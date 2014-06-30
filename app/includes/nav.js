@@ -10,7 +10,7 @@ document.write('<span class="icon-bar"></span>');
 document.write('<span class="icon-bar"></span>');
 document.write('<span class="icon-bar"></span>');
 document.write('</button>');
-document.write('<a class="navbar-brand" href="home.html"><img src="/images/HeaderIcon.png">Jiffs Notes</a>');
+document.write("<a class='navbar-brand' href='home.html'><img src='/images/HeaderIcon.png'>Jiff's Notes</a>");
 document.write('</div>');
 document.write('<div class="navbar-collapse collapse">');
 document.write('<ul class="nav navbar-nav navbar-right">');
