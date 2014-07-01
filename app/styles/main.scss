@@ -60,7 +60,7 @@ body {
 	}
 }
 
-.home-grid{
+.home-grid {
 	.box{
 	}
 	h6 {
@@ -87,7 +87,7 @@ body {
 }
 
 /* Nav Styling here */
-.navbar-brand{
+.navbar-brand {
 	img {
 		max-height: 30px;
 		max-width: 30px;
@@ -97,14 +97,24 @@ body {
 }
 
 /* Footer Styling here */
-.footer{
-	.glyphicon{
+.footer {
+	.glyphicon {
 		margin: 0px 2px 0px 10px;
 	}
 }
 
-.homeBody{
-	.jumbotron{
+/* Style for Example class */
+.example {
+
+}
+
+/* Style for Term class */
+.term {
+	text-weight: bold;
+}
+
+.homeBody {
+	.jumbotron {
 		background-image: url(/images/FranklinVsZeus.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
@@ -118,8 +128,8 @@ body {
 	}
 }
 
-.htmlBody{
-	.jumbotron{
+.htmlBody {
+	.jumbotron {
 		background-image: url(/images/RooseveltVsBigfoot.jpg);
 		background-position: center;
 		background-size: 50em;
@@ -132,6 +142,20 @@ body {
 	}
 	.main{
 		margin-left: 40px;
+	}
+}
+
+.javascriptBody {
+	.jumbotron {
+		background-image: url(/images/JFKAlienHunter.jpg);
+		background-position: center;
+		background-size: 50em;
+			h1 {
+				color: white;
+			}
+			p {
+				color: white;
+			}
 	}
 }
 

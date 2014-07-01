@@ -17,25 +17,349 @@
         <script src="../bower_components/modernizr/modernizr.js"></script>
         <!-- endbuild -->
     </head>
-    <body class="JavascriptBody">
+    <body class="javascriptBody">
         <!-- Loading the header with javascript include.  Should add a switch for html5 import -->
         <div class="navPlaceholder"></div>
         <!--[if lt IE 10]>
-                                        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <div class="container">
-            <div class="jumbotron">
-                <h1>Welcome</h1>
-                <p class="lead">Keeping notes as I learn new to code. Not intended to look pretty, in some places I'm keeping it intentionally bad.</p>
-                <p><a class="btn btn-lg btn-success" href="#"> <span class="glyphicon glyphicon-fire"> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
+            <div>
+                <div class="jumbotron">
+                    <h1>Javascript Notes</h1>
+                    <p class="lead">"Things do not happen. Things are made to happen." - JFK</p>
+                    <p><a class="btn btn-lg btn-success" href="#"> <span class="glyphicon glyphicon-fire"> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
+                </div>
             </div>
-            <div class="row">
-                <div class="col-md-8 col-sm-4 col-xs-6">
+            <div>
+                <div class="row">
+                    <div class="col-md-9 col-sm-8 col-xs-10">
+                        <header>
+                            <h3>Javascript</h3>
+                            <p>
+                            Press this button for Javascript in action!
+                            <button type="submit" value="Submit" onclick="alert('I need to think of something for this to do.')">Button</button>
+                            </p>
+                        </header>
+                        <article>
+                        <p>
+                        A few basic things about Javascript, it is case sensitive, but not whitespace sensitive.  It's
+                        important to remember that the code will get executed when the browser hits the code. Best
+                        practice is to run the Javascript at the end of the body unless you're linking to a stylesheet.
+                        If you want you're variable to be a string just be sure to put it in quotes.  You can quote inside it by
+                        using a different type of quote.
+                        </p>
+                        <p>
+                        <span class="term">Variables</span> are about as important as it gets, <span class="example">("var
+                        foo;")</span> is an undefined variable, while <span class="example">"var foo=100;"</span> is defined.
+                        Variables can be made of letters, numbers, underscores and the dollar sign, but can't start with a number.
+                        Some issues can up when you go to change a variable and you accidently don't get the name right because of
+                        case sensitivity, this will create a new variable and screw with your mind because an error doesn't appear.
+                        Javascript is a weekly typed language meaning you don't have to declare if variables are a string, number
+                        or boolean.
+                        </p>
+                        <p>
+                        <span class="term">Conditionals Code</span> is done with if statements. Here's an example:
+                        <br />
+                        <span class="example2">
+                        if (x==100){ <br />
+                        alert(this) <br />
+                        }else{ <br />
+                        alert(that) <br />
+                        }<br /> </span>
+                        You can nest another argument inside the else, but it is suggested to not nest more than once or twice for
+                        the sake of code readiblity.
+                        </p>
+                        <p>
+                        Another important part of javascript is <span class="term">Operators</span>. Arithmetic Operators are things like
+                        addition, subration, multiplacation and division <span class="example">("foo = foo + 1;" or in shorthand "foo +=
+                        1;")</span>. But it's important to remember <span class="term">Oparator Precedence</span>,  multiplication and division
+                        are considered more important than addition and subtraction, use parentheses to ensure your math gets done in the order
+                        you intended.  For <span class="term"> Equality </span> rember that you need to use double equal signs <span
+                        class="example">("foo == '5'")</span> or three equal signs for <span class="term">Strict Equality </span> which also
+                        checks type <span>("foo === 5")</span>.  When making <span class ="term"> Comparisons </span> you have to remember that
+                        <span class="term"> and </span> uses a double ampersand <span class="example">("&&")</span> and for <span class="term">
+                        Or</span> you use two bars <span class="example">("||")</span>. <span class="term"> Modulus</span> <span class="example">
+                        ("%")</span> will leave you the remainder. The <span class="term">Ternary </span> operator is like a mini if statement, you
+                        make one by setting a condition then using a questionmark then do this is true colon this if false <span class="example">
+                        (e.g. "(playerOne > playerTwo ? playerOne : playerTwo)").</span>
+                        </p>
+                        <p>
+                        Working with <span class="term"> Loops </span>, also known as iteration, is a big part of using Javascript. A <span
+                        class="term">for loop</span> starts with the word "for" then opens parenthesis, in the parenthesis you start with a variable
+                        being defined, after a comma you set a condition, after another comma you set and incrementor and then close the
+                        parenthesis. You follow with curly braces, that will get executed every time the loop runs <span class="example"> (e.g. "for
+                        (var = i, i < 10, i++){console.log(i;};")</span>.  A <span class="term">while loop</span> is writen like:<br />
+                        <span class="example"> while (a < 10){<br />
+                        console.log(a);<br />
+                        a++;<br />
+                        }<br /></span>
+                        You can always use <span class="term"> break </span> to manually stop a loop. You can also use <span class="term"> continue
+                        </span> to skip one iteration and check the condition again.
+                        </p>
+                        <p>
+                        Another big part of Javascript is writting a <span class="term"> function </span>. A function is declared by:<br />
+                        <span class="example">
+                        function myName() {<br />
+                        dostuff;<br />
+                        }<br /> </span>
+                        Then you can use the function by calling it with parenthesis and then following it with a semicolon <span class="example">
+                        (e.g. "myName();")</span>.  Some functions have <span class="term">parameters</span> that go inside the parenthesis.  If you call
+                        a function with extra parameters it will just ignore the extras, but if you pass in too few they will be considered undefined.
+                        It's also important to remember <span class="term"> Variabal Scope </span>. If you define a variable in a function it is a
+                        local variable and will be undefined outside the function.  If you need a global variable just declare the it outside the
+                        function and don't use the word var when defining it inside the function.
+                        </p>
+                        <p>
+                        <span class="term">Arrays</span> are like Variable for with multiple values.  You define an array the same way you would a
+                        variable except you put the values in a square bracket separated by commas <span class="example">(e.g. "var myArray = [0, 1,
+                        2, Cat];")</span>.  Remember that to start counting at 0 when referencing the items in the array.
+                        </p>
+                        <p>
+                        <span class="term">Objects</span> are containers that hold things like variables or functions.  You make a variable like this: <br />
+                        <span class="example">
+                        var player = new Object();<br />
+                        player.name = "Fred";<br />
+                        player.score = 100;<br />
+                        </span>
+                        But this also has a shorthand (<span class="example">var player = {name: "fred", score = 100};</span>). You can then make a method for
+                        the object by writting a function like this: <br />
+                        <span class="example2">
+                        function playerDetails(){<br />
+                        console.log(this.name + " has a score of " + this.score ".");<br />
+                        }<br />
+                        </span>
+                        One of the most important methods of the Document Object Model is <span class=term>getElementById</span> which can be used
+                        to retrieve an element node (<span class="example">var myElement = document.getElementById("someId")</span>).  You can use this to grab
+                        things in the DOM and change them with .setAttribute. More helpful is to individually drop element nodes into the DOM, using .createElement
+                        with .appendChild, for more on this please watch this <a href="http://www.lynda.com/home/Player.aspx?lpk4=87541&playChapter=False"
+                        target="_blank">video</a>.
+                        </p>
+                        <p>
+                        <span class="term">Methods</span> are used on a bunch of different objects.  When using methods for dates it's important to
+                        remember that .getDate will give you the day of the month, while .getDay will give you the day of the week, and that to get the
+                        year you should use .getFullYear <span class="example">(e.g. "myDate.getFullYear():") </span>. .getHours will give you the hour
+                        in a 0-23 format. .getTime will give you the time down to the millisecond since 1/1/1970, which gets used a lot to see if something
+                        is newer than something else. When comparing dates you usually want to use a method because you're comparing objects and they're not
+                        same even if they have the same value <span class="example">(e.g. "date1.getTime() == date2.getTime();")</span>.
+                        </p>
+                        <p>
+                        <span class="term">Events</span> are a huge part of interactivity. These can be done in dot notation and then written like
+                        a function. (<span class="example">document.onclick = function(){...</span>).  You can also do the by using an <span class="term">
+                        Event Listener</span> which isn't completely supported because IE is IE (<span class="example">document.addEventListener("click",
+                        myFunction, false)</span>).  If you want to target something you can use a combo of a new variable and the .getElement function like this:<br />
+                        <span class="example">
+                        var myImage = document.getElementById("mainImage");{<br />
+                        myImage.onclick = function(){;<br />
+                        alert("You click me");<br />
+                        }<br />
+                        </span>
+                        You can use the the onsubmit function for forms to stop them from sending to the server by setting them to return false. If you're planning
+                        on adding CSS that will require Javascript to complete the function you may want to only add the CSS through a javascript, this type of
+                        practice is called <span class="term">Progressive Enhancement</span>.
+                        </p>
+                        <p>
+                        You can change the inlined CSS with the <span class="term"> .style </span> (<span class="example">.style.red </span>).  Some of the terms
+                        change slightly, things that are hyphenated change to camel case (<span class="example">backgroundColor</span>).  Class is a reserved word
+                        so in Javascript you use className.
+                        </p>
+                        <p>
+                        <span class="term">Regular Expressions</span> can be used to do some complex stuff, check this <a href="javascript:void(0);"
+                        target="_blank">video</a> for more information.  You're also going to want to learn more about <span class="term">Asynchronous
+                        JavaScript and XML</span>, also known as <span class="term">AJAX</span> to make the browser do all this stuff on the server side.
+                        </p>
+                        </article>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <h3> javascrip <h3>
-                    <p> </p>
-                </div>
+            </div>
+            <div class="col-md-3 col-sm-4 col-xs-2">
+                    <aside>
+                        <h4> Terms </h4>
+                        <p> <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference" target="_blank">Mozilla Reference Guide </a><p>
+                        <h5> Functions </h5>
+                        <ul>
+                            <li>
+                                <h6> Function Basics </h6>
+                                <p>This is how you define a function:<br />
+                                function myName() = { <br />
+                                do stuff; <br />
+                                }<br /></p>
+                                <p>
+                                <a href="http://www.tutorialspoint.com/javascript/javascript_builtin_functions.htm" target="_blank"> Functions </a>
+                                are quick arguements.
+                                </p>
+                            </li>
+                            <li>
+                                <h6> Basic Functions </h6>
+                                <ul>
+                                    <li> myName(); </li>
+                                    <li> alert(); </li>
+                                    <li> toUpperCase(); </li>
+                                    <li> valueOf(); </li>
+                                    <li> isNaN(); </li>
+                                    <li> !isNaN(); </li>
+                                    <li> Date(2000, 12, 31); </li>
+                                    <li> Date(2000, 12, 31, 12, 60, 00); </li>
+                                    <li> setTimeout </li>
+                                    <li> setInterval </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6> Event Listeners </h6>
+                                <ul>
+                                    <li> .onclick; </li>
+                                    <li> .onload; </li>
+                                    <li> .onhover; </li>
+                                    <li> .onfocus; </li>
+                                    <li> .onblur; </li>
+                                </ul>
+                                <h6> For Forms </h6>
+                                <ul>
+                                    <li> .onchange </li>
+                                    <li> .onkeypress </li>
+                                    <li> .onkeyup </li>
+                                    <li> .checked </li>
+                                    <li> .selected </li>
+                                    <li> .onsubmit </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h5> Operators </h5>
+                        <p>
+                        Here is a list of some <a href="http://www.w3schools.com/js/js_operators.asp" target ="_blank">Operators</a>
+                        </p>
+                        <ul>
+                            <li>
+                                <h6> Comparisons </h6>
+                                <ul>
+                                    <li> if (a == b) </li>
+                                    <li> if (a < b) </li>
+                                    <li> if (a != b) </li>
+                                    <li> if (a === b) </li>
+                                    <li> if (a >= b && a<=c) </li>
+                                    <li> if ((a !== b) || (a !== c))</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6> Modulus </h6>
+                                <ul>
+                                    <li> var remainder = year % 4; </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6> Increment / Decrement </h6>
+                                <ul>
+                                    <li> a = a + 1 </li>
+                                    <li> a++ </li>
+                                    <li> a += 1 </li>
+                                    <li> ++a </li>
+                                    <li> a-- </li>
+                                    <li> a -= 1 </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6> Ternary </h6>
+                                <ul>
+                                    <li> (a != 0) ? alert(true) : alert(false) </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h5> Loops </h5>
+                        <p> Loops are a valuable tool. </p>
+                        <ul>
+                            <li>
+                                <h6> Loops </h6>
+                                <ul>
+                                    <li> for( var a = 10, a!=0, a--){console.log(a);} </li>
+                                    <li> var a=10 while(a <10) {console.log(a); a++;} </li>
+                                    <li> var a=10 do{console.log(a); a++} while( a >10); </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h5> Methods </h5>
+                        <ul>
+                            <li>
+                                <h6> Basic Methods </h6>
+                                <ul>
+                                    <li> .length(); </li>
+                                    <li> .join();</li>
+                                    <li> .sort(); </li>
+                                    <li> .reverse(); </li>
+                                    <li> .split(); </li>
+                                    <li> .indexOf(); </li>
+                                    <li> .slice(); </li>
+                                    <li> .substring(start,length); </li>
+                                    <li> .substr(start,length); </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6> Methods for working in HTML </h6>
+                                <ul>
+                                    <li> .getElementById(); </li>
+                                    <li> .getELementByTag(); </li>
+                                    <li> .nodeType </li>
+                                    <li> .innerHTML </li>
+                                    <li> .getAttribute("name"); </li>
+                                    <li> .setAttribute("name , value "); </li>
+                                    <li> .createElement </li>
+                                    <li> .appendChild </li>
+                                    <li> .createTextNode </li>
+                                    <li> document.form.formName </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6> Methods for Arrays </h6>
+                                <ul>
+                                    <li> .getElementsByTagName(); </li>
+                                    <li> .join();</li>
+                                    <li> .sort(); </li>
+                                    <li> .reverse(); </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <h6> Methods for Date </h6>
+                                <ul>
+                                    <li> .getMonth(); </li>
+                                    <li> .getFullYear();</li>
+                                    <li> .getDate(); </li>
+                                    <li> .getDay(); </li>
+                                    <li> .getHours(); </li>
+                                    <li> .getTime(); </li>
+                                    <li> .setMonth(); </li>
+                                    <li> .setDate(); </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h5> Objects </h5>
+                        <ul>
+                            <li>
+                                <h6> Math </h6>
+                                <ul>
+                                    <li> Math.round(); </li>
+                                    <li> Math.max(); </li>
+                                    <li> Math.min(); </li>
+                                    <li> Math.random(); </li>
+                                    <li> Math.sqrt(); </li>
+                                    <li> Math.PI(); </li>
+                                    <li> Math.log(); </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <h5> Console Commands </h5>
+                        <p> Console Commands are only used by debug tools. </p>
+                        <ul>
+                            <li>
+                                <h6> Console Commands </h6>
+                                <ul>
+                                    <li> console.log() </li>
+                                    <li> console.debug() </li>
+                                    <li> console.info()</li>
+                                    <li> console.error() </li>
+                                    <li> console.warn() </li>
+                                </ul>
+                            </li>
+                        </ul>
+                </aside>
             </div>
         </div>
     </div>
