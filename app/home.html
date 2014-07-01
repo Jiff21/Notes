@@ -1,133 +1,85 @@
 <!doctype html>
 <html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <title>HOME ::: Notes</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" href="/favicon.ico">
-        <!-- build:css styles/vendor.css -->
-        <!-- bower:css -->
-        <!-- endbower -->
-        <!-- endbuild -->
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
-        <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="../bower_components/modernizr/modernizr.js"></script>
-        <!-- endbuild -->
-    </head>
-    <body>
-        <!--[if lt IE 10]>
-                                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <!-- Fixed navbar -->
-        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="home.html"><img src="/images/HeaderIcon.png">Jiff's Notes</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="/home.html">Home</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Front End<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/html.html">HTML</a></li>
-                                <li><a href="/javascript.html">Javascript</a></li>
-                                <li><a href="/css.html">CSS</a></li>
-                                <li><a href="/sass.html">SASS</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Back End<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/php.html">PHP</a></li>
-                                <li><a href="/mysql.html">MySQL</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">QA<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/jasmine.html">Jasmine</a></li>
-                                <li><a href="/selenium.html">Selenium</a></li>
-                                <li><a href="/protractor.html">Protractor</a></li>
-                                <li><a href="/karma.html">Karma</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Other<span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="/git.html">Git</a></li>
-                                <li><a href="/grunt.html">Grunt</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
-            </div>
-            <div class="container">
-                <div class="jumbotron">
-                    <h1>Welcome</h1>
-                    <p class="lead">Keeping notes as I learn new to code. Not intended to look pretty, in some places I'm keeping it intentionally bad.</p>
-                    <p><a class="btn btn-lg btn-success" href="#"> <span class="glyphicon glyphicon-fire"> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
-                </div>
-                <div class="lang-grid home-grid">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/javascript.html"><h6>Javascript</h6></a></div>
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/git.html"><h6>Git</h6></a></div>
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/jasmien.html"><h6>Jasmine</h6></a></div>
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/css.html"><h6>CSS</h6></a></div>
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/html.html"><h6>HTML</h6></a></div>
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/sass.html"><h6>SASS</h6></a></div>
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/php.html"><h6>PHP</h6></a></div>
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/mysql.html"><h6>MySQL</h6></a></div>
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/selenium.html"><h6>Selenium</h6></a></div>
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/karma.html"><h6>Karma</h6></a></div>
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/protractor.html"><h6>Protractor</h6></a></div>
-                        <div class="col-md-3 col-sm-4 col-xs-6"><a href="#/grunt.html"><h6>Grunt</h6></a></div>
-                    </div>
-                </div>
-                <div class="footer">
-                    <p><span class="glyphicon glyphicon-cloud"></span> Keeping notes on git.</p>
-                </div>
-            </div>
-            <!-- build:js scripts/vendor.js -->
-            <!-- bower:js -->
-            <script src="../bower_components/jquery/dist/jquery.js"></script>
-            <!-- endbower -->
-            <!-- endbuild -->
-            <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-            <script>
-                                                (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-                                                function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-                                                e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-                                                e.src='//www.google-analytics.com/analytics.js';
-                                                r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-                                                ga('create','UA-XXXXX-X');ga('send','pageview');
-            </script>
-            <!-- build:js scripts/plugins.js -->
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-            <script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-            <!-- endbuild -->
-            <!-- build:js({app,.tmp}) scripts/main.js -->
-            <script src="scripts/main.js"></script>
-            <!-- endbuild -->
-        </body>
-    </html>
+	<head>
+		<meta charset="utf-8">
+		<title>HOME of Jiff's Notes</title>
+		 <meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<link rel="shortcut icon" href="/favicon.ico">
+		<!-- build:css styles/vendor.css -->
+		<!-- bower:css -->
+		<!-- endbower -->
+		<!-- endbuild -->
+		<!-- build:css(.tmp) styles/main.css -->
+		<link rel="stylesheet" href="styles/main.css">
+		<!-- endbuild -->
+		<!-- build:js scripts/vendor/modernizr.js -->
+		<script src="../bower_components/modernizr/modernizr.js"></script>
+		<!-- endbuild -->
+	</head>
+	<body class="homeBody">
+		<!-- Loading Nav with AJAX Request at bottom of page.  Should add a switch for html5 import -->
+		<div class="navPlaceholder"></div>
+		<!--[if lt IE 10]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+			<div class="container">
+				<div class="jumbotron">
+					<h1>Welcome</h1>
+					<p class="lead">Keeping notes as I learn new to code. Not intended to look pretty, in some places I'm keeping it intentionally bad.</p>
+					<p><a class="btn btn-lg btn-success" href="#"> <span class="glyphicon glyphicon-fire"> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
+				</div>
+				<div class="lang-grid home-grid">
+					<div class="row">
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/javascript.html"><h6>Javascript</h6></a></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/git.html"><h6>Git</h6></a></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/jasmien.html"><h6>Jasmine</h6></a></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/css.html"><h6>CSS</h6></a></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/html.html"><h6>HTML</h6></a></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/sass.html"><h6>SASS</h6></a></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/php.html"><h6>PHP</h6></a></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/mysql.html"><h6>MySQL</h6></a></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/selenium.html"><h6>Selenium</h6></a></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/karma.html"><h6>Karma</h6></a></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/protractor.html"><h6>Protractor</h6></a></div>
+						<div class="col-md-3 col-sm-4 col-xs-6"><a href="/grunt.html"><h6>Grunt</h6></a></div>
+					</div>
+				</div>
+				<!-- Loading footer with AJAX -->
+				<div class="footerPlaceholder"></div>
+			</div>
+			<!-- build:js scripts/vendor.js -->
+			<!-- bower:js -->
+			<script src="../bower_components/jquery/dist/jquery.js"></script>
+			<!-- endbower -->
+			<!-- endbuild -->
+			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+			<script>
+												(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+												function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+												e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+												e.src='//www.google-analytics.com/analytics.js';
+												r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+												ga('create','UA-XXXXX-X');ga('send','pageview');
+			</script>
+			<!-- build:js scripts/plugins.js -->
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+			<script src="/includes/nav.js"></script>
+			<script src="/includes/footer.js"></script>
+			<!-- endbuild -->
+			<!-- build:js({app,.tmp}) scripts/main.js -->
+			<script src="scripts/main.js"></script>
+			<!-- endbuild -->
+		</body>
+	</html>
