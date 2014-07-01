@@ -159,6 +159,20 @@ body {
 	}
 }
 
+.cssBody {
+	.jumbotron {
+		background-image: url(/images/Cinton.jpg);
+		background-position: center;
+		background-size: 50em;
+			h1 {
+				color: white;
+			}
+			p {
+				color: white;
+			}
+	}
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
 	.container {
