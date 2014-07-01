@@ -1,6 +1,25 @@
 /**********************************************************************
 * Include for the header. Hoping there's an easier way to do this.
 ***********************************************************************/
+
+// $.ajax({
+//   url: '/imports/nav.html',
+//   // data: data,
+//   error: function(error) {
+//   	 console.log('ERROR :::: ', error);
+//   },
+
+//   success: function(fileData) {
+// 	console.log('OUR HTML :::: ', fileData);
+// 	$('.container').html(fileData);
+//   },
+
+//   dataType: 'html'
+
+// });
+
+
+
 document.write('<div class="navbar navbar-default navbar-fixed-top" role="navigation">');
 document.write('<div class="container">');
 document.write('<div class="navbar-header">');
