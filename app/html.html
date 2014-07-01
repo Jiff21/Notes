@@ -16,12 +16,35 @@
 		<!-- build:js scripts/vendor/modernizr.js -->
 		<script src="../bower_components/modernizr/modernizr.js"></script>
 		<!-- endbuild -->
+		<!-- This is some embedded style for example purposes. BAD FORM.-->
+		<Style type="text/css">
+		.red { color: red; }
+		p.first:first-line{font-variant: small-caps;}
+		}
+		.col1 {background-color: #fcd;}
+		.col2 {background-color: #cfd;}
+		.col3 {background-color: #cdf;}
+		#frame1 {
+		display: block;
+		float: right;
+		width: 300px;
+		height: 400px;
+		margin: 4px 0 4px 4px;
+		border: 2px solid #666;
+		overflow: auto;
+		background-color: #eef;
+		font-family: tahoma, sans-serif;
+		font-size: 10pt;
+		padding: 0 6pt;
+		}
+		#frame1 h1 { margin-top: 0; }
+		</Style>
 	</head>
 	<body class="htmlBody">
 		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
 		<div class="navPlaceholder"></div>
 		<!--[if lt IE 10]>
-						<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 		<div>
 			<div class="jumbotron">
@@ -30,53 +53,275 @@
 				<p><a class="btn btn-lg btn-success" href="#"> <span class="glyphicon glyphicon-fire"> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
 			</div>
 		</div>
-		<div class="lang-grid git-grid">
+		<div class="main">
 			<div class="row">
-				<div class="col-md-7 col-sm-6 col-xs-12">
-				<p>TEST TESTTEST</p>
+				<div class="col-md-9 col-sm-8 col-xs-10">
+					<header>
+						<h6>HTML</h6>
+						<p> This is a paragraph in the Header.  We're not going to count it as part of the article.</p>
+					</header>
+					<article>
+					<div>
+						<h1 class="red"> This is the 1st Header. </h1>
+						<img src="images/Bored.jpg" width="260" height="260"
+						alt="Picture of me." title="Me Bored."
+						class="floatright-img"/>
+						<p class="first">
+						This is the 1st Paragraph. I'm going to make this paragraph fairly long just to try to
+						get it to word wrap on the browser page.  You can make a <span class="term"> Comment
+						</span> using a less than symbol, an exclamation point, and two dashes to open in and
+						I really want it to be at least three lines or the small-caps font variant doesn't make
+						it look anything like a book.	Or you can reload the <a href="HTMLTestTemplate.html" target="_Blank">homepage</a>
+						in a new window.  Or maybe you'd like to see the <a href="#p6">Sixth Paragraph</a>, it's about CSS.
+						</p>
+					</div>
+					<p> This is the second paragraph. This&shy;Sentence&shy;Has&shy;Soft&shy;Hyphens&shy;If&shy;You&shy;Make&shy;It&shy;Wrap.
+					YouIndicateWhereYou&shy;WantTheWordToBreakWith&shy;TheFollowingMarkUp<span class="example">&amp;shy;</span>.</p>
+<pre> 
+This is how you make     a paragraph with    weird spacing using pre.  Pre can also be used to show characters that would &otherwise #give HTML trouble.
+</pre>
+					<div>
+						<img src="images/WashingtonZombies.png" width="260" height="260"
+						alt="Washington Vs. Zombies" title="George Washington also revolted against Zombie Tyranny"
+						class="floatleft-img"/>
+						<p>
+						You open a paragraph with a <span class="example">&lt;p&gt;</span> tag.   You can force linebreaks <br/>
+						with a <span class="example">&lt;br /&gt;</span> tag. You can do other stuff, like add extra &nbsp&nbsp&nbsp&nbsp spaces!
+						with <span class="example">&amp;nbsp</span>. You can also highlight text with the word <mark>mark</mark> tags That's really not that
+						useful but you could change the colors using CSS. Although you could use "quotation marks" in the text, <q>Smart
+						Quotes</q>  <span class="example">&lt;q&gt;</span> are the way to go because <q>you can have <q>nested</q> quotes in the text</q>
+						and can be changed for different languages with CSS.  You can also quote a block of text with blockquote.
+						</p>
+						<p>
+						These are some Phrase Elements in an ordered list:
+						<ol>
+							<li> <em> Emphasize </em> <span class="example">&lt;em&gt;</span></li>
+							<li> <strong> Strong </strong> <span class="example">&lt;strong&gt;</span></li>
+							<li> <dfn> Define a Term </dfn> <span class="example">&lt;dfn&gt;</span></li>
+							<li> <code> Code Listings </code> <span class="example">&lt;code&gt;</span></li>
+							<li> <samp> Sample </samp> <span class="example">&lt;samp&gt;</span></li>
+							<li> <kbd> Keyboard </kbd> <span class="example">&lt;kbd&gt;</span></li>
+							<li> <var> Variables </var> <span class="example">&lt;var&gt;</span></li>
+						</ol>
+						</p>
+						<p>
+						These are Font Elements in an unordered list:
+						<ul style="list-style-type: circle">
+							<li> <b>Bold</b> <span class="example">&lt;b&gt;</span></li>
+							<li><i>Italic</i> <span class="example">&lt;i&gt;</span></li>
+							<li><u>Underline</u> <span class="example">&lt;u&gt;</span></li>
+							<li><sub>Subscript</sub> <span class="example">&lt;sub&gt;</span></li>
+							<li><sup>Superscript</sup> <span class="example">&lt;sup&gt;</span> </li>
+							<li><small>Small</small>, <span class="example">&lt;small&gt;</span></li>
+							<li><s>Strikeout</s> <span class="example">&lt;s&gt;</span></li>
+							<li><del>Delete</del> <span class="example">&lt;del&gt;</span></li>
+							<ul style="list-style-type: circle">
+								<li> Lists can be nested </li>
+								<ul style="list-style-type: circle">
+									<li>by the way.</li>
+								</ul>
+							</ul>
+						</ul>
+						</p>
+					</div>
+					<h3 class="clearheader"> Let's talk about CSS (H3 of 6 Header).</h3>
+					<p id="p6" class="first clearheader">
+					This is the Sixth Paragraph.  In it we're going to talk about CSS.  When writing CSS you can just style by
+					using different element names on the page by using them as a selector.  If you want to select a class, you
+					need to put a period in front of the name (e.g. .example).  If you want to use an ID selector, use the
+					Pound symbol in front of the name (e.g. #example:) Some commonly used CSS properties are font-family, font-size,
+					font-weight, border, margin, background-color, ,  . Setting the overflow property to auto is a neat trick. When
+					you are working with borders always remember TRBL (Top, Right, Bottom, Left). You can add multiple classes to a
+					html element using whitespace.
+					Click on  the picture to go back to the top of the document:
+					</p>
+					<a href="#top"><img
+					src="images/RooseveltVsBigfoot.jpg" width="260" height="260"
+					alt="The end of Bigfoot" title="Bigfoot did exist until Teddy Roosevelt found him."
+					class="floatleft-img"
+					></a>
+					<p>
+					Selectors are very important in styling your page.   Descendant Selectors just require a space (e.g. h2 p). Child
+					selectors are similar but they don't target the whole page (e.g. h2 > p).  Adjacent selectors (e.g. h1 + p, H2 +p,)
+					can be useful if there if you want to select something that follows another thing directly and is part of the same
+					parent element.  Attribute Selectors look for things with the thing in brackets (e.g. a[title] or a[title="example"]).
+					When using Attribute selectors you can use a tilde (~) before the equal sign to find anything with it instead of an
+					exact match or you can use a carrot (^) to look for anything that starts with. Or you can use a dollar sign ($) to look
+					for anything that has that end.  As you're familiar with you can use asterisk to do a wildcard search (*).
+					</p>
+					<p>
+					<button onclick = "alert('Hello')" > Run Some Javascript </button>
+					<script type="text/javascript" src="Javascript_Test.js"></script>
+					This is the code for the button above. <br />
+					<!--  This is Example Code-->
+					<span class="example"> &lt;button onclick = &quot;alert(&#39;Hello&#39;)&quot; &gt; Run Some Javascript &lt;/button&gt; <br />
+					&lt;script type=&quot;text/javascript&quot; src=&quot;Javascript_Test.js&quot;&gt;&lt;/script&gt; </span>
+					</p>
+					<p>
+					This is a table:
+					<section>
+						<table>
+							<caption>
+							This is my table
+							</caption>
+							<colgroup>
+							<col class="col1" />
+							<col class="col2" />
+							<col class="col3" />
+							</colgroup>
+							<tr>
+								<th>Name</th>
+								<th>Years</th>
+								<th>Drink</th>
+							</tr>
+							<tr>
+								<td>James</td>
+								<td>19</td>
+								<td>Jameson & Ginger</td>
+							</tr>
+							<tr>
+								<td>Visor</td>
+								<td>10</td>
+								<td>Shots</td>
+							</tr>
+						</table>
+					</section>
+					This is an example of some of the code: <br />
+<pre class="example">
+&lt;section&gt;
+&lt;table&gt;
+&lt;caption&gt;
+This is my table
+&lt;/caption&gt;
+&lt;colgroup&gt;
+&lt;col class=&quot;col1&quot; /&gt;
+&lt;col class=&quot;col2&quot; /&gt;
+&lt;col class=&quot;col3&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Years&lt;/th&gt;
+&lt;th&gt;Drink&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;James&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;Jameson &amp; Ginger&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/section&gt;
+</pre>
+					</p>
+					<p>
+					This is a frame with an HTML 5 accordian list in it. You make the frame with an id and CSS.   You make the list accordian by
+					starting a <span class="example">&lt;details open&gt;</span> tag, and you also want to title it in <span class="example">
+					&lt;summary&gt;</span> tags.
+					<!-- This is a frame.  It could also just use a src to fill it -->
+					<div id="frame1">
+						<h1>Top Ten Lists</h1>
+						<div>
+							<details open>
+							<summary>Top 10 Smokers Bars</summary>
+							<ol>
+								<li>Summer Place</li>
+								<li>Hemlock</li>
+								<li>Thee Parkside</li>
+								<li>Zeitgeist</li>
+								<li>Savoy Tavoli</li>
+								<li>Edinburgh Castle</li>
+								<li>Dr. Teeth & the Electric Mayhem</li>
+								<li>Vertigo</li>
+								<li>Toad Hall</li>
+								<li>Bacchus Kirk</li>
+							</ol>
+							</details>
+						</div>
+					</div>
+					</p>
+					</article>
 				</div>
-				<div class="col-md-4 col-sm-5 col-xs-12">
-					<h3> Starting a Project <h3>
-					<p> </p>
+				<div class="col-md-3 col-sm-4 col-xs-2">
+					<aside>
+						<div>
+							<h6> Page formattimg </h6>
+							<ul>
+								<li><h6> Header </h6></li>
+								<li><h6> Article </h6></li>
+								<li><h6> Aside </h6></li>
+								<li><h6> Footer </h6></li>
+							</ul>
+							<h6> Tags </h6>
+							<ul>
+								<li>
+									<h6> Heading </h6>
+									<ul>
+										<li> h1 </li>
+										<li> h2 </li>
+										<li> h3 </li>
+										<li> h4 </li>
+										<li> h5 </li>
+										<li> h6 </li>
+									</ul>
+								</li>
+								<li>
+									<h6> Lists </h6>
+									<ul>
+										<li> ol </li>
+										<li> ul </li>
+										<li> li </li>
+									</ul></li>
+									<li>
+										<h6> Formatting </h6>
+										<ul>
+											<li> p </li>
+											<li> pre </li>
+											<li> div </li>
+											<li> a href="[url]"</li>
+											<li> <a href="http://www.opinionatedgeek.com/dotnet/tools/htmlencode/encode.aspx">Encode Code to HTML</a> </li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</aside>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div>
-			<!-- Loading footer with AJAX -->
-			<div class="footerPlaceholder"></div>
-		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-					(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-					function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-					e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-					e.src='//www.google-analytics.com/analytics.js';
-					r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-					ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<script src="/includes/nav.js"></script>
-		<script src="/includes/footer.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="scripts/main.js"></script>
-		<!-- endbuild -->
-	</body>
-</html>
+			<div>
+				<!-- Loading footer with AJAX -->
+				<div class="footerPlaceholder"></div>
+			</div>
+			<!-- build:js scripts/vendor.js -->
+			<!-- bower:js -->
+			<script src="../bower_components/jquery/dist/jquery.js"></script>
+			<!-- endbower -->
+			<!-- endbuild -->
+			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+			<script>
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X');ga('send','pageview');
+			</script>
+			<!-- build:js scripts/plugins.js -->
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+			<script src="/includes/nav.js"></script>
+			<script src="/includes/footer.js"></script>
+			<!-- endbuild -->
+			<!-- build:js({app,.tmp}) scripts/main.js -->
+			<script src="scripts/main.js"></script>
+			<!-- endbuild -->
+		</body>
+	</html>
