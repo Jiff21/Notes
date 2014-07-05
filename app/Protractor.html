@@ -2,7 +2,7 @@
 <html class="no-js">
 	<head>
 		<meta charset="utf-8">
-		<title>PHP Notes</title>
+		<title>Protractor Notes</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="shortcut icon" href="/favicon.ico">
@@ -17,7 +17,7 @@
 		<script src="../bower_components/modernizr/modernizr.js"></script>
 		<!-- endbuild -->
 	</head>
-	<body class="phpBody">
+	<body class="protractorBody">
 		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
 		<div class="navPlaceholder"></div>
 		<!--[if lt IE 10]>
@@ -26,7 +26,7 @@
 		<div class="container">
 			<div>
 				<div class="jumbotron">
-					<h1>PHP Notes</h1>
+					<h1>Protractor Notes</h1>
 					<p class="lead">"Things do not happen. Things are made to happen." - JFK</p>
 					<p><a class="btn btn-lg btn-success" href="#"> <span class="glyphicon glyphicon-fire"></span> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
 				</div>
@@ -35,73 +35,7 @@
 				<div class="row">
 					<div class="col-md-9 col-sm-8 col-xs-10">
 						<article id="container">
-					   <p>
-						PHP is a server side scripting language which means it needs to be run on a server.  PHP originally stould for Personal Home Page
-						Tools, then it change to PHP: Hypertext Preprocessor (recursive humor). The "Stack" refers to the combination used the most
-						common are MAMP, LAMP, WAMP and XAMP.  MAMP stands for Macintosh, Apache, MySQL and PHP (Windows, Linux, and X is wildcard/all).
-						Apache's nickname in terminal is httpd. I'm using MAMP, but if you need to set up an Apache Server you can get it
-						<a href="http://www.lynda.com/home/Player.aspx?lpk4=136918&playChapter=True" target="_blank">here</a>. You probably want to check out your notes for
-						<a href="terminal.html">Terminal</a> as well.
-						</p>
-						<p>
-						You open and close PHP with the following tags, <code class="example">&lt;?PHP</code> to open and
-						<code class="example">?&gt;</code> at the end of the doc to close. If you load a PHP file that says
-						<code class="example">&lt;? php phpinfo() ?&gt;</code> it will load the settings of php on the Apache terminal. PHP ignores
-						whitespace and a semicolon ends a line of code.
-						</p>
-						<h6>Exploring Data Types</h6>
-						<p>
-						<span class="Term">Variables</span> need to start with a dollar sign, can contain letters, numbers, underscores or dashes, and are
-						case sensitive.  Remember to avoid <a href="http://us3.php.net/manual/en/reserved.php" target="_blank">these</a> reserved words.
-						Period's are used for concatenation. You can make a float into an integer with the <code class="example">round()</code> function.
-						When using <span class="term">Arrays</span> it's important to remember that you make an array with parentheses <code class="example">
-						$var = array(x,"word")</code>, unless you're using the new shorthand <code class="example">$var = [x, "wowrd", y]</code> and you call
-						a variable in the array with brackets <code class="example">$var[0]</code>.  You can also add and replace to an array using brackets
-						<code class="example">$var[x] = "word" </code>. PHP has a second type of arrays. named <span class="term">Associative Arrays</span>
-						, that have a <span class="term">value</span> and a <span class="term">key</span>. If you use the <code class="example">sort</code>
-						function on an array it will restructure the order of the array.  The <code class="example">array_push()</code> function is a handy
-						way to add one more item to the end of an array. <code class="example">array_search()</code> will search for a value and return its
-						corresponding key.
-						</p>
-						<p>
-						<span class="term">Booleans</span> return a value of 1 if true and nothing if false.  You can always use <code class="example">
-						is_bool()</code> to tell if something is a boolean or not.  <span class="term">NULL</span> is the term used for a variable not
-						having a value. You can avoid warnings by setting values to Null. You could also use <span class="term">Empty</span>, but that
-						will neturn any of the following values- "", null, 0. 0/.0, "0", false, and array().  The terms Bool and Null are case
-						incesensitive when you write them out.  This makes empty powerful but dangerous. If you were using it for form validation,
-						answering a how many children question would lead the validation to thinking the field was empty when a person has no children.
-						</p>
-						<p>
-						<span class="term">Type Casting</span> is how you can change a string variable into an integer, float, array, etc.  <span class="term">
-						Type Juggling</span> is when php automatically changes a string to a variable or vice versa.  Juggling will usually occur when you add
-						an integer to a string (which is lazy but not horrible) or when you change an integer to a string using concatination (which should
-						never be done).
-						</p>
-						<p>
-						<span class="term">Constants</span> can only be changed with the <code class="example">define("VAR")</code> functions, they are recognizable
-						because they are written in all caps and don't have a dollar sign in front of them.  Once you define a constant it can't be changed with
-						functions or even a second time with the define function.  Constants only last for the length of the php script.
-						</p>
-						<h6>Logical Expression</h6>
-						<p>
-						<span class="term">If Else Statements</span> are the same as Javascript.<br />
-						<code class="example2">
-						if&#40$x > $y&#41{ <br />
-						echo "hello"; <br />
-						} <br />
-						</code>
-						You should also be pretty familiar with <span class="term">Switch Statements</span>: <br />
-						<code class="example2">
-						switch&#40 $x &#41{ <br />
-						case 0: echo "x is 0"; break; <br />
-						case 1: echo "x is 1"; break; <br />
-						case: echo "x is not a number in this test."; break;<br />
-						</code>
-						They are great for mutually exclusive options and can be used for more.
-						</p>
-						<p>
-						Notes from <a href="CodeIgniter.html">CodeIgniter Course</a>.
-						</p>
+	
 						</article>
 					</div>
 					<div class="col-md-3 col-sm-4 col-xs-2">

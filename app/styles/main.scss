@@ -107,8 +107,10 @@ body {
 /* Style for Example class */
 .example {
 	font-style: italic;
+	color: black;
 	background-color: #E6E6E6;
-	border: solid 1px black;
+	border: none 1px black;
+	border-radius: 5px;
 	padding: 2px;
 	border-radius: 2px;
 }
@@ -116,9 +118,11 @@ body {
 /* Style for Example2 class detached code */
 .example2 {
 	.div{
-	background-color: #E6E6E6;
-	border: solid 1px black;		
-	}
+
+		background-color: #E6E6E6;
+		border: solid 1px black;		
+		}
+	color: black;
 	font-style: italic;
 	padding: 2px;
 	border-radius: 2px;
@@ -128,6 +132,43 @@ body {
 .term {
 	font-weight: bold;
 }
+
+
+
+/* Aside Styling*/
+
+aside h5 { font-size: 90%; }
+
+aside p, aside ol, aside ul {
+    margin: 2px;
+    font-family: tahoma, sans-serif;
+    font-style: italic;
+    font-size: 80%;
+    list-style-position: inside;
+}
+
+/* This uses adjacent selectors to add extra line height after some headings */
+aside h4 + p, aside h5 + p, aside h6 + p {
+ 	margin: 5px;
+}
+
+
+/* This is for the properties inside the CSS Lists*/
+aside ul li {
+	margin: 3px 0px 3px 0px;
+}
+
+aside ul ul li {
+	font-size: 9px;
+	padding-left: 5px;
+	line-height: .9;
+	letter-spacing: .2em;
+}
+
+aside ul ul li:first-child{
+	margin: 2px 0px 1px 0px;
+}
+
 
 header{
 	background-color: Black;
@@ -158,6 +199,7 @@ header{
 		background-repeat: no-repeat;
 		background-size: 62em;
 			h1 {
+				margin-top: 150px;
 				color: black;
 			}
 			p {
@@ -209,20 +251,153 @@ header{
 
 }
 
-// STYLE SPECIFIC TO PAGES //
 
 .cssBody {
 	.jumbotron {
 		background-image: url(/images/Cinton.jpg);
 		background-position: center;
-		background-size: 50em;
+		background-size: 65em;
+		min-height: 450px;
+		padding-bottom: 0px;
 			h1 {
 				color: white;
+				padding-top: 230px;
 			}
 			p {
 				color: white;
 			}
 	}
+
+
+	#background {
+		position: absolute;
+		font-size: 300pt;
+		text-shadow: 4px 5px 10px #666;
+		opacity: .10;
+		filter: dropshadow(color=#666, offx=4, offy=5);
+		transform:rotate(12deg);
+		-ms-transform:rotate(12deg); /* IE 9 */
+		-webkit-transform:rotate(12deg); /* Safari and Chrome */
+		top: 0;
+		left: 0;
+		right: 50;
+		z-index: -1;
+		overflow: hidden;
+	}
+
+	#background2 {
+		position: absolute;
+		font-size: 300pt;
+		text-shadow: 4px 5px 10px #666;
+		opacity: .10;
+		filter: dropshadow(color=#666, offx=4, offy=5);
+		transform:rotate(-12deg);
+		-ms-transform:rotate(-12deg); /* IE 9 */
+		-webkit-transform:rotate(-12deg); /* Safari and Chrome */
+		top: 600px;
+		left: 20px;
+		z-index: -1;
+		overflow: hidden;
+	}
+
+	/* This is for styling the aside in the CSS Page */
+	aside{
+		overflow: auto;
+		min-height: 600px;
+		max-height: 2000px;
+	}
+
+}
+
+.SassBody {
+	.jumbotron {
+		background-image: url(/images/ReaganVeloc.jpg);
+		background-position: center;
+		background-size: 70em;
+			h1 {
+				color: white;
+				margin-top: 180px;
+			}
+			p {
+				color: white;
+			}
+	}	
+}
+
+.phpBody {
+	.jumbotron {
+		background-image: url(/images/ObamaLionKing.jpg);
+		background-position: center;
+		background-size: 50em;
+			h1 {
+				color: white;
+				margin-top: 160px;
+			}
+			p {
+				color: white;
+			}
+	}	
+}
+
+.MySQLBody {
+	.jumbotron {
+		background-image: url(/images/GWvZombies.jpg);
+		background-position: center;
+		background-size: 80em;
+			h1 {
+				color: white;
+				margin-top: 180px;
+			}
+			p {
+				color: white;
+			}
+	}	
+}
+
+.JasmineBody {
+	.jumbotron {
+		background-image: url(/images/Jasmine.jpg);
+		background-position: right;
+		background-size: 60em;
+		padding: 220px 0px 10px 0px ;
+			h1 {
+				text-align: left;
+				margin-left: 0px;
+			}
+			p {
+				text-align: left;
+			}
+	}	
+}
+
+.SeleniumBody {
+	.jumbotron {
+		background-image: url(/images/abe_grizzly.jpg);
+		background-position: center;
+		background-size: 70em;
+			h1 {
+				color: white;
+				margin-top: 180px;
+			}
+			p {
+				color: white;
+			}
+	}	
+}
+
+.protractorBody {
+	.jumbotron {
+		background-image: url(/images/NixonVSaber.jpg);
+		background-position: center;
+		background-size: 70em;
+			h1 {
+				color: white;
+				margin-top: 180px;
+			}
+			p {
+				color: white;
+			}
+	}	
 }
 
 /* Responsive: Portrait tablets and up */
