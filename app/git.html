@@ -116,11 +116,14 @@
 						<p>Merge a banch<br>
 						<code class="example2">git merge <span class="replace">NameOfBranchToMergeIntoCurrentBranch</span></code>
 						</p>
-
 					</div>
 					<div class="col-md-6 col-xs-6">
-						<h3> Starting a Project </h3>
-						<p> </p>
+						<h3> Setting up git igone globally </h3>
+						<p> First make a file <br>
+						<code class="example2">echo .DS_Store > ~/.gitignore_global</code><br>
+						Then:
+						<code class="example2">git config --global core.excludesfile ~/.gitignore_global</code>
+						</p>
 					</div>
 				</div>
 				<!-- Loading footer with AJAX -->
