@@ -35,7 +35,105 @@
 				<div class="row">
 					<div class="col-md-9 col-sm-8 col-xs-10">
 						<article id="container">
-	
+	<div class="lang-grid git-grid">
+				<div class="row">
+					<div class="col-md-12 col-xs-12">
+						<h3>Introduction</h3>
+						<p>Protractor is an end to end test framework for <a href="https://angularjs.org/">AngularJS</a> applications built on top of <a href="https://code.google.com/p/selenium/wiki/WebDriverJs">WebDriverJS</a>. Protractor runs tests against your application running in a real browser, interacting with it as a user would.</p>
+					</div>
+					<div class="col-md-12 col-xs-12">
+						<h3>Installation &amp; Use</h3>
+						<p>The setup is explained in their readme doc on <a href="https://github.com/angular/protractor/blob/master/docs/getting-started.md">github</a>.</p>
+					</div>
+					<div class="col-md-12 col-xs-12">
+						<h3>Tools</h3>
+						<p>The full list of selectors and evaluation tools can be found on their <a href="https://github.com/angular/protractor/blob/master/docs/api.md">github api page</a>.  Watch out, as many of them use deferred promises.</p>
+					</div>
+					<div class="col-md-12 col-xs-12">
+						<h3>Running Only Certain Tests</h3>
+						<p>When working on a single test or set of tests you probably don't want to run all of your tests.  This can be accomplished in a couple ways, the ones in protractor are mentioned in the reference conf file. By adding the following to you config file:
+						</p>
+						<p>
+						<code class="example2">
+							 //patterns are relative to the location of this config. </br>
+							 suites: {</br>
+							 	full: '.e2e/**/*.spec.js',</br>
+							 	smoke: ['.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js'],</br>
+							 	views: '.e2e/views/*.spec.js',</br>
+							 	inProg: 'e2e/nav/productcounter.js'</br>
+							 },<br>
+						</code>
+						</p>
+						<p>
+						Then you can run a set of tests simple simply by adding <span class="term">--suite=<span class="replace">SuiteName</span></span> to the end of your run command in terminal (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --suite=smoke</code>).
+						</br>
+						While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using, but be careful because they're easy to miss if you forget to remove them.
+							<table>
+								<tbody>
+									<tr>
+										<td>&nbsp;</td>
+										<td><b>Jasmine</b>&nbsp;</td>
+										<td><b>Mocha&nbsp;</b></td>
+									</tr>
+									<tr>
+										<td>Run just this test</td>
+										<td>&nbsp;change it to iit</td>
+										<td>&nbsp;change it to it.only</td>
+									</tr>
+									<tr>
+										<td>Skip a test</td>
+										<td>&nbsp;change it to xit</td>
+										<td>&nbsp;change it to it.skip</td>
+									</tr>
+									<tr>
+										<td>Run just this describe block</td>
+										<td>&nbsp;change describe to ddescribe</td>
+										<td>&nbsp;change describe to describe.only</td>
+									</tr>
+									<tr>
+										<td>Skip a describe block</td>
+										<td>&nbsp;change describe to xdescribe</td>
+										<td>&nbsp;change describe to describe.skip<span></td>
+									</tr>
+								</tbody>
+							</table>
+						</p>
+					</div>
+					<div class="col-md-12 col-xs-12">
+						<h3>Tips</h3>
+						<h6>Send Keys</h6>
+						<p>
+						A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.</br>
+						Sending letters and numbers works simple by using:</br>
+						<code class="example2">element(by.name('name')).sendKeys('Example.');</code></br>
+						But if you need to use a unicode key it should work with.
+						<code class="example2">element(by.name('name')).sendKeys(protractor.Key.TAB)</code></br>
+						But right now it only seems to work if you do:
+						<code class="example2">browser.actions().sendKeys(protractor.Key.TAB).perform();</code></br>
+						</p>
+						<h6>Sleep & Pause</h6>
+						<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
+						<h6>Angular Can't Be Found</h6>
+						<p>As the <a href="https://github.com/angular/protractor/blob/master/docs/faq.md">FAQ</a> mentions this may have to do with the version, but they didn't mention that it looks for ng-app on the body tag.  So if yours is anywhere else you need to set rootEl in the config file (e.g. <code class="example">rootElement: 'div',</code>). </p>
+						<h6>OnPrepare &amp; OnComplete</h6>
+						<p>You can use the OnPrepare function in the config file to set up for testing.  You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing).  I suggest at least setting a default window size and location to start your testing from.</p>
+						<p>
+						<code class="example2">
+							onPrepare: function() {</br>
+							browser.manage().window().setSize(1500,1000);</br>
+							browser.manage().window().setPosition(0,0);</br>
+							},</br>
+						</code>
+						</p>
+						<h6>$</h6>
+						<p>
+							<code class="example">$</code> means <code class="example">element(by.Css</code></br>
+							<code class="example">$$</code> means <code class="example">element.all(by.Css</code></br>
+							It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time.  Sometimes it's better to just use element.all then see what ends up in the array.
+						</p>
+					</div>
+
+
 						</article>
 					</div>
 					<div class="col-md-3 col-sm-4 col-xs-2">
