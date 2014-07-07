@@ -54,18 +54,18 @@
 						</p>
 						<p>
 						<code class="example2">
-							 //patterns are relative to the location of this config. </br>
-							 suites: {</br>
-							 	full: '.e2e/**/*.spec.js',</br>
-							 	smoke: ['.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js'],</br>
-							 	views: '.e2e/views/*.spec.js',</br>
-							 	inProg: 'e2e/nav/productcounter.js'</br>
+							 //patterns are relative to the location of this config. <br>
+							 suites: {<br>
+							 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '.e2e/**/*.spec.js',<br>
+							 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smoke: ['.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js'],<br>
+							 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '.e2e/views/*.spec.js',<br>
+							 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: 'e2e/nav/productcounter.js'<br>
 							 },<br>
 						</code>
 						</p>
 						<p>
 						Then you can run a set of tests simple simply by adding <span class="term">--suite=<span class="replace">SuiteName</span></span> to the end of your run command in terminal (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --suite=smoke</code>).
-						</br>
+						<br>
 						While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using, but be careful because they're easy to miss if you forget to remove them.
 							<table>
 								<tbody>
@@ -103,13 +103,13 @@
 						<h3>Tips</h3>
 						<h6>Send Keys</h6>
 						<p>
-						A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.</br>
-						Sending letters and numbers works simple by using:</br>
-						<code class="example2">element(by.name('name')).sendKeys('Example.');</code></br>
+						A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
+						Sending letters and numbers works simple by using:<br>
+						<code class="example2">element(by.name('name')).sendKeys('Example.');</code><br>
 						But if you need to use a unicode key it should work with.
-						<code class="example2">element(by.name('name')).sendKeys(protractor.Key.TAB)</code></br>
+						<code class="example2">element(by.name('name')).sendKeys(protractor.Key.TAB)</code><br>
 						But right now it only seems to work if you do:
-						<code class="example2">browser.actions().sendKeys(protractor.Key.TAB).perform();</code></br>
+						<code class="example2">browser.actions().sendKeys(protractor.Key.TAB).perform();</code><br>
 						</p>
 						<h6>Sleep & Pause</h6>
 						<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
@@ -119,17 +119,28 @@
 						<p>You can use the OnPrepare function in the config file to set up for testing.  You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing).  I suggest at least setting a default window size and location to start your testing from.</p>
 						<p>
 						<code class="example2">
-							onPrepare: function() {</br>
-							browser.manage().window().setSize(1500,1000);</br>
-							browser.manage().window().setPosition(0,0);</br>
-							},</br>
+							onPrepare: function() {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSize(1500,1000);<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPosition(0,0);<br>
+							},<br>
 						</code>
 						</p>
 						<h6>$</h6>
 						<p>
-							<code class="example">$</code> means <code class="example">element(by.Css</code></br>
-							<code class="example">$$</code> means <code class="example">element.all(by.Css</code></br>
+							<code class="example">$</code> means <code class="example">element(by.Css</code><br>
+							<code class="example">$$</code> means <code class="example">element.all(by.Css</code><br>
 							It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time.  Sometimes it's better to just use element.all then see what ends up in the array.
+						</p>
+						<h6>Managing Expectations</h6>
+						<p>
+							Some good thing to check examples:<br>
+							<code class="example">expect(elName.isPresent()).toBeTruthy();</code><br>
+							Or: <br>
+							<code class="example">
+								prodNum.get(7).$('img').isDisplayed().then(function(val) {<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBe(false);<br>
+								})</code><br>
+							<code class="example"></code><br>
 						</p>
 					</div>
 
@@ -175,6 +186,13 @@
 								<li><code class="example"><span class="replace">elName</span>.isDisplayed()</code> (promise)</li>
 								<li><code class="example"><span class="replace">elName</span>.isPresent()</code></li>
 								<li><code class="example"><span class="replace">elName</span>.getLocation()</code>relative to left corner of screen</li>
+							</ul>
+							<h6>Expectations</h6>
+							<ul>
+								<li>toBe()</li>
+								<li>toEqual()</li>
+								<li>toContain()</li>
+								<li>toMatch()</li>
 							</ul>
 						</aside>
 						</div>
