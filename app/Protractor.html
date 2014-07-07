@@ -27,8 +27,7 @@
 			<div>
 				<div class="jumbotron">
 					<h1>Protractor Notes</h1>
-					<p class="lead">"Things do not happen. Things are made to happen." - JFK</p>
-					<p><a class="btn btn-lg btn-success" href="#"> <span class="glyphicon glyphicon-fire"></span> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
+					<p class="lead">"When the President does it, that means that it's not illegal." - Richard Nixon</p>
 				</div>
 			</div>
 			<div class="main">
@@ -70,28 +69,29 @@
 						While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using, but be careful because they're easy to miss if you forget to remove them.
 							<table>
 								<tbody>
+								<caption>Skip Text or Block by Language</caption>
 									<tr>
-										<td>&nbsp;</td>
-										<td><b>Jasmine</b>&nbsp;</td>
-										<td><b>Mocha&nbsp;</b></td>
+										<th></th>
+										<th><b>Jasmine</b>&nbsp;</th>
+										<th><b>Mocha&nbsp;</b></th>
 									</tr>
 									<tr>
-										<td>Run just this test</td>
+										<th>Run just this test</th>
 										<td>&nbsp;change it to iit</td>
 										<td>&nbsp;change it to it.only</td>
 									</tr>
 									<tr>
-										<td>Skip a test</td>
+										<th>Skip a test</th>
 										<td>&nbsp;change it to xit</td>
 										<td>&nbsp;change it to it.skip</td>
 									</tr>
 									<tr>
-										<td>Run just this describe block</td>
+										<th>Run just this describe block</th>
 										<td>&nbsp;change describe to ddescribe</td>
 										<td>&nbsp;change describe to describe.only</td>
 									</tr>
 									<tr>
-										<td>Skip a describe block</td>
+										<th>Skip a describe block</th>
 										<td>&nbsp;change describe to xdescribe</td>
 										<td>&nbsp;change describe to describe.skip<span></td>
 									</tr>
@@ -157,7 +157,7 @@
 							<h6>Browser</h6>
 							<ul>
 								<li>means: <code class="example">protractor.getInstance();</code></li>
-								<li><code class="example">browser.get()</code> gets page</li>
+								<li><code class="example">browser.get('<span class="replace">URL</span>')</code></li>
 								<li><code class="example">browser.getCurrentUrl()</code></li>
 								<li><code class="example">browser.sleep(<span class="replace">#</span>)</code></li>
 								<li><code class="example">browser.pause(<span class="replace">#</span>)</code></li>

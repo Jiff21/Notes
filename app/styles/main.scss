@@ -191,7 +191,7 @@ header{
 
 
 
-// STYLES FOR INDIVIDUAL JUMBOTRONS //
+// STYLES FOR INDIVIDUAL Pages//
 .homeBody {
 	.jumbotron {
 		background-image: url(/images/FranklinVsZeus.jpg);
@@ -321,7 +321,7 @@ header{
 			p {
 				color: white;
 			}
-	}	
+	}
 }
 
 .phpBody {
@@ -358,16 +358,16 @@ header{
 	.jumbotron {
 		background-image: url(/images/Jasmine.jpg);
 		background-position: right;
-		background-size: 60em;
 		padding: 220px 0px 10px 0px ;
 			h1 {
 				text-align: left;
-				margin-left: 0px;
+				margin-left: 20px;
 			}
 			p {
 				text-align: left;
+				margin-left: 20px;
 			}
-	}	
+	}
 }
 
 .SeleniumBody {
@@ -392,12 +392,27 @@ header{
 		background-size: 70em;
 			h1 {
 				color: white;
-				margin-top: 180px;
+				margin-top: 300px;
 			}
 			p {
 				color: white;
 			}
-	}	
+	}
+	table, th, td {
+		border: 1px solid black;
+	}
+	td, th {
+		text-align: center;
+	}
+	th, caption {
+		background-color: #FFFFF0;
+	}
+	caption {
+		border-top: 1px solid black;
+		border-right: 1px solid black;
+		border-left: 1px solid black;
+		font-weight: bolder;
+	}
 }
 
 .gitBody {
