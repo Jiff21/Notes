@@ -33,23 +33,23 @@
 			</div>
 			<div class="main">
 				<div class="row">
-					<div class="col-md-9 col-sm-8 col-xs-10">
+					<div class="col-md-8 col-sm-8 col-xs-10">
 						<article id="container">
 	<div class="lang-grid git-grid">
 				<div class="row">
-					<div class="col-md-12 col-xs-12">
+					<div>
 						<h3>Introduction</h3>
 						<p>Protractor is an end to end test framework for <a href="https://angularjs.org/">AngularJS</a> applications built on top of <a href="https://code.google.com/p/selenium/wiki/WebDriverJs">WebDriverJS</a>. Protractor runs tests against your application running in a real browser, interacting with it as a user would.</p>
 					</div>
-					<div class="col-md-12 col-xs-12">
+					<div>
 						<h3>Installation &amp; Use</h3>
 						<p>The setup is explained in their readme doc on <a href="https://github.com/angular/protractor/blob/master/docs/getting-started.md">github</a>.</p>
 					</div>
-					<div class="col-md-12 col-xs-12">
+					<div>
 						<h3>Tools</h3>
 						<p>The full list of selectors and evaluation tools can be found on their <a href="https://github.com/angular/protractor/blob/master/docs/api.md">github api page</a>.  Watch out, as many of them use deferred promises.</p>
 					</div>
-					<div class="col-md-12 col-xs-12">
+					<div>
 						<h3>Running Only Certain Tests</h3>
 						<p>When working on a single test or set of tests you probably don't want to run all of your tests.  This can be accomplished in a couple ways, the ones in protractor are mentioned in the reference conf file. By adding the following to you config file:
 						</p>
@@ -99,7 +99,7 @@
 							</table>
 						</p>
 					</div>
-					<div class="col-md-12 col-xs-12">
+					<div>
 						<h3>Tips</h3>
 						<h6>Send Keys</h6>
 						<p>
@@ -136,18 +136,45 @@
 
 						</article>
 					</div>
-					<div class="col-md-3 col-sm-4 col-xs-2">
+					<div class="col-md-4 col-sm-4 col-xs-12">
 					<aside>
 						<div>
-							<h6>$</h6>
+
+							<h6>Element(By.XXXXX</h6>
 							<ul>
 								<li><code class="example">$</code> means <code class="example">element(by.Css</code></li>
 								<li><code class="example">$$</code> means <code class="example">element.all(by.Css</code></li>
+								<li><code class="example">element(by.className('')</code></li>
+								<li><code class="example">element(by.cssContainingText('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
+								<li><code class="example">element(by.className('')</code></li>
+								<li><code class="example">element(by.Name('')</code> Element Name</li>
 							</ul>
 							<h6>Send Keys</h6>
 							<ul>
 								<li>Should be: <code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
 								<li>But currently you need: <code class="example">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code></li>
+							</ul>
+							<h6>Browser</h6>
+							<ul>
+								<li>means: <code class="example">protractor.getInstance();</code></li>
+								<li><code class="example">browser.get()</code> gets page</li>
+								<li><code class="example">browser.getCurrentUrl()</code></li>
+								<li><code class="example">browser.sleep(<span class="replace">#</span>)</code></li>
+								<li><code class="example">browser.pause(<span class="replace">#</span>)</code></li>
+								<li><code class="example">browser.manage().window().setSize(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
+								<li><code class="example">browser.manage().window().setPosition(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
+								<li><code class="example">browser.manage().getCookie('_ga')</code> (promise)</li>
+								<li><code class="example">browser.driver.navigate().forward()</code> (promise)</li>
+							</ul>
+							<h6>Element Properties</h6>
+							<ul>
+								<li><code class="example"><span class="replace">elName</span>.getText()</code></li>
+								<li><code class="example"><span class="replace">elName</span>.getTitle()</code></li>
+								<li><code class="example"><span class="replace">elName</span>.getCssValue()</code></li>
+								<li><code class="example"><span class="replace">elName</span>.getAttribute('<span class="replace">value</span>')</code></li>
+								<li><code class="example"><span class="replace">elName</span>.isDisplayed()</code> (promise)</li>
+								<li><code class="example"><span class="replace">elName</span>.isPresent()</code></li>
+								<li><code class="example"><span class="replace">elName</span>.getLocation()</code>relative to left corner of screen</li>
 							</ul>
 						</aside>
 						</div>
