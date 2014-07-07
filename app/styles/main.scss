@@ -400,6 +400,21 @@ header{
 	}	
 }
 
+.gitBody {
+	.jumbotron {
+		background-image: url(/images/Octocat.jpg);
+		background-position: center;
+		background-size: 70em;
+			h1 {
+				color: white;
+				margin-top: 180px;
+			}
+			p {
+				color: white;
+			}
+	}	
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
 	.container {
