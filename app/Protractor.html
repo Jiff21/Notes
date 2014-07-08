@@ -104,7 +104,7 @@
 				But right now it only seems to work if you do:
 				<code class="example2">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
 				</p>
-				<h6>Sleep & Pause</h6>
+				<h6>Sleep &amp; Pause</h6>
 				<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
 				<h6>Angular Can't Be Found</h6>
 				<p>As the <a href="https://github.com/angular/protractor/blob/master/docs/faq.md">FAQ</a> mentions this may have to do with the version, but they didn't mention that it looks for ng-app on the body tag.  So if yours is anywhere else you need to set rootEl in the config file (e.g. <code class="example">rootElement: '<span class="replace">div</span>',</code>). </p>
