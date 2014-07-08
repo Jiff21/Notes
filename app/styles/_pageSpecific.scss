@@ -1,0 +1,250 @@
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+        border-radius: $radius;
+}
+
+.home-grid {
+	h6 {
+		border: 3px solid black;
+		padding: 50px 30px;
+		background: RGB(196,236,255);
+		font-size: 16px;
+		text-align: center;
+		box-shadow: 10px 10px 5px #888888; 
+		@include border-radius(10px);
+	}
+	a {
+		color: black;
+		text-decoration: none;
+	}
+}
+
+
+.htmlBody {
+	.jumbotron {
+		background-image: url(/images/RooseveltVsBigfoot.jpg);
+		background-position: center;
+			h1 {
+				color: white;
+			}
+			p {
+				color: white;
+			}
+	}
+	.main{
+		margin-left: 40px;
+	}
+}
+
+.javascriptBody {
+	.jumbotron {
+		background-image: url(/images/JFKAlienHunter.jpg);
+		background-position: center;
+			h1 {
+				margin-top: 230px;
+				color: white;
+			}
+			p {
+				color: white;
+			}
+	}
+}
+
+.cssBody {
+	.jumbotron {
+		background-image: url(/images/Cinton.jpg);
+		background-position: center;
+		padding-bottom: 0px;
+			h1 {
+				color: white;
+				padding-top: 230px;
+			}
+			p {
+				color: white;
+			}
+	}
+
+	#background {
+		position: absolute;
+		font-size: 300pt;
+		text-shadow: 4px 5px 10px #666;
+		opacity: .10;
+		filter: dropshadow(color=#666, offx=4, offy=5);
+		transform:rotate(12deg);
+		-ms-transform:rotate(12deg); /* IE 9 */
+		-webkit-transform:rotate(12deg); /* Safari and Chrome */
+		top: 0;
+		left: 0;
+		right: 50;
+		z-index: -1;
+		overflow: hidden;
+	}
+
+	#background2 {
+		position: absolute;
+		font-size: 300pt;
+		text-shadow: 4px 5px 10px #666;
+		opacity: .10;
+		filter: dropshadow(color=#666, offx=4, offy=5);
+		transform:rotate(-12deg);
+		-ms-transform:rotate(-12deg); /* IE 9 */
+		-webkit-transform:rotate(-12deg); /* Safari and Chrome */
+		top: 600px;
+		left: 20px;
+		z-index: -1;
+		overflow: hidden;
+	}
+
+	/* This is for styling the aside in the CSS Page */
+	aside{
+		overflow: auto;
+		min-height: 600px;
+		max-height: 1500px;
+	}
+
+}
+
+
+
+.homeBody {
+	.jumbotron {
+		background-image: url(/images/FranklinVsZeus.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
+			h1 {
+				margin-top: 150px;
+				color: black;
+			}
+			p {
+				color: black;
+				font-weight: bolder;
+			}
+	}
+}
+
+.SassBody {
+	.jumbotron {
+		background-image: url(/images/ReaganVeloc.jpg);
+		background-position: center;
+			h1 {
+				color: white;
+				margin-top: 180px;
+			}
+			p {
+				color: white;
+			}
+	}
+}
+
+.phpBody {
+	.jumbotron {
+		background-image: url(/images/ObamaLionKing.jpg);
+		background-position: center;
+			h1 {
+				color: white;
+				margin-top: 160px;
+			}
+			p {
+				color: white;
+			}
+	}
+	aside {
+		li {
+			list-style-type: none;
+		}
+		ul li ul li {
+			list-style-type: disc;
+		}
+	}
+}
+
+.MySQLBody {
+	.jumbotron {
+		background-image: url(/images/GWvZombies.jpg);
+		background-position: center;
+			h1 {
+				color: white;
+				margin-top: 180px;
+			}
+			p {
+				color: white;
+			}
+	}	
+}
+
+.JasmineBody {
+	.jumbotron {
+		background-image: url(/images/Jasmine.jpg);
+		background-position: right;
+		padding: 220px 0px 10px 0px ;
+			h1 {
+				text-align: left;
+				margin-left: 20px;
+			}
+			p {
+				text-align: left;
+				margin-left: 20px;
+			}
+	}
+}
+
+.SeleniumBody {
+	.jumbotron {
+		background-image: url(/images/abe_grizzly.jpg);
+		background-position: center;
+			h1 {
+				color: white;
+				margin-top: 180px;
+			}
+			p {
+				color: white;
+			}
+	}	
+}
+
+.protractorBody {
+	.jumbotron {
+		background-image: url(/images/NixonVSaber.jpg);
+		background-position: center;
+			h1 {
+				color: white;
+				margin-top: 300px;
+			}
+			p {
+				color: white;
+			}
+	}
+	table, th, td {
+		border: 1px solid black;
+	}
+	td, th {
+		text-align: center;
+	}
+	th, caption {
+		background-color: #FFFFF0;
+	}
+	caption {
+		border-top: 1px solid black;
+		border-right: 1px solid black;
+		border-left: 1px solid black;
+		font-weight: bolder;
+	}
+}
+
+.gitBody {
+	.jumbotron {
+		background-image: url(/images/Octocat.jpg);
+		background-position: center;
+			h1 {
+				color: white;
+				margin-top: 180px;
+			}
+			p {
+				color: white;
+			}
+	}	
+}
+
