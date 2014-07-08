@@ -25,10 +25,12 @@
 		<![endif]-->
 		<div class="container">
 			<div class="jumbotron">
+				<div class="lightLayer">
 				<h1>Protractor Notes</h1>
 				<p class="lead">"When the President does it, that means that it's not illegal." - Richard Nixon</p>
+				</div>
 			</div>
-			<article class="col-md-8 col-sm-8 col-xs-10">
+			<article class="col-md-8 col-sm-8 col-xs-12">
 			<div>
 				<h3>Introduction</h3>
 				<p>Protractor is an end to end test framework for <a href="https://angularjs.org/">AngularJS</a> applications built on top of <a href="https://code.google.com/p/selenium/wiki/WebDriverJs">WebDriverJS</a>. Protractor runs tests against your application running in a real browser, interacting with it as a user would.</p>
@@ -62,7 +64,7 @@
 				While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using, but be careful because they're easy to miss if you forget to remove them.
 				<table>
 					<tbody>
-						<caption>Skip Text or Block by Language</caption>
+						<caption>Single Test or Block by Language</caption>
 						<tr>
 							<th></th>
 							<th><b>Jasmine</b>&nbsp;</th>
@@ -70,23 +72,23 @@
 						</tr>
 						<tr>
 							<th>Run just this test</th>
-							<td>&nbsp;change it to iit</td>
-							<td>&nbsp;change it to it.only</td>
+							<td>&nbsp;change it to <span class="term">iit</span></td>
+							<td>&nbsp;change it to <span class="term">it.only</span></td>
 						</tr>
 						<tr>
 							<th>Skip a test</th>
-							<td>&nbsp;change it to xit</td>
-							<td>&nbsp;change it to it.skip</td>
+							<td>&nbsp;change it to <span class="term">xit</span></td>
+							<td>&nbsp;change it to <span class="term">it.skip</span></td>
 						</tr>
 						<tr>
 							<th>Run just this describe block</th>
-							<td>&nbsp;change describe to ddescribe</td>
-							<td>&nbsp;change describe to describe.only</td>
+							<td>&nbsp;change describe to <span class="term">ddescribe</span></td>
+							<td>&nbsp;change describe to <span class="term">describe.only</span></td>
 						</tr>
 						<tr>
 							<th>Skip a describe block</th>
-							<td>&nbsp;change describe to xdescribe</td>
-							<td>&nbsp;change describe to describe.skip<span></td>
+							<td>&nbsp;change describe to <span class="term">xdescribe</span></td>
+							<td>&nbsp;change describe to <span class="term">describe.skip</span></td>
 						</tr>
 					</tbody>
 				</table>
@@ -94,21 +96,21 @@
 			</div>
 			<div>
 				<h3>Tips</h3>
-				<h6>Send Keys</h6>
+				<h5>Send Keys</h5>
 				<p>
 				A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
 				Sending letters and numbers works simple by using:<br>
-				<code class="example2">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</code><br>
+				<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</code><br>
 				But if you need to use a unicode key it should work with.
-				<code class="example2">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code><br>
+				<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code><br>
 				But right now it only seems to work if you do:
-				<code class="example2">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
+				<code class="example">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
 				</p>
-				<h6>Sleep &amp; Pause</h6>
+				<h5>Sleep &amp; Pause</h5>
 				<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
-				<h6>Angular Can't Be Found</h6>
+				<h5>Angular Can't Be Found</h5>
 				<p>As the <a href="https://github.com/angular/protractor/blob/master/docs/faq.md">FAQ</a> mentions this may have to do with the version, but they didn't mention that it looks for ng-app on the body tag.  So if yours is anywhere else you need to set rootEl in the config file (e.g. <code class="example">rootElement: '<span class="replace">div</span>',</code>). </p>
-				<h6>OnPrepare &amp; OnComplete</h6>
+				<h5>OnPrepare &amp; OnComplete</h5>
 				<p>You can use the OnPrepare function in the config file to set up for testing.  You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing).  I suggest at least setting a default window size and location to start your testing from.</p>
 				<p>
 				<div class="example2">
@@ -118,13 +120,13 @@
 				},<br>
 				</div>
 				</p>
-				<h6>$</h6>
+				<h5>$</h5>
 				<p>
 				<code class="example">$</code> means <code class="example">element(by.Css</code><br>
 				<code class="example">$$</code> means <code class="example">element.all(by.Css</code><br>
 				It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time.  Sometimes it's better to just use element.all then see what ends up in the array.
 				</p>
-				<h6>Managing Expectations</h6>
+				<h5>Managing Expectations</h5>
 				<p>
 				Some good thing to check examples:<br>
 				<code class="example">expect(<span class="replace">elName</span>.isPresent()).toBeTruthy();</code><br>
@@ -137,6 +139,7 @@
 			</div>
 			</article>
 			<aside class="col-md-4 col-sm-4 col-xs-12">
+			<h5>Quick Reference</h5>
 				<h6>Element(By.XXXXX</h6>
 				<ul>
 					<li><code class="example">$</code> means <code class="example">element(by.Css</code></li>

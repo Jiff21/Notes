@@ -4,6 +4,13 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	 -moz-border-radius: $radius;
+	  -ms-border-radius: $radius;
+		border-radius: $radius;
+}
+
 .browsehappy {
 	margin: 0.2em 0;
 	background: #ccc;
@@ -129,16 +136,16 @@ body {
 aside h5 { font-size: 90%; }
 
 aside p, aside ol, aside ul {
-    margin: 2px;
-    font-family: tahoma, sans-serif;
-    font-style: italic;
-    font-size: 80%;
-    list-style-position: inside;
+	margin: 2px;
+	font-family: tahoma, sans-serif;
+	font-style: italic;
+	font-size: 80%;
+	list-style-position: inside;
 }
 
 /* This uses adjacent selectors to add extra line height after some headings */
 aside h4 + p, aside h5 + p, aside h6 + p {
- 	margin: 5px;
+	margin: 5px;
 }
 
 
@@ -179,14 +186,34 @@ header{
 	}
 }
 
+/* For Jumbotron images that need an overlay to make text more readable. */
 .jumbotron{
 	background-size: cover;
-	.layer {
-    	background-color: rgba(248, 247, 216, 0.7);
-    	top: 0;
-	    left: 0;
-	    width: 100%;
-	    height: 100%;
+	.darkLayer, .lightLayer{
+		opacity: 0.65;
+		h1, h2, h3, h4, h5, h6, p, {
+			opacity: 1.0;
+		}
+		p {
+			font-weight: bold;
+			padding-left: 10px;
+			padding-right: 10px;			
+		}
+		h1 {
+			padding: 15px;
+		}
+		width: 100%;
+		height: 100%;
+		@include border-radius(20px);	
+	}
+
+	.darkLayer {
+		color: #FFF;
+		background-color: #000;
+	}
+	.lightLayer {
+		color: #000;
+		background-color: #FFF;
 	}
 }
 

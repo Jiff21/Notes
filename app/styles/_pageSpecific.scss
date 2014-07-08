@@ -1,9 +1,9 @@
 
 @mixin border-radius($radius) {
 	-webkit-border-radius: $radius;
-     -moz-border-radius: $radius;
-      -ms-border-radius: $radius;
-        border-radius: $radius;
+	 -moz-border-radius: $radius;
+	  -ms-border-radius: $radius;
+		border-radius: $radius;
 }
 
 .home-grid {
@@ -57,10 +57,10 @@
 	.jumbotron {
 		background-image: url(../images/Cinton.jpg);
 		background-position: center;
-		padding-bottom: 0px;
+		padding-bottom: 20px;
 			h1 {
 				color: white;
-				padding-top: 230px;
+				margin-top: 260px;
 			}
 			p {
 				color: white;
@@ -144,12 +144,9 @@
 		background-image: url(../images/ObamaLionKing.jpg);
 		background-position: center;
 			h1 {
-				color: white;
-				margin-top: 160px;
+				margin-top: 280px;
 			}
-			p {
-				color: white;
-			}
+			padding-bottom: 20px;
 	}
 	aside {
 		li {
@@ -166,12 +163,9 @@
 		background-image: url(../images/GWvZombies.jpg);
 		background-position: center;
 			h1 {
-				color: white;
 				margin-top: 180px;
 			}
-			p {
-				color: white;
-			}
+
 	}	
 }
 
@@ -188,6 +182,21 @@
 				text-align: left;
 				margin-left: 20px;
 			}
+	}
+	.blue {
+		background-color: #ADD8E6;
+		.example2, .example {
+			background-color: #C6E4EE;
+		}		
+	}
+	.yellow {
+		background-color: #FBDE7E;
+		.example2, .example {
+			background-color: #FDF2CB;
+		}
+	}
+	#rts {
+		padding-bottom: 30px;
 	}
 }
 
@@ -210,12 +219,9 @@
 		background-image: url(../images/NixonVSaber.jpg);
 		background-position: center;
 			h1 {
-				color: white;
 				margin-top: 300px;
 			}
-			p {
-				color: white;
-			}
+
 	}
 	table, th, td {
 		border: 1px solid black;
