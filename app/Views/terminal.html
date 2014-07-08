@@ -17,7 +17,7 @@
 		<script src="../bower_components/modernizr/modernizr.js"></script>
 		<!-- endbuild -->
 	</head>
-	<body class="gitBody">
+	<body class="terminalBody">
 		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
 		<div class="navPlaceholder"></div>
 		<!--[if lt IE 10]>
@@ -26,38 +26,23 @@
 		<div class="container">
 			<div class="jumbotron">
 				<h1>Terminal</h1>
+				<p>emacs > esc > x > doctor > ctrl+c+x</p>
 			</div>
 			<div class="lang-grid git-grid">
 				<div class="row">
 					<div class="col-md-6 col-xs-6">
-						<h3>Starting a Project</h3>
-						<p>Locally use:<br>
-						<code class="example2">
-						git init <br>
-						touch README.md <br>
-						git add *.c<br>
-						git add README.md<br>
-						git commit -m "<span class="replace">This is the 1st commit</span>"
-						</code>
-						</p>
-						<p> Pull down a project that has already been started: <br>
-						<code class="example2">git clone <span class="replace">github/url</span></code>
-						<p>
+						<h3>Basics</h3>
+						<p><code class="example">cd</code> means change directory.</p>
+						<p><code class="example">cd ..</code> goes back a folder.</p>
+						<p><code class="example">open .</code> open the folder you are currently in.</p>
+						<p><code class="example">cat <span class="replace">filename.txt</span></code> to read a file.</p>
 					</div>
 					<div class="col-md-6 col-xs-6">
-						<h3>Stash</h3>
-						<p>Save current changes to Stash<br>
-						<code class="example2">git stash -m "<span class="replace">Message about stash</span>"</code>
-						</p>
-						<p>List stash changes<br>
-						<code class="example2">git stash list</code>
-						</p>
-						<p>Get a stashed change back to working directory:<br>
-						<code class="example2">git stash pop <span class="replace">HashFragNum</span></code>
-						</p>
-						<p>Clear all stashed changes:<br>
-						<code class="example2">git stash -m "<span class="replace">Message about stash</span>"</code>
-						</p>
+						<h3>VIM</h3>
+						<p>To edit a file: <code class="example">vim <span class="replace">filename.txt</span></code>.</p>
+						<p>Press <span class="keypress">i</span> button to enter insert mode.</p>
+						<p><span class="keypress">ctrl + c</span> to exit insert mode.</p>
+						<p><span class="keypress">:</span> then type <code class="example">wq</code> to write quit.</p>
 					</div>
 					<div class="col-md-5 col-xs-5">
 						<h3>Basics</h3>

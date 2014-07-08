@@ -248,3 +248,47 @@
 	}	
 }
 
+.terminalBody {
+	.jumbotron {
+		background-image: url(../images/Terminal.jpg);
+		background-size: cover;
+			h1 {
+				margin-top: 180px;
+			}
+	}	
+	background-color: #000;
+	color: #63DE01;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	.example, .example2 {
+		background-color: #000;
+		border: dashed 1px #e5e5e5;
+		color: #63DE01;
+	}
+	.keyword {
+		color: #007A00;
+	}
+	.footer {
+		color: #63DE01;
+	}
+	.navbar-default, .navbar-fixed-top, .active {
+		background-color: #000 !important;
+		li {
+			color: #63DE01 !important;
+			.active {
+				background-color: #000 !important;
+				color: #63DE01 !important;
+			}
+		}
+		.dropdown-menu {
+			li {
+				a:hover, a:focus {
+					background-color: #000 !important;
+				}
+			}
+			}
+		img {
+			background-color: #000 !important;
+		}
+	}
+}
+
