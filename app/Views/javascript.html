@@ -59,13 +59,13 @@
 			<p>
 			<span class="term">Conditionals Code</span> is done with if statements. Here's an example:
 			<br>
-			<code class="example2">
+			<div class="example2">
 			if (x==100){ <br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(this) <br>
 			}else{ <br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(that) <br>
 			}<br>
-			</code>
+			</div>
 			You can nest another argument inside the else, but it is suggested to not nest more than once or twice for
 			the sake of code readiblity.
 			</p>
@@ -89,20 +89,20 @@
 			being defined, after a comma you set a condition, after another comma you set and incrementor and then close the
 			parenthesis. You follow with curly braces, that will get executed every time the loop runs (e.g. <code class="example">for
 			(var = i, i &lt; 10, i++){console.log(i;};</code>).  A <span class="term">while loop</span> is writen like:<br>
-			<code class="example2">
+			<div class="example2">
 			while (a &lt; 10){<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(a);<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a++;<br>
-			}<br></code>
+			}<br></div>
 			You can always use <span class="term"> break </span> to manually stop a loop. You can also use <span class="term"> continue
 			</span> to skip one iteration and check the condition again.
 			</p>
 			<p>
 			Another big part of Javascript is writting a <span class="term"> function </span>. A function is declared by:<br>
-			<code class="example2">
+			<div class="example2">
 			function myName() {<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dostuff;<br>
-			}<br> </code>
+			}<br> </div>
 			Then you can use the function by calling it with parenthesis and then following it with a semicolon (e.g. <code class="example">
 			myName();</code>).  Some functions have <span class="term">parameters</span> that go inside the parenthesis.  If you call
 			a function with extra parameters it will just ignore the extras, but if you pass in too few they will be considered undefined.
@@ -117,18 +117,18 @@
 			</p>
 			<p>
 			<span class="term">Objects</span> are containers that hold things like variables or functions.  You make a variable like this: <br>
-			<code class="example2">
+			<div class="example2">
 			var player = new Object();<br>
 			player.name = "Fred";<br>
 			player.score = 100;<br>
-			</code>
+			</div>
 			But this also has a shorthand (<code class="example">var player = {name: "fred", score = 100};</code>). You can then make a method for
 			the object by writting a function like this: <br>
-			<code class="example2">
+			<div class="example2">
 			function playerDetails(){<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(this.name + " has a score of " + this.score ".");<br>
 			}<br>
-			</code>
+			</div>
 			One of the most important methods of the Document Object Model is <span class=term>getElementById</span> which can be used
 			to retrieve an element node (<code class="example">var myElement = document.getElementById("someId")</code>).  You can use this to grab
 			things in the DOM and change them with .setAttribute. More helpful is to individually drop element nodes into the DOM, using .createElement
@@ -148,12 +148,12 @@
 			a function ( <code class="example">document.onclick = function(){...</code>).  You can also do the by using an <span class="term">
 			Event Listener</span> which isn't completely supported because IE is IE (<code class="example">document.addEventListener("click",
 			myFunction, false)</code>).  If you want to target something you can use a combo of a new variable and the .getElement function like this:<br>
-			<code class="example2">
+			<div class="example2">
 			var myImage = document.getElementById("mainImage");{<br>
 			myImage.onclick = function(){;<br>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("You click me");<br>
 			}<br>
-			</code>
+			</div>
 			You can use the the onsubmit function for forms to stop them from sending to the server by setting them to return false. If you're planning
 			on adding CSS that will require Javascript to complete the function you may want to only add the CSS through a javascript, this type of
 			practice is called <span class="term">Progressive Enhancement</span>.

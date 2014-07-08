@@ -250,11 +250,8 @@
 
 .terminalBody {
 	.jumbotron {
-		background-image: url(../images/Terminal.jpg);
-		background-size: cover;
-			h1 {
-				margin-top: 180px;
-			}
+		background-color: #000;
+
 	}	
 	background-color: #000;
 	color: #63DE01;
@@ -263,32 +260,17 @@
 		background-color: #000;
 		border: dashed 1px #e5e5e5;
 		color: #63DE01;
+		padding-right: 5px;
+		padding-left: 5px;
 	}
-	.keyword {
-		color: #007A00;
+	.keypress {
+		color: #e7e7e7;
 	}
 	.footer {
 		color: #63DE01;
 	}
-	.navbar-default, .navbar-fixed-top, .active {
-		background-color: #000 !important;
-		li {
-			color: #63DE01 !important;
-			.active {
-				background-color: #000 !important;
-				color: #63DE01 !important;
-			}
-		}
-		.dropdown-menu {
-			li {
-				a:hover, a:focus {
-					background-color: #000 !important;
-				}
-			}
-			}
-		img {
-			background-color: #000 !important;
-		}
-	}
+
+
+
 }
 

@@ -44,17 +44,28 @@
 						<p><span class="keypress">ctrl + c</span> to exit insert mode.</p>
 						<p><span class="keypress">:</span> then type <code class="example">wq</code> to write quit.</p>
 					</div>
-					<div class="col-md-5 col-xs-5">
-						<h3>Basics</h3>
-						<p>Check for Changes since last commit:<br>
-
-					</div>
-					<div class="col-md-7 col-xs-7">
-						<h3>Branches</h3>
-
+					<div class="col-md-12 col-xs-12">
+						<h3>Bash Shortcuts</h3>
+						<p>Terminal shortcuts are store in the <span class="term">.bash_profile</span> in the User folder on mac.  By default this folder is hidden. You can make a shortcut a command or location with <code class="example">alias <span class="replace">newShortcutName</span>="<span class="replace">any terminal command</span>"</code>.
 					</div>
 					<div class="col-md-6 col-xs-6">
-
+						<h3>Change Command Line</h3>
+						<p>This is your command line preference for .bash_profile</p>
+							<div class="example2">
+								if [ -f ~/.git-prompt.sh ]; then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;source ~/.git-prompt.sh<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;export PS1='[\u \W$(__git_ps1 " (%s)")]\$ '<br>
+								fi
+							</div>
+					</div>
+					<div class="col-md-6 col-xs-6">
+						<h3>Git Auto-Complete</h3>
+						<p>The following addition to .bash_profile will turn on git auto-complete:</p>
+							<div class="example2">
+								if [ -f ~/.git-completion.bash ]; then<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;source ~/.git-completion.bash<br>
+								fi<br>
+							</div>
 					</div>
 					<div class="col-md-6 col-xs-6">
 						<h3></h3>

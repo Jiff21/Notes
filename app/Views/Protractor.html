@@ -46,7 +46,7 @@
 				<p>When working on a single test or set of tests you probably don't want to run all of your tests.  This can be accomplished in a couple ways, the ones in protractor are mentioned in the reference conf file. By adding the following to you config file:
 				</p>
 				<p>
-				<code class="example2">
+				<div class="example2">
 				//patterns are relative to the location of this config. <br>
 				suites: {<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '<span class="replace">.e2e/**/*.spec.js</span>',<br>
@@ -54,7 +54,7 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '<span class="replace">.e2e/views/*.spec.js</span>',<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: '<span class="replace">e2e/nav/productcounter.js</span>'<br>
 				},<br>
-				</code>
+				</div>
 				</p>
 				<p>
 				Then you can run a set of tests simple simply by adding <span class="term">--suite=<span class="replace">SuiteName</span></span> to the end of your run command in terminal (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --suite=smoke</code>).
@@ -111,12 +111,12 @@
 				<h6>OnPrepare &amp; OnComplete</h6>
 				<p>You can use the OnPrepare function in the config file to set up for testing.  You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing).  I suggest at least setting a default window size and location to start your testing from.</p>
 				<p>
-				<code class="example2">
+				<div class="example2">
 				onPrepare: function() {<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSize(<span class="replace">1500</span>,<span class="replace">1000</span>);<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPosition(<span class="replace">0</span>,<span class="replace">0</span>);<br>
 				},<br>
-				</code>
+				</div>
 				</p>
 				<h6>$</h6>
 				<p>
@@ -129,11 +129,10 @@
 				Some good thing to check examples:<br>
 				<code class="example">expect(<span class="replace">elName</span>.isPresent()).toBeTruthy();</code><br>
 				Or: <br>
-				<code class="example">
+				<div class="example2">
 				<span class="replace">prodNum.get(7).$('img')</span>.isDisplayed().then(function(val) {<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();<br>
-				})</code><br>
-				<code class="example"></code><br>
+				})</div>
 				</p>
 			</div>
 			</article>

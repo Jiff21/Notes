@@ -87,34 +87,31 @@ body {
 	}
 }
 
-/* Style for Example class */
+/* Style for Example classes along with related spans. */
 .example {
 	font-style: italic;
 	color: black;
-	background-color: #E6E6E6;
+	background-color: #f9f2f4;
 	border: none 1px black;
 	border-radius: 5px;
 	padding: 2px;
 	border-radius: 2px;
-	.replace {
-		color: red;
-	}	
 }
 
-/* Style for Example2 class detached code */
 .example2 {
-	.div{
-
-		background-color: #E6E6E6;
-		border: solid 1px black;		
-		}
-	color: black;
+	background-color: #f9f2f4;
+	border: solid 1px black;		
 	font-style: italic;
+	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+	font-size: 90%;
 	padding: 2px;
+	padding-left: 5px;
+	color: black;
 	border-radius: 2px;
-	.replace {
-		color: red;
-	}
+}
+
+.replace {
+	color: red;
 }
 
 /* Style for Term class */
@@ -125,7 +122,6 @@ body {
 .keypress {
 	color: blue;
 }
-
 
 
 /* Aside Styling*/
@@ -163,6 +159,7 @@ aside ul ul li:first-child{
 }
 
 
+/* Styling for the Old Header Class.  May be I can get rid of this or style into jumbrotrons with LESS. */
 header{
 	background-color: Black;
 	border-radius: 25px;
