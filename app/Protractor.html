@@ -24,220 +24,202 @@
 										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 		<div class="container">
+			<div class="jumbotron">
+				<h1>Protractor Notes</h1>
+				<p class="lead">"When the President does it, that means that it's not illegal." - Richard Nixon</p>
+			</div>
+			<article class="col-md-8 col-sm-8 col-xs-10">
 			<div>
-				<div class="jumbotron">
-					<h1>Protractor Notes</h1>
-					<p class="lead">"When the President does it, that means that it's not illegal." - Richard Nixon</p>
-				</div>
+				<h3>Introduction</h3>
+				<p>Protractor is an end to end test framework for <a href="https://angularjs.org/">AngularJS</a> applications built on top of <a href="https://code.google.com/p/selenium/wiki/WebDriverJs">WebDriverJS</a>. Protractor runs tests against your application running in a real browser, interacting with it as a user would.</p>
 			</div>
-			<div class="main">
-				<div class="row">
-					<div class="col-md-8 col-sm-8 col-xs-10">
-						<article id="container">
-	<div class="lang-grid git-grid">
-				<div class="row">
-					<div>
-						<h3>Introduction</h3>
-						<p>Protractor is an end to end test framework for <a href="https://angularjs.org/">AngularJS</a> applications built on top of <a href="https://code.google.com/p/selenium/wiki/WebDriverJs">WebDriverJS</a>. Protractor runs tests against your application running in a real browser, interacting with it as a user would.</p>
-					</div>
-					<div>
-						<h3>Installation &amp; Use</h3>
-						<p>The setup is explained in their readme doc on <a href="https://github.com/angular/protractor/blob/master/docs/getting-started.md">github</a>.</p>
-					</div>
-					<div>
-						<h3>Tools</h3>
-						<p>The full list of selectors and evaluation tools can be found on their <a href="https://github.com/angular/protractor/blob/master/docs/api.md">github api page</a>.  Watch out, as many of them use deferred promises.</p>
-					</div>
-					<div>
-						<h3>Running Only Certain Tests</h3>
-						<p>When working on a single test or set of tests you probably don't want to run all of your tests.  This can be accomplished in a couple ways, the ones in protractor are mentioned in the reference conf file. By adding the following to you config file:
-						</p>
-						<p>
-						<code class="example2">
-							 //patterns are relative to the location of this config. <br>
-							 suites: {<br>
-							 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '.e2e/**/*.spec.js',<br>
-							 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smoke: ['.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js'],<br>
-							 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '.e2e/views/*.spec.js',<br>
-							 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: 'e2e/nav/productcounter.js'<br>
-							 },<br>
-						</code>
-						</p>
-						<p>
-						Then you can run a set of tests simple simply by adding <span class="term">--suite=<span class="replace">SuiteName</span></span> to the end of your run command in terminal (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --suite=smoke</code>).
-						<br>
-						While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using, but be careful because they're easy to miss if you forget to remove them.
-							<table>
-								<tbody>
-								<caption>Skip Text or Block by Language</caption>
-									<tr>
-										<th></th>
-										<th><b>Jasmine</b>&nbsp;</th>
-										<th><b>Mocha&nbsp;</b></th>
-									</tr>
-									<tr>
-										<th>Run just this test</th>
-										<td>&nbsp;change it to iit</td>
-										<td>&nbsp;change it to it.only</td>
-									</tr>
-									<tr>
-										<th>Skip a test</th>
-										<td>&nbsp;change it to xit</td>
-										<td>&nbsp;change it to it.skip</td>
-									</tr>
-									<tr>
-										<th>Run just this describe block</th>
-										<td>&nbsp;change describe to ddescribe</td>
-										<td>&nbsp;change describe to describe.only</td>
-									</tr>
-									<tr>
-										<th>Skip a describe block</th>
-										<td>&nbsp;change describe to xdescribe</td>
-										<td>&nbsp;change describe to describe.skip<span></td>
-									</tr>
-								</tbody>
-							</table>
-						</p>
-					</div>
-					<div>
-						<h3>Tips</h3>
-						<h6>Send Keys</h6>
-						<p>
-						A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
-						Sending letters and numbers works simple by using:<br>
-						<code class="example2">element(by.name('name')).sendKeys('Example.');</code><br>
-						But if you need to use a unicode key it should work with.
-						<code class="example2">element(by.name('name')).sendKeys(protractor.Key.TAB)</code><br>
-						But right now it only seems to work if you do:
-						<code class="example2">browser.actions().sendKeys(protractor.Key.TAB).perform();</code><br>
-						</p>
-						<h6>Sleep & Pause</h6>
-						<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
-						<h6>Angular Can't Be Found</h6>
-						<p>As the <a href="https://github.com/angular/protractor/blob/master/docs/faq.md">FAQ</a> mentions this may have to do with the version, but they didn't mention that it looks for ng-app on the body tag.  So if yours is anywhere else you need to set rootEl in the config file (e.g. <code class="example">rootElement: 'div',</code>). </p>
-						<h6>OnPrepare &amp; OnComplete</h6>
-						<p>You can use the OnPrepare function in the config file to set up for testing.  You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing).  I suggest at least setting a default window size and location to start your testing from.</p>
-						<p>
-						<code class="example2">
-							onPrepare: function() {<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSize(1500,1000);<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPosition(0,0);<br>
-							},<br>
-						</code>
-						</p>
-						<h6>$</h6>
-						<p>
-							<code class="example">$</code> means <code class="example">element(by.Css</code><br>
-							<code class="example">$$</code> means <code class="example">element.all(by.Css</code><br>
-							It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time.  Sometimes it's better to just use element.all then see what ends up in the array.
-						</p>
-						<h6>Managing Expectations</h6>
-						<p>
-							Some good thing to check examples:<br>
-							<code class="example">expect(elName.isPresent()).toBeTruthy();</code><br>
-							Or: <br>
-							<code class="example">
-								prodNum.get(7).$('img').isDisplayed().then(function(val) {<br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBe(false);<br>
-								})</code><br>
-							<code class="example"></code><br>
-						</p>
-					</div>
-
-
-						</article>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-12">
-					<aside>
-						<div>
-
-							<h6>Element(By.XXXXX</h6>
-							<ul>
-								<li><code class="example">$</code> means <code class="example">element(by.Css</code></li>
-								<li><code class="example">$$</code> means <code class="example">element.all(by.Css</code></li>
-								<li><code class="example">element(by.className('')</code></li>
-								<li><code class="example">element(by.cssContainingText('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
-								<li><code class="example">element(by.className('')</code></li>
-								<li><code class="example">element(by.Name('')</code> Element Name</li>
-							</ul>
-							<h6>Send Keys</h6>
-							<ul>
-								<li>Should be: <code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
-								<li>But currently you need: <code class="example">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code></li>
-							</ul>
-							<h6>Browser</h6>
-							<ul>
-								<li>means: <code class="example">protractor.getInstance();</code></li>
-								<li><code class="example">browser.get('<span class="replace">URL</span>')</code></li>
-								<li><code class="example">browser.getCurrentUrl()</code></li>
-								<li><code class="example">browser.sleep(<span class="replace">#</span>)</code></li>
-								<li><code class="example">browser.pause(<span class="replace">#</span>)</code></li>
-								<li><code class="example">browser.manage().window().setSize(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
-								<li><code class="example">browser.manage().window().setPosition(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
-								<li><code class="example">browser.manage().getCookie('_ga')</code> (promise)</li>
-								<li><code class="example">browser.driver.navigate().forward()</code> (promise)</li>
-							</ul>
-							<h6>Element Properties</h6>
-							<ul>
-								<li><code class="example"><span class="replace">elName</span>.getText()</code></li>
-								<li><code class="example"><span class="replace">elName</span>.getTitle()</code></li>
-								<li><code class="example"><span class="replace">elName</span>.getCssValue()</code></li>
-								<li><code class="example"><span class="replace">elName</span>.getAttribute('<span class="replace">value</span>')</code></li>
-								<li><code class="example"><span class="replace">elName</span>.isDisplayed()</code> (promise)</li>
-								<li><code class="example"><span class="replace">elName</span>.isPresent()</code></li>
-								<li><code class="example"><span class="replace">elName</span>.getLocation()</code>relative to left corner of screen</li>
-							</ul>
-							<h6>Matchers</h6>
-							<ul>
-								<li>toBe()</li>
-								<li>toEqual()</li>
-								<li>toContain()</li>
-								<li>toMatch()</li>
-								<li>toBeTruthy()</li>
-								<li>toBeGreaterThan()</li>
-								<li>toBeDefined()</li>
-							</ul>
-						</aside>
-						</div>
-						<div>
-							<!-- Loading footer with AJAX -->
-							<div class="footerPlaceholder"></div>
-						</div>
-					</div>
-				</div>
+			<div>
+				<h3>Installation &amp; Use</h3>
+				<p>The setup is explained in their readme doc on <a href="https://github.com/angular/protractor/blob/master/docs/getting-started.md">github</a>.</p>
 			</div>
-			<!-- build:js scripts/vendor.js -->
-			<!-- bower:js -->
-			<script src="../bower_components/jquery/dist/jquery.js"></script>
-			<!-- endbower -->
-			<!-- endbuild -->
-			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-			<script>
-				(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-				function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-				e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-				e.src='//www.google-analytics.com/analytics.js';
-				r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-				ga('create','UA-XXXXX-X');ga('send','pageview');
-			</script>
-			<!-- build:js scripts/plugins.js -->
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-			<script src="/includes/nav.js"></script>
-			<script src="/includes/footer.js"></script>
-			<!-- endbuild -->
-			<!-- build:js({app,.tmp}) scripts/main.js -->
-			<script src="scripts/main.js"></script>
-			<!-- endbuild -->
-		</body>
-	</html>
+			<div>
+				<h3>Tools</h3>
+				<p>The full list of selectors and evaluation tools can be found on their <a href="https://github.com/angular/protractor/blob/master/docs/api.md">github api page</a>.  Watch out, as many of them use deferred promises.</p>
+			</div>
+			<div>
+				<h3>Running Only Certain Tests</h3>
+				<p>When working on a single test or set of tests you probably don't want to run all of your tests.  This can be accomplished in a couple ways, the ones in protractor are mentioned in the reference conf file. By adding the following to you config file:
+				</p>
+				<p>
+				<code class="example2">
+				//patterns are relative to the location of this config. <br>
+				suites: {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '<span class="replace">.e2e/**/*.spec.js</span>',<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smoke: ['<span class="replace">.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js</span>'],<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '<span class="replace">.e2e/views/*.spec.js</span>',<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: '<span class="replace">e2e/nav/productcounter.js</span>'<br>
+				},<br>
+				</code>
+				</p>
+				<p>
+				Then you can run a set of tests simple simply by adding <span class="term">--suite=<span class="replace">SuiteName</span></span> to the end of your run command in terminal (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --suite=smoke</code>).
+				<br>
+				While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using, but be careful because they're easy to miss if you forget to remove them.
+				<table>
+					<tbody>
+						<caption>Skip Text or Block by Language</caption>
+						<tr>
+							<th></th>
+							<th><b>Jasmine</b>&nbsp;</th>
+							<th><b>Mocha&nbsp;</b></th>
+						</tr>
+						<tr>
+							<th>Run just this test</th>
+							<td>&nbsp;change it to iit</td>
+							<td>&nbsp;change it to it.only</td>
+						</tr>
+						<tr>
+							<th>Skip a test</th>
+							<td>&nbsp;change it to xit</td>
+							<td>&nbsp;change it to it.skip</td>
+						</tr>
+						<tr>
+							<th>Run just this describe block</th>
+							<td>&nbsp;change describe to ddescribe</td>
+							<td>&nbsp;change describe to describe.only</td>
+						</tr>
+						<tr>
+							<th>Skip a describe block</th>
+							<td>&nbsp;change describe to xdescribe</td>
+							<td>&nbsp;change describe to describe.skip<span></td>
+						</tr>
+					</tbody>
+				</table>
+				</p>
+			</div>
+			<div>
+				<h3>Tips</h3>
+				<h6>Send Keys</h6>
+				<p>
+				A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
+				Sending letters and numbers works simple by using:<br>
+				<code class="example2">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</code><br>
+				But if you need to use a unicode key it should work with.
+				<code class="example2">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code><br>
+				But right now it only seems to work if you do:
+				<code class="example2">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
+				</p>
+				<h6>Sleep & Pause</h6>
+				<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
+				<h6>Angular Can't Be Found</h6>
+				<p>As the <a href="https://github.com/angular/protractor/blob/master/docs/faq.md">FAQ</a> mentions this may have to do with the version, but they didn't mention that it looks for ng-app on the body tag.  So if yours is anywhere else you need to set rootEl in the config file (e.g. <code class="example">rootElement: '<span class="replace">div</span>',</code>). </p>
+				<h6>OnPrepare &amp; OnComplete</h6>
+				<p>You can use the OnPrepare function in the config file to set up for testing.  You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing).  I suggest at least setting a default window size and location to start your testing from.</p>
+				<p>
+				<code class="example2">
+				onPrepare: function() {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSize(<span class="replace">1500</span>,<span class="replace">1000</span>);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPosition(<span class="replace">0</span>,<span class="replace">0</span>);<br>
+				},<br>
+				</code>
+				</p>
+				<h6>$</h6>
+				<p>
+				<code class="example">$</code> means <code class="example">element(by.Css</code><br>
+				<code class="example">$$</code> means <code class="example">element.all(by.Css</code><br>
+				It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time.  Sometimes it's better to just use element.all then see what ends up in the array.
+				</p>
+				<h6>Managing Expectations</h6>
+				<p>
+				Some good thing to check examples:<br>
+				<code class="example">expect(<span class="replace">elName</span>.isPresent()).toBeTruthy();</code><br>
+				Or: <br>
+				<code class="example">
+				<span class="replace">prodNum.get(7).$('img')</span>.isDisplayed().then(function(val) {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();<br>
+				})</code><br>
+				<code class="example"></code><br>
+				</p>
+			</div>
+			</article>
+			<aside class="col-md-4 col-sm-4 col-xs-12">
+				<h6>Element(By.XXXXX</h6>
+				<ul>
+					<li><code class="example">$</code> means <code class="example">element(by.Css</code></li>
+					<li><code class="example">$$</code> means <code class="example">element.all(by.Css</code></li>
+					<li><code class="example">element(by.className('')</code></li>
+					<li><code class="example">element(by.cssContainingText('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
+					<li><code class="example">element(by.className('')</code></li>
+					<li><code class="example">element(by.Name('')</code> Element Name</li>
+				</ul>
+				<h6>Send Keys</h6>
+				<ul>
+					<li>Should be: <code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
+					<li>But currently you need: <code class="example">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code></li>
+				</ul>
+				<h6>Browser</h6>
+				<ul>
+					<li>means: <code class="example">protractor.getInstance();</code></li>
+					<li><code class="example">browser.get('<span class="replace">URL</span>')</code></li>
+					<li><code class="example">browser.getCurrentUrl()</code></li>
+					<li><code class="example">browser.sleep(<span class="replace">#</span>)</code></li>
+					<li><code class="example">browser.pause(<span class="replace">#</span>)</code></li>
+					<li><code class="example">browser.manage().window().setSize(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
+					<li><code class="example">browser.manage().window().setPosition(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
+					<li><code class="example">browser.manage().getCookie('<span class="replace">_ga</span>')</code> (promise)</li>
+					<li><code class="example">browser.driver.navigate().forward()</code> (promise)</li>
+				</ul>
+				<h6>Element Properties</h6>
+				<ul>
+					<li><code class="example"><span class="replace">elName</span>.getText()</code></li>
+					<li><code class="example"><span class="replace">elName</span>.getTitle()</code></li>
+					<li><code class="example"><span class="replace">elName</span>.getCssValue()</code></li>
+					<li><code class="example"><span class="replace">elName</span>.getAttribute('<span class="replace">value</span>')</code></li>
+					<li><code class="example"><span class="replace">elName</span>.isDisplayed()</code> (promise)</li>
+					<li><code class="example"><span class="replace">elName</span>.isPresent()</code></li>
+					<li><code class="example"><span class="replace">elName</span>.getLocation()</code>relative to left corner of screen</li>
+				</ul>
+				<h6>Matchers</h6>
+				<ul>
+					<li>toBe()</li>
+					<li>toEqual()</li>
+					<li>toContain()</li>
+					<li>toMatch()</li>
+					<li>toBeTruthy()</li>
+					<li>toBeGreaterThan()</li>
+					<li>toBeDefined()</li>
+				</ul>
+			</aside>
+			<!-- Loading footer with AJAX -->
+			<div class="footerPlaceholder"></div>
+		</div>
+		<!-- build:js scripts/vendor.js -->
+		<!-- bower:js -->
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<!-- endbower -->
+		<!-- endbuild -->
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X');ga('send','pageview');
+		</script>
+		<!-- build:js scripts/plugins.js -->
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+		<script src="/includes/nav.js"></script>
+		<script src="/includes/footer.js"></script>
+		<!-- endbuild -->
+		<!-- build:js({app,.tmp}) scripts/main.js -->
+		<script src="scripts/main.js"></script>
+		<!-- endbuild -->
+	</body>
+</html>

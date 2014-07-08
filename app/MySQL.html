@@ -21,38 +21,37 @@
 		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
 		<div class="navPlaceholder"></div>
 		<!--[if lt IE 10]>
-										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 		<div class="container">
 			<div>
 				<div class="jumbotron">
 					<h1>MySQL Notes</h1>
-					<p class="lead">"Things do not happen. Things are made to happen." - JFK</p>
+					<p class="lead">"It is far better to be alone, than to be in bad company." - George Washington</p>
 					<p><a class="btn btn-lg btn-success" href="#"> <span class="glyphicon glyphicon-fire"></span> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
 				</div>
 			</div>
-			<div class="main">
-				<div class="row">
-					<div class="col-md-9 col-sm-8 col-xs-10">
-						<article id="container">
-	
-						</article>
-					</div>
-					<div class="col-md-3 col-sm-4 col-xs-2">
-			   <aside>
-					<h4> Quick Notes </h4>
-					<p> For all things: <a href="http://php.net/" target="_blank">PHP.Net</a>.</p>
-					<h5> Header </h5>
-					<ul>
-						<li>
-							<details open>
-							<summary>Various</summary>
-							<ul>
-								<li> // ~ Single line comments </li>
-								<li> print_r($var) ~ show array </li>
-							</ul>
-							</details>
-						</li>
+			<article class="col-md-9 col-sm-8 col-xs-10">
+			</article>
+			<aside class="col-md-3 col-sm-4 col-xs-2">
+				<h4> Quick Notes </h4>
+				<p> For all things: <a href="http://php.net/" target="_blank">PHP.Net</a>.</p>
+				<h5> Header </h5>
+				<ul>
+					<li>
+						<details open>
+						<summary>Various</summary>
+						<ul>
+							<li>
+								Comment<br />
+								/**<br />
+								* This is part of the comment. <br />
+								*/
+							</li>
+							<li> // ~ Single line comments </li>
+							<li> print_r($var) ~ show array </li>
+						</ul>
+						</details>
 						<li>
 							<details closed>
 							<summary>String Functions</summary>
@@ -136,58 +135,56 @@
 								<summary>Comparisons &amp; Logical Operators</summary>
 								<ul>
 									<li> if (a == b) </li>
-									<li> if (a < b) </li>
+									<li> if (a &#60; b) </li>
 									<li> if (a != b) </li>
 									<li> if (a === b) </li>
-									<li> if (a >= b &amp;&amp; a !<=c) </li>
+									<li> if (a >= b &amp;&amp; a !&#60;=c) </li>
 									<li> if ((a != b) || (a !== c))</li>
 									<li> if (!isSet($a)) ~ ! means not</li>
 								</ul>
 								</details>
 							</li>
 						</ul>
-						</details>
 					</aside>
-						</div>
-						<div>
-							<!-- Loading footer with AJAX -->
-							<div class="footerPlaceholder"></div>
-						</div>
+					<div>
+						<!-- Loading footer with AJAX -->
+						<div class="footerPlaceholder"></div>
 					</div>
 				</div>
 			</div>
-			<!-- build:js scripts/vendor.js -->
-			<!-- bower:js -->
-			<script src="../bower_components/jquery/dist/jquery.js"></script>
-			<!-- endbower -->
-			<!-- endbuild -->
-			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-			<script>
-				(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-				function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-				e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-				e.src='//www.google-analytics.com/analytics.js';
-				r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-				ga('create','UA-XXXXX-X');ga('send','pageview');
-			</script>
-			<!-- build:js scripts/plugins.js -->
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-			<script src="/includes/nav.js"></script>
-			<script src="/includes/footer.js"></script>
-			<!-- endbuild -->
-			<!-- build:js({app,.tmp}) scripts/main.js -->
-			<script src="scripts/main.js"></script>
-			<!-- endbuild -->
-		</body>
-	</html>
+		</div>
+		<!-- build:js scripts/vendor.js -->
+		<!-- bower:js -->
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<!-- endbower -->
+		<!-- endbuild -->
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+		e.src='//www.google-analytics.com/analytics.js';
+		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+		ga('create','UA-XXXXX-X');ga('send','pageview');
+		</script>
+		<!-- build:js scripts/plugins.js -->
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+		<script src="/includes/nav.js"></script>
+		<script src="/includes/footer.js"></script>
+		<!-- endbuild -->
+		<!-- build:js({app,.tmp}) scripts/main.js -->
+		<script src="scripts/main.js"></script>
+		<!-- endbuild -->
+	</body>
+</html>
