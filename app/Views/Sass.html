@@ -31,33 +31,79 @@
 					<p><a class="btn btn-lg btn-success" href="#"> <span class="glyphicon glyphicon-fire"></span> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
 				</div>
 			</div>
-			<div class="main">
-				<div class="row">
-					<div class="col-md-9 col-sm-8 col-xs-10">
-						<article id="container">
+						<article id="container" class="col-md-8 col-sm-8 col-xs-12">
 						<p>Most of what you want to know is in their <a href="http://sass-lang.com/guide">guide</a>. We need to learn Less &amp; Sass soon, so we can to <a href="http://ruby.bvision.com/blog/please-stop-embedding-bootstrap-classes-in-your-html">this</a>.</p>
+						<h3>SASS</h3>
+						<p>To see command line Sass controls type <code class="example">Sass -?</code> You can update a stylesheet on the command line using <code class="example">sass --update <span class="replace">stylesheetname.scss</span></code> or you can keep it active with <code class="example">sass --watch <span class="replace">foldername:cssfoldername</span></code>.  Each of the last two commands can be run on a folder or a individual file, the new file name can be different than scss file name, just add <code>:<span class ="replace">newFileOrFoloderName</span></code> to the end of the command with no space.
+						</p> 
+
+						<p><span class="term">Variables</span> can be used repeatedly as you would expect. They also can be used to append content with string as so:
+						<div class="example2">
+							$myString ="This will end up after the paragraph."<br>
+							#iDParag:after {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;content: $myString;<br>
+							}
+						</div> 
+						<p>Here's a sample of a <span class="term">mixin</span> in use:
+						<div class="example2">
+							.alert(warning){<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;@color: yellow;<br>
+							}<br>
+							.alert(error){<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;@color: red<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;border: 2px;<br>
+							}<br>
+							/* Always be applied styles, if you need it to get double val use (@_,@_) */ <br>
+							.alert(@.){<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;<br> 
+							}<br>
+							// Setting the current type.<br>
+							@type: error;<br>
+							#iDForm {<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;.alert(@type);<br>
+							}
+						</div>
+						</p>
+						<h3>LESS</h3>
+						<p></p>
 						</article>
-					</div>
-					<div class="col-md-3 col-sm-4 col-xs-2">
+					<div class="col-md-4 col-sm-4 col-xs-12">
 						<aside>
 							<div>
-								<h6> Page formattimg </h6>
+								<h6> SASS </h6>
 								<ul>
-									<li><h6> Header </h6></li>
-									<li><h6> Article </h6></li>
-									<li><h6> Aside </h6></li>
-									<li><h6> Footer </h6></li>
+									<li>Variables</li>
+									<ul>
+										<li>$myVar: 25px;</li>
+										<li>$myString: "something";</li>
+										<li>$myColor: rbg(35,34,42)</li>
+										<li>$myBool: false;</li>
+										<li>$myNull: null;</li>
+										<li>$list: 2em 4em 2em 4em;</li>
+									</ul>
 								</ul>
-								<h6> Tags </h6>
+								<ul>
+									<li>Use of Variables</li>
+									<ul>
+										<li>lighten($basecolor, 30%)</li>
+										<li>darken($basecolor, 20%)</li>
+										<li>content: $myString;</li>
+									</ul>
+								</ul>
+								<h6> Less </h6>
+								
+								<ul>
+								<li>@baseColor:</li>
+									<ul>
+										<li>lighten(@basecolor, 10%) </li>
+										<li>darken(@basecolor, 40%) </li>
+									</ul>
+								</ul>
 							</div>
 						</aside>
 					</div>
-					<div>
 						<!-- Loading footer with AJAX -->
 						<div class="footerPlaceholder"></div>
-					</div>
-				</div>
-			</div>
 		</div>
 		<!-- build:js scripts/vendor.js -->
 		<!-- bower:js -->

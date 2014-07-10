@@ -169,6 +169,9 @@
 	}	
 }
 
+$jasmineYellow: #FBDE7E;
+$jasmineBlue: #ADD8E6;
+
 .JasmineBody {
 	.jumbotron {
 		background-image: url(../images/Jasmine.jpg);
@@ -184,15 +187,15 @@
 			}
 	}
 	.blue {
-		background-color: #ADD8E6;
+		background-color: $jasmineBlue;
 		.example2, .example {
-			background-color: #C6E4EE;
+			background-color: lighten($jasmineBlue, 5%);
 		}		
 	}
 	.yellow {
-		background-color: #FBDE7E;
+		background-color: $jasmineYellow;
 		.example2, .example {
-			background-color: #FDF2CB;
+			background-color: lighten($jasmineYellow, 5%);
 		}
 	}
 	#rts {
