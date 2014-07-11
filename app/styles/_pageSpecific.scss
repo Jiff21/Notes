@@ -241,7 +241,6 @@ $jasmineBlue: #ADD8E6;
 
 .owaspBody {
 	.jumbotron {
-		background-image: url(../images/ReaganVeloc.jpg);
 		background-position: center;
 			h1 {
 				color: white;
@@ -250,7 +249,11 @@ $jasmineBlue: #ADD8E6;
 			p {
 				color: white;
 			}
-	}	
+	}
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 }
 
 .gitBody {
