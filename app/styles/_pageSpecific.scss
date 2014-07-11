@@ -1,10 +1,4 @@
-
-@mixin border-radius($radius) {
-	-webkit-border-radius: $radius;
-	 -moz-border-radius: $radius;
-	  -ms-border-radius: $radius;
-		border-radius: $radius;
-}
+@import "_mixins.scss";
 
 .homeBody {
 	.jumbotron {
@@ -245,7 +239,7 @@ $jasmineBlue: #ADD8E6;
 		background-position: center;
 			h1 {
 				color: white;
-				margin-top: 180px;
+				margin-top: 600px;
 			}
 			p {
 				color: white;
