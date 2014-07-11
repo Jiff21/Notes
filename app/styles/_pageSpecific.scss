@@ -123,7 +123,7 @@
 
 .SassBody {
 	.jumbotron {
-		background-image: url(../images/ReaganVeloc.jpg);
+		background-image: url(../images/Sasquatch.jpg);
 		background-position: center;
 			h1 {
 				color: white;
@@ -237,6 +237,20 @@ $jasmineBlue: #ADD8E6;
 		border-left: 1px solid black;
 		font-weight: bolder;
 	}
+}
+
+.owaspBody {
+	.jumbotron {
+		background-image: url(../images/ReaganVeloc.jpg);
+		background-position: center;
+			h1 {
+				color: white;
+				margin-top: 180px;
+			}
+			p {
+				color: white;
+			}
+	}	
 }
 
 .gitBody {
