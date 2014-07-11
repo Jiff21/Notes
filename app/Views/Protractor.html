@@ -26,8 +26,8 @@
 		<div class="container">
 			<div class="jumbotron">
 				<div class="lightLayer">
-				<h1>Protractor Notes</h1>
-				<p class="lead">"When the President does it, that means that it's not illegal." - Richard Nixon</p>
+					<h1>Protractor Notes</h1>
+					<p class="lead">"When the President does it, that means that it's not illegal." - Richard Nixon</p>
 				</div>
 			</div>
 			<article class="col-md-8 col-sm-8 col-xs-12">
@@ -49,13 +49,13 @@
 				</p>
 				<p>
 				<div class="example2">
-				//patterns are relative to the location of this config. <br>
-				suites: {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '<span class="replace">.e2e/**/*.spec.js</span>',<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smoke: ['<span class="replace">.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js</span>'],<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '<span class="replace">.e2e/views/*.spec.js</span>',<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: '<span class="replace">e2e/nav/productcounter.js</span>'<br>
-				},<br>
+					//patterns are relative to the location of this config. <br>
+					suites: {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '<span class="replace">.e2e/**/*.spec.js</span>',<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smoke: ['<span class="replace">.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js</span>'],<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '<span class="replace">.e2e/views/*.spec.js</span>',<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: '<span class="replace">e2e/nav/productcounter.js</span>'<br>
+					},<br>
 				</div>
 				</p>
 				<p>
@@ -114,10 +114,10 @@
 				<p>You can use the OnPrepare function in the config file to set up for testing.  You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing).  I suggest at least setting a default window size and location to start your testing from.</p>
 				<p>
 				<div class="example2">
-				onPrepare: function() {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSize(<span class="replace">1500</span>,<span class="replace">1000</span>);<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPosition(<span class="replace">0</span>,<span class="replace">0</span>);<br>
-				},<br>
+					onPrepare: function() {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSize(<span class="replace">1500</span>,<span class="replace">1000</span>);<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPosition(<span class="replace">0</span>,<span class="replace">0</span>);<br>
+					},<br>
 				</div>
 				</p>
 				<h5>$</h5>
@@ -132,14 +132,14 @@
 				<code class="example">expect(<span class="replace">elName</span>.isPresent()).toBeTruthy();</code><br>
 				Or: <br>
 				<div class="example2">
-				<span class="replace">prodNum.get(7).$('img')</span>.isDisplayed().then(function(val) {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();<br>
+					<span class="replace">prodNum.get(7).$('img')</span>.isDisplayed().then(function(val) {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();<br>
 				})</div>
 				</p>
 			</div>
 			</article>
 			<aside class="col-md-4 col-sm-4 col-xs-12">
-			<h5>Quick Reference</h5>
+				<h5>Quick Reference</h5>
 				<h6>Element(By.XXXXX</h6>
 				<ul>
 					<li><code class="example">$</code> means <code class="example">element(by.Css</code></li>
@@ -147,7 +147,11 @@
 					<li><code class="example">element(by.className('')</code></li>
 					<li><code class="example">element(by.cssContainingText('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
 					<li><code class="example">element(by.className('')</code></li>
-					<li><code class="example">element(by.Name('')</code> Element Name</li>
+					<li><code class="example">element(by.name('')</code> Element Name</li>
+					<li><code class="example">element(by.id('')</code></li>
+					<li><code class="example">element(by.partialLinkText('')</code></li>
+					<li><code class="example">element(by.binding('')</code></li>
+					<li><code class="example">element(by.js('')</code></li>
 				</ul>
 				<h6>Send Keys</h6>
 				<ul>
