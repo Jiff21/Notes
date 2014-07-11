@@ -32,27 +32,16 @@
 				</div>
 			</div>
 			<article id="container" class="col-md-8 col-sm-8 col-xs-12">
+			<h3>Introduction</h3>
+			<p>OWASP ZAP is a penetration testing tool for people who aren't penetration testing experts.   You can very easily scan a site and get a list of Alerts about possible security exploits and generate reports about parts of the site that don't follow OWASP best practices.  There are more intensive tools that can also be used to try to hack into the site.</p>
+			<h3>Installation and setup</h3>
+			<p>To install OWASP ZAP you just need to download it <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" target="_blank">here</a> and run through the installation process.  There isn't a ton of setup that needs to be done to use the quick start button talked about in the next section, but there are a few things that can be done to scan the site in different ways. </p>
+			<h3>Changing settings to work with MAMP on MAC</h3>
+			<p>If you’re on a mac using MAMP you’ll likely need to go into this file (File/mutillidae/classes/MySQLHandler.php) and change password to ‘root’ using a test editor.</p>
+			<h3>Configuring Firefox Proxy Settings</h3>
+			<p>You don't need to do this to use Quick Scan, but if you'd like to populate the Site Tree with individual pages you can do so by using the Plug-N-Hack button in OWASP ZAP.  You can also do this by going into Firefox Preferences, by Selecting the Advanced tab, selecting the Network Sub-Tab, pressing the Setting Button, clicking on the "Manual proxy configuration" button and pointing the HTTP Proxy at "localhost" and the Port at "8080" (Zap's default). You should also click on the "Use this proxy server for all protocols" button and make sure "localhost" is not included in the "No Proxy for" part of this menu.  Once this is done you can populate individual pages or explore the site manually (which is recommended by security experts) by simply navigating through the site manually in Firefox.</p>
+			<h3>Quick Start</h3>
 
-			<p>Here's a sample of a <span class="term">mixin</span> in use:
-			<div class="example2">
-				.alert(warning){<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;@color: yellow;<br>
-				}<br>
-				.alert(error){<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;@color: red<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;border: 2px;<br>
-				}<br>
-				/* Always be applied styles, if you need it to get double val use (@_,@_) */ <br>
-				.alert(@.){<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;<br>
-				}<br>
-				// Setting the current type.<br>
-				@type: error;<br>
-				#iDForm {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;.alert(@type);<br>
-				}
-			</div>
-			</p>
 			</article>
 			<div class="col-md-4 col-sm-4 col-xs-12">
 				<aside>
