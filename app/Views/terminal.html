@@ -73,25 +73,7 @@
 
 					</div>
 
-					<div class="col-md-6 col-xs-6">
-						<h3>Unix Commands for Apple Remote Desktop</h3>
-						<p>To grab the version # off the plist file if they have Adobe Flash Plugin installed on the system use <code class="example">defaults read /Applications/Utilities/Adobe\ Flash\ Player\ Install\ Manager.app/Contents/Info.plist</code></p>.  This is a lot more simple with Java where you can just use <code class="example">java -version</code>.  If you want to convince someone that there computer in sentient just type <code class="example"> say "Hello. Are you trying to communicate with me?"</code>. I suggest using the software update included in ARD but the unix command is <code class="example">sudo /usr/sbin/softwareupdate -i -a</code>.
-					</div>
 
-					<div class="col-md-6 col-xs-6">
-						<h3>Password Compliance </h3>
-						<p>To add a login banner use the command <code class="example">sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Use of the system implies consent to user monitoring, any unauthorized use of the system will be prosecuted."</code>  To remove the banner use "sudo defaults delete /Library/Preferences/com.apple.loginwindow LoginwindowText".
-						</p>
-						<ul>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "requiresAlpha=1"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "requiresSymbol=1"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "requiresNumeric =1"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "minChars=8"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "maxMinutesUntilChangePassword=86400"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "minutesUntilFailedLoginReset=0"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "maxFailedLoginAttempts=15"</code></li>
-						</ul>
-					</div>
 				</div>
 				<!-- Loading footer with AJAX -->
 				<div class="footerPlaceholder"></div>
