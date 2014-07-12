@@ -47,6 +47,7 @@
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 		<div class="container-fluid">
+			<article>
 			<div class="jumbotron">
 				<h1>HTML Notes</h1>
 				<p class="lead">"Speak softly and carry a big stick, and you will go far." - Teddy Roosevelt summarizing an old African proverb.</p>
@@ -54,7 +55,6 @@
 				<a class="btn btn-lg btn-success" href="#"> <span class="glyphicon glyphicon-fire"></span> FPO <span class="glyphicon glyphicon-fire"></span></a>
 				</p>
 			</div>
-			<article>
 			<header>
 				<h3>HTML</h3>
 				<p> This is a paragraph in the Header.  We're not going to count it as part of the article.</p>
@@ -132,162 +132,162 @@ This is how you make     a paragraph with    weird spacing using pre.  Pre can a
 						</ul>
 					</div>
 				</div>
-				<div class="full">
-					<h3 class="clearheader"> Let's talk about CSS (H3 of 6 Header).</h3>
-					<p id="p6" class="first clearheader">
-					This is the Sixth Paragraph.  In it we're going to talk about CSS.  When writing CSS you can just style by
-					using different element names on the page by using them as a selector.  If you want to select a class, you
-					need to put a period in front of the name (e.g. <code class="example">.example:</code>).  If you want to use an ID selector, use the
-					Pound symbol in front of the name (e.g. <code class="example">#example:</code>) Some commonly used CSS properties are font-family, font-size,
-					font-weight, border, margin, background-color, ,  . Setting the overflow property to auto is a neat trick. When
-					you are working with borders always remember TRBL (Top, Right, Bottom, Left). You can add multiple classes to a
-					html element using whitespace.
-					Click on  the picture to go back to the top of the document:
-					</p>
-					<a href="#top">
-					<img src="images/RooseveltVsBigfoot.jpg" width="260" height="260"
-					alt="The end of Bigfoot" title="Bigfoot did exist until Teddy Roosevelt found him."
-					class="floatleft-img">
-					</a>
-					<p>
-					Selectors are very important in styling your page.   Descendant Selectors just require a space (e.g. h2 p). Child
-					selectors are similar but they don't target the whole page (e.g. h2 > p).  Adjacent selectors (e.g. h1 + p, H2 +p,)
-					can be useful if there if you want to select something that follows another thing directly and is part of the same
-					parent element.  Attribute Selectors look for things with the thing in brackets (e.g. a[title] or a[title="example"]).
-					When using Attribute selectors you can use a tilde (~) before the equal sign to find anything with it instead of an
-					exact match or you can use a carrot (^) to look for anything that starts with. Or you can use a dollar sign ($) to look
-					for anything that has that end.  As you're familiar with you can use asterisk to do a wildcard search (*).
-					</p>
-					<p>
-					<button onclick = "alert('Hello')" > Run Some Javascript </button>
-					</p>
-					<p>
-					This is a table:
-					<section>
-						<table>
-							<caption>
-							This is my table
-							</caption>
-							<colgroup>
-							<col class="col1" />
-							<col class="col2" />
-							<col class="col3" />
-							</colgroup>
-							<tr>
-								<th>Name</th>
-								<th>Years</th>
-								<th>Drink</th>
-							</tr>
-							<tr>
-								<td>James</td>
-								<td>19</td>
-								<td>Jameson & Ginger</td>
-							</tr>
-							<tr>
-								<td>Visor</td>
-								<td>10</td>
-								<td>Shots</td>
-							</tr>
-						</table>
-					</section>
-					<p>
-					This is an example of some of the code:
-					</p>
-					<div class="example2">
-						&lt;section&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;caption&gt;This is my table&lt;/caption&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;colgroup&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col1&quot; /&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col2&quot; /&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col3&quot; /&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/colgroup&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Years&lt;/th&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Drink&lt;/th&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;James&lt;/td&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;19&lt;/td&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Jameson &amp; Ginger&lt;/td&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br>
-						&lt;/section&gt;<br>
-					</div>
-					<p>
-					This is a frame with an HTML 5 accordian list in it. You make the frame with an id and CSS.   You make the list accordian by
-					starting a <span class="example">&lt;details open&gt;</span> tag, and you also want to title it in <span class="example">
-					&lt;summary&gt;</span> tags.
-					</p>
-					<!-- This is a frame.  It could also just use a src to fill it -->
-					<div id="frame1">
-						<h3>Top Ten Lists</h3>
-						<div>
-							<details open>
-							<summary>Top 10 Smokers Bars</summary>
-							<ol>
-								<li>Summer Place</li>
-								<li>Hemlock</li>
-								<li>Thee Parkside</li>
-								<li>Zeitgeist</li>
-								<li>Savoy Tavoli</li>
-								<li>Edinburgh Castle</li>
-								<li>Dr. Teeth &amp; the Electric Mayhem</li>
-								<li>Vertigo</li>
-								<li>Toad Hall</li>
-								<li>Bacchus Kirk</li>
-							</ol>
-							</details>
-						</div>
+				<h3 class="clearheader"> Let's talk about CSS (H3 of 6 Header).</h3>
+				<p id="p6" class="first clearheader">
+				This is the Sixth Paragraph.  In it we're going to talk about CSS.  When writing CSS you can just style by
+				using different element names on the page by using them as a selector.  If you want to select a class, you
+				need to put a period in front of the name (e.g. <code class="example">.example:</code>).  If you want to use an ID selector, use the
+				Pound symbol in front of the name (e.g. <code class="example">#example:</code>) Some commonly used CSS properties are font-family, font-size,
+				font-weight, border, margin, background-color, ,  . Setting the overflow property to auto is a neat trick. When
+				you are working with borders always remember TRBL (Top, Right, Bottom, Left). You can add multiple classes to a
+				html element using whitespace.
+				Click on  the picture to go back to the top of the document:
+				</p>
+				<a href="#top">
+				<img src="images/RooseveltVsBigfoot.jpg" width="260" height="260"
+				alt="The end of Bigfoot" title="Bigfoot did exist until Teddy Roosevelt found him."
+				class="floatleft-img">
+				</a>
+				<p>
+				Selectors are very important in styling your page.   Descendant Selectors just require a space (e.g. h2 p). Child
+				selectors are similar but they don't target the whole page (e.g. h2 > p).  Adjacent selectors (e.g. h1 + p, H2 +p,)
+				can be useful if there if you want to select something that follows another thing directly and is part of the same
+				parent element.  Attribute Selectors look for things with the thing in brackets (e.g. a[title] or a[title="example"]).
+				When using Attribute selectors you can use a tilde (~) before the equal sign to find anything with it instead of an
+				exact match or you can use a carrot (^) to look for anything that starts with. Or you can use a dollar sign ($) to look
+				for anything that has that end.  As you're familiar with you can use asterisk to do a wildcard search (*).
+				</p>
+				<p>
+				<button onclick = "alert('Hello')" > Run Some Javascript </button>
+				</p>
+				<p>
+				This is a table:
+				</p>
+
+				<section>
+					<table>
+						<caption>
+						This is my table
+						</caption>
+						<colgroup>
+						<col class="col1" />
+						<col class="col2" />
+						<col class="col3" />
+						</colgroup>
+						<tr>
+							<th>Name</th>
+							<th>Years</th>
+							<th>Drink</th>
+						</tr>
+						<tr>
+							<td>James</td>
+							<td>19</td>
+							<td>Jameson & Ginger</td>
+						</tr>
+						<tr>
+							<td>Visor</td>
+							<td>10</td>
+							<td>Shots</td>
+						</tr>
+					</table>
+				</section>
+				<p>
+				This is an example of some of the code:
+				</p>
+				<div class="example2">
+					&lt;section&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;caption&gt;This is my table&lt;/caption&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;colgroup&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col1&quot; /&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col2&quot; /&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col3&quot; /&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/colgroup&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Years&lt;/th&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Drink&lt;/th&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;James&lt;/td&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;19&lt;/td&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Jameson &amp; Ginger&lt;/td&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br>
+					&lt;/section&gt;<br>
+				</div>
+				<p>
+				This is a frame with an HTML 5 accordian list in it. You make the frame with an id and CSS.   You make the list accordian by
+				starting a <span class="example">&lt;details open&gt;</span> tag, and you also want to title it in <span class="example">
+				&lt;summary&gt;</span> tags.
+				</p>
+				<!-- This is a frame.  It could also just use a src to fill it -->
+				<div id="frame1">
+					<h3>Top Ten Lists</h3>
+					<div>
+						<details open>
+						<summary>Top 10 Smokers Bars</summary>
+						<ol>
+							<li>Summer Place</li>
+							<li>Hemlock</li>
+							<li>Thee Parkside</li>
+							<li>Zeitgeist</li>
+							<li>Savoy Tavoli</li>
+							<li>Edinburgh Castle</li>
+							<li>Dr. Teeth &amp; the Electric Mayhem</li>
+							<li>Vertigo</li>
+							<li>Toad Hall</li>
+							<li>Bacchus Kirk</li>
+						</ol>
+						</details>
 					</div>
 				</div>
-				<aside>
-					<div>
-						<h6> Page formattimg </h6>
-						<ul>
-							<li>Article</li>
-							<li>Aside</li>
-							<li>Footer</li>
-							<li>Header</li>
-						</ul>
-						<h6> Tags </h6>
-						<ul>
-							<li>
-								Heading
-								<ul>
-									<li> h1 </li>
-									<li> h2 </li>
-									<li> h3 </li>
-									<li> h4 </li>
-									<li> h5 </li>
-									<li> h6 </li>
-								</ul>
-							</li>
-							<li>
-								Lists
-								<ul>
-									<li> ol </li>
-									<li> ul </li>
-									<li> li </li>
-								</ul>
-							</li>
-							<li>
-								Formatting
-								<ul>
-									<li> p </li>
-									<li> pre </li>
-									<li> div </li>
-									<li> a href="[url]"</li>
-									<li> <a href="http://www.opinionatedgeek.com/dotnet/tools/htmlencode/encode.aspx">Encode Code to HTML</a></li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</aside>
-				<!-- Loading footer with AJAX -->
-				<div class="footerPlaceholder"></div>
 			</div>
+			<aside>
+				<div>
+					<h6> Page formattimg </h6>
+					<ul>
+						<li>Article</li>
+						<li>Aside</li>
+						<li>Footer</li>
+						<li>Header</li>
+					</ul>
+					<h6> Tags </h6>
+					<ul>
+						<li>
+							Heading
+							<ul>
+								<li> h1 </li>
+								<li> h2 </li>
+								<li> h3 </li>
+								<li> h4 </li>
+								<li> h5 </li>
+								<li> h6 </li>
+							</ul>
+						</li>
+						<li>
+							Lists
+							<ul>
+								<li> ol </li>
+								<li> ul </li>
+								<li> li </li>
+							</ul>
+						</li>
+						<li>
+							Formatting
+							<ul>
+								<li> p </li>
+								<li> pre </li>
+								<li> div </li>
+								<li> a href="[url]"</li>
+								<li> <a href="http://www.opinionatedgeek.com/dotnet/tools/htmlencode/encode.aspx">Encode Code to HTML</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</aside>
+			<!-- Loading footer with AJAX -->
+			<div class="footerPlaceholder"></div>
 			</article>
 		</div>
 		<!-- build:js scripts/vendor.js -->
