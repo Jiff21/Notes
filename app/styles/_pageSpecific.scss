@@ -310,7 +310,7 @@ $jasmineBlue: #ADD8E6;
 	header {
 		margin-top: 40px;
 	}
-	article {
+	.main {
 		@include make-xs-column(12);
 		@include make-sm-column(12);
 		@include make-md-column(12);
