@@ -28,363 +28,353 @@
 			<div>
 				<div class="jumbotron">
 					<div class="darkLayer">
-						<div class="layerText">
-							<h1>CSS Notes</h1>
-							<p class="lead">"That depends on what your definition of "is" is." - William "Bill" Clinton</p>
-						</div>
+						<h1>CSS Notes</h1>
+						<p class="lead">"That depends on what your definition of "is" is." - William "Bill" Clinton</p>
 					</div>
 				</div>
 			</div>
-			<div class="main">
-				<div class="row">
-					<div class="col-md-8 col-sm-8 col-xs-12">
-						<article id="container">
-						<div id="background">CSS</div>
-						<div id="background2">CSS<br />CSS</div>
-						<h3> Let's talk about CSS (H3 of 6 Header).</h3>
-						<p class="first new">
-						On this page we're going to talk about CSS.  When writing CSS you can just style by
-						using different element names on the page by using them as a selector.  If you want to <span class="term">
-						Select a Class</span>, you need to put a period in front of the name <code class="example">.example
-						</code>.  If you want to use an <span class="term">ID selector</span>, use the Pound symbol in front of
-						the name <code class="example">#example:</code> Setting the overflow property to auto is a neat
-						trick. When you are working with borders always remember TRBL (Top, Right, Bottom, Left). You can add
-						multiple classes to a html element using whitespace. You make a <span class="term">Comment</span> by
-						using a backslash and a asterisk <code class="example">/* This is a comment */</code>.
-						</p>
-						<p>
-						Selectors are very important in styling your page.  <span class="term">Descendant Selectors</span>
-						just require a space, e.g.  <code class="example">h2 p</code> . Child selectors are similar
-						but they don't target the whole page, e.g.  <code class="example">
-						h2 > p</code>. <span class="term">Adjacent Selectors</span>, e.g. <code class="example">
-						h1 + p, H2 + p</code>, can be useful if there if you want to select
-						something that follows another thing directly and is part of the same parent,
-						element.  <span class="term">Attribute Selectors</span> look for things with the thing in brackets
-						e.g. <code class="example">a[title]</code> or <code class="example">a[title="example"]</code>. When using Attribute
-						selectors you can use a tilde <code class="example">~</code> before the equal sign to find
-						anything with that will match as a full attribute values separated by whitespace
-						or the asterisk <code class="example">*</code> to do a wildcard search looking for literal
-						values. If you use a carrot <code class="example">^</code> to look for anything that
-						starts with your search, while you can use a dollar sign <code class="example">($)</code>
-						to look for anything that has that end. For more on selector and values please visit the
-						<a href="http://www.w3.org/TR/selectors/#selectors" target="_blank"> W3C Page </a>
-						</p>
-						<p>
-						<span class="term">Suedo-Class Selectors </span>are used for selecting elements that are outside
-						the DOM or in a state through User interaction.  You use them by  placing a colon, e.g.  <code class="example">
-						:hover</code> before the word.  The example is a <span class="term">Dynamic Selector</span> which are
-						the most common and can be used with a descendant selector, e.g. <code class="example">a:hover</code> and
-						whitespace does matter when doing this.  When using the common linke ones be sure to remember Love Hate
-						(link, visted, hover &amp; active) so they behave correctly. Learn UI element state selectors when they become
-						supported. <span class="term"> Structural Suedo-Class Selectors</span> can be used to target elements based
-						on pattern regarding sibling element, e.g. <code class="example">:nth-child(odd)</code>.
-						<a href="http://www.w3.org/TR/selectors/#structural-pseudos" target="_blank">Structural Selectors</a> use terms like
-						first-child, only-child or last-of-type.  You can also target things using <span class="term">before</span>
-						and <span class="term"> after </span>, e.g.<code class="example"> a::after</code>.  Sometimes you may want
-						to use the <span class="term">content</span> property with the <span class="term">attribute</span>
-						to display the value of an attribute. <code class="example">a::after{content:" attr(href)";}</code>.</p>
-						<p>
-						Resolving conflicts is an important part of CSS.  The <span class="term">Cascade</span> is what you think
-						it is and the last rule to get parsed will win... most of the time.  <span class="term">Inheritence</span>
-						is also what you think it is, but it's important to remember that when you use relative properties these
-						effects can become cumlative.  <span class="term">Specifity</span> is where it gets complex.  ID tags are
-						worth 100 Points, Classes are worth 10 Points &amp; Elements are worth 1 <span class="example"> (so "#aside p"
-						would be worth 101 points while "div p"" would only be worth 2)</span>.  The <span class="term"> Important
-						Declaration</span> can overide all of this <code class="example">color:green !important;</code>, but you
-						shouldn't really use it because it's the cheap way out and will make code impossible to fix later.
-						</p>
-						<p>
-						Let's talk about font formatting. Remember <span class="term">font-family</span> properties are case sensitive
-						and fonts should be stacked in case they do not have it.  You can use <span class="term">@font-face</span> to use
-						fonts the User may not have, if you do be sure to put it at top of your style sheet and order the styles
-						(normal, italic, bold, bold-italic). <span class="term">text-transform</span> can be used to change capitalization
-						and cover up inconsistencies with the source text.
-						</p>
-						<p>
-						The property for aligning text is called text-align.  Kerning doesn't exist yet but may be comiing with CSS3,
-						for now we have to live with letter-spacing and word-spacing.  Rendering matters a bit and text will look a bit
-						better if you optimize for legibility <code class="example">text-rendering:optimizeLegibility</code> or can
-						load faster if you go for speed <code class="example">text-rendering:optimizeSpeed</code>.  It may seem simple
-						but you can <span class="term"> Indent</span> text using the text-indent property
-						<code class="example">text-indent: 3em</code>.  You can use a negative indent to create hanging punctuation
-						if you have quotes that are in their own paragraph.  If you're a graphic designer you know <span class="term">
-						line-height</span> as ledding.  If you're going to let line-height be inherited you should use numerical values.
-						<code class="example">line-height: 1.8</code>.  Remember Margin and Padding does not inherit unless you tell it
-						to.
-						</p>
-						<p>
-						The <span class="term">Box Model</span> is the rectangular box that all your elements are contained in and are
-						made up of the Margin, Padding, Border, width and height.  <span class="term">Padding</span> is the space in
-						between the content and the border.  While the <span class="term">Margin</span> is the space between the border
-						and the edge of the box, although they shouldn't be counted on to set the container box because the can be
-						ignored if there's not enough room. When calculating the size of a box it's important remember to double the
-						border, padding, and margin space because if it's appearing on both sides of the element.  Margins act funny
-						vertically because of Vertical Margin Collapse and Floats. <span class="term"> Vertical Margin Collapse </span>
-						is when two margins directly touch only the largest value is counted (borders and padding can prevent them from
-						toucing directly).  You can also use margin-left:auto with margin-right:auto to auto-cent objects with defined
-						widths.  With Padding the same sort of thing can happen horizontally if there is not enough space in
-						the parent element.   You can use border-radius with borders of unequel thickness to make some
-						<a href="http://www.w3.org/TR/css3-background/#corner-shaping" target="_blank">Cool Edges</a>.  If you're using
-						a background image in an external CSS file the link is relative to the CSS file not the html. When using
-						<span class="term"> background-poistion </span> the first number represents horizontal while the second number
-						is the vertical.  If you use percentages with background position it will find that spot on the image then
-						center it at that percentage of the element. If you use multiple images be sure to stack the top one first and
-						use a comma to seperate the url() selectors then use the background-position listing the positions respectively
-						also seperated by a comma.
-						</p>
-						<p>
-						There are a few <a href="http://www.w3.org/TR/css3-color/#html4" target="_blank"> Basic Color Keywords </a>
-						that have been around since before time.  There's also an <a href="http://www.w3.org/TR/css3-color/#svg-color"
-						target="_blank"> Extended List </a> that's pretty well supported as well. You can also use <span class="term">
-						Hexadecimal Notation</span>(<code class="example">#ab19ef</code>) where each set of two characters represents
-						red, green and blue respectively on a chart. If the pairs match you can use a 3 digit shorthand
-						<code class="example">(#fff)</code>. <span class="term"> RBG Values (</span> <code class="example">
-						rgb(324, 235, 12)</code>) are red, green, and blue values up to 255.  If you site has a Color Palate you may
-						want to leave the color values at the top of your style sheet in a comment so they can be used without
-						memorization.  Another option is <span class="term"> HSL</span>, it uses a 0-360 Hue value and percentages of
-						Saturation and lightness (<code class="example">hsl(240,80%,40%)</code>). <span class="term">Opacity </span>
-						can be set to a value between 0 and 1 in decimals.  And while using that term is the only one that works on
-						images, you can set element values using <span class="term"> rgba</span> or <span class="term"> hsla </span>
-						the "a" being an alpha channel that also a 0-1 value.
-						</p>
-						<p>
-						<span class="term"> Drop Shadows </span> can be added with the box-shadow property (<code class="example">
-						box-shadow:10px 10px 5px 5px</code>).  The first two numbers are horizontal and vertical length respectively,
-						the third is blur radius and the last is spread.  <span class="term"> Gradients </span> are fairly new but
-						they are rapidly being adopted.  <code class="example">linear-gradient(top, #00000 0%, #ffffff 100%)</code>
-						</p>
-						</article>
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-12">
-						<aside>
-							<h4> Properties </h4>
-							<p> A full list of <a href="http://www.w3.org/TR/CSS21/propidx.html" target="_blank"> Properties</a>.</p>
-							<h5> Properties used on Fonts </h5>
-							<ul>
-								<li>
-									<h6> font-family (common) </h6>
-									<ul>
-										<li> Ariel </li>
-										<li> Times </li>
-										<li>"Times New Roman"</li>
-										<li> Helvetica </li>
-										<li> Georgia </li>
-									</ul>
-								</li>
-								<li>
-									<h6> font-family (defaults) </h6>
-									<ul>
-										<li> serif </li>
-										<li> san-serif </li>
-										<li> cursive </li>
-										<li> fantasy </li>
-									</ul>
-								</li>
-								<li>
-									<h6> font-size </h6>
-									<ul>
-										<li> 12pt </li>
-										<li> 12px </li>
-										<li> 120% </li>
-										<li> 1.2em </li>
-									</ul>
-								</li>
-								<li>
-									<h6> font-weight </h6>
-									<ul>
-										<li> bold </li>
-										<li> lighter </li>
-										<li> 100 </li>
-										<li> 900 </li>
-									</ul>
-								</li>
-								<li>
-									<h6> font-style </h6>
-									<ul><li> italic </li></ul>
-								</li>
-								<li>
-									<h6> text-decoration </h6>
-									<ul>
-										<li> underline </li>
-										<li> line-through </li>
-										<li> none </li>
-										<li> blink </li>
-									</ul>
-								</li>
-								<li>
-									<h6> text-transform </h6>
-									<ul>
-										<li> capitalize </li>
-										<li> uppercase </li>
-									</ul>
-								</li>
-								<li>
-									<h6> font-variant </h6>
-									<ul><li> small-caps</li></ul>
-								</li>
-								<li>
-									<h6> text-shadow </h6>
-									<ul>
-										<li> 10px 10px 5px rgba(0, 0, 0, .9) </li>
-									</ul>
-								</li>
-								<li>
-									<h6> color </h6>
-									<ul>
-										<li> saddlebrown </li>
-										<li> #0A4DFF </li>
-										<li> rgb(255, 129, 83) </li>
-										<li> rgb(20%, 30%, 50%) </li>
-										<li> hsl(180, 60%, 99%) </li>
-										<li> rgba(102, 0, 0, .75) </li>
-										<li> hsla(65, 100%, 100%, .6) </li>
-									</ul>
-								</li>
-								<li>
-									<h6> background-color </h6>
-									<ul>
-										<li> maroon </li>
-										<li> rbg(7, 40, 225) </li>
-									</ul>
-								</li>
+			<article>
+			<div id="background">CSS</div>
+			<div id="background2">CSS<br />CSS</div>
+			<h3> Let's talk about CSS (H3 of 6 Header).</h3>
+			<p class="first new">
+			On this page we're going to talk about CSS.  When writing CSS you can just style by
+			using different element names on the page by using them as a selector.  If you want to <span class="term">
+			Select a Class</span>, you need to put a period in front of the name <code class="example">.example
+			</code>.  If you want to use an <span class="term">ID selector</span>, use the Pound symbol in front of
+			the name <code class="example">#example:</code> Setting the overflow property to auto is a neat
+			trick. When you are working with borders always remember TRBL (Top, Right, Bottom, Left). You can add
+			multiple classes to a html element using whitespace. You make a <span class="term">Comment</span> by
+			using a backslash and a asterisk <code class="example">/* This is a comment */</code>.
+			</p>
+			<p>
+			Selectors are very important in styling your page.  <span class="term">Descendant Selectors</span>
+			just require a space, e.g.  <code class="example">h2 p</code> . Child selectors are similar
+			but they don't target the whole page, e.g.  <code class="example">
+			h2 > p</code>. <span class="term">Adjacent Selectors</span>, e.g. <code class="example">
+			h1 + p, H2 + p</code>, can be useful if there if you want to select
+			something that follows another thing directly and is part of the same parent,
+			element.  <span class="term">Attribute Selectors</span> look for things with the thing in brackets
+			e.g. <code class="example">a[title]</code> or <code class="example">a[title="example"]</code>. When using Attribute
+			selectors you can use a tilde <code class="example">~</code> before the equal sign to find
+			anything with that will match as a full attribute values separated by whitespace
+			or the asterisk <code class="example">*</code> to do a wildcard search looking for literal
+			values. If you use a carrot <code class="example">^</code> to look for anything that
+			starts with your search, while you can use a dollar sign <code class="example">($)</code>
+			to look for anything that has that end. For more on selector and values please visit the
+			<a href="http://www.w3.org/TR/selectors/#selectors" target="_blank"> W3C Page </a>
+			</p>
+			<p>
+			<span class="term">Suedo-Class Selectors </span>are used for selecting elements that are outside
+			the DOM or in a state through User interaction.  You use them by  placing a colon, e.g.  <code class="example">
+			:hover</code> before the word.  The example is a <span class="term">Dynamic Selector</span> which are
+			the most common and can be used with a descendant selector, e.g. <code class="example">a:hover</code> and
+			whitespace does matter when doing this.  When using the common linke ones be sure to remember Love Hate
+			(link, visted, hover &amp; active) so they behave correctly. Learn UI element state selectors when they become
+			supported. <span class="term"> Structural Suedo-Class Selectors</span> can be used to target elements based
+			on pattern regarding sibling element, e.g. <code class="example">:nth-child(odd)</code>.
+			<a href="http://www.w3.org/TR/selectors/#structural-pseudos" target="_blank">Structural Selectors</a> use terms like
+			first-child, only-child or last-of-type.  You can also target things using <span class="term">before</span>
+			and <span class="term"> after </span>, e.g.<code class="example"> a::after</code>.  Sometimes you may want
+			to use the <span class="term">content</span> property with the <span class="term">attribute</span>
+			to display the value of an attribute. <code class="example">a::after{content:" attr(href)";}</code>.</p>
+			<p>
+			Resolving conflicts is an important part of CSS.  The <span class="term">Cascade</span> is what you think
+			it is and the last rule to get parsed will win... most of the time.  <span class="term">Inheritence</span>
+			is also what you think it is, but it's important to remember that when you use relative properties these
+			effects can become cumlative.  <span class="term">Specifity</span> is where it gets complex.  ID tags are
+			worth 100 Points, Classes are worth 10 Points &amp; Elements are worth 1 <span class="example"> (so "#aside p"
+			would be worth 101 points while "div p"" would only be worth 2)</span>.  The <span class="term"> Important
+			Declaration</span> can overide all of this <code class="example">color:green !important;</code>, but you
+			shouldn't really use it because it's the cheap way out and will make code impossible to fix later.
+			</p>
+			<p>
+			Let's talk about font formatting. Remember <span class="term">font-family</span> properties are case sensitive
+			and fonts should be stacked in case they do not have it.  You can use <span class="term">@font-face</span> to use
+			fonts the User may not have, if you do be sure to put it at top of your style sheet and order the styles
+			(normal, italic, bold, bold-italic). <span class="term">text-transform</span> can be used to change capitalization
+			and cover up inconsistencies with the source text.
+			</p>
+			<p>
+			The property for aligning text is called text-align.  Kerning doesn't exist yet but may be comiing with CSS3,
+			for now we have to live with letter-spacing and word-spacing.  Rendering matters a bit and text will look a bit
+			better if you optimize for legibility <code class="example">text-rendering:optimizeLegibility</code> or can
+			load faster if you go for speed <code class="example">text-rendering:optimizeSpeed</code>.  It may seem simple
+			but you can <span class="term"> Indent</span> text using the text-indent property
+			<code class="example">text-indent: 3em</code>.  You can use a negative indent to create hanging punctuation
+			if you have quotes that are in their own paragraph.  If you're a graphic designer you know <span class="term">
+			line-height</span> as ledding.  If you're going to let line-height be inherited you should use numerical values.
+			<code class="example">line-height: 1.8</code>.  Remember Margin and Padding does not inherit unless you tell it
+			to.
+			</p>
+			<p>
+			The <span class="term">Box Model</span> is the rectangular box that all your elements are contained in and are
+			made up of the Margin, Padding, Border, width and height.  <span class="term">Padding</span> is the space in
+			between the content and the border.  While the <span class="term">Margin</span> is the space between the border
+			and the edge of the box, although they shouldn't be counted on to set the container box because the can be
+			ignored if there's not enough room. When calculating the size of a box it's important remember to double the
+			border, padding, and margin space because if it's appearing on both sides of the element.  Margins act funny
+			vertically because of Vertical Margin Collapse and Floats. <span class="term"> Vertical Margin Collapse </span>
+			is when two margins directly touch only the largest value is counted (borders and padding can prevent them from
+			toucing directly).  You can also use margin-left:auto with margin-right:auto to auto-cent objects with defined
+			widths.  With Padding the same sort of thing can happen horizontally if there is not enough space in
+			the parent element.   You can use border-radius with borders of unequel thickness to make some
+			<a href="http://www.w3.org/TR/css3-background/#corner-shaping" target="_blank">Cool Edges</a>.  If you're using
+			a background image in an external CSS file the link is relative to the CSS file not the html. When using
+			<span class="term"> background-poistion </span> the first number represents horizontal while the second number
+			is the vertical.  If you use percentages with background position it will find that spot on the image then
+			center it at that percentage of the element. If you use multiple images be sure to stack the top one first and
+			use a comma to seperate the url() selectors then use the background-position listing the positions respectively
+			also seperated by a comma.
+			</p>
+			<p>
+			There are a few <a href="http://www.w3.org/TR/css3-color/#html4" target="_blank"> Basic Color Keywords </a>
+			that have been around since before time.  There's also an <a href="http://www.w3.org/TR/css3-color/#svg-color"
+			target="_blank"> Extended List </a> that's pretty well supported as well. You can also use <span class="term">
+			Hexadecimal Notation</span>(<code class="example">#ab19ef</code>) where each set of two characters represents
+			red, green and blue respectively on a chart. If the pairs match you can use a 3 digit shorthand
+			<code class="example">(#fff)</code>. <span class="term"> RBG Values (</span> <code class="example">
+			rgb(324, 235, 12)</code>) are red, green, and blue values up to 255.  If you site has a Color Palate you may
+			want to leave the color values at the top of your style sheet in a comment so they can be used without
+			memorization.  Another option is <span class="term"> HSL</span>, it uses a 0-360 Hue value and percentages of
+			Saturation and lightness (<code class="example">hsl(240,80%,40%)</code>). <span class="term">Opacity </span>
+			can be set to a value between 0 and 1 in decimals.  And while using that term is the only one that works on
+			images, you can set element values using <span class="term"> rgba</span> or <span class="term"> hsla </span>
+			the "a" being an alpha channel that also a 0-1 value.
+			</p>
+			<p>
+			<span class="term"> Drop Shadows </span> can be added with the box-shadow property (<code class="example">
+			box-shadow:10px 10px 5px 5px</code>).  The first two numbers are horizontal and vertical length respectively,
+			the third is blur radius and the last is spread.  <span class="term"> Gradients </span> are fairly new but
+			they are rapidly being adopted.  <code class="example">linear-gradient(top, #00000 0%, #ffffff 100%)</code>
+			</p>
+			</article>
+			<aside>
+				<h4> Properties </h4>
+				<p> A full list of <a href="http://www.w3.org/TR/CSS21/propidx.html" target="_blank"> Properties</a>.</p>
+				<h5> Properties used on Fonts </h5>
+				<ul>
+					<li>
+						<h6> font-family (common) </h6>
+						<ul>
+							<li> Ariel </li>
+							<li> Times </li>
+							<li>"Times New Roman"</li>
+							<li> Helvetica </li>
+							<li> Georgia </li>
+						</ul>
+					</li>
+					<li>
+						<h6> font-family (defaults) </h6>
+						<ul>
+							<li> serif </li>
+							<li> san-serif </li>
+							<li> cursive </li>
+							<li> fantasy </li>
+						</ul>
+					</li>
+					<li>
+						<h6> font-size </h6>
+						<ul>
+							<li> 12pt </li>
+							<li> 12px </li>
+							<li> 120% </li>
+							<li> 1.2em </li>
+						</ul>
+					</li>
+					<li>
+						<h6> font-weight </h6>
+						<ul>
+							<li> bold </li>
+							<li> lighter </li>
+							<li> 100 </li>
+							<li> 900 </li>
+						</ul>
+					</li>
+					<li>
+						<h6> font-style </h6>
+						<ul><li> italic </li></ul>
+					</li>
+					<li>
+						<h6> text-decoration </h6>
+						<ul>
+							<li> underline </li>
+							<li> line-through </li>
+							<li> none </li>
+							<li> blink </li>
+						</ul>
+					</li>
+					<li>
+						<h6> text-transform </h6>
+						<ul>
+							<li> capitalize </li>
+							<li> uppercase </li>
+						</ul>
+					</li>
+					<li>
+						<h6> font-variant </h6>
+						<ul><li> small-caps</li></ul>
+					</li>
+					<li>
+						<h6> text-shadow </h6>
+						<ul>
+							<li> 10px 10px 5px rgba(0, 0, 0, .9) </li>
+						</ul>
+					</li>
+					<li>
+						<h6> color </h6>
+						<ul>
+							<li> saddlebrown </li>
+							<li> #0A4DFF </li>
+							<li> rgb(255, 129, 83) </li>
+							<li> rgb(20%, 30%, 50%) </li>
+							<li> hsl(180, 60%, 99%) </li>
+							<li> rgba(102, 0, 0, .75) </li>
+							<li> hsla(65, 100%, 100%, .6) </li>
+						</ul>
+					</li>
+					<li>
+						<h6> background-color </h6>
+						<ul>
+							<li> maroon </li>
+							<li> rbg(7, 40, 225) </li>
+						</ul>
+					</li>
+				</ul>
+				<h5> Properties for formatting </h5>
+				<ul>
+					<li>
+						<h6> border </h6>
+						<ul>
+							<li> 1px solid #300 </li>
+							<li> 5px 10px 5px 10px </li>
+							<li> dotted </li>
+							<li> dashed </li>
+							<li> 4px groove #fff </li>
+							<li> 4px double #F00 </li>
+							<li> 4px ridge #222 </li>
+							<li> 4px inset #f00 </li>
+							<li> 4px outset #f00 </li>
+							<li> min-width </li>
+						</ul>
+					</li>
+					<li>
+						<h6> border-radius </h6>
+						<ul>
+							<li> 25px </li>
+							<li> 25px/10px </li>
+						</ul>
+					</li>
+					<li>
+						<h6> margin </h6>
+						<ul>
+							<li> 10pt 0pt 10pt 0pt </li>
+							<li> 10px 0px </li>
+						</ul>
+					</li>
+					<li>
+						<h6> padding </h6>
+						<ul>
+							<li> 10% </li>
+							<li> 10px 0 px 10px </li>
+						</ul>
+					</li>
+					<li>
+						<h6> background </h6>
+						<ul>
+							<li> slategrey </li>
+							<li> #f00 </li>
+							<li> linear-gradient(top, #00000 0%, #ffffff 100%) <li>
 							</ul>
-							<h5> Properties for formatting </h5>
+						</li>
+						<li>
+							<h6> opacity </h6>
 							<ul>
-								<li>
-									<h6> border </h6>
-									<ul>
-										<li> 1px solid #300 </li>
-										<li> 5px 10px 5px 10px </li>
-										<li> dotted </li>
-										<li> dashed </li>
-										<li> 4px groove #fff </li>
-										<li> 4px double #F00 </li>
-										<li> 4px ridge #222 </li>
-										<li> 4px inset #f00 </li>
-										<li> 4px outset #f00 </li>
-										<li> min-width </li>
-									</ul>
-								</li>
-								<li>
-									<h6> border-radius </h6>
-									<ul>
-										<li> 25px </li>
-										<li> 25px/10px </li>
-									</ul>
-								</li>
-								<li>
-									<h6> margin </h6>
-									<ul>
-										<li> 10pt 0pt 10pt 0pt </li>
-										<li> 10px 0px </li>
-									</ul>
-								</li>
-								<li>
-									<h6> padding </h6>
-									<ul>
-										<li> 10% </li>
-										<li> 10px 0 px 10px </li>
-									</ul>
-								</li>
-								<li>
-									<h6> background </h6>
-									<ul>
-										<li> slategrey </li>
-										<li> #f00 </li>
-										<li> linear-gradient(top, #00000 0%, #ffffff 100%) <li>
-										</ul>
-									</li>
-									<li>
-										<h6> opacity </h6>
-										<ul>
-											<li> .85 </li>
-										</ul>
-									</li>
-									<li>
-										<h6> clear </h6>
-										<ul>
-											<li> left </li>
-											<li> right </li>
-											<li> both </li>
-										</ul>
-									</li>
-									<li>
-										<h6> content </h6>
-									</li>
-									<li>
-										<h6> overflow </h6>
-										<ul>
-											<li> auto </li>
-											<li> hidden </li>
-										</ul>
-									</li>
-									<li>
-										<h6> background-image </h6>
-										<ul>
-											<li> url(../images/tweet_90.png) </li>
-											<li> url(images/tweet_90.png), url(../_images/pic.jpg) </li>
-										</ul>
-									</li>
-									<li>
-										<h6> background-size </h6>
-										<ul>
-											<li> auto </li>
-											<li> cover </li>
-											<li> 100% </li>
-											<li> 225px, 50px </li>
-											<li> contain </li>
-										</ul>
-									</li>
-									<li>
-										<h6> background-repeat </h6>
-										<ul>
-											<li> repeat </li>
-											<li> repeat-x </li>
-											<li> no-repeat </li>
-										</ul>
-									</li>
-									<li>
-										<h6> background-position </h6>
-										<ul>
-											<li> right top </li>
-											<li> left bottom </li>
-											<li> center </li>
-											<li> 50px 100px </li>
-											<li> 1em 2em </li>
-											<li> 50% 50% </li>
-											<li> top right, 50% 50% </li>
-										</ul>
-									</li>
-									<li>
-										<h6> background-attachment </h6>
-										<ul>
-											<li> fixed </li>
-										</ul>
-									</li>
-									<li>
-										<h6> background(shorthand) </h6>
-										<ul>
-											<li> #666 url(../_images/pic.png) no-repeat right top</li>
-											<li> url(_images/pic.png) no-repeat right top, url(../_images/pic.png)
-											no-repeat right top, #666</li>
-											<li> rgb(237, 228, 214) </li>
-										</ul>
-									</li>
-									<li>
-										<h6> box-shadow </h6>
-										<ul>
-											<li> 10px 10px 5px 5px rgba(0, 0, 0, .7) </li>
-										</ul>
-									</li>
-								</ul>
-							</aside>
-						</div>
-						<div>
-							<!-- Loading footer with AJAX -->
-							<div class="footerPlaceholder"></div>
-						</div>
-					</div>
-				</div>
+								<li> .85 </li>
+							</ul>
+						</li>
+						<li>
+							<h6> clear </h6>
+							<ul>
+								<li> left </li>
+								<li> right </li>
+								<li> both </li>
+							</ul>
+						</li>
+						<li>
+							<h6> content </h6>
+						</li>
+						<li>
+							<h6> overflow </h6>
+							<ul>
+								<li> auto </li>
+								<li> hidden </li>
+							</ul>
+						</li>
+						<li>
+							<h6> background-image </h6>
+							<ul>
+								<li> url(../images/tweet_90.png) </li>
+								<li> url(images/tweet_90.png), url(../_images/pic.jpg) </li>
+							</ul>
+						</li>
+						<li>
+							<h6> background-size </h6>
+							<ul>
+								<li> auto </li>
+								<li> cover </li>
+								<li> 100% </li>
+								<li> 225px, 50px </li>
+								<li> contain </li>
+							</ul>
+						</li>
+						<li>
+							<h6> background-repeat </h6>
+							<ul>
+								<li> repeat </li>
+								<li> repeat-x </li>
+								<li> no-repeat </li>
+							</ul>
+						</li>
+						<li>
+							<h6> background-position </h6>
+							<ul>
+								<li> right top </li>
+								<li> left bottom </li>
+								<li> center </li>
+								<li> 50px 100px </li>
+								<li> 1em 2em </li>
+								<li> 50% 50% </li>
+								<li> top right, 50% 50% </li>
+							</ul>
+						</li>
+						<li>
+							<h6> background-attachment </h6>
+							<ul>
+								<li> fixed </li>
+							</ul>
+						</li>
+						<li>
+							<h6> background(shorthand) </h6>
+							<ul>
+								<li> #666 url(../_images/pic.png) no-repeat right top</li>
+								<li> url(_images/pic.png) no-repeat right top, url(../_images/pic.png)
+								no-repeat right top, #666</li>
+								<li> rgb(237, 228, 214) </li>
+							</ul>
+						</li>
+						<li>
+							<h6> box-shadow </h6>
+							<ul>
+								<li> 10px 10px 5px 5px rgba(0, 0, 0, .7) </li>
+							</ul>
+						</li>
+					</li>
+				</ul>
+			</aside>
+			<div>
+				<!-- Loading footer with AJAX -->
+				<div class="footerPlaceholder"></div>
 			</div>
 			<!-- build:js scripts/vendor.js -->
 			<!-- bower:js -->
