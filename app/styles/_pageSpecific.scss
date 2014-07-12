@@ -36,6 +36,7 @@
 		background-image: url(../images/RooseveltVsBigfoot.jpg);
 		background-position: center;
 			h1 {
+				margin-top: 2em;
 				color: white;
 			}
 			p {
@@ -239,7 +240,7 @@ $jasmineBlue: #ADD8E6;
 		background-position: center;
 			h1 {
 				color: white;
-				margin-top: 600px;
+				margin-top: 4em;
 			}
 			p {
 				color: white;
@@ -286,7 +287,6 @@ $jasmineBlue: #ADD8E6;
 .terminalBody {
 	.jumbotron {
 		background-color: #000;
-
 	}	
 	background-color: #000;
 	color: #63DE01;
@@ -304,8 +304,20 @@ $jasmineBlue: #ADD8E6;
 	.footer {
 		color: #63DE01;
 	}
+}
 
+.ardBody {
+	header {
+		margin-top: 40px;
+	}
+	.background {
+		background-image: url(../images/ARD.jpg);
+		background-position: center;
+		background-repeat: no-repeat;
 
-
+	}
+	.lightLayer{
+		opacity: .9;
+	}
 }
 

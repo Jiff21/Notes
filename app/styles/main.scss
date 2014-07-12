@@ -43,6 +43,27 @@ body {
 	}
 }
 
+
+/* Styling for the Old Header Class.  May be I can get rid of this or style into jumbrotrons with LESS. */
+header{
+	background-color: Black;
+	border-radius: 25px;
+	font-variant: small-caps;
+	color: #FFF;
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 30px;
+	button{
+		border: 1px solid #dcdcdc;
+		color: #777777;
+		font-size: 12px;
+		font-weight: bold;
+		width: 50px;
+		text-align: center;
+		text-shadow: 1px 1px 0px #000;
+	}
+}
+
 /* Custom page footer */
 .footer {
 	padding-top: 19px;
@@ -86,6 +107,7 @@ body {
 
 /* Footer Styling here */
 .footer {
+	clear: both;
 	.glyphicon {
 		margin: 0px 2px 0px 10px;
 	}
@@ -162,27 +184,6 @@ aside ul ul li:first-child{
 	margin: 2px 0px 1px 0px;
 }
 
-
-/* Styling for the Old Header Class.  May be I can get rid of this or style into jumbrotrons with LESS. */
-header{
-	background-color: Black;
-	border-radius: 25px;
-	font-variant: small-caps;
-	color: #FFF;
-	text-align: center;
-	padding: 10px;
-	margin-bottom: 30px;
-	button{
-		border:1px solid #dcdcdc;
-		color:#777777;
-		font-size:12px;
-		font-weight:bold;
-		width:50px;
-		text-align:center;
-		text-shadow:1px 1px 0px #ffffff;
-	}
-}
-
 /* For Jumbotron images that need an overlay to make text more readable. */
 .jumbotron{
 	background-size: cover;
@@ -203,15 +204,15 @@ header{
 		height: 100%;
 		@include border-radius(20px);	
 	}
+}
 
-	.darkLayer {
-		color: #FFF;
-		background-color: #000;
-	}
-	.lightLayer {
-		color: #000;
-		background-color: #FFF;
-	}
+.darkLayer {
+	color: #FFF;
+	background-color: #000;
+}
+.lightLayer {
+	color: #000;
+	background-color: #FFF;
 }
 
 @import 'pageSpecific';
