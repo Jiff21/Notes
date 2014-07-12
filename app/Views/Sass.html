@@ -36,7 +36,7 @@
 			<h3>SASS</h3>
 			<p>To see command line Sass controls type <code class="example">Sass -?</code> You can update a stylesheet on the command line using <code class="example">sass --update <span class="replace">stylesheetname.scss</span></code> or you can keep it active with <code class="example">sass --watch <span class="replace">foldername:cssfoldername</span></code>.  Each of the last two commands can be run on a folder or a individual file, the new file name can be different than scss file name, just add <code>:<span class ="replace">newFileOrFoloderName</span></code> to the end of the command with no space.  You can change how it is converted to css using the <code class="example">-style</code> command.  There are 4 styles: nested (default), expanded (most human friendly), compact, &amp; compressed (minimized for production).
 			</p>
-			<p>You can import a stylesheet with <code class="example">@import "<span class="replace">import_me</span>.scss"</code>. <span class="term">Variables</span> are set by using a $ in front of the word and can be used repeatedly as you would expect. They also can be used to append content with string as so:
+			<p>You can import a stylesheet with <code class="example">@import "<span class="replace">import_me</span>.scss"</code>. <span class="term">Variables</span> are set by using a <code class="example">$</code> in front of the word and can be used repeatedly as you would expect. They also can be used to append content with string as so:
 			<div class="example2">
 				$myString ="This will end up after the paragraph."<br>
 				#iDParag:after {<br>
@@ -65,7 +65,8 @@
 			</div>
 			</p>
 			<h3>LESS</h3>
-			<p>Here's a sample of a <span class="term">mixin</span> in use:
+
+			<p> In production you want to compile the less files to css before use rather than using Javascript on the page. After initial compile simpLess watches the files as long as it's open. <span class="term">Variables</span> are set by using a @ in front of the word and can be used repeatedly as you would expect. <span class="term">Mixins</span> are set by using a <code class="example">.</code> in front of the word.  You can set a variable with parenthesis and set a default like in Sass. You can also use they keyword <code class="example">@arguments</code> to simply use parameters in the order they are passed in. Here's a sample of a mixin with <span class="term">pattern matching</span>:
 			<div class="example2">
 				.alert(warning){<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;@color: yellow;<br>
@@ -84,6 +85,15 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;.alert(@type);<br>
 				}
 			</div>
+			There are also <span class="term">Gaurded Mixins</span> that allow you to use the word <code class="example">when</code> to apply the style if it meets a condition.  This looks like, 
+			<div class="example2">
+			.@3dText(@color) when lightness(@color) >= 50% {<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;color: @color;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 1px 1px 0px lighten(@color, 5%),<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2px, 2px, 0px, lighten(@color, 10%),<br>
+			}
+			</div>
+			Like Sass, Less lets you use nested rules and they work the same, including the &amp; for sudo classes.  <span class="term">Operators</span>, which just means you can do math the same way you do in Sass. You can import a stylesheet with <code class="example">@import "<span class="replace">import_me</span>.less"</code>. 
 			</p>
 			</article>
 			<div class="col-md-4 col-sm-4 col-xs-12">
@@ -102,21 +112,21 @@
 							</ul>
 							<li>Color Functions</li>
 							<ul>
-								<li>lighten($basecolor, 30%)</li>
-								<li>darken($basecolor, 20%)</li>
-								<li>saturate(color, amount)</li>
-								<li>desaturate(color, amount)</li>
-								<li>fadein(color, amount)</li>
-								<li>fadeout(color, amount)</li>
-								<li>fade(color, amount)</li>
+								<li>lighten($color, 30%)</li>
+								<li>darken($color, 20%)</li>
+								<li>saturate($color, amount)</li>
+								<li>desaturate($color, amount)</li>
+								<li>fadein($color, amount)</li>
+								<li>fadeout($color, amount)</li>
+								<li>fade($color, amount)</li>
 								<li>mix($color1, $color2)</li>
-								<li>hue(color)</li>
-								<li>saturation(color)</li>
-								<li>lightness(color)</li>
-								<li>alpha(color)</li>
-								<li>grayscale(color)</li>
-								<li>complement(color)</li>
-								<li>invert(color)</li>
+								<li>hue($color)</li>
+								<li>saturation($color)</li>
+								<li>lightness($color)</li>
+								<li>alpha($color)</li>
+								<li>grayscale($color)</li>
+								<li>complement($color)</li>
+								<li>invert($color)</li>
 							</ul>
 							<li>Math Functions</li>
 							<ul>
@@ -131,10 +141,38 @@
 						<h6> Less </h6>
 
 						<ul>
-							<li>@baseColor:</li>
+							<li>Variables</li>
 							<ul>
-								<li>lighten(@basecolor, 10%) </li>
-								<li>darken(@basecolor, 40%) </li>
+								<li>@accentColor: #24a;</li>
+								<li>@myString: "something";</li>
+							</ul>
+							<li>Mixins</li>
+							<ul>
+								<li>set with <code class="example">.myBorder: 1px solid black;</code></li>
+								<li>simply use <code class="example">.myBorder;</code></li>
+							</ul>
+							<li>Color functions</li>
+							<ul>
+								<li>lighten(@color, 30%)</li>
+								<li>darken(@color, 20%)</li>
+								<li>saturate(@color, amount)</li>
+								<li>desaturate(@color, amount)</li>
+								<li>fadein(@color, amount)</li>
+								<li>fadeout(@color, amount)</li>
+								<li>fade(@color, amount)</li>
+								<li>spin(@color, amount)</li>
+								<li>mix(@color, @color2)</li>
+								<li>hue(@color)</li>
+								<li>saturation(@color)</li>
+								<li>lightness(@color)</li>
+								<li>alpha(@color)</li>
+							</ul>
+							<li>Math Functions</li>
+							<ul>
+								<li>round(number)</li>
+								<li>ceil(number)</li>
+								<li>floor(number)</li>
+								<li>percentage(number)</li>
 							</ul>
 						</ul>
 					</div>
