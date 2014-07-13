@@ -27,4 +27,8 @@ article{
 	.half {
 		@include make-xs-column(6);
 	}
+	.fourth {
+		@include make-xs-column(12);
+		@include make-md-column(3);
+	}
 }
