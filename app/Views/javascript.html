@@ -31,14 +31,14 @@
 					<p><a class="btn btn-lg btn-success" href="#"><span class="glyphicon glyphicon-fire"></span> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
 				</div>
 			</div>
-			<article id="container" class="col-xs-12 col-sm-8">
-			<header> <!-- Header should not be in article.  Header tag itself seems to be breaking the format tool.-->
-				<h3>Javascript</h3>
-			<p>
-			Press this button for Javascript in action!
-			<button type="submit" value="Submit" onclick="alert('I need to think of something for this to do.')">Button</button>
-			</p>
+			<article>
+			<header> <!-- Header should not be in article.  Header tag itself seems to be breaking the format tool .-->
+			<h3>Javascript</h3>
+			<p>Press this button for Javascript in action!</p>
+			<button type="submit" value="Submit" onclick="alert('I need to think of something for this to do.')">
+			Button</button>
 			</header>
+			<div class="main">
 			<p>
 			A few basic things about Javascript, it is case sensitive, but not whitespace sensitive.  It's
 			important to remember that the code will get executed when the browser hits the code. Best
@@ -57,7 +57,7 @@
 			</p>
 			<p>
 			<span class="term">Conditionals Code</span> is done with if statements. Here's an example:
-			<br>
+			</p>
 			<div class="example2">
 				if (x==100){ <br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(this) <br>
@@ -65,6 +65,7 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(that) <br>
 				}<br>
 			</div>
+			<p>
 			You can nest another argument inside the else, but it is suggested to not nest more than once or twice for
 			the sake of code readiblity.
 			</p>
@@ -87,21 +88,26 @@
 			class="term">for loop</span> starts with the word "for" then opens parenthesis, in the parenthesis you start with a variable
 			being defined, after a comma you set a condition, after another comma you set and incrementor and then close the
 			parenthesis. You follow with curly braces, that will get executed every time the loop runs (e.g. <code class="example">for
-			(var = i, i &lt; 10, i++){console.log(i;};</code>).  A <span class="term">while loop</span> is writen like:<br>
+			(var = i, i &lt; 10, i++){console.log(i;};</code>).  A <span class="term">while loop</span> is writen like:
+			</p>
 			<div class="example2">
 				while (a &lt; 10){<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(a);<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a++;<br>
 			}<br></div>
+			<p>
 			You can always use <span class="term"> break </span> to manually stop a loop. You can also use <span class="term"> continue
 			</span> to skip one iteration and check the condition again.
 			</p>
 			<p>
-			Another big part of Javascript is writting a <span class="term"> function </span>. A function is declared by:<br>
+			Another big part of Javascript is writting a <span class="term"> function </span>. A function is declared by:
+			</p>
 			<div class="example2">
 				function myName() {<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dostuff;<br>
-			}<br> </div>
+				}
+			</div>
+			<p>
 			Then you can use the function by calling it with parenthesis and then following it with a semicolon (e.g. <code class="example">
 			myName();</code>).  Some functions have <span class="term">parameters</span> that go inside the parenthesis.  If you call
 			a function with extra parameters it will just ignore the extras, but if you pass in too few they will be considered undefined.
@@ -115,23 +121,27 @@
 			2, Cat];</code> ).  Remember that to start counting at 0 when referencing the items in the array.
 			</p>
 			<p>
-			<span class="term">Objects</span> are containers that hold things like variables or functions.  You make a variable like this: <br>
+			<span class="term">Objects</span> are containers that hold things like variables or functions.  You make a variable like this:
+			</p>
 			<div class="example2">
 				var player = new Object();<br>
 				player.name = "Fred";<br>
 				player.score = 100;<br>
 			</div>
+			<p>
 			But this also has a shorthand (<code class="example">var player = {name: "fred", score = 100};</code>). You can then make a method for
-			the object by writting a function like this: <br>
+			the object by writting a function like this:
+			</p>
 			<div class="example2">
 				function playerDetails(){<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(this.name + " has a score of " + this.score ".");<br>
 				}<br>
 			</div>
+			<p>
 			One of the most important methods of the Document Object Model is <span class=term>getElementById</span> which can be used
 			to retrieve an element node (<code class="example">var myElement = document.getElementById("someId")</code>).  You can use this to grab
 			things in the DOM and change them with .setAttribute. More helpful is to individually drop element nodes into the DOM, using .createElement
-			with .appendChild, for more on this please watch this <a href="http://www.lynda.com/home/Player.aspx?lpk4=87541&playChapter=False"
+			with .appendChild, for more on this please watch this <a href="http://www.lynda.com/home/Player.aspx?lpk4=87541&amp;playChapter=False"
 			target="_blank">video</a>.
 			</p>
 			<p>
@@ -146,13 +156,15 @@
 			<span class="term">Events</span> are a huge part of interactivity. These can be done in dot notation and then written like
 			a function ( <code class="example">document.onclick = function(){...</code>).  You can also do the by using an <span class="term">
 			Event Listener</span> which isn't completely supported because IE is IE (<code class="example">document.addEventListener("click",
-			myFunction, false)</code>).  If you want to target something you can use a combo of a new variable and the .getElement function like this:<br>
+			myFunction, false)</code>).  If you want to target something you can use a combo of a new variable and the .getElement function like this:
+			</p>
 			<div class="example2">
 				var myImage = document.getElementById("mainImage");{<br>
 				myImage.onclick = function(){;<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert("You click me");<br>
 				}<br>
 			</div>
+			<p>
 			You can use the the onsubmit function for forms to stop them from sending to the server by setting them to return false. If you're planning
 			on adding CSS that will require Javascript to complete the function you may want to only add the CSS through a javascript, this type of
 			practice is called <span class="term">Progressive Enhancement</span>.
@@ -167,233 +179,231 @@
 			target="_blank">video</a> for more information.  You're also going to want to learn more about <span class="term">Asynchronous
 			JavaScript and XML</span>, also known as <span class="term">AJAX</span> to make the browser do all this stuff on the server side.
 			</p>
-			</article>
-			<div class="col-xs-12 col-sm-4">
-				<aside>
-					<h4> Terms </h4>
-					<p> <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference" target="_blank">Mozilla Reference Guide </a><p>
-					<h5> Functions </h5>
-					<ul>
-						<li>
-							<h6> Function Basics </h6>
-							<p>This is how you define a function:<br>
-							function myName() = { <br>
-							do stuff; <br>
-							}
-							</p>
-							<p>
-							<a href="http://www.tutorialspoint.com/javascript/javascript_builtin_functions.htm" target="_blank"> Functions </a>
-							are quick arguements.
-							</p>
-						</li>
-						<li>
-							<h6> Basic Functions </h6>
-							<ul>
-								<li> myName(); </li>
-								<li> alert(); </li>
-								<li> toUpperCase(); </li>
-								<li> valueOf(); </li>
-								<li> isNaN(); </li>
-								<li> !isNaN(); </li>
-								<li> Date(2000, 12, 31); </li>
-								<li> Date(2000, 12, 31, 12, 60, 00); </li>
-								<li> setTimeout </li>
-								<li> setInterval </li>
-							</ul>
-						</li>
-						<li>
-							<h6> Event Listeners </h6>
-							<ul>
-								<li> .onclick; </li>
-								<li> .onload; </li>
-								<li> .onhover; </li>
-								<li> .onfocus; </li>
-								<li> .onblur; </li>
-							</ul>
-							<h6> For Forms </h6>
-							<ul>
-								<li> .onchange </li>
-								<li> .onkeypress </li>
-								<li> .onkeyup </li>
-								<li> .checked </li>
-								<li> .selected </li>
-								<li> .onsubmit </li>
-							</ul>
-						</li>
-					</ul>
-					<h5> Operators </h5>
-					<p>
-					Here is a list of some <a href="http://www.w3schools.com/js/js_operators.asp" target ="_blank">Operators</a>
+			</div>
+			<aside>
+			<h4> Terms </h4>
+			<p> <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference" target="_blank">Mozilla Reference Guide </a><p>
+			<h5> Functions </h5>
+			<ul>
+				<li>
+					<h6> Function Basics </h6>
+					<p>This is how you define a function:<br>
+					function myName() = { <br>
+					do stuff; <br>
+					}
 					</p>
+					<p>
+					<a href="http://www.tutorialspoint.com/javascript/javascript_builtin_functions.htm" target="_blank"> Functions </a>
+					are quick arguements.
+					</p>
+				</li>
+				<li>
+					<h6> Basic Functions </h6>
 					<ul>
-						<li>
-							<h6> Comparisons </h6>
-							<ul>
-								<li> if (a == b) </li>
-								<li> if (a &lt; b) </li>
-								<li> if (a != b) </li>
-								<li> if (a === b) </li>
-								<li> if (a &lt;= b &amp;&amp; a&lt;=c) </li>
-								<li> if ((a !== b) || (a !== c))</li>
-							</ul>
-						</li>
-						<li>
-							<h6> Modulus </h6>
-							<ul>
-								<li> var remainder = year % 4; </li>
-							</ul>
-						</li>
-						<li>
-							<h6> Increment / Decrement </h6>
-							<ul>
-								<li> a = a + 1 </li>
-								<li> a++ </li>
-								<li> a += 1 </li>
-								<li> ++a </li>
-								<li> a-- </li>
-								<li> a -= 1 </li>
-							</ul>
-						</li>
-						<li>
-							<h6> Ternary </h6>
-							<ul>
-								<li> (a != 0) ? alert(true) : alert(false) </li>
-							</ul>
-						</li>
+						<li> myName(); </li>
+						<li> alert(); </li>
+						<li> toUpperCase(); </li>
+						<li> valueOf(); </li>
+						<li> isNaN(); </li>
+						<li> !isNaN(); </li>
+						<li> Date(2000, 12, 31); </li>
+						<li> Date(2000, 12, 31, 12, 60, 00); </li>
+						<li> setTimeout </li>
+						<li> setInterval </li>
 					</ul>
-					<h5> Loops </h5>
-					<p> Loops are a valuable tool. </p>
+				</li>
+				<li>
+					<h6> Event Listeners </h6>
 					<ul>
-						<li>
-							<h6> Loops </h6>
-							<ul>
-								<li> for( var a = 10, a!=0, a--){console.log(a);} </li>
-								<li> var a=10 while(a &#60; 10) {console.log(a); a++;} </li>
-								<li> var a=10 do{console.log(a); a++} while( a >10); </li>
-							</ul>
-						</li>
+						<li> .onclick; </li>
+						<li> .onload; </li>
+						<li> .onhover; </li>
+						<li> .onfocus; </li>
+						<li> .onblur; </li>
 					</ul>
-					<h5> Methods </h5>
+					<h6> For Forms </h6>
 					<ul>
-						<li>
-							<h6> Basic Methods </h6>
-							<ul>
-								<li> .length(); </li>
-								<li> .join();</li>
-								<li> .sort(); </li>
-								<li> .reverse(); </li>
-								<li> .split(); </li>
-								<li> .indexOf(); </li>
-								<li> .slice(); </li>
-								<li> .substring(start,length); </li>
-								<li> .substr(start,length); </li>
-							</ul>
-						</li>
-						<li>
-							<h6> Methods for working in HTML </h6>
-							<ul>
-								<li> .getElementById(); </li>
-								<li> .getELementByTag(); </li>
-								<li> .nodeType </li>
-								<li> .innerHTML </li>
-								<li> .getAttribute("name"); </li>
-								<li> .setAttribute("name , value "); </li>
-								<li> .createElement </li>
-								<li> .appendChild </li>
-								<li> .createTextNode </li>
-								<li> document.form.formName </li>
-							</ul>
-						</li>
-						<li>
-							<h6> Methods for Arrays </h6>
-							<ul>
-								<li> .getElementsByTagName(); </li>
-								<li> .join();</li>
-								<li> .sort(); </li>
-								<li> .reverse(); </li>
-							</ul>
-						</li>
-						<li>
-							<h6> Methods for Date </h6>
-							<ul>
-								<li> .getMonth(); </li>
-								<li> .getFullYear();</li>
-								<li> .getDate(); </li>
-								<li> .getDay(); </li>
-								<li> .getHours(); </li>
-								<li> .getTime(); </li>
-								<li> .setMonth(); </li>
-								<li> .setDate(); </li>
-							</ul>
-						</li>
+						<li> .onchange </li>
+						<li> .onkeypress </li>
+						<li> .onkeyup </li>
+						<li> .checked </li>
+						<li> .selected </li>
+						<li> .onsubmit </li>
 					</ul>
-					<h5> Objects </h5>
+				</li>
+			</ul>
+			<h5> Operators </h5>
+			<p>
+			Here is a list of some <a href="http://www.w3schools.com/js/js_operators.asp" target ="_blank">Operators</a>
+			</p>
+			<ul>
+				<li>
+					<h6> Comparisons </h6>
 					<ul>
-						<li>
-							<h6> Math </h6>
-							<ul>
-								<li> Math.round(); </li>
-								<li> Math.max(); </li>
-								<li> Math.min(); </li>
-								<li> Math.random(); </li>
-								<li> Math.sqrt(); </li>
-								<li> Math.PI(); </li>
-								<li> Math.log(); </li>
-							</ul>
-						</li>
+						<li> if (a == b) </li>
+						<li> if (a &lt; b) </li>
+						<li> if (a != b) </li>
+						<li> if (a === b) </li>
+						<li> if (a &lt;= b &amp;&amp; a&lt;=c) </li>
+						<li> if ((a !== b) || (a !== c))</li>
 					</ul>
-					<h5> Console Commands </h5>
-					<p> Console Commands are only used by debug tools. </p>
+				</li>
+				<li>
+					<h6> Modulus </h6>
 					<ul>
-						<li>
-							<h6> Console Commands </h6>
-							<ul>
-								<li> console.log() </li>
-								<li> console.debug() </li>
-								<li> console.info()</li>
-								<li> console.error() </li>
-								<li> console.warn() </li>
-							</ul>
-						</li>
+						<li> var remainder = year % 4; </li>
 					</ul>
-				</aside>
-			</div>
-			<div>
-				<!-- Loading footer with AJAX -->
-				<div class="footerPlaceholder"></div>
-			</div>
-			<!-- build:js scripts/vendor.js -->
-			<!-- bower:js -->
-			<script src="../bower_components/jquery/dist/jquery.js"></script>
-			<!-- endbower -->
-			<!-- endbuild -->
-			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-			<script>
-				(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-				function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-				e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-				e.src='//www.google-analytics.com/analytics.js';
-				r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-				ga('create','UA-XXXXX-X');ga('send','pageview');
-			</script>
-			<!-- build:js scripts/plugins.js -->
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-			<script src="../includes/nav.js"></script>
-			<script src="../includes/footer.js"></script>
-			<!-- endbuild -->
-			<!-- build:js({app,.tmp}) scripts/main.js -->
-			<script src="../scripts/main.js"></script>
-			<!-- endbuild -->
-		</body>
-	</html>
+				</li>
+				<li>
+					<h6> Increment / Decrement </h6>
+					<ul>
+						<li> a = a + 1 </li>
+						<li> a++ </li>
+						<li> a += 1 </li>
+						<li> ++a </li>
+						<li> a-- </li>
+						<li> a -= 1 </li>
+					</ul>
+				</li>
+				<li>
+					<h6> Ternary </h6>
+					<ul>
+						<li> (a != 0) ? alert(true) : alert(false) </li>
+					</ul>
+				</li>
+			</ul>
+			<h5> Loops </h5>
+			<p> Loops are a valuable tool. </p>
+			<ul>
+				<li>
+					<h6> Loops </h6>
+					<ul>
+						<li> for( var a = 10, a!=0, a--){console.log(a);} </li>
+						<li> var a=10 while(a &#60; 10) {console.log(a); a++;} </li>
+						<li> var a=10 do{console.log(a); a++} while( a >10); </li>
+					</ul>
+				</li>
+			</ul>
+			<h5> Methods </h5>
+			<ul>
+				<li>
+					<h6> Basic Methods </h6>
+					<ul>
+						<li> .length(); </li>
+						<li> .join();</li>
+						<li> .sort(); </li>
+						<li> .reverse(); </li>
+						<li> .split(); </li>
+						<li> .indexOf(); </li>
+						<li> .slice(); </li>
+						<li> .substring(start,length); </li>
+						<li> .substr(start,length); </li>
+					</ul>
+				</li>
+				<li>
+					<h6> Methods for working in HTML </h6>
+					<ul>
+						<li> .getElementById(); </li>
+						<li> .getELementByTag(); </li>
+						<li> .nodeType </li>
+						<li> .innerHTML </li>
+						<li> .getAttribute("name"); </li>
+						<li> .setAttribute("name , value "); </li>
+						<li> .createElement </li>
+						<li> .appendChild </li>
+						<li> .createTextNode </li>
+						<li> document.form.formName </li>
+					</ul>
+				</li>
+				<li>
+					<h6> Methods for Arrays </h6>
+					<ul>
+						<li> .getElementsByTagName(); </li>
+						<li> .join();</li>
+						<li> .sort(); </li>
+						<li> .reverse(); </li>
+					</ul>
+				</li>
+				<li>
+					<h6> Methods for Date </h6>
+					<ul>
+						<li> .getMonth(); </li>
+						<li> .getFullYear();</li>
+						<li> .getDate(); </li>
+						<li> .getDay(); </li>
+						<li> .getHours(); </li>
+						<li> .getTime(); </li>
+						<li> .setMonth(); </li>
+						<li> .setDate(); </li>
+					</ul>
+				</li>
+			</ul>
+			<h5> Objects </h5>
+			<ul>
+				<li>
+					<h6> Math </h6>
+					<ul>
+						<li> Math.round(); </li>
+						<li> Math.max(); </li>
+						<li> Math.min(); </li>
+						<li> Math.random(); </li>
+						<li> Math.sqrt(); </li>
+						<li> Math.PI(); </li>
+						<li> Math.log(); </li>
+					</ul>
+				</li>
+			</ul>
+			<h5> Console Commands </h5>
+			<p> Console Commands are only used by debug tools. </p>
+			<ul>
+				<li>
+					<h6> Console Commands </h6>
+					<ul>
+						<li> console.log() </li>
+						<li> console.debug() </li>
+						<li> console.info()</li>
+						<li> console.error() </li>
+						<li> console.warn() </li>
+					</ul>
+				</li>
+			</ul>
+			</aside>
+		</article>
+		<!-- Loading footer with AJAX -->
+		<div class="footerPlaceholder"></div>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+		e.src='//www.google-analytics.com/analytics.js';
+		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+		ga('create','UA-XXXXX-X');ga('send','pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<!-- endbuild -->
+</body>
+</html>
