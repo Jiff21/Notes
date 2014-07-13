@@ -30,104 +30,114 @@
 					<p>"Don't be afraid to see what you see." - Ronald Reagan</p>
 				</div>
 			</div>
-			<article id="container" class="col-md-8 col-sm-8 col-xs-12">
-			<h3>Introduction</h3>
-			<p>OWASP ZAP is a penetration testing tool for people who aren't penetration testing experts.   You can very easily scan a site and get a list of Alerts about possible security exploits and generate reports about parts of the site that don't follow OWASP best practices.  There are more intensive tools that can also be used to try to hack into the site.</p>
-			<h3>Installation and setup</h3>
-			<p>To install OWASP ZAP you just need to download it <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" target="_blank">here</a> and run through the installation process.  There isn't a ton of setup that needs to be done to use the quick start button talked about in the next section, but there are a few things that can be done to scan the site in different ways. </p>
-			<h3>Changing settings to work with MAMP on MAC</h3>
-			<p>If you’re on a mac using MAMP you’ll likely need to go into this file (File/mutillidae/classes/MySQLHandler.php) and change password to ‘root’ using a test editor.</p>
-			<h3>Configuring Firefox Proxy Settings</h3>
-			<p>You don't need to do this to use Quick Scan, but if you'd like to populate the Site Tree with individual pages you can do so by using the Plug-N-Hack button in OWASP ZAP.  You can also do this by going into Firefox Preferences, by Selecting the Advanced tab, selecting the Network Sub-Tab, pressing the Setting Button, clicking on the "Manual proxy configuration" button and pointing the HTTP Proxy at "localhost" and the Port at "8080" (Zap's default). You should also click on the "Use this proxy server for all protocols" button and make sure "localhost" is not included in the "No Proxy for" part of this menu.  Once this is done you can populate individual pages or explore the site manually (which is recommended by security experts) by simply navigating through the site manually in Firefox.</p>
-			<h3>Quick Start</h3>
-			<img src="../images/ZAP/QS1.png"  alt="Quick Start 1" title="Quick Start 1" />
-			<img src="../images/ZAP/QS2.png"  alt="Quick Start 2" title="Quick Start 2" />
-			<p>These scans miss content that can't be accessed unless you're logged in until you setup Auto-Authentication.   It should be noted that Quick Start uses the Spider tool and the Active Scan (which actively attacks the site) so you should only use it on approved sites. The scans can be triggered again by right clicking on the site in the sites tree, then selecting the corresponding option from the attack menu.  The Alerts from this or any attack can be exported as seen below.</p>
-			<h3>Generating a HTML Report</h3>
-			<img src="../images/ZAP/QS3.png"  alt="HTML Report" title="HTML Report" />
-			<h3>Useful buttons</h3>
-			<img src="../images/ZAP/QS4.png"  alt="buttons" title="Buttons" />
-			<h3>Setting up Auto-Authentication</h3>
-			<ol>
-				<li>Find the login in the Sites Menu (open sites folder in left window) and right click on it, (it may look something like this: “POST:login.jsp(password,username” or “POST:index.php(page)(login-php-submit-button,password,username)”) right click and flag in context of Login Request.  This should fill in the Login POST data and the login in URL.</li>
-				<li>Then go to a page in the site tree and use find to find the text that appears while you're logged in (This text will usually be something like "<a href="logout.php">Logout</a>". Once you've found this highlight the text and right click it to flag it as a Logged In Indicator.</li>
-				<li>Logout and copy the the URL from your browser and insert it into the "Logout URL"</li>
-				<li>You're Authentication Properties should look something like this:<br>
-					<img src="../images/ZAP/QS5.png"  alt="Auto-Auth" title="Auto-Auth" />
-				</li>
-				<li>Hit the auto Authenticate button<br>
-					<img src="../images/ZAP/QS6.png"  alt="Auto-Auth2" title="Auto-Auth2" />
-				</li>
-				<li>Go to the site in the browser and logout if necessary</li>
-				<li>Click on any link while logged out, if it logs back in automatically it means auto-authentication has been setup correctly.
-				(As of 12/16/2013, isn't capable of using cookies for login)</li>
-			</ol>
-			<h3>Form Fuzzing</h3>
-			<p>There's a bunch of different Fuzzers available.  Here are the basic steps for form fuzzing.
-			<img src="../images/ZAP/QS7.png"  alt="Fuzzer" title="Fuzzer" />
-			<img src="../images/ZAP/QS8.png"  alt="Fuzzer2" title="Fuzzer2" /><br>
-			For a better explanation of how to use Form Fuzzing watch this <a href="http://www.youtube.com/watch?feature=player_detailpage&amp;v=rmbi-VbIK6I" target="_blank">video</a>.  It should be noted that the "Successful" state just means the test completed.  The Reflected site means the text inserted is present in the sites Response, but you will want to look at where the text is reflected in the Response tab because a lot of it is false positives.</p>
-			<h3>Integration with other tools</h3>
-			<p>There is a way you can hook up some CI servers to run selenium, firefox, and Zap automatically when you deploy.  It can then run the site automatically and alert you if new security issues appear on a new deploy.  I will look further into this if this tool proves valuable.</p>
-			<h3>Early Results</h3>
-			<p>I think our code monkeys are doing a good job, because I haven't been able to get high alerts against one of our recent sites yet.  The tools was able to detect vulnerabilities on an old site we designed that came back because of said vulnerabilities.  This is a scan 40% done on the intentionally vulnerable site OWASP Mutillidae. It gives you an idea of what can be found by the program.
-			<img src="../images/ZAP/QS9.png"  alt="Muttilida" title="Muttilida" />
-			</p>
-			</article>
-			<div class="col-md-4 col-sm-4 col-xs-12">
-				<aside>
-					<h6> Top 10 </h6>
-					<ol>
-						<li>Injection</li>
+			<article>
+			<div class="main">
+				<h3>Introduction</h3>
+				<p>OWASP ZAP is a penetration testing tool for people who aren't penetration testing experts.   You can very easily scan a site and get a list of Alerts about possible security exploits and generate reports about parts of the site that don't follow OWASP best practices.  There are more intensive tools that can also be used to try to hack into the site.</p>
+				<h3>Installation and setup</h3>
+				<p>To install OWASP ZAP you just need to download it <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" target="_blank">here</a> and run through the installation process.  There isn't a ton of setup that needs to be done to use the quick start button talked about in the next section, but there are a few things that can be done to scan the site in different ways. </p>
+				<h3>Changing settings to work with MAMP on MAC</h3>
+				<p>If you’re on a mac using MAMP you’ll likely need to go into this file (File/mutillidae/classes/MySQLHandler.php) and change password to ‘root’ using a test editor.</p>
+				<h3>Configuring Firefox Proxy Settings</h3>
+				<p>You don't need to do this to use Quick Scan, but if you'd like to populate the Site Tree with individual pages you can do so by using the Plug-N-Hack button in OWASP ZAP.  You can also do this by going into Firefox Preferences, by Selecting the Advanced tab, selecting the Network Sub-Tab, pressing the Setting Button, clicking on the "Manual proxy configuration" button and pointing the HTTP Proxy at "localhost" and the Port at "8080" (Zap's default). You should also click on the "Use this proxy server for all protocols" button and make sure "localhost" is not included in the "No Proxy for" part of this menu.  Once this is done you can populate individual pages or explore the site manually (which is recommended by security experts) by simply navigating through the site manually in Firefox.</p>
+				<h3>Quick Start</h3>
+				<img src="../images/ZAP/QS1.png"  alt="Quick Start 1" title="Quick Start 1" />
+				<img src="../images/ZAP/QS2.png"  alt="Quick Start 2" title="Quick Start 2" />
+				<p>These scans miss content that can't be accessed unless you're logged in until you setup Auto-Authentication.   It should be noted that Quick Start uses the Spider tool and the Active Scan (which actively attacks the site) so you should only use it on approved sites. The scans can be triggered again by right clicking on the site in the sites tree, then selecting the corresponding option from the attack menu.  The Alerts from this or any attack can be exported as seen below.</p>
+				<h3>Generating a HTML Report</h3>
+				<img src="../images/ZAP/QS3.png"  alt="HTML Report" title="HTML Report" />
+				<h3>Useful buttons</h3>
+				<img src="../images/ZAP/QS4.png"  alt="buttons" title="Buttons" />
+				<h3>Setting up Auto-Authentication</h3>
+				<ol>
+					<li>Find the login in the Sites Menu (open sites folder in left window) and right click on it, (it may look something like this: “POST:login.jsp(password,username” or “POST:index.php(page)(login-php-submit-button,password,username)”) right click and flag in context of Login Request.  This should fill in the Login POST data and the login in URL.</li>
+					<li>Then go to a page in the site tree and use find to find the text that appears while you're logged in (This text will usually be something like "<a href="logout.php">Logout</a>". Once you've found this highlight the text and right click it to flag it as a Logged In Indicator.</li>
+					<li>Logout and copy the the URL from your browser and insert it into the "Logout URL"</li>
+					<li>You're Authentication Properties should look something like this:<br>
+						<img src="../images/ZAP/QS5.png"  alt="Auto-Auth" title="Auto-Auth" />
+					</li>
+					<li>Hit the auto Authenticate button<br>
+						<img src="../images/ZAP/QS6.png"  alt="Auto-Auth2" title="Auto-Auth2" />
+					</li>
+					<li>Go to the site in the browser and logout if necessary</li>
+					<li>Click on any link while logged out, if it logs back in automatically it means auto-authentication has been setup correctly.
+					(As of 12/16/2013, isn't capable of using cookies for login)</li>
+				</ol>
+				<h3>Form Fuzzing</h3>
+				<p>There's a bunch of different Fuzzers available.  Here are the basic steps for form fuzzing.
+				<img src="../images/ZAP/QS7.png"  alt="Fuzzer" title="Fuzzer" />
+				<img src="../images/ZAP/QS8.png"  alt="Fuzzer2" title="Fuzzer2" /><br>
+				For a better explanation of how to use Form Fuzzing watch this <a href="http://www.youtube.com/watch?feature=player_detailpage&amp;v=rmbi-VbIK6I" target="_blank">video</a>.  It should be noted that the "Successful" state just means the test completed.  The Reflected site means the text inserted is present in the sites Response, but you will want to look at where the text is reflected in the Response tab because a lot of it is false positives.</p>
+				<h3>Integration with other tools</h3>
+				<p>There is a way you can hook up some CI servers to run selenium, firefox, and Zap automatically when you deploy.  It can then run the site automatically and alert you if new security issues appear on a new deploy.  I will look further into this if this tool proves valuable.</p>
+				<h3>Early Results</h3>
+				<p>I think our code monkeys are doing a good job, because I haven't been able to get high alerts against one of our recent sites yet.  The tools was able to detect vulnerabilities on an old site we designed that came back because of said vulnerabilities.  This is a scan 40% done on the intentionally vulnerable site OWASP Mutillidae. It gives you an idea of what can be found by the program.
+				<img src="../images/ZAP/QS9.png"  alt="Muttilida" title="Muttilida" />
+				</p>
+			</div>
+			<aside>
+				<h6> Top 10 </h6>
+				<ol>
+					<li>Injection
 						<ul>
 							<li>SQL injection</li>
 							<li>Scanner can find</li>
 						</ul>
-						<li>Broken Authentication and Session Management</li>
+					</li>
+					<li>Broken Authentication and Session Management
 						<ul>
 							<li>Auth Credential isn't encypted when stored</li>
 						</ul>
-						<li>Cross-Site Scripting (XSS)</li>
+					</li>
+					<li>Cross-Site Scripting (XSS)
 						<ul>
 							<li>User supplied input isn’t escaped</li>
 							<li>Can be found with automated tools, but can take manual testing</li>
 						</ul>
-						<li>Insecure Direct Object Reference</li>
+					</li>
+					<li>Insecure Direct Object Reference
 						<ul>
 							<li>Does application verify the account is authorized to access resources</li>
 							<li>Manipulate URL</li>
 							<li>http://example.com/app/accountInfo?acct=notmyacct</li>
 						</ul>
-						<li>Security Misconfiguration</li>
+					</li>
+					<li>Security Misconfiguration
 						<ul>
 							<li>Software across stack isn’t up to date</li>
 							<li>Default accounts still enabled</li>
 							<li>Error handling left on and too revealing</li>
 						</ul>
-						<li>Sensitive Data Exposure</li>
+					</li>
+					<li>Sensitive Data Exposure
 						<ul>
 							<li>Mostly secure data not being encrypted</li>
 						</ul>
-						<li>Missing Function Level Access Control</li>
+					</li>
+					<li>Missing Function Level Access Control
 						<ul>
 							<li>Can you access admin level content as normal user?</li>
 						</ul>
-						<li>Cross-Site Request Forgery</li>
+					</li>
+					<li>Cross-Site Request Forgery
 						<ul>
 							<li>You take advantage a function from someone else’s site and try to embed it in your own.</li>
 							<li>Unpredictable CSRF tokens can prevent.</li>
 						</ul>
-						<li>Using Components with known vulnerabilities</li>
+					</li>
+					<li>Using Components with known vulnerabilities
 						<ul>
 							<li>Pretty much research what you using and keep it up to date</li>
 						</ul>
-						<li>Unvalidated redirects</li>
+					</li>
+					<li>Unvalidated redirects
 						<ul>
 							<li>Redirects should be whitelisted</li>
 						</ul>
-					</ol>
-				</aside>
-			</div>
+					</li>
+				</ol>
+			</aside>
+			</article>
 			<!-- Loading footer with AJAX -->
 			<div class="footerPlaceholder"></div>
 		</div>

@@ -30,115 +30,112 @@
 					<p class="lead">"When the President does it, that means that it's not illegal." - Richard Nixon</p>
 				</div>
 			</div>
-			<article class="col-md-8 col-sm-8 col-xs-12">
-			<div>
-				<h3>Introduction</h3>
-				<p>Protractor is an end to end test framework for <a href="https://angularjs.org/">AngularJS</a> applications built on top of <a href="https://code.google.com/p/selenium/wiki/WebDriverJs">WebDriverJS</a>. Protractor runs tests against your application running in a real browser, interacting with it as a user would.</p>
-			</div>
-			<div>
-				<h3>Installation &amp; Use</h3>
-				<p>The setup is explained in their readme doc on <a href="https://github.com/angular/protractor/blob/master/docs/getting-started.md">github</a>.</p>
-			</div>
-			<div>
-				<h3>Tools</h3>
-				<p>The full list of selectors and evaluation tools can be found on their <a href="https://github.com/angular/protractor/blob/master/docs/api.md">github api page</a>.  Watch out, as many of them use deferred promises.</p>
-			</div>
-			<div>
-				<h3>Running Only Certain Tests</h3>
-				<p>When working on a single test or set of tests you probably don't want to run all of your tests.  This can be accomplished in a couple ways, the ones in protractor are mentioned in the reference conf file. By adding the following to you config file:
-				</p>
-				<p>
-				<div class="example2">
-					//patterns are relative to the location of this config. <br>
-					suites: {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '<span class="replace">.e2e/**/*.spec.js</span>',<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smoke: ['<span class="replace">.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js</span>'],<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '<span class="replace">.e2e/views/*.spec.js</span>',<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: '<span class="replace">e2e/nav/productcounter.js</span>'<br>
-					},<br>
+			<article>
+			<div class="main">
+				<div>
+					<h3>Introduction</h3>
+					<p>Protractor is an end to end test framework for <a href="https://angularjs.org/">AngularJS</a> applications built on top of <a href="https://code.google.com/p/selenium/wiki/WebDriverJs">WebDriverJS</a>. Protractor runs tests against your application running in a real browser, interacting with it as a user would.</p>
 				</div>
-				</p>
-				<p>
-				Then you can run a set of tests simple simply by adding <span class="term">--suite=<span class="replace">SuiteName</span></span> to the end of your run command in terminal (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --suite=smoke</code>).
-				<br>
-				While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using, but be careful because they're easy to miss if you forget to remove them.
-				<table>
-					<tbody>
+				<div>
+					<h3>Installation &amp; Use</h3>
+					<p>The setup is explained in their readme doc on <a href="https://github.com/angular/protractor/blob/master/docs/getting-started.md">github</a>.</p>
+				</div>
+				<div>
+					<h3>Tools</h3>
+					<p>The full list of selectors and evaluation tools can be found on their <a href="https://github.com/angular/protractor/blob/master/docs/api.md">github api page</a>.  Watch out, as many of them use deferred promises.</p>
+				</div>
+				<div>
+					<h3>Running Only Certain Tests</h3>
+					<p>When working on a single test or set of tests you probably don't want to run all of your tests.  This can be accomplished in a couple ways, the ones in protractor are mentioned in the reference conf file. By adding the following to you config file:
+					</p>
+					<div class="example2">
+						//patterns are relative to the location of this config. <br>
+						suites: {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '<span class="replace">.e2e/**/*.spec.js</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smoke: ['<span class="replace">.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js</span>'],<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '<span class="replace">.e2e/views/*.spec.js</span>',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: '<span class="replace">e2e/nav/productcounter.js</span>'<br>
+						},<br>
+					</div>
+					<p>
+					Then you can run a set of tests simple simply by adding <span class="term">--suite=<span class="replace">SuiteName</span></span> to the end of your run command in terminal (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --suite=smoke</code>).
+					<br>
+					While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using, but be careful because they're easy to miss if you forget to remove them.
+					</p>
+					<table>
 						<caption>Single Test or Block by Language</caption>
-						<tr>
-							<th></th>
-							<th><b>Jasmine</b>&nbsp;</th>
-							<th><b>Mocha&nbsp;</b></th>
-						</tr>
-						<tr>
-							<th>Run just this test</th>
-							<td>&nbsp;change it to <span class="term">iit</span></td>
-							<td>&nbsp;change it to <span class="term">it.only</span></td>
-						</tr>
-						<tr>
-							<th>Skip a test</th>
-							<td>&nbsp;change it to <span class="term">xit</span></td>
-							<td>&nbsp;change it to <span class="term">it.skip</span></td>
-						</tr>
-						<tr>
-							<th>Run just this describe block</th>
-							<td>&nbsp;change describe to <span class="term">ddescribe</span></td>
-							<td>&nbsp;change describe to <span class="term">describe.only</span></td>
-						</tr>
-						<tr>
-							<th>Skip a describe block</th>
-							<td>&nbsp;change describe to <span class="term">xdescribe</span></td>
-							<td>&nbsp;change describe to <span class="term">describe.skip</span></td>
-						</tr>
-					</tbody>
-				</table>
-				</p>
-			</div>
-			<div>
-				<h3>Tips</h3>
-				<h5>Send Keys</h5>
-				<p>
-				A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
-				Sending letters and numbers works simple by using:<br>
-				<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</code><br>
-				But if you need to use a unicode key it should work with.
-				<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code><br>
-				But right now it only seems to work if you do:
-				<code class="example">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
-				</p>
-				<h5>Sleep &amp; Pause</h5>
-				<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
-				<h5>Angular Can't Be Found</h5>
-				<p>As the <a href="https://github.com/angular/protractor/blob/master/docs/faq.md">FAQ</a> mentions this may have to do with the version, but they didn't mention that it looks for ng-app on the body tag.  So if yours is anywhere else you need to set rootEl in the config file (e.g. <code class="example">rootElement: '<span class="replace">div</span>',</code>). </p>
-				<h5>OnPrepare &amp; OnComplete</h5>
-				<p>You can use the OnPrepare function in the config file to set up for testing.  You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing).  I suggest at least setting a default window size and location to start your testing from.</p>
-				<p>
-				<div class="example2">
-					onPrepare: function() {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSize(<span class="replace">1500</span>,<span class="replace">1000</span>);<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPosition(<span class="replace">0</span>,<span class="replace">0</span>);<br>
-					},<br>
+						<tbody>
+							<tr>
+								<th></th>
+								<th><b>Jasmine</b>&nbsp;</th>
+								<th><b>Mocha&nbsp;</b></th>
+							</tr>
+							<tr>
+								<th>Run just this test</th>
+								<td>&nbsp;change it to <span class="term">iit</span></td>
+								<td>&nbsp;change it to <span class="term">it.only</span></td>
+							</tr>
+							<tr>
+								<th>Skip a test</th>
+								<td>&nbsp;change it to <span class="term">xit</span></td>
+								<td>&nbsp;change it to <span class="term">it.skip</span></td>
+							</tr>
+							<tr>
+								<th>Run just this describe block</th>
+								<td>&nbsp;change describe to <span class="term">ddescribe</span></td>
+								<td>&nbsp;change describe to <span class="term">describe.only</span></td>
+							</tr>
+							<tr>
+								<th>Skip a describe block</th>
+								<td>&nbsp;change describe to <span class="term">xdescribe</span></td>
+								<td>&nbsp;change describe to <span class="term">describe.skip</span></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-				</p>
-				<h5>$</h5>
-				<p>
-				<code class="example">$</code> means <code class="example">element(by.Css</code><br>
-				<code class="example">$$</code> means <code class="example">element.all(by.Css</code><br>
-				It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time.  Sometimes it's better to just use element.all then see what ends up in the array.
-				</p>
-				<h5>Managing Expectations</h5>
-				<p>
-				Some good thing to check examples:<br>
-				<code class="example">expect(<span class="replace">elName</span>.isPresent()).toBeTruthy();</code><br>
-				Or: <br>
-				<div class="example2">
-					<span class="replace">prodNum.get(7).$('img')</span>.isDisplayed().then(function(val) {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();<br>
-				})</div>
-				</p>
+				<div>
+					<h3>Tips</h3>
+					<h5>Send Keys</h5>
+					<p>
+					A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
+					Sending letters and numbers works simple by using:<br>
+					<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</code><br>
+					But if you need to use a unicode key it should work with.
+					<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code><br>
+					But right now it only seems to work if you do:
+					<code class="example">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
+					</p>
+					<h5>Sleep &amp; Pause</h5>
+					<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
+					<h5>Angular Can't Be Found</h5>
+					<p>As the <a href="https://github.com/angular/protractor/blob/master/docs/faq.md">FAQ</a> mentions this may have to do with the version, but they didn't mention that it looks for ng-app on the body tag.  So if yours is anywhere else you need to set rootEl in the config file (e.g. <code class="example">rootElement: '<span class="replace">div</span>',</code>). </p>
+					<h5>OnPrepare &amp; OnComplete</h5>
+					<p>You can use the OnPrepare function in the config file to set up for testing.  You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing).  I suggest at least setting a default window size and location to start your testing from.</p>
+					<div class="example2">
+						onPrepare: function() {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSize(<span class="replace">1500</span>,<span class="replace">1000</span>);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPosition(<span class="replace">0</span>,<span class="replace">0</span>);<br>
+						},<br>
+					</div>
+					<h5>$</h5>
+					<p>
+					<code class="example">$</code> means <code class="example">element(by.Css</code><br>
+					<code class="example">$$</code> means <code class="example">element.all(by.Css</code><br>
+					It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time.  Sometimes it's better to just use element.all then see what ends up in the array.
+					</p>
+					<h5>Managing Expectations</h5>
+					<p>
+					Some good thing to check examples:<br>
+					<code class="example">expect(<span class="replace">elName</span>.isPresent()).toBeTruthy();</code><br>
+					Or:
+					</p>
+					<div class="example2">
+						<span class="replace">prodNum.get(7).$('img')</span>.isDisplayed().then(function(val) {<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();<br>
+					})</div>
+				</div>
 			</div>
-			</article>
-			<aside class="col-md-4 col-sm-4 col-xs-12">
+			<aside>
 				<h5>Quick Reference</h5>
 				<h6>Element(By.XXXXX</h6>
 				<ul>
@@ -191,6 +188,7 @@
 					<li>toBeDefined()</li>
 				</ul>
 			</aside>
+			</article>
 			<!-- Loading footer with AJAX -->
 			<div class="footerPlaceholder"></div>
 		</div>
