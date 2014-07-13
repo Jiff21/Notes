@@ -29,6 +29,7 @@ article{
 	}
 	.fourth {
 		@include make-xs-column(12);
+		@include make-sm-column(3);
 		@include make-md-column(3);
 	}
 	.fiveOfSeven {
@@ -40,3 +41,5 @@ article{
 		@include make-md-column(7);
 	}
 }
+
+$myLineBreak: '\a';

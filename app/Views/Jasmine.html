@@ -48,10 +48,21 @@
 					<li><code class="example">toThrow</code>: for catching expected exceptions.</li>
 				</ul>
 			</div>
-			<div class="fourth yellow" id="rts">
-				<h3>Run Test Shortcuts</h3>
+			<div class="fourth yellow rts">
+				<h3>Test<span id="break"> </span>Parts</h3>
 			</div>
-			<div class="col-md-3 col-sm-12 col-xs-12 yellow">
+			<div class="fourth yellow rtlist">
+					<ul>
+						<li>describe</li>
+						<li>it</li>
+						<li>expect</li>
+						<li>beforeEach</li>
+					</ul>
+			</div>
+			<div class="fourth yellow rts">
+				<h3>Test<span id="break"> </span>Shortcuts</h3>
+			</div>
+			<div class="fourth yellow rtlist">
 				<ul>
 					<li>iit</li>
 					<li>xit</li>
@@ -59,6 +70,43 @@
 					<li>xdescribe</li>
 				</ul>
 			</div>
+			<div class="full blue">
+				<h3>Spies</h3>
+			</div>
+			<div class="fourth blue rtlist">
+				<ul>
+					<li>spyOn()</li>
+					<li>toHaveBeenCalled()</li>
+					<li>toHaveBeenCalledWith()</li>
+					<li>and.callThrough()</li>
+				</ul>
+			</div>
+			<div class="fourth blue rtlist">
+				<ul>
+					<li>and.returnValue(745)</li>
+					<li>and.callFake(f(){})</li>
+					<li>and.throwError("err")</li>
+					<li>and.stub()</li>
+				</ul>
+			</div>
+			<div class="fourth blue rtlist">
+				<ul>
+					<li>calls.any()</li>
+					<li>calls.count()</li>
+					<li>calls.argsFor(index)</li>
+					<li>calls.allArgs()</li>
+				</ul>
+			</div>
+			<div class="fourth blue rtlist">
+				<ul>
+					<li>calls.all()</li>
+					<li>calls.mostRecent()</li>
+					<li>calls.first()</li>
+					<li>calls.reset()</li>
+				</ul>
+			</div>
+
+
 			</article>
 			<!-- Loading footer with AJAX -->
 			<div class="footerPlaceholder"></div>
