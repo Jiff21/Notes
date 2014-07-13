@@ -31,4 +31,12 @@ article{
 		@include make-xs-column(12);
 		@include make-md-column(3);
 	}
+	.fiveOfSeven {
+		@include make-xs-column(12);
+		@include make-md-column(5);
+	}
+	.sevenOfFive {
+		@include make-xs-column(12);
+		@include make-md-column(7);
+	}
 }

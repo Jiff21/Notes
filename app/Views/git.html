@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<title>git Notes</title>
-		<meta name="Git Notes" content="">
+		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="shortcut icon" href="../favicon.ico">
 		<!-- build:css styles/vendor.css -->
@@ -28,8 +28,8 @@
 				<h1>Git</h1>
 			</div>
 			<div class="lang-grid git-grid">
-				<div class="row">
-					<div class="col-md-6 col-xs-6">
+				<article>
+					<div class="half">
 						<h3>Starting a Project</h3>
 						<p>Locally use:<br>
 						<div class="example2">
@@ -44,7 +44,7 @@
 						<code class="example2">git clone <span class="replace">github/url</span></code>
 						<p>
 					</div>
-					<div class="col-md-6 col-xs-6">
+					<div class="half">
 						<h3>Stash</h3>
 						<p>Save current changes to Stash<br>
 						<code class="example2">git stash -m "<span class="replace">Message about stash</span>"</code>
@@ -59,7 +59,7 @@
 						<code class="example2">git stash -m "<span class="replace">Message about stash</span>"</code>
 						</p>
 					</div>
-					<div class="col-md-5 col-xs-5">
+					<div class="fiveOfSeven">
 						<h3>Basics</h3>
 						<p>Check for Changes since last commit:<br>
 						<code class="example2">git status</code>
@@ -89,7 +89,7 @@
 						<code class="example2">git reset --hard <span class="replace">origin/master</span></code>
 						</p>
 					</div>
-					<div class="col-md-7 col-xs-7">
+					<div class="sevenOfFive">
 						<h3>Branches</h3>
 						<p> Create a new branch off current branch:<br>
 						<code class="example2">git checkout -b <span class="replace">BranchName</span></code>
@@ -116,7 +116,7 @@
 						<code class="example2">git merge <span class="replace">NameOfBranchToMergeIntoCurrentBranch</span></code>
 						</p>
 					</div>
-					<div class="col-md-6 col-xs-6">
+					<div class="half">
 						<h3> Setting up git ignore globally </h3>
 						<p> First make a file <br>
 						<code class="example2">echo <span class="replace">file_type_to_Ignore</span> > ~/.gitignore_global</code><br>
@@ -124,11 +124,11 @@
 						<code class="example2">git config --global core.excludesfile ~/.gitignore_global</code>
 						</p>
 					</div>
-					<div class="col-md-6 col-xs-6">
+					<div class="half">
 						<h3></h3>
 						<p></p>
 					</div>
-				</div>
+				</article>
 				<!-- Loading footer with AJAX -->
 				<div class="footerPlaceholder"></div>
 			</div>
