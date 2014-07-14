@@ -198,6 +198,11 @@ $jasmineBlue: #ADD8E6;
 			background-color: lighten($jasmineYellow, 5%);
 		}
 	}
+	.sameList {
+		ul {
+			margin-bottom: 0px;
+		}
+	}
 	@media(min-width: $screen-tablet){
 		.rts{
 			height: 100px;
@@ -211,6 +216,11 @@ $jasmineBlue: #ADD8E6;
 		.rtlist{
 			padding-top: 10px;
 			min-height: 100px;
+		}
+		.sameList {
+			ul {
+				margin-bottom: 10px;
+			}
 		}
 		#break:before{
 			content: $myLineBreak;
