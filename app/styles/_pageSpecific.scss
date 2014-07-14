@@ -200,14 +200,15 @@ $jasmineBlue: #ADD8E6;
 	}
 	@media(min-width: $screen-tablet){
 		.rts{
-			padding-bottom: 2px;
-			padding-top: 2px;
+			min-height: 100px;
 			h3 {
 				margin-bottom: 20px;
+				vertical-align: middle;
 			}
 		}
 		.rtlist{
 			padding-top: 10px;
+			min-height: 100px;
 		}
 		#break:before{
 			content: $myLineBreak;
