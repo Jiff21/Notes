@@ -27,6 +27,14 @@ article{
 	.halfFull {
 		@include make-xs-column(12);
 		@include make-sm-column(6);
+		h3 {
+			text-align: center;
+		}
+		@media(min-width: $screen-tablet){
+			h3 {
+				text-align: left;
+			}
+		}
 	}
 	.fourth {
 		@include make-xs-column(12);
@@ -35,11 +43,27 @@ article{
 	}
 	.fiveOfSeven {
 		@include make-xs-column(12);
-		@include make-md-column(5);
+		@include make-sm-column(5);
+		h3 {
+			text-align: center;
+		}
+		@media(min-width: $screen-tablet){
+			h3 {
+				text-align: left;
+			}
+		}		
 	}
 	.sevenOfFive {
 		@include make-xs-column(12);
-		@include make-md-column(7);
+		@include make-sm-column(7);
+		h3 {
+			text-align: center;
+		}
+		@media(min-width: $screen-tablet){
+			h3 {
+				text-align: left;
+			}
+		}		
 	}
 }
 
