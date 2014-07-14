@@ -339,6 +339,14 @@ $jasmineBlue: #ADD8E6;
 	.footer {
 		color: #63DE01;
 	}
+	h3 {
+		text-align: center;
+	}
+	@media(min-width: $screen-tablet){
+		h3 {
+			text-align: left;
+		}
+	}	
 }
 
 .ardBody {
