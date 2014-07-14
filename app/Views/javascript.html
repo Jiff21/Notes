@@ -28,14 +28,14 @@
 				<div class="jumbotron">
 					<h1>Javascript Notes</h1>
 					<p class="lead">"Things do not happen. Things are made to happen." - JFK</p>
-					<p><a class="btn btn-lg btn-success" href="#"><span class="glyphicon glyphicon-fire"></span> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
+					<p><a class="btn btn-lg btn-success" onclick="alert('I need to think of something for this to do.')"><span class="glyphicon glyphicon-fire"></span> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
 				</div>
 			</div>
 			<article>
 			<header> <!-- Header should not be in article.  Header tag itself seems to be breaking the format tool .-->
-			<h3>Javascript</h3>
-			<p>Press this button for Javascript in action!</p>
-			<button type="submit" value="Submit" onclick="alert('I need to think of something for this to do.')">
+			<h3 class="red" id="switcher">Javascript</h3>
+			<p class="red">Press this button for Javascript in action!</p>
+			<button type="submit" value="Submit" onclick="headerChange()">
 			Button</button>
 			</header>
 			<div class="main">
@@ -404,6 +404,7 @@
 	<!-- endbuild -->
 	<!-- build:js({app,.tmp}) scripts/main.js -->
 	<script src="../scripts/main.js"></script>
+	<script src="../scripts/headerChange.js"></script>
 	<!-- endbuild -->
 </body>
 </html>
