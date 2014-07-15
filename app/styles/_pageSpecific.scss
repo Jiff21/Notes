@@ -1,4 +1,5 @@
 @import "_mixins.scss";
+@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 
 .homeBody {
 	.jumbotron {
@@ -110,6 +111,12 @@
 				color: white;
 			}
 	}
+	.main {
+		@include make-sm-column-pull(4);
+	}
+	aside {
+		@include make-sm-column-push(8);
+	}
 
 	#background {
 		position: absolute;
@@ -143,12 +150,13 @@
 	}
 
 	/* This is for styling the aside in the CSS Page */
-	aside{
-		overflow: auto;
-		min-height: 600px;
-		max-height: 1500px;
+	@media(min-width: $screen-tablet){	
+		aside {
+			overflow: auto;
+			min-height: 600px;
+			max-height: 1500px;
+		}
 	}
-
 }
 
 .SassBody {
