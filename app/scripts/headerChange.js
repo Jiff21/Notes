@@ -3,39 +3,31 @@
  */
 'use strict';
 
-var ourItems = document.getElementsByClassName('red'),
-	red = [],
-	white = [];
-
 function headerChange() {
-
-	console.log('OUR ITEMS :::: ', ourItems);
-
 	// Defining variables outside loop.
-	var i = 0,
-		itemCount = ourItems.length,
+	var i,
 		item,
-		startingLength,
+		itemArray,
 		switcher = document.getElementById('switcher');
+	// grabs element by switcher id to figure out which replace loop should be run.
+	if (switcher.className === 'red') {
 
+		itemArray = document.getElementsByClassName('red');
+		i = itemArray.length - 1;
 
-	for (i; i < itemCount; i++) {
-		var currentItem = ourItems[i],
-			currentClass = currentItem.getAttribute('class');
+		for (i; i >= 0; i--) {
+			// Sets item to the current element in header array.
+			item = itemArray[i];
+			item.className = 'white';
+		}
+	}else{
 
-		// console.log('CURRENT ITME :::: ', currentItem);
-		console.log('CURRENT CLASS :::: ', currentItem.setAttribute);
-
-		// // grabs element by switcher id to figure out which replace loop should be run.
-		if (currentClass === 'red') {
-			console.log('IS RED :: MAKE WHITE');
-			currentItem.setAttribute('class', 'white');
-		} 
-
-		// Other wise we are making them white? 
-		else {
-			console.log('IS WHITE :: MAKE RED!!!!');
-			currentItem.setAttribute('class', 'red');
+		itemArray = document.getElementsByClassName('white');
+		i = itemArray.length - 1;
+		
+		for (i ; i >= 0; i--) {
+			item = itemArray[i];
+			item.className = 'red';
 		}
 	}
 }
