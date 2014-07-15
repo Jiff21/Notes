@@ -43,6 +43,11 @@
 				color: white;
 			}
 	}
+	.main {
+		h1, h3 {
+			margin-top: 0px;
+		}
+	}
 	.shyText {
 		padding: 10px 100px 10px 100px;
 	}
@@ -54,7 +59,7 @@
 		margin: 10px 100px 10px 100px;
 	}
 	.matchPicHeight {
-		min-height: 260px;
+		min-height: 177px;
 	}
 	img {
 		max-width: 100%;

@@ -178,6 +178,34 @@ This is how you make     a paragraph with    weird spacing using pre.  Pre can a
 					</p>
 				</div>
 
+				<div class="sevenOfFive">
+					<p>
+					This is an example of some of the code:
+					</p>
+					<div class="example2">
+						&lt;section&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;caption&gt;This is my table&lt;/caption&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;colgroup&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col1&quot; /&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col2&quot; /&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col3&quot; /&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/colgroup&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Years&lt;/th&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Drink&lt;/th&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;James&lt;/td&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;19&lt;/td&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Jameson &amp; Ginger&lt;/td&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br>
+						&lt;/section&gt;<br>
+					</div>
+				</div>				
+
 				<div class="fiveOfSeven">
 					<p>
 					This is a table:
@@ -211,42 +239,10 @@ This is how you make     a paragraph with    weird spacing using pre.  Pre can a
 					</section>
 				</div>
 
-				<div class="SevenOfFive">
+				<div class="full clearBoth">
 					<p>
-					This is an example of some of the code:
+					This is a frame with an HTML 5 accordian list in it. You make the frame with an id and CSS. You make the list accordian by starting a <span class="example">&lt;details open&gt;</span> tag, and you also want to title it in <span class="example">&lt;summary&gt;</span> tags.  This is new to HTML5 and isn't really supported yet.
 					</p>
-					<div class="example2">
-						&lt;section&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;caption&gt;This is my table&lt;/caption&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;colgroup&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col1&quot; /&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col2&quot; /&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col3&quot; /&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/colgroup&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Years&lt;/th&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Drink&lt;/th&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;James&lt;/td&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;19&lt;/td&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Jameson &amp; Ginger&lt;/td&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br>
-						&lt;/section&gt;<br>
-					</div>
-				</div>
-
-				<div class="fiveOfSeven">
-					<p>
-					This is a frame with an HTML 5 accordian list in it. You make the frame with an id and CSS.   You make the list accordian by
-					starting a <span class="example">&lt;details open&gt;</span> tag, and you also want to title it in <span class="example">
-					&lt;summary&gt;</span> tags.
-					</p>
-				</div>
-				<div class="sevenOfFive">
 					<!-- This is a frame.  It could also just use a src to fill it -->
 					<div id="frame1">
 						<h3>Top Ten Lists</h3>
@@ -307,7 +303,7 @@ This is how you make     a paragraph with    weird spacing using pre.  Pre can a
 								<li> pre </li>
 								<li> div </li>
 								<li> a href="[url]"</li>
-								<li> <a href="http://www.opinionatedgeek.com/dotnet/tools/htmlencode/encode.aspx">Encode Code to HTML</a></li>
+								<li> <a href="http://www.opinionatedgeek.com/dotnet/tools/htmlencode/encode.aspx">Encode Text to HTML</a></li>
 							</ul>
 						</li>
 					</ul>
