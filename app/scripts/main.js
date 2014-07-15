@@ -1,1 +1,7 @@
-console.log('\'Allo \'Allo!');
+/*!
+ * @docauthor Jeff Campbell
+ */
+'use strict';
+
+
+// console.log('\'Allo \'Allo!');

@@ -10,7 +10,6 @@ $.ajax({
   },
 
   success: function(fileData) {
-	console.log('OUR Nav Data ', fileData);
 	$('.navPlaceholder').html(fileData);
   },
 

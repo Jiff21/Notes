@@ -10,7 +10,6 @@ $.ajax({
   },
 
   success: function(fileData) {
-	console.log('OUR Footer AJAX Loaded :::: ', fileData);
 	$('.footerPlaceholder').html(fileData);
   },
 
