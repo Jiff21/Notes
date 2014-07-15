@@ -350,8 +350,12 @@ $jasmineBlue: #ADD8E6;
 }
 
 .terminalBody {
-	.jumbotron {
-		background-color: #000;
+	header {
+		padding-top: 40px;
+		color: #63DE01;
+		h1 {
+			font-size: 7em;
+		}
 	}	
 	background-color: #000;
 	color: #63DE01;
