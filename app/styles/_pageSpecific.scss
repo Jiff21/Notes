@@ -171,6 +171,30 @@
 				color: white;
 			}
 	}
+	.main {
+		button {
+			width: 49%;
+			height: 50px;
+			margin-bottom: 20px;
+			font-size: 30px;
+			@include buttonColor(#FFFFFF, #990909, #ff0000);
+			@include border-radius(10px);
+			&:hover {
+				border-top-color: #000;
+				background: #000;
+			}
+			&:active {
+  				border-top-color: #030303;
+   				background: #030303;
+  			}
+  			&:focus {
+  				outline: none; //Not worrried about accessibility.
+  			}
+		}
+		h3 {
+			text-align: center;
+		}
+	}
 }
 
 .phpBody {

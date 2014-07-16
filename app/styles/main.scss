@@ -4,6 +4,11 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 // endbower
 
+/* Remove Top Margin on the 1st Heading of Main Paragraph or Aside */
+.main div h3, .main div h1, .main div h2, aside h5, aside h6, aside h4 {
+	margin-top: 0px;
+}
+
 @import "_pageSpecific.scss";
 
 /* Mixin for setting Bootstrap setting using html5 terms.  Some pages changes in page specific. */
@@ -208,12 +213,6 @@ header{
 	color: blue;
 }
 
-/* Remove Top Margin on the 1st Heading of Main Paragraph or Aside */
-.main div h3, .main div h1, .main div h2, aside h5, aside h6, aside h4 {
-	margin-top: 0px;
-}
-
-
 /* Aside Styling*/
 
 aside h5 { font-size: 90%; }
@@ -281,6 +280,14 @@ aside ul ul li:first-child{
 
 .clearBoth {
 	clear: both;
+}
+
+.visible {
+	display: inline;
+}
+
+.hidden {
+	display: none;
 }
 
 
