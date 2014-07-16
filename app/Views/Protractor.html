@@ -135,14 +135,15 @@
 					})</div>
 				</div>
 			</div>
-			<aside>
+			<aside id="proAside">
 				<h5>Quick Reference</h5>
 				<h6>Element(By.XXXXX</h6>
 				<ul>
 					<li><code class="example">$</code> means <code class="example">element(by.Css</code></li>
 					<li><code class="example">$$</code> means <code class="example">element.all(by.Css</code></li>
 					<li><code class="example">element(by.className('')</code></li>
-					<li><code class="example">element(by.cssContainingText('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
+					<li><code class="example">element(by.<br>
+					cssContainingText('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
 					<li><code class="example">element(by.className('')</code></li>
 					<li><code class="example">element(by.name('')</code> Element Name</li>
 					<li><code class="example">element(by.id('')</code></li>
@@ -152,8 +153,11 @@
 				</ul>
 				<h6>Send Keys</h6>
 				<ul>
-					<li>Should be: <code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
-					<li>But currently you need: <code class="example">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code></li>
+					<li>Should be: <code class="example">element(by.name<br>
+					('name')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
+					<li>But currently you need: <code class="example">browser<br>
+					.actions().sendKeys(protractor<br>
+					.Key.<span class="replace">TAB</span>).perform();</code></li>
 				</ul>
 				<h6>Browser</h6>
 				<ul>
@@ -162,10 +166,14 @@
 					<li><code class="example">browser.getCurrentUrl()</code></li>
 					<li><code class="example">browser.sleep(<span class="replace">#</span>)</code></li>
 					<li><code class="example">browser.pause(<span class="replace">#</span>)</code></li>
-					<li><code class="example">browser.manage().window().setSize(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
-					<li><code class="example">browser.manage().window().setPosition(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
-					<li><code class="example">browser.manage().getCookie('<span class="replace">_ga</span>')</code> (promise)</li>
-					<li><code class="example">browser.driver.navigate().forward()</code> (promise)</li>
+					<li><code class="example">browser.manage()<br>
+					.window().setSize(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
+					<li><code class="example">browser.manage().window()<br>
+					.setPosition(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
+					<li><code class="example">browser.manage()<br>
+					.getCookie('<span class="replace">_ga</span>')</code> (promise)</li>
+					<li><code class="example">browser.driver.navigate()<br>
+					.forward()</code> (promise)</li>
 				</ul>
 				<h6>Element Properties</h6>
 				<ul>
@@ -175,7 +183,7 @@
 					<li><code class="example"><span class="replace">elName</span>.getAttribute('<span class="replace">value</span>')</code></li>
 					<li><code class="example"><span class="replace">elName</span>.isDisplayed()</code> (promise)</li>
 					<li><code class="example"><span class="replace">elName</span>.isPresent()</code></li>
-					<li><code class="example"><span class="replace">elName</span>.getLocation()</code>relative to left corner of screen</li>
+					<li><code class="example"><span class="replace">elName</span>.getLocation()</code><br>relative to left corner of screen</li>
 				</ul>
 				<h6>Matchers</h6>
 				<ul>
@@ -224,6 +232,7 @@
 		<!-- endbuild -->
 		<!-- build:js({app,.tmp}) scripts/main.js -->
 		<script src="../scripts/main.js"></script>
+		<script src="../scripts/proScrollAsideFixed.js"></script>
 		<!-- endbuild -->
 	</body>
 </html>

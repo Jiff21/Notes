@@ -3,12 +3,12 @@
  */
 'use strict';
 
-function OnScrollDiv (el) {
-	var height = el.scrollTop;
-	console.log(height);
-	// if(height >= 70){
-	// 	document.getElementById('proAside')
-	// }
-}
-
-OnScrollDiv();
+window.addEventListener('scroll', function() {
+	var proAside = $('#proAside');
+	var posTop = document.body.scrollTop;
+	if (posTop < 603) {
+		proAside.removeClass('proFixed');
+	} else if (posTop >= 603) {
+		proAside.addClass('proFixed');
+	}
+});

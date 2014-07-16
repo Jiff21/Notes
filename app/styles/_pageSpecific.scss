@@ -310,6 +310,24 @@ $jasmineBlue: #ADD8E6;
 		border-left: 1px solid black;
 		font-weight: bolder;
 	}
+	@media(min-width: $screen-tablet){
+		.proFixed {
+			position: fixed;
+			top: 70px;
+			width: 750px;
+			left: 50%;
+			margin-left: 125px;
+		}
+	}
+	@media(min-width: $screen-desktop){
+		.proFixed {
+			position: fixed;
+			top: 70px;
+			width: 900px;
+			left: 50%;
+			margin-left: 150px;
+		}
+	}	
 }
 
 .owaspBody {
