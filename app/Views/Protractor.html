@@ -142,10 +142,11 @@
 					<li><code class="example">$</code> means <code class="example">element(by.Css</code></li>
 					<li><code class="example">$$</code> means <code class="example">element.all(by.Css</code></li>
 					<li><code class="example">element(by.className('')</code></li>
-					<li><code class="example">element(by.<br>
-					cssContainingText('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
+					<li><code class="example">element(by.cssContaining<br>
+					Text('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
 					<li><code class="example">element(by.className('')</code></li>
-					<li><code class="example">element(by.name('')</code> Element Name</li>
+					<li><code class="example">element(by.name('')</code><br> 
+					&nbsp;&nbsp;&nbsp;&nbsp;Element Name</li>
 					<li><code class="example">element(by.id('')</code></li>
 					<li><code class="example">element(by.partialLinkText('')</code></li>
 					<li><code class="example">element(by.binding('')</code></li>
@@ -153,11 +154,12 @@
 				</ul>
 				<h6>Send Keys</h6>
 				<ul>
-					<li>Should be: <code class="example">element(by.name<br>
-					('name')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
-					<li>But currently you need: <code class="example">browser<br>
-					.actions().sendKeys(protractor<br>
-					.Key.<span class="replace">TAB</span>).perform();</code></li>
+					<li>Should be: <br>
+					<code class="example">element(by.name('name'))<br>
+					.sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
+					<li>But currently you need: <br>
+					<code class="example">browser.actions().sendKeys<br>
+					(protractor.Key.<span class="replace">TAB</span>).perform();</code></li>
 				</ul>
 				<h6>Browser</h6>
 				<ul>

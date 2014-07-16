@@ -208,6 +208,12 @@ header{
 	color: blue;
 }
 
+/* Remove Top Margin on the 1st Heading of Main Paragraph or Aside */
+.main div h3, .main div h1, .main div h2, aside h5, aside h6, aside h4 {
+	margin-top: 0px;
+}
+
+
 /* Aside Styling*/
 
 aside h5 { font-size: 90%; }
