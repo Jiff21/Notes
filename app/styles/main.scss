@@ -90,11 +90,13 @@ article{
 		padding-left: 0px;
 	}
 	.main {
-		@include make-xs-column(8);
-		@include make-sm-column(9);
+		@include make-xs-column(12);
 		h3 {
 			margin-top: 55px;
 		}
+	}
+	.leftNavCompanion {
+		margin-left: 30%;
 	}
 }
 
