@@ -120,7 +120,12 @@
 
 	#background {
 		position: absolute;
-		font-size: 300pt;
+		font-size: 9em;
+		margin: 0px;
+		padding: 0px;
+		@media(min-width: $screen-tablet){
+			font-size: 20em;
+		}
 		text-shadow: 4px 5px 10px #666;
 		opacity: .10;
 		filter: dropshadow(color=#666, offx=4, offy=5);
@@ -136,7 +141,12 @@
 
 	#background2 {
 		position: absolute;
-		font-size: 300pt;
+		font-size: 9em;
+		margin: 0px;
+		padding: 0px;
+		@media(min-width: $screen-tablet){
+			font-size: 20em;
+		}
 		text-shadow: 4px 5px 10px #666;
 		opacity: .10;
 		filter: dropshadow(color=#666, offx=4, offy=5);
