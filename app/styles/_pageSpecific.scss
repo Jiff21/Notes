@@ -164,11 +164,12 @@
 		background-image: url(../images/Sasquatch.jpg);
 		background-position: center;
 			h1 {
-				color: white;
+				color: #990909;
 				margin-top: 180px;
 			}
 			p {
-				color: white;
+				color: #990909;
+				font-weight: 600;
 			}
 	}
 	.main {
@@ -193,6 +194,7 @@
 		}
 		h3 {
 			text-align: center;
+			font-size: 130px;
 		}
 	}
 }
@@ -401,7 +403,43 @@ $jasmineBlue: #ADD8E6;
 			p {
 				color: white;
 			}
+	}
+	@media(min-width: $screen-phone){
+		.proFixed {
+			position: fixed;
+			top: 70px;
+			left: 0px;
+			width: 30%
+		}
+		.main {
+			left: 35%;
+		}
 	}	
+	@media(min-width: $screen-tablet){
+		.proFixed {
+			position: fixed;
+			top: 70px;
+			left: 0px;
+			width: 28%
+		}
+		.main {
+			left: 25%;
+		}
+		aside{
+			a {
+				font-size: 2em;
+			}
+		}
+
+	}
+	@media(min-width: $screen-desktop){
+		.proFixed {
+			position: fixed;
+			top: 70px;
+			width: 30%;
+		}
+	}	
+
 }
 
 .terminalBody {
