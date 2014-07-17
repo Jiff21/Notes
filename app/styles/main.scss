@@ -80,6 +80,8 @@ article{
 		display: block;
 		border: 2px solid white;
 		text-align: right;
+		text-decoration: none;
+		cursor: pointer;
 	}
 	aside{
 		@include make-xs-column(4);
