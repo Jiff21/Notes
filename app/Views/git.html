@@ -94,8 +94,11 @@
 				<p>Get rid of all unstaged changes:<br>
 				<code class="example2">git checkout — .</code>
 				</p>
-				<p>Revert last commit if not pushed to remote yet:<br>
-				<code class="example2">git reset --hard <span class="replace">origin/master</span></code>
+				<p>Revert last commit (keeping changes) if not pushed to remote yet:<br>
+				<code class="example2">git reset HEAD~1</code>
+				</p>
+				<p>Revert last commit (nuking changes) if not pushed to remote yet:<br>
+				<code class="example2">git reset --hard HEAD~1</code>
 				</p>
 			</div>
 			<div id="branches" class="leftNavCompanion">
@@ -121,13 +124,13 @@
 				<p> Delete local branch:<br>
 				<code class="example2">git branch -d <span class="replace">BranchName</span></code>
 				</p>
-				<p>Merge a banch<br>
+				<p>Merge a branch:<br>
 				<code class="example2">git merge <span class="replace">NameOfBranchToMergeIntoCurrentBranch</span></code>
 				</p>
 			</div>
 			<div id="ignore" class="leftNavCompanion">
 				<h3> Setting up git ignore globally </h3>
-				<p> First make a file <br>
+				<p> First make a file:<br>
 				<code class="example2">echo <span class="replace">file_type_to_Ignore</span> > ~/.gitignore_global</code><br>
 				Then:<br>
 				<code class="example2">git config --global core.excludesfile ~/.gitignore_global</code>
