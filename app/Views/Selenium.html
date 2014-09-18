@@ -31,11 +31,34 @@
 				</div>
 			</div>
 			<article>
-			<div class="main">
+			<div class="full">
+				<h2> Selenium Javascript Web Driver </h2>
+				<p> Here are some useful commands that you've had to use in Jasmine or Protractor:</p>
+				<ul>
+					<li><span class="example">browser.driver.findElement(by.id('signIn'));</span></li>
+					<li><span class="example">browser.driver.isElementPresent(by.css('img .new'))</span></li>
+					<li><span class="example"></span></li>
+					<li><span class="example">browser.driver.manage().deleteCookie('loggedin');</span></li>
+					<li><span class="example">browser.driver.manage().deleteAllCookies();</span></li>
+					<li><span class="example">browser.executeScript('window.localStorage.clear();');</span></li>
+					<li>A wait command: </br>
+					<div class="example2">
+						browser.driver.wait(function() { </br>
+						&nbsp;&nbsp;console.log(&quot;This has a list of accounts to choose from. Waiting for QA Account.&quot;);</br>
+						&nbsp;&nbsp;return browser.driver.isElementPresent(by.name('account-test@test.com')).then(function(el) { </br>
+						&nbsp;&nbsp;&nbsp;&nbsp;return el === true; </br>
+						&nbsp;&nbsp;}); </br>
+						}, 5000) </br>
+						&nbsp;&nbsp;.then(function() { </br>
+						&nbsp;&nbsp;&nbsp;&nbsp; yourFunction();</br>
+						});</br>
+					</div></li>
+
+				</ul>
 			</div>
-			<aside>
+<!-- 			<aside>
 				<div>
-					<h6> Page formattimg </h6>
+					<h6> Selenium Commands </h6>
 					<ul>
 						<li><h6> Header </h6></li>
 						<li><h6> Article </h6></li>
@@ -44,7 +67,7 @@
 					</ul>
 					<h6> Tags </h6>
 				</div>
-			</aside>
+			</aside> -->
 			</article>
 			<!-- Loading footer with AJAX -->
 			<div class="footerPlaceholder"></div>
