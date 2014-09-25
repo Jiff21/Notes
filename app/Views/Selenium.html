@@ -33,78 +33,87 @@
 			<article>
 			<div class="full">
 				<h2> Selenium Javascript Web Driver </h2>
+				<h6>Locators</h6>
+				<ul>
+					<li><span class="example">browser.driver.findElement(by.id('<span class="replace">signIn</span>'));</span></li>
+					<li><span class="example">browser.driver.findElement(by.partialLinkText('<span class="replace">signIn</span>'));</span></li>
+					<li><span class="example">browser.driver.findElement(by.css('<span class="replace">signIn</span>'));</span></li>
+					<li><span class="example">browser.driver.findElement(by.className('<span class="replace">signIn</span>'));</span></li>
+					<li><span class="example">browser.driver.findElement(by.name('<span class="replace">signIn</span>'));</span></li>
+					<li><span class="example">browser.driver.findElement(by.xpath('<span class="replace">signIn</span>'));</span></li>
+				</ul>
 				<p> Here are some useful commands that you've had to use in Jasmine or Protractor:</p>
 				<ul>
-					<li><span class="example">browser.driver.findElement(by.id('signIn'));</span></li>
 					<li><span class="example">browser.driver.isElementPresent(by.css('img .new'))</span></li>
 					<li><span class="example"></span></li>
 					<li><span class="example">browser.driver.manage().deleteCookie('loggedin');</span></li>
 					<li><span class="example">browser.driver.manage().deleteAllCookies();</span></li>
 					<li><span class="example">browser.executeScript('window.localStorage.clear();');</span></li>
+					<li><span class="example">browser.get('<span class="replace">http:www.example.com</span>');</span></li>
 					<li>A wait command: </br>
-					<div class="example2">
-						browser.driver.wait(function() { </br>
-						&nbsp;&nbsp;console.log(&quot;This has a list of accounts to choose from. Waiting for QA Account.&quot;);</br>
-						&nbsp;&nbsp;return browser.driver.isElementPresent(by.name('account-test@test.com')).then(function(el) { </br>
-						&nbsp;&nbsp;&nbsp;&nbsp;return el === true; </br>
-						&nbsp;&nbsp;}); </br>
-						}, 5000) </br>
-						&nbsp;&nbsp;.then(function() { </br>
-						&nbsp;&nbsp;&nbsp;&nbsp; yourFunction();</br>
-						});</br>
-					</div></li>
-
-				</ul>
-			</div>
-<!-- 			<aside>
-				<div>
-					<h6> Selenium Commands </h6>
-					<ul>
-						<li><h6> Header </h6></li>
-						<li><h6> Article </h6></li>
-						<li><h6> Aside </h6></li>
-						<li><h6> Footer </h6></li>
+						<div class="example2">
+							browser.driver.wait(function() { </br>
+							&nbsp;&nbsp;console.log(&quot;This has a list of accounts to choose from. Waiting for QA Account.&quot;);</br>
+							&nbsp;&nbsp;return browser.driver.isElementPresent(by.name('account-test@test.com')).then(function(el) { </br>
+							&nbsp;&nbsp;&nbsp;&nbsp;return el === true; </br>
+							&nbsp;&nbsp;}); </br>
+							}, 5000) </br>
+							&nbsp;&nbsp;.then(function() { </br>
+							&nbsp;&nbsp;&nbsp;&nbsp; yourFunction();</br>
+							});</br>
+						</div></li>
 					</ul>
-					<h6> Tags </h6>
+
 				</div>
-			</aside> -->
-			</article>
-			<!-- Loading footer with AJAX -->
-			<div class="footerPlaceholder"></div>
-		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="../scripts/main.js"></script>
-		<!-- endbuild -->
-		<!-- myScripts -->
-		<script src="../includes/nav.js"></script>
-		<script src="../includes/footer.js"></script>
-	</body>
-</html>
+				<!-- 			<aside>
+						<div>
+								<h6> Selenium Commands </h6>
+								<ul>
+										<li><h6> Header </h6></li>
+										<li><h6> Article </h6></li>
+										<li><h6> Aside </h6></li>
+										<li><h6> Footer </h6></li>
+								</ul>
+								<h6> Tags </h6>
+						</div>
+				</aside> -->
+				</article>
+				<!-- Loading footer with AJAX -->
+				<div class="footerPlaceholder"></div>
+			</div>
+			<!-- build:js scripts/vendor.js -->
+			<!-- bower:js -->
+			<script src="../bower_components/jquery/dist/jquery.js"></script>
+			<!-- endbower -->
+			<!-- endbuild -->
+			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+			<script>
+				(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+				function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+				e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+				e.src='//www.google-analytics.com/analytics.js';
+				r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+				ga('create','UA-XXXXX-X');ga('send','pageview');
+			</script>
+			<!-- build:js scripts/plugins.js -->
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+			<!-- endbuild -->
+			<!-- build:js({app,.tmp}) scripts/main.js -->
+			<script src="../scripts/main.js"></script>
+			<!-- endbuild -->
+			<!-- myScripts -->
+			<script src="../includes/nav.js"></script>
+			<script src="../includes/footer.js"></script>
+		</body>
+	</html>
