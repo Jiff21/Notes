@@ -92,6 +92,9 @@
 							</tr>
 						</tbody>
 					</table>
+					<p>
+					If you're using multibrower capabilities but wish to test one a specific browser you can use <span class="term">--browser=<span class="replace">BrowserName</span></span> (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --browser=firefox</code>).
+					</p>
 				</div>
 				<div>
 					<h3>Tips</h3>
@@ -145,7 +148,7 @@
 					<li><code class="example">element(by.cssContaining<br>
 					Text('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
 					<li><code class="example">element(by.className('')</code></li>
-					<li><code class="example">element(by.name('')</code><br> 
+					<li><code class="example">element(by.name('')</code><br>
 					&nbsp;&nbsp;&nbsp;&nbsp;Element Name</li>
 					<li><code class="example">element(by.id('')</code></li>
 					<li><code class="example">element(by.partialLinkText('')</code></li>
@@ -155,10 +158,10 @@
 				<h6>Send Keys</h6>
 				<ul>
 					<li>Should be: <br>
-					<code class="example">element(by.name('name'))<br>
+						<code class="example">element(by.name('name'))<br>
 					.sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
 					<li>But currently you need: <br>
-					<code class="example">browser.actions().sendKeys<br>
+						<code class="example">browser.actions().sendKeys<br>
 					(protractor.Key.<span class="replace">TAB</span>).perform();</code></li>
 				</ul>
 				<h6>Browser</h6>
