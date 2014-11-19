@@ -62,6 +62,14 @@
 					<br>
 					While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using, but be careful because they're easy to miss if you forget to remove them.
 					</p>
+					<p> There's a new option to exclude test for specific capability with build 1.40. You can now set multibrowser capabilities like this:</p>
+					<div class="example2">
+						multiCapabilities: [{<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'browserName': 'chrome',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include: 'spec/unit/data/fakespecA.js'<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude: 'spec/unit/data/fakespecB.js'<br>
+						}]</span>'<br>
+					</div>
 					<table>
 						<caption>Single Test or Block by Language</caption>
 						<tbody>
@@ -117,6 +125,7 @@
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPosition(<span class="replace">0</span>,<span class="replace">0</span>);<br>
 						},<br>
 					</div>
+					<p>Similar commands can be run before and after each test with <code class="example">beforeEach</code> &amp; <code class="example">afterEach</code>.  On 1.40 they added <code class="example">beforeLaunch</code> &amp; <code class="example">afterLaunch</code> which can be used to setup/close test dependencies, but beware this runs before global variable 'protractor' object is setup.</p>
 					<h5>$</h5>
 					<p>
 					<code class="example">$</code> means <code class="example">element(by.Css</code><br>

@@ -96,10 +96,6 @@ article{
 	}
 }
 
-
-
-
-
 .browsehappy {
 	margin: 0.2em 0;
 	background: #ccc;
@@ -226,6 +222,13 @@ header{
 	padding-left: 5px;
 	color: black;
 	border-radius: 2px;
+	margin-bottom: 10px;
+	clear: all;
+}
+
+/* Adding styling to tables */
+table {
+	margin: 10px 0px;
 }
 
 .replace {
