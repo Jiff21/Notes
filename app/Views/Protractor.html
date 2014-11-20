@@ -100,6 +100,9 @@
 							</tr>
 						</tbody>
 					</table>
+					<p>
+					If you're using single browser capability but wish to test with a different browser than the default add <span class="term">--browser=<span class="replace">BrowserName</span></span> (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --browser=firefox</code>).
+					</p>
 				</div>
 				<div>
 					<h3>Tips</h3>
@@ -108,10 +111,14 @@
 					A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
 					Sending letters and numbers works simple by using:<br>
 					<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</code><br>
-					But if you need to use a unicode key it should work with.
+					Recently they fixed in issue and this should work for sending unicode keys.
 					<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code><br>
-					But right now it only seems to work if you do:
+					This was the workaround for previous issue so I'm keeping it here in case comes back.
 					<code class="example">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
+					Using the send key delete doesn't seem to work,<br>
+					<code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">DELETE</span>);</code><br>
+					But BACK_SPACE does.<br>
+					<code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">BACK_SPACE</span>);</code>
 					</p>
 					<h5>Sleep &amp; Pause</h5>
 					<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
@@ -154,14 +161,19 @@
 					<li><code class="example">element(by.cssContaining<br>
 					Text('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
 					<li><code class="example">element(by.className('')</code></li>
-					<li><code class="example">element(by.name('')</code><br> 
+					<li><code class="example">element(by.name('')</code><br>
 					&nbsp;&nbsp;&nbsp;&nbsp;Element Name</li>
 					<li><code class="example">element(by.id('')</code></li>
 					<li><code class="example">element(by.partialLinkText('')</code></li>
 					<li><code class="example">element(by.binding('')</code></li>
 					<li><code class="example">element(by.js('')</code></li>
 				</ul>
-
+				<h6>Send Keys</h6>
+				<ul>
+					<li>Should be: <br>
+						<code class="example">element(by.name('name'))<br>
+					.sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
+				</ul>
 				<h6>Browser</h6>
 				<ul>
 					<li>means: <code class="example">protractor.getInstance();</code></li>

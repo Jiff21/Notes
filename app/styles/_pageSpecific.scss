@@ -120,7 +120,12 @@
 
 	#background {
 		position: absolute;
-		font-size: 300pt;
+		font-size: 9em;
+		margin: 0px;
+		padding: 0px;
+		@media(min-width: $screen-tablet){
+			font-size: 20em;
+		}
 		text-shadow: 4px 5px 10px #666;
 		opacity: .10;
 		filter: dropshadow(color=#666, offx=4, offy=5);
@@ -136,7 +141,12 @@
 
 	#background2 {
 		position: absolute;
-		font-size: 300pt;
+		font-size: 9em;
+		margin: 0px;
+		padding: 0px;
+		@media(min-width: $screen-tablet){
+			font-size: 20em;
+		}
 		text-shadow: 4px 5px 10px #666;
 		opacity: .10;
 		filter: dropshadow(color=#666, offx=4, offy=5);
@@ -411,20 +421,9 @@ $jasmineBlue: #ADD8E6;
 			left: 0px;
 			width: 30%
 		}
-		.main {
-			left: 35%;
-		}
 	}	
 	@media(min-width: $screen-tablet){
-		.proFixed {
-			position: fixed;
-			top: 70px;
-			left: 0px;
-			width: 28%
-		}
-		.main {
-			left: 25%;
-		}
+
 		aside{
 			a {
 				font-size: 2em;
@@ -433,11 +432,7 @@ $jasmineBlue: #ADD8E6;
 
 	}
 	@media(min-width: $screen-desktop){
-		.proFixed {
-			position: fixed;
-			top: 70px;
-			width: 30%;
-		}
+
 	}	
 
 }

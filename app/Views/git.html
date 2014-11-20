@@ -23,7 +23,7 @@
 		<!--[if lt IE 10]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container">
+		<div class="container-fluid">
 			<div class="jumbotron">
 				<h1>Git</h1>
 			</div>
@@ -38,7 +38,7 @@
 			</aside>
 			
 			<div class="main">
-			<div id="start" class="full">
+			<div id="start" class="leftNavCompanion">
 				<h3>Starting a Project</h3>
 				<p>Locally use:<br>
 				<div class="example2">
@@ -53,7 +53,7 @@
 				<code class="example2">git clone <span class="replace">github/url</span></code>
 				<p>
 			</div>
-			<div id="stash" class="full">
+			<div id="stash" class="leftNavCompanion">
 				<h3 >Stash</h3>
 				<p>Save current changes to Stash<br>
 				<code class="example2">git stash -m "<span class="replace">Message about stash</span>"</code>
@@ -65,10 +65,10 @@
 				<code class="example2">git stash pop <span class="replace">HashFragNum</span></code>
 				</p>
 				<p>Clear all stashed changes:<br>
-				<code class="example2">git stash -m "<span class="replace">Message about stash</span>"</code>
+				<code class="example2">git stash clear "<span class="replace">Message about stash</span>"</code>
 				</p>
 			</div>
-			<div id="basics" class="full">
+			<div id="basics" class="leftNavCompanion">
 				<h3 >Basics</h3>
 				<p>Check for Changes since last commit:<br>
 				<code class="example2">git status</code>
@@ -94,11 +94,14 @@
 				<p>Get rid of all unstaged changes:<br>
 				<code class="example2">git checkout — .</code>
 				</p>
-				<p>Revert last commit if not pushed to remote yet:<br>
-				<code class="example2">git reset --hard <span class="replace">origin/master</span></code>
+				<p>Revert last commit (keeping changes) if not pushed to remote yet:<br>
+				<code class="example2">git reset HEAD~1</code>
+				</p>
+				<p>Revert last commit (nuking changes) if not pushed to remote yet:<br>
+				<code class="example2">git reset --hard HEAD~1</code>
 				</p>
 			</div>
-			<div id="branches" class="full">
+			<div id="branches" class="leftNavCompanion">
 				<h3>Branches</h3>
 				<p> Create a new branch off current branch:<br>
 				<code class="example2">git checkout -b <span class="replace">BranchName</span></code>
@@ -112,8 +115,8 @@
 				<p> Show Remote branches:<br>
 				<code class="example2">git branch -r</code>
 				</p>
-				<p> Put branch on remote with default tracking:<br>
-				<code class="example2">git branch -u <span class="replace">OriginName</span> <span class="replace">RemoteBranchName</span></code>
+				<p> Put a local branch on remote with default tracking:<br>
+				<code class="example2">git push -u <span class="replace">OriginName</span> <span class="replace">RemoteBranchName</span></code>
 				</p>
 				<p> Pull down a remote branch you don't have:<br>
 				<code class="example2">git checkout -b <span class="replace">LocalBranchName</span> origin/<span class="replace">remote_branch_name</span></code>
@@ -121,13 +124,13 @@
 				<p> Delete local branch:<br>
 				<code class="example2">git branch -d <span class="replace">BranchName</span></code>
 				</p>
-				<p>Merge a banch<br>
+				<p>Merge a branch:<br>
 				<code class="example2">git merge <span class="replace">NameOfBranchToMergeIntoCurrentBranch</span></code>
 				</p>
 			</div>
-			<div id="ignore" class="full">
+			<div id="ignore" class="leftNavCompanion">
 				<h3> Setting up git ignore globally </h3>
-				<p> First make a file <br>
+				<p> First make a file:<br>
 				<code class="example2">echo <span class="replace">file_type_to_Ignore</span> > ~/.gitignore_global</code><br>
 				Then:<br>
 				<code class="example2">git config --global core.excludesfile ~/.gitignore_global</code>
