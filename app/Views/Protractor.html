@@ -161,26 +161,7 @@
 					<li><code class="example">element(by.binding('')</code></li>
 					<li><code class="example">element(by.js('')</code></li>
 				</ul>
-				<h6>Send Keys</h6>
-				<ul>
-					<li>A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html" target="_blank" >here</a>.<br>
-					Sending letters and numbers works simple by using:
-					<code class="example">element(by.name('name'))<br>
-					.sendKeys(protractor.Key.<span class="replace">TAB</span>)</code>
-					</li>
-					<li>In the past there was an issue with sending unicode keys that needed the following workaround, keeping it here in case comes back.<br>
-					<code class="example">browser.actions().sendKeys<br>
-					(protractor.Key.<span class="replace">TAB</span>).perform();</code>
-					</li>
-					<li>Using the send key delete doesn't seem to work,<br>
-					<code class="example">element(by.name('name'))
-					.sendKeys(protractor.Key.<span class="replace">DELETE</span>);</code>
-					</li>
-					<li> But BACK_SPACE does.<br>
-					<code class="example">element(by.name('name'))
-					.sendKeys(protractor.Key.<span class="replace">BACK_SPACE</span>);</code>
-					</li>
-				</ul>
+
 				<h6>Browser</h6>
 				<ul>
 					<li>means: <code class="example">protractor.getInstance();</code></li>
