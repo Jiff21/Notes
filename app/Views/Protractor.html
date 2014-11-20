@@ -108,10 +108,14 @@
 					A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
 					Sending letters and numbers works simple by using:<br>
 					<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</code><br>
-					But if you need to use a unicode key it should work with.
+					Recently they fixed in issue and this should work for sending unicode keys.
 					<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code><br>
-					But right now it only seems to work if you do:
+					This was the workaround for previous issue so I'm keeping it here in case comes back.
 					<code class="example">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
+					Using the send key delete doesn't seem to work,<br>
+					<code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">DELETE</span>);</code><br>
+					But BACK_SPACE does.<br>
+					<code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">BACK_SPACE</span>);</code>
 					</p>
 					<h5>Sleep &amp; Pause</h5>
 					<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
@@ -166,9 +170,6 @@
 					<li>Should be: <br>
 					<code class="example">element(by.name('name'))<br>
 					.sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
-					<li>But currently you need: <br>
-					<code class="example">browser.actions().sendKeys<br>
-					(protractor.Key.<span class="replace">TAB</span>).perform();</code></li>
 				</ul>
 				<h6>Browser</h6>
 				<ul>
