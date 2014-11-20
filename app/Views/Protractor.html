@@ -62,6 +62,14 @@
 					<br>
 					While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using, but be careful because they're easy to miss if you forget to remove them.
 					</p>
+					<p> There's a new option to exclude test for specific capability with build 1.40. You can now set multibrowser capabilities like this:</p>
+					<div class="example2">
+						multiCapabilities: [{<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'browserName': 'chrome',<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include: 'spec/unit/data/fakespecA.js'<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude: 'spec/unit/data/fakespecB.js'<br>
+						}]</span>'<br>
+					</div>
 					<table>
 						<caption>Single Test or Block by Language</caption>
 						<tbody>
@@ -103,10 +111,14 @@
 					A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
 					Sending letters and numbers works simple by using:<br>
 					<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</code><br>
-					But if you need to use a unicode key it should work with.
+					Recently they fixed in issue and this should work for sending unicode keys.
 					<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code><br>
-					But right now it only seems to work if you do:
+					This was the workaround for previous issue so I'm keeping it here in case comes back.
 					<code class="example">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
+					Using the send key delete doesn't seem to work,<br>
+					<code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">DELETE</span>);</code><br>
+					But BACK_SPACE does.<br>
+					<code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">BACK_SPACE</span>);</code>
 					</p>
 					<h5>Sleep &amp; Pause</h5>
 					<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
@@ -120,6 +132,7 @@
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPosition(<span class="replace">0</span>,<span class="replace">0</span>);<br>
 						},<br>
 					</div>
+					<p>Similar commands can be run before and after each test with <code class="example">beforeEach</code> &amp; <code class="example">afterEach</code>.  On 1.40 they added <code class="example">beforeLaunch</code> &amp; <code class="example">afterLaunch</code> which can be used to setup/close test dependencies, but beware this runs before global variable 'protractor' object is setup.</p>
 					<h5>$</h5>
 					<p>
 					<code class="example">$</code> means <code class="example">element(by.Css</code><br>
@@ -160,9 +173,6 @@
 					<li>Should be: <br>
 						<code class="example">element(by.name('name'))<br>
 					.sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
-					<li>But currently you need: <br>
-						<code class="example">browser.actions().sendKeys<br>
-					(protractor.Key.<span class="replace">TAB</span>).perform();</code></li>
 				</ul>
 				<h6>Browser</h6>
 				<ul>
