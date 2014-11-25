@@ -54,8 +54,7 @@ var Helpers = function () {
 		trainingEmail: '',
 		trainingPass: '',
 		domain: '@gmail.com',
-		accessCode;
-		'#######',
+		accessCode; '#######',
 	};
 
 	/**
