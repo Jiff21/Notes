@@ -419,7 +419,10 @@ $jasmineBlue: #ADD8E6;
 			position: fixed;
 			top: 70px;
 			left: 0px;
-			width: 30%
+			width: 30%;
+		}
+		.main {
+			margin-left: 30%;
 		}
 	}	
 	@media(min-width: $screen-tablet){

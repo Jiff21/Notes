@@ -36,11 +36,11 @@
 				<a href="#branches" class="leftNaveButton clearBoth">Branches</a>
 				<a href="#ignore" class="leftNaveButton clearBoth">Ignore</a>
 			</aside>
-			
+			</div>
 			<div class="main">
 			<div id="start" class="leftNavCompanion">
 				<h3>Starting a Project</h3>
-				<p>Locally use:<br>
+				<p>Locally use:</p>
 				<div class="example2">
 					git init <br>
 					touch README.md <br>
@@ -48,7 +48,6 @@
 					git add README.md<br>
 					git commit -m "<span class="replace">This is the 1st commit</span>"
 				</div>
-				</p>
 				<p> Pull down a project that has already been started: <br>
 				<code class="example2">git clone <span class="replace">github/url</span></code>
 				<p>
@@ -130,25 +129,22 @@
 			</div>
 			<div id="ignore" class="leftNavCompanion">
 				<h3>Git Settings</h3>
-				<p>Your syncing your .bash_profile now and autocompletion can be setup by simply setting your bash profile to use the files in this project:</br>
+				<p>Your syncing your .bash_profile now and autocompletion can be setup by simply setting your bash profile to use the files in this project:<br>
 				<code class="example2">source /Applications/MAMP/htdocs/Notes/app/examples/.bash_profile</code></p>
-				<p>Git Ignore:<br>
-				<code class="example2">echo <span class="replace">file_type_to_Ignore</span> &#62; /Applications/MAMP/htdocs/Notes/app/examples/.gitignore_global</code><br>
-				Then:<br>
+				<p> You should be able to use your synced git ignore by configuring it to look at the file in this project <br>
 				<code class="example2">git config --global core.excludesfile /Applications/MAMP/htdocs/Notes/app/examples/.gitignore_global</code>
 				</p>
 			</div>
 			<div id="bower" class="leftNavCompanion">
 				<h3>NPM &amp; Bower</h3>
 				<p>Just a couple quick notes on npm &amp; Bower. When you need to update a dependency don't just update package.json, instead run the update through npm with a command.  Here's some examples.</p>
-				<code class="example2">npm install <span class="replace">yeoman -g</span></code></br>
-				<code class="example2">git checkout <span class="replace">protractor@1.4.0 --save-dev</span></code></br>
-				<code class="example2">git checkout <span class="replace">selenium-webdriver@latest</span></code></br>
+				<code class="example2">npm install <span class="replace">yeoman -g</span></code><br>
+				<code class="example2">git checkout <span class="replace">protractor@1.4.0 --save-dev</span></code><br>
+				<code class="example2">git checkout <span class="replace">selenium-webdriver@latest</span></code><br>
 				<code class="example2">git checkout <span class="replace">chromedriver@"&#62;2.0.0 &#60;2.12.0"</span></code>
 			</div>
+			</div>
 			</article>
-			</div>
-			</div>
 
 			<!-- Loading footer with AJAX -->
 			<div class="footerPlaceholder"></div>
