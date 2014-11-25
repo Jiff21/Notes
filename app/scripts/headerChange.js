@@ -20,12 +20,12 @@ function headerChange() {
 			item = itemArray[i];
 			item.className = 'white';
 		}
-	}else{
+	} else {
 
 		itemArray = document.getElementsByClassName('white');
 		i = itemArray.length - 1;
-		
-		for (i ; i >= 0; i--) {
+
+		for (i; i >= 0; i--) {
 			item = itemArray[i];
 			item.className = 'red';
 		}

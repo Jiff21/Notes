@@ -1,0 +1,7 @@
+[user]
+	name = Jeff
+	email = Jeff@bynd.com
+[push]
+	default = simple
+[core]
+	/Applications/MAMP/htdocs/Notes/app/examples/.gitignore_global

@@ -1,0 +1,10 @@
+{
+	"installed_packages":
+	[
+		"Javascript Beautify",
+		"Sass",
+		"SassBeautify",
+		"SublimeLinter",
+		"SublimeLinter-jshint"
+	]
+}
