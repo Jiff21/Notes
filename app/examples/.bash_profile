@@ -26,7 +26,7 @@ alias statsum="git log --stat --summary"
 ###################################
 if [ -f ~/.git-prompt.sh ]; then
 	source ~/.git-prompt.sh
-	export PS1='[\u \W$(__git_ps1 " (%s)")]\$ '
+	export PS1='[\u|\W$(__git_ps1 " (%s)")]\$ '
 fi
 
 ###################################
