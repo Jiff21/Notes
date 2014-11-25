@@ -24,8 +24,8 @@ alias statsum="git log --stat --summary"
 ###################################
 # Adding Working Directory and Branch to Command Line
 ###################################
-if [ -f ~/.git-prompt.sh ]; then
-	source ~/.git-prompt.sh
+if [ -f /Applications/MAMP/htdocs/Notes/app/examples/.git-completion.bash ]; then
+	source /Applications/MAMP/htdocs/Notes/app/examples/.git-prompt.sh
 	export PS1='[\u|\W$(__git_ps1 " (%s)")]\$ '
 fi
 
@@ -33,8 +33,8 @@ fi
 # Adding Git Autocomplete
 ###################################
 
-if [ -f ~/.git-completion.bash ]; then
-	source ~/.git-completion.bash
+if [ -f /Applications/MAMP/htdocs/Notes/app/examples/.git-completion.bash ]; then
+	source /Applications/MAMP/htdocs/Notes/app/examples/.git-completion.bash
 fi
 
 

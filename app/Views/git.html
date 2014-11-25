@@ -130,14 +130,12 @@
 			</div>
 			<div id="ignore" class="leftNavCompanion">
 				<h3>Git Settings</h3>
-				<h5>Autocomplete &amp; Bash-Profile</h5>
 				<p>Your syncing your .bash_profile now and autocompletion can be setup by simply setting your bash profile to use the files in this project:</br>
 				<code class="example2">source /Applications/MAMP/htdocs/Notes/app/examples/.bash_profile</code></p>
-				<h5>Git Ignore</h5>
-				<p> First make a file:<br>
-				<code class="example2">echo <span class="replace">file_type_to_Ignore</span> > ~/.gitignore_global</code><br>
+				<p>Git Ignore:<br>
+				<code class="example2">echo <span class="replace">file_type_to_Ignore</span> &#62; /Applications/MAMP/htdocs/Notes/app/examples/.gitignore_global</code><br>
 				Then:<br>
-				<code class="example2">git config --global core.excludesfile ~/.gitignore_global</code>
+				<code class="example2">git config --global core.excludesfile /Applications/MAMP/htdocs/Notes/app/examples/.gitignore_global</code>
 				</p>
 			</div>
 			<div id="bower" class="leftNavCompanion">
