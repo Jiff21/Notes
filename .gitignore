@@ -4,3 +4,9 @@ dist
 .sass-cache
 bower_components
 test/bower_components
+/app/examples/Package Control.last-run
+/app/examples/Package Control.ca-list
+/app/examples/Package Control.ca-bundle
+/app/examples/Package Control.system-ca-bundle
+/app/examples/Package Control.ca-certs/
+/app/examples/Package Control.cache/
