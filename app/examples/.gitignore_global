@@ -1,10 +1,2 @@
 # Ignore Mac finder files
 .DS_Store
-
-# Ignoring Sublime Caching.
-/Applications/MAMP/htdocs/Notes/app/examples/Package Control.last-run
-/Applications/MAMP/htdocs/Notes/app/examples/Package Control.ca-list
-/Applications/MAMP/htdocs/Notes/app/examples/Package Control.ca-bundle
-/Applications/MAMP/htdocs/Notes/app/examples/Package Control.system-ca-bundle
-/Applications/MAMP/htdocs/Notes/app/examples/Package Control.ca-certs/
-/Applications/MAMP/htdocs/Notes/app/examples/Package Control.cache/
