@@ -39,13 +39,13 @@
 					</div>
 					<div>
 						<h3>Password Compliance </h3>
-						<p>To add a login banner use the command <code class="example">sudo defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Use of the system implies consent to user monitoring, any unauthorized use of the system will be prosecuted."</code>  To remove the banner use <code class="example">"sudo defaults delete /Library/Preferences/com.apple.loginwindow LoginwindowText"</code>.<br></p>
+						<p>To add a login banner use the command <code class="example">sudo defaults write /Library/Preferences/com.apple.logi&shy;nwindow LoginwindowText "Use of the system implies consent to user monitoring, any unauthorized use of the system will be prosecuted."</code>  To remove the banner use <code class="example">"sudo defaults delete /Library/Preferences/com.apple.logi&shy;nwindow LoginwindowText"</code>.<br></p>
 						<ul>
 							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "requiresAlpha=1"</code></li>
 							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "requiresSymbol=1"</code></li>
 							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "requiresNumeric =1"</code></li>
 							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "minChars=8"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "maxMinutesUntilChangePassword=86400"</code></li>
+							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "maxMinutesUntilChangePa&shy;ssword=86400"</code></li>
 							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "minutesUntilFailedLoginReset=0"</code></li>
 							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "maxFailedLoginAttempts=15"</code></li>
 						</ul>
@@ -53,7 +53,7 @@
 					<div>
 						<h3>Software Unix Commands</h3>
 						<p>
-						Supposedly <code class="example">java -version</code> should get you the version, but I've found you need to use <code class="example">/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java -version</code> to get the real version. To grab the flash version in it's correct format you want to use <code class="example">defaults read /Applications/Utilities/Adobe\ Flash\ Player\ Install\ Manager.app/Contents/Info.plist</code>.
+						Supposedly <code class="example">java -version</code> should get you the version, but I've found you need to use <code class="example">/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Cont&shy;ents/Home/bin/java -version</code> to get the real version. To grab the flash version in it's correct format you want to use <code class="example">defaults read /Applications/Utilities/Adobe\ Flash\ Player\ Install\ Manager.app/Contents/Info.plist</code>.
 						</p>
 					</div>
 					<div>

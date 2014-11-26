@@ -41,7 +41,7 @@
 		background-image: url(../images/RooseveltVsBigfoot.jpg);
 		background-position: center;
 			h1 {
-				margin-top: 4em;
+				margin-top: 2em;
 				color: white;
 			}
 			p {
@@ -75,6 +75,13 @@
 			margin-top: 10px;
 		}
 	}
+	@media(min-width: $screen-tablet){
+		.jumbotron {
+			h1 {
+				margin-top: 4em;
+			}
+		}
+	}
 }
 
 .javascriptBody {
@@ -82,7 +89,7 @@
 		background-image: url(../images/JFKAlienHunter.jpg);
 		background-position: center;
 			h1 {
-				margin-top: 230px;
+				margin-top: 50px;
 				color: white;
 			}
 			p {
@@ -100,6 +107,13 @@
 		background-color: DarkGray;
 		color: white
 	}
+	@media(min-width: $screen-tablet){
+		.jumbotron {
+			h1 {
+				margin-top: 230px;
+			}
+		}
+	}
 }
 
 .cssBody {
@@ -108,7 +122,7 @@
 		background-position: center;
 		padding-bottom: 20px;
 			.darkLayer {
-				margin-top: 280px;
+				margin-top: 80px;
 				h1 {
 					color: white;
 					margin-top: 15px;
@@ -174,27 +188,36 @@
 			min-height: 600px;
 			max-height: 1500px;
 		}
+		.jumbotron {
+			.darkLayer {
+				margin-top: 280px;
+			}
+		}
 	}
 }
 
 .SassBody {
+	h3 {
+		text-align: center;
+		font-size: 110px;
+	}
 	.jumbotron {
 		background-image: url(../images/Sasquatch.jpg);
 		background-position: center;
-			h1 {
-				color: #990909;
-				margin-top: 180px;
-			}
-			p {
-				color: #990909;
-				font-weight: 600;
-			}
+		h1 {
+			color: #990909;
+			margin-top: 60px;
+		}
+		p {
+			color: #990909;
+			font-weight: 600;
+		}
 	}
 	.main {
 		button {
 			width: 49%;
 			height: 50px;
-			margin-bottom: 20px;
+			margin-bottom: 10px;
 			font-size: 30px;
 			@include buttonColor(#FFFFFF, #990909, #ff0000);
 			@include border-radius(10px);
@@ -210,9 +233,15 @@
   				outline: none; //Not worrried about accessibility.
   			}
 		}
+	}
+	@media(min-width: $screen-tablet){
 		h3 {
-			text-align: center;
 			font-size: 130px;
+		}
+		.jumbotron {
+			h1 {
+				margin-top: 180px;
+			}
 		}
 	}
 }
@@ -223,7 +252,7 @@
 		background-position: center;
 			padding-bottom: 20px;
 			.lightLayer {
-				margin-top: 250px;
+				margin-top: 120px;
 				h1 {
 					margin-top: 15px;
 					padding-top: 0px;
@@ -239,6 +268,13 @@
 			list-style-type: disc;
 		}
 	}
+	@media(min-width: $screen-tablet){
+		.jumbotron {
+			.lightLayer {
+				margin-top: 250px;
+			}
+		}
+	}
 }
 
 .MySQLBody {
@@ -246,15 +282,21 @@
 		background-image: url(../images/GWVZombies.jpg);
 		background-position: center;
 			.lightLayer {
-				margin-top: 220px;
+				margin-top: 100px;
 				h1 {
 					margin-top: 15px;
 					padding-top: 0px;
 					padding-bottom: 0px;
 				}
 			}
-
-	}	
+	}
+	@media(min-width: $screen-tablet){
+		.jumbotron {
+			.lightLayer {
+				margin-top: 220px;
+			}
+		}
+	}
 }
 
 $jasmineYellow: #FBDE7E;
@@ -264,15 +306,22 @@ $jasmineBlue: #ADD8E6;
 	.jumbotron {
 		background-image: url(../images/Jasmine.jpg);
 		background-position: right;
-		padding: 330px 0px 10px 0px ;
+		padding: 150px 0px 10px 0px;
+		.lightLayer {
 			h1 {
-				text-align: left;
-				margin-left: 20px;
+				padding: 0px 0px 0px 10px;
 			}
-			p {
-				text-align: left;
-				margin-left: 20px;
-			}
+		}
+		h1 {
+			text-align: left;
+			margin-left: 20px;
+			font-size: 18px;
+		}
+		p {
+			text-align: left;
+			margin-left: 20px;
+			font-size: 10px;
+		}
 	}
 	h3 {
 		text-align: center;
@@ -301,6 +350,15 @@ $jasmineBlue: #ADD8E6;
 		}
 	}
 	@media(min-width: $screen-tablet){
+		.jumbotron { // Not working for some reason.
+			padding: 330px 0px 10px 0px;
+			h1 {
+				font-size: 36px;
+			}
+			p {
+				font-size: 21px;
+			}
+		}
 		.rts{
 			height: 100px;
 			position: relative;
@@ -332,26 +390,32 @@ $jasmineBlue: #ADD8E6;
 		background-position: center;
 			h1 {
 				color: white;
-				margin-top: 180px;
+				margin-top: 80px;
 			}
 			p {
 				color: white;
 			}
-	}	
+	}
+	@media(min-width: $screen-tablet){
+		.jumbotron {
+			h1 {
+				margin-top: 180px;
+			}
+		}
+	}
 }
 
 .protractorBody {
 	.jumbotron {
 		background-image: url(../images/NixonVSaber.jpg);
 		background-position: center;
-			.lightLayer {
-				margin-top: 300px;
-				h1 {
-					margin-top: 15px;
-					padding: 0px 15px;
-				}
+		.lightLayer {
+			margin-top: 80px;
+			h1 {
+				margin-top: 15px;
+				padding: 0px 15px;
 			}
-
+		}
 	}
 	table, th, td {
 		border: 1px solid black;
@@ -369,6 +433,9 @@ $jasmineBlue: #ADD8E6;
 		font-weight: bolder;
 	}
 	@media(min-width: $screen-tablet){
+		.lightLayer {
+			margin-top: 300px;
+		}
 		.proFixed {
 			position: fixed;
 			top: 70px;
@@ -394,7 +461,7 @@ $jasmineBlue: #ADD8E6;
 		background-position: center;
 			h1 {
 				color: white;
-				margin-top: 4em;
+				margin-top: 1em;
 			}
 			p {
 				color: white;
@@ -403,6 +470,11 @@ $jasmineBlue: #ADD8E6;
 	img {
 		max-width: 100%;
 		height: auto;
+	}
+	@media(min-width: $screen-tablet){
+		h1 {
+			margin-top: 4em;
+		}
 	}
 }
 
@@ -446,15 +518,13 @@ $jasmineBlue: #ADD8E6;
 		.main {
 			margin-left: 30%;
 		}
-	}	
+	}
 	@media(min-width: $screen-tablet){
-
 		aside{
 			a {
 				font-size: 2em;
 			}
 		}
-
 	}
 	@media(min-width: $screen-desktop){
 
@@ -467,9 +537,9 @@ $jasmineBlue: #ADD8E6;
 		padding-top: 40px;
 		color: #63DE01;
 		h1 {
-			font-size: 7em;
+			font-size: 3em;
 		}
-	}	
+	}
 	background-color: #000;
 	color: #63DE01;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -485,6 +555,11 @@ $jasmineBlue: #ADD8E6;
 	}
 	.footer {
 		color: #63DE01;
+	}
+	@media(min-width: $screen-tablet){
+		h1{
+			font-size: 7em;
+		}
 	}
 }
 

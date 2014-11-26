@@ -110,15 +110,15 @@
 					<p>
 					A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
 					Sending letters and numbers works simple by using:<br>
-					<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</code><br>
+					<code class="example">element(by.name('<span class="replace">name</span>')).sendKe&shy;ys('<span class="replace">Example</span>');</code><br>
 					Recently they fixed in issue and this should work for sending unicode keys.
-					<code class="example">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</code><br>
+					<code class="example">element(by.name('<span class="replace">name</span>')).sendKe&shy;ys(protractor.Key.<span class="replace">TAB</span>)</code><br>
 					This was the workaround for previous issue so I'm keeping it here in case comes back.
-					<code class="example">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
+					<code class="example">browser.actions().sendKe&shy;ys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
 					Using the send key delete doesn't seem to work,<br>
-					<code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">DELETE</span>);</code><br>
+					<code class="example">element(by.name('name')).sendKe&shy;ys(protractor.Key.<span class="replace">DELETE</span>);</code><br>
 					But BACK_SPACE does.<br>
-					<code class="example">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">BACK_SPACE</span>);</code>
+					<code class="example">element(by.name('name')).sendKe&shy;ys(protractor.Key.<span class="replace">BACK_SPACE</span>);</code>
 					</p>
 					<h5>Sleep &amp; Pause</h5>
 					<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
@@ -128,8 +128,8 @@
 					<p>You can use the OnPrepare function in the config file to set up for testing.  You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing).  I suggest at least setting a default window size and location to start your testing from.</p>
 					<div class="example2">
 						onPrepare: function() {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSize(<span class="replace">1500</span>,<span class="replace">1000</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPosition(<span class="replace">0</span>,<span class="replace">0</span>);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSi&shy;ze(<span class="replace">1500</span>,<span class="replace">1000</span>);<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPo&shy;sition(<span class="replace">0</span>,<span class="replace">0</span>);<br>
 						},<br>
 					</div>
 					<p>Similar commands can be run before and after each test with <code class="example">beforeEach</code> &amp; <code class="example">afterEach</code>.  On 1.40 they added <code class="example">beforeLaunch</code> &amp; <code class="example">afterLaunch</code> which can be used to setup/close test dependencies, but beware this runs before global variable 'protractor' object is setup.</p>
@@ -142,15 +142,15 @@
 					<h5>Managing Expectations</h5>
 					<p>
 					Some good thing to check examples:<br>
-					<code class="example">expect(<span class="replace">elName</span>.isPresent()).toBeTruthy();</code><br>
+					<code class="example">expect(<span class="replace">elName</span>.isPr&shy;esent()).toBeTruthy();</code><br>
 					Or:
 					</p>
 					<div class="example2">
-						<span class="replace">prodNum.get(7).$('img')</span>.isDisplayed().then(function(val) {<br>
+						<span class="replace">prodNum.get(7).$('img')</span>.isDis&shy;played().then(function(val) {<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();<br>
 					})</div>
 					<p>Or:
-					<code class="example">expect(<span class="replace">myButton</span>.isEnabled()).toBeFalsy();</code><br>
+					<code class="example">expect(<span class="replace">myButton</span>.isEn&shy;abled()).toBeFalsy();</code><br>
 					</p>
 
 					<h3>Examples</h3>

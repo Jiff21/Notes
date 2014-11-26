@@ -35,26 +35,25 @@
 				<h2> Selenium Javascript Web Driver </h2>
 				<h6>Locators</h6>
 				<ul>
-					<li><span class="example">browser.driver.findElement(by.id('<span class="replace">signIn</span>'));</span></li>
-					<li><span class="example">browser.driver.findElement(by.partialLinkText('<span class="replace">signIn</span>'));</span></li>
-					<li><span class="example">browser.driver.findElement(by.css('<span class="replace">signIn</span>'));</span></li>
-					<li><span class="example">browser.driver.findElement(by.className('<span class="replace">signIn</span>'));</span></li>
-					<li><span class="example">browser.driver.findElement(by.name('<span class="replace">signIn</span>'));</span></li>
-					<li><span class="example">browser.driver.findElement(by.xpath('<span class="replace">signIn</span>'));</span></li>
+					<li><span class="example">browser.driver.findElem&shy;ent(by.id('<span class="replace">signIn</span>'));</span></li>
+					<li><span class="example">browser.driver.findElem&shy;ent(by.partialLinkText('<span class="replace">signIn</span>'));</span></li>
+					<li><span class="example">browser.driver.findElem&shy;ent(by.css('<span class="replace">signIn</span>'));</span></li>
+					<li><span class="example">browser.driver.findElem&shy;ent(by.className('<span class="replace">signIn</span>'));</span></li>
+					<li><span class="example">browser.driver.findElem&shy;ent(by.name('<span class="replace">signIn</span>'));</span></li>
+					<li><span class="example">browser.driver.findElem&shy;ent(by.xpath('<span class="replace">signIn</span>'));</span></li>
 				</ul>
 				<p> Here are some useful commands that you've had to use in Jasmine or Protractor:</p>
 				<ul>
 					<li><span class="example">browser.driver.isElementPresent(by.css('img .new'))</span></li>
-					<li><span class="example"></span></li>
-					<li><span class="example">browser.driver.manage().deleteCookie('loggedin');</span></li>
-					<li><span class="example">browser.driver.manage().deleteAllCookies();</span></li>
-					<li><span class="example">browser.executeScript('window.localStorage.clear();');</span></li>
-					<li><span class="example">browser.get('<span class="replace">http:www.example.com</span>');</span></li>
+					<li><span class="example">browser.driver.manage().dele&shy;teCookie('loggedin');</span></li>
+					<li><span class="example">browser.driver.manage().dele&shy;teAllCookies();</span></li>
+					<li><span class="example">browser.executeScript('wind&shy;ow.localStorage.clear();');</span></li>
+					<li><span class="example">browser.get('<span class="replace">http:www.exa&shy;mple.com</span>');</span></li>
 					<li>A wait command: </br>
 						<div class="example2">
 							browser.driver.wait(function() { </br>
 							&nbsp;&nbsp;console.log(&quot;This has a list of accounts to choose from. Waiting for QA Account.&quot;);</br>
-							&nbsp;&nbsp;return browser.driver.isElementPresent(by.name('account-test@test.com')).then(function(el) { </br>
+							&nbsp;&nbsp;return browser.driver.isElemen&shy;tPresent(by.name('acco&shy;unt-test@test.com')).then(fun&shy;ction(el) { </br>
 							&nbsp;&nbsp;&nbsp;&nbsp;return el === true; </br>
 							&nbsp;&nbsp;}); </br>
 							}, 5000) </br>
