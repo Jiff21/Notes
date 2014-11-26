@@ -285,7 +285,12 @@ aside ul ul li:first-child{
 /* For Jumbotron images that need an overlay to make text more readable. */
 .jumbotron{
 	background-size: cover;
+	min-height: 500px;
+	div{
+		overflow: auto;
+	}
 	.darkLayer, .lightLayer{
+		margin-top: 150px;
 		opacity: 0.65;
 		h1, h2, h3, h4, h5, h6, p, {
 			opacity: 1.0;
