@@ -344,9 +344,9 @@ describe('Google Training App', function () {
 			});
 
 		// Erasing iTest Account so future tests will work.
-		helpers.eraseAccount(helpers.userAccounts.notSignedUpEmail, helpers.userAccounts.domain);
+		helpers.eraseAccount(helpers.userAccounts.mainEmail, helpers.userAccounts.notSignedUpEmail);
 		helpers.deleteUserData();
-		helpers.LoginToGoogle(helpers.userAccounts.mainEmail, helpers.userAccounts.mainPass, helpers.userAccounts.domain);
+		helpers.LoginToGoogle(helpers.userAccounts.mainEmail, helpers.userAccounts.mainPass);
 	});
 
 
