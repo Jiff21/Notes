@@ -23,8 +23,6 @@ alias favlog="git log --oneline --graph --all --decorate"
 alias statsum="git log --stat --summary"
 # SHOW STATUS OF SUB MODULES
 alias substatus="git submodule status"
-# More full logging display
-alias tree="gitk --all &"
 # Show full remote settings
 alias remotes="git remote --verbose"
 
