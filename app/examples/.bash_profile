@@ -9,6 +9,8 @@ alias ls="ls -a -gG"
 alias web="cd /Applications/MAMP/htdocs"
 alias bar="cd /Applications/MAMP/htdocs/localsbarguide/"
 alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
+alias bar="cd /Applications/MAMP/htdocs/Locals-Bar-Guide/"
+
 
 
 ###################################
@@ -19,6 +21,12 @@ alias remotes="git remote -v"
 alias status="git status"
 alias favlog="git log --oneline --graph --all --decorate"
 alias statsum="git log --stat --summary"
+# SHOW STATUS OF SUB MODULES
+alias substatus="git submodule status"
+# More full logging display
+alias tree="gitk --all &"
+# Show full remote settings
+alias remotes="git remote --verbose"
 
 
 ###################################
