@@ -9,7 +9,7 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 	margin-top: 0px;
 }
 
-@import "_pageSpecific.scss";
+@import "_mixins.scss";
 
 /* Mixin for setting Bootstrap setting using html5 terms.  Some pages changes in page specific. */
 article{
@@ -362,3 +362,5 @@ aside ul ul li:first-child{
 		border-bottom: 0;
 	}
 }
+
+@import "_pageSpecific.scss";
