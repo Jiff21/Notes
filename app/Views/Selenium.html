@@ -49,7 +49,8 @@
 					<li><span class="example">browser.driver.manage().dele&shy;teAllCookies();</span></li>
 					<li><span class="example">browser.executeScript('wind&shy;ow.localStorage.clear();');</span></li>
 					<li><span class="example">browser.get('<span class="replace">http:www.exa&shy;mple.com</span>');</span></li>
-					<li>A wait command: </br>
+					<li>A wait command:</li>
+					</ul>
 						<div class="example2">
 							browser.driver.wait(function() { </br>
 							&nbsp;&nbsp;console.log(&quot;<span class="replace">Message to log while waiting.</span>&quot;);</br>
@@ -60,8 +61,8 @@
 							&nbsp;&nbsp;.then(function() { </br>
 							&nbsp;&nbsp;&nbsp;&nbsp; <span class="replace">yourFunction()</span>;</br>
 							});</br>
-						</div></li>
-					</ul>
+						</div>
+					
 					<p>Send Keys should work as followed but I'm having trouble with special keys, I've also tried sending browser.driver.Keys.Return.</p>
 					<ul>
 						<li><span class="example">browser.driver.<span class="replace">elementName</span>.sendKeys('<span class="replace">TextToSend</span>');</span></li>
