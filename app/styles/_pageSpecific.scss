@@ -566,6 +566,9 @@ $jasmineBlue: #ADD8E6;
 .ardBody {
 	header {
 		margin-top: 40px;
+		h1 {
+			margin: 20px;
+		}
 	}
 	.main {
 		@include make-xs-column(12);
@@ -582,7 +585,3 @@ $jasmineBlue: #ADD8E6;
 		opacity: .9;
 	}
 }
-
-
-
-
