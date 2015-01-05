@@ -17,5 +17,5 @@ Use:
 ## Running Tests
 Use:
 
-	grunt serve
-	protractor protractor.conf.js
+	grunt test
+
