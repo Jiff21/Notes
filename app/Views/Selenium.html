@@ -44,21 +44,21 @@
 				</ul>
 				<p> Here are some useful commands that you've had to use in Jasmine or Protractor:</p>
 				<ul>
-					<li><span class="example">browser.driver.isElementPresent(by.css('img .new'))</span></li>
-					<li><span class="example">browser.driver.manage().dele&shy;teCookie('loggedin');</span></li>
+					<li><span class="example">browser.driver.isElementPresent(by.css('<span class="replace">img .new</span>'))</span></li>
+					<li><span class="example">browser.driver.manage().dele&shy;teCookie('<span class="replace">loggedin</span>');</span></li>
 					<li><span class="example">browser.driver.manage().dele&shy;teAllCookies();</span></li>
 					<li><span class="example">browser.executeScript('wind&shy;ow.localStorage.clear();');</span></li>
 					<li><span class="example">browser.get('<span class="replace">http:www.exa&shy;mple.com</span>');</span></li>
 					<li>A wait command: </br>
 						<div class="example2">
 							browser.driver.wait(function() { </br>
-							&nbsp;&nbsp;console.log(&quot;This has a list of accounts to choose from. Waiting for QA Account.&quot;);</br>
-							&nbsp;&nbsp;return browser.driver.isElemen&shy;tPresent(by.name('acco&shy;unt-test@test.com')).then(fun&shy;ction(el) { </br>
+							&nbsp;&nbsp;console.log(&quot;<span class="replace">Message to log while waiting.</span>&quot;);</br>
+							&nbsp;&nbsp;return browser.driver.isElemen&shy;tPresent(by.name('<span class="replace">acco&shy;unt-test@test.com</span>')).then(fun&shy;ction(el) { </br>
 							&nbsp;&nbsp;&nbsp;&nbsp;return el === true; </br>
 							&nbsp;&nbsp;}); </br>
-							}, 5000) </br>
+							}, <span class="replace">5000</span>) </br>
 							&nbsp;&nbsp;.then(function() { </br>
-							&nbsp;&nbsp;&nbsp;&nbsp; yourFunction();</br>
+							&nbsp;&nbsp;&nbsp;&nbsp; <span class="replace">yourFunction()</span>;</br>
 							});</br>
 						</div></li>
 					</ul>
