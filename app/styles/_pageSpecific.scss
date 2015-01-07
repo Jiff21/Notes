@@ -497,6 +497,12 @@ $jasmineBlue: #ADD8E6;
 }
 
 .gitBody {
+	code {
+		margin-bottom: 10px;
+	}
+	div {
+		margin-bottom: 10px;
+	}
 	.jumbotron {
 		background-image: url(../images/Octocat.jpg);
 		background-position: center;

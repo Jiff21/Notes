@@ -35,6 +35,8 @@
 				<a href="#basics" class="leftNaveButton clearBoth">Basics</a>
 				<a href="#branches" class="leftNaveButton clearBoth">Branches</a>
 				<a href="#ignore" class="leftNaveButton clearBoth">Ignore</a>
+				<a href="#bisect" class="leftNaveButton clearBoth">Bisect</a>
+				<a href="#bower" class="leftNaveButton clearBoth">NPM &amp; Bower</a>
 			</aside>
 			</div>
 			<div class="main">
@@ -134,6 +136,17 @@
 				<p> You should be able to use your synced git ignore by configuring it to look at the file in this project <br>
 				<code class="example2">git config --global core.excludesfile /Applications/MAMP/htdocs/No&shy;tes/app/examples/.gitignore_global</code>
 				</p>
+			</div>
+			<div id="bisect" class="leftNavCompanion">
+				<h3>Git Bisect</h3>
+				<p>Git has a nifty feature for tracking down when someone broke a branch. Figure out a past commit that's working for the good, then follow these steps.</p>
+				<div class="example2">
+				git bisect start<br>
+				git bisect bad<br>
+				git bisect good <span class="replace">HashFragNum</span><br>
+				</div>
+				<p>Keep repeating git bisect bad and good commands until landing on the commit that broke the code. Then type the following command and return to the head to fix the broken code.</p>
+				<code class="example2">git bisect reset</code>
 			</div>
 			<div id="bower" class="leftNavCompanion">
 				<h3>NPM &amp; Bower</h3>
