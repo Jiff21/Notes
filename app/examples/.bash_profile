@@ -43,6 +43,10 @@ if [ -f /Applications/MAMP/htdocs/Notes/app/examples/.git-completion.bash ]; the
 	source /Applications/MAMP/htdocs/Notes/app/examples/.git-completion.bash
 fi
 
+###################################
+# Adding Grunt Autocomplete. Hopefully.
+###################################
+eval "$(grunt --completion=bash)"
 
 ##
 # Setup for Android SDK for use with cordova
