@@ -9,6 +9,7 @@ alias ls="ls -a -gG"
 alias web="cd /Users/jeffreycampbell/Documents/Code"
 alias bar="cd /Users/jeffreycampbell/Documents/Code/localsbarguide/"
 alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
+alias old-web="cd /Applications/MAMP/htdocs"
 
 
 
