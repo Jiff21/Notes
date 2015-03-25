@@ -4,4 +4,4 @@
 [push]
 	default = simple
 [core]
-	/Applications/MAMP/htdocs/Notes/app/examples/.gitignore_global
+	/Users/jeffreycampbell/Documents/Code/Notes/app/examples/.gitignore_global
