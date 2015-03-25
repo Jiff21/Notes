@@ -94,18 +94,25 @@
 					while (a &lt; 10){<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(a);<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a++;<br>
-				}<br></div>
+				};<br></div>
 				<p>
 				You can always use <span class="term"> break </span> to manually stop a loop. You can also use <span class="term"> continue
 				</span> to skip one iteration and check the condition again.
 				</p>
+				<p>
+				When dealing with arrays you can use the <span class="term">forEach</span> function to get values. 
+				</p>	
+				<div class="example2">
+					stocks.forEach(function(stock){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;symbols.push(stock.symbols);<br>
+				};<br></div>
 				<p>
 				Another big part of Javascript is writting a <span class="term"> function </span>. A function is declared by:
 				</p>
 				<div class="example2">
 					function myName() {<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dostuff;<br>
-					}
+					};
 				</div>
 				<p>
 				Then you can use the function by calling it with parenthesis and then following it with a semicolon (e.g. <code class="example">
@@ -118,7 +125,8 @@
 				<p>
 				<span class="term">Arrays</span> are like Variable for with multiple values.  You define an array the same way you would a
 				variable except you put the values in a square bracket separated by commas (e.g. <code class="example">var myArray = [0, 1,
-				2, Cat];</code> ).  Remember that to start counting at 0 when referencing the items in the array.
+				2, Cat];</code> ).  Remember that to start counting at 0 when referencing the items in the array. If you need to log out a simple array
+				you can do this quickly with <code class="example">console.log(JSON.stringify(array));</code>.
 				</p>
 				<p>
 				<span class="term">Objects</span> are containers that hold things like variables or functions.  You make a variable like this:
