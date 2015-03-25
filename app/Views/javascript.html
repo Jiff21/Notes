@@ -204,9 +204,27 @@
 				<div class="example2">
 					function getStocksOver(stocks, minPrice){{<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stocks.filter(function(stock){<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock..price >= minPrice;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.price >= minPrice;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
 				};<br>
+				</div>
+				<p>
+					The advantage of using map and filter together instead of looping through data is it will work well with asynchronous data, while loops 
+					generally do not. The end result would look something like this.
+				</p>
+				<div class="example2">
+					var fileredStockSymbols = {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stock.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filter(function(stock){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.price >= 150;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}).<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map(function(stock){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.symbol;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}).<br>
+					};<br>
+					filteredStockSymbols.forEach(function(symbol){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(symbol);<br>
+					});
 				</div>				
 			<aside>
 				<h4> Terms </h4>
