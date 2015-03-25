@@ -100,13 +100,6 @@
 				</span> to skip one iteration and check the condition again.
 				</p>
 				<p>
-				When dealing with arrays you can use the <span class="term">forEach</span> function to get values. 
-				</p>	
-				<div class="example2">
-					stocks.forEach(function(stock)){<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;symbols.push(stock.symbols);<br>
-				};<br></div>
-				<p>
 				Another big part of Javascript is writting a <span class="term"> function </span>. A function is declared by:
 				</p>
 				<div class="example2">
@@ -187,7 +180,34 @@
 				target="_blank">video</a> for more information.  You're also going to want to learn more about <span class="term">Asynchronous
 				JavaScript and XML</span>, also known as <span class="term">AJAX</span> to make the browser do all this stuff on the server side.
 				</p>
-			</div>
+				<p>
+				If you are trying to get a single value out of an associative array you could use the <span class="term">forEach</span> function inside a for loop. 
+				</p>	
+				<div class="example2">
+					stocks.forEach(function(stock)){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;symbols.push(stock.symbols);<br>
+				};<br>
+				</div>
+				<p>
+					But if you are dealing with associtive arrays you can simplify this by using the <span class="term">map</span> function.
+				</p>
+				<div class="example2">
+					function getStockSymbols(stocks){{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stocks.map(function(stock){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.symbol;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+				};<br>
+				</div>
+				<p>
+					Of if you need to only get elements that pass a certain qualification you could use the <span class="term">filter</span> method.
+				</p>
+				<div class="example2">
+					function getStocksOver(stocks, minPrice){{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stocks.filter(function(stock){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock..price >= minPrice;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+				};<br>
+				</div>				
 			<aside>
 				<h4> Terms </h4>
 				<p> <a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference" target="_blank">Mozilla Reference Guide </a><p>
