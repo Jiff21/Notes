@@ -4,4 +4,4 @@
 [push]
 	default = simple
 [core]
-	/Users/$USER/Documents/Code/Notes/app/examples/.gitignore_global
+	excludesfile = Users/$USER/Documents/Code/Notes/app/examples/.gitignore_global
