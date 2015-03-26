@@ -26,7 +26,6 @@ alias substatus="git submodule status"
 # Show full remote settings
 alias remotes="git remote --verbose"
 
-
 ###################################
 # Adding Working Directory and Branch to Command Line
 ###################################
