@@ -6,8 +6,8 @@ alias ls="ls -a -gG"
 ###################################
 # Shortcuts
 ###################################
-alias web="cd /Users/jeffreycampbell/Documents/Code"
-alias bar="cd /Users/jeffreycampbell/Documents/Code/localsbarguide/"
+alias web="cd /Users/$USER/Documents/Code"
+alias bar="cd /Users/$USER/Documents/Code/localsbarguide/"
 alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
 alias old-web="cd /Applications/MAMP/htdocs"
 
@@ -30,8 +30,8 @@ alias remotes="git remote --verbose"
 ###################################
 # Adding Working Directory and Branch to Command Line
 ###################################
-if [ -f /Users/jeffreycampbell/Documents/Code/Notes/app/examples/.git-completion.bash ]; then
-	source /Users/jeffreycampbell/Documents/Code/Notes/app/examples/.git-prompt.sh
+if [ -f /Users/$USER/Documents/Code/Notes/app/examples/.git-completion.bash ]; then
+	source /Users/$USER/Documents/Code/Notes/app/examples/.git-prompt.sh
 	export PS1='[\u|\W$(__git_ps1 " (%s)")]\$ '
 fi
 
@@ -39,8 +39,8 @@ fi
 # Adding Git Autocomplete
 ###################################
 
-if [ -f /Users/jeffreycampbell/Documents/Code/Notes/app/examples/.git-completion.bash ]; then
-	source /Users/jeffreycampbell/Documents/Code/Notes/app/examples/.git-completion.bash
+if [ -f /Users/$USER/Documents/Code/Notes/app/examples/.git-completion.bash ]; then
+	source /Users/$USER/Documents/Code/Notes/app/examples/.git-completion.bash
 fi
 
 ###################################

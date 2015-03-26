@@ -4,4 +4,4 @@
 [push]
 	default = simple
 [core]
-	/Users/jeffreycampbell/Documents/Code/Notes/app/examples/.gitignore_global
+	/Users/$USER/Documents/Code/Notes/app/examples/.gitignore_global
