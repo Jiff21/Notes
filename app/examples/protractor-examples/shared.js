@@ -46,7 +46,7 @@ var Helpers = function () {
 			expect(JSON.stringify(browserLog)).toNotContain('Analytics');
 		});
 	};
-	
+
 	this.signInVars = {
 		firstNameField: element(by.model('user.first_name')),
 		lastNameField: element(by.model('user.last_name')),
@@ -615,6 +615,20 @@ var Helpers = function () {
 
 	}
 
+
+	this.getTableValues = function (tableSelector, columnSelector, colNames) {
+		return element.all(by.css(tableSelector)).map(function (row, index) {
+			var columns = row.all(by.css(columnSelector));
+			return columns.then(function (cols) {
+				var result = {};
+				cols.forEach(function (col, idx) {
+					result[colNames[idx]] = col.getText();
+					result.rowElm = row;
+				});
+				return result;
+			});
+		});
+	};
 
 };
 
