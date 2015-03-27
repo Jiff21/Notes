@@ -37,7 +37,73 @@
 			<p>
 				When declaring a variable, forgetting to prefix it with <span class="term">var</span> will cause it to be a global varaible. The <span class="term">Event Loop</span> starts automatically with Node. All input and output in node is non-blocking, essentially asynchonous calls. Since the node sever continues to run a listener, when you set a specific value it stay in memory.
 			</p>
-			<p>Create a project. Start with a folder and use <span class="example">npm init</span>.  For author supply email in angle brackets as well. If you install a module use <span class="example">npm install --save <span class="replace">moduleName</span></span> to make sure it ends up in package.json with a version number.</p>
+			<p>Create a project. Start with a folder and use <span class="example">npm init</span>.  For author supply email in angle brackets as well. If you install a module use <span class="example">npm install --save <span class="replace">moduleName</span></span> to make sure it ends up in package.json with a version number. You can install express globally, and use <span class="example">express <span class="replace">project name</span></span> to start a project. Then you can cd into the folder and use npm install -- to set up dependencies, then use <span class="example">npm install</span> to complete the instalation of the dependencies. Remember you can use <span class="example">npm prune</span> to get rid of unused modules or you can use <span class="example">npm update</span> modules. </p>
+			<p>
+				Here's a basic example of a setter and getter module in a file called flight.js.
+			</p>
+			<div class="example2">
+				var number, origin, desination;<br>
+				<br>
+				exports.setNumber = function (num) {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number = num;<br>
+				}<br>
+				exports.setOrigin = function (o) {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orgin = o;<br>
+				}<br>
+				exports.setDestination = function (d) {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination = d;<br>
+				}<br>
+				exports.getInfo = function () {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return{<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: number,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: origin,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: destination<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+				}<br>
+			</div>
+			<p>You could then load the module in a seperate file.</p>
+			<div class="example2">
+				var flight = require('./flight.js');<br><br>
+				flight.setOrigin('LAX');<br>
+				flight.setDestination('SFO');<br>
+				flight.setNumber('134');<br><br>
+				console.log(flight.getInfo());<br>
+			</div>
+			<p>But this would get you introule because module results get cached. And the Vars are being set outside the function. Here is a better way to write that module.</p>
+			<div class="example2">
+				module.exports = function (info) {<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var values = {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: null,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: null,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: null,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;departs: null,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrives: null,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualDepart: null,<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualArrive: null<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Only sets the values above that are not defined.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(var prop in values) {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(values[prop] !== 'undefined') {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;values[prop] = info[prop];<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// Sets an array of functions.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var functions = {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;triggerDepart: function () {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;values.actualDepart = Date.now();<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;triggerArrive: function () {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;values.actualArrive = Date.now();<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;getInformation: function () {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return values;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br><br>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return functions;<br><br>
+
+			};<br>
+			</div>
 			</article>
 			<aside class="col-md-3 col-sm-4 col-xs-2">
 				<h4> Quick Notes </h4>
@@ -62,7 +128,7 @@
 							<ul>
 								<li> require('<span class="replace">./pathToFile</span>');</li>
 								<li> require('<span class="replace">coreModuleName</span>');</li>
-								<li> </li>
+								<li> exports()</li>
 							</ul>
 							</details>
 						</li>
