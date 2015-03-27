@@ -33,6 +33,20 @@ var Helpers = function () {
 		browser.driver.manage().deleteCookie('sessionid');
 	};
 
+
+	this.checkLogs = function () {
+		browser.manage().logs().get('browser').then(function (browserLog){
+			expect(browserLog.length).toBe(0);
+			if(browserLog.length) console.log('!!CONSOLE ERROR!!: ' + require('util').inspect(browserLog));
+		});
+	};
+
+	this.checkGA = function () {
+		browser.manage().logs().get('browser').then(function (browserLog){
+			expect(JSON.stringify(browserLog)).toNotContain('Analytics');
+		});
+	};
+	
 	this.signInVars = {
 		firstNameField: element(by.model('user.first_name')),
 		lastNameField: element(by.model('user.last_name')),
