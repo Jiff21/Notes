@@ -44,22 +44,22 @@
 				<div class="example2">
 					var number, origin, desination;<br>
 					<br>
-					exports.setNumber = function &#40;num&#41; {<br>
+					exports.setNumber = function &#40;num&#41; &#123;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number = num;<br>
-					}<br>
-					exports.setOrigin = function &#40;o&#41; {<br>
+					&#125;<br>
+					exports.setOrigin = function &#40;o&#41; &#123;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orgin = o;<br>
-					}<br>
-					exports.setDestination = function &#40;d&#41; {<br>
+					&#125;<br>
+					exports.setDestination = function &#40;d&#41; &#123;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination = d;<br>
-					}<br>
-					exports.getInfo = function &#40;&#41; {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return{<br>
+					&#125;<br>
+					exports.getInfo = function &#40;&#41; &#123;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&#123;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: number,<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: origin,<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: destination<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
-					}<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br>
+					&#125;<br>
 				</div>
 				<p>You could then load the module in a seperate file.</p>
 				<div class="example2">
@@ -71,8 +71,8 @@
 				</div>
 				<p>But this would get you introule because module results get cached. And the Vars are being set outside the function. Here is a better way to write that module.</p>
 				<div class="example2">
-					var Flight = function &#40;info&#41; {<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data = {<br>
+					var Flight = function &#40;info&#41; &#123;<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data = &#123;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: null,<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: null,<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: null,<br>
@@ -80,30 +80,30 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrives: null,<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualDepart: null,<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualArrive: null<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.fill = function &#40;info&#41;{<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&#40;var prop in this.data&#41; {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&#40;this.data[prop] !== 'undefined'&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.fill = function &#40;info&#41;&#123;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&#40;var prop in this.data&#41; &#123;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&#40;this.data[prop] !== 'undefined'&#41; &#123;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data[prop] = info[prop];<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerDepart: function &#40;&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerDepart: function &#40;&#41; &#123;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualDepart = Date.now&#40;&#41;;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerArrive: function &#40;&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerArrive: function &#40;&#41; &#123;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualArrive = Date.now&#40;&#41;;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.getInformation: function &#40;&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.getInformation: function &#40;&#41; &#123;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return values;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br><br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Optionally create factory depending on setup.<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module.exports = function&#40;info&#41;{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module.exports = function&#40;info&#41;&#123;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var instance = new Flight&#40;&#41;;<br><br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.fill&#40;info&#41;;<br><br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return instance;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
-					};<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br>
+					&#125;;<br>
 				</div>
 			</article>
 			<aside class="col-md-3 col-sm-4 col-xs-2">
@@ -128,7 +128,7 @@
 							<summary>Functions</summary>
 							<ul>
 								<li> require&#40;'<span class="replace">./pathToFile</span>'&#41;;</li>
-								<li> require&#40;'<span class="replace">coreModuleName</span>'&#41;;</li>
+								<li> require&#40;'<span class="replace">coreModuleName</span>'&#4;;</li>
 								<li> exports&#40;&#41;</li>
 							</ul>
 						</details>
