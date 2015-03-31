@@ -105,6 +105,42 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br>
 					&#125;;<br>
 				</div>
+
+
+				<h3>Express</h3>
+				<p>Install Express with <span class="example">sudp npm install express -g</span> and install <span class="example">sudo npm install express-generator -g</span>. Currently you run the server with <span class="example">DEBUG=airline:* ./bin/www</span>
+				</p>
+				<p>Routing http verbs is a simple as using different methods in express. If you're modifying data use app.put istead of app.get. Just like http objects get passed as arguements, if you build middleware be sure to add next to tell the server to go on to the next object. <span class="term">req</span>(request), <span class="term">res</span>(response) and <span class="term">next</span>(as a parameter then as a function at the end of the middleware).</p>
+
+				<h3>Unit Testing</h3>
+				<p><span class="term">Supertest</span> is a testing tool that lets you mimic http request, in this version we used it in conjunction with <span class="term">should</span> and a globally installed instance of the <span class="term">Mocha</span> framwork. Here's an example of a test spec that takes an instance of the app built in helpers that uses spec'd data and runs a test using supertest.</p>
+				<div class="example2">
+					var app = require('./helpers/app'),<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;should = require('should'),<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#;supertest = require('supertest');<br><br>
+					describe('flights', function () {<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it('should mark a flight as arrived', function (done) {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;supertest(app)<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.put('/flight/18/arrived')<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.expect(200)<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end(function(err,res){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status.should.equal(200);<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.body.status.should.equal('done');<br>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;supertest(app)<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.get('/flight/18')<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.expect(200)<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end(function(err,res){<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status.should.equal(200);<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.body.actualArrive<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.should.not.equal(undefined);<br>
+
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;done();<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+					});
+				</div>
 			</article>
 			<aside class="col-md-3 col-sm-4 col-xs-2">
 				<h4> Quick Notes </h4>
