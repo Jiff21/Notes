@@ -33,78 +33,78 @@
 				</div>
 			</div>
 			<article class="col-md-9 col-sm-8 col-xs-10">
-			<h3>Basics</h3>
-			<p>
-				When declaring a variable, forgetting to prefix it with <span class="term">var</span> will cause it to be a global varaible. The <span class="term">Event Loop</span> starts automatically with Node. All input and output in node is non-blocking, essentially asynchonous calls. Since the node sever continues to run a listener, when you set a specific value it stay in memory.
-			</p>
-			<p>Create a project. Start with a folder and use <span class="example">npm init</span>.  For author supply email in angle brackets as well. If you install a module use <span class="example">npm install --save <span class="replace">moduleName</span></span> to make sure it ends up in package.json with a version number. You can install express globally, and use <span class="example">express <span class="replace">project name</span></span> to start a project. Then you can cd into the folder and use npm install -- to set up dependencies, then use <span class="example">npm install</span> to complete the instalation of the dependencies. Remember you can use <span class="example">npm prune</span> to get rid of unused modules or you can use <span class="example">npm update</span> modules. </p>
-			<p>
-				Here's a basic example of a setter and getter module in a file called flight.js.
-			</p>
-			<div class="example2">
-				var number, origin, desination;<br>
-				<br>
-				exports.setNumber = function (num) {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number = num;<br>
-				}<br>
-				exports.setOrigin = function (o) {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orgin = o;<br>
-				}<br>
-				exports.setDestination = function (d) {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination = d;<br>
-				}<br>
-				exports.getInfo = function () {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return{<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: number,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: origin,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: destination<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
-				}<br>
-			</div>
-			<p>You could then load the module in a seperate file.</p>
-			<div class="example2">
-				var flight = require('./flight.js');<br><br>
-				flight.setOrigin('LAX');<br>
-				flight.setDestination('SFO');<br>
-				flight.setNumber('134');<br><br>
-				console.log(flight.getInfo());<br>
-			</div>
-			<p>But this would get you introule because module results get cached. And the Vars are being set outside the function. Here is a better way to write that module.</p>
-			<div class="example2">
-				var Flight = function (info) {<br><br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data = {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: null,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: null,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: null,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;departs: null,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrives: null,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualDepart: null,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualArrive: null<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br><br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.fill = function (info){<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for(var prop in this.data) {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(this.data[prop] !== 'undefined') {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data[prop] = info[prop];<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerDepart: function () {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualDepart = Date.now();<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerArrive: function () {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualArrive = Date.now();<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.getInformation: function () {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return values;<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br><br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Optionally create factory depending on setup.<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module.exports = function(info){<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var instance = new Flight();<br><br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.fill(info);<br><br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return instance;<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
-			};<br>
-			</div>
+				<h3>Basics</h3>
+				<p>
+					When declaring a variable, forgetting to prefix it with <span class="term">var</span> will cause it to be a global varaible. The <span class="term">Event Loop</span> starts automatically with Node. All input and output in node is non-blocking, essentially asynchonous calls. Since the node sever continues to run a listener, when you set a specific value it stay in memory.
+				</p>
+				<p>Create a project. Start with a folder and use <span class="example">npm init</span>.  For author supply email in angle brackets as well. If you install a module use <span class="example">npm install --save <span class="replace">moduleName</span></span> to make sure it ends up in package.json with a version number. You can install express globally, and use <span class="example">express <span class="replace">project name</span></span> to start a project. Then you can cd into the folder and use npm install -- to set up dependencies, then use <span class="example">npm install</span> to complete the instalation of the dependencies. Remember you can use <span class="example">npm prune</span> to get rid of unused modules or you can use <span class="example">npm update</span> modules. </p>
+				<p>
+					Here's a basic example of a setter and getter module in a file called flight.js.
+				</p>
+				<div class="example2">
+					var number, origin, desination;<br>
+					<br>
+					exports.setNumber = function &#40;num&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number = num;<br>
+					}<br>
+					exports.setOrigin = function &#40;o&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orgin = o;<br>
+					}<br>
+					exports.setDestination = function &#40;d&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination = d;<br>
+					}<br>
+					exports.getInfo = function &#40;&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: number,<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: origin,<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: destination<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+					}<br>
+				</div>
+				<p>You could then load the module in a seperate file.</p>
+				<div class="example2">
+					var flight = require&#40;'./flight.js'&#41;;<br><br>
+					flight.setOrigin&#40;'LAX'&#41;;<br>
+					flight.setDestination&#40;'SFO'&#41;;<br>
+					flight.setNumber&#40;'134'&#41;;<br><br>
+					console.log&#40;flight.getInfo&#40;&#41;&#41;;<br>
+				</div>
+				<p>But this would get you introule because module results get cached. And the Vars are being set outside the function. Here is a better way to write that module.</p>
+				<div class="example2">
+					var Flight = function &#40;info&#41; {<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data = {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: null,<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: null,<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: null,<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;departs: null,<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrives: null,<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualDepart: null,<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualArrive: null<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.fill = function &#40;info&#41;{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&#40;var prop in this.data&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&#40;this.data[prop] !== 'undefined'&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data[prop] = info[prop];<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerDepart: function &#40;&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualDepart = Date.now&#40;&#41;;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerArrive: function &#40;&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualArrive = Date.now&#40;&#41;;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.getInformation: function &#40;&#41; {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return values;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Optionally create factory depending on setup.<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module.exports = function&#40;info&#41;{<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var instance = new Flight&#40;&#41;;<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.fill&#40;info&#41;;<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return instance;<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
+					};<br>
+				</div>
 			</article>
 			<aside class="col-md-3 col-sm-4 col-xs-2">
 				<h4> Quick Notes </h4>
@@ -115,62 +115,60 @@
 				<ul>
 					<li>
 						<details open>
-						<summary>node objects</summary>
-						<ul>
-							<li>global</li>
-							<li>module</li>
-							<li>process</li>
-							<li>console</li>
-						</ul>
+							<summary>node objects</summary>
+							<ul>
+								<li>global</li>
+								<li>module</li>
+								<li>process</li>
+								<li>console</li>
+							</ul>
 						</details>
-						<li>
-							<details closed>
+					<li>
+						<details closed>
 							<summary>Functions</summary>
 							<ul>
-								<li> require('<span class="replace">./pathToFile</span>');</li>
-								<li> require('<span class="replace">coreModuleName</span>');</li>
-								<li> exports()</li>
+								<li> require&#40;'<span class="replace">./pathToFile</span>'&#41;;</li>
+								<li> require&#40;'<span class="replace">coreModuleName</span>'&#41;;</li>
+								<li> exports&#40;&#41;</li>
 							</ul>
-							</details>
-						</li>
-						<li>
-							<details closed>
+						</details>
+					</li>
+					<li>
+						<details closed>
 							<summary>Methods</summary>
 							<ul>
-								<li> http.createServer(handleRequest);</li>
-								<li> server.listen(<span class="replace">port#</span> , '<span class="replace">address</span>')</li>
+								<li> http.createServer&#40;handleRequest&#41;;</li>
+								<li> server.listen&#40;<span class="replace">port#</span> , '<span class="replace">address</span>'&#41;</li>
 								<li> </li>
 								<li> </li>
 							</ul>
-							</details>
-						</li>
-						<li>
-							<details closed>
+						</details>
+					</li>
+					<li>
+						<details closed>
 							<summary>Core Modules</summary>
 							<ul>
 								<li> os </li>
 								<li> </li>
 								<li> </li>
 							</ul>
-							</details>
-						</li>
-						<li>
-							<details closed>
+						</details>
+					</li>
+					<li>
+						<details closed>
 							<summary>Community Modules</summary>
 							<ul>
 								<li> <a href="https://www.npmjs.com/package/express" target="_blank">express</a> </li>
 								<li> </li>
 								<li> </li>
 							</ul>
-							</details>
-						</li>
-						</ul>
-					</aside>
-					<div>
-						<!-- Loading footer with AJAX -->
-						<div class="footerPlaceholder"></div>
-					</div>
-				</div>
+						</details>
+					</li>
+				</ul>
+			</aside>
+			<div>
+				<!-- Loading footer with AJAX -->
+				<div class="footerPlaceholder"></div>
 			</div>
 		</div>
 		<!-- build:js scripts/vendor.js -->
@@ -180,12 +178,12 @@
 		<!-- endbuild -->
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
-		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-		e.src='//www.google-analytics.com/analytics.js';
-		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-		ga('create','UA-XXXXX-X');ga('send','pageview');
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X');ga('send','pageview');
 		</script>
 		<!-- build:js scripts/plugins.js -->
 		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
