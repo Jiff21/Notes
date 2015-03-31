@@ -96,16 +96,13 @@
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.getInformation: function () {<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return values;<br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
-
-
-
-
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br><br>
-
-
-
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return functions;<br><br>
-
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Optionally create factory depending on setup.<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module.exports = function(info){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var instance = new Flight();<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.fill(info);<br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return instance;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;};<br>
 			};<br>
 			</div>
 			</article>
