@@ -113,7 +113,7 @@
 				<p>Routing http verbs is a simple as using different methods in express. If you're modifying data use app.put istead of app.get. Just like http objects get passed as arguements, if you build middleware be sure to add next to tell the server to go on to the next object. <span class="term">req</span>(request), <span class="term">res</span>(response) and <span class="term">next</span>(as a parameter then as a function at the end of the middleware).</p>
 
 				<h3>Unit Testing</h3>
-				<p><span class="term">Supertest</span> is a testing tool that lets you mimic http request, in this version we used it in conjunction with <span class="term">should</span> and a globally installed instance of the <span class="term">Mocha</span> framwork. Here's an example of a test spec that takes an instance of the app built in helpers that uses spec'd data and runs a test using supertest.</p>
+				<p><span class="term">Supertest</span> is a testing tool that lets you mimic http request that allows you to write tests not bound to a port and chain requests, in this version we used it in conjunction with <span class="term">should</span> and a globally installed instance of the <span class="term">Mocha</span> framwork. Here's an example of a test spec that takes an instance of the app built in helpers that uses spec'd data and runs a test using supertest.</p>
 				<div class="example2">
 					var app = require('./helpers/app'),<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;should = require('should'),<br>
@@ -141,6 +141,13 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
 					});
 				</div>
+				<p>Their suggestions for unit testing, with my opinion infused.</p>
+					<ul>
+						<li>Instead of 100% coverage test all endpoints</li>
+						<li>Write tests after majority of application completed.</li>
+					</ul>
+				<h3>Mongo DB &amp; Mongoose</h3>
+				<p>You can either download a <a href="https://www.mongodb.org/">MondoDB</a> to install locally or set up a free one at <a href="https://mongolab.com/">Mongo Lab</a>.</p> If you do it locally you have to place the binary files in an executible path, if you use mongolab you can find the address below "To connect using a driver via the standard URI" after setup. Mongoose can be installed on the project simply with  <code class="example">sudo npm install --save mongoose</code>, it manages the connection between a Mondodb and your application. Set up schemas to ensure normalized data, they can put in a schema folder and look like <code class="example">module.exports = mongoose.model('Flight', {number: Number, origin: String,});</code>. Now that you're handling the backend, you need to be responsible for sesssions. You can do this with connect-mongo. The session is always stored in the request (req). 
 			</article>
 			<aside class="col-md-3 col-sm-4 col-xs-2">
 				<h4> Quick Notes </h4>
