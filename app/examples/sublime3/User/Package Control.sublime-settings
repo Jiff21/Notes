@@ -12,6 +12,7 @@
 		"SublimeCodeIntel",
 		"SublimeLinter",
 		"SublimeLinter-contrib-scss-lint",
+		"SublimeLinter-html-tidy",
 		"SublimeLinter-jshint",
 		"SublimeLinter-php"
 	]
