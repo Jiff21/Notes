@@ -4,6 +4,7 @@
 	],
 	"installed_packages":
 	[
+		"CSScomb",
 		"Javascript Beautify",
 		"LiveReload",
 		"Package Control",

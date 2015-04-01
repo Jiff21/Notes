@@ -74,7 +74,7 @@ article {
 		h3 {
 			text-align: center;
 		}
-		
+
 		@media(min-width: $screen-tablet){
 			h3 {
 				text-align: left;
@@ -86,8 +86,8 @@ article {
 .left-nav {
 	a {
 		font-size: 1.5em;
-		padding: 5px 10px;
-		margin: 4px 0px 0px -5px;
+		padding: 5 10;
+		margin: 4 0 0 -5px;
 		color: white;
 		background-color: black;
 		display: block;
@@ -96,18 +96,21 @@ article {
 		text-decoration: none;
 		cursor: pointer;
 	}
-	aside{
+
+	aside {
 		@include make-xs-column(4);
 		@include make-sm-column(3);
 		@include make-sm-column(2);
-		padding-left: 0px;
+		padding-left: 0;
 	}
+
 	.main {
 		@include make-xs-column(12);
 		h3 {
 			margin-top: 55px;
 		}
 	}
+
 	.left-nav-companion {
 		margin-left: 30%;
 	}
@@ -155,7 +158,7 @@ body {
 
 
 /* Styling for the Old Header Class.  May be I can get rid of this or style into jumbrotrons with LESS. */
-header{
+header {
 	background-color: Black;
 	color: #FFF;
 	border-radius: 25px;
@@ -163,7 +166,8 @@ header{
 	text-align: center;
 	padding: 10px;
 	margin-bottom: 30px;
-	button{
+
+	button {
 		border: 1px solid #dcdcdc;
 		color: #777777;
 		font-size: 12px;
@@ -188,6 +192,7 @@ header{
 /* Supporting marketing content */
 .marketing {
 	margin: 40px 0;
+
 	p + h4 {
 		margin-top: 28px;
 	}
@@ -206,6 +211,7 @@ header{
 /* Footer Styling here */
 .footer {
 	clear: both;
+
 	.glyphicon {
 		margin: 0px 2px 0px 10px;
 	}
@@ -260,7 +266,8 @@ aside h5 { font-size: 90%; }
 
 
 aside {
-	li{
+
+	li {
 		h6, h5, h4 {
 			display: inline;
 		}
@@ -293,7 +300,7 @@ aside ul ul li {
 	letter-spacing: .2em;
 }
 
-aside ul ul li:first-child{
+aside ul ul li:first-child {
 	margin: 2px 0px 1px 0px;
 }
 
@@ -311,6 +318,7 @@ aside ul ul li:first-child{
 
 	@media(min-width: $screen-tablet){
 		min-height: 500px;
+
 		.dark-layer, .light-layer{
 			margin-top: 150px;
 		}
