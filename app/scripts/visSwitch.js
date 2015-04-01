@@ -1,6 +1,9 @@
 /*!
  * @docauthor Jeff Campbell
  */
+ // Letting jshint know these are Exported Variables.
+ /* exported makeVisible */
+
 'use strict';
 
 var i,
