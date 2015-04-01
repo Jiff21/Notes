@@ -1,32 +1,40 @@
-$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+$icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/';
 
 // bower:scss
-@import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
+@import '../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 // endbower
 
 /* Remove Top Margin on the 1st Heading of Main Paragraph or Aside */
-.main div h3, .main div h1, .main div h2, aside h5, aside h6, aside h4 {
-	margin-top: 0px;
+.main div h3, 
+.main div h1, 
+.main div h2, 
+aside h5, 
+aside h6, 
+aside h4 {
+	margin-top: 0;
 }
 
-@import "_mixins.scss";
+@import 'mixins';
 
 /* Mixin for setting Bootstrap setting using html5 terms.  Some pages changes in page specific. */
-article{
+article {
 	@include make-row();
 	.main {
 		@include make-xs-column(12);
 		@include make-sm-column(8);
 		@include make-md-column(8);
 	}
+
 	aside {
 		@include make-xs-column(12);
 		@include make-sm-column(4);
 		@include make-md-column(4);
 	}
+
 	.full {
 		@include make-xs-column(12);
 	}
+
 	.halfFull {
 		@include make-xs-column(12);
 		@include make-sm-column(6);
@@ -111,6 +119,10 @@ article{
 body {
 	padding-top: 20px;
 	padding-bottom: 20px;
+
+	.text-centered {
+		text-align: center;
+	}
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -363,4 +375,4 @@ aside ul ul li:first-child{
 	}
 }
 
-@import "_pageSpecific.scss";
+@import 'pageSpecific';

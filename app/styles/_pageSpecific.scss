@@ -1,7 +1,7 @@
 @import "_mixins.scss";
 @import "../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss";
 
-.homeBody {
+.home-body {
 	.jumbotron {
 		background-image: url(../images/FranklinVsZeus.jpg);
 		background-position: center;
@@ -36,7 +36,7 @@
 }
 
 
-.htmlBody {
+.html-body {
 	.jumbotron {
 		background-image: url(../images/RooseveltVsBigfoot.jpg);
 		background-position: center;
@@ -438,6 +438,100 @@ $jasmineBlue: #ADD8E6;
 	}
 }
 
+$sublime-gold: #DAA520;
+
+.sublime-body {
+	.jumbotron {
+		background-image: url(../images/sublime.jpg);
+		background-position: top;
+		padding: 150px 0px 10px 0px;
+		.lightLayer {
+			h1 {
+				padding: 0px 0px 0px 10px;
+			}
+		}
+		h1 {
+			margin-left: 20px;
+			font-size: 18px;
+		}
+		p {
+			margin-left: 20px;
+			font-size: 10px;
+		}
+	}
+	h3 {
+		text-align: center;
+	}
+	.fourth{
+		h3 {
+			text-align: left;
+			padding-left: 20px;
+		}
+	} 
+	.gold {
+		background-color: $sublime-gold;
+		.example2, .example {
+			background-color: lighten($sublime-gold, 5%);
+		}		
+	}
+	.sameList {
+		ul {
+			margin-bottom: 0px;
+		}
+	}
+	@media(min-width: $screen-tablet){
+		.jumbotron { // Not working for some reason.
+			padding: 330px 0px 10px 0px;
+			h1 {
+				font-size: 36px;
+			}
+			p {
+				font-size: 21px;
+			}
+		}
+		.rts{
+			height: 100px;
+			position: relative;
+			h3 {
+				position: absolute; 
+				top: 50%;
+				margin-top: -26px;
+			}
+		}
+		.rtlist{
+			padding-top: 10px;
+			min-height: 100px;
+		}
+		.sameList {
+			ul {
+				margin-bottom: 10px;
+			}
+		}
+		#break:before{
+			content: $myLineBreak;
+			white-space: pre;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .protractorBody {
 	.jumbotron {
 		background-image: url(../images/NixonVSaber.jpg);
@@ -549,6 +643,11 @@ $jasmineBlue: #ADD8E6;
 				color: white;
 			}
 	}
+	.linter {
+		.example{
+			margin-bottom: 5px;
+		}
+	}
 	@media(min-width: $screen-phone){
 		.proFixed {
 			position: fixed;
@@ -584,6 +683,7 @@ $jasmineBlue: #ADD8E6;
 	background-color: #000;
 	color: #63DE01;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 	.example, .example2 {
 		background-color: #000;
 		border: dashed 1px #e5e5e5;
@@ -591,9 +691,11 @@ $jasmineBlue: #ADD8E6;
 		padding-right: 5px;
 		padding-left: 5px;
 	}
+
 	.keypress {
 		color: #e7e7e7;
 	}
+	
 	.footer {
 		color: #63DE01;
 	}

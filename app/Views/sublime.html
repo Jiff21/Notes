@@ -2,7 +2,7 @@
 <html class="no-js">
 	<head>
 		<meta charset="utf-8">
-		<title>Terminal Notes</title>
+		<title>Jasmine Notes</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="shortcut icon" href="../favicon.ico">
@@ -17,62 +17,22 @@
 		<script src="../bower_components/modernizr/modernizr.js"></script>
 		<!-- endbuild -->
 	</head>
-	<body class="terminalBody">
+	<body class="sublime-body">
 		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
 		<div class="navPlaceholder"></div>
 		<!--[if lt IE 10]>
-		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container">
-			<header>
-				<h1 id="shiny">Terminal</h1>
-				<p>emacs > esc > x > doctor > ctrl+c+x</p>
-			</header>
-			<div class="lang-grid git-grid">
-				<article>
-				<div class="halfFull">
-					<h3>Basics</h3>
-					<p><code class="example">cd</code> means change directory.</p>
-					<p><code class="example">cd ..</code> goes back a folder.</p>
-					<p><code class="example">ls</code> shows the files in that directory.</p>
-					<p><code class="example">open .</code> open the folder you are currently in.</p>
-					<p><code class="example">cat <span class="replace">filename.txt</span></code> to read a file.</p>
-				</div>
-				<div class="halfFull">
-					<h3>VIM</h3>
-					<p>To edit a file: <code class="example">vim <span class="replace">filename.txt</span></code>.</p>
-					<p>Press <span class="keypress">i</span> button to enter insert mode.</p>
-					<p><span class="keypress">ctrl + c</span> to exit insert mode.</p>
-					<p>To write quit hit <span class="keypress">:</span> then type <code class="example">wq</code>.</p>
-				</div>
-				<div class="full">
-					<h3>Synced Bash Profile</h3>
-					<p>All your bash profile settings can be setup by creating a .bash_profile file in the home directory and adding this line:</p>
-					<div class="example2">source /Applications/MAMP/htdocs/No&shy;tes/app/examples/.bash_profile</div>
-				</div>				
-				<div class="full">
-					<h3>Bash Shortcuts</h3>
-					<p>Terminal shortcuts are store in the <span class="term">.bash_profile</span> in the User folder on mac.  By default this folder is hidden. You can make a shortcut a command or location with <code class="example">alias <span class="replace">newShortcutName</span>="<span class="replace">any terminal command</span>"</code>.
-				</div>
-				<div class="halfFull">
-					<h3>Change Command Line</h3>
-					<p>This is your command line preference for .bash_profile</p>
-					<div class="example2">
-						if [ -f ~/.git-prompt.sh ]; then<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;source ~/.git-prompt.sh<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;export PS1='[\u \W$(__git_ps1 " (%s)")]\$ '<br>
-						fi
+		<div class="container-fluid">
+			<div>
+				<div class="jumbotron">
+					<div class="lightLayer centered">
+					<h1>Sublime Notes</h1>
+					<p class="lead">FPO</p>
 					</div>
 				</div>
-				<div class="halfFull">
-					<h3>Git Auto-Complete</h3>
-					<p>The following addition to .bash_profile will turn on git auto-complete:</p>
-					<div class="example2">
-						if [ -f ~/.git-completion.bash ]; then<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;source ~/.git-completion.bash<br>
-						fi<br>
-					</div>
-				</div>
+			</div>
+			<article>
 				<div class="full">
 					<h3>Syncing Submlime Settings</h3>
 					<p>Currently you can sync your sublime 3 settings with the following commands. Be sure to quit sublime before doing remove.</p>
@@ -95,6 +55,10 @@
 					<div class="example">/* exported variableName, functionName */</div>		
 				</div>
 				<div class="halfFull linter">
+					<h5>php linter</h5>
+					<p>PHP must be installed. Shouldn't be a problem.</p>
+				</div>
+				<div class="halfFull linter">
 					<h5>scss &amp; sass linter</h5>
 					<p>Install ruby if not already installed.</p>
 					<div class="example">sudo gem install scss-lint</div>
@@ -109,19 +73,47 @@
 					<p>or get the html 5 version:</p>
 					<div class="example">brew install homebrew/dupes/tidy --HEAD</div>
 				</div>
-				<div class="halfFull linter">
-					<h5>php linter</h5>
-					<p>PHP must be installed. Shouldn't be a problem.</p>
-				</div>
-				<div class="full">
-					<h3>Random Tricks</h3>
-					<p>A cool trick is to add spaces to your dock using:</p>
-					<div class="example2">defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'</div>
-				</div>
-				</article>
-				<!-- Loading footer with AJAX -->
-				<div class="footerPlaceholder"></div>
+
+			<div class="full gold">
+				<h3>Useful Shortcuts</h3>
 			</div>
+			<div class="fourth gold rtlist sameList">
+				<ul>
+					<li>Global Find and Replace = cmd+shift+F</li>
+					<li>Move Highlighted = cmd+cntl+arrow</li>
+					<li>Indentent Highlighted = cmd+bracket</li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="fourth gold rtlist sameList">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="fourth gold rtlist sameList">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="fourth gold rtlist">
+				<ul>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+
+
+			</article>
+			<!-- Loading footer with AJAX -->
+			<div class="footerPlaceholder"></div>
 		</div>
 		<!-- build:js scripts/vendor.js -->
 		<!-- bower:js -->
@@ -130,12 +122,12 @@
 		<!-- endbuild -->
 		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 		<script>
-		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-		e.src='//www.google-analytics.com/analytics.js';
-		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-		ga('create','UA-XXXXX-X');ga('send','pageview');
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X');ga('send','pageview');
 		</script>
 		<!-- build:js scripts/plugins.js -->
 		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
@@ -157,7 +149,5 @@
 		<!-- myScripts -->
 		<script src="../includes/nav.js"></script>
 		<script src="../includes/footer.js"></script>
-		<script src="../bower_components/shine/dist/shine.min.js"></script>
-		<script src="../scripts/shiny.js"></script>
 	</body>
 </html>
