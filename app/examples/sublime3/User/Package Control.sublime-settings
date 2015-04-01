@@ -11,6 +11,7 @@
 		"SassBeautify",
 		"SublimeCodeIntel",
 		"SublimeLinter",
-		"SublimeLinter-jshint"
+		"SublimeLinter-jshint",
+		"SublimeLinter-php"
 	]
 }
