@@ -8,8 +8,8 @@ window.addEventListener('scroll', function() {
 	var proAside = $('#proAside');
 	var posTop = document.body.scrollTop;
 	if (posTop < scrollAt) {
-		proAside.removeClass('proFixed');
+		proAside.removeClass('pro-fixed');
 	} else if (posTop >= scrollAt) {
-		proAside.addClass('proFixed');
+		proAside.addClass('pro-fixed');
 	}
 });

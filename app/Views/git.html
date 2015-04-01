@@ -28,19 +28,19 @@
 				<h1>Git</h1>
 			</div>
 			<article>
-			<div class="leftNav">
-			<aside class="proFixed">
-				<a href="#start" class="leftNaveButton clearBoth">Starting</a>
-				<a href="#stash" class="leftNaveButton clearBoth">Stash</a>
-				<a href="#basics" class="leftNaveButton clearBoth">Basics</a>
-				<a href="#branches" class="leftNaveButton clearBoth">Branches</a>
-				<a href="#ignore" class="leftNaveButton clearBoth">Ignore</a>
-				<a href="#bisect" class="leftNaveButton clearBoth">Bisect</a>
-				<a href="#bower" class="leftNaveButton clearBoth">NPM &amp; Bower</a>
+			<div class="left-nav">
+			<aside class="pro-fixed">
+				<a href="#start" class="left-naveButton clear-both">Starting</a>
+				<a href="#stash" class="left-naveButton clear-both">Stash</a>
+				<a href="#basics" class="left-naveButton clear-both">Basics</a>
+				<a href="#branches" class="left-naveButton clear-both">Branches</a>
+				<a href="#ignore" class="left-naveButton clear-both">Ignore</a>
+				<a href="#bisect" class="left-naveButton clear-both">Bisect</a>
+				<a href="#bower" class="left-naveButton clear-both">NPM &amp; Bower</a>
 			</aside>
 			</div>
 			<div class="main">
-			<div id="start" class="leftNavCompanion">
+			<div id="start" class="left-nav-companion">
 				<h3>Starting a Project</h3>
 				<p>Locally use:</p>
 				<div class="example2">
@@ -54,7 +54,7 @@
 				<code class="example2">git clone <span class="replace">github/url</span></code>
 				<p>
 			</div>
-			<div id="stash" class="leftNavCompanion">
+			<div id="stash" class="left-nav-companion">
 				<h3 >Stash</h3>
 				<p>Save current changes to Stash<br>
 				<code class="example2">git stash -m "<span class="replace">Message about stash</span>"</code>
@@ -69,7 +69,7 @@
 				<code class="example2">git stash clear "<span class="replace">Message about stash</span>"</code>
 				</p>
 			</div>
-			<div id="basics" class="leftNavCompanion">
+			<div id="basics" class="left-nav-companion">
 				<h3 >Basics</h3>
 				<p>Check for Changes since last commit:<br>
 				<code class="example2">git status</code>
@@ -102,7 +102,7 @@
 				<code class="example2">git reset --hard HEAD~1</code>
 				</p>
 			</div>
-			<div id="branches" class="leftNavCompanion">
+			<div id="branches" class="left-nav-companion">
 				<h3>Branches</h3>
 				<p> Create a new branch off current branch:<br>
 				<code class="example2">git checkout -b <span class="replace">BranchName</span></code>
@@ -132,7 +132,7 @@
 				<code class="example2">git cherry-pick <span class="replace">HashOfChangeToMergeIn</span></code>
 				</p>
 			</div>
-			<div id="ignore" class="leftNavCompanion">
+			<div id="ignore" class="left-nav-companion">
 				<h3>Git Settings</h3>
 				<p>Your syncing your .bash_profile now and autocompletion can be setup by simply setting your bash profile to use the files in this project:<br>
 				<code class="example2">source Users/$USER/Documents/Code/No&shy;tes/app/examples/.bash_profile</code></p>
@@ -140,7 +140,7 @@
 				<code class="example2">git config --global core.excludesfile Users/$USER/Documents/Code/No&shy;tes/app/examples/.gitignore_global</code>
 				</p>
 			</div>
-			<div id="bisect" class="leftNavCompanion">
+			<div id="bisect" class="left-nav-companion">
 				<h3>Git Bisect</h3>
 				<p>Git has a nifty feature for tracking down where a bug started. Figure out a past commit that's working (good hash), then follow these steps.</p>
 				<div class="example2">
@@ -151,7 +151,7 @@
 				<p>Keep repeating git bisect bad and good commands until landing on the commit that broke the code. Then type the following command and return to the head to fix the broken code.</p>
 				<code class="example2">git bisect reset</code>
 			</div>
-			<div id="bower" class="leftNavCompanion">
+			<div id="bower" class="left-nav-companion">
 				<h3>NPM &amp; Bower</h3>
 				<p>Just a couple quick notes on npm &amp; Bower. When you need to update a dependency don't just update package.json, instead run the update through npm with a command.  Here's some examples.</p>
 				<code class="example2">npm install <span class="replace">yeoman -g</span></code><br>

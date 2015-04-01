@@ -6,7 +6,7 @@
 		background-image: url(../images/FranklinVsZeus.jpg);
 		background-position: center;
 		background-repeat: no-repeat;
-			.darkLayer {
+			.dark-layer {
 				margin-top: 150px;
 			}
 			h1 {
@@ -121,7 +121,7 @@
 		background-image: url(../images/Cinton.jpg);
 		background-position: center;
 		padding-bottom: 20px;
-			.darkLayer {
+			.dark-layer {
 				margin-top: 80px;
 				h1 {
 					color: white;
@@ -189,7 +189,7 @@
 			max-height: 1500px;
 		}
 		.jumbotron {
-			.darkLayer {
+			.dark-layer {
 				margin-top: 280px;
 			}
 		}
@@ -251,7 +251,7 @@
 		background-image: url(../images/ObamaLionKing.jpg);
 		background-position: center;
 			padding-bottom: 20px;
-			.lightLayer {
+			.light-layer {
 				margin-top: 120px;
 				h1 {
 					margin-top: 15px;
@@ -270,7 +270,7 @@
 	}
 	@media(min-width: $screen-tablet){
 		.jumbotron {
-			.lightLayer {
+			.light-layer {
 				margin-top: 250px;
 			}
 		}
@@ -281,7 +281,7 @@
 	.jumbotron {
 		background-image: url(../images/GWVZombies.jpg);
 		background-position: center;
-			.lightLayer {
+			.light-layer {
 				margin-top: 100px;
 				h1 {
 					margin-top: 15px;
@@ -292,7 +292,7 @@
 	}
 	@media(min-width: $screen-tablet){
 		.jumbotron {
-			.lightLayer {
+			.light-layer {
 				margin-top: 220px;
 			}
 		}
@@ -304,7 +304,7 @@
 		background-image: url(../images/nodegarden10.jpg);
 		background-position: center;
 			padding-bottom: 120px;
-			.darkLayer {
+			.dark-layer {
 				margin-top: 120px;
 				h1 {
 					margin-top: 15px;
@@ -323,7 +323,7 @@
 	}
 	@media(min-width: $screen-tablet){
 		.jumbotron {
-			.lightLayer {
+			.light-layer {
 				margin-top: 120px;
 			}
 		}
@@ -340,7 +340,7 @@ $jasmineBlue: #ADD8E6;
 		background-image: url(../images/Jasmine.jpg);
 		background-position: right;
 		padding: 150px 0px 10px 0px;
-		.lightLayer {
+		.light-layer {
 			h1 {
 				padding: 0px 0px 0px 10px;
 			}
@@ -377,7 +377,7 @@ $jasmineBlue: #ADD8E6;
 			background-color: lighten($jasmineYellow, 5%);
 		}
 	}
-	.sameList {
+	.same-list {
 		ul {
 			margin-bottom: 0px;
 		}
@@ -405,7 +405,7 @@ $jasmineBlue: #ADD8E6;
 			padding-top: 10px;
 			min-height: 100px;
 		}
-		.sameList {
+		.same-list {
 			ul {
 				margin-bottom: 10px;
 			}
@@ -445,7 +445,7 @@ $sublime-gold: #DAA520;
 		background-image: url(../images/sublime.jpg);
 		background-position: top;
 		padding: 150px 0px 10px 0px;
-		.lightLayer {
+		.light-layer {
 			h1 {
 				padding: 0px 0px 0px 10px;
 			}
@@ -474,7 +474,7 @@ $sublime-gold: #DAA520;
 			background-color: lighten($sublime-gold, 5%);
 		}		
 	}
-	.sameList {
+	.same-list {
 		ul {
 			margin-bottom: 0px;
 		}
@@ -502,7 +502,7 @@ $sublime-gold: #DAA520;
 			padding-top: 10px;
 			min-height: 100px;
 		}
-		.sameList {
+		.same-list {
 			ul {
 				margin-bottom: 10px;
 			}
@@ -518,7 +518,7 @@ $sublime-gold: #DAA520;
 	.jumbotron {
 		background-image: url(../images/NixonVSaber.jpg);
 		background-position: center;
-		.lightLayer {
+		.light-layer {
 			margin-top: 180px;
 			h1 {
 				margin-top: 15px;
@@ -542,10 +542,10 @@ $sublime-gold: #DAA520;
 		font-weight: bolder;
 	}
 	@media(min-width: $screen-tablet){
-		.lightLayer {
+		.light-layer {
 			margin-top: 300px;
 		}
-		.proFixed {
+		.pro-fixed {
 			position: fixed;
 			top: 60px;
 			width: 750px;
@@ -554,7 +554,7 @@ $sublime-gold: #DAA520;
 		}
 	}
 	@media(min-width: $screen-desktop){
-		.proFixed {
+		.pro-fixed {
 			position: fixed;
 			top: 60px;
 			width: 900px;
@@ -631,7 +631,7 @@ $sublime-gold: #DAA520;
 		}
 	}
 	@media(min-width: $screen-phone){
-		.proFixed {
+		.pro-fixed {
 			position: fixed;
 			top: 70px;
 			left: 0px;
@@ -706,7 +706,7 @@ $sublime-gold: #DAA520;
 		background-repeat: no-repeat;
 
 	}
-	.lightLayer{
+	.light-layer{
 		opacity: .9;
 	}
 }

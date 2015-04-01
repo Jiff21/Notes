@@ -35,7 +35,7 @@ article {
 		@include make-xs-column(12);
 	}
 
-	.halfFull {
+	.half-full {
 		@include make-xs-column(12);
 		@include make-sm-column(6);
 		h3 {
@@ -47,29 +47,34 @@ article {
 			}
 		}
 	}
+
 	.fourth {
 		@include make-xs-column(12);
 		@include make-sm-column(3);
 		@include make-md-column(3);
 	}
-	.fiveOfSeven {
+
+	.five-of-seven {
 		@include make-xs-column(12);
 		@include make-sm-column(5);
 		h3 {
 			text-align: center;
 		}
+
 		@media(min-width: $screen-tablet){
 			h3 {
 				text-align: left;
 			}
 		}		
 	}
-	.sevenOfFive {
+
+	.seven-of-five {
 		@include make-xs-column(12);
 		@include make-sm-column(7);
 		h3 {
 			text-align: center;
 		}
+		
 		@media(min-width: $screen-tablet){
 			h3 {
 				text-align: left;
@@ -78,7 +83,7 @@ article {
 	}
 }
 
-.leftNav {
+.left-nav {
 	a {
 		font-size: 1.5em;
 		padding: 5px 10px;
@@ -103,11 +108,12 @@ article {
 			margin-top: 55px;
 		}
 	}
-	.leftNavCompanion {
+	.left-nav-companion {
 		margin-left: 30%;
 	}
 }
 
+// modenizer warning don't change name until you look into it.
 .browsehappy {
 	margin: 0.2em 0;
 	background: #ccc;
@@ -117,8 +123,8 @@ article {
 
 /* Space out content a bit */
 body {
-	padding-top: 20px;
 	padding-bottom: 20px;
+	padding-top: 20px;
 
 	.text-centered {
 		text-align: center;
@@ -139,9 +145,9 @@ body {
 
 	/* Make the masthead heading the same height as the navigation */
 	h3 {
-		margin-top: 0;
-		margin-bottom: 0;
 		line-height: 40px;
+		margin-bottom: 0;
+		margin-top: 0;
 		padding-bottom: 19px;
 		text-transform: capitalize;
 	}
@@ -151,9 +157,9 @@ body {
 /* Styling for the Old Header Class.  May be I can get rid of this or style into jumbrotrons with LESS. */
 header{
 	background-color: Black;
+	color: #FFF;
 	border-radius: 25px;
 	font-variant: small-caps;
-	color: #FFF;
 	text-align: center;
 	padding: 10px;
 	margin-bottom: 30px;
@@ -292,7 +298,7 @@ aside ul ul li:first-child{
 }
 
 /* For Jumbotron images that need an overlay to make text more readable. */
-.jumbotron{
+.jumbotron {
 	background-size: cover;
 	width: 100%;
 	text-align: center;
@@ -302,16 +308,19 @@ aside ul ul li:first-child{
 		font-size: 21px;
 		padding: 14px 24px;
 	}
+
 	@media(min-width: $screen-tablet){
 		min-height: 500px;
-		.darkLayer, .lightLayer{
+		.dark-layer, .light-layer{
 			margin-top: 150px;
 		}
 	}
-	div{
+
+	div {
 		overflow: auto;
 	}
-	.darkLayer, .lightLayer{
+
+	.dark-layer, .light-layer{
 		opacity: 0.65;
 		h1, h2, h3, h4, h5, h6, p, {
 			opacity: 1.0;
@@ -328,16 +337,17 @@ aside ul ul li:first-child{
 	}
 }
 
-.darkLayer {
+.dark-layer {
 	color: #FFF;
 	background-color: #000;
 }
-.lightLayer {
+
+.light-layer {
 	color: #000;
 	background-color: #FFF;
 }
 
-.clearBoth {
+.clear-both {
 	clear: both;
 }
 
