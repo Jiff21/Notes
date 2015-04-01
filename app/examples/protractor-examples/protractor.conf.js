@@ -1,3 +1,9 @@
+// Globals and Excludes for jsHint.
+/* global browser */
+/* exported */
+
+'use strict';
+
 exports.config = {
 	allScriptsTimeout: 7 * 10000,
 
@@ -36,7 +42,7 @@ exports.config = {
 
 	onPrepare: function () {
 		var helpers = require('./test/e2e/shared.js');
-		console.log('Running onPrepare.')
+		console.log('Running onPrepare.');
 		browser.manage().window().setSize(1500, 1000);
 		browser.manage().window().setPosition(0, 0);
 		browser.get('#/welcome');

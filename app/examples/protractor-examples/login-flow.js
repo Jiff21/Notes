@@ -1,4 +1,14 @@
-describe('Google Training App', function () {
+/**
+* Login flows for .
+ */
+
+// Globals and Excludes for jsHint.
+/* global afterEach, by, browser, beforeEach, describe, element, expect, it */
+/* exported */
+
+'use strict';
+
+describe('the Application', function () {
 
 	var helpers = require('./shared.js');
 	// console.log('Helpers File :: ', helpers);
@@ -21,8 +31,6 @@ describe('Google Training App', function () {
 			closebutton,
 			correctAccount,
 			currentURL,
-			idField,
-			idCheck,
 			loginbutton,
 			lAccount = 'account-' + helpers.userAccounts.mainEmail + helpers.userAccounts.domain,
 			lPw = helpers.userAccounts.mainPass,
@@ -33,7 +41,7 @@ describe('Google Training App', function () {
 		// Helper function for when the Google OAuth has multiple accounts remembered in this browser. Can't use superWait as OAuth is outside of Angular.
 		var multipleAccountsFlow = function () {
 			sBrowser.wait(function () {
-				console.log("This has a list of accounts to choose from. Waiting for QA Account.");
+				console.log('This has a list of accounts to choose from. Waiting for QA Account.');
 				return sBrowser.isElementPresent(by.id(lAccount)).then(function (el) {
 					return el === true;
 				});
@@ -49,7 +57,7 @@ describe('Google Training App', function () {
 						if (el === true) {
 
 							sBrowser.wait(function () {
-								console.log("Waiting for login button to appear (Muliple Accounts).");
+								console.log('Waiting for login button to appear (Muliple Accounts).');
 								return sBrowser.isElementPresent(by.name('signIn')).then(function (el) {
 									return el === true;
 								});
@@ -66,7 +74,7 @@ describe('Google Training App', function () {
 										loginbutton.click();
 									}, 4440);
 								});
-						};
+						}
 					});
 				});
 		};
@@ -76,7 +84,7 @@ describe('Google Training App', function () {
 
 			// Waits for next page to load then fills out form and submits.
 			sBrowser.wait(function () {
-				console.log("Waiting for login button to appear (No Accounts).");
+				console.log('Waiting for login button to appear (No Accounts).');
 				return sBrowser.isElementPresent(by.name('signIn')).then(function (el) {
 					return el === true;
 				});
@@ -99,7 +107,7 @@ describe('Google Training App', function () {
 
 		// Test needs to wait for page to load. Then click Sign in button.
 		browser.driver.wait(function () {
-			console.log("Waiting for sign up button to appear");
+			console.log('Waiting for sign up button to appear');
 			return sBrowser.isElementPresent(by.id('welcome')).then(function (el) {
 				return el === true;
 			});
@@ -122,13 +130,13 @@ describe('Google Training App', function () {
 						} else {
 							// 2nd Helper function defined above.
 							noAccountsFlow();
-						};
+						}
 					});
 				});
 			});
 
 		sBrowser.wait(function () {
-			console.log("Waiting for Homepage to load.");
+			console.log('Waiting for Homepage to load.');
 			return sBrowser.isElementPresent(by.id('page-home')).then(function (el) {
 				return el === true;
 			});
@@ -136,7 +144,7 @@ describe('Google Training App', function () {
 			// Needs crazy long timeout in-case there is no local storage yet.
 		}, 15000)
 			.then(function () {
-				console.log("Homepage Loaded!");
+				console.log('Homepage Loaded!');
 				closebutton = element(by.cssContainingText('a', 'OK GOT IT'));
 				closebutton.click();
 				browser.sleep(1000).then(function () {
@@ -156,23 +164,11 @@ describe('Google Training App', function () {
 	it('should display a warning if first name is too short.', function () {
 		// Trying to clear in Safari, has some issues timing up clears in new window.
 		var sBrowser = browser.driver, // Just shortening what I have to write when not on an Angular page.
-			email,
-			errorVariable,
-			closebutton,
-			correctAccount,
-			currentURL,
-			idField,
-			idCheck,
-			loginbutton,
-			lAccount = 'account-' + helpers.userAccounts.notSignedUpEmail + helpers.userAccounts.domain,
-			lPw = helpers.userAccounts.notSignedUpPass,
-			lUser = helpers.userAccounts.notSignedUpEmail + helpers.userAccounts.domain,
-			pass,
 			signInButton;
 
 		// Test needs to wait for page to load. Then click Sign in button.
 		browser.driver.wait(function () {
-			console.log("Waiting for sign up button to appear");
+			console.log('Waiting for sign up button to appear');
 			return sBrowser.isElementPresent(by.id('welcome')).then(function (el) {
 				return el === true;
 			});
@@ -195,7 +191,7 @@ describe('Google Training App', function () {
 						} else {
 							// 2nd Helper function defined above.
 							helpers.gNoAccountsFlow(helpers.userAccounts.notSignedUpEmail, helpers.userAccounts.notSignedUpPass, helpers.userAccounts.domain);
-						};
+						}
 					});
 					helpers.signInVars.firstNameField.click();
 					helpers.signInVars.firstNameField.clear();
@@ -224,20 +220,11 @@ describe('Google Training App', function () {
 	it('should display warnings if name fields are empty.', function () {
 		// Trying to clear in Safari, has some issues timing up clears in new window.
 		var sBrowser = browser.driver, // Just shortening what I have to write when not on an Angular page.
-			email,
-			errorVariable,
-			closebutton,
-			correctAccount,
-			currentURL,
-			idField,
-			idCheck,
-			loginbutton,
-			pass,
 			signInButton;
 
 		// Test needs to wait for page to load. Then click Sign in button.
 		browser.driver.wait(function () {
-			console.log("Waiting for sign up button to appear");
+			console.log('Waiting for sign up button to appear');
 			return sBrowser.isElementPresent(by.id('welcome')).then(function (el) {
 				return el === true;
 			});
@@ -260,7 +247,7 @@ describe('Google Training App', function () {
 						} else {
 							// 2nd Helper function defined above.
 							helpers.gNoAccountsFlow(helpers.userAccounts.notSignedUpEmail, helpers.userAccounts.notSignedUpPass, helpers.userAccounts.domain);
-						};
+						}
 					});
 					helpers.signInVars.firstNameField.click();
 					helpers.signInVars.firstNameField.clear();
@@ -281,20 +268,13 @@ describe('Google Training App', function () {
 	it('should allow a user to sign up using a code.', function () {
 		// Trying to clear in Safari, has some issues timing up clears in new window.
 		var sBrowser = browser.driver, // Just shortening what I have to write when not on an Angular page.
-			email,
-			closebutton,
-			correctAccount,
 			currentURL,
-			idField,
-			idCheck,
-			loginbutton,
-			pass,
 			signInButton;
 
 
 		// Test needs to wait for page to load. Then click Sign in button.
 		browser.driver.wait(function () {
-			console.log("Waiting for sign up button to appear");
+			console.log('Waiting for sign up button to appear');
 			return sBrowser.isElementPresent(by.id('welcome')).then(function (el) {
 				return el === true;
 			});
@@ -317,7 +297,7 @@ describe('Google Training App', function () {
 						} else {
 							// 2nd Helper function defined above.
 							helpers.gNoAccountsFlow(helpers.userAccounts.notSignedUpEmail, helpers.userAccounts.notSignedUpPass, helpers.userAccounts.domain);
-						};
+						}
 						browser.element(by.className('mod-cta-bar')).click();
 					});
 				});
@@ -325,7 +305,7 @@ describe('Google Training App', function () {
 
 
 		sBrowser.wait(function () {
-			console.log("Waiting for Homepage to load.");
+			console.log('Waiting for Homepage to load.');
 			return sBrowser.isElementPresent(by.id('page-home')).then(function (el) {
 				return el === true;
 			});
@@ -333,7 +313,7 @@ describe('Google Training App', function () {
 			// Needs crazy long timeout in-case there is no local storage yet.
 		}, 15000)
 			.then(function () {
-				console.log("Homepage Loaded!");
+				console.log('Homepage Loaded!');
 				browser.sleep(1000).then(function () {
 					// Checks to make sure we're on the homepage.
 					browser.getCurrentUrl().then(function (url) {

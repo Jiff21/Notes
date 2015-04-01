@@ -1,13 +1,20 @@
 /**
+* Stubbed helper files for tests.
  */
+
+// Globals and Excludes for jsHint.
+/* global browser, beforeEach, afterEach, protractor, element, by, By, expect */
+/* exported ptor */
+
+'use strict';
+
 var Helpers = function () {
-	var me = this,
-		sBrowser = browser.driver; // Needed for all Oauth that is outside of angular app.
+	var sBrowser = browser.driver; // Needed for all Oauth that is outside of angular app.
 
 	// Keep our protractor reference
 	beforeEach(function () {
 		// console.log('HELPERS ::::: beforeEach');
-		ptor = protractor.getInstance();
+		var ptor = protractor.getInstance();
 	});
 
 	afterEach(function () {
@@ -35,14 +42,16 @@ var Helpers = function () {
 
 
 	this.checkLogs = function () {
-		browser.manage().logs().get('browser').then(function (browserLog){
+		browser.manage().logs().get('browser').then(function (browserLog) {
 			expect(browserLog.length).toBe(0);
-			if(browserLog.length) console.log('!!CONSOLE ERROR!!: ' + require('util').inspect(browserLog));
+			if (browserLog.length) {
+				console.log('!!CONSOLE ERROR!!: ' + require('util').inspect(browserLog));
+			}
 		});
 	};
 
 	this.checkGA = function () {
-		browser.manage().logs().get('browser').then(function (browserLog){
+		browser.manage().logs().get('browser').then(function (browserLog) {
 			expect(JSON.stringify(browserLog)).toNotContain('Analytics');
 		});
 	};
@@ -68,7 +77,7 @@ var Helpers = function () {
 		trainingEmail: '',
 		trainingPass: '',
 		domain: '@gmail.com',
-		accessCode; '#######',
+		accessCode: '#######',
 	};
 
 	/**
@@ -82,6 +91,9 @@ var Helpers = function () {
 		var i = 0,
 			checkingModule,
 			checkMod,
+			currentURL,
+			expectedURL,
+			imageUrl,
 			mod;
 
 		for (i; i < mods.length; i++) {
@@ -129,7 +141,7 @@ var Helpers = function () {
 
 					(function (checkMod) {
 						checkMod.getText().then(function (text) {
-							console.log('Is ' + text + ' present?')
+							console.log('Is ' + text + ' present?');
 						});
 						checkMod.isPresent().then(function (val) {
 							// console.log(val);
@@ -146,7 +158,7 @@ var Helpers = function () {
 
 					(function (checkMod) {
 						checkMod.getText().then(function (text) {
-							console.log('Is ' + text + ' present?')
+							console.log('Is ' + text + ' present?');
 						});
 						checkMod.isPresent().then(function (val) {
 							// console.log(val);
@@ -178,7 +190,7 @@ var Helpers = function () {
 
 					(function (checkMod) {
 						checkMod.getText().then(function (text) {
-							console.log('Is ' + text + ' present?')
+							console.log('Is ' + text + ' present?');
 						});
 						checkMod.isPresent().then(function (val) {
 							// console.log(val);
@@ -191,7 +203,7 @@ var Helpers = function () {
 
 				// Ending 1st SIF.
 			})(mod);
-		};
+		}
 	};
 
 
@@ -289,7 +301,7 @@ var Helpers = function () {
 					// Then run this function.
 					thenFunction();
 				});
-		};
+		}
 
 	};
 
@@ -298,7 +310,7 @@ var Helpers = function () {
 	this.eraseAccount = function (user, domain) {
 		var lAccount = 'account-' + user + domain,
 			lUser = user + domain;
-		sBrowser.get("https://testing-dot-go-training.appspot.com/ta_admin/user_manager/customuser/");
+		sBrowser.get('https://testing-dot-go-training.appspot.com/ta_admin/user_manager/customuser/');
 		var correctAccount = sBrowser.findElement(by.id(lAccount))
 			.findElement(by.tagName('button'));
 		console.log('Selecting correct account.');
@@ -313,7 +325,7 @@ var Helpers = function () {
 
 	// Helper function that logs into Google for Login form testing. Not being used in Login Flow test because that needs expectations.
 	this.LoginToGoogle = function (user, password, domain) {
-		console.log('Logging into google account with helper.')
+		console.log('Logging into google account with helper.');
 
 		// Trying to clear in Safari, has some issues timing up clears in new window.
 		browser.get('/welcome');
@@ -335,7 +347,7 @@ var Helpers = function () {
 		// Helper function for when the Google OAuth has multiple accounts remembered in this browser. Can't use superWait as OAuth is outside of Angular.
 		var multipleAccountsFlow = function () {
 			sBrowser.wait(function () {
-				console.log("This has a list of accounts to choose from. Waiting for Beyond QA Account.");
+				console.log('This has a list of accounts to choose from. Waiting for Beyond QA Account.');
 				return sBrowser.isElementPresent(by.id(lAccount)).then(function (el) {
 					return el === true;
 				});
@@ -351,7 +363,7 @@ var Helpers = function () {
 						if (el === true) {
 
 							sBrowser.wait(function () {
-								console.log("Waiting for login button to appear (Muliple Accounts).");
+								console.log('Waiting for login button to appear (Muliple Accounts).');
 								return sBrowser.isElementPresent(by.name('signIn')).then(function (el) {
 									return el === true;
 								});
@@ -368,7 +380,7 @@ var Helpers = function () {
 										loginbutton.click();
 									}, 4440);
 								});
-						};
+						}
 					});
 				});
 		};
@@ -377,7 +389,7 @@ var Helpers = function () {
 		var noAccountsFlow = function () {
 			// Waits for next page to load then fills out form and submits.
 			sBrowser.wait(function () {
-				console.log("Waiting for login button to appear (No Accounts).");
+				console.log('Waiting for login button to appear (No Accounts).');
 				return sBrowser.isElementPresent(by.name('signIn')).then(function (el) {
 					return el === true;
 				});
@@ -397,7 +409,7 @@ var Helpers = function () {
 
 		// Test needs to wait for page to load. Then click Sign in button.
 		browser.driver.wait(function () {
-			console.log("Waiting for sign in button to appear");
+			console.log('Waiting for sign in button to appear');
 			return sBrowser.isElementPresent(by.id('welcome')).then(function (el) {
 				return el === true;
 			});
@@ -428,13 +440,13 @@ var Helpers = function () {
 									noAccountsFlow(lUser, lPw);
 								}
 							});
-						};
+						}
 					});
 				});
 			});
 
 		sBrowser.wait(function () {
-			console.log("Waiting for Homepage to load.");
+			console.log('Waiting for Homepage to load.');
 			return sBrowser.isElementPresent(by.id('page-home')).then(function (el) {
 				return el === true;
 			});
@@ -442,7 +454,7 @@ var Helpers = function () {
 			// Needs crazy long timeout in-case there is no local storage yet.
 		}, 15000)
 			.then(function () {
-				console.log("Homepage Loaded!");
+				console.log('Homepage Loaded!');
 				closebutton = element(by.cssContainingText('a', 'OK GOT IT'));
 				closebutton.click();
 			});
@@ -495,7 +507,9 @@ var Helpers = function () {
 
 	// Helper function for when the Google OAuth has multiple accounts remembered in this browser. Can't use superWait as OAuth is outside of Angular.
 	this.gMultipleAccountsFlow = function (user, password, domain) {
-		var lAccount = 'account-' + user + domain,
+		var correctAccount,
+			email,
+			lAccount = 'account-' + user + domain,
 			lPw = password,
 			lUser = user + domain;
 
@@ -510,7 +524,7 @@ var Helpers = function () {
 			.then(function () {
 				sBrowser.isElementPresent(by.id(lAccount)).then(function (addAcc) {
 					if (addAcc === false) {
-						console.log('Clicking add account.')
+						console.log('Clicking add account.');
 						sBrowser.findElement(by.id('account-chooser-add-account')).click();
 						sBrowser.wait(function () {
 							console.log("Waiting for login button to appear (No Accounts).");
@@ -531,7 +545,7 @@ var Helpers = function () {
 								loginbutton.click();
 							});
 					} else {
-						console.log('iTest account already there.')
+						console.log('iTest account already there.');
 						sBrowser.wait(function () {
 							console.log('Waiting for iTest QA Account.');
 							return sBrowser.isElementPresent(by.id(lAccount)).then(function (el) {
@@ -549,7 +563,7 @@ var Helpers = function () {
 									if (el === true) {
 
 										sBrowser.wait(function () {
-											console.log("Waiting for login button to appear (Muliple Accounts).");
+											console.log('Waiting for login button to appear (Muliple Accounts).');
 											return sBrowser.isElementPresent(by.name('signIn')).then(function (el) {
 												return el === true;
 											});
@@ -569,7 +583,7 @@ var Helpers = function () {
 									};
 								});
 							});
-					};
+					}
 				});
 			});
 	};
@@ -608,12 +622,12 @@ var Helpers = function () {
 		var container = element(by.className('dialog-container'));
 		container.getOuterHtml().then(function (html) {
 			console.log(html);
-		})
+		});
 		// browser.wait(function(){
 		// 	return browser.
 		// })
 
-	}
+	};
 
 
 	this.getTableValues = function (tableSelector, columnSelector, colNames) {
