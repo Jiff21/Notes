@@ -5,7 +5,7 @@
 		border-radius: $radius;
 }
 
-@mixin buttonColor($color1, $color2, $color3){
+@mixin button-color($color1, $color2, $color3) {
 	border-top: 1px solid $color2;
 	color: $color1;
 	background: $color2;
@@ -16,4 +16,4 @@
 	background: -o-linear-gradient(top, $color3, $color2);
 }
 
-$myLineBreak: '\a';
+$my-linebreak: '\a';
