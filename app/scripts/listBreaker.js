@@ -2,7 +2,7 @@
 
 'use strict';
 
-function breakList(numOfLists, list){
+function breakList(numOfLists, list, color){
 	var listLength = list.find('li').size();
 	var numInRow = Math.ceil(listLength / numOfLists);
 	var listNumber = 0;
@@ -10,7 +10,7 @@ function breakList(numOfLists, list){
 	for(var b = 0; b < numOfLists; b++) {
 		// console.log(b);
 		var fourthDiv = document.createElement('div');
-		fourthDiv.className = 'fourth gold breaking-list rtlist same-list';
+		fourthDiv.className = 'fourth breaking-list same-list ' + color;
 		document.getElementsByClassName('list-container')[0].appendChild(fourthDiv);
 	}
 
@@ -24,12 +24,10 @@ function breakList(numOfLists, list){
 			listNumber = listNumber + 1;
 		}
 
-		console.log(document.getElementsByClassName('fourth gold breaking-list rtlist same-list')[listNumber]);
+		console.log(document.getElementsByClassName('fourth breaking-list same-list ' + color)[listNumber]);
 
-		var currentDiv = document.getElementsByClassName('fourth gold breaking-list rtlist same-list')[listNumber];
+		var currentDiv = document.getElementsByClassName('fourth breaking-list same-list ' + color)[listNumber];
 		// currentDiv.appendChild(newList);
 		$(currentDiv).append(newList);
 	}
 }
-
-breakList(4, $('.to-be-spliced'));

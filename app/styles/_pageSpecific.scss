@@ -608,15 +608,13 @@ $sublime-gold: #daa520;
 			}
 		}
 
-		.rtlist {
-			padding-top: 10px;
-			min-height: 100px;
-		}
-
 		.same-list {
 			ul {
 				margin-bottom: 10px;
 			}
+
+			padding-top: 10px;
+			min-height: 100px;
 		}
 
 		#break:before {

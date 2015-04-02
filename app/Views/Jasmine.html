@@ -77,39 +77,26 @@
 			<div class="full blue">
 				<h3>Spies</h3>
 			</div>
-			<div class="fourth blue rtlist same-list">
-				<ul>
+			<div class="list-container">
+				<ul class="to-be-spliced">
 					<li>spyOn()</li>
 					<li>toHaveBeenCalled()</li>
 					<li>toHaveBeenCalledWith()</li>
 					<li>and.callThrough()</li>
-				</ul>
-			</div>
-			<div class="fourth blue rtlist same-list">
-				<ul>
 					<li>and.returnValue()</li>
 					<li>and.callFake(f(){})</li>
 					<li>and.throwError("err")</li>
 					<li>and.stub()</li>
-				</ul>
-			</div>
-			<div class="fourth blue rtlist same-list">
-				<ul>
 					<li>calls.any()</li>
 					<li>calls.count()</li>
 					<li>calls.argsFor(index)</li>
 					<li>calls.allArgs()</li>
-				</ul>
-			</div>
-			<div class="fourth blue rtlist">
-				<ul>
 					<li>calls.all()</li>
 					<li>calls.mostRecent()</li>
 					<li>calls.first()</li>
 					<li>calls.reset()</li>
 				</ul>
 			</div>
-
 
 			</article>
 			<!-- Loading footer with AJAX -->
@@ -149,5 +136,7 @@
 		<!-- myScripts -->
 		<script src="../includes/nav.js"></script>
 		<script src="../includes/footer.js"></script>
+		<script src="../scripts/listBreaker.js"></script>
+		<script type="text/javascript">breakList(4, $('.to-be-spliced'), 'blue');</script>
 	</body>
 </html>
