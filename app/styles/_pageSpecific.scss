@@ -540,11 +540,15 @@ $sublime-gold: #daa520;
 	article {
 		background-color: black;
 		color: white;
+		p {
+			margin-bottom: 2px;
+		}
 	}
 
 	.example2, 
 	.example {
 		background-color: lighten($sublime-gold, 5%);
+		margin-bottom: 10px;
 	}	
 
 	h3 {
@@ -565,7 +569,7 @@ $sublime-gold: #daa520;
 		.example2, 
 		.example {
 			background-color: lighten($sublime-gold, 5%);
-		}		
+		}
 	}
 
 	.linter {

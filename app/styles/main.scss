@@ -172,9 +172,9 @@ header {
 		color: #777777;
 		font-size: 12px;
 		font-weight: bold;
-		width: 50px;
 		text-align: center;
 		text-shadow: 1px 1px 0px $black;
+		width: 50px;
 	}
 }
 
@@ -276,11 +276,11 @@ aside {
 }
 
 aside p, aside ol, aside ul {
-	margin: 2px;
 	font-family: tahoma, sans-serif;
-	font-style: italic;
 	font-size: 80%;
+	font-style: italic;
 	list-style-position: inside;
+	margin: 2px;
 }
 
 /* This uses adjacent selectors to add extra line height after some headings */
@@ -315,6 +315,11 @@ aside ul ul li:first-child {
 	text-align: center;
 	width: 100%;
 
+	p {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
 	.btn {
 		font-size: 21px;
 		padding: 14px 24px;
@@ -332,8 +337,10 @@ aside ul ul li:first-child {
 		overflow: auto;
 	}
 
-	.dark-layer, .light-layer{
+	.dark-layer, 
+	.light-layer {
 		opacity: 0.65;
+		
 		h1, 
 		h2, 
 		h3, 
