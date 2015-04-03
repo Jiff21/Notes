@@ -47,12 +47,12 @@
 		background-position: center;
 			
 		h1 {
-			color: white;
+			color: $white;
 			margin-top: 2em;
 		}
 
 		p {
-			color: white;
+			color: $white;
 		}
 	}
 
@@ -107,12 +107,12 @@
 		background-position: center;
 		
 		h1 {
-			color: white;
+			color: $white;
 			margin-top: 50px;
 		}
 
 		p {
-			color: white;
+			color: $white;
 		}
 	}
 
@@ -122,11 +122,11 @@
 
 	.red {
 		color: red;
-		background-color: black;
+		background-color: $black;
 	}
 
 	.white {
-		color: white;
+		color: $white;
 		background-color: DarkGray;
 	}
 
@@ -150,14 +150,14 @@
 			margin-top: 80px;
 			
 			h1 {
-				color: #fff;
+				color: $white;
 				margin-top: 15px;
 				padding: 0 10;
 			}
 		}
 
 		p {
-			color: #fff;
+			color: $white;
 		}
 	}
 
@@ -238,12 +238,12 @@
 		background-position: center;
 		
 		h1 {
-			color: #990909;
+			color: $dark-red;
 			margin-top: 60px;
 		}
 		
 		p {
-			color: #990909;
+			color: $dark-red;
 			font-weight: 600;
 		}
 	}
@@ -254,19 +254,15 @@
 			height: 50px;
 			margin-bottom: 10px;
 			font-size: 30px;
-			@include button-color(#FFFFFF, #990909, #ff0000);
+			@include button-color($white, $dark-red, #ff0000);
 			@include border-radius(10px);
 			
+			&:active, 
 			&:hover {
-				border-top-color: #000;
-				background: #000;
+				border-top-color: $black;
+				background: $black;
 			}
 			
-			&:active {
-  				border-top-color: #030303;
-   				background: #030303;
-  			}
-  			
   			&:focus {
   				outline: none; //Not worrried about accessibility.
   			}
@@ -291,17 +287,17 @@
 	.jumbotron {
 		background-image: url('../images/ObamaLionKing.jpg');
 		background-position: center;
-			padding-bottom: 20px;
+		padding-bottom: 20px;
 
-			.light-layer {
-				margin-top: 120px;
+		.light-layer {
+			margin-top: 120px;
 				
 				h1 {
 					margin-top: 15px;
 					padding-top: 0px;
 					padding-bottom: 0px;
 				}
-			}
+		}
 	}
 
 	aside {
@@ -354,17 +350,17 @@
 	.jumbotron {
 		background-image: url('../images/nodegarden10.jpg');
 		background-position: center;
-			padding-bottom: 120px;
+		padding-bottom: 120px;
 			
-			.dark-layer {
-				margin-top: 120px;
-				
-				h1 {
-					margin-top: 15px;
-					padding-top: 0px;
-					padding-bottom: 0px;
-				}
+		.dark-layer {
+			margin-top: 120px;
+
+			h1 {
+				margin-top: 15px;
+				padding-top: 0px;
+				padding-bottom: 0px;
 			}
+		}
 	}
 
 	aside {
@@ -388,8 +384,8 @@
 
 
 
-$jasmine-yellow: #FBDE7E;
-$jasmine-blue: #ADD8E6;
+$jasmine-yellow: #fbde7e;
+$jasmine-blue: #add8e6;
 
 
 .jasmine-body {
@@ -525,7 +521,6 @@ $sublime-gold: #daa520;
 		padding: 150 0 10;
 		
 		.light-layer {
-			
 			h1 {
 				padding: 0px 0px 0px 10px;
 			}
@@ -565,7 +560,7 @@ $sublime-gold: #daa520;
 
 	.gold {
 		background-color: $sublime-gold;
-		color: #000;
+		color: $black;
 		
 		.example2, 
 		.example {
@@ -575,7 +570,6 @@ $sublime-gold: #daa520;
 
 	.linter {
 		padding-bottom: 0px;
-		padding-bottom: 20px;
 	}
 
 	.same-list {
@@ -597,7 +591,7 @@ $sublime-gold: #daa520;
 			}
 		}
 
-		.rts{
+		.rts {
 			height: 100px;
 			position: relative;
 			
@@ -613,8 +607,8 @@ $sublime-gold: #daa520;
 				margin-bottom: 10px;
 			}
 
-			padding-top: 10px;
 			min-height: 100px;
+			padding-top: 10px;
 		}
 
 		#break:before {
@@ -648,7 +642,7 @@ $sublime-gold: #daa520;
 	}
 
 	th, caption {
-		background-color: #FFFFF0;
+		background-color: #fffff0;
 	}
 
 	caption {
@@ -690,18 +684,18 @@ $sublime-gold: #daa520;
 		background-position: center;
 			
 		h1 {
-			color: white;
+			color: $white;
 			margin-top: 4em;
 		}
 
 		p {
-			color: white;
+			color: $white;
 		}
 	}
 
 	img {
-		max-width: 100%;
 		height: auto;
+		max-width: 100%;
 	}
 
 	@media(min-width: $screen-desktop){
@@ -719,14 +713,14 @@ $sublime-gold: #daa520;
 		background-image: url('../images/SQLMap.jpeg');
 		background-position: center;
 			
-			h1 {
-				color: white;
-				margin-top: 180px;
-			}
+		h1 {
+			color: $white;
+			margin-top: 180px;
+		}
 
-			p {
-				color: white;
-			}
+		p {
+			color: $white;
+		}
 	}
 
 	img {
@@ -747,14 +741,15 @@ $sublime-gold: #daa520;
 	.jumbotron {
 		background-image: url('../images/Octocat.jpg');
 		background-position: center;
-			h1 {
-				color: white;
-				margin-top: 180px;
-			}
+		
+		h1 {
+			color: $white;
+			margin-top: 180px;
+		}
 
-			p {
-				color: white;
-			}
+		p {
+			color: $white;
+		}
 	}
 
 	.linter {
@@ -790,25 +785,27 @@ $sublime-gold: #daa520;
 
 }
 
+$terminal-text: #63de01;
+$terminal-outline: #e5e5e5;
 
 .terminal-body {
 	header {
+		color: $terminal-text;
 		padding-top: 40px;
-		color: #63de01;
 		
 		h1 {
 			font-size: 3em;
 		}
 	}
 
-	background-color: #000;
-	color: #63de01;
+	background-color: $black;
+	color: $terminal-text;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 	.example, .example2 {
-		background-color: #000;
-		border: dashed 1px #e5e5e5;
-		color: #63de01;
+		background-color: $black;
+		border: dashed 1px $terminal-outline;
+		color: $terminal-text;
 		padding-left: 5px;
 		padding-right: 5px;
 	}
@@ -818,7 +815,7 @@ $sublime-gold: #daa520;
 	}
 	
 	.footer {
-		color: #63de01;
+		color: $terminal-text;
 	}
 
 	@media(min-width: $screen-tablet){
@@ -848,7 +845,6 @@ $sublime-gold: #daa520;
 		background-image: url('../images/ARD.jpg');
 		background-position: center;
 		background-repeat: no-repeat;
-
 	}
 
 	.light-layer {

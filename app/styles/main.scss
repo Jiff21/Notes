@@ -85,16 +85,16 @@ article {
 
 .left-nav {
 	a {
-		font-size: 1.5em;
-		padding: 5 10;
-		margin: 4 0 0 -5px;
-		color: white;
-		background-color: black;
+		background-color: $black;
+		border: 2px solid $white;
+		color: $white;
+		cursor: pointer;
 		display: block;
-		border: 2px solid white;
+		padding: 5 10;
+		font-size: 1.5em;
+		margin: 4 0 0 -5px;
 		text-align: right;
 		text-decoration: none;
-		cursor: pointer;
 	}
 
 	aside {
@@ -118,9 +118,9 @@ article {
 
 // modenizer warning don't change name until you look into it.
 .browsehappy {
-	margin: 0.2em 0;
 	background: #ccc;
-	color: #000;
+	color: $black;
+	margin: 0.2em 0;
 	padding: 0.2em 0;
 }
 
@@ -160,7 +160,7 @@ body {
 /* Styling for the Old Header Class.  May be I can get rid of this or style into jumbrotrons with LESS. */
 header {
 	background-color: Black;
-	color: #FFF;
+	color: $white;
 	border-radius: 25px;
 	font-variant: small-caps;
 	text-align: center;
@@ -174,7 +174,7 @@ header {
 		font-weight: bold;
 		width: 50px;
 		text-align: center;
-		text-shadow: 1px 1px 0px #000;
+		text-shadow: 1px 1px 0px $black;
 	}
 }
 
@@ -217,29 +217,30 @@ header {
 	}
 }
 
+$example-background: #f9f2f4;
 /* Style for Example classes along with related spans. */
 .example {
-	font-style: italic;
-	color: black;
-	background-color: #f9f2f4;
-	border: none 1px black;
 	@include border-radius(5px);
-	padding: 2px;
+	background-color: $example-background;
+	border: none 1px $black;
 	border-radius: 2px;
+	color: $black;
+	font-style: italic;
+	padding: 2px;
 }
 
 .example2 {
-	background-color: #f9f2f4;
-	border: solid 1px black;		
-	font-style: italic;
+	background-color: $example-background;
+	border: solid 1px $black;		
+	border-radius: 2px;
+	clear: all;
+	color: $black;
 	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 	font-size: 90%;
+	font-style: italic;
+	margin-bottom: 10px;
 	padding: 2px;
 	padding-left: 5px;
-	color: black;
-	border-radius: 2px;
-	margin-bottom: 10px;
-	clear: all;
 }
 
 /* Adding styling to tables */
@@ -283,7 +284,9 @@ aside p, aside ol, aside ul {
 }
 
 /* This uses adjacent selectors to add extra line height after some headings */
-aside h4 + p, aside h5 + p, aside h6 + p {
+aside h4 + p, 
+aside h5 + p, 
+aside h6 + p {
 	margin: 5px;
 }
 
@@ -307,10 +310,11 @@ aside ul ul li:first-child {
 /* For Jumbotron images that need an overlay to make text more readable. */
 .jumbotron {
 	background-size: cover;
-	width: 100%;
-	text-align: center;
 	border-bottom: 1px solid #e5e5e5;
 	margin-top: 45px;
+	text-align: center;
+	width: 100%;
+
 	.btn {
 		font-size: 21px;
 		padding: 14px 24px;
@@ -330,29 +334,34 @@ aside ul ul li:first-child {
 
 	.dark-layer, .light-layer{
 		opacity: 0.65;
-		h1, h2, h3, h4, h5, h6, p, {
-			opacity: 1.0;
-		}
-		p {
+		h1, 
+		h2, 
+		h3, 
+		h4, 
+		h5, 
+		h6, 
+		p, {
 			font-weight: bold;
-			padding-left: 10px;
-			padding-right: 10px;			
+			opacity: 1.0;
+			padding-left: 0px 10px;			
 		}
+
 		h1 {
 			padding: 15px;
 		}
+
 		@include border-radius(20px);	
 	}
 }
 
 .dark-layer {
-	color: #FFF;
-	background-color: #000;
+	background-color: $black;
+	color: $white;
 }
 
 .light-layer {
-	color: #000;
-	background-color: #FFF;
+	background-color: $white;
+	color: $black;
 }
 
 .clear-both {
