@@ -16,3 +16,4 @@ app/examples/sublime3/User/Package Control.merged-ca-bundle
 
 test/e2e/selenium-debug.log
 test/e2e/reports
+npm-debug.log
