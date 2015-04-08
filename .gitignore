@@ -13,7 +13,9 @@ app/examples/sublime3/User/Package Control.cache/
 // Trying to figure out why these exist on home computer but not road.
 app/examples/sublime3/User/Package Control.user-ca-bundle
 app/examples/sublime3/User/Package Control.merged-ca-bundle
-
-test/e2e/selenium-debug.log
-test/e2e/reports
 npm-debug.log
+
+// Ignores for Nightwatch
+test/e2e/selenium-debug.log
+test/e2e/tests_output/
+test/e2e/reports
