@@ -21,6 +21,9 @@ module.exports = function (grunt) {
         dist: 'dist'
     };
 
+    var nightwatch = require('nightwatch');
+    nightwatch.initGrunt(grunt);
+ 
     // Define the configuration for all the tasks
     grunt.initConfig({
 
@@ -89,8 +92,9 @@ module.exports = function (grunt) {
             },
             test: {
                 options: {
-                    open: false,
-                    port: 9001,
+                    port: 9000,
+                    hostname: '127.0.0.1.xip.io',
+                    keepalive: true,
                     middleware: function(connect) {
                         return [
                             connect.static('.tmp'),
@@ -147,20 +151,30 @@ module.exports = function (grunt) {
             }
         },
 
-
-
         nightwatch: {
-            options: { 
-                config_path: 'test/e2e/nightwatch.json',
-                // globals: { foo: 'bar' },
-                // globals_path: 'custom_tests/globals',
-                // custom_commands_path: 'custom_tests/helpers',
-                // custom_assertions_path: 'custom_tests/asserts',
-                test_settings: {},
-                selenium: {}
+            options: {
+                cwd: './test/e2e',
+                keepAlive: true
+            },
+
+            'default': {
+                argv: {
+                    env: 'default'
+                },
+                settings: {
+                    config_path: 'test/e2e/nightwatch.json'
+                }
+            },
+
+            'all': {
+                argv: {
+                    env: 'chrome,firefox,safari'
+                },
+                settings: {
+                    config_path: 'test/e2e/nightwatch.json'
+                }
             }
         },
-
 
         // Compiles Sass to CSS and generates necessary files if requested
         sass: {
@@ -429,7 +443,7 @@ module.exports = function (grunt) {
 
     // This task will kick off the "End to End" tests 1 time, requires 'grunt serve' to be running
     grunt.registerTask('test:e2e', [
-        'nightwatch:e2e'
+        'nightwatch'
     ]);
 
 
