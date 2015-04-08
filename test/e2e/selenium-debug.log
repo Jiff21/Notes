@@ -1,0 +1,228 @@
+09:00:44.891 INFO - Launching a standalone server
+Setting system property webdriver.chrome.driver to test/e2e/bin/chromedriver
+09:00:44.929 INFO - Java: Oracle Corporation 25.25-b02
+09:00:44.930 INFO - OS: Mac OS X 10.10.2 x86_64
+09:00:44.938 INFO - v2.45.0, with Core v2.45.0. Built from revision 5017cb8
+09:00:45.010 INFO - Default driver org.openqa.selenium.ie.InternetExplorerDriver registration is skipped: registration capabilities Capabilities [{ensureCleanSession=true, browserName=internet explorer, version=, platform=WINDOWS}] does not match with current platform: MAC
+09:00:45.044 INFO - RemoteWebDriver instances should connect to: http://127.0.0.1:4444/wd/hub
+09:00:45.045 INFO - Version Jetty/5.1.x
+09:00:45.046 INFO - Started HttpContext[/selenium-server,/selenium-server]
+09:00:45.080 INFO - Started org.openqa.jetty.jetty.servlet.ServletHandler@7e0babb1
+09:00:45.080 INFO - Started HttpContext[/wd,/wd]
+09:00:45.081 INFO - Started HttpContext[/selenium-server/driver,/selenium-server/driver]
+09:00:45.081 INFO - Started HttpContext[/,/]
+09:00:45.085 INFO - Started SocketListener on 0.0.0.0:4444
+09:00:45.085 INFO - Started org.openqa.jetty.jetty.Server@6e2c634b
+09:00:45.266 INFO - Executing: [new session: Capabilities [{acceptSslCerts=true, name=Sass Page, browserName=firefox, javascriptEnabled=true, platform=ANY}]])
+09:00:45.275 INFO - Creating a new session for Capabilities [{acceptSslCerts=true, name=Sass Page, browserName=firefox, javascriptEnabled=true, platform=ANY}]
+09:00:47.441 INFO - Done: [new session: Capabilities [{acceptSslCerts=true, name=Sass Page, browserName=firefox, javascriptEnabled=true, platform=ANY}]]
+09:00:47.450 INFO - Executing: [get: http://localhost:9000])
+09:00:47.611 INFO - Done: [get: http://localhost:9000]
+09:00:47.616 INFO - Executing: [find element: By.cssSelector: body.home-body])
+09:00:49.312 WARN - Exception thrown
+org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"css selector","selector":"body.home-body"}
+Command duration or timeout: 52 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'Jeffreys-iMac.local', ip: '10.71.250.76', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_25'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0.1, platform=MAC, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 175531c5-7c83-d546-9e38-8f967b6f92de
+*** Element info: {Using=css selector, value=body.home-body}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:441)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:426)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:101)
+	at com.sun.proxy.$Proxy1.findElement(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:184)
+	at org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:47)
+	at org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:168)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"css selector","selector":"body.home-body"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'Jeffreys-iMac.local', ip: '10.71.250.76', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_25'
+Driver info: driver.version: unknown
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10271)
+	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10280)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12274)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12279)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12221)
+09:00:49.334 WARN - Exception: Unable to locate element: {"method":"css selector","selector":"body.home-body"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'Jeffreys-iMac.local', ip: '10.71.250.76', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_25'
+Driver info: driver.version: unknown
+09:00:49.928 INFO - Executing: [find element: By.cssSelector: body.home-body])
+09:00:50.344 WARN - Exception thrown
+org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"css selector","selector":"body.home-body"}
+Command duration or timeout: 8 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'Jeffreys-iMac.local', ip: '10.71.250.76', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_25'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0.1, platform=MAC, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 175531c5-7c83-d546-9e38-8f967b6f92de
+*** Element info: {Using=css selector, value=body.home-body}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:441)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:426)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:101)
+	at com.sun.proxy.$Proxy1.findElement(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:184)
+	at org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:47)
+	at org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:168)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"css selector","selector":"body.home-body"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'Jeffreys-iMac.local', ip: '10.71.250.76', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_25'
+Driver info: driver.version: unknown
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10271)
+	at <anonymous class>.FirefoxDriver.prototype.findElement(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10280)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12274)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12279)
+	at <anonymous class>.DelayedCommand.prototype.execute/<(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12221)
+09:00:50.351 WARN - Exception: Unable to locate element: {"method":"css selector","selector":"body.home-body"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'Jeffreys-iMac.local', ip: '10.71.250.76', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_25'
+Driver info: driver.version: unknown
+09:00:50.915 INFO - Executing: [find element: By.cssSelector: body.home-body])
+09:00:51.567 ERROR - Unexpected exception during findElement
+org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Command duration or timeout: 9 milliseconds
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'Jeffreys-iMac.local', ip: '10.71.250.76', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_25'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0.1, platform=MAC, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 175531c5-7c83-d546-9e38-8f967b6f92de
+*** Element info: {Using=css selector, value=body.home-body}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:441)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:426)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:101)
+	at com.sun.proxy.$Proxy1.findElement(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:184)
+	at org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:47)
+	at org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:168)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'Jeffreys-iMac.local', ip: '10.71.250.76', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_25'
+Driver info: driver.version: unknown
+	at <anonymous class>.nsCommandProcessor.prototype.execute(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12343)
+	at <anonymous class>.Dispatcher.executeAs/<(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9061)
+	at <anonymous class>.Resource.prototype.handle(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9208)
+	at <anonymous class>.Dispatcher.prototype.dispatch(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9155)
+	at <anonymous class>.WebDriverServer/<.handle(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12128)
+	at <anonymous class>.createHandlerFunc/<(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2058)
+	at <anonymous class>.ServerHandler.prototype.handleResponse(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2391)
+	at <anonymous class>.Connection.prototype.process(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1227)
+	at <anonymous class>.RequestReader.prototype._handleResponse(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1681)
+	at <anonymous class>.RequestReader.prototype._processBody(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1529)
+	at <anonymous class>.RequestReader.prototype.onInputStreamReady(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1397)
+09:00:51.573 WARN - Exception thrown
+org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Command duration or timeout: 9 milliseconds
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'Jeffreys-iMac.local', ip: '10.71.250.76', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_25'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=37.0.1, platform=MAC, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 175531c5-7c83-d546-9e38-8f967b6f92de
+*** Element info: {Using=css selector, value=body.home-body}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:204)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:156)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:599)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:441)
+	at org.openqa.selenium.By$ByCssSelector.findElement(By.java:426)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$2.invoke(EventFiringWebDriver.java:101)
+	at com.sun.proxy.$Proxy1.findElement(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver.findElement(EventFiringWebDriver.java:184)
+	at org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:47)
+	at org.openqa.selenium.remote.server.handler.FindElement.call(FindElement.java:1)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.openqa.selenium.remote.server.DefaultSession$1.run(DefaultSession.java:168)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.openqa.selenium.NoSuchWindowException: Window not found. The browser window may have been closed.
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'Jeffreys-iMac.local', ip: '10.71.250.76', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_25'
+Driver info: driver.version: unknown
+	at <anonymous class>.nsCommandProcessor.prototype.execute(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12343)
+	at <anonymous class>.Dispatcher.executeAs/<(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9061)
+	at <anonymous class>.Resource.prototype.handle(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9208)
+	at <anonymous class>.Dispatcher.prototype.dispatch(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:9155)
+	at <anonymous class>.WebDriverServer/<.handle(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:12128)
+	at <anonymous class>.createHandlerFunc/<(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2058)
+	at <anonymous class>.ServerHandler.prototype.handleResponse(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:2391)
+	at <anonymous class>.Connection.prototype.process(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1227)
+	at <anonymous class>.RequestReader.prototype._handleResponse(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1681)
+	at <anonymous class>.RequestReader.prototype._processBody(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1529)
+	at <anonymous class>.RequestReader.prototype.onInputStreamReady(file:///var/folders/ym/4xxg61954fn6c9ngx77w106r0000gn/T/anonymous8003146011787032013webdriver-profile/extensions/fxdriver@googlecode.com/components/httpd.js:1397)
+09:00:51.578 WARN - Exception: Window not found. The browser window may have been closed.
+Build info: version: '2.45.0', revision: '5017cb8', time: '2015-02-26 23:59:50'
+System info: host: 'Jeffreys-iMac.local', ip: '10.71.250.76', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.10.2', java.version: '1.8.0_25'
+Driver info: driver.version: unknown
+09:00:51.846 INFO - Executing: [delete session: 4c724f0d-49e9-45ad-9b4d-4f052efd1067])
+09:00:51.912 INFO - Done: [delete session: 4c724f0d-49e9-45ad-9b4d-4f052efd1067]
+09:00:51.926 INFO - Shutting down...
