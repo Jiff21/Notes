@@ -147,6 +147,21 @@ module.exports = function (grunt) {
             }
         },
 
+
+
+        nightwatch: {
+            options: { 
+                config_path: 'test/e2e/nightwatch.json',
+                // globals: { foo: 'bar' },
+                // globals_path: 'custom_tests/globals',
+                // custom_commands_path: 'custom_tests/helpers',
+                // custom_assertions_path: 'custom_tests/asserts',
+                test_settings: {},
+                selenium: {}
+            }
+        },
+
+
         // Compiles Sass to CSS and generates necessary files if requested
         sass: {
             options: {
@@ -402,9 +417,21 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'connect:test',
-            'jasmine'
+            'jasmine',
+            'nightwatch'
         ]);
     });
+
+    // This task will kick off the unit tests 1 time
+    grunt.registerTask('test:unit', [
+        'jasmine'
+    ]);
+
+    // This task will kick off the "End to End" tests 1 time, requires 'grunt serve' to be running
+    grunt.registerTask('test:e2e', [
+        'nightwatch:e2e'
+    ]);
+
 
     grunt.registerTask('build', [
         'clean:dist',

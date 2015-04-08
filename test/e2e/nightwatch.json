@@ -1,0 +1,42 @@
+{
+	"src_folders" : ["./spec"],
+	"live_output": true,
+	"parallel_process_delay": 1500,
+
+	"selenium" : {
+		"standalone": true,
+		"start_process": true,
+		"server_path": "../../node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-2.45.0.jar",
+		"jar_version" : "2.45.0",
+		"host" : "127.0.0.1",
+	    "port" : 4444,
+		"log_path": "",
+		"cli_args": {
+			"webdriver.chrome.driver": "bin/chromedriver"
+		}
+	},
+
+	"test_settings" : {
+		"default": {
+			"launch_url": "http://0.0.0.0:9000/Views/home.html",
+			"silent": true,
+			"screenshots": {
+				"enabled": false,
+				"path": "./screenshots"
+			}
+		},
+
+		"chrome" : {
+			"desiredCapabilities": {
+				"browserName": "chrome",
+				"chromeOptions": {
+					"args": [
+						"use-fake-device-for-media-stream",
+						"use-fake-ui-for-media-stream"
+					]
+				}
+			}
+		}
+
+	}
+}
