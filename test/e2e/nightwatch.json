@@ -4,6 +4,7 @@
 	"parallel_process_delay": 1500,
 	"globals_path": "./globals/globals.js",
 
+
 	"selenium" : {
 		"standalone": true,
 		"silent" : true,

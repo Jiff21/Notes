@@ -41,6 +41,7 @@ module.exports = {
 	'The Javascript page should a specific hero image': function(browser) {
 		browser
 			.url(browser.globals.baseURL + 'javascript.html')
+			.url(browser.globals.baseURL + '/javascript.html')
 			.waitForElementVisible('body.javascript-body', 3000)
 			.assert.cssProperty('div.jumbotron', 'background-image', 'url("http://localhost:9000/images/JFKAlienHunter.jpg")')
 			.end();
