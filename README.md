@@ -15,7 +15,14 @@ Use:
 	grunt serve
 
 ## Running Tests
-Use:
+To run all tests:
 
 	grunt test
 
+To run Nightwatch tests:
+
+	grunt test:e2e
+
+To run Jasmine Tests (to be written)
+
+	grunt test:unit

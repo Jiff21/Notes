@@ -37,7 +37,7 @@
 				<h5>Step 1</h5>
 				<p>In a project already setup using grunt install nightwatch with <span class="example">sudo npm install nightwatch —save-dev</span>, then install selenium-standalone with <span class="example">sudo npm install selenium-server-standalone-jar --save-dev</span>. If a folder wasn't automatically created,  make a test folder at root scope. Inside that folder create the folder e2e. Inside e2e add the folders spec, screeenshots, and reports. As of version 0.6 they have grunt instructions <a href="http://nightwatchjs.org/guide#using-grunt" target="_blank">here</a> and I've updated these steps to reflect this, but it's so early on keep an eye on <a href="https://github.com/gextech/grunt-nightwatch">grunt-nightwatch</a> but it took similar steps to get it working. Start by adding this to the section of you grunt file right under <span class="term">module.export = function (grunt) {</span></p>
 				<div class="example2">
-    			var nightwatch = require('nightwatch');
+    			var nightwatch = require('nightwatch');<br>
     			nightwatch.initGrunt(grunt);
 				</div>
 			</div>
