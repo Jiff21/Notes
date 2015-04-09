@@ -16,7 +16,7 @@ module.exports = {
 
 	'The Javascript page should a button that changes the color of the header': function(browser) {
 		browser
-			.url('http://localhost:9000/Views/javascript.html')
+			.url(browser.globals.baseURL + '/javascript.html')
 			.waitForElementVisible('body.javascript-body', 3000)
 			.waitForElementVisible('button[value=button]', 500)
 			.click('xpath','//*[@id="switcher"]/button').pause(100)
@@ -40,7 +40,7 @@ module.exports = {
 
 	'The Javascript page should a specific hero image': function(browser) {
 		browser
-			.url('http://localhost:9000/Views/javascript.html')
+			.url(browser.globals.baseURL + '/javascript.html')
 			.waitForElementVisible('body.javascript-body', 3000)
 			.assert.cssProperty('div.jumbotron', 'background-image', 'url("http://localhost:9000/images/JFKAlienHunter.jpg")')
 			.end();
