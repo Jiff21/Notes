@@ -35,14 +35,12 @@
 
 			<div class="half-full">
 				<h5>Step 1</h5>
-				<p>In a project already setup using grunt install nightwatch with <span class="example">sudo npm install nightwatch —save-dev</span>, then install selenium-standalone with <span class="example">sudo npm install selenium-server-standalone-jar --save-dev</span>. First create a test folder at root scope. Inside that folder create the folder e2e. Inside e2e add the folders spec, screeenshots, and reports. Start by adding this to the section of you grunt file right under <span class="term">module.export = function (grunt) {</span></p>
+				<p>In a project already setup using grunt install nightwatch with <span class="example">sudo npm install nightwatch —save-dev</span>, then install selenium-standalone with <span class="example">sudo npm install selenium-server-standalone-jar --save-dev</span>. If a folder wasn't automatically created,  make a test folder at root scope. Inside that folder create the folder e2e. Inside e2e add the folders spec, screeenshots, and reports. As of version 0.6 they have grunt instructions <a href="http://nightwatchjs.org/guide#using-grunt" target="_blank">here</a> and I've updated these steps to reflect this, but it's so early on keep an eye on <a href="https://github.com/gextech/grunt-nightwatch">grunt-nightwatch</a> but it took similar steps to get it working. Start by adding this to the section of you grunt file right under <span class="term">module.export = function (grunt) {</span></p>
 				<div class="example2">
     			var nightwatch = require('nightwatch');
     			nightwatch.initGrunt(grunt);
 				</div>
 			</div>
-
-
 			<div class="half-full">
 				<h5>Step 2</h5>
 				<p>Then in your gruntfile add the following to the <span class="term">gruntInitConfig</span> section.</p>
@@ -70,7 +68,7 @@
 				</div>
 			</div>
 			<div class="half-full">
-				<h5>Step 2</h5>
+				<h5>Step 3</h5>
 				<p>Then in add the task <span class="example">nightwatch</span> to the run portion of of your <span class="term">grunt.registerTask('test', function (target) {</span> and a a seperate registerTask of 'test:e2e'. The end result should look something like this.</p>
 				<div class="example2">
 				grunt.registerTask('test', function (target) {<br>
@@ -99,7 +97,7 @@
 			</div>
 
 			<div class="half-full">
-				<h5>Step 3</h5>
+				<h5>Step 4</h5>
 				<p>Now in the e2e folder add a file title <span class="term">nightwatch.json</span>. The file should look something like this.</p>
 				<div class="example2">
 				{<br>
@@ -144,7 +142,7 @@
 				</div>
 			</div>
 			<div class="half-full">
-				<h5>Step 4</h5>
+				<h5>Step 5</h5>
 				<p>You should now be able to run nightwatch with the command <span class="example">grunt test:e2e</span>, in addition it should run with your other tests when using <span class="example">grunt test</span>.</p>
 			</div>
 			<div class="full text-centered">
@@ -200,6 +198,19 @@
 					<li><span class="example">.assert.containsText('<span class="replace">#ires</span>', '<span class="replace">joyent/node</span>')</span></li>
 				</ul>
 			</div>
+			<div class="full text-centered">
+				<h3>Shortcuts</h3>
+			</div>
+			<div class="full">
+				<p>A full list of assertions can be found on the <a href="http://nightwatchjs.org/guide#command-line-options" target="_blank">nightwatch dev guide</a>.</p>
+			</div>
+			<div class="full list-container">
+				<ul>
+					<li><span class="example">grunt test:e2e -t /spec/<span class="replace">name/or/path/to/spec</span></span></li>
+					<li><span class="example">grunt test:e2e -g /spec/<span class="replace">folderNameToRunAGroup</span></span></li>
+					<li><span class="example">grunt test:e2e -e <span class="replace">environmentNameDefiniedInNightwatchJson</span></span></li>
+				</ul>
+			</div>			
 			</article>
 			<!-- Loading footer with AJAX -->
 			<div class="footerPlaceholder"></div>
