@@ -6,13 +6,13 @@ var luckyLink = function () {
 	var b = 0,
 		i = 0,
 		correctLink,
+		checkLoop,
 		correctDropdownNumber,
 		dropdowns = document.getElementsByClassName('dropdown-menu'),
 		linksChecked = 0,
 		linksInDropdown,
 		linksInThisDropdown,
 		linkNumber,
-		loopGoesUpTo = 0,
 		numberForThisDropdown = 0,
 		totalLinks = 0;
 
@@ -23,21 +23,24 @@ var luckyLink = function () {
 	}
 
 	// Picking a random number between 1 and total number of options.
-	linkNumber = Math.floor((Math.random() * totalLinks) + 1);
+	linkNumber = Math.floor((Math.random() * totalLinks));
+	console.log('######!1 link Number is : ' + linkNumber);
 
 	//
 	for(b; b < dropdowns.length; b++) {
 
 		linksInThisDropdown = dropdowns[b].getElementsByTagName('a');
-		loopGoesUpTo += linksInThisDropdown.length;
 
-		if (linkNumber <= loopGoesUpTo){
+		checkLoop = 0;
+		checkLoop = linkNumber - linksChecked;
+		checkLoop -= linksInThisDropdown.length;
 
+		console.log(' checkLoop ' + checkLoop + ' and b is ' + b);
+		if (checkLoop < 0){
 			correctDropdownNumber = dropdowns[b].getElementsByTagName('a');
-			numberForThisDropdown = linkNumber - linksChecked -1;
+			numberForThisDropdown = linkNumber - linksChecked;
 			correctLink = correctDropdownNumber[numberForThisDropdown];
-			console.log(correctLink);
-			correctLink.click();
+			// correctLink.click();
 			break;
 		} else {
 			linksChecked += linksInThisDropdown.length;
