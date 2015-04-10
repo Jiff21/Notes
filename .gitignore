@@ -19,3 +19,4 @@ npm-debug.log
 test/e2e/selenium-debug.log
 test/e2e/tests_output/
 test/e2e/reports
+test/e2e.screenshots

@@ -6,7 +6,7 @@
 
 module.exports = {
 	defaultTimeout: 3000,
-	baseURL: 'http://localhost:9000/Views/',
+	baseURL: 'http://localhost:9000/',
 	email: 'jeff@example.com',
 	password: 'Password1!',
 	practice: 'Test Practice',
