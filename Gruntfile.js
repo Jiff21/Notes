@@ -162,7 +162,7 @@ module.exports = function (grunt) {
 					env: 'default'
 				},
 				settings: {
-					config_path: 'test/e2e/nightwatch.json'
+					configPath: 'test/e2e/nightwatch.json'
 				}
 			},
 
