@@ -90,9 +90,9 @@ article {
 		color: $white;
 		cursor: pointer;
 		display: block;
-		padding: 5 10;
+		padding: 5px 10px 5px 0px;
 		font-size: 1.5em;
-		margin: 4 0 0 -5px;
+		margin: 4px 0px 0px -5px;
 		text-align: right;
 		text-decoration: none;
 	}
@@ -101,7 +101,7 @@ article {
 		@include make-xs-column(4);
 		@include make-sm-column(3);
 		@include make-sm-column(2);
-		padding-left: 0;
+		padding-left: 0px;
 	}
 
 	.main {
@@ -328,7 +328,7 @@ aside ul ul li:first-child {
 	@media(min-width: $screen-tablet){
 		min-height: 500px;
 
-		.dark-layer, .light-layer{
+		.dark-layer, .light-layer {
 			margin-top: 150px;
 		}
 	}

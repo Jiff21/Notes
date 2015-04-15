@@ -25,7 +25,7 @@ var luckyLink = function () {
 	// Picking a random number between 1 and total number of options.
 	linkNumber = Math.floor((Math.random() * totalLinks));
 
-	// Loops through each menu to determine if the linkNumber is in it. Then clickis on the correct link.
+	// Loops through each menu to determine if the linkNumber is in it. Then clicks on the correct link.
 	for(b; b < dropdowns.length; b++) {
 
 		linksInThisDropdown = dropdowns[b].getElementsByTagName('a');
