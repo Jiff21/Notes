@@ -751,8 +751,20 @@ $sublime-gold: #daa520;
 }
 
 .git-body {
+	article {
+		margin-bottom: 600px;
+	}
+
 	code {
 		margin-bottom: 10px;
+	}
+
+	.footer {
+		position: fixed;
+		bottom: 0px;
+		left: 0px;
+		width: 100%;
+		background-color: $white;
 	}
 
 	.main div {

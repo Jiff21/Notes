@@ -95,6 +95,18 @@ article {
 		margin: 4px 0px 0px -5px;
 		text-align: right;
 		text-decoration: none;
+			&:hover {
+				background-color: lighten($black, 15%);
+				color: $white;
+				text-decoration: none;
+			}
+			&:active,
+			&:focus {
+				background-color: $white;
+				color: $black;
+				text-decoration: none;
+				outline: none;
+			}
 	}
 
 	aside {
