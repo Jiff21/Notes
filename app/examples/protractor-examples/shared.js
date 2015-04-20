@@ -644,6 +644,114 @@ var Helpers = function () {
 		});
 	};
 
+	this.measureTimeToLoad = function(elClass, expectedLoadTime) {
+
+		var end,
+			expectedTime = expectedLoadTime,
+			start,
+			loadTime;
+
+
+		var getStartTime = function () {
+			browser.driver.executeScript(function () {
+				return window.performance.timing.navigationStart;
+			}).then(function (newStart) {
+				console.log('Start time is ' + newStart);
+				start = newStart;
+				return start;
+
+			});
+		};
+
+		var getEndTime = function () {
+			browser.wait(function () {
+
+				// Message to console log while waiting for element to appear.
+				console.log('Waiting for element with class of ' + elClass + ' to be present');
+
+				// Checking elements presence by class in this instance. 
+				// Uses Selenium browser instead of Protractors to avoid protractors wait till full page load.
+				return browser.driver.isElementPresent(by.className(elClass)).then(function (el) {
+					return el === true;
+				});
+			}, 10000)
+				.then(function () {
+
+					// Console log out a success message.
+					console.log(elClass + ' is present!');
+					end = new Date().getTime();
+					getTotalTime(start, end);
+				});
+		};
+
+		var getTotalTime = function (theStart, theEnd) {
+			loadTime = theEnd - theStart;
+			console.log('It took ' + loadTime + ' for ' + elClass + ' to Load.');
+			expect(loadTime).toBeLessThan(expectedTime);
+		};
+
+		getStartTime();
+		getEndTime();
+	};
+
+
+
+
+	// This helper measure time to Dom load, more usefulf or non-angular sites.
+	this.measureDomLoad = function(expectedLoadTime) {
+		var end,
+			expectedTime = expectedLoadTime,
+			start,
+			timer;
+
+
+		var getStartTime = function () {
+			browser.driver.executeScript(function() {
+				return window.performance.timing.navigationStart;
+			}).then(function(newStart) {
+				console.log('Start time is ' + newStart);
+				start = newStart;
+				return start;
+				
+			});
+		};
+
+		var getEndTime = function() {
+			browser.driver.executeScript(function() {
+				return window.performance.timing.domComplete;
+			}).then(function(newEnd) {
+				console.log('End time is ' + newEnd);
+				end = newEnd;
+				return end;
+			});
+		};
+		
+		var getTotalTime = function(theStart, theEnd) {
+			timer = theEnd - theStart;
+			console.log('Total time is ' + timer);
+			return timer;
+		};
+
+		getStartTime();
+		getEndTime();
+
+		browser.wait(function () {
+			// Message to console log while waiting for element to appear.
+			console.log('Waiting for start and end times');
+
+			if(end != undefined && start != undefined){
+				return true;
+			};
+		}, 5000)
+			.then(function () {
+				// Console log out a success message.
+				console.log('Got Times');
+				// Then run this function.
+				getTotalTime(start, end);
+				expect(timer).toBeLessThan(expectedTime);
+			});
+	};
+
 };
 
 module.exports = new Helpers();
