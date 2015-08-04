@@ -6,6 +6,7 @@
 	[
 		"CSScomb",
 		"Javascript Beautify",
+		"LESS",
 		"LiveReload",
 		"Package Control",
 		"Sass",
