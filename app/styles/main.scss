@@ -41,6 +41,7 @@ article {
 		h3 {
 			text-align: center;
 		}
+
 		@media(min-width: $screen-tablet){
 			h3 {
 				text-align: left;
@@ -95,18 +96,19 @@ article {
 		margin: 4px 0px 0px -5px;
 		text-align: right;
 		text-decoration: none;
-			&:hover {
-				background-color: lighten($black, 15%);
-				color: $white;
-				text-decoration: none;
-			}
-			&:active,
-			&:focus {
-				background-color: $white;
-				color: $black;
-				text-decoration: none;
-				outline: none;
-			}
+		&:hover {
+			background-color: lighten($black, 15%);
+			color: $white;
+			text-decoration: none;
+		}
+
+		&:active,
+		&:focus {
+			background-color: $white;
+			color: $black;
+			outline: none;
+			text-decoration: none;
+		}
 	}
 
 	aside {
@@ -132,8 +134,8 @@ article {
 .browsehappy {
 	background: #ccc;
 	color: $black;
-	margin: 0.2em 0;
-	padding: 0.2em 0;
+	margin: .2em 0;
+	padding: .2em 0;
 }
 
 /* Space out content a bit */
@@ -192,9 +194,9 @@ header {
 
 /* Custom page footer */
 .footer {
-	padding-top: 19px;
 	color: #777;
 	border-top: 1px solid #e5e5e5;
+	padding-top: 19px;
 }
 
 .container-narrow > hr {
@@ -213,10 +215,10 @@ header {
 /* Nav Styling here */
 .navbar-brand {
 	img {
+		margin-top: -7px;
 		max-height: 30px;
 		max-width: 30px;
 		padding-right: 5px;
-		margin-top: -7px;
 	}
 }
 
@@ -330,17 +332,35 @@ aside ul ul li:first-child {
 	p {
 		padding-left: 10px;
 		padding-right: 10px;
+		font-size: 16px;
+		@media(min-width: $screen-tablet){
+			font-size: 21px;
+		}
+	}
+
+	h1 {
+		font-size: 36px;
+		margin-bottom: 0px;
+		@media(min-width: $screen-tablet){
+			font-size: 61px;
+			margin-bottom: 10px;
+		}		
 	}
 
 	.btn {
-		font-size: 21px;
-		padding: 14px 24px;
+		font-size: 18px;
+		padding: 7px 12px;
+		@media(min-width: $screen-tablet){
+			font-size: 30px;
+			padding: 14px 24px;
+		}				
 	}
 
 	@media(min-width: $screen-tablet){
 		min-height: 500px;
 
-		.dark-layer, .light-layer {
+		.dark-layer, 
+		.light-layer {
 			margin-top: 150px;
 		}
 	}
@@ -351,7 +371,7 @@ aside ul ul li:first-child {
 
 	.dark-layer, 
 	.light-layer {
-		opacity: 0.65;
+		@include border-radius(20px);
 		
 		h1, 
 		h2, 
@@ -361,7 +381,7 @@ aside ul ul li:first-child {
 		h6, 
 		p, {
 			font-weight: bold;
-			opacity: 1.0;
+			opacity: 1;
 			padding-left: 0px 10px;			
 		}
 
@@ -369,7 +389,7 @@ aside ul ul li:first-child {
 			padding: 15px;
 		}
 
-		@include border-radius(20px);	
+		opacity: .65;
 	}
 }
 
