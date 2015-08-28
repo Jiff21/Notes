@@ -139,6 +139,13 @@
 					<code class="example">$$</code> means <code class="example">element.all(by.Css</code><br>
 					It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time.  Sometimes it's better to just use element.all then see what ends up in the array.
 					</p>
+					<h5>Selenium Workarounds</h5>
+					<p>There is no easy command for scrolling but you can accomplish it with:</p>
+					<div class="example2">
+						browser.executeScript('window.scrollTo(0,2000);').then(function () {
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="replace">code to run here</span><br>
+						});</div>
+					
 					<h5>Managing Expectations</h5>
 					<p>
 					Some good thing to check examples:<br>
@@ -205,6 +212,7 @@
 					.addCookie('<span class="replace">name</span>','<span class="replace">value</span>','<span class="replace">path</span>','<span class="replace">domain</span>')</code></li>
 					<li><code class="example">browser.driver.navigate()<br>
 					.forward()</code> (promise)</li>
+					<li><code class="example">browser.refresh();</code></li>
 				</ul>
 				<h6>Element Properties</h6>
 				<ul>
