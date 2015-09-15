@@ -8,8 +8,11 @@ alias ls="ls -a -gG"
 ###################################
 alias web="cd /Users/$USER/Documents/Code"
 alias bar="cd /Users/$USER/Documents/Code/localsbarguide/"
-alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
+ # myip:Public facing IP Address
+alias myip='curl ip.appspot.com'
 alias old-web="cd /Applications/MAMP/htdocs"
+# top10, top 10 processes in cpu
+alias top10="ps -eo %cpu,pid,comm | sort -nr | head -10"
 
 
 
