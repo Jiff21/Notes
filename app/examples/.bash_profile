@@ -13,7 +13,7 @@ alias myip='curl ip.appspot.com'
 alias old-web="cd /Applications/MAMP/htdocs"
 # top10, top 10 processes in cpu
 alias top10="ps -eo %cpu,pid,comm | sort -nr | head -10"
-
+alias deviceproxy="/Users/$USER/ntlmaps-0.9.9.0.1/main.py"
 
 
 ###################################
