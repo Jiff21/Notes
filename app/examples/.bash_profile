@@ -7,6 +7,7 @@ alias ls="ls -a -gG"
 # Shortcuts
 ###################################
 alias web="cd /Users/$USER/Documents/Code"
+alias tools="cd /Users/$USER/Documents/Tools"
 alias bar="cd /Users/$USER/Documents/Code/localsbarguide/"
  # myip:Public facing IP Address
 alias myip='curl ip.appspot.com'
