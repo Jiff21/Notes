@@ -31,6 +31,11 @@ alias substatus="git submodule status"
 alias remotes="git remote --verbose"
 
 ###################################
+# For Homebrew:
+###################################
+export PATH="$HOME/.node/bin:$PATH"
+
+###################################
 # Adding Working Directory and Branch to Command Line
 ###################################
 if [ -f /Users/$USER/Documents/Code/Notes/app/examples/.git-completion.bash ]; then
