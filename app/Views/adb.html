@@ -58,27 +58,36 @@
 			<h3>Permissions</h3>
 			<h5>Lollipop</h5>
 			<ul>
-				<li>List permissions groups</li>
-				<div class="example2">adb shell pm list permission-groups</div>
-				<li>List permissions in a group</li>
-				<div class="example2">adb shell pm list permissions -u <span class="replace">android.permission-group.PERMISSION_NAME</span></div>
-				<li>Grant permissions for a package</li>
-				<div class="example2">adb shell pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
-				<li>Revoke permissions for a package</li>
-				<div class="example2">adb shell revoke pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
-				<li>View permissions an apk is using (You must have build-tools set up to use aaptl)</li>
-				<div class="example2">
-					adb shell pm list packages -f<br>
-					adb pull <span class="replace">/path/to/package/from/previous/step.apk</span><br>
-					aapt d permissions <span class="replace">path/to/app/on/computer.apk</span><br>
-				</div>
+				<li>
+					List permissions groups
+					<div class="example2">adb shell pm list permission-groups</div>
+				</li>
+				<li>
+					List permissions in a group
+					<div class="example2">adb shell pm list permissions -u <span class="replace">android.permission-group.PERMISSION_NAME</span></div>
+				</li>
+				<li>
+					Grant permissions for a package
+					<div class="example2">adb shell pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
+				</li>
+				
+				<li>
+					Revoke permissions for a package
+					<div class="example2">adb shell revoke pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
+				</li>
+				<li>
+					View permissions an apk is using (You must have build-tools set up to use aaptl)
+					<div class="example2">
+						adb shell pm list packages -f<br>
+						adb pull <span class="replace">/path/to/package/from/previous/step.apk</span><br>
+						aapt d permissions <span class="replace">path/to/app/on/computer.apk</span><br>
+					</div>
+				</li>
 			</ul>
 				<h5>Marshmallow</h5>
 			<ul>
-				<li>Grant</li>
-				<div class="example2">adb pm grant <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
-				<li>Revoke</li>
-				<div class="example2">adb pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
+				<li>Grant<div class="example2">adb pm grant <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div></li>
+				<li>Revoke<div class="example2">adb pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div></li>
 			</ul>
 			</div>
 			<div class="half-full">
@@ -91,17 +100,26 @@
 			<ol>
 				<li>Download and unzip <a href="http://ntlmaps.sourceforge.net/" target="_blank">NTLMaps</a></li>
 				<li>Place NTL Maps in your User's Home folder</li>
-				<li>Add a command to your bash profile</li>
-				<div class="example2">alias deviceproxy="~/ntlmaps-0.9.9.0.1/main.py"</div>
+				<li>
+					Add a command to your bash profile
+					<div class="example2">alias deviceproxy="~/ntlmaps-0.9.9.0.1/main.py"</div>
+				</li>
 				<li>In NTLMaps folder locater server.cfg and open it in a text editor</li>
 				<li>Change the following lines of the config file</li>
 				<ul>
-					<li>PARENT_PROXY:[Proxy Address]</li>
-					<div class="example2">PARENT_PROXY:<span class="replace">127.0.0.1</span></div>
-					<li>PARENT_PROXY_PORT:[####]</li>
-					<div class="example2">PARENT_PROXY_PORT:<span class="replace">8080</span></div>
-					<li>Allow External Clients</li>
-					<div class="example2">ALLOW_EXTERNAL_CLIENTS:1</div>
+					<li>
+						PARENT_PROXY:[Proxy Address]
+						<div class="example2">PARENT_PROXY:<span class="replace">127.0.0.1</span></div>
+					</li>
+					<li>
+						PARENT_PROXY_PORT:[####]
+						<div class="example2">PARENT_PROXY_PORT:<span class="replace">8080</span></div>
+					</li>
+					<li>
+						Allow External Clients
+						<div class="example2">ALLOW_EXTERNAL_CLIENTS:1</div>
+					</li>
+					
 				</ul>
 				<li>Connect Device to Shared Network</li>
 				<li>Edit the connection settings on that device</li>
