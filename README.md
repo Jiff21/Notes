@@ -14,6 +14,8 @@ Use:
 
 	grunt serve
 
+---
+
 ### Running Tests
 To run all tests:
 
@@ -31,9 +33,11 @@ To run Jasmine Tests (to be written)
 
 #### PhantomCSS
 To setup PhantomCSS test:
-casperjs test test/phantomcss/specs/ --pre=./test/phantomcss/start.js --includes=./test/phantomcss/inc.js --post=./test/phantomcss/end.js  --ssl-protocol=any --ignore-ssl-errors=true --rebase
+	grunt serve
+	casperjs test test/phantomcss/specs/ --pre=./test/phantomcss/start.js --includes=./test/phantomcss/inc.js --post=./test/phantomcss/end.js  --ssl-protocol=any --ignore-ssl-errors=true --rebase
 
 To Run PhatomCSS tests:
-casperjs test test/phantomcss/specs/ --pre=./test/phantomcss/start.js --includes=./test/phantomcss/inc.js --post=./test/phantomcss/end.js  --ssl-protocol=any --ignore-ssl-errors=true
+	grunt serve
+	casperjs test test/phantomcss/specs/ --pre=./test/phantomcss/start.js --includes=./test/phantomcss/inc.js --post=./test/phantomcss/end.js  --ssl-protocol=any --ignore-ssl-errors=true
 
-// Note it keeps trying to get you to run it with --web-security=no --version, but that seems to be stopping it from running, also it says it isn't running tests because the end file has nbo tests. That isn't for all tests.
+*Note it keeps trying to get you to run it with --web-security=no --version, but that seems to be stopping it from running, also it says it isn't running tests because the end file has nbo tests. That isn't for all tests.*
