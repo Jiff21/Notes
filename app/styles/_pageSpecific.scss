@@ -122,6 +122,27 @@
 	}
 }
 
+.burp-body {
+	.jumbotron {
+		background-image: url('../images/bughunt.jpg');
+		background-position: center;
+			
+		h1 {
+			color: $white;
+			margin-top: 180px;
+		}
+
+		p {
+			color: $white;
+		}
+	}
+
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+}
+
 
 .javascript-body {
 	.jumbotron {
@@ -531,7 +552,7 @@ $scat-blue: #add8e6;
 
 .scat-body {
 	.jumbotron {
-		background-image: url('../images/bughunt.jpg');
+		background-image: url('../images/staticcodeanalysis.jpg');
 		background-position: center;
 		padding: 10 0px 10px 0px;
 		
