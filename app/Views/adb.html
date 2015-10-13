@@ -34,44 +34,113 @@
 			</div>
 			<article>
 			<div class="wrapper yellow">
-			<h3>QARK</h3>
+			<h3>ADB</h3>
 			<div class="fourth rts">
-				<h3>Description</h3>
+				<h3>Getting Activity Logs</h3>
 			</div>
 			<div class="fourth rtlist">
-			<p><a href="https://github.com/linkedin/qark" target="_blank">QARK</a> (Quick Android Review Kit) is a tool that does static code analysis on Android App to locate possible security issues, it can examine source code or an APK. It then provides an HTML report of known vulnerabilities and can compile a QARK app that will allow you to test possible vulnerabilities on a device or emulator.</p>
+			<p>To get the device log to see why a native app may be crashing you can use &quot;<span class="example">adb logcat <span class="replace">app.process.name</span> &#x3E; Filename.txt</span>&quot;. This may also be useful if you're crashing chrome with your web app.  The log is pretty long so if you have exact reproductions steps you may want to clear the log with &quot;<span class="example">adb logcat -c</span>&quot; before starting the reproduction.</p>
+			<h5>See all dumpsys services</h5>
+			<div class="example2">adb dumpsys | grep "DUMP OF SERVICE"</div>
 			</div>
 			<div class="fourth rts">
 				<div class="verticalAlign">
-				<h3>Install &#x26; Run</h3>
+				<h3>Screen Recording</h3>
 				</div>
 			</div>
 			<div class="fourth rtlist">
-			<p>All you really need to do is clone QARK (git clone git clone https://github.com/linkedin/qark.git), cd into the folder, and run with the follind command.</p>
-			<div class="example2">python qark.py</div>
-			<p>You can simply follow the prompts to get a report and run tests against evil twin of the app.</p>
+			<p>You can make a recording of the screen for demo purposes. Full commands can be found <a href="https://developer.android.com/tools/help/shell.html#screenrecord" target="_blank">here</a>. The basics are:</p>
+			<div class="example2">
+				adb shell<br>
+				screenrecord --verbose /sdcard/<span class="replace">demo</span>.mp4<br>
+				// (press Ctrl-C to stop) <br>
+				exit<br>
+				adb pull /sdcard/<span class="replace">demo</span>.mp4
+			</div>
+			<p>Note:  screenrecord is only supported on 4.4 and above. if you try it on an older device it will report "screenrecord not found".</p>
 			</div>
 			</div>
 			<div class="wrapper blue">
-			<h3>Retire.js</h3>
 			<div class="fourth rts">
-				<h3>Installation</h3>
+				<h3>Permissions</h3>
 			</div>
 			<div class="fourth rtlist">
-			<p><a href="https://github.com/RetireJS/retire.js" target="_blank">Retire.JS</a> is the javascript equivalent to Dependency Check, it does static code analysis and lists know vulnerabilities with components you are using. As long as you have NPM it's super simple just run the following command.</p>
-			<div class="example2">sudo npm install -g retire</div>
+			<h5>Lollipop</h5>
+			<ul>
+				<li>List permissions groups</li>
+				<div class="example2">adb shell pm list permission-groups</div>
+				<li>List permissions in a group</li>
+				<div class="example2">adb shell pm list permissions -u <span class="replace">android.permission-group.PERMISSION_NAME</span></div>
+				<li>Grant permissions for a package</li>
+				<div class="example2">adb shell pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
+				<li>Revoke permissions for a package</li>
+				<div class="example2">adb shell revoke pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
+				<li>View permissions an apk is using (You must have build-tools set up to use aaptl)</li>
+				<div class="example2">
+					adb shell pm list packages -f<br>
+					adb pull <span class="replace">/path/to/package/from/previous/step.apk</span><br>
+					aapt d permissions <span class="replace">path/to/app/on/computer.apk</span><br>
+				</div>
+			</ul>
+				<h5>Marshmallow</h5>
+			<ul>
+				<li>Grant</li>
+				<div class="example2">adb pm grant <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
+				<li>Revoke</li>
+				<div class="example2">adb pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
+			</ul>
 			</div>
 			<div class="fourth rts">
 				<div class="verticalAlign">
-				<h3>Instructions</h3>
+				<h3>Proxying Apps</h3>
 				</div>
 			</div>
 			<div class="fourth rtlist">
-			<p>If you want to see vulnerabilities in the Terminal, simply run:</p>
-			<div class="example2">--retire --path <span class="replace">~/Path/To/Project/Root</span>/</div>
-			<p>I prefer to read them in a text file, so I can separate issues and mark things off as I go. This command will write a file in your Documents folder with whatever name you choose, output format can be .txt or .xml.</p>
-			<div class="example2">retire --path <span class="replace">~/Path/To/Project/Root/To/Test</span>/ --outputpath ~/Documents/AnyFileName.txt</div>
+			<p>You can use your preferred proxy app on your computer by combining NTLMaps and a Mac's shared internet connection.</p>
+			<ol>
+				<li>Download and unzip <a href="http://ntlmaps.sourceforge.net/" target="_blank">NTLMaps</a></li>
+				<li>Place NTL Maps in your User's Home folder</li>
+				<li>Add a command to your bash profile</li>
+				<div class="example2">alias deviceproxy="~/ntlmaps-0.9.9.0.1/main.py"</div>
+				<li>In NTLMaps folder locater server.cfg and open it in a text editor</li>
+				<li>Change the following lines of the config file</li>
+				<ul>
+					<li>PARENT_PROXY:[Proxy Address]</li>
+					<div class="example2">PARENT_PROXY:<span class="replace">127.0.0.1</span></div>
+					<li>PARENT_PROXY_PORT:[####]</li>
+					<div class="example2">PARENT_PROXY_PORT:<span class="replace">8080</span></div>
+					<li>Allow External Clients</li>
+					<div class="example2">ALLOW_EXTERNAL_CLIENTS:1</div>
+				</ul>
+				<li>Connect Device to Shared Network</li>
+				<li>Edit the connection settings on that device</li>
+				<ol>
+					<li>Obtain the Networks DCHP Server address with a program like <a href="https://play.google.com/store/apps/details?id=lksystems.wifiintruder" target="blank">Wifi Inspector</a> or use iOS device connected to same network to get server address</li>
+					<li>Go to Settings &gt; WiFi</li>
+					<li>Hold down the name of the Network you're connected and select Modify Network</li>
+					<li>Advanced Settings</li>
+					<ul>
+						<li>Proxy set to Manual</li>
+						<li>Proxy Hostname to IP address from step 7-1</li>
+						<li>Port to LISTEN_PORT found in NTMLMaps server.cfg file (Should be defaulted to 5865)</li>
+						<li>IP Settings DHCP should be fine.</li>
+						<li>Save</li>
+					</ul>
+					<li>Install certificate of proxy you're using on device (Note will require a passcode being used on lock screen</li>
+					<ul>
+						<li>If you just mail it to the android device, clicking on the .pem file will prompt you on certificate install. Certificates can later be found in Security &gt; Edit Certificates.</li>
+					</ul>
+				</ol>
+			</ol>
 			</div>
+			</div>
+			<div class="wrapper">
+				<div class="half">
+				<h3>GPU Testing</h3>
+				<p>If you&#39;re making an app for Google they&#39;re going to require it renders at 60fps. To test this you&#39;re going to have to first turn on Developer options on the Android Phone (tap build number 10 times) and install adb.</p>
+				<p>
+				Towards the bottom of Develeloper options, there&#39;s an option called Profile GPU Rendering.  This can be displayed as &quot;On Screen as bars&quot; or by selecting &quot;In <span class="example">adb shell dumpsys gfxinfo</span>&quot;.  If you select on screen there will be a green line on the screen for 16ms (needed to hit 60fps), and the intention is to not go over that line. If you use dumsys gfx info, you want to make sure Draw, Process, and Execute don&#39;t add up to over 16.  You can grab this information in terminal with the command, &quot;adb shell dumpsys gfxinfo [app process name] [FileName].xls&quot; (e.g. <span class="example">adb shell dumpsys gfxinfo <span class="replace">com.app.name</span><span class="replace">newfilename</span>.xls</span>). if you don&#39;t know the app&#39;s process name run adb shell dumpsys gfxinfo the first time and go through until you find you app in the list.</p>
+				</div>
 			</div>
 			</article>
 			<!-- Loading footer with AJAX -->
