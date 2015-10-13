@@ -34,20 +34,20 @@
 				<div class="main">
 					<div>
 						<h3>Unix Commands for Apple Remote Desktop</h3>
-						<p>To grab the version # off the plist file if they have Adobe Flash Plugin installed on the system use <code class="example">defaults read /Applications/Utilities/Adobe\ Flash\ Player\ Install\ Manager.app/Contents/Info.plist</code>.  This is a lot more simple with Java where you can just use <code class="example">java -version</code>.  If you want to convince someone that there computer in sentient just type <code class="example"> say "Hello. Are you trying to communicate with me?"</code>. I suggest using the software update included in ARD but the unix command is <code class="example">sudo /usr/sbin/softwareupdate -i -a</code>.
+						<p>To grab the version # off the plist file if they have Adobe Flash Plugin installed on the system use <code class="example">defaults read /Applications/Utilities/Adobe\ Flash\ Player\ Install\ Manager.app/Contents/Info.plist</code>.  This is a lot more simple with Java where you can just use <code class="example">java -version</code>.  If you want to convince someone that there computer in sentient just type <code class="example"> say &#x22;Hello. Are you trying to communicate with me?&#x22;</code>. I suggest using the software update included in ARD but the unix command is <code class="example">sudo /usr/sbin/softwareupdate -i -a</code>.
 						</p>
 					</div>
 					<div>
 						<h3>Password Compliance </h3>
-						<p>To add a login banner use the command <code class="example">sudo defaults write /Library/Preferences/com.apple.logi&shy;nwindow LoginwindowText "Use of the system implies consent to user monitoring, any unauthorized use of the system will be prosecuted."</code>  To remove the banner use <code class="example">"sudo defaults delete /Library/Preferences/com.apple.logi&shy;nwindow LoginwindowText"</code>.<br></p>
+						<p>To add a login banner use the command <code class="example">sudo defaults write /Library/Preferences/com.apple.logi&shy;nwindow LoginwindowText &#x22;Use of the system implies consent to user monitoring, any unauthorized use of the system will be prosecuted."</code>  To remove the banner use <code class="example">&#x22;sudo defaults delete /Library/Preferences/com.apple.logi&shy;nwindow LoginwindowText&#x22;</code>.<br></p>
 						<ul>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "requiresAlpha=1"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "requiresSymbol=1"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "requiresNumeric =1"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "minChars=8"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "maxMinutesUntilChangePa&shy;ssword=86400"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "minutesUntilFailedLoginReset=0"</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy "maxFailedLoginAttempts=15"</code></li>
+							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;requiresAlpha=1&#x22;</code></li>
+							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;requiresSymbol=1&#x22;</code></li>
+							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;requiresNumeric =1&#x22;</code></li>
+							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;minChars=8&#x22;</code></li>
+							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;maxMinutesUntilChangePa&shy;ssword=86400&#x22;</code></li>
+							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;minutesUntilFailedLoginReset=0&#x22;</code></li>
+							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;maxFailedLoginAttempts=15&#x22;</code></li>
 						</ul>
 					</div>
 					<div>

@@ -17,7 +17,7 @@
 		<script src="../bower_components/modernizr/modernizr.js"></script>
 		<!-- endbuild -->
 	</head>
-	<body class="jasmine-body">
+	<body class="scat-body">
 		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
 		<div class="navPlaceholder"></div>
 		<!--[if lt IE 10]>
@@ -27,79 +27,51 @@
 			<div>
 				<div class="jumbotron">
 					<div class="light-layer">
-					<h1>Jasmine Notes</h1>
-					<p class="lead">&#x22;Maybe I don&#x27;t wanna be a princess anymore.&#x22; - Jasmine</p>
+					<h1>Static Code Analysis Tools</h1>
+					<p class="lead">&#x22;A bug is never just a mistake. It represents something bigger. An error of thinking. That makes you who you are.&#x22; - Elliot Alderson</p>
 					</div>
 				</div>
 			</div>
 			<article>
-			<div class="full blue">
-				<h3>Matchers</h3>
-				<ul>
-					<li><code class="example">toBe</code>: represents the exact equality (===) operator.</li>
-					<li><code class="example">toEqual</code>: represents the regular equality (==) operator.</li>
-					<li><code class="example">toMatch</code>: calls the RegExp match() method behind the scenes to compare string data.</li>
-					<li><code class="example">toBeDefined</code>: opposite of the JS &#x22;undefined&#x22; constant.</li>
-					<li><code class="example">toBeUndefined</code>: tests the actual against &#x22;undefined&#x22;.</li>
-					<li><code class="example">toBeNull</code>: tests the actual against a null value - useful for certain functions that may return null, like those of regular expressions (same as toBe(null))</li>
-					<li><code class="example">toBeTruthy</code>: simulates JavaScript boolean casting.</li>
-					<li><code class="example">toBeFalsy</code>: like toBeTruthy, but tests against anything that evaluates to false, such as empty strings, zero, undefined, etc&hellip;</li>
-					<li><code class="example">toContain</code>: performs a search on an array for the actual value.</li>
-					<li><code class="example">toBeLessThan</code>/<code class="example">toBeGreaterThan</code>: for numerical comparisons.</li>
-					<li><code class="example">toBeCloseTo</code>: for floating point comparisons.</li>
-					<li><code class="example">toThrow</code>: for catching expected exceptions.</li>
-				</ul>
+			<div class="wrapper yellow">
+			<h3>QARK</h3>
+			<div class="fourth rts">
+				<h3>Description</h3>
 			</div>
-			<div class="fourth yellow rts">
-				<h3>Test<span id="break"> </span>Parts</h3>
+			<div class="fourth rtlist">
+			<p><a href="https://github.com/linkedin/qark" target="_blank">QARK</a> (Quick Android Review Kit) is a tool that does static code analysis on Android App to locate possible security issues, it can examine source code or an APK. It then provides an HTML report of known vulnerabilities and can compile a QARK app that will allow you to test possible vulnerabilities on a device or emulator.</p>
 			</div>
-			<div class="fourth yellow rtlist">
-					<ul>
-						<li>describe</li>
-						<li>it</li>
-						<li>expect</li>
-						<li>beforeEach</li>
-					</ul>
-			</div>
-			<div class="fourth yellow rts">
+			<div class="fourth rts">
 				<div class="verticalAlign">
-				<h3>Test<span id="break"> </span>Shortcuts</h3>
+				<h3>Install &#x26; Run</h3>
 				</div>
 			</div>
-			<div class="fourth yellow rtlist">
-				<ul>
-					<li>iit</li>
-					<li>xit</li>
-					<li>ddescribe</li>
-					<li>xdescribe</li>
-				</ul>
+			<div class="fourth rtlist">
+			<p>All you really need to do is clone QARK (git clone git clone https://github.com/linkedin/qark.git), cd into the folder, and run with the follind command.</p>
+			<div class="example2">python qark.py</div>
+			<p>You can simply follow the prompts to get a report and run tests against evil twin of the app.</p>
 			</div>
-			<div class="full blue">
-				<h3>Spies</h3>
 			</div>
-			<div class="list-container">
-				<ul class="to-be-spliced">
-					<li>spyOn()</li>
-					<li>toHaveBeenCalled()</li>
-					<li>toHaveBeenCalledWith()</li>
-					<li>and.callThrough()</li>
-					<li>and.returnValue()</li>
-					<li>and.callFake(f(){})</li>
-					<li>and.throwError(&#x22;err&#x22;)</li>
-					<li>and.stub()</li>
-					<li>calls.any()</li>
-					<li>calls.count()</li>
-					<li>calls.argsFor(index)</li>
-					<li>calls.allArgs()</li>
-					<li>calls.all()</li>
-					<li>calls.mostRecent()</li>
-					<li>calls.first()</li>
-					<li>calls.reset()</li>
-				</ul>
+			<div class="wrapper blue">
+			<h3>Retire.js</h3>
+			<div class="fourth rts">
+				<h3>Installation</h3>
 			</div>
-			<div class="full yellow">
-				<h3>This Project</h3>
-				<p>This project is setup with <a href="https://github.com/gruntjs/grunt-contrib-jasmine/" target="_blank">grunt-contrib-jasmine</a>, which uses phantom.js to run headless testing.</p>
+			<div class="fourth rtlist">
+			<p><a href="https://github.com/RetireJS/retire.js" target="_blank">Retire.JS</a> is the javascript equivalent to Dependency Check, it does static code analysis and lists know vulnerabilities with components you are using. As long as you have NPM it's super simple just run the following command.</p>
+			<div class="example2">sudo npm install -g retire</div>
+			</div>
+			<div class="fourth rts">
+				<div class="verticalAlign">
+				<h3>Instructions</h3>
+				</div>
+			</div>
+			<div class="fourth rtlist">
+			<p>If you want to see vulnerabilities in the Terminal, simply run:</p>
+			<div class="example2">--retire --path <span class="replace">~/Path/To/Project/Root</span>/</div>
+			<p>I prefer to read them in a text file, so I can separate issues and mark things off as I go. This command will write a file in your Documents folder with whatever name you choose, output format can be .txt or .xml.</p>
+			<div class="example2">retire --path <span class="replace">~/Path/To/Project/Root/To/Test</span>/ --outputpath ~/Documents/AnyFileName.txt</div>
+			</div>
 			</div>
 			</article>
 			<!-- Loading footer with AJAX -->
@@ -139,7 +111,5 @@
 		<!-- myScripts -->
 		<script src="../includes/nav.js"></script>
 		<script src="../includes/footer.js"></script>
-		<script src="../scripts/listBreaker.js"></script>
-		<script type="text/javascript">breakList(4, $('.to-be-spliced'), 'blue');</script>
 	</body>
 </html>

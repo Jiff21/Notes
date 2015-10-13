@@ -1,0 +1,191 @@
+<!doctype html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>Burpsuite Notes</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<link rel="shortcut icon" href="../favicon.ico">
+		<!-- build:css styles/vendor.css -->
+		<!-- bower:css -->
+		<!-- endbower -->
+		<!-- endbuild -->
+		<!-- build:css(.tmp) styles/main.css -->
+		<link rel="stylesheet" href="../styles/main.css">
+		<!-- endbuild -->
+		<!-- build:js scripts/vendor/modernizr.js -->
+		<script src="../bower_components/modernizr/modernizr.js"></script>
+		<!-- endbuild -->
+	</head>
+	<body class="burp-body">
+		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+		<div class="navPlaceholder"></div>
+		<!--[if lt IE 10]>
+		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<div class="container-fluid">
+			<div>
+				<div class="jumbotron">
+					<h1>Burpsuite</h1>
+				</div>
+			</div>
+			<article>
+			<div class="main">
+				<h3>Certificate setup</h3>
+				<p>Setting up certificates information for various browsers can be found <a href="https://portswigger.net/burp/help/proxy_options_installingCAcert.html#firefox">here</a>. These steps are for Firefox. You can also go to <a href="http://burp.com">http://burp.com</a> when the proxy is running and the browser is pointed at it.</p>
+				<h1>Intercept</h1>
+				<p>The most basic yet most useful part of Burp is under the Proxy tab, there's a second set of tabs &#x22;Intercept&#x22;.   Here you can chose to Forward and Drop requests and responses.  You can also modify the Request or Response before forwarding it on (similar functionality can be found in the repeater tab). Although Requests seem get intercepted pretty well by default, Responses tend to need some setup.</p>
+				<ol>
+					<li>Click the Proxy Tab</li>
+					<li>On the second set of tabs click Options</li>
+					<li>In the Intercept Server Response section </li>
+					<ol>
+						<li>Unclick enabled on Content Type Header Matches text. </li>
+						<li>Add a new rule</li>
+						<ol>
+							<li>Boolean Operator = And</li>
+							<li>Match Type = Http method </li>
+							<li>Match Relationship = Does Not Match</li>
+							<li>Match Condition = [RANDOM STRING] (e.g. &#x22;^66666666666&#x22;)</li>
+						</ol>
+					</ol>
+					<li>Now you're going to get all responses that don't have that string in them.  But now you're probably going to want to filter out some other responses.  Here are some suggested filters for Responses:</li>
+					<ol>
+						<li>Match Type = Domain Name, Match Relationship = Does Not Match, Match Condition = ^ssl\.google-analytics\.com</li>
+						<li>Match Type = Domain Name, Match Relationship = Does Not Match, Match Condition = ^safebrowsing-cache\.google\.com</li>
+						<li>Match Type = Domain Name, Match Relationship = Does Not Match, Match Condition = ^fonts\.gstatic\.com</li>
+						<li>etc, pretty much go through intercepting responses until you filter out all 3rd party things you do not wish to test.</li>
+					</ol>
+				</ol>
+				<h1>Repeater</h1>
+				<p>If you left click on an intercepted call in the proxy tab you can use the option Send to Repeater, this will allow you to repeatedly send the same API call repeatedly, editing the call in-between sends and monitory the response the server returns.</p>
+				<h1>Intruder</h1>
+				<p>The intercepter is similar to the repeater but it allows you to try varying different payloads and methods. The Target Tab should mostly be left alone but you can target toggle on Https.</p>
+				<p>The Position Tab allows you to highlight the variables you want to fuzz. This will be done automatically if sent from the repeater, but you may want to clear and highlight just the ones you want to fuzz and hit the add button to set them as payload variables. You also select your attack type on this page.</p>
+				<ul>
+					<li>Sniper</li>
+					<ul>
+						<li>Attack a single variable with a list of payloads.</li>
+					</ul>
+				</ul>
+				<ul>
+					<li>Battering Ram</li>
+					<ul>
+						<li>Attack multiple variables with the same payload.</li>
+					</ul>
+				</ul>
+				<ul>
+					<li>Pitchfork</li>
+					<ul>
+						<li>Attack variables with 2 different matched lists.  (Example: username list and password list)</li>
+					</ul>
+				</ul>
+				<ul>
+					<li>Cluster Bomb</li>
+					<ul>
+						<li>Similar to pitchfork but it will try all the items in list 1 with first item from list 2, then try all items in list 1 with 2nd item in list 2.</li>
+						<li>Say you're trying to login with a user by guessing there password from commonly used password list. Setup usernames in list 1 and passwords in list 2. It will try password 1 from list 2 for all the usernames in list 1, then move on to password 2 in list 2 with all the usernames in list 1.  If you're trying this attack you may want to try using a really long list of users to avoid locking out accounts for failing validation repeatedly in a short period of time.</li>
+					</ul>
+				</ul>
+				<p>The Payload Tab is where you set up your attacks. The Payload Sets options let you select which variable you're editing. Note you can only adjust as many variables as you've set in the Position tab, and variable number is the order it appears. Payload Type lets you pick what type of attack you send, some of the more useful options are:</p>
+				<ul>
+					<li>Simple List - Uses the fields below to upload or add you own list. Uploads should be just a return separated list of values. Normal txt file is okay.</li>
+					<li>Runtime File - Basically same as Simple List but you can add values to it as it is fuzzing. It is also useful for large lists as it imports as it goes. </li>
+					<li>Character Substitution - Swaps characters in list of stings you add</li>
+					<li>Recursive Grep - Let's you search a previous response to use as a Payload</li>
+					<li>Illegal Unicode - Helpful for looking for errors that shouldn't be displaying if error logging is off.</li>
+					<li>Character Blocks - Useful for Buffer Overflow attacks</li>
+					<li>Numbers - Try every number in a range as payload. Can be used to find direct object references that aren't protected, amongst other things.</li>
+					<li>Brute Forcer - Payload of all permutations of a character set</li>
+				</ul>
+
+				<h1>Plugins</h1>
+				<!-- <div class="modal"> -->
+				<h3>Autorize</h3>
+				<h6>Introduction</h6>
+				<p><a href="https://github.com/Quitten/Autorize">Autorize</a> Automatic authorization enforcement detection extension for burp suite written in Jython developed by Barak Tawily in order to ease application security people work and allow them perform an automatic authorization tests. It's a great tool for thoroughly testing admin functions for Privilege checks.</p>
+				<h6>Installation</h6>
+				<ol>
+					<li>Install Burp (obviously)</li>
+					<li>
+					Install Jython (if not already installed, need homebrew for this install or you can download here <a href="http://www.jython.org/downloads.html">http://www.jython.org/downloads.html</a>)
+					<div class="example2">brew install jython</div>
+					</li>
+					<li>
+						Take not of where it installs Jython in the summary. It is likely:
+						<div class="example2">/usr/local/Cellar/jython/#.#.#</div>
+					</li>
+					<li>
+						Open Burp &gt; Extender Tab &gt; Options Sub-Tab &gt; Python Environment -&gt; Select File -&gt; Choose the Jython standalone JAR, the first part of the path is found in step 3, will likely match text here but may not if you did download instead).
+						<div class="example2">/usr/local/Cellar/jython/#.#.#/libexec/jython.jar</div>
+					</li>
+					<li>Install Autorize from the BApp Store or follow these steps (Burp &gt; Extender Tab &gt; Bapp Store &gt; Click Autorize &gt; Hit Install Button).</li>
+				</ol>
+				<h6>Instructions</h6>
+				<ol>
+					<li>After installation, the Autorize tab will be added to Burp.</li>
+					<li>Open the configuration tab (Autorize -&gt; Configuration).</li>
+					<li>Turn on the proxy in burp and try to log in with an authorized user, right click on the intercept after log in functions complete and select &#x2018;Send cookie to Autorize&#x201D;</li>
+					<li>Turn the Proxy to &#x22;Intercept is off&#x22;</li>
+					<li>Click on the Autorize Tab in Burpsuite</li>
+					<li>In the Enforcement Detector section, click the Interception Dectector use the Add filter button to restrict it to admin only queries (optional)</li>
+					<li>Hit the Turn on Autorize button</li>
+					<li>Open a browser and configure the proxy settings so the traffic will be passed to Burp.</li>
+					<li>Browse to the application you want to test with an admin privilege user.</li>
+					<li>The Autorize table will show you the request's URL and enforcement status. What it is doing is mimicking all the admin requests that come through the proxy with the Headers for the Non-Admin User. This way it tests to see if any of the admin functions aren’t protected from non admin Users accessing them.</li>
+					<li>It is possible to click on a specific URL and see the original/modified request/response in order to investigate the differences.</li>
+				</ol>
+				<h6>Common Functions or Views</h6>
+				<p>This is a lift of the types of things you want to make sure won't succeed it a non-admin blindly made a request.</p>
+				<ul>
+					<li>Add user function</li>
+					<li>Delete user function</li>
+					<li>Start project / campaign / etc function</li>
+					<li>Change account info (pass, CC, etc) function</li>
+					<li>Customer analytics view</li>
+					<li>Payment processing view</li>
+					<li>Any view with PII (Personally identifiable information) for other users</li>
+				</ul>
+
+				<!-- </div> -->
+
+			</article>
+			<!-- Loading footer with AJAX -->
+			<div class="footerPlaceholder"></div>
+		</div>
+		<!-- build:js scripts/vendor.js -->
+		<!-- bower:js -->
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<!-- endbower -->
+		<!-- endbuild -->
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X');ga('send','pageview');
+		</script>
+		<!-- build:js scripts/plugins.js -->
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+		<!-- endbuild -->
+		<!-- build:js({app,.tmp}) scripts/main.js -->
+		<script src="../scripts/main.js"></script>
+		<!-- endbuild -->
+		<!-- myScripts -->
+		<script src="../includes/nav.js"></script>
+		<script src="../includes/footer.js"></script>
+	</body>
+</html>

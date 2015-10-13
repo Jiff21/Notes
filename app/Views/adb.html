@@ -1,0 +1,175 @@
+<!doctype html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		<title>ADB Notes</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<link rel="shortcut icon" href="../favicon.ico">
+		<!-- build:css styles/vendor.css -->
+		<!-- bower:css -->
+		<!-- endbower -->
+		<!-- endbuild -->
+		<!-- build:css(.tmp) styles/main.css -->
+		<link rel="stylesheet" href="../styles/main.css">
+		<!-- endbuild -->
+		<!-- build:js scripts/vendor/modernizr.js -->
+		<script src="../bower_components/modernizr/modernizr.js"></script>
+		<!-- endbuild -->
+	</head>
+	<body class="adb-body">
+		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+		<div class="navPlaceholder"></div>
+		<!--[if lt IE 10]>
+										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+		<div class="container-fluid">
+			<div>
+				<div class="jumbotron">
+					<div class="light-layer">
+					<h1>Android Debug Tool</h1>
+					<p class="lead">&#x22;No. I have to stay functional until my mission is complete. Then it doesn&#39;t matter.&#x22; - The Terminator</p>
+					</div>
+				</div>
+			</div>
+			<article>
+			<div class="wrapper yellow">
+			<div class="half-full">
+			<h3>Getting Activity Logs</h3>
+			<p>To get the device log to see why a native app may be crashing you can use &quot;<span class="example">adb logcat <span class="replace">app.process.name</span> &gt; Filename.txt</span>&quot;. This may also be useful if you're crashing chrome with your web app.  The log is pretty long so if you have exact reproductions steps you may want to clear the log with &quot;<span class="example">adb logcat -c</span>&quot; before starting the reproduction.</p>
+			<h5>See all dumpsys services</h5>
+			<div class="example2">adb dumpsys | grep &quot;DUMP OF SERVICE&quot;</div>
+			</div>
+			<div class="half-full">
+			<h3>Screen Recording</h3>
+			<p>You can make a recording of the screen for demo purposes. Full commands can be found <a href="https://developer.android.com/tools/help/shell.html#screenrecord" target="_blank">here</a>. The basics are:</p>
+			<div class="example2">
+				adb shell<br>
+				screenrecord --verbose /sdcard/<span class="replace">demo</span>.mp4<br>
+				// (press Ctrl-C to stop) <br>
+				exit<br>
+				adb pull /sdcard/<span class="replace">demo</span>.mp4
+			</div>
+			<p>Note:  screenrecord is only supported on 4.4 and above. if you try it on an older device it will report "screenrecord not found".</p>
+			</div>
+			</div>
+			<div class="wrapper blue">
+			<div class="half-full">
+			<h3>Permissions</h3>
+			<h5>Lollipop</h5>
+			<ul>
+				<li>List permissions groups</li>
+				<div class="example2">adb shell pm list permission-groups</div>
+				<li>List permissions in a group</li>
+				<div class="example2">adb shell pm list permissions -u <span class="replace">android.permission-group.PERMISSION_NAME</span></div>
+				<li>Grant permissions for a package</li>
+				<div class="example2">adb shell pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
+				<li>Revoke permissions for a package</li>
+				<div class="example2">adb shell revoke pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
+				<li>View permissions an apk is using (You must have build-tools set up to use aaptl)</li>
+				<div class="example2">
+					adb shell pm list packages -f<br>
+					adb pull <span class="replace">/path/to/package/from/previous/step.apk</span><br>
+					aapt d permissions <span class="replace">path/to/app/on/computer.apk</span><br>
+				</div>
+			</ul>
+				<h5>Marshmallow</h5>
+			<ul>
+				<li>Grant</li>
+				<div class="example2">adb pm grant <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
+				<li>Revoke</li>
+				<div class="example2">adb pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
+			</ul>
+			</div>
+			<div class="half-full">
+				<div class="verticalAlign">
+				<h3>Proxying Apps</h3>
+				</div>
+			</div>
+			<div class="half-full">
+			<p>You can use your preferred proxy app on your computer by combining NTLMaps and a Mac's shared internet connection.</p>
+			<ol>
+				<li>Download and unzip <a href="http://ntlmaps.sourceforge.net/" target="_blank">NTLMaps</a></li>
+				<li>Place NTL Maps in your User's Home folder</li>
+				<li>Add a command to your bash profile</li>
+				<div class="example2">alias deviceproxy="~/ntlmaps-0.9.9.0.1/main.py"</div>
+				<li>In NTLMaps folder locater server.cfg and open it in a text editor</li>
+				<li>Change the following lines of the config file</li>
+				<ul>
+					<li>PARENT_PROXY:[Proxy Address]</li>
+					<div class="example2">PARENT_PROXY:<span class="replace">127.0.0.1</span></div>
+					<li>PARENT_PROXY_PORT:[####]</li>
+					<div class="example2">PARENT_PROXY_PORT:<span class="replace">8080</span></div>
+					<li>Allow External Clients</li>
+					<div class="example2">ALLOW_EXTERNAL_CLIENTS:1</div>
+				</ul>
+				<li>Connect Device to Shared Network</li>
+				<li>Edit the connection settings on that device</li>
+				<ol>
+					<li>Obtain the Networks DCHP Server address with a program like <a href="https://play.google.com/store/apps/details?id=lksystems.wifiintruder" target="blank">Wifi Inspector</a> or use iOS device connected to same network to get server address</li>
+					<li>Go to Settings &gt; WiFi</li>
+					<li>Hold down the name of the Network you're connected and select Modify Network</li>
+					<li>Advanced Settings</li>
+					<ul>
+						<li>Proxy set to Manual</li>
+						<li>Proxy Hostname to IP address from step 7-1</li>
+						<li>Port to LISTEN_PORT found in NTMLMaps server.cfg file (Should be defaulted to 5865)</li>
+						<li>IP Settings DHCP should be fine.</li>
+						<li>Save</li>
+					</ul>
+					<li>Install certificate of proxy you're using on device (Note will require a passcode being used on lock screen</li>
+					<ul>
+						<li>If you just mail it to the android device, clicking on the .pem file will prompt you on certificate install. Certificates can later be found in Security &gt; Edit Certificates.</li>
+					</ul>
+				</ol>
+			</ol>
+			</div>
+			</div>
+			<div class="wrapper">
+				<div class="half-full">
+				<h3>GPU Testing</h3>
+				<p>If you&#39;re making an app for Google they&#39;re going to require it renders at 60fps. To test this you&#39;re going to have to first turn on Developer options on the Android Phone (tap build number 10 times) and install adb.</p>
+				<p>
+				Towards the bottom of Develeloper options, there&#39;s an option called Profile GPU Rendering.  This can be displayed as &quot;On Screen as bars&quot; or by selecting &quot;In <span class="example">adb shell dumpsys gfxinfo</span>&quot;.  If you select on screen there will be a green line on the screen for 16ms (needed to hit 60fps), and the intention is to not go over that line. If you use dumsys gfx info, you want to make sure Draw, Process, and Execute don&#39;t add up to over 16.  You can grab this information in terminal with the command, &quot;adb shell dumpsys gfxinfo [app process name] [FileName].xls&quot; (e.g. <span class="example">adb shell dumpsys gfxinfo <span class="replace">com.app.name</span><span class="replace">newfilename</span>.xls</span>). if you don&#39;t know the app&#39;s process name run adb shell dumpsys gfxinfo the first time and go through until you find you app in the list.</p>
+				</div>
+			</div>
+			</article>
+			<!-- Loading footer with AJAX -->
+			<div class="footerPlaceholder"></div>
+		</div>
+		<!-- build:js scripts/vendor.js -->
+		<!-- bower:js -->
+		<script src="../bower_components/jquery/dist/jquery.js"></script>
+		<!-- endbower -->
+		<!-- endbuild -->
+		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+		<script>
+			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXX-X');ga('send','pageview');
+		</script>
+		<!-- build:js scripts/plugins.js -->
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+		<!-- endbuild -->
+		<!-- build:js({app,.tmp}) scripts/main.js -->
+		<script src="../scripts/main.js"></script>
+		<!-- endbuild -->
+		<!-- myScripts -->
+		<script src="../includes/nav.js"></script>
+		<script src="../includes/footer.js"></script>
+	</body>
+</html>
