@@ -82,6 +82,12 @@ article {
 			}
 		}		
 	}
+	.wrapper {
+		display: table;
+		.fourth {
+			display: table-cell;
+		}
+	}
 }
 
 .left-nav {

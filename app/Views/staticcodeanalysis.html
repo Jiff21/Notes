@@ -2,7 +2,7 @@
 <html class="no-js">
 	<head>
 		<meta charset="utf-8">
-		<title>ARD Notes</title>
+		<title>Jasmine Notes</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 		<link rel="shortcut icon" href="../favicon.ico">
@@ -17,54 +17,65 @@
 		<script src="../bower_components/modernizr/modernizr.js"></script>
 		<!-- endbuild -->
 	</head>
-	<body class="ard-body">
+	<body class="scat-body">
 		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
 		<div class="navPlaceholder"></div>
 		<!--[if lt IE 10]>
 										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="background">
-			<div class="container light-layer">
-				<div>
-					<header>
-						<h1>Apple Remote Desktop</h1>
-					</header>
-				</div>
-				<article>
-				<div class="main">
-					<div>
-						<h3>Unix Commands for Apple Remote Desktop</h3>
-						<p>To grab the version # off the plist file if they have Adobe Flash Plugin installed on the system use <code class="example">defaults read /Applications/Utilities/Adobe\ Flash\ Player\ Install\ Manager.app/Contents/Info.plist</code>.  This is a lot more simple with Java where you can just use <code class="example">java -version</code>.  If you want to convince someone that there computer in sentient just type <code class="example"> say &#x22;Hello. Are you trying to communicate with me?&#x22;</code>. I suggest using the software update included in ARD but the unix command is <code class="example">sudo /usr/sbin/softwareupdate -i -a</code>.
-						</p>
-					</div>
-					<div>
-						<h3>Password Compliance </h3>
-						<p>To add a login banner use the command <code class="example">sudo defaults write /Library/Preferences/com.apple.logi&shy;nwindow LoginwindowText &#x22;Use of the system implies consent to user monitoring, any unauthorized use of the system will be prosecuted."</code>  To remove the banner use <code class="example">&#x22;sudo defaults delete /Library/Preferences/com.apple.logi&shy;nwindow LoginwindowText&#x22;</code>.<br></p>
-						<ul>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;requiresAlpha=1&#x22;</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;requiresSymbol=1&#x22;</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;requiresNumeric =1&#x22;</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;minChars=8&#x22;</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;maxMinutesUntilChangePa&shy;ssword=86400&#x22;</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;minutesUntilFailedLoginReset=0&#x22;</code></li>
-							<li><code class="example">sudo pwpolicy -n /Local/Default -setglobalpolicy &#x22;maxFailedLoginAttempts=15&#x22;</code></li>
-						</ul>
-					</div>
-					<div>
-						<h3>Software Unix Commands</h3>
-						<p>
-						Supposedly <code class="example">java -version</code> should get you the version, but I've found you need to use <code class="example">/Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Cont&shy;ents/Home/bin/java -version</code> to get the real version. To grab the flash version in it's correct format you want to use <code class="example">defaults read /Applications/Utilities/Adobe\ Flash\ Player\ Install\ Manager.app/Contents/Info.plist</code>.
-						</p>
-					</div>
-					<div>
-						<h3>Packages</h3>
-						<p>You may have to sign up but Flash Packages can be found <a href="http://www.adobe.com/products/flashplayer/distribution3.html">here</a>.</p>
+		<div class="container-fluid">
+			<div>
+				<div class="jumbotron">
+					<div class="light-layer">
+					<h1>Static Code Analysis Tools</h1>
+					<p class="lead">&#x22;TBD&#x22; - TBD</p>
 					</div>
 				</div>
-				</article>
-				<!-- Loading footer with AJAX -->
-				<div class="footerPlaceholder"></div>
 			</div>
+			<article>
+			<div class="wrapper yellow">
+			<h3>QARK</h3>
+			<div class="fourth rts">
+				<h3>Description</h3>
+			</div>
+			<div class="fourth rtlist">
+			<p><a href="https://github.com/linkedin/qark" target="_blank">QARK</a> (Quick Android Review Kit) is a tool that does static code analysis on Android App to locate possible security issues, it can examine source code or an APK. It then provides an HTML report of known vulnerabilities and can compile a QARK app that will allow you to test possible vulnerabilities on a device or emulator.</p>
+			</div>
+			<div class="fourth rts">
+				<div class="verticalAlign">
+				<h3>Install &#x26; Run</h3>
+				</div>
+			</div>
+			<div class="fourth rtlist">
+			<p>All you really need to do is clone QARK (git clone git clone https://github.com/linkedin/qark.git), cd into the folder, and run with the follind command.</p>
+			<div class="example2">python qark.py</div>
+			<p>You can simply follow the prompts to get a report and run tests against evil twin of the app.</p>
+			</div>
+			</div>
+			<div class="wrapper blue">
+			<h3>Retire.js</h3>
+			<div class="fourth rts">
+				<h3>Installation</h3>
+			</div>
+			<div class="fourth rtlist">
+			<p><a href="https://github.com/RetireJS/retire.js" target="_blank">Retire.JS</a> is the javascript equivalent to Dependency Check, it does static code analysis and lists know vulnerabilities with components you are using. As long as you have NPM it's super simple just run the following command.</p>
+			<div class="example2">sudo npm install -g retire</div>
+			</div>
+			<div class="fourth rts">
+				<div class="verticalAlign">
+				<h3>Instructions</h3>
+				</div>
+			</div>
+			<div class="fourth rtlist">
+			<p>If you want to see vulnerabilities in the Terminal, simply run:</p>
+			<div class="example2">--retire --path <span class="replace">~/Path/To/Project/Root</span>/</div>
+			<p>I prefer to read them in a text file, so I can separate issues and mark things off as I go. This command will write a file in your Documents folder with whatever name you choose, output format can be .txt or .xml.</p>
+			<div class="example2">retire --path <span class="replace">~/Path/To/Project/Root/To/Test</span>/ --outputpath ~/Documents/AnyFileName.txt</div>
+			</div>
+			</div>
+			</article>
+			<!-- Loading footer with AJAX -->
+			<div class="footerPlaceholder"></div>
 		</div>
 		<!-- build:js scripts/vendor.js -->
 		<!-- bower:js -->

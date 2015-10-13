@@ -28,7 +28,7 @@
 			<div class="jumbotron">
 				<div class="dark-layer">
 					<h1>CSS Notes</h1>
-					<p class="lead">"That depends on what your definition of "is" is." - William "Bill" Clinton</p>
+					<p class="lead">&#x22;That depends on what your definition of &#x27;is&#x27; is.&#x22; - William &#x27;Bill&#x27; Clinton</p>
 				</div>
 			</div>
 			<article>
@@ -43,7 +43,7 @@
 						<ul>
 							<li> Ariel </li>
 							<li> Times </li>
-							<li>"Times New Roman"</li>
+							<li>&#x22;Times New Roman&#x22;</li>
 							<li> Helvetica </li>
 							<li> Georgia </li>
 						</ul>
@@ -298,7 +298,7 @@
 				h1 + p, H2 + p</code>, can be useful if there if you want to select
 				something that follows another thing directly and is part of the same parent,
 				element.  <span class="term">Attribute Selectors</span> look for things with the thing in brackets
-				e.g. <code class="example">a[title]</code> or <code class="example">a[title="example"]</code>. When using Attribute
+				e.g. <code class="example">a[title]</code> or <code class="example">a[title=&#x22;example&#x22;]</code>. When using Attribute
 				selectors you can use a tilde <code class="example">~</code> before the equal sign to find
 				anything with that will match as a full attribute values separated by whitespace
 				or the asterisk <code class="example">*</code> to do a wildcard search looking for literal
@@ -320,14 +320,14 @@
 				first-child, only-child or last-of-type.  You can also target things using <span class="term">before</span>
 				and <span class="term"> after </span>, e.g.<code class="example"> a::after</code>.  Sometimes you may want
 				to use the <span class="term">content</span> property with the <span class="term">attribute</span>
-				to display the value of an attribute. <code class="example">a::after{content:" attr(href)";}</code>.</p>
+				to display the value of an attribute. <code class="example">a::after{content:&#x22; attr(href)&#x22;;}</code>.</p>
 				<p>
 				Resolving conflicts is an important part of CSS.  The <span class="term">Cascade</span> is what you think
 				it is and the last rule to get parsed will win... most of the time.  <span class="term">Inheritence</span>
 				is also what you think it is, but it's important to remember that when you use relative properties these
 				effects can become cumlative.  <span class="term">Specifity</span> is where it gets complex.  ID tags are
-				worth 100 Points, Classes are worth 10 Points &amp; Elements are worth 1 <span class="example"> (so "#aside p"
-				would be worth 101 points while "div p"" would only be worth 2)</span>.  The <span class="term"> Important
+				worth 100 Points, Classes are worth 10 Points &amp; Elements are worth 1 <span class="example"> (so &#x22;#aside p&#x22;&#x9;&#x9;
+				&#x9;&#x9;would be worth 101 points while &#x22;div p&#x22;&#x22; would only be worth 2)</span>.  The <span class="term"> Important
 				Declaration</span> can overide all of this <code class="example">color:green !important;</code>, but you
 				shouldn't really use it because it's the cheap way out and will make code impossible to fix later.
 				</p>
@@ -387,12 +387,13 @@
 				</p>
 				<p>
 				<span class="term"> Drop Shadows </span> can be added with the box-shadow property (<code class="example">
-				box-shadow:10px 10px 5px 5px</code>).  The first two numbers are horizontal and vertical length respectively,
+				box-shadow: 10px 10px 5px 5px</code>).  The first two numbers are horizontal and vertical length respectively,
 				the third is blur radius and the last is spread.  <span class="term"> Gradients </span> are fairly new but
 				they are rapidly being adopted.  <code class="example">linear-gradient(top, #00000 0%, #ffffff 100%)</code>
 				</p>
 				<p>
-				I know you want to set <code class="example">outline: none;</code> but if you have any concerns about accessibility, <a href="http://www.outlinenone.com/">this</a> is why you don't want to.
+				I know you want to set <code class="example">outline: none;</code> but if you have any concerns about accessibility, 
+				<a href="http://www.outlinenone.com/">this</a> is why you don't want to.
 				</p>
 			</div>
 
