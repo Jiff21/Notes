@@ -28,27 +28,20 @@
 				<div class="jumbotron">
 					<div class="light-layer">
 					<h1>Android Debug Tool</h1>
-					<p class="lead">&#x22;TBD&#x22; - TBD</p>
+					<p class="lead">&#x22;No. I have to stay functional until my mission is complete. Then it doesn&#39;t matter.&#x22; - The Terminator</p>
 					</div>
 				</div>
 			</div>
 			<article>
 			<div class="wrapper yellow">
-			<h3>ADB</h3>
-			<div class="fourth rts">
-				<h3>Getting Activity Logs</h3>
-			</div>
-			<div class="fourth rtlist">
-			<p>To get the device log to see why a native app may be crashing you can use &quot;<span class="example">adb logcat <span class="replace">app.process.name</span> &#x3E; Filename.txt</span>&quot;. This may also be useful if you're crashing chrome with your web app.  The log is pretty long so if you have exact reproductions steps you may want to clear the log with &quot;<span class="example">adb logcat -c</span>&quot; before starting the reproduction.</p>
+			<div class="half-full">
+			<h3>Getting Activity Logs</h3>
+			<p>To get the device log to see why a native app may be crashing you can use &quot;<span class="example">adb logcat <span class="replace">app.process.name</span> &gt; Filename.txt</span>&quot;. This may also be useful if you're crashing chrome with your web app.  The log is pretty long so if you have exact reproductions steps you may want to clear the log with &quot;<span class="example">adb logcat -c</span>&quot; before starting the reproduction.</p>
 			<h5>See all dumpsys services</h5>
-			<div class="example2">adb dumpsys | grep "DUMP OF SERVICE"</div>
+			<div class="example2">adb dumpsys | grep &quot;DUMP OF SERVICE&quot;</div>
 			</div>
-			<div class="fourth rts">
-				<div class="verticalAlign">
-				<h3>Screen Recording</h3>
-				</div>
-			</div>
-			<div class="fourth rtlist">
+			<div class="half-full">
+			<h3>Screen Recording</h3>
 			<p>You can make a recording of the screen for demo purposes. Full commands can be found <a href="https://developer.android.com/tools/help/shell.html#screenrecord" target="_blank">here</a>. The basics are:</p>
 			<div class="example2">
 				adb shell<br>
@@ -61,10 +54,8 @@
 			</div>
 			</div>
 			<div class="wrapper blue">
-			<div class="fourth rts">
-				<h3>Permissions</h3>
-			</div>
-			<div class="fourth rtlist">
+			<div class="half-full">
+			<h3>Permissions</h3>
 			<h5>Lollipop</h5>
 			<ul>
 				<li>List permissions groups</li>
@@ -90,12 +81,12 @@
 				<div class="example2">adb pm revoke <span class="replace">com.name.app android.permissions.PERMISSION_NAME</span></div>
 			</ul>
 			</div>
-			<div class="fourth rts">
+			<div class="half-full">
 				<div class="verticalAlign">
 				<h3>Proxying Apps</h3>
 				</div>
 			</div>
-			<div class="fourth rtlist">
+			<div class="half-full">
 			<p>You can use your preferred proxy app on your computer by combining NTLMaps and a Mac's shared internet connection.</p>
 			<ol>
 				<li>Download and unzip <a href="http://ntlmaps.sourceforge.net/" target="_blank">NTLMaps</a></li>
@@ -135,7 +126,7 @@
 			</div>
 			</div>
 			<div class="wrapper">
-				<div class="half">
+				<div class="half-full">
 				<h3>GPU Testing</h3>
 				<p>If you&#39;re making an app for Google they&#39;re going to require it renders at 60fps. To test this you&#39;re going to have to first turn on Developer options on the Android Phone (tap build number 10 times) and install adb.</p>
 				<p>

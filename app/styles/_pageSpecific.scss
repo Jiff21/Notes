@@ -100,6 +100,25 @@
 	}
 }
 
+.adb-body {
+	.jumbotron {
+		background-image: url('../images/ADB.jpg');
+		background-position: center;
+			
+		h1 {
+			color: $black;
+		}
+
+		p {
+			color: $black;
+		}
+	}
+
+	img {
+		height: auto;
+		max-width: 100%;
+	}
+}
 
 .beef-body {
 	.jumbotron {
@@ -108,7 +127,7 @@
 			
 		h1 {
 			color: $white;
-			margin-top: 180px;
+			margin-top: 300px;
 		}
 
 		p {
