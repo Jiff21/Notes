@@ -13,7 +13,7 @@ var noDelay = 0,
 	mediumDelay = 2000,
 	longDelay = 3000,
 	specialsDelay = 6000,
-	baseUrl = 'https://www.localsbarguide.com';
+	baseUrl = 'http://0.0.0.0:9000/';
 
 var largestDesktop = function () {
 	casper.viewport(2549, 3000);
@@ -58,56 +58,56 @@ var basicTestSuite = function (screenSize) {
 		phantomcss.screenshot('body', smallDelay, '', 'Homepage-' + screenSize);
 	});
 
-	casper.thenOpen(baseUrl + '/News', function () {
+	casper.thenOpen(baseUrl + 'Views/html.html', function () {
 		console.log('URL::', casper.getCurrentUrl());
-		phantomcss.screenshot('body', noDelay, '', 'News-' + screenSize);
+		phantomcss.screenshot('body', noDelay, '', 'Html-' + screenSize);
 	});
 
-	casper.thenOpen(baseUrl + '/Browse', function () {
+	casper.thenOpen(baseUrl + 'Views/javascript.html', function () {
 		console.log('URL::', casper.getCurrentUrl());
-		phantomcss.screenshot('body', longDelay, '', 'Browse-' + screenSize);
+		phantomcss.screenshot('body', longDelay, '', 'javascript-' + screenSize);
 	});
 
-	casper.thenOpen(baseUrl + '/Specials', function () {
+	casper.thenOpen(baseUrl + 'Views/css.html', function () {
 		console.log('URL::', casper.getCurrentUrl());
-		phantomcss.screenshot('body', longDelay, '', 'Specials-'  + screenSize);
+		phantomcss.screenshot('body', longDelay, '', 'CSS-'  + screenSize);
 	});
 
-	casper.thenOpen(baseUrl + '/Bars/View/Mars%20Bar', function () {
+	casper.thenOpen(baseUrl + 'Views/sass.html', function () {
 		console.log('URL::', casper.getCurrentUrl());
 		phantomcss.screenshot('body', noDelay, '', 'BarView-' + screenSize);
 	});
 };
 
 var secondaryTestSuite = function(screenSize) {
-	casper.start(baseUrl + '/News/Article/The%20original%20Irish%20Coffee', function () {
+	casper.start(baseUrl + 'Views/jasmine.html', function () {
 		console.log('URL::', casper.getCurrentUrl());
-		phantomcss.screenshot('body', noDelay, '', 'Article-' + screenSize);
+		phantomcss.screenshot('body', noDelay, '', 'Jasmine-' + screenSize);
 	});
 
-	casper.thenOpen(baseUrl + '/Search/Results/con', function () {
+	casper.thenOpen(baseUrl + 'Views/selenium.html', function () {
 		console.log('URL::', casper.getCurrentUrl());
-		phantomcss.screenshot('body', noDelay, '', 'Search-' + screenSize);
+		phantomcss.screenshot('body', noDelay, '', 'Selenium-' + screenSize);
 	});
 
-	casper.thenOpen(baseUrl + '/Contact', function () {
+	casper.thenOpen(baseUrl + 'Views/protractor.html', function () {
 		console.log('URL::', casper.getCurrentUrl());
-		phantomcss.screenshot('body', noDelay, '', 'Contact-' + screenSize);
+		phantomcss.screenshot('body', noDelay, '', 'Protractor-' + screenSize);
 	});
 
-	casper.thenOpen(baseUrl + '/About', function () {
+	casper.thenOpen(baseUrl + 'Views/nightwatch.html', function () {
 		console.log('URL::', casper.getCurrentUrl());
-		phantomcss.screenshot('body', noDelay, '', 'About-' + screenSize);
+		phantomcss.screenshot('body', noDelay, '', 'Nightwatch-' + screenSize);
 	});
 
-	casper.thenOpen(baseUrl + '/About/Privacy', function () {
+	casper.thenOpen(baseUrl + 'Views/owasp.html', function () {
 		console.log('URL::', casper.getCurrentUrl());
-		phantomcss.screenshot('body', noDelay, '', 'Privacy-' + screenSize);
+		phantomcss.screenshot('body', noDelay, '', 'Owasp-' + screenSize);
 	});
 
-	casper.thenOpen(baseUrl + '/About/Terms', function () {
+	casper.thenOpen(baseUrl + 'Views/sqlmap.html', function () {
 		console.log('URL::', casper.getCurrentUrl());
-		phantomcss.screenshot('body', noDelay, '', 'Terms-' + screenSize);
+		phantomcss.screenshot('body', noDelay, '', 'SQLMap-' + screenSize);
 	});
 };
 

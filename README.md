@@ -26,3 +26,9 @@ To run Nightwatch tests:
 To run Jasmine Tests (to be written)
 
 	grunt test:unit
+
+To setup PhantomCSS test:
+casperjs test test/phantomcss/specs/ --pre=./test/phantomcss/start.js --includes=./test/phantomcss/inc.js --post=./test/phantomcss/end.js  --ssl-protocol=any --ignore-ssl-errors=true --rebase
+
+To Run PhatomCSS tests:
+casperjs test test/phantomcss/specs/ --pre=./test/phantomcss/start.js --includes=./test/phantomcss/inc.js --post=./test/phantomcss/end.js  --ssl-protocol=any --ignore-ssl-errors=true --web-security=no --version
