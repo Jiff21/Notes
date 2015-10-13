@@ -109,6 +109,18 @@ var secondaryTestSuite = function(screenSize) {
 		console.log('URL::', casper.getCurrentUrl());
 		phantomcss.screenshot('body', noDelay, '', 'SQLMap-' + screenSize);
 	});
+	casper.thenOpen(baseUrl + 'Views/burpsuite.html', function () {
+		console.log('URL::', casper.getCurrentUrl());
+		phantomcss.screenshot('body', noDelay, '', 'burpsuite-' + screenSize);
+	});
+	casper.thenOpen(baseUrl + 'Views/beef.html', function () {
+		console.log('URL::', casper.getCurrentUrl());
+		phantomcss.screenshot('body', noDelay, '', 'beef-' + screenSize);
+	});
+	casper.thenOpen(baseUrl + 'Views/staticcodeanalysis.html', function () {
+		console.log('URL::', casper.getCurrentUrl());
+		phantomcss.screenshot('body', noDelay, '', 'SCAT-' + screenSize);
+	});
 };
 
 var endIt = function(){
