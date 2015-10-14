@@ -9,13 +9,14 @@ After downloading be sure to run the following commands.
 	bower install
 	grunt build
 
+---
+
 ## Running Locally
 Use:
 
 	grunt serve
 
-___
-
+---
 
 ## Running Tests
 To run all tests:
