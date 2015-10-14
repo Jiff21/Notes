@@ -9,7 +9,7 @@ After downloading be sure to run the following commands.
 	bower install
 	grunt build
 
-##Running Locally
+## Running Locally
 Use:
 
 	grunt serve
@@ -21,17 +21,17 @@ To run all tests:
 
 	grunt test
 
-#### Nightwatch
+##### Nightwatch
 To run Nightwatch tests
 
 	grunt test:e2e
 
-#### Jasmine
+##### Jasmine
 To run Jasmine Tests (to be written)
 
 	grunt test:unit
 
-#### PhantomCSS
+##### PhantomCSS
 To setup PhantomCSS test
 
 	grunt serve
