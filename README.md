@@ -14,9 +14,10 @@ Use:
 
 	grunt serve
 
----
+___
 
-### Running Tests
+
+## Running Tests
 To run all tests:
 
 	grunt test
