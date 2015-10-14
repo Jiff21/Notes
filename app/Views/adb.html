@@ -150,6 +150,56 @@
 				<p>
 				Towards the bottom of Develeloper options, there&#39;s an option called Profile GPU Rendering.  This can be displayed as &quot;On Screen as bars&quot; or by selecting &quot;In <span class="example">adb shell dumpsys gfxinfo</span>&quot;.  If you select on screen there will be a green line on the screen for 16ms (needed to hit 60fps), and the intention is to not go over that line. If you use dumsys gfx info, you want to make sure Draw, Process, and Execute don&#39;t add up to over 16.  You can grab this information in terminal with the command, &quot;adb shell dumpsys gfxinfo [app process name] [FileName].xls&quot; (e.g. <span class="example">adb shell dumpsys gfxinfo <span class="replace">com.app.name</span><span class="replace">newfilename</span>.xls</span>). if you don&#39;t know the app&#39;s process name run adb shell dumpsys gfxinfo the first time and go through until you find you app in the list.</p>
 				</div>
+				<div class="half-full">
+				<h3>Flashing Devices</h3>
+				<ol>
+					<li>CD into adb folder or path setup in bash profile</li>
+					<li>
+						Load the bootloader by holding down Power/Volume Up/Volume Down as you boot the device or enter the following command in terminal.
+						<div class="example2">adb reboot bootloader</div>
+					</li>
+					<li>
+						If the device hasn't been flashed before use the command.
+						<div class="example2">fastboot oem unlock</div>
+					</li>
+					<li>
+						Download a the OS you want to load. Make sure you download the version of the operating system for the device you are using. Make sure the file has an a bootloader image and an OS image (and a radio image if it's a phone).  Google has there own set of images <a href="https://developers.google.com/android/nexus/images" target="_blank">here</a>, but they pull older ones so you may want to check <a href="http://forum.xda-developers.com/wiki/Main_Page" target="_blank">here</a> or google until you find the right one.
+					</li>
+					<li>
+						Erase the previous system off the device with the following commands.  Wait for each command to complete then enter the next one.
+						<div class="example2">
+							fastboot erase boot
+							fastboot erase cache
+							fastboot erase recovery
+							fastboot erase system
+							fastboot erase userdata
+						</div>
+					</li>
+					<li>
+						Flash the new bootloader.
+						<div class="example2">fastboot flash bootloader <span class="replace">drag bootloader image file here</span></div>
+						e.g. fastboot flash bootloader /Users/Jeff/Android/bootloader-mako-makoz101.img
+					</li>
+					<li>
+						Reboot the Bootloader for good measure
+						<div class="example2">fastboot reboot-bootloader</div>
+					</li>
+					<li>
+						If it's a cellphone you need to flash the radio (Not necessary if it's a tablet)
+						<div class="example2">fastboot flash radio <span class="replace">drag bootloader radio file here</span></div>
+						e.g. fastboot flash radio /Users/Jeff/Android/radio-mako-m9615-cefwmazm-2.0.1700.33.img
+					</li>
+					<li>
+						Reboot the Bootloader again for good measure  (Not necessary if it's a tablet)
+						<div class="example2">fastboot reboot-bootloader</div>
+					</li>
+					<li>
+						Flash the new OS
+						<div class="example2">fastboot -w update <span class="replace">drag bootloader image file here</span></div>
+						e.g. fastboot -w update /Users/Jeff/Android/image-occam-jop40c.img
+					</li>
+				</ol>
+
 			</div>
 			</article>
 			<!-- Loading footer with AJAX -->
