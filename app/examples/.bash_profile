@@ -57,3 +57,9 @@ eval "$(grunt --completion=bash)"
 
 export PATH=${PATH}:$HOME/android-sdk-macosx/platform-tools:$HOME/android-sdk-macosx/tools:$HOME/android-sdk-macosx/build-tools/22.0.1
 export ANDROID_HOME=$(dirname $(dirname $(which android)))
+
+
+##
+# Trying to specify path for NPM but will it break Android?
+###
+export PATH="/usr/local/bin:$PATH"
