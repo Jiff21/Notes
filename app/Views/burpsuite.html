@@ -107,18 +107,24 @@
 				<h6>Installation</h6>
 				<ol>
 					<li>Install Burp (obviously)</li>
-					<li>Install Jython (if not already installed, need homebrew for this install or you can download here <a href="http://www.jython.org/downloads.html">http://www.jython.org/downloads.html</a>)</li>
+					<li>
+					Install Jython (if not already installed, need homebrew for this install or you can download here <a href="http://www.jython.org/downloads.html">http://www.jython.org/downloads.html</a>)
 					<div class="example2">brew install jython</div>
-					<li>Take not of where it installs Jython in the summary. It is likely:</li>
-					<div class="example2">/usr/local/Cellar/jython/#.#.#</div>
-					<li>Open Burp &#x3E; Extender Tab &#x3E; Options Sub-Tab &#x3E; Python Environment -&#x3E; Select File -&#x3E; Choose the Jython standalone JAR, the first part of the path is found in step 3, will likely match text here but may not if you did download instead).</li>
-					<div class="example2">/usr/local/Cellar/jython/#.#.#/libexec/jython.jar</div>
-					<li>Install Autorize from the BApp Store or follow these steps (Burp &#x3E; Extender Tab &#x3E; Bapp Store &#x3E; Click Autorize &#x3E; Hit Install Button).</li>
+					</li>
+					<li>
+						Take not of where it installs Jython in the summary. It is likely:
+						<div class="example2">/usr/local/Cellar/jython/#.#.#</div>
+					</li>
+					<li>
+						Open Burp &gt; Extender Tab &gt; Options Sub-Tab &gt; Python Environment -&gt; Select File -&gt; Choose the Jython standalone JAR, the first part of the path is found in step 3, will likely match text here but may not if you did download instead).
+						<div class="example2">/usr/local/Cellar/jython/#.#.#/libexec/jython.jar</div>
+					</li>
+					<li>Install Autorize from the BApp Store or follow these steps (Burp &gt; Extender Tab &gt; Bapp Store &gt; Click Autorize &gt; Hit Install Button).</li>
 				</ol>
 				<h6>Instructions</h6>
 				<ol>
 					<li>After installation, the Autorize tab will be added to Burp.</li>
-					<li>Open the configuration tab (Autorize -&#x3E; Configuration).</li>
+					<li>Open the configuration tab (Autorize -&gt; Configuration).</li>
 					<li>Turn on the proxy in burp and try to log in with an authorized user, right click on the intercept after log in functions complete and select &#x2018;Send cookie to Autorize&#x201D;</li>
 					<li>Turn the Proxy to &#x22;Intercept is off&#x22;</li>
 					<li>Click on the Autorize Tab in Burpsuite</li>

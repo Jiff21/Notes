@@ -20,3 +20,8 @@ test/e2e/selenium-debug.log
 test/e2e/tests_output/
 test/e2e/reports
 test/e2e.screenshots
+
+// Ignores for PhantomCSS
+test/phantomcss/failures
+test/phantomcss/results
+test/phantomcss/screenshots
