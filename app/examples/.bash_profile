@@ -55,7 +55,7 @@ eval "$(grunt --completion=bash)"
 # Setup for Android SDK for use with cordova
 ##
 
-export PATH=${PATH}:$HOME/android-sdk-macosx/platform-tools:$HOME/android-sdk-macosx/tools:$HOME/android-sdk-macosx/build-tools/22.0.1
+export PATH=${PATH}:$HOME/Documents/Tools/android-sdk-macosx/platform-tools:$HOME/Documents/Tools/android-sdk-macosx/tools:$HOME/Documents/Tools/android-sdk-macosx/build-tools/22.0.1
 export ANDROID_HOME=$(dirname $(dirname $(which android)))
 
 
