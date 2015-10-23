@@ -25,6 +25,7 @@ alias remotes="git remote -v"
 alias status="git status"
 alias favlog="git log --oneline --graph --all --decorate"
 alias statsum="git log --stat --summary"
+alias whathash="git log --oneline -n 1"
 # SHOW STATUS OF SUB MODULES
 alias substatus="git submodule status"
 # Show full remote settings
