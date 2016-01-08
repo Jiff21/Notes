@@ -6,7 +6,8 @@
 	"installed_packages":
 	[
 		"CSScomb",
-		"Javascript Beautify",
+		"JsFormat",
+		"JSONLint",
 		"LESS",
 		"LiveReload",
 		"Package Control",
