@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"CSScomb",
+		"JavaScript Completions",
 		"JsFormat",
 		"JSONLint",
 		"LESS",
