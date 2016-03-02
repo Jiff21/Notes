@@ -35,10 +35,14 @@
 			<article>
 			<div class="wrapper yellow">
 			<div class="half-full">
-			<h3>Getting Activity Logs</h3>
+			<h3>Getting Activity Logs &amp; Basics</h3>
 			<p>To get the device log to see why a native app may be crashing you can use &quot;<span class="example">adb logcat <span class="replace">app.process.name</span> &gt; Filename.txt</span>&quot;. This may also be useful if you're crashing chrome with your web app.  The log is pretty long so if you have exact reproductions steps you may want to clear the log with &quot;<span class="example">adb logcat -c</span>&quot; before starting the reproduction.</p>
 			<h5>See all dumpsys services</h5>
 			<div class="example2">adb dumpsys | grep &quot;DUMP OF SERVICE&quot;</div>
+			<h5>Install</h5>
+			<div class="example2">adb install <span class="replace>">path/to/localfile.apk</span></div>
+			<h5>Uninstall</h5>
+			<div class="example2">adb uninstall <span class="replace>">com.name.app</span></div>
 			</div>
 			<div class="half-full">
 			<h3>Screen Recording</h3>
@@ -55,6 +59,10 @@
 			</div>
 			<div class="wrapper blue">
 			<div class="half-full">
+
+
+
+			
 			<h3>Permissions</h3>
 			<h5>Lollipop</h5>
 			<ul>
