@@ -26,6 +26,9 @@ alias status="git status"
 alias favlog="git log --oneline --graph --all --decorate"
 alias statsum="git log --stat --summary"
 alias whathash="git log --oneline -n 1"
+# Usage would be 'gitlast ##' to get last X commits
+alias gitlast="git log --oneline -n"
+alias git10Days="git log  --since=10.days"
 # SHOW STATUS OF SUB MODULES
 alias substatus="git submodule status"
 # Show full remote settings
