@@ -68,6 +68,12 @@ export PATH=${PATH}:$HOME/Documents/Tools/android-sdk-macosx/platform-tools:$HOM
 export ANDROID_HOME=$(dirname $(dirname $(which android)))
 
 
+###
+# Setting Java Home. Needed for Appium.
+###
+export JAVA_HOME=$(/usr/libexec/java_home)
+
+
 ##
 # Trying to specify path for NPM but will it break Android?
 ###
