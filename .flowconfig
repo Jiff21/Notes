@@ -2,8 +2,9 @@
 .*/node_modules/
 
 [include]
-.*/app/scripts/
+app/scripts/
 
 [libs]
+interfaces/
 
 [options]
