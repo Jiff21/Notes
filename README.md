@@ -47,3 +47,16 @@ To Run PhatomCSS tests:
 
 
 *PhantomCSS Notes: it keeps trying to get you to run it with --web-security=no --version, but that breaks it on OSX 10.10.5. Also, ignore the warning about not running tests. On Rebase no tests are run intentionally. On run command it must be referring to end.js or start.js file as you can see tests running and producing results.
+
+##### Flow
+To Install Flow. 
+
+	npm install --save-dev flow-bin -g
+
+To run flow either do:
+
+	flow check
+
+Or start a Flow Server to check as you edit.
+
+	flow
