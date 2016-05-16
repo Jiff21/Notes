@@ -1,6 +1,11 @@
+/* @flow */
+
 /*!
  * @docauthor Jeff Campbell
  */
+
+ /* imported $ */
+ 
 'use strict';
 
 window.addEventListener('scroll', function() {

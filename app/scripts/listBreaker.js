@@ -1,4 +1,7 @@
+/* @flow */
+
 /* exported breakList */
+/* imported $ */
 
 'use strict';
 

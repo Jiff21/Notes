@@ -1,3 +1,4 @@
+/* @flow */
 /* exported luckyLink */
 
 'use strict';

@@ -1,3 +1,5 @@
+/* @flow */
+
 /*!
  * @docauthor Jeff Campbell
  */
@@ -5,6 +7,7 @@
  /* exported makeVisible */
 
 'use strict';
+
 
 var i,
 	oldVis,
