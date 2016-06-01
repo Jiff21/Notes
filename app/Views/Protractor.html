@@ -110,17 +110,16 @@
 					<h4>Send Keys</h4>
 					<p>
 					A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
-					Sending letters and numbers works simple by using:<br>
-					<code class="example">element(by.name('<span class="replace">name</span>')).sendKe&shy;ys('<span class="replace">Example</span>');</code><br>
-					Recently they fixed in issue and this should work for sending unicode keys.
-					<code class="example">element(by.name('<span class="replace">name</span>')).sendKe&shy;ys(protractor.Key.<span class="replace">TAB</span>)</code><br>
-					This was the workaround for previous issue so I'm keeping it here in case comes back.
-					<code class="example">browser.actions().sendKe&shy;ys(protractor.Key.<span class="replace">TAB</span>).perform();</code><br>
-					Using the send key delete doesn't seem to work,<br>
-					<code class="example">element(by.name('name')).sendKe&shy;ys(protractor.Key.<span class="replace">DELETE</span>);</code><br>
-					But BACK_SPACE does.<br>
-					<code class="example">element(by.name('name')).sendKe&shy;ys(protractor.Key.<span class="replace">BACK_SPACE</span>);</code>
-					</p>
+					Sending letters and numbers works simple by using:
+					<div class="example2">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</div>
+					<p>Recently they fixed in issue and this should work for sending unicode keys.</p>
+					<div class="example2 example-overscroll">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</div>
+					<p>This was the workaround for previous issue so I'm keeping it here in case comes back.</p>
+					<div class="example2 example-overscroll">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</div>
+					<p>Using the send key delete doesn't seem to work,</p>
+					<div class="example2 example-overscroll">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">DELETE</span>);</div>
+					<p>But BACK_SPACE does.</p>
+					<div class="example2 example-overscroll">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">BACK_SPACE</span>);</div>
 					<h4>Sleep &amp; Pause</h4>
 					<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
 					<h5>Angular Can't Be Found</h5>
@@ -143,7 +142,7 @@
 					<h4>Selenium Workarounds</h4>
 					<h5>Scrolling</h5>
 					<p>There is no easy command for scrolling but you can accomplish it with:</p>
-					<div class="example2">
+					<div class="example2 example-overscroll">
 						browser.executeScript('window.scrollTo(0,2000);').then(function () {
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="replace">code to run here</span><br>
 						});
@@ -155,12 +154,12 @@
 						browser.executeScript(&#39;localStorage.clear();&#39;);
 					</div>
 					<h6>Write to local storage with a json file</h6>
-					<div class="example2">
+					<div class="example2 example-overscroll">
 						var <span class="replace">productData</span> = require(&#39;./<span class="replace">stubbedjson/filename</span>.json&#39;);<br>
 						browser.executeScript(&#39;localStorage.setItem("<span class="replace">ngStorage-file-name-en_us</span>", arguments[0]);&#39;, JSON.stringify(<span class="replace">productData</span>));
 					</div>
 					<h6>Delete a specific file in local storage</h6>
-					<div class="example2">
+					<div class="example2 example-overscroll">
 						browser.executeScript(&#39;localStorage.removeItem("<span class="replace">ngStorage-file-name-en_us</span>");&#39;);
 					</div>
 					<h4>Managing Expectations</h4>
