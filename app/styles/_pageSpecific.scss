@@ -680,6 +680,24 @@ $scat-blue: #add8e6;
 		}
 	}
 
+	button {
+		height: 40px;
+		margin-bottom: 10px;
+		@include button-color($white, $black, #ff0000);
+		@include border-radius(2px);
+		
+		&:active, 
+		&:hover {
+			border-top-color: $black;
+			background: $black;
+		}
+		
+			&:focus {
+				outline: none; //Not worrried about accessibility.
+			}
+	}
+
+
 	@media(min-width: $screen-tablet){
 		.jumbotron {
 			h1 {
