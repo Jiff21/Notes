@@ -110,67 +110,114 @@
 					actions.perform()
 				</div>
 				
-				</div>
-				<div id="simple" class="hidden">
-				<div class="full">
-					<p>This is the most basic starting point for testing in Selenium.</p>
-					<h3>Quick Install</h3>
-					<p>To get around an OS X El Capitan Permissions issue we need to install a version of python through <a href="http://brew.sh/" target="_blank">homebrew</a> (this may cause issues with NPM later though).</p>
-					<div span class="example2">
-						brew update &amp;&amp; brew upgrade<br>
-						brew install python<br>
-						hash -r python<br>
-						pip install selenium<br>
-						pip install nose<br>
-					</div>
-					<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
-					<p>Here is an <a href="./../examples/python-selenium-examples/simple/simple_carousel_test.py" target="_blank">example</a> of a really simple test.</p>
-					<p>Useful documentation can be found <a href="http://selenium-python.readthedocs.io/" target="_blank">here</a> and <a href="http://www.seleniumhq.org/docs/" target="_blank">here</a>.</p>
-				</div>
-				</div>
-				<div id="sgrid" class="hidden">
-				<div class="full">
-					<p>This is a setup where the browsers can be configured in the globes.py file and multiple browsers can be tested at the same time using selenium grid.</p>
-					<h3>Install</h3>
-					<div span class="example2">
-						sudo npm install selenium-standalone@latest -get<br>
-						sudo selenium-standalone install<br>
-						pip install nose<br>
-					</div>
-					<h3>Running</h3>
-					<p>Start a hub in terminal.</p>
-					<div class="example2">
-						selenium-standalone start -- -role hub
-					</div>
-					<p>In another tab of terminal register you local mac</p>
-					<div class="example2">
-						selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -maxSessions 31 -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY
-					</div>
-					<p>In you want to run tests off a virtualbox as well register another hub.</p>
-					<div class="example2">
-						selenium-standalone start -- -role node -hub http://<span class="replace">[YOUR COMPUTERS IP ADDRESS]</span>:4444/grid/register -port 5557 -maxSessions 6 -browser browserName="internet explorer",javascriptEnabled=true,maxInstances=3,version=<span class="replace">9</span>,platform=ANY
-					</div>
-					<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
-					<p>So for example you can import this <a href="./../examples/python-selenium-examples/grid/globes.py" target="_blank">global file</a> by including <span class="example">from globes import *</span> at the top of your test, and then run tests like <a href="./../examples/python-selenium-examples/grid/home_test.py" target="_blank">this</a> or <a href="./../examples/python-selenium-examples/grid/search_test.py" target="_blank">this</a>.</p>
-				</div>
-				</div>
-				<div id="appium" class="hidden">
-				<div class="full">
-					<p>This is a setup where the browsers can be configured in the globes.py file and multiple browsers can be tested at the same time using selenium grid.</p>
-					<h3>Install</h3>
-					<div span class="example2">
-						sudo npm install selenium-standalone@latest -get<br>
-						sudo selenium-standalone install<br>
-						pip install nose<br>
-					</div>
-					<h3>Running</h3>
-					<p>Start a hub in terminal.</p>
-					<div class="example2">
-						selenium-standalone start -- -role hub
-					</div>
+			</div>
+			</div>
 
+
+
+			<div id="simple" class="hidden">
+			<div class="full">
+				<p>This is the most basic starting point for testing in Selenium.</p>
+				<h3>Quick Install</h3>
+				<p>To get around an OS X El Capitan Permissions issue we need to install a version of python through <a href="http://brew.sh/" target="_blank">homebrew</a> (this may cause issues with NPM later though).</p>
+				<div span class="example2">
+					brew update &amp;&amp; brew upgrade<br>
+					brew install python<br>
+					hash -r python<br>
+					pip install selenium<br>
+					pip install nose<br>
 				</div>
+				<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
+				<p>Here is an <a href="./../examples/python-selenium-examples/simple/simple_carousel_test.py" target="_blank">example</a> of a really simple test.</p>
+				<p>Useful documentation can be found <a href="http://selenium-python.readthedocs.io/" target="_blank">here</a> and <a href="http://www.seleniumhq.org/docs/" target="_blank">here</a>.</p>
+			</div>
+			</div>
+
+
+
+
+			<div id="sgrid" class="hidden">
+			<div class="full">
+				<h2>Selenium Grid Python Tests</h2>
+				<p>This is a setup where the browsers can be configured in the globes.py file and multiple browsers can be tested at the same time using selenium grid.</p>
+				<h3>Install</h3>
+				<div span class="example2">
+					sudo npm install selenium-standalone@latest -get<br>
+					sudo selenium-standalone install<br>
+					pip install nose<br>
 				</div>
+				<h3>Running</h3>
+				<p>Start a hub in terminal.</p>
+				<div class="example2">
+					selenium-standalone start -- -role hub
+				</div>
+				<p>In another tab of terminal register you local mac</p>
+				<div class="example2">
+					selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -maxSessions 31 -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY
+				</div>
+				<p>In you want to run tests off a virtualbox as well register another hub.</p>
+				<div class="example2">
+					selenium-standalone start -- -role node -hub http://<span class="replace">[YOUR COMPUTERS IP ADDRESS]</span>:4444/grid/register -port 5557 -maxSessions 6 -browser browserName="internet explorer",javascriptEnabled=true,maxInstances=3,version=<span class="replace">9</span>,platform=ANY
+				</div>
+				<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
+				<p>So for example you can import this <a href="./../examples/python-selenium-examples/grid/globes.py" target="_blank">global file</a> by including <span class="example">from globes import *</span> at the top of your test, and then run tests like <a href="./../examples/python-selenium-examples/grid/home_test.py" target="_blank">this</a> or <a href="./../examples/python-selenium-examples/grid/search_test.py" target="_blank">this</a>.</p>
+			</div>
+			</div>
+
+				
+			<div id="appium" class="hidden">
+			<div class="full">
+
+				<h3>Appium + Selenium + Python</h3>
+				<p>See the example general file <a href="./../examples/python-selenium-examples/appium/desired_capabilities.py" target="_blank">here</a> and the example test <a href="./../examples/python-selenium-examples/appium/app_test.py" target="_blank">here</a>.</p>
+
+				<h4>Locators</h4>
+				<p>Appium works a lot like normal Selenium Python but you have limited selectors because it is an app</p>
+				<div class="example2">wd.find_element_by_android_uiautomator('text("<span class="replace">Overview</span>")')</div>
+				<div class="example2">wd.find_element_by_xpath('//android.widget.<span class="replace">TextView</span>[@<span class="replace">resource-id</span>="<span class="replace">com.google.example.app.name:id/curriculums_header_coins</span>"]')</div>
+
+
+				<h4>Waiting</h4>
+				<p>Be sure to import wait and expected conditions</p>
+				<div class="example2">
+					from selenium.webdriver.support.ui import WebDriverWait<br>
+					from selenium.webdriver.support import expected_conditions as EC
+				</div>
+				<p>Then you can wait like this:</p>
+				<div class="example2">
+					wait = WebDriverWait(wd, 20)<br>
+					currently_waiting_for = wait.until(EC.element_to_be_clickable((By.XPATH,'//android.widget.TextView[@text="<span class="replace">Example Text</span>"]')))
+				</div>
+
+				<h4>Scrolling</h4>
+				<p>If you want to scroll the page you need to import touch actions.</p>
+				<div class="example2">
+					from appium.webdriver.common.touch_action import TouchAction
+				</div>
+				<p>Then you can perform an action like so.</p>
+				<div class="example2">
+					action = TouchAction(wd)<br>
+					action.press(x=700, y=466).move_to(x=700, y=-200).release().perform()
+				</div>
+
+				<h4>Assertions</h4>
+				<div class="example2">
+					self.assertIsNotNone(<span class="replace">elem</span>)
+				</div>
+				<div class="example2">
+					self.assertEqual('<span class="replace">Example Text</span>', elem.get_attribute('text'))
+				</div>
+				<div class="example2">
+					self.assertTrue(activity, '<span class="replace">com.example.app.name/intro.MainDrawerActivity</span>')
+				</div>
+
+				<p>*For the purpose of this page we are setting this at the top of the test <span class="example">wd = self.driver</span></p>
+
+
+			</div>
+			</div>
+
+
 			<div id="protractorcommands" class="hidden">
 			<div class="full">
 				<h1>Protractor Related</h1>
