@@ -31,8 +31,150 @@
 				</div>
 			</div>
 			<article>
-			<div id="selenium-commands" class="visible">
+			<div>
+				<button value="button" onclick="makeVisible(seleniumcommands)">Python Commands</button>
+				<button value="button" onclick="makeVisible(sgrid)">Python Hub</button>
+				<button value="button" onclick="makeVisible(simple)">Simple Python</button>
+				<button value="button" onclick="makeVisible(appium)">Appium</button>
+				<button value="button" onclick="makeVisible(protractorcommands)">Protractor</button>
+			</div>
+
+			<div id="seleniumcommands" class="visible">
 			<div class="full">
+				<h2> Selenium Python</h2>
+				<h4>Seleniumn Locators</h4>
+				<ul>
+					<li><span class="example">driver.find_element_by_id("<span class="replace">search</span>")</span></li>
+					<li><span class="example">driver.find_element_by_name("<span class="replace">replace</span>")</span></li>
+					<li><span class="example">driver.find_element_by_xpath("<span class="replace">replace</span>")</span></li>
+					<li><span class="example">driver.find_element_by_partial_link_text("<span class="replace">replace</span>")</span></li>
+					<li><span class="example">driver.find_element_by_link_text("<span class="replace">replace</span>")</span></li>
+					<li><span class="example">driver.find_element_by_css_selector("<span class="replace">example</span>")</span></li>
+					<li><span class="example">driver.find_element_by_class_name("<span class="replace">aside</span>")</span></li>
+				</ul>
+
+				<h4>Webdriver By Locators</h4>
+				<p>If you prefer webdrivers By locators</p>
+				<div class="example2">from selenium.webdriver.common.by import By</div>
+				<ul>
+					<li><span class="example">driver.find_element(By.ID, '<span class="replace">signIn</span>')</span></li>
+					<li><span class="example">driver.find_element(By.NAME, '<span class="replace">signIn</span>')</span></li>
+					<li><span class="example">driver.find_element(By.XPATH, '<span class="replace">signIn</span>')</span></li>
+					<li><span class="example">driver.find_element(By.PARTIAL_LINK_TEXT, '<span class="replace">signIn</span>')</span></li>
+					<li><span class="example">driver.find_element(By.LINK_TEXT, '<span class="replace">signIn</span>')</span></li>
+					<li><span class="example">driver.find_element(By.CSS_SELECTOR, '<span class="replace">signIn</span>')</span></li>
+					<li><span class="example">driver.find_element(By.CLASS_NAME, '<span class="replace">signIn</span>')</span></li>
+					<li><span class="example">driver.find_element(By.TAG_NAME, '<span class="replace">signIn</span>')</span></li>
+				</ul>
+
+				<h4>Waiting</h4>
+				<p>Be sure to import wait and expected conditions</p>
+				<div class="example2">
+					from selenium.webdriver.support.ui import WebDriverWait<br>
+					from selenium.webdriver.support import expected_conditions as EC
+				</div>
+				<p>Then you can wait for an element like this:</p>
+				<div class="example2">
+					wait = WebDriverWait(driver, <span class="replace">10</span>)<br>
+					element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'<span class="replace">message-results</span>')))
+				</div>
+
+				<h4>Send Keys</h4>
+				<div class="example2">from selenium.webdriver.common.keys import Keys</div>
+				<ul>
+					<li><span class="example"><span class="replace">elementName</span>.sendKeys('<span class="replace">TextToSend</span>')</span></li>
+					<li><span class="example"><span class="replace">elementName</span>.sendKeys(Keys.RETURN)</span></li>
+				</ul>
+				<p>A list of <a href="http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.keys" target="_blank">special keys</a>, like return above.</p>
+				
+				<h4>Example Assertions</h4>
+				<div class="example2">
+					try: assert "<span class="replace">No posts were found...</span>" not in driver.page_source<br>
+					except AssertionError, e: self.verificationErrors.append("<span class="replace">No Posts incorrectly appeared.</span>")
+				</div>
+				<div class="example2">
+					posts = driver.find_elements_by_class_name('post')<br>
+					try: self.assertEqual(len(posts), 1)<br>
+					except AssertionError, e: self.verificationErrors.append('Search ' + str(len(posts)) + ' many posts when there should only be 1 for no port message.')
+				</div>
+
+				<h4>Action Chains</h4>		
+				<p>Be sure to load in actions chains for webdrivers</p>
+				<div class="example2">from selenium.webdriver.common.action_chains import ActionChains</div>
+				<p>Then you can perform chained actions like this.</p>
+				<div class="example2">
+					actions = ActionChains(driver)<br>
+					actions.click(<span class="replace">elem</span>)<br>
+					actions.send_keys("<span class="replace">Automated Testing IGNORE ME!!!!</span>")<br>
+					actions.send_keys(Keys.RETURN)<br>
+					actions.perform()
+				</div>
+				
+				</div>
+				<div id="simple" class="hidden">
+				<div class="full">
+					<p>This is the most basic starting point for testing in Selenium.</p>
+					<h3>Quick Install</h3>
+					<p>To get around an OS X El Capitan Permissions issue we need to install a version of python through <a href="http://brew.sh/" target="_blank">homebrew</a> (this may cause issues with NPM later though).</p>
+					<div span class="example2">
+						brew update &amp;&amp; brew upgrade<br>
+						brew install python<br>
+						hash -r python<br>
+						pip install selenium<br>
+						pip install nose<br>
+					</div>
+					<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
+					<p>Here is an <a href="./../examples/python-selenium-examples/simple/simple_carousel_test.py" target="_blank">example</a> of a really simple test.</p>
+					<p>Useful documentation can be found <a href="http://selenium-python.readthedocs.io/" target="_blank">here</a> and <a href="http://www.seleniumhq.org/docs/" target="_blank">here</a>.</p>
+				</div>
+				</div>
+				<div id="sgrid" class="hidden">
+				<div class="full">
+					<p>This is a setup where the browsers can be configured in the globes.py file and multiple browsers can be tested at the same time using selenium grid.</p>
+					<h3>Install</h3>
+					<div span class="example2">
+						sudo npm install selenium-standalone@latest -get<br>
+						sudo selenium-standalone install<br>
+						pip install nose<br>
+					</div>
+					<h3>Running</h3>
+					<p>Start a hub in terminal.</p>
+					<div class="example2">
+						selenium-standalone start -- -role hub
+					</div>
+					<p>In another tab of terminal register you local mac</p>
+					<div class="example2">
+						selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -maxSessions 31 -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY
+					</div>
+					<p>In you want to run tests off a virtualbox as well register another hub.</p>
+					<div class="example2">
+						selenium-standalone start -- -role node -hub http://<span class="replace">[YOUR COMPUTERS IP ADDRESS]</span>:4444/grid/register -port 5557 -maxSessions 6 -browser browserName="internet explorer",javascriptEnabled=true,maxInstances=3,version=<span class="replace">9</span>,platform=ANY
+					</div>
+					<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
+					<p>So for example you can import this <a href="./../examples/python-selenium-examples/grid/globes.py" target="_blank">global file</a> by including <span class="example">from globes import *</span> at the top of your test, and then run tests like <a href="./../examples/python-selenium-examples/grid/home_test.py" target="_blank">this</a> or <a href="./../examples/python-selenium-examples/grid/search_test.py" target="_blank">this</a>.</p>
+				</div>
+				</div>
+				<div id="appium" class="hidden">
+				<div class="full">
+					<p>This is a setup where the browsers can be configured in the globes.py file and multiple browsers can be tested at the same time using selenium grid.</p>
+					<h3>Install</h3>
+					<div span class="example2">
+						sudo npm install selenium-standalone@latest -get<br>
+						sudo selenium-standalone install<br>
+						pip install nose<br>
+					</div>
+					<h3>Running</h3>
+					<p>Start a hub in terminal.</p>
+					<div class="example2">
+						selenium-standalone start -- -role hub
+					</div>
+
+				</div>
+				</div>
+			<div id="protractorcommands" class="hidden">
+			<div class="full">
+				<h1>Protractor Related</h1>
+				<p>When using protractor you occasionally need to operate using selenium when outside an Angular site. Here are some commands that have been useful.</p>
 				<h2> Selenium Javascript Web Driver </h2>
 				<h6>Locators</h6>
 				<ul>
@@ -82,49 +224,6 @@
 						</div>
 				</aside> -->
 				</div>
-				<div id="selenium-super-simple" class="visible">
-				<div class="full">
-					<p>This is the most basic starting point for testing in Selenium.</p>
-					<h3>Quick Install</h3>
-					<p>To get around an OS X El Capitan Permissions issue we need to install a version of python through <a href="http://brew.sh/" target="_blank">homebrew</a> (this may cause issues with NPM later though).</p>
-					<code span class="example2">
-						brew update &amp;&amp; brew upgrade<br>
-						brew install python<br>
-						hash -r python<br>
-						pip install selenium<br>
-						pip install nose<br>
-					</code>
-					<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
-					<p>Here is an <a href="./examples/python-selenium-examples/simple/simple_carousel_test.py" target="_blank">example</a> of a really simple test.</p>
-					<p>Useful documentation can be found <a href="http://selenium-python.readthedocs.io/" target="_blank">here</a> and <a href="http://www.seleniumhq.org/docs/" target="_blank">here</a>.</p>
-				</div>
-				</div>
-				<div id="selenium-grid" class="visible">
-				<div class="full">
-					<p>This is a setup where the browsers can be configured in the globes.py file and multiple browsers can be tested at the same time using selenium grid.</p>
-					<h3>Install</h3>
-					<code span class="example2">
-						sudo npm install selenium-standalone@latest -get
-						sudo selenium-standalone install
-						pip install nose
-					</code>
-					<h3>Running</h3>
-					<p>Start a hub in terminal.</p>
-					<div class="example2">
-						selenium-standalone start -- -role hub
-					</div>
-					<p>In another tab of terminal register you local mac</p>
-					<div class="example2">
-						selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -maxSessions 31 -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY
-					</div>
-					<p>In you want to run tests off a virtualbox as well register another hub.</p>
-					<div class="example2">
-						selenium-standalone start -- -role node -hub http://<span class="replace">[YOUR COMPUTERS IP ADDRESS]</span>:4444/grid/register -port 5557 -maxSessions 6 -browser browserName="internet explorer",javascriptEnabled=true,maxInstances=3,version=<span class="replace">9</span>,platform=ANY
-					</div>
-					<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
-					<p>Here is an <a href="./examples/python-selenium-examples/simple/simple_carousel_test.py" target="_blank">example</a> of a really simple test.</p>
-				</div>
-				</div>
 				</article>
 				<!-- Loading footer with AJAX -->
 				<div class="footerPlaceholder"></div>
@@ -159,6 +258,7 @@
 			<!-- endbuild -->
 			<!-- build:js({app,.tmp}) scripts/main.js -->
 			<script src="../scripts/main.js"></script>
+			<script src="../scripts/visSwitch.js"></script>
 			<!-- endbuild -->
 			<!-- myScripts -->
 			<script src="../includes/nav.js"></script>
