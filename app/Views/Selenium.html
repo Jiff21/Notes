@@ -31,6 +31,7 @@
 				</div>
 			</div>
 			<article>
+			<div id="selenium-commands" class="visible">
 			<div class="full">
 				<h2> Selenium Javascript Web Driver </h2>
 				<h6>Locators</h6>
@@ -80,6 +81,50 @@
 								<h6> Tags </h6>
 						</div>
 				</aside> -->
+				</div>
+				<div id="selenium-super-simple" class="visible">
+				<div class="full">
+					<p>This is the most basic starting point for testing in Selenium.</p>
+					<h3>Quick Install</h3>
+					<p>To get around an OS X El Capitan Permissions issue we need to install a version of python through <a href="http://brew.sh/" target="_blank">homebrew</a> (this may cause issues with NPM later though).</p>
+					<code span class="example2">
+						brew update &amp;&amp; brew upgrade<br>
+						brew install python<br>
+						hash -r python<br>
+						pip install selenium<br>
+						pip install nose<br>
+					</code>
+					<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
+					<p>Here is an <a href="./examples/python-selenium-examples/simple/simple_carousel_test.py" target="_blank">example</a> of a really simple test.</p>
+					<p>Useful documentation can be found <a href="http://selenium-python.readthedocs.io/" target="_blank">here</a> and <a href="http://www.seleniumhq.org/docs/" target="_blank">here</a>.</p>
+				</div>
+				</div>
+				<div id="selenium-grid" class="visible">
+				<div class="full">
+					<p>This is a setup where the browsers can be configured in the globes.py file and multiple browsers can be tested at the same time using selenium grid.</p>
+					<h3>Install</h3>
+					<code span class="example2">
+						sudo npm install selenium-standalone@latest -get
+						sudo selenium-standalone install
+						pip install nose
+					</code>
+					<h3>Running</h3>
+					<p>Start a hub in terminal.</p>
+					<div class="example2">
+						selenium-standalone start -- -role hub
+					</div>
+					<p>In another tab of terminal register you local mac</p>
+					<div class="example2">
+						selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -maxSessions 31 -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY
+					</div>
+					<p>In you want to run tests off a virtualbox as well register another hub.</p>
+					<div class="example2">
+						selenium-standalone start -- -role node -hub http://<span class="replace">[YOUR COMPUTERS IP ADDRESS]</span>:4444/grid/register -port 5557 -maxSessions 6 -browser browserName="internet explorer",javascriptEnabled=true,maxInstances=3,version=<span class="replace">9</span>,platform=ANY
+					</div>
+					<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
+					<p>Here is an <a href="./examples/python-selenium-examples/simple/simple_carousel_test.py" target="_blank">example</a> of a really simple test.</p>
+				</div>
+				</div>
 				</article>
 				<!-- Loading footer with AJAX -->
 				<div class="footerPlaceholder"></div>

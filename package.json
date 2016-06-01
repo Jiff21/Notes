@@ -30,10 +30,11 @@
     "load-grunt-tasks": "~0.4.0",
     "nightwatch": "^0.6.1",
     "node-sass": "^3.1.2",
-    "phantomjs": "^1.9.18",
     "phantomcss": "^0.10.4",
+    "phantomjs": "^1.9.18",
     "selenium-server-standalone-jar": "^2.45.0",
-    "time-grunt": "~0.3.1"
+    "time-grunt": "~0.3.1",
+    "webdriverio": "^4.0.8"
   },
   "engines": {
     "node": ">=0.10.0"
