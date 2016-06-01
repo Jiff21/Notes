@@ -261,7 +261,11 @@ $example-background: #f9f2f4;
 	margin-bottom: 10px;
 	padding: 2px;
 	padding-left: 5px;
+	overflow-x: scroll;
+	width: auto;
+	white-space: nowrap;
 }
+
 
 /* Adding styling to tables */
 table {
