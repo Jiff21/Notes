@@ -2,13 +2,14 @@
 
 describe('The Sass and Less page', function() {
 
-	it('should have a visible less header after clicking a button', function async () {
+	it('should have a visible less header after clicking a button', function () {
 		return browser
 			.url('/sass.html')
-			.emit('log', 'About to Click Less Button')
-			.click(button="less")
-			.pause(4000)
-			.element('#lassy')
-			.expect(element.isVisible()).true;
+			.click('button=LESS')
+			.pause(2000)
+			.isVisible('#lassy').then(function(isVisible){
+				expect(isVisible).true;
+			})
+			.call(done);
 	});
 });
