@@ -34,6 +34,8 @@ alias git10Days="git log  --since=10.days"
 alias substatus="git submodule status"
 # Show full remote settings
 alias remotes="git remote --verbose"
+alias softback="git reset --soft HEAD~"
+alias hardback="git reset --hard HEAD~1"
 
 ###################################
 # For Homebrew:
