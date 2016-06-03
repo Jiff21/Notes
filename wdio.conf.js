@@ -64,12 +64,15 @@ exports.config = {
 		// maxInstances can get overwritten per capability. So if you have an in-house Selenium
 		// grid with only 5 firefox instance available you can make sure that not more than
 		// 5 instance gets started at a time.
-		maxInstances: 5,
-		//
-		browserName: 'chrome'
-		// }, {
 		// maxInstances: 5,
-		// browserName: 'firefox'
+		//
+		// browserName: 'chrome'
+		// }, {
+		maxInstances: 5,
+		browserName: 'firefox',
+		// exclude: [
+		// 	'exampledoesntworkinFF.js'
+		// ]
 	}],
 	//
 	// ===================
@@ -93,7 +96,7 @@ exports.config = {
 	//
 	// Set a base URL in order to shorten url command calls. If your url parameter starts
 	// with "/", then the base url gets prepended.
-	baseUrl: 'http://0.0.0.0:9000/Views/',
+	baseUrl: 'http://0.0.0.0:9000/Views',
 	//
 	// Default timeout for all waitFor* commands.
 	waitforTimeout: 10000,
