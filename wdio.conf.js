@@ -38,6 +38,9 @@ exports.config = {
 		],
 		edge: [
 			'./test/webdriverio/spec/edgecase/*.js'
+		],
+		ip: [
+			'./test/webdriverio/spec/robust/sass_and_less_robust.js'
 		]
 	},
 	// Patterns to exclude.
