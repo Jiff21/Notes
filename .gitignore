@@ -26,3 +26,7 @@ test/e2e.screenshots
 test/phantomcss/failures
 test/phantomcss/results
 test/phantomcss/screenshots
+
+// Ignores for webdriverio
+
+test/webdriverio/screenshots/

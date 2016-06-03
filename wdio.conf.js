@@ -28,12 +28,18 @@ exports.config = {
 		'./test/webdriverio/spec/robust/*.js',
 		'./test/webdriverio/spec/edgecase/*.js'
 	],
-	// suites: [
-	//     smoke: [
-	//         './test/webdriverio/spec/exmaple1.js',
-	//         './test/webdriverio/spec/exmaple2.js'
-	//     ]
-	// ]
+	suites: {
+		smoke: [
+			'./test/webdriverio/spec/smoke/*.js'
+		],
+		robust: [
+			'./test/webdriverio/spec/main/*.js',
+			'./test/webdriverio/spec/robust/*.js'
+		],
+		edge: [
+			'./test/webdriverio/spec/edgecase/*.js'
+		]
+	},
 	// Patterns to exclude.
 	exclude: [
 		// 'path/to/excluded/files'

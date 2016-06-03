@@ -66,12 +66,13 @@ You can also register a Virtualbox with.
 
 	selenium-standalone start -- -role node -hub http://[YOUR COMPUTERS IP ADDRESS]:4444/grid/register -port 5557 -maxSessions 6 -browser browserName="internet explorer",javascriptEnabled=true,maxInstances=3,version=9,platform=ANY
 
-The to run tests.
+Then to run all tests.
 
 	./node_modules/.bin/wdio wdio.conf.js
 
+Or you can run a suite of tests defined in wdio.conf.js like so.
 
-
+	./node_modules/.bin/wdio wdio.conf.js --suite edge
 
 
 ##### Flow
