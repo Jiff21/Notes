@@ -2,8 +2,7 @@
 
 describe('The home page', function() {
 
-	// Synchronous test style.
-	it('Should have more at least 20 grid links', function () {
+	it('Should have more at least 20 grid links', function async () {
 		return browser
 			.url('/Home.html')
 			.elements('.home-grid a').then(function(res){
