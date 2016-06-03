@@ -48,6 +48,32 @@ To Run PhatomCSS tests:
 
 *PhantomCSS Notes: it keeps trying to get you to run it with --web-security=no --version, but that breaks it on OSX 10.10.5. Also, ignore the warning about not running tests. On Rebase no tests are run intentionally. On run command it must be referring to end.js or start.js file as you can see tests running and producing results.
 
+
+#### Webdriverio
+
+If you haven't already install selenium-standalone & mocha.
+
+	sudo npm install selenium-standalone -g
+	sudo npm install mocha -g
+
+Start a Selenium Server. Run the following commands in two terminal tabs.
+
+	selenium-standalone start -- -role hub
+	selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -maxSessions 31 -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY
+
+
+You can also register a Virtualbox with.
+
+	selenium-standalone start -- -role node -hub http://[YOUR COMPUTERS IP ADDRESS]:4444/grid/register -port 5557 -maxSessions 6 -browser browserName="internet explorer",javascriptEnabled=true,maxInstances=3,version=9,platform=ANY
+
+The to run tests.
+
+	./node_modules/.bin/wdio wdio.conf.js
+
+
+
+
+
 ##### Flow
 To Install Flow. 
 
@@ -60,3 +86,5 @@ To run flow either do:
 Or start a Flow Server to check as you edit.
 
 	flow
+
+
