@@ -15,6 +15,7 @@ alias old-web="cd /Applications/MAMP/htdocs"
 # top10, top 10 processes in cpu
 alias top10="ps -eo %cpu,pid,comm | sort -nr | head -10"
 alias deviceproxy="~/Documents/Tools/ntlmaps/main.py"
+alias wdio-run="./node_modules/.bin/wdio wdio.conf.js"
 
 
 ###################################
