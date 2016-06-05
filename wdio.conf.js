@@ -10,7 +10,7 @@ exports.config = {
 	// according to your user and key information. However, if you are using a private Selenium
 	// backend you should define the host address, port, and path here.
 	//
-	host: '192.168.2.1',
+	host: '192.168.0.7',
 	port: 5556,
 	path: '/wd/hub',
 	
