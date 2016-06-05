@@ -194,8 +194,9 @@ exports.config = {
 	// },
 	//
 	// Function to be executed before a test (in Mocha/Jasmine) or a step (in Cucumber) starts.
-	// beforeTest: function (test) {
-	// },
+	beforeTest: function (test) {
+		browser.windowHandleSize({width: 1200, height: 1000})
+	},
 	//
 	// Runs before a WebdriverIO command gets executed.
 	// beforeCommand: function (commandName, args) {

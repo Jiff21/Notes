@@ -5,8 +5,11 @@ describe('The Sass and Less page', function() {
 	it('should have a visible less header after clicking the LESS button', function () {
 		return browser
 			.url('/sass.html')
+			// .waitForVisible('button=LESS', 1000, false)
+			.pause(8000)
 			.click('button=LESS')
-			.getText('h3=SASS').then(function(text){
+			.pause(2000)
+			.getText('h3#sassy').then(function(text){
 				expect(text).to.contain('LESS')
 			})
 			// .pause(2000)
