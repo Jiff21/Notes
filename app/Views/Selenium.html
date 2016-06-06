@@ -50,7 +50,7 @@
 					<li><span class="example">driver.find_element_by_xpath("<span class="replace">//div[@id='a']//a[@class='click']</span>")</span></li>
 					<li><span class="example">driver.find_element_by_partial_link_text("<span class="replace">replace</span>")</span></li>
 					<li><span class="example">driver.find_element_by_link_text("<span class="replace">replace</span>")</span></li>
-					<li><span class="example">driver.find_element_by_css_selector("<span class="replace">example</span>")</span></li>
+					<li><span class="example">driver.find_element_by_css_selector("<span class="replace">h1.example</span>")</span></li>
 					<li><span class="example">driver.find_element_by_class_name("<span class="replace">aside</span>")</span></li>
 				</ul>
 
@@ -61,9 +61,9 @@
 					<li><span class="example">driver.find_element(By.ID, '<span class="replace">signIn</span>')</span></li>
 					<li><span class="example">driver.find_element(By.NAME, '<span class="replace">signIn</span>')</span></li>
 					<li><span class="example">driver.find_element(By.XPATH, '//button[text()="Sign In"]')</span></li>
-					<li><span class="example">driver.find_element(By.PARTIAL_LINK_TEXT, '<span class="replace">sign</span>')</span></li>
-					<li><span class="example">driver.find_element(By.LINK_TEXT, '<span class="replace">signIn</span>')</span></li>
-					<li><span class="example">driver.find_element(By.CSS_SELECTOR, '<span class="replace">.signIn</span>')</span></li>
+					<li><span class="example">driver.find_element(By.PARTIAL_LINK_TEXT, '<span class="replace">Sign</span>')</span></li>
+					<li><span class="example">driver.find_element(By.LINK_TEXT, '<span class="replace">Sign In</span>')</span></li>
+					<li><span class="example">driver.find_element(By.CSS_SELECTOR, '<span class="replace">a#signIn</span>')</span></li>
 					<li><span class="example">driver.find_element(By.CLASS_NAME, '<span class="replace">signIn</span>')</span></li>
 					<li><span class="example">driver.find_element(By.TAG_NAME, '<span class="replace">signIn</span>')</span></li>
 				</ul>
@@ -79,6 +79,11 @@
 					wait = WebDriverWait(driver, <span class="replace">10</span>)<br>
 					element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'<span class="replace">message-results</span>')))
 				</div>
+				<p>You could also use implicit waits</p>
+				<div class="example2">
+					driver.implicitly_wait(<span class="replace">1</span>)
+				</div>
+				
 
 				<h4>Send Keys</h4>
 				<div class="example2">from selenium.webdriver.common.keys import Keys</div>
@@ -98,6 +103,22 @@
 					try: self.assertEqual(len(posts), 1)<br>
 					except AssertionError, e: self.verificationErrors.append('Search ' + str(len(posts)) + ' many posts when there should only be 1 for no port message.')
 				</div>
+				<div class="example2 example-overscroll">
+					welcome_message = driver.find_element(By.CSS_SELECTOR, 'h1#welcome-message')<br>
+					if current_hour < 12:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(welcome_message.text, 'Ohayōgozaimasu')<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )<br>
+					elif current_hour <= 24:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(welcome_message.text, 'Kon&#39;nichiwa')<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )<br>
+					else<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(welcome_message.text, 'Dude where did you get that clock?')<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )
+
+				</div>
+				<h4>Properties</h4>		
+				<p>You can get the text of an element simply by adding <span class="term">.text</span> to it:</p>
+				<div class="example2"><span class="replace">example_elem</span>.text</div>
 
 				<h4>Action Chains</h4>		
 				<p>Be sure to load in actions chains for webdrivers</p>
