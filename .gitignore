@@ -27,5 +27,5 @@ test/phantomcss/failures
 test/phantomcss/results
 test/phantomcss/screenshots
 
-##Python
+// Python
 test/python-selenium/*.pyc
