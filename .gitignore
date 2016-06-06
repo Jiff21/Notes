@@ -26,3 +26,6 @@ test/e2e.screenshots
 test/phantomcss/failures
 test/phantomcss/results
 test/phantomcss/screenshots
+
+##Python
+python-selenium/__pycache__
