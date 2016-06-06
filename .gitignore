@@ -28,4 +28,4 @@ test/phantomcss/results
 test/phantomcss/screenshots
 
 ##Python
-python-selenium/__pycache__
+test/python-selenium/*.pyc

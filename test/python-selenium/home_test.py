@@ -22,7 +22,7 @@ class Homepage_Lucky_Button(unittest.TestCase):
 			self.drivers.append(driver)
 		self.verificationErrors = []
 
-	def test_hero_carousel(self):
+	def test_feeling_lucky(self):
 		for driver in self.drivers:
 			driver.get(globes.base_url + '/Home.html')
 			feeling_lucky_button = driver.find_element(By.CSS_SELECTOR, 'a.btn-success')
@@ -37,7 +37,7 @@ class Homepage_Lucky_Button(unittest.TestCase):
 			self.assertEqual([], self.verificationErrors)
 
 # ## Counts the card elements on the page.
-class Homepage(unittest.TestCase):
+class Homepage_grids(unittest.TestCase):
 
 	def setUp(self):
 		self.drivers = []
@@ -48,7 +48,7 @@ class Homepage(unittest.TestCase):
 			self.drivers.append(driver)
 		self.verificationErrors = []
 
-	def test_hero_carousel(self):
+	def test_homepage_grids(self):
 		for driver in self.drivers:
 			driver.get(globes.base_url + '/Home.html')
 			get_all_the_cards = driver.find_elements(By.CSS_SELECTOR, 'div.col-md-3.col-sm-4.col-xs-6')
@@ -63,30 +63,35 @@ class Homepage(unittest.TestCase):
 
 
 
-# ## Counts the card elements on the page.
-# class Homepage(unittest.TestCase):
+# ## Makes sure the Jumbotron loads
+class Homepage_Jumbotron_elements(unittest.TestCase):
 
-# 	def setUp(self):
-# 		self.drivers = []
-# 		for driver_instance in globes.desired_cap:
-# 			driver = webdriver.Remote(
-# 				command_executor=globes.selenium_server_url,
-# 				desired_capabilities=driver_instance)
-# 			self.drivers.append(driver)
-# 		self.verificationErrors = []
+	def setUp(self):
+		self.drivers = []
+		for driver_instance in globes.desired_cap:
+			driver = webdriver.Remote(
+				command_executor=globes.selenium_server_url,
+				desired_capabilities=driver_instance)
+			self.drivers.append(driver)
+		self.verificationErrors = []
 
-# 	def test_hero_carousel(self):
-# 		for driver in self.drivers:
-# 			driver.get(globes.base_url + '/Home.html')
-# 			get_all_the_cards = driver.find_elements(By.CSS_SELECTOR, 'h6.home-grid')
-# 			counted_card = len(get_all_the_cards)
-# 			try: self.assertTrue(hero_carousel.is_displayed())
-# 			except AssertionError, e: self.verificationErrors.append("home_test: Hero Carousel was not visible")
+	def test_jumbotron_elemenst(self):
+		for driver in self.drivers:
+			driver.get(globes.base_url + '/Home.html')
+			jumbo_diaz = driver.find_element(By.CSS_SELECTOR, 'div.jumbotron')
+			try: self.assertTrue(jumbo_diaz.is_displayed())
+			except AssertionError, e: self.verificationErrors.append("home_test: Jumbotron Div Missing")
+			dark_overlay = driver.find_element(By.CSS_SELECTOR, 'div.dark-layer')
+			try: self.assertTrue(dark_overlay.is_displayed())
+			except AssertionError, e: self.verificationErrors.append("home_test: Missing Jumbotron text overlay")
+			greeting_header = driver.find_element(By.CSS_SELECTOR, 'h1#welcome-message')
+			try: self.assertTrue(greeting_header.is_displayed())
+			except AssertionError, e: self.verificationErrors.append("home_test: Missing Jumbotron Header")
 
-# 	def tearDown(self):
-# 		for driver in self.drivers:
-# 			driver.quit()
-# 			self.assertEqual([], self.verificationErrors)
+	def tearDown(self):
+		for driver in self.drivers:
+			driver.quit()
+			self.assertEqual([], self.verificationErrors)
 
 
 
