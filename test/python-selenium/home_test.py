@@ -36,7 +36,34 @@ class Homepage_Lucky_Button(unittest.TestCase):
 			driver.quit()
 			self.assertEqual([], self.verificationErrors)
 
-# ## Starter test that goes to homepage and makes sure the Hero Carousel is visible.
+# ## Counts the card elements on the page.
+class Homepage(unittest.TestCase):
+
+	def setUp(self):
+		self.drivers = []
+		for driver_instance in globes.desired_cap:
+			driver = webdriver.Remote(
+				command_executor=globes.selenium_server_url,
+				desired_capabilities=driver_instance)
+			self.drivers.append(driver)
+		self.verificationErrors = []
+
+	def test_hero_carousel(self):
+		for driver in self.drivers:
+			driver.get(globes.base_url + '/Home.html')
+			get_all_the_cards = driver.find_elements(By.CSS_SELECTOR, 'div.col-md-3.col-sm-4.col-xs-6')
+			counted_cards = len(get_all_the_cards)
+			try: self.assertEqual(counted_cards,20)
+			except AssertionError, e: self.verificationErrors.append("home_test: Not enoungh cards on home, there were only " + str(counted_cards) )
+
+	def tearDown(self):
+		for driver in self.drivers:
+			driver.quit()
+			self.assertEqual([], self.verificationErrors)
+
+
+
+# ## Counts the card elements on the page.
 # class Homepage(unittest.TestCase):
 
 # 	def setUp(self):
@@ -51,10 +78,8 @@ class Homepage_Lucky_Button(unittest.TestCase):
 # 	def test_hero_carousel(self):
 # 		for driver in self.drivers:
 # 			driver.get(globes.base_url + '/Home.html')
-# 			feeling_lucky_button = driver.find_element(By.CSS_SELECTOR, 'a.btn-success')
-# 			feeling_lucky_button.click()
-# 			current_url = driver.current_url()
-# 			console.log(current_url)
+# 			get_all_the_cards = driver.find_elements(By.CSS_SELECTOR, 'h6.home-grid')
+# 			counted_card = len(get_all_the_cards)
 # 			try: self.assertTrue(hero_carousel.is_displayed())
 # 			except AssertionError, e: self.verificationErrors.append("home_test: Hero Carousel was not visible")
 
