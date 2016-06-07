@@ -129,6 +129,12 @@
 				<h4>Properties</h4>		
 				<p>You can get the text of an element simply by adding <span class="term">.text</span> to it:</p>
 				<div class="example2"><span class="replace">example_elem</span>.text</div>
+				<p>You get the css propert off an element with the following command. Note that it returns it in rgba(###, ###, ###, 1) format.</p>
+				<div class="example2"><span class="replace">elem_name</span>.value_of_css_property('<span class="replace">background-color</span>')</div>
+				<p>You can get the elements size with. It will return in a dict like so {'width': 250, 'height': 250}</p>
+				<div class="example2"><span class="replace">elem_name</span>.size</div>
+				<p>You can get the elements size with. It will return in a dict like so {'y': 800, 'x': 300}</p>
+				<div class="example2"><span class="replace">elem_name</span>.location</div>
 
 				<h4>Action Chains</h4>		
 				<p>Be sure to load in actions chains for webdrivers</p>

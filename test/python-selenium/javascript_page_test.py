@@ -15,33 +15,33 @@ import datetime
 
 
 ## Starter test that goes to home, hits Feeeling Lucky Button, then makes sure you're not on Home URL.
-# class fpo_alert_button(unittest.TestCase):
+class fpo_alert_button(unittest.TestCase):
 
-# 	def setUp(self):
-# 		self.drivers = []
-# 		for driver_instance in globes.desired_cap:
-# 			driver = webdriver.Remote(
-# 				command_executor=globes.selenium_server_url,
-# 				desired_capabilities=driver_instance)
-# 			self.drivers.append(driver)
-# 		self.verificationErrors = []
+	def setUp(self):
+		self.drivers = []
+		for driver_instance in globes.desired_cap:
+			driver = webdriver.Remote(
+				command_executor=globes.selenium_server_url,
+				desired_capabilities=driver_instance)
+			self.drivers.append(driver)
+		self.verificationErrors = []
 
-# 	def test_alert_button(self):
-# 		for driver in self.drivers:
-# 			driver.get(globes.base_url + '/javascript.html')
-# 			# jumbo_button = driver.find_element(By.XPATH, '//a[text()="FPO"]')
-# 			jumbo_button = driver.find_element(By.XPATH, '//div/p[2]/a')
-# 			jumbo_button.click()
-# 			driver.implicitly_wait(2)
-# 			try: WebDriverWait(driver, 3).until(EC.alert_is_present(),'Timed out waiting for PA creation ' + 'confirmation popup to appear.')
-# 			except AssertionError, e: self.verificationErrors.append("javascript_page: Alert did not appear.")
-# 			alert = driver.switch_to_alert()
-# 			alert.accept()
+	def test_alert_button(self):
+		for driver in self.drivers:
+			driver.get(globes.base_url + '/javascript.html')
+			# jumbo_button = driver.find_element(By.XPATH, '//a[text()="FPO"]')
+			jumbo_button = driver.find_element(By.XPATH, '//div/p[2]/a')
+			jumbo_button.click()
+			driver.implicitly_wait(2)
+			try: WebDriverWait(driver, 3).until(EC.alert_is_present(),'Timed out waiting for PA creation ' + 'confirmation popup to appear.')
+			except AssertionError, e: self.verificationErrors.append("javascript_page: Alert did not appear.")
+			alert = driver.switch_to_alert()
+			alert.accept()
 
-# 	def tearDown(self):
-# 		for driver in self.drivers:
-# 			driver.quit()
-# 			self.assertEqual([], self.verificationErrors)
+	def tearDown(self):
+		for driver in self.drivers:
+			driver.quit()
+			self.assertEqual([], self.verificationErrors)
 
 
 class fpo_alert_button(unittest.TestCase):
