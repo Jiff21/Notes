@@ -64,13 +64,13 @@ Or start a Flow Server to check as you edit.
 
 ---
 
-#### Python Selenium
+##### Python Selenium
 
 Install Selenium [Standalone](https://www.npmjs.com/package/selenium-standalone)
 
 	pip install selenium-standalone
 
-### Running Tests
+###### Setting Up Hub
 Before running tests, start a selenium-standalone server. with this command:
 
 	selenium-standalone start
@@ -89,6 +89,8 @@ You can also specify how many sessions can be going on the node at the same time
 	selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -maxSessions 31 -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY
 
 Then if you go to [http://localhost:4444/grid/console](http://localhost:4444/grid/console) address you should see register machines.
+
+###### Running Tests
 
 To run all tests cd into the project folder. Then run the following command.
 
