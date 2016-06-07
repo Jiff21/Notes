@@ -94,15 +94,15 @@ Then if you go to [http://localhost:4444/grid/console](http://localhost:4444/gri
 
 To run all tests cd into the project folder. Then run the following command.
 
-	python test/python-selenium/full_runner.py
+	grunt test:pyfull
 
 To run individual tests you can simply run
 
 	python python-selenium-tests/test_name_test.py
 
-You can also run a suite of tests by importing them into a file. See full_suite.py or smoke_suite.py for how the tests are imported. Or run a set of commands with something like this.
+You can also run a suite of tests by importing them into a file. See full_runner.py or smoke_suite.py for how the tests are imported. Or run a set of commands with something like this.
 
-	python python-selenium-tests/smoke_suite.py
+	grunt: test:pysmoke
 
 With this setup, remember to configure the full_runner and suites by editing the imports as you add tests.
 

@@ -166,6 +166,7 @@ module.exports = function (grunt) {
 				}
 			},
 
+
 			// 'all': {
 			//     argv: {
 			//         env: 'chrome,firefox,safari'
@@ -176,6 +177,20 @@ module.exports = function (grunt) {
 			// }
 		},
 
+		shell: {
+			pythonFullRun: {
+				options: {
+					stdout: true
+				},
+				command: 'python test/python-selenium/full_runner.py'
+			},
+			pythonSmoke: {
+				options: {
+					stdout: true
+				},
+				command: 'python test/python-selenium/full_runner.py'
+			}
+		},
 		// Compiles Sass to CSS and generates necessary files if requested
 		sass: {
 			options: {
@@ -446,6 +461,14 @@ module.exports = function (grunt) {
 		'nightwatch'
 	]);
 
+	// This task will kick off the "End to End" tests 1 time, requires 'grunt serve' to be running
+	grunt.registerTask('test:pyfull', [
+		'shell:pythonFullRun'
+	]);
+
+	grunt.registerTask('test:pysmoke', [
+		'shell:pythonSmoke'
+	]);
 
 	grunt.registerTask('build', [
 		'clean:dist',
