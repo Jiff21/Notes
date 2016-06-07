@@ -21,7 +21,7 @@ class Less_And_Sass_Buttons(unittest.TestCase):
 			self.drivers.append(driver)
 		self.verificationErrors = []
 
-	def less_and_sass_button_show_correct_content(self):
+	def test_sass_and_less_button(self):
 		for driver in self.drivers:
 			driver.get(globes.base_url + '/sass.html')
 			sass_header = driver.find_element(By.CSS_SELECTOR, 'h3#sassy')
