@@ -79,12 +79,15 @@
 					wait = WebDriverWait(driver, <span class="replace">10</span>)<br>
 					element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'<span class="replace">message-results</span>')))
 				</div>
-				<p>You could also use implicit waits</p>
+				<p>You could also use implicit waits, normally the dom will look for an element and immediately fail if not there. You can change it to implicitly_wait which will poll the dom every X number of seconds before failing, but this will change for the whole webdriver instance and slow down other tests.</p>
 				<div class="example2">
 					driver.implicitly_wait(<span class="replace">1</span>)
 				</div>
-				
-
+				<p>If you want to slow down the test a specific amount of time while debugging.</p>
+				<div class="example2">
+					import time <br><br>
+					time.sleep(<span class="replace">1</span>)
+				</div>
 				<h4>Send Keys</h4>
 				<div class="example2">from selenium.webdriver.common.keys import Keys</div>
 				<ul>
