@@ -94,28 +94,38 @@
 				<p>A list of <a href="http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.keys" target="_blank">special keys</a>, like return above.</p>
 				
 				<h4>Example Assertions</h4>
+				<h6>Check page source</h6>
 				<div class="example2">
 					try: assert "<span class="replace">No posts were found...</span>" not in driver.page_source<br>
 					except AssertionError, e: self.verificationErrors.append("<span class="replace">No Posts incorrectly appeared.</span>")
 				</div>
+				<h6>Count elements on page</h6>
 				<div class="example2">
-					posts = driver.find_elements_by_class_name('post')<br>
+					posts = driver.find_elements_by_class_name('<span class="replace">post</span>')<br>
 					try: self.assertEqual(len(posts), 1)<br>
-					except AssertionError, e: self.verificationErrors.append('Search ' + str(len(posts)) + ' many posts when there should only be 1 for no port message.')
+					except AssertionError, e: self.verificationErrors.append('Search ' + str(len(posts)) + ' many posts when there should only be 1.')
 				</div>
+				<h6>Elements text in an if statement</h6>
 				<div class="example2 example-overscroll">
-					welcome_message = driver.find_element(By.CSS_SELECTOR, 'h1#welcome-message')<br>
+					welcome_message = driver.find_element(By.CSS_SELECTOR, '<span class="replace">h1#welcome-message</span>')<br>
 					if current_hour < 12:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(welcome_message.text, 'Ohayōgozaimasu')<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Ohayōgozaimasu')<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )<br>
 					elif current_hour <= 24:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(welcome_message.text, 'Kon&#39;nichiwa')<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Kon&#39;nichiwa')<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )<br>
 					else<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(welcome_message.text, 'Dude where did you get that clock?')<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Dude where did you get that clock?')<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )
-
 				</div>
+				<h6>Displayed / Visible </h6>
+				<div class="example2 example-overscroll">
+				try: self.assertTrue(<span class="replace">elem_name</span>.is_displayed())<br>
+				except AssertionError, e: self.verificationErrors.append("Element not visible when it should be.")
+				</div>
+
+							
+
 				<h4>Properties</h4>		
 				<p>You can get the text of an element simply by adding <span class="term">.text</span> to it:</p>
 				<div class="example2"><span class="replace">example_elem</span>.text</div>
