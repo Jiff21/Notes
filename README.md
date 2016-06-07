@@ -68,8 +68,7 @@ Or start a Flow Server to check as you edit.
 
 Install Selenium [Standalone](https://www.npmjs.com/package/selenium-standalone)
 
-	sudo npm install selenium-standalone@latest -g
-	sudo selenium-standalone install
+	pip install selenium-standalone
 
 ### Running Tests
 Before running tests, start a selenium-standalone server. with this command:
@@ -113,8 +112,8 @@ Registering a Node from a Virtualbox can be accoplished with the following comma
 
 Notes: 
 
-* Useful documentation can be found [here](http://selenium-python.readthedocs.io/) (don't miss the webdriver part [here](http://selenium-python.readthedocs.io/api.html#locate-elements-by),  and [here](http://www.seleniumhq.org/docs/).
+* Useful documentation can be found [here](http://selenium-python.readthedocs.io/) and [here](http://www.seleniumhq.org/docs/).
 
 * Remember to get webdriver to work in Safari you must install [safari driver extension](http://selenium-release.storage.googleapis.com/index.html?path=2.48/). At the link find SafariDriver.safariextz once downloaded drag it into extensions found in Safari Preferences.
 
-* I did like nosetests a little better for the --process but had to work around [this](http://apple.stackexchange.com/questions/209572/how-to-use-pip-after-the-os-x-el-capitan-upgrade) by installing python somewhere else. But then that seemed to break NPM after an upgrade. Using pyTest until that is sorted.
+* I did like nosetests a little better for the --process but had to work around [this](http://apple.stackexchange.com/questions/209572/how-to-use-pip-after-the-os-x-el-capitan-upgrade) by installing python somewhere else. But then that seemed to break NPM after an upgrade. Using pyTest or manual runner for now.
