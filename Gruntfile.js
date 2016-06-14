@@ -422,7 +422,7 @@ module.exports = function (grunt) {
 		}
 
 		grunt.task.run([
-			'build',
+			// 'build', // Turned off as there is no production envorment and it slows everything down.
 			'clean:server',
 			'concurrent:server',
 			'autoprefixer',

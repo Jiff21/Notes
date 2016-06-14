@@ -26,29 +26,46 @@ class check_width_for_half_full_divs(unittest.TestCase):
 			time.sleep(3)
 			left_nav_comp_divs = driver.find_elements(By.CSS_SELECTOR, 'div.left-nav-companion')
 			top_left_nav_comp = left_nav_comp_divs[0].size
+			left_nav_comp_location = left_nav_comp_divs[0].location
 			try: self.assertEqual(top_left_nav_comp["width"], 770)
 			except AssertionError, e: self.verificationErrors.append("git_page: 1. At Medium-Desktop size half full div wasn't 770. Instead: " + str(top_left_nav_comp["width"]) )
+
+			try: self.assertEqual(left_nav_comp_location["x"], 375)
+			except AssertionError, e: self.verificationErrors.append("git_page: 2. At Medium-Desktop size half full div wasn't 375. Instead: " + str(left_nav_comp_location["x"]) )
+
 			## Testing Medium width responsiveness
 			driver.set_window_size(991,1000)
 			time.sleep(3)
 			left_nav_comp_divs = driver.find_elements(By.CSS_SELECTOR, 'div.left-nav-companion')
 			top_left_nav_comp = left_nav_comp_divs[0].size
+			left_nav_comp_location = left_nav_comp_divs[0].location
 			try: self.assertEqual(top_left_nav_comp["width"], 631)
-			except AssertionError, e: self.verificationErrors.append("git_page: 2. At Small-Desktop size half full div wasn't 631. Instead: " + str(top_left_nav_comp["width"]) )
+			except AssertionError, e: self.verificationErrors.append("git_page: 3. At Small-Desktop size half full div wasn't 631. Instead: " + str(top_left_nav_comp["width"]) )
+			try: self.assertEqual(left_nav_comp_location["x"], 312)
+			except AssertionError, e: self.verificationErrors.append("git_page: 4. At Medium-Desktop size half full div wasn't 312. Instead: " + str(left_nav_comp_location["x"]) )
+
 			## Testing Tablet width responsiveness
 			driver.set_window_size(767,1000)
 			time.sleep(3)
 			left_nav_comp_divs = driver.find_elements(By.CSS_SELECTOR, 'div.left-nav-companion')
 			top_left_nav_comp = left_nav_comp_divs[0].size
+			left_nav_comp_location = left_nav_comp_divs[0].location
 			try: self.assertEqual(top_left_nav_comp["width"], 737)
-			except AssertionError, e: self.verificationErrors.append("git_page: 3. At Tablet size half full div wasn't 737. Instead: " + str(top_left_nav_comp["width"]) )
+			except AssertionError, e: self.verificationErrors.append("git_page: 5. At Tablet size half full div wasn't 737. Instead: " + str(top_left_nav_comp["width"]) )
+			try: self.assertEqual(left_nav_comp_location["x"], 15)
+			except AssertionError, e: self.verificationErrors.append("git_page: 6. At Medium-Desktop size half full div wasn't 15. Instead: " + str(left_nav_comp_location["x"]) )
+
 			## Testing Mobile width responsiveness
 			driver.set_window_size(400,1000)
 			time.sleep(3)
 			left_nav_comp_divs = driver.find_elements(By.CSS_SELECTOR, 'div.left-nav-companion')
 			top_left_nav_comp = left_nav_comp_divs[0].size
+			left_nav_comp_location = left_nav_comp_divs[0].location
 			try: self.assertEqual(top_left_nav_comp["width"], 370)
-			except AssertionError, e: self.verificationErrors.append("git_page: 4. At Mobile size half full div wasn't 370. Instead: " + str(top_left_nav_comp["width"]) )
+			except AssertionError, e: self.verificationErrors.append("git_page: 7. At Mobile size half full div wasn't 370. Instead: " + str(top_left_nav_comp["width"]) )
+			try: self.assertEqual(left_nav_comp_location["x"], 15)
+			except AssertionError, e: self.verificationErrors.append("git_page: 8. At Medium-Desktop size half full div wasn't 15. Instead: " + str(left_nav_comp_location["x"]) )
+
 
 	def tearDown(self):
 		for driver in self.drivers:

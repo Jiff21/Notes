@@ -969,12 +969,12 @@ $sublime-gold: #daa520;
 		}
 	}
 
-	@media(min-width: $screen-phone){
+	@media(min-width: $screen-sm){
 		.pro-fixed {
 			left: 0px;
 			position: fixed;
 			top: 70px;
-			width: 30%;
+			width: 100%;
 		}
 
 		.main {
@@ -988,11 +988,17 @@ $sublime-gold: #daa520;
 				font-size: 2em;
 			}
 		}
+		.pro-fixed {
+			left: 0px;
+			position: fixed;
+			top: 70px;
+			width: 30%;
+		}
 	}
 
-	@media(min-width: $screen-desktop){
+	// @media(min-width: $screen-desktop){
 
-	}	
+	// }	
 
 }
 
