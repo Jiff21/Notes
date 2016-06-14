@@ -146,7 +146,7 @@ module.exports = function (grunt) {
 		jasmine: {
 			all: {
 				options: {
-					specs: 'test/spec/{,*/}*.js'
+					specs: 'test/jasmine/spec/{,*/}*.js'
 				}
 			}
 		},

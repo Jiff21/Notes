@@ -19,13 +19,11 @@ Use:
 ---
 
 ## Running Tests
-To run all tests:
-
-	grunt test
 
 ##### Nightwatch
 To run Nightwatch tests
 
+	grunt serve
 	grunt test:e2e
 
 ##### Jasmine
