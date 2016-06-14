@@ -111,10 +111,10 @@
 				<h6>Elements text in an if statement</h6>
 				<div class="example2 example-overscroll">
 					welcome_message = driver.find_element(By.CSS_SELECTOR, '<span class="replace">h1#welcome-message</span>')<br>
-					if current_hour < 12:<br>
+					if current_hour &lt; 12<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Ohayōgozaimasu')<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )<br>
-					elif current_hour <= 24:<br>
+					elif current_hour &lt;= 24:<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Kon&#39;nichiwa')<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )<br>
 					else<br>
