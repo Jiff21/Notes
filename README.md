@@ -16,51 +16,10 @@ Use:
 
 	grunt serve
 
+
 ---
 
 ## Running Tests
-
-##### Nightwatch
-To run Nightwatch tests
-
-	grunt serve
-	grunt test:e2e
-
-##### Jasmine
-To run Jasmine Tests (to be written)
-
-	grunt test:unit
-
-##### PhantomCSS
-To setup PhantomCSS test
-
-	grunt serve
-	casperjs test test/phantomcss/specs/ --pre=./test/phantomcss/start.js --includes=./test/phantomcss/inc.js --post=./test/phantomcss/end.js  --ssl-protocol=any --ignore-ssl-errors=true --rebase
-
-
-To Run PhatomCSS tests:
-
-	grunt serve
-	casperjs test test/phantomcss/specs/ --pre=./test/phantomcss/start.js --includes=./test/phantomcss/inc.js --post=./test/phantomcss/end.js  --ssl-protocol=any --ignore-ssl-errors=true
-
-
-*PhantomCSS Notes: it keeps trying to get you to run it with --web-security=no --version, but that breaks it on OSX 10.10.5. Also, ignore the warning about not running tests. On Rebase no tests are run intentionally. On run command it must be referring to end.js or start.js file as you can see tests running and producing results.
-
-##### Flow
-To Install Flow. 
-
-	npm install --save-dev flow-bin -g
-
-To run flow either do:
-
-	flow check
-
-Or start a Flow Server to check as you edit.
-
-	flow
-
-
----
 
 ##### Python Selenium
 
@@ -120,3 +79,48 @@ Notes:
 * Remember to get webdriver to work in Safari you must install [safari driver extension](http://selenium-release.storage.googleapis.com/index.html?path=2.48/). At the link find SafariDriver.safariextz once downloaded drag it into extensions found in Safari Preferences.
 
 * I did like nosetests a little better for the --process but had to work around [this](http://apple.stackexchange.com/questions/209572/how-to-use-pip-after-the-os-x-el-capitan-upgrade) by installing python somewhere else. But then that seemed to break NPM after an upgrade. Using pyTest or manual runner for now.
+
+
+##### Nightwatch
+To run Nightwatch tests
+
+	grunt serve
+	grunt test:e2e
+
+
+
+##### Jasmine
+To run Jasmine Tests (to be written)
+
+	grunt test:unit
+
+
+##### PhantomCSS
+To setup PhantomCSS test
+
+	grunt serve
+	casperjs test test/phantomcss/specs/ --pre=./test/phantomcss/start.js --includes=./test/phantomcss/inc.js --post=./test/phantomcss/end.js  --ssl-protocol=any --ignore-ssl-errors=true --rebase
+
+
+To Run PhatomCSS tests:
+
+	grunt serve
+	casperjs test test/phantomcss/specs/ --pre=./test/phantomcss/start.js --includes=./test/phantomcss/inc.js --post=./test/phantomcss/end.js  --ssl-protocol=any --ignore-ssl-errors=true
+
+
+*PhantomCSS Notes: it keeps trying to get you to run it with --web-security=no --version, but that breaks it on OSX 10.10.5. Also, ignore the warning about not running tests. On Rebase no tests are run intentionally. On run command it must be referring to end.js or start.js file as you can see tests running and producing results.
+
+##### Flow
+To Install Flow. 
+
+	npm install --save-dev flow-bin -g
+
+To run flow either do:
+
+	flow check
+
+Or start a Flow Server to check as you edit.
+
+	flow
+
+---
