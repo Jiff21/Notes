@@ -25,25 +25,25 @@ class check_width_for_half_full_divs(unittest.TestCase):
 			half_full_divs = driver.find_elements(By.CSS_SELECTOR, 'div.half-full')
 			third_half_full = half_full_divs[0].size
 			try: self.assertEqual(third_half_full["width"], 450)
-			except AssertionError, e: self.verificationErrors.append("terminal_page: 1. At Default size half full div wasn't 450. Instead: " + str(third_half_full["width"]) )
+			except AssertionError, e: self.verificationErrors.append("terminal_page: 1. At Medium-Desktop size half full div wasn't 450. Instead: " + str(third_half_full["width"]) )
 			## Testing Medium width responsiveness
 			driver.set_window_size(991,1000)
 			half_full_divs = driver.find_elements(By.CSS_SELECTOR, 'div.half-full')
 			third_half_full = half_full_divs[0].size
 			try: self.assertEqual(third_half_full["width"], 375)
-			except AssertionError, e: self.verificationErrors.append("terminal_page: 2. At Default size half full div wasn't 375. Instead: " + str(third_half_full["width"]) )
+			except AssertionError, e: self.verificationErrors.append("terminal_page: 2. At Small-Desktop size half full div wasn't 375. Instead: " + str(third_half_full["width"]) )
 			## Testing Tablet width responsiveness
 			driver.set_window_size(767,1000)
 			half_full_divs = driver.find_elements(By.CSS_SELECTOR, 'div.half-full')
 			third_half_full = half_full_divs[0].size
 			try: self.assertEqual(third_half_full["width"], 767)
-			except AssertionError, e: self.verificationErrors.append("terminal_page: 3. At Default size half full div wasn't 767. Instead: " + str(third_half_full["width"]) )
+			except AssertionError, e: self.verificationErrors.append("terminal_page: 3. At Tablet size half full div wasn't 767. Instead: " + str(third_half_full["width"]) )
 			## Testing Mobile width responsiveness
 			driver.set_window_size(400,1000)
 			half_full_divs = driver.find_elements(By.CSS_SELECTOR, 'div.half-full')
 			third_half_full = half_full_divs[0].size
 			try: self.assertEqual(third_half_full["width"], 400)
-			except AssertionError, e: self.verificationErrors.append("terminal_page: 4. At Default size half full div wasn't 370. Instead: " + str(third_half_full["width"]) )
+			except AssertionError, e: self.verificationErrors.append("terminal_page: 4. At mobile size half full div wasn't 370. Instead: " + str(third_half_full["width"]) )
 
 	def tearDown(self):
 		for driver in self.drivers:
