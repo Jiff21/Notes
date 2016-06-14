@@ -188,7 +188,7 @@ module.exports = function (grunt) {
 				options: {
 					stdout: true
 				},
-				command: 'python test/python-selenium/full_runner.py'
+				command: 'python test/python-selenium/smoke_suite.py'
 			}
 		},
 		// Compiles Sass to CSS and generates necessary files if requested
