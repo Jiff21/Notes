@@ -5,9 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from globes import *
-import time
 
-class check_width_for_half_full_divs(unittest.TestCase):
+class check_width_of_left_nav_companion(unittest.TestCase):
 
 	def setUp(self):
 		self.drivers = []
@@ -18,12 +17,11 @@ class check_width_for_half_full_divs(unittest.TestCase):
 			self.drivers.append(driver)
 		self.verificationErrors = []
 
-	def test_div_width(self):
+	def test_left_nav_comp_div_width(self):
 		for driver in self.drivers:
 			driver.get(globes.base_url + '/git.html')
 			driver.set_window_size(1200,1000)
 			## Testing Large width responsiveness
-			time.sleep(3)
 			left_nav_comp_divs = driver.find_elements(By.CSS_SELECTOR, 'div.left-nav-companion')
 			top_left_nav_comp = left_nav_comp_divs[0].size
 			left_nav_comp_location = left_nav_comp_divs[0].location
@@ -35,7 +33,6 @@ class check_width_for_half_full_divs(unittest.TestCase):
 
 			## Testing Medium width responsiveness
 			driver.set_window_size(991,1000)
-			time.sleep(3)
 			left_nav_comp_divs = driver.find_elements(By.CSS_SELECTOR, 'div.left-nav-companion')
 			top_left_nav_comp = left_nav_comp_divs[0].size
 			left_nav_comp_location = left_nav_comp_divs[0].location
@@ -46,7 +43,6 @@ class check_width_for_half_full_divs(unittest.TestCase):
 
 			## Testing Tablet width responsiveness
 			driver.set_window_size(767,1000)
-			time.sleep(3)
 			left_nav_comp_divs = driver.find_elements(By.CSS_SELECTOR, 'div.left-nav-companion')
 			top_left_nav_comp = left_nav_comp_divs[0].size
 			left_nav_comp_location = left_nav_comp_divs[0].location
@@ -57,7 +53,6 @@ class check_width_for_half_full_divs(unittest.TestCase):
 
 			## Testing Mobile width responsiveness
 			driver.set_window_size(400,1000)
-			time.sleep(3)
 			left_nav_comp_divs = driver.find_elements(By.CSS_SELECTOR, 'div.left-nav-companion')
 			top_left_nav_comp = left_nav_comp_divs[0].size
 			left_nav_comp_location = left_nav_comp_divs[0].location
