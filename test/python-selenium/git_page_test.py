@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoSuchElementException
 from globes import *
+import time
 
 class check_width_of_left_nav_companion(unittest.TestCase):
 
@@ -61,6 +62,20 @@ class check_width_of_left_nav_companion(unittest.TestCase):
 			try: self.assertEqual(left_nav_comp_location["x"], 15)
 			except AssertionError, e: self.verificationErrors.append("git_page: 8. At Medium-Desktop size half full div wasn't 15. Instead: " + str(left_nav_comp_location["x"]) )
 
+
+	def test_left_nav_scrolls_with_page(self):
+		for driver in self.drivers:
+			driver.get(globes.base_url + '/git.html')
+			branches_anchor = driver.find_element_by_link_text("Branches")
+
+			try: self.assertEqual(branches_anchor.location["y"], 248)
+			except AssertionError, e: self.verificationErrors.append("git_page: 1. Branches Anchor Link didn't started at 248. Instead: " + str(branches_anchor.location["y"]) )
+		
+			branches_anchor.click()
+			time.sleep(2)
+
+			try: self.assertEqual(branches_anchor.location["y"], 2019)
+			except AssertionError, e: self.verificationErrors.append("git_page: 2. Branches Anchor Link didn't move to 2019 after using link. Instead: " + str(branches_anchor.location["y"]) )
 
 	def tearDown(self):
 		for driver in self.drivers:
