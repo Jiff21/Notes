@@ -162,6 +162,11 @@
 					<div class="example2 example-overscroll">
 						browser.executeScript(&#39;localStorage.removeItem("<span class="replace">ngStorage-file-name-en_us</span>");&#39;);
 					</div>
+					<h6>Upload a file</h6>
+					<div class="example2 example-overscroll">
+						var uploadInput = element(by.css("input[type=file]"));<br>
+						uploadInput.sendKeys("path/to/file");
+					</div>
 					<h4>Managing Expectations</h4>
 					<p>
 					Some good thing to check examples:<br>
@@ -182,6 +187,7 @@
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val.height).toEqual(9);<br>
 						})
 					</div>
+
 					<h4>Ignore Syncronization</h4>
 					<p>A lot of people use Ignore Syncronization for the wrong reasons (like when rootEl can&#39;t be found. But it is should really only be used it you have to leave an angular site. If you&#39;re dealing with Google Oauth you may have to turn it on and off.</p>
 					<h6>After 2.5</h6>
