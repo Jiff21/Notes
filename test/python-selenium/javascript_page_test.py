@@ -42,7 +42,7 @@ class fpo_alert_button(unittest.TestCase):
 			self.assertEqual([], self.verificationErrors)
 
 
-# class In_Action_Button(unittest.TestCase):
+class In_Action_Button(unittest.TestCase):
 
 	def setUp(self):
 		self.drivers = []
