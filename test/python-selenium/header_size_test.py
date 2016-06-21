@@ -44,19 +44,19 @@ class Header_Should_Match_Window_Size(unittest.TestCase):
 				## Testing Large width responsiveness
 				driver.set_window_size(1200,1000)
 				try: self.assertEqual(nav_bar_full.size["width"], 1200)
-				except AssertionError, e: self.verificationErrors.append("header_size_test: 1. At Medium-Desktop size half full header wasn't 1200. Instead: " + str(nav_bar_full.size["width"]) )
+				except AssertionError, e: self.verificationErrors.append("header_size_test: 1. At Medium-Desktop size half full header wasn't 1200 on " + str(link) + " page. Instead: " + str(nav_bar_full.size["width"]) )
 				## Testing Medium width responsiveness
 				driver.set_window_size(991,1000)
 				try: self.assertEqual(nav_bar_full.size["width"], 991)
-				except AssertionError, e: self.verificationErrors.append("header_size_test: 2. At Small-Desktop size half full header wasn't 991. Instead: " + str(nav_bar_full.size["width"]) )
+				except AssertionError, e: self.verificationErrors.append("header_size_test: 2. At Small-Desktop size half full header wasn't 991 on " + str(link) + " page. Instead: " + str(nav_bar_full.size["width"]) )
 				## Testing Tablet width responsiveness
 				driver.set_window_size(767,1000)
 				try: self.assertEqual(nav_bar_full.size["width"], 767)
-				except AssertionError, e: self.verificationErrors.append("header_size_test: 3. At Tablet size half full header wasn't 767. Instead: " + str(nav_bar_full.size["width"]) )
+				except AssertionError, e: self.verificationErrors.append("header_size_test: 3. At Tablet size half full header wasn't 767 on " + str(link) + " page. Instead: " + str(nav_bar_full.size["width"]) )
 				## Testing Mobile width responsiveness
 				driver.set_window_size(400,1000)
 				try: self.assertEqual(nav_bar_full.size["width"], 400)
-				except AssertionError, e: self.verificationErrors.append("header_size_test: 4. At Phone size half full header wasn't 400. Instead: " + str(nav_bar_full.size["width"]) )
+				except AssertionError, e: self.verificationErrors.append("header_size_test: 4. At Phone size half full header wasn't 400 on " + str(link) + " page. Instead: " + str(nav_bar_full.size["width"]) )
 
 
 	def tearDown(self):
