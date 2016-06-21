@@ -47,13 +47,13 @@ class Header_Should_Match_Window_Size(unittest.TestCase):
 				except AssertionError, e: self.verificationErrors.append("header_size_test: 1. At Medium-Desktop size half full header wasn't 1200 on " + str(link) + " page. Instead: " + str(nav_bar_full.size["width"]) )
 
 				## Testing Medium width responsiveness
-				driver.set_window_size(991,1000)
-				try: self.assertEqual(nav_bar_full.size["width"], 991)
-				except AssertionError, e: self.verificationErrors.append("header_size_test: 2. At Small-Desktop size half full header wasn't 991 on " + str(link) + " page. Instead: " + str(nav_bar_full.size["width"]) )
+				driver.set_window_size(768,1000)
+				try: self.assertEqual(nav_bar_full.size["width"], 768)
+				except AssertionError, e: self.verificationErrors.append("header_size_test: 2. At Small-Desktop size half full header wasn't 768 on " + str(link) + " page. Instead: " + str(nav_bar_full.size["width"]) )
 				## Testing Tablet width responsiveness
-				driver.set_window_size(767,1000)
-				try: self.assertEqual(nav_bar_full.size["width"], 767)
-				except AssertionError, e: self.verificationErrors.append("header_size_test: 3. At Tablet size half full header wasn't 767 on " + str(link) + " page. Instead: " + str(nav_bar_full.size["width"]) )
+				driver.set_window_size(650,1000)
+				try: self.assertEqual(nav_bar_full.size["width"], 650)
+				except AssertionError, e: self.verificationErrors.append("header_size_test: 3. At Tablet size half full header wasn't 650 on " + str(link) + " page. Instead: " + str(nav_bar_full.size["width"]) )
 				## Testing Mobile width responsiveness
 				driver.set_window_size(400,1000)
 				try: self.assertEqual(nav_bar_full.size["width"], 400)

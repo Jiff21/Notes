@@ -47,15 +47,15 @@ class Page_Should_Not_Scroll_Larger_Than_Window(unittest.TestCase):
 				try: self.assertEqual(real_doc_width, 1200)
 				except AssertionError, e: self.verificationErrors.append("large_string_window_test: At Medium-Desktop size page scrollWidth wasn't 1200 on " + str(link) + " page. Instead: " + str(real_doc_width) )
 				## Testing Medium width responsiveness
-				driver.set_window_size(991,1000)
+				driver.set_window_size(768,1000)
 				real_doc_width = driver.execute_script("return document.body.scrollWidth")
-				try: self.assertEqual(real_doc_width, 991)
-				except AssertionError, e: self.verificationErrors.append("large_string_window_test: At Small-Desktop size page scrollWidth wasn't 991 on " + str(link) + " page. Instead: " + str(real_doc_width) )
+				try: self.assertEqual(real_doc_width, 768)
+				except AssertionError, e: self.verificationErrors.append("large_string_window_test: At Small-Desktop size page scrollWidth wasn't 768 on " + str(link) + " page. Instead: " + str(real_doc_width) )
 				## Testing Tablet width responsiveness
-				driver.set_window_size(767,1000)
+				driver.set_window_size(650,1000)
 				real_doc_width = driver.execute_script("return document.body.scrollWidth")
-				try: self.assertEqual(real_doc_width, 767)
-				except AssertionError, e: self.verificationErrors.append("large_string_window_test: At Tablet size page scrollWidth wasn't 767 on "  + str(link) + " page. Instead: " + str(real_doc_width) )
+				try: self.assertEqual(real_doc_width, 650)
+				except AssertionError, e: self.verificationErrors.append("large_string_window_test: At Tablet size page scrollWidth wasn't 650 on "  + str(link) + " page. Instead: " + str(real_doc_width) )
 				## Testing Mobile width responsiveness
 				driver.set_window_size(400,1000)
 				real_doc_width = driver.execute_script("return document.body.scrollWidth")
