@@ -11,6 +11,7 @@ class Header_Should_Match_Window_Size(unittest.TestCase):
 
 	def setUp(self):
 		self.drivers = []
+		self.maxDiff = 'none'
 		for driver_instance in globes.desired_cap:
 			driver = webdriver.Remote(
 				command_executor=globes.selenium_server_url,
@@ -29,10 +30,13 @@ class Header_Should_Match_Window_Size(unittest.TestCase):
 				# print current_link.get_attribute("href")
 				link_url = current_link.get_attribute("href")
 				all_nav_links.append(link_url)
-			
+
+			try: self.assertTrue(len(all_nav_links) > 0 )
+			except AssertionError, e: self.verificationErrors.append("header_size_test: Expected more urls: " + str(len(all_nav_links)))
+
 
 			for link in all_nav_links:
-				print "getting link " + str(link)
+				print "test_header_at_different_window_sizes: Getting link " + str(link)
 				# nav_bar_size = nav_bar_full.size
 				driver.get(link)
 				nav_bar_full = driver.find_element(By.CSS_SELECTOR, 'div.navbar-fixed-top')

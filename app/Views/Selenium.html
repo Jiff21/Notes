@@ -121,6 +121,14 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Dude where did you get that clock?')<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )
 				</div>
+				<h6>More Than a certain amount</h6>
+				<div class="example2 example-overscroll">
+					nav_bar_links = driver.find_elements(By.CSS_SELECTOR, '.dropdown-menu &#62; li &#62; a')<br>
+					try: self.assertTrue(len(nav_bar_links) &#62; 2)<br>
+					except AssertionError, e: self.verificationErrors.append("Expected more urls: " + str(len(nav_bar_links)))
+				</div>
+				
+
 				<h6>Displayed / Visible </h6>
 				<div class="example2 example-overscroll">
 				try: self.assertTrue(<span class="replace">elem_name</span>.is_displayed())<br>
@@ -138,6 +146,8 @@
 				<div class="example2"><span class="replace">elem_name</span>.size</div>
 				<p>You can get the elements size with. It will return in a dict like so {'y': 800, 'x': 300}</p>
 				<div class="example2"><span class="replace">elem_name</span>.location</div>
+				<p>With execute script</p>
+				<div class="example2">driver.execute_script("return <span class="replace"> document.body.scrollWidth</span>")</div>
 
 				<h4>Interacting With Browser</h4>		
 				<p>Set Window Size</p>
