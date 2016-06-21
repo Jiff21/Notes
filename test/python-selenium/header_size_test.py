@@ -7,7 +7,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from globes import *
-
+import time
 
 ## Starter test that goes to home, hits Feeeling Lucky Button, then makes sure you're not on Home URL.
 class Header_Should_Match_Window_Size(unittest.TestCase):
@@ -38,9 +38,9 @@ class Header_Should_Match_Window_Size(unittest.TestCase):
 
 			for link in all_nav_links:
 				print "getting link " + str(link)
-				nav_bar_full = driver.find_element(By.CSS_SELECTOR, 'div.navbar-fixed-top')
 				# nav_bar_size = nav_bar_full.size
 				driver.get(link)
+				nav_bar_full = driver.find_element(By.CSS_SELECTOR, 'div.navbar-fixed-top')
 				## Testing Large width responsiveness
 				driver.set_window_size(1200,1000)
 				try: self.assertEqual(nav_bar_full.size["width"], 1200)
@@ -58,10 +58,6 @@ class Header_Should_Match_Window_Size(unittest.TestCase):
 				try: self.assertEqual(nav_bar_full.size["width"], 400)
 				except AssertionError, e: self.verificationErrors.append("header_size_test: 4. At Phone size half full header wasn't 400. Instead: " + str(nav_bar_full.size["width"]) )
 
-
-			## Testing Tablet width responsiveness
-			try: self.assertEqual(len(nav_bar_links), 'SASS')
-			except AssertionError, e: self.verificationErrors.append("header_size: Got this instead.  " + str(len(nav_bar_links)))
 
 	def tearDown(self):
 		for driver in self.drivers:
