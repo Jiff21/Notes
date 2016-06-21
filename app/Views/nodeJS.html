@@ -32,7 +32,8 @@
 					</div>
 				</div>
 			</div>
-			<article class="col-md-9 col-sm-8 col-xs-10">
+
+			<article class="col-md-9 col-sm-8 col-xs-12">
 				<h3>Basics</h3>
 				<p>
 					When declaring a variable, forgetting to prefix it with <span class="term">var</span> will cause it to be a global varaible. The <span class="term">Event Loop</span> starts automatically with Node. All input and output in node is non-blocking, essentially asynchonous calls. Since the node sever continues to run a listener, when you set a specific value it stay in memory.
@@ -114,7 +115,7 @@
 
 				<h3>Unit Testing</h3>
 				<p><span class="term">Supertest</span> is a testing tool that lets you mimic http request that allows you to write tests not bound to a port and chain requests, in this version we used it in conjunction with <span class="term">should</span> and a globally installed instance of the <span class="term">Mocha</span> framwork. Here's an example of a test spec that takes an instance of the app built in helpers that uses spec'd data and runs a test using supertest.</p>
-				<div class="example2">
+				<div class="example2 example-overscroll">
 					var app = require('./helpers/app'),<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;should = require('should'),<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#;supertest = require('supertest');<br><br>
@@ -149,7 +150,8 @@
 				<h3>Mongo DB &amp; Mongoose</h3>
 				<p>You can either download a <a href="https://www.mongodb.org/">MondoDB</a> to install locally or set up a free one at <a href="https://mongolab.com/">Mongo Lab</a>.</p> If you do it locally you have to place the binary files in an executible path, if you use mongolab you can find the address below "To connect using a driver via the standard URI" after setup. Mongoose can be installed on the project simply with  <code class="example">sudo npm install --save mongoose</code>, it manages the connection between a Mondodb and your application. Set up schemas to ensure normalized data, they can put in a schema folder and look like <code class="example">module.exports = mongoose.model('Flight', {number: Number, origin: String,});</code>. Now that you're handling the backend, you need to be responsible for sesssions. You can do this with connect-mongo. The session is always stored in the request (req). 
 			</article>
-			<aside class="col-md-3 col-sm-4 col-xs-2">
+
+			<aside class="col-md-3 col-sm-4 col-xs-12">
 				<h4> Quick Notes </h4>
 				<p> 
 					For all things: <a href="https://nodejs.org/" target="_blank">nodejs</a>.
