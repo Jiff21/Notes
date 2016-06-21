@@ -7,7 +7,7 @@ from globes import *
 import time
 
 ## Starter test that goes to home, hits Feeeling Lucky Button, then makes sure you're not on Home URL.
-class Header_Should_Match_Window_Size(unittest.TestCase):
+class Page_Should_Not_Scroll_Larger_Than_Window(unittest.TestCase):
 
 	def setUp(self):
 		self.drivers = []
@@ -19,7 +19,7 @@ class Header_Should_Match_Window_Size(unittest.TestCase):
 			self.drivers.append(driver)
 		self.verificationErrors = []
 
-	def test_header_at_different_window_sizes(self):
+	def test_for_overscroll(self):
 		for driver in self.drivers:
 			driver.get(globes.base_url + '/sass.html')
 			all_nav_links = []
@@ -42,22 +42,22 @@ class Header_Should_Match_Window_Size(unittest.TestCase):
 				real_doc_width = driver.execute_script("return document.body.scrollWidth")
 				## Testing Large width responsiveness
 				try: self.assertEqual(real_doc_width, 1200)
-				except AssertionError, e: self.verificationErrors.append("header_size_test: 1. At Medium-Desktop size page scrollWidth wasn't 1200 on " + str(link) + " page. Instead: " + str(real_doc_width) )
+				except AssertionError, e: self.verificationErrors.append("large_string_window_test: 1. At Medium-Desktop size page scrollWidth wasn't 1200 on " + str(link) + " page. Instead: " + str(real_doc_width) )
 				## Testing Medium width responsiveness
 				driver.set_window_size(991,1000)
 				real_doc_width = driver.execute_script("return document.body.scrollWidth")
 				try: self.assertEqual(real_doc_width, 991)
-				except AssertionError, e: self.verificationErrors.append("header_size_test: 2. At Small-Desktop size page scrollWidth wasn't 991 on " + str(link) + " page. Instead: " + str(real_doc_width) )
+				except AssertionError, e: self.verificationErrors.append("large_string_window_test: 2. At Small-Desktop size page scrollWidth wasn't 991 on " + str(link) + " page. Instead: " + str(real_doc_width) )
 				## Testing Tablet width responsiveness
 				driver.set_window_size(767,1000)
 				real_doc_width = driver.execute_script("return document.body.scrollWidth")
 				try: self.assertEqual(real_doc_width, 767)
-				except AssertionError, e: self.verificationErrors.append("header_size_test: 3. At Tablet size page scrollWidth wasn't 767 on "  + str(link) + " page. Instead: " + str(real_doc_width) )
+				except AssertionError, e: self.verificationErrors.append("large_string_window_test: 3. At Tablet size page scrollWidth wasn't 767 on "  + str(link) + " page. Instead: " + str(real_doc_width) )
 				## Testing Mobile width responsiveness
 				driver.set_window_size(400,1000)
 				real_doc_width = driver.execute_script("return document.body.scrollWidth")
 				try: self.assertEqual(real_doc_width, 400)
-				except AssertionError, e: self.verificationErrors.append("header_size_test: 4. At Phone size page scrollWidth wasn't 400 on " + str(link) + " page. Instead: " + str(real_doc_width) )
+				except AssertionError, e: self.verificationErrors.append("large_string_window_test: 4. At Phone size page scrollWidth wasn't 400 on " + str(link) + " page. Instead: " + str(real_doc_width) )
 
 
 	def tearDown(self):
