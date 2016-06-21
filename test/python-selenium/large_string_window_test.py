@@ -36,8 +36,7 @@ class Page_Should_Not_Scroll_Larger_Than_Window(unittest.TestCase):
 			
 
 			for link in all_nav_links:
-				print "test_for_overscroll: Getting link " + str(link)
-				# nav_bar_size = nav_bar_full.size
+				# print "test_for_overscroll: Getting link " + str(link)
 				driver.get(link)
 				nav_bar_full = driver.find_element(By.CSS_SELECTOR, 'div.navbar-fixed-top')
 				# body = driver.find_element(By.TAG_NAME, 'body')

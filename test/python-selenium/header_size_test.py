@@ -36,8 +36,7 @@ class Header_Should_Match_Window_Size(unittest.TestCase):
 
 
 			for link in all_nav_links:
-				print "test_header_at_different_window_sizes: Getting link " + str(link)
-				# nav_bar_size = nav_bar_full.size
+				# print "test_header_at_different_window_sizes: Getting link " + str(link)
 				driver.get(link)
 				nav_bar_full = driver.find_element(By.CSS_SELECTOR, 'div.navbar-fixed-top')
 
