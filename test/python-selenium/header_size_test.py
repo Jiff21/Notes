@@ -26,22 +26,39 @@ class Header_Should_Match_Window_Size(unittest.TestCase):
 			driver.get(globes.base_url + '/sass.html')
 			nav_bar_links = driver.find_elements(By.CSS_SELECTOR, '.dropdown-menu > li > a')
 			total_menu_items = len(nav_bar_links)
+			all_nav_links = []
 
 			
-
+			## Get all links in nav.
 			for current_link in nav_bar_links:
-				print current_link.text
-				# current_link.click()
+				print current_link.get_attribute("href")
+				link_url = current_link.get_attribute("href")
+				all_nav_links.append(link_url)
+			
+
+			for link in all_nav_links:
+				print "getting link " + str(link)
+				nav_bar_full = driver.find_element(By.CSS_SELECTOR, 'div.navbar-fixed-top')
+				# nav_bar_size = nav_bar_full.size
+				driver.get(link)
+				## Testing Large width responsiveness
+				driver.set_window_size(1200,1000)
+				try: self.assertEqual(nav_bar_full.size["width"], 1200)
+				except AssertionError, e: self.verificationErrors.append("header_size_test: 1. At Medium-Desktop size half full header wasn't 1200. Instead: " + str(nav_bar_full.size["width"]) )
+				## Testing Medium width responsiveness
+				driver.set_window_size(991,1000)
+				try: self.assertEqual(nav_bar_full.size["width"], 991)
+				except AssertionError, e: self.verificationErrors.append("header_size_test: 2. At Small-Desktop size half full header wasn't 991. Instead: " + str(nav_bar_full.size["width"]) )
+				## Testing Tablet width responsiveness
+				driver.set_window_size(767,1000)
+				try: self.assertEqual(nav_bar_full.size["width"], 767)
+				except AssertionError, e: self.verificationErrors.append("header_size_test: 3. At Tablet size half full header wasn't 767. Instead: " + str(nav_bar_full.size["width"]) )
+				## Testing Mobile width responsiveness
+				driver.set_window_size(400,1000)
+				try: self.assertEqual(nav_bar_full.size["width"], 400)
+				except AssertionError, e: self.verificationErrors.append("header_size_test: 4. At Phone size half full header wasn't 400. Instead: " + str(nav_bar_full.size["width"]) )
 
 
-			nav_bar_full = driver.find_element(By.CSS_SELECTOR, 'div.navbar-fixed-top')
-
-			## Testing Medium width responsiveness
-			driver.set_window_size(991,1000)
-			nav_bar_size = nav_bar_full.size
-
-			try: self.assertEqual(nav_bar_size["width"], 991)
-			except AssertionError, e: self.verificationErrors.append("header_size: 2. At Small-Desktop size half full div wasn't 375. Instead: " + str(nav_bar_size["width"]) )
 			## Testing Tablet width responsiveness
 			try: self.assertEqual(len(nav_bar_links), 'SASS')
 			except AssertionError, e: self.verificationErrors.append("header_size: Got this instead.  " + str(len(nav_bar_links)))
