@@ -24,14 +24,14 @@ class Header_Should_Match_Window_Size(unittest.TestCase):
 	def test_header_at_different_window_sizes(self):
 		for driver in self.drivers:
 			driver.get(globes.base_url + '/sass.html')
+			all_nav_links = []
 			nav_bar_links = driver.find_elements(By.CSS_SELECTOR, '.dropdown-menu > li > a')
 			total_menu_items = len(nav_bar_links)
-			all_nav_links = []
 
 			
 			## Get all links in nav.
 			for current_link in nav_bar_links:
-				print current_link.get_attribute("href")
+				# print current_link.get_attribute("href")
 				link_url = current_link.get_attribute("href")
 				all_nav_links.append(link_url)
 			
