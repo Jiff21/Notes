@@ -658,6 +658,14 @@ $scat-blue: #add8e6;
 			content: $my-linebreak;
 			white-space: pre;
 		}
+
+		.scat-overscroll {
+			overflow-x: scroll;
+			width: auto;
+			white-space: nowrap;
+		}
+
+
 	}
 }
 
