@@ -43,7 +43,7 @@ class Check_All_Images_For_Errors(unittest.TestCase):
 					r = requests.get(current_link)
 					print r.status_code
 					try: self.assertEqual(r.status_code, 200)
-					except AssertionError, e: self.verificationErrors.append('news_and_ideas: ' + current_link + ' delivered response code of ' + str(r.status_code))
+					except AssertionError, e: self.verificationErrors.append('On Page: ' + link + '. And this image: ' + current_link + ' delivered response code of ' + str(r.status_code))
 
 	def tearDown(self):
 		for driver in self.drivers:
