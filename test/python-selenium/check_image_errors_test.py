@@ -39,9 +39,9 @@ class Check_All_Images_For_Errors(unittest.TestCase):
 				images = driver.find_elements(By.TAG_NAME, 'img')
 				for image in images:
 					current_link = image.get_attribute("src")
-					print current_link
+					# print current_link
 					r = requests.get(current_link)
-					print r.status_code
+					# print r.status_code
 					try: self.assertEqual(r.status_code, 200)
 					except AssertionError, e: self.verificationErrors.append('On Page: ' + link + '. And this image: ' + current_link + ' delivered response code of ' + str(r.status_code))
 
