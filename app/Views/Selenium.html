@@ -127,7 +127,18 @@
 					try: self.assertTrue(len(nav_bar_links) &#62; 2)<br>
 					except AssertionError, e: self.verificationErrors.append("Expected more urls: " + str(len(nav_bar_links)))
 				</div>
-				
+
+				<h6>Check Image responses</h6>
+				<div class="example2 example-overscroll">
+					import requests <br><br>
+					for image in side_bar_images:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;current_link = image.get_attribute("src")<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;r = requests.get(current_link)<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(r.status_code, 200)<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append(current_link + ' delivered response code of ' + r.status_code)
+				</div>				
+
+
 
 				<h6>Displayed / Visible </h6>
 				<div class="example2 example-overscroll">
@@ -146,6 +157,8 @@
 				<div class="example2"><span class="replace">elem_name</span>.size</div>
 				<p>You can get the elements size with. It will return in a dict like so {'y': 800, 'x': 300}</p>
 				<div class="example2"><span class="replace">elem_name</span>.location</div>
+				<p>Get attribute.</p>
+				<div class="example2"><span class="replace">elem_name</span>.get_attribute('<span class="replace">href</span>')</div>
 				<p>With execute script</p>
 				<div class="example2">driver.execute_script("return <span class="replace"> document.body.scrollWidth</span>")</div>
 
