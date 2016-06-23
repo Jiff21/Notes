@@ -8,6 +8,7 @@ from globes import *
 class CheckLogsForErrors(unittest.TestCase):
 	def setUp(self):
 		self.drivers = []
+		self.maxDiff = 'None'
 		for driver_instance in globes.desired_cap:
 			driver = webdriver.Remote(
 				command_executor=globes.selenium_server_url,
@@ -36,7 +37,7 @@ class CheckLogsForErrors(unittest.TestCase):
 				for entry in driver.get_log('browser'):
 					print  entry['level']
 					try: assert "SEVERE" not in entry['level']
-					except AssertionError, e: self.verificationErrors.append("Expeced no errors in log instead got: " + str(entry))
+					except AssertionError, e: self.verificationErrors.append("On Page: " + link + ". Expeced no errors in log instead got: " + str(entry))
 
 	def tearDown(self):
 		for driver in self.drivers:
