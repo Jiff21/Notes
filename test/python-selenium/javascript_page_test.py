@@ -99,7 +99,7 @@ class No_Waldo(unittest.TestCase):
 
 			waldos = driver.find_elements_by_class_name('waldo')
 			try: self.assertEqual(len(waldos), 0)
-			except AssertionError, e: self.verificationErrors.append('Found ' + str(len(waldos)) + ' Waldo.')
+			except AssertionError, e: self.verificationErrors.append('Found ' + str(len(waldos)) + ' Waldi.')
 			
 
 	def tearDown(self):

@@ -139,10 +139,6 @@
 					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append(current_link + ' delivered response code of ' + r.status_code)
 				</div>				
 
-				<h6>Take a screenshot</h6>
-				<p>Need to look into this</p>
-				<div class="example2">driver.get_screenshot_as_file('/Screenshots/google.png')</div>
-
 				<h6>Displayed / Visible </h6>
 				<div class="example2 example-overscroll">
 				try: self.assertTrue(<span class="replace">elem_name</span>.is_displayed())<br>
@@ -172,7 +168,9 @@
 				<div class="example2">driver.set_window_position(<span class="replace">0</span>,<span class="replace">0</span>)</div>
 
 
-
+				<h4>Screenshot</h4>
+				<p>Need to look into this</p>
+				<div class="example2">driver.get_screenshot_as_file('/Screenshots/google.png')</div>
 
 
 				<h4>Action Chains</h4>		
