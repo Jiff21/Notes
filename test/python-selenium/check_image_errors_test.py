@@ -6,7 +6,6 @@ from globes import *
 import requests
 
 
-# Not working yet. But was trying to test number of elements in the sidebar. 
 class Check_All_Images_For_Errors(unittest.TestCase):
 	def setUp(self):
 		self.drivers = []

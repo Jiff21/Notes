@@ -70,5 +70,43 @@ class In_Action_Button(unittest.TestCase):
 			self.assertEqual([], self.verificationErrors)
 
 
+
+class No_Waldo(unittest.TestCase):
+
+	def setUp(self):
+		self.drivers = []
+		for driver_instance in globes.desired_cap:
+			driver = webdriver.Remote(
+				command_executor=globes.selenium_server_url,
+				desired_capabilities=driver_instance)
+			self.drivers.append(driver)
+		self.verificationErrors = []
+
+	def test_all_the_ways_assert_elem_not_present(self):
+		for driver in self.drivers:
+			driver.get(globes.base_url + '/selenium.html')
+
+			try: assert '<div id="Waldo" class="waldo">Example</div>' not in driver.page_source
+			except AssertionError, e: self.verificationErrors.append("Waldo incorrectly appeared in page source.")
+
+			try: 
+				with self.assertRaises(NoSuchElementException) as cm:
+					driver.find_element(By.CSS_SELECTOR, 'div.waldo')
+			except AssertionError, e: self.verificationErrors.append('Did not get NoSuchElementException looking for Waldo')
+
+			try: assert EC.presence_of_element_located( (By.XPATH, '//*[@id="Waldo"]') ) is not True
+			except AssertionError, e: self.verificationErrors.append('presence_of_element_located returned True for Waldo')
+
+			waldos = driver.find_elements_by_class_name('waldo')
+			try: self.assertEqual(len(waldos), 0)
+			except AssertionError, e: self.verificationErrors.append('Found ' + str(len(waldos)) + ' Waldo.')
+			
+
+	def tearDown(self):
+		for driver in self.drivers:
+			driver.quit()
+			self.assertEqual([], self.verificationErrors)
+
+
 if __name__ == "__main__":
 	unittest.main()
