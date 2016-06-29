@@ -79,6 +79,7 @@
 					wait = WebDriverWait(driver, <span class="replace">10</span>)<br>
 					element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'<span class="replace">message-results</span>')))
 				</div>
+				<p>Check out available <a href="https://seleniumhq.github.io/selenium/docs/api/py/webdriver_support/selenium.webdriver.support.expected_conditions.html" target="_blank">Expected Conditions</a></p>
 				<p>You could also use implicit waits, normally the dom will look for an element and immediately fail if not there. You can change it to implicitly_wait which will poll the dom every X number of seconds before failing, but this will change for the whole webdriver instance and slow down other tests.</p>
 				<div class="example2">
 					driver.implicitly_wait(<span class="replace">1</span>)
@@ -97,7 +98,7 @@
 				<p>A list of <a href="http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.keys" target="_blank">special keys</a>, like return above.</p>
 				
 				<h4>Example Assertions</h4>
-				<p>Check out available <a href="https://docs.python.org/2.7/library/unittest.html" target="_blank">Asserts</a></p>
+				<p>Check out available <a href="https://docs.python.org/2.7/library/unittest.html#test-cases" target="_blank">Asserts</a></p>
 				<h6>Check page source</h6>
 				<div class="example2">
 					try: assert "<span class="replace">No posts were found...</span>" not in driver.page_source<br>
