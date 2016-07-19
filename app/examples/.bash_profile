@@ -32,15 +32,25 @@ alias whathash="git log --oneline -n 1"
 # Usage would be 'gitlast ##' to get last X commits
 alias gitlast="git log --oneline -n"
 alias git10Days="git log  --since=10.days"
+# Get the full diff between two branches by adding branch1...branch2 after this.
+alias fulldiff="git --no-pager log --oneline"
 # SHOW STATUS OF SUB MODULES
 alias substatus="git submodule status"
 # Show full remote settings
 alias remotes="git remote --verbose"
 
+
 ###################################
 # For Homebrew:
 ###################################
 export PATH="$HOME/.node/bin:$PATH"
+export PATH="/usr/sbin:$PATH"
+
+##
+# Trying to specify path for NPM but will it break Android?
+###
+export PATH="/usr/local/bin:$PATH"
+
 
 ###################################
 # Adding Working Directory and Branch to Command Line
@@ -77,7 +87,4 @@ export ANDROID_HOME=$(dirname $(dirname $(which android)))
 export JAVA_HOME=$(/usr/libexec/java_home)
 
 
-##
-# Trying to specify path for NPM but will it break Android?
-###
-export PATH="/usr/local/bin:$PATH"
+
