@@ -260,7 +260,10 @@
 					action = TouchAction(wd)<br>
 					action.press(x=700, y=466).move_to(x=700, y=-200).release().perform()
 				</div>
-
+				<p>Currently <a href="https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/appium-bindings.md#swipe" target="_blank">swipe</a> seems to work better than this. </p>
+				<div class="example2">
+					driver.swipe(start_x=700, start_y=1400, end_x=700, end_y=200, duration=300)
+				</div>
 				<h4>Assertions</h4>
 				<div class="example2">
 					self.assertIsNotNone(<span class="replace">elem</span>)
