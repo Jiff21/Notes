@@ -28,7 +28,7 @@
 				<div class="jumbotron">
 					<div class="light-layer">
 					<h1>Python Notes</h1>
-					<p class="lead">You are <a href="http://learnpythonthehardway.org/book/ex1.html">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
+					<p class="lead">You are <a href="http://learnpythonthehardway.org/book/ex8.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
 					</div>
 				</div>
 			</div>
@@ -56,11 +56,14 @@
 					<li><code class="example">sorted(iterable[, cmp[, key[, reverse]]])</code>: Sort an object, details here.<a href="https://docs.python.org/2/library/functions.html#sorted" target="_blank"> See here.</a></li>
 			</div>
 			<div class="fourth yellow rts">
-				<h3>Stuff</h3>
+				<h3>Formatters</h3>
 			</div>
 			<div class="fourth yellow rtlist">
 					<ul>
-						<li>print "Hello World"</li>
+						<li>%s = variable for string replacements</li>
+						<li>%r = raw data for debugging, like strings display quotes around them</li>
+						<li>%d = for numbers not string</li>
+						<li>%% = Escape Percentage Symbol</li>
 					</ul>
 			</div>
 			<div class="fourth yellow rts">
@@ -88,6 +91,7 @@
 			</div>
 			<div class="full yellow">
 				<h3>This Project</h3>
+				<p>There is a difference between commas and plus's when combining strings. For example <span class="example">print "Hey" , var , "there."</span> would print "Hey you there." (if var = you). While <span>print "Hey " + you + " there."</span> would need spaces inserted. If you need to do it without spaces, you could do <span class="example">print "He's got %s eyes and %s hair." % (my_eyes, my_hair)</span>. It's bad form to have more than 80 characts on a line but you can two prints with a comma.</p>
 			</div>
 			</article>
 			<!-- Loading footer with AJAX -->
