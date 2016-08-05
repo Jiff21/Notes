@@ -310,7 +310,7 @@ var Helpers = function () {
 	this.eraseAccount = function (user, domain) {
 		var lAccount = 'account-' + user + domain,
 			lUser = user + domain;
-		sBrowser.get('https://testing-dot-go-training.appspot.com/ta_admin/user_manager/customuser/');
+		sBrowser.get('https://fake_url.com');
 		var correctAccount = sBrowser.findElement(by.id(lAccount))
 			.findElement(by.tagName('button'));
 		console.log('Selecting correct account.');
