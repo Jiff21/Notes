@@ -38,7 +38,7 @@ alias remotes="git remote --verbose"
 
 logsearch() {
     # parameters is $1, Excpects a regex
-    git log -p --oneline | grep $1
+    git log --oneline --grep=$1
 }
 
 changesearch(){
