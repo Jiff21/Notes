@@ -19,7 +19,6 @@ alias wdio-run="./node_modules/.bin/wdio wdio.conf.js"
 alias shub='selenium-standalone start -- -role hub'
 alias snode='selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -maxSessions 31 -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY'
 
-
 ###################################
 # Git :: More detailed commands
 ###################################
@@ -36,6 +35,15 @@ alias git10Days="git log  --since=10.days"
 alias substatus="git submodule status"
 # Show full remote settings
 alias remotes="git remote --verbose"
+
+logsearch() {
+    # parameters is $1, Excpects a regex
+    git log -p --oneline | grep $1
+}
+
+changesearch(){
+    git grep $1 $(git rev-list --all)
+}
 
 ###################################
 # For Homebrew:

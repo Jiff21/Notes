@@ -22,7 +22,11 @@ class check_width_for_half_full_divs(unittest.TestCase):
 		# runs applescript and waits for it to terminate. 
 		process = subprocess.Popen('mode=Edge osascript ~/Documents/Tools/thottle_on_nlc.scpt', shell=True, stdout=subprocess.PIPE)
 		process.wait()
-		print process.returncode
+		if process.returncode != 0:
+			print 'Turning NLC ON' , process.returncode , 'it should have been 0, so NLC may have not have turned on'
+			exit()
+		else:
+			print 'Turning NLC ON.' , process.returncode , 'success that should be a 0.'
 		self.drivers = []
 		for driver_instance in globes.desired_cap:
 			driver = webdriver.Remote(
@@ -63,7 +67,11 @@ class check_width_for_half_full_divs(unittest.TestCase):
 		# Turns off throttling at end of test.
 		process = subprocess.Popen('osascript ~/Documents/Tools/throttle_off_nlc.scpt', shell=True, stdout=subprocess.PIPE)
 		process.wait()
-		print process.returncode
+		if process.returncode != 0:
+			print 'Turning NLC Off' , process.returncode , 'it should have been 0, so NLC may have not been turned off.'
+			exit()
+		else:
+			print 'Turning NLC Off' , process.returncode , 'success that should be a 0.'
 		for driver in self.drivers:
 			driver.quit()
 			self.assertEqual([], self.verificationErrors)
