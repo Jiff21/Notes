@@ -133,6 +133,10 @@
 					<p>Cherry pick a commit from another branch:<br>
 					<div class="example2">git cherry-pick <span class="replace">HashOfChangeToMergeIn</span></div> or <div class="example2">git cherry-pick <span class="replace">olderHash</span>..<span class="replace">toNewerHash</span></div>
 					</p>
+					<p>Compare commits between two branches written by a specific user:<br>
+					git log  --author="Larry Meirosu" beyond-release-1.4..master
+					<div class="example2">git log  --author="<span class="replace">User Name</span>" <span class="replace">Older_Branch</span>..<span class="replace">Newer_Branch</span></div>
+					</p>					
 				</div>
 				<div id="ignore" class="left-nav-companion">
 					<h3>Git Settings</h3>

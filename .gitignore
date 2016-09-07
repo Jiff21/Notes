@@ -30,3 +30,5 @@ test/phantomcss/screenshots
 // Ignores for webdriverio
 
 test/webdriverio/screenshots/
+
+*.pyc

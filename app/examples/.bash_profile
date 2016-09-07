@@ -83,3 +83,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Trying to specify path for NPM but will it break Android?
 ###
 export PATH="/usr/local/bin:$PATH"
+
+
+##
+# Putting --user version of python on path to avoid El Capitan issues.
+##
+export PATH="~/Library/Python/2.7/bin:$PATH"
