@@ -28,7 +28,7 @@
 				<div class="jumbotron">
 					<div class="light-layer">
 					<h1>Python Notes</h1>
-					<p class="lead">You are <a href="http://learnpythonthehardway.org/book/ex8.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
+					<p class="lead">You are <a href="http://learnpythonthehardway.org/book/ex16.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
 					</div>
 				</div>
 			</div>
@@ -54,6 +54,9 @@
 					<li><code class="example">round(3.1234,2)</code>: 3.12, 5 rounds up</li>
 					<li><code class="example">open(name[, mode[, buffering]])</code>: <a href="https://docs.python.org/2/library/functions.html#open" target="_blank">See here.</a></li>
 					<li><code class="example">sorted(iterable[, cmp[, key[, reverse]]])</code>: Sort an object, details here.<a href="https://docs.python.org/2/library/functions.html#sorted" target="_blank"> See here.</a></li>
+					<li><code class="example">a = raw_input('<span class="replace">Prompt text here</span>')</code>: Prompt user for input<a href="https://docs.python.org/2/library/functions.html#raw_input" target="_blank"> See here.</a></li></li>
+					<li><span class="example">help()</span>Command line help module, like <span class="example">pydoc</span> but that is outside running python</li>
+					
 			</div>
 			<div class="fourth yellow rts">
 				<h3>Formatters</h3>
@@ -68,30 +71,50 @@
 			</div>
 			<div class="fourth yellow rts">
 				<div class="verticalAlign">
-				<h3>Test<span id="break"> </span>Shortcuts</h3>
+				<h3>Escape Sequences</h3>
 				</div>
 			</div>
 			<div class="fourth yellow rtlist">
 				<ul>
-					<li>i</li>
-					<li>x</li>
-					<li>d</li>
-					<li>x</li>
+					<li>\n = New line in a string of text.</li>
+					<li>\'= Esccape a single quote.</li>
+					<li>\" = escape a double quote</li>
+					<li>\t = tab</li>
+					<li>\\ = backslash</li>
+					<li>\N{name} = Character name in Unicode</li>
+					<li>\a = ASCII Bel (Beep)</li>
+					<li>\b = backspace </li>
+					<li>\xhh = Charcter with hex value of</li>
+					<li>u'\U0001F47E' = Unicode String</li>
 				</ul>
 			</div>
 			<div class="full blue">
-				<h3>Spies</h3>
+				<h3>File Functions</h3>
 			</div>
 			<div class="list-container">
 				<ul class="to-be-spliced">
-					<li>spyOn()</li>
-					<li>toHaveBeenCalled()</li>
-					<li>toHaveBeenCalledWith()</li>
+					<li><span class="example">close</span>: Closes the file.  Like File-&gt;Save.. in your editor.</li>
+					<li><span class="example">read</span>: Reads the contents of the file. You can assign the result to a variable.</li>
+					<li><span class="example">readline</span>: Reads just one line of a text file.</li>
+					<li><span class="example">truncate</span>: Empties the file. Watch out if you care about the file.</li>
+					<li><span class="example">write('<span class="replace">stuff</span>')</span>:Reads just one line of a text file.</li>
 				</ul>
 			</div>
 			<div class="full yellow">
 				<h3>This Project</h3>
 				<p>There is a difference between commas and plus's when combining strings. For example <span class="example">print "Hey" , var , "there."</span> would print "Hey you there." (if var = you). While <span>print "Hey " + you + " there."</span> would need spaces inserted. If you need to do it without spaces, you could do <span class="example">print "He's got %s eyes and %s hair." % (my_eyes, my_hair)</span>. It's bad form to have more than 80 characts on a line but you can two prints with a comma.</p>
+			</div>
+			<div class="full blue">
+				<h3>Modules</h3>
+				<p>Ou first example of importing a module is from <span class="term">sys</span>. As you know, at the top of the file you would import the module</p>
+				<div> class="example2">
+					from sys import argv <br><br>
+					script, first, second = argv<br><br>
+					print "The script is called:", script<br>
+					print "You like:", first<br>
+					print "You hate", second<br>
+				</div>
+				<p>On the 2nd lind of we unpack the arguments, then use them later. In terminal, this could be run with <span class="example">python filename.py dogs cats</span>. Remember command line arguments like raw_input come in as strings, you need to convert them if you need something else.</p>
 			</div>
 			</article>
 			<!-- Loading footer with AJAX -->
