@@ -288,7 +288,33 @@
 
 				<p>*For the purpose of this page we are setting this at the top of the test <span class="example">wd = self.driver</span></p>
 
+				<h4>Install at the time </h4>
+				<p>Prequisites Selenium &amp; Selenium Webdriver installed and setup. Xcode and Xcode-cli setup. Pip &amp; Homebrew Installed. These are an abbreviated version of the steps from their getting started guide I had to run to get it going. Android Home set and ADB setup. Java Development Kit installed as well.</p>
+				<div class="example2">
+					npm install -g appium </br>
+					pip install Appium-Python-Client</br>
+					brew install libimobiledevice</br>
+					npm install -g authorize-ios</br>
+					sudo authorize-ios</br>
+					brew install ios-webkit-debug-proxy</br>
+					brew install carthage</br>
+					Cd into appium folder. </br>
+					cd path/to/node_modules/appium/</br>
+					sudo npm install appium-ios-driver</br>
+					brew install --HEAD ideviceinstaller</br>
+				</div>
+				<p>Add location of Java Home to .bash_profile</p>
+				<div class="example2">
+					export JAVA_HOME=$(/usr/libexec/java_home)
+				</div>
+				<p>Also make sure Android Home is defined from your ADB Setup.</p>
+				<div class="example2">
+					export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools:~/Library/Android/sdk/build-tools
+export ANDROID_HOME=$(dirname $(dirname $(which android)))
+				</div>
 
+				<h4>Running</h4>
+				<p>Launch a selenium hub, a selenium node and run <span class="example">appium</span>. For iOS Safari you will need to also run <span class="example">ios_webkit_debug_proxy</span> and make sure you have a <a href="http://appium.io/slate/en/master/?ruby#running-your-tests-with-appium" target="_blank">distribution profile setup</a>.</p>
 			</div>
 			</div>
 
