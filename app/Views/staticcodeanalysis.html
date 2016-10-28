@@ -78,6 +78,52 @@
 					<div class="example2 scat-overscroll">retire --path <span class="replace">~/Path/To/Project/Root/To/Test</span>/ --outputpath ~/Documents/AnyFileName.txt</div>
 				</div>
 			</div>
+
+			<div class="wrapper yellow">
+				<h3>Source Clear (scr:clr)</h3>
+				<div class="fourth rts">
+					<p>Intro</p>
+					<p>SourceClear (src:clr) is a static vulnerability scanning tool that can also scan active websites for components with known vulnerabilities.  The scr:clr vulnerability library can searched manually without signing up. https://www.sourceclear.com/registry/explore</p>
+				</div>
+				<div class="fourth rtlist">
+					<p>Install Steps.</p>
+					<p>Once logged in Install agents on your github repository using the side nav.</p>
+					<p>To install for local scanning:</p>
+					<div class="example2">
+						brew update</br>
+						brew tap srcclr/srcclr</br>
+						brew install srcclr</br>
+						srcclr activate</br> 
+					</div>
+					<p>Use the activation code found in the Token dropdown in the Agents side nav.</p>
+				</div>
+				<div class="fourth rts">
+					<div class="verticalAlign">
+					<p>To run a scan on a URL:</p>
+					<div class="example2">
+						srcclr scan --url https://github.com/<span class="replace">yourgithubname</span>/<span class="replace">repositoryname</span>
+					</div>
+					<p>To run a scan on a local repository:</p>
+					<div class="example2">
+						srcclr scan <span class="replace">~/path/to/the/code/base</span>
+					</div>
+					</div>
+				</div>
+
+				<div class="fourth rtlist">
+				<h3>Tips</h3>
+				<h6>JIRA</h6>
+				<P>In Team settings you can integrate with a JIRA project so you can select an issue an hit Create Issue to make linked JIRA issues. You may need pro for this.</P>
+				<h6>Ignore</h6>
+				<p>Say you find a vulnerability in a test scope or you decided it doesn't matter you can choose to ignore it by clicking on issues tab in the Web GUI, Click the Select Button, then click Ignore Button on the top right of the search bar menu bar. Then you will not get notified about the issue or have it clutter your report.</p>
+				<h6>Notifications</h6>
+				<p>If you click on your User Name in the top right and select Notification Settings, you can control your notification setting. These are only available on the Pro Plan but you can get an email every time a new Vulnerability is found. If you have weekly summaries turned on and a new vulnerability is found in an old scan you will get notified even if you don't perform a new scan on your code.</p>
+				<H6>Vulnerable Methods</H6>
+				<p>The Pro plan can scan python code for vulnerable methods.</p>
+				</div>
+			</div>
+
+
 			</article>
 			<!-- Loading footer with AJAX -->
 			<div class="footerPlaceholder"></div>
