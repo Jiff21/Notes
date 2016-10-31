@@ -147,8 +147,10 @@
 						<li>Instead of 100% coverage test all endpoints</li>
 						<li>Write tests after majority of application completed.</li>
 					</ul>
+				</p>
 				<h3>Mongo DB &amp; Mongoose</h3>
-				<p>You can either download a <a href="https://www.mongodb.org/">MondoDB</a> to install locally or set up a free one at <a href="https://mongolab.com/">Mongo Lab</a>.</p> If you do it locally you have to place the binary files in an executible path, if you use mongolab you can find the address below "To connect using a driver via the standard URI" after setup. Mongoose can be installed on the project simply with  <code class="example">sudo npm install --save mongoose</code>, it manages the connection between a Mondodb and your application. Set up schemas to ensure normalized data, they can put in a schema folder and look like <code class="example">module.exports = mongoose.model('Flight', {number: Number, origin: String,});</code>. Now that you're handling the backend, you need to be responsible for sesssions. You can do this with connect-mongo. The session is always stored in the request (req). 
+				<p>You can either download a <a href="https://www.mongodb.org/">MondoDB</a> to install locally or set up a free one at <a href="https://mongolab.com/">Mongo Lab</a>. If you do it locally you have to place the binary files in an executible path, if you use mongolab you can find the address below "To connect using a driver via the standard URI" after setup. Mongoose can be installed on the project simply with  <code class="example">sudo npm install --save mongoose</code>, it manages the connection between a Mondodb and your application. Set up schemas to ensure normalized data, they can put in a schema folder and look like <code class="example">module.exports = mongoose.model('Flight', {number: Number, origin: String,});</code>. Now that you're handling the backend, you need to be responsible for sesssions. You can do this with connect-mongo. The session is always stored in the request (req). 
+				</p>
 			</article>
 
 			<aside class="col-md-3 col-sm-4 col-xs-12">
