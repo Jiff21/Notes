@@ -276,6 +276,9 @@
 					action.press(x=700, y=466).move_to(x=700, y=-200).release().perform()
 				</div>
 
+				<h4>Actions</h4>
+				<P>there is fairly good documentation for how to perform actions on the Usage section for <a href="https://github.com/appium/python-client" target="_blank">Appium-Python-Client</a>.  Appium also provides more detailed documentation of <a href="http://appium.io/slate/en/master/?python#automating-mobile-gestures" target="_blank">touch actions</a> and <a href="http://appium.io/slate/en/master/?python#appium-client-libraries">client librarie</a>. I've attached two example tests from other projects and the globes files they referenced. One is an example of web tests using appium and the other is an example of a native test. You can also check out the example files provided by appium.</P>
+
 				<h4>Assertions</h4>
 				<div class="example2">
 					self.assertIsNotNone(<span class="replace">elem</span>)
@@ -316,6 +319,22 @@ export ANDROID_HOME=$(dirname $(dirname $(which android)))
 
 				<h4>Running</h4>
 				<p>Launch a selenium hub, a selenium node and run <span class="example">appium</span>. For iOS Safari you will need to also run <span class="example">ios_webkit_debug_proxy</span> and make sure you have a <a href="http://appium.io/slate/en/master/?ruby#running-your-tests-with-appium" target="_blank">distribution profile setup</a>.</p>
+
+				<h4>Wifi Controls</h4>
+				<p>This is an example of a <a href="https://github.com/appium/python-client/blob/master/test/functional/android/network_connection_tests.py" target="_blank">network test</a>. It uses</p>
+				<div class="example2">
+					from appium.webdriver.connectiontype import ConnectionType</br>
+					nc = driver.set_network_connection(ConnectionType.DATA_ONLY)</br>
+					self.assertIsInstance(nc, int)</br>
+					self.assertEqual(nc, ConnectionType.DATA_ONLY)</br>
+				</div>
+				<p>Airplane=1, Wifi only=2, data only=4,wifi and data = 6</p>
+
+				<h4>Remote Server</h4>
+				<p>You can point appium at a different computer on your network using:</p>
+				<div class="example2">
+					appium --address 192.0.0.1 --port 8080
+				</div>
 			</div>
 			</div>
 
