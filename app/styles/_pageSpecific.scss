@@ -586,6 +586,111 @@ $jasmine-blue: #add8e6;
 	}
 }
 
+
+
+.python-body {
+	.jumbotron {
+		background-image: url('../images/Python.jpg');
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-color: #000000;
+		padding: 150px 0px 10px 0px;
+		
+		.light-layer {
+			h1 {
+				padding: 0px 0px 0px 10px;
+			}
+		}
+
+		h1 {
+			text-align: left;
+			margin-left: 20px;
+			font-size: 18px;
+		}
+
+		p {
+			text-align: left;
+			margin-left: 20px;
+			font-size: 10px;
+		}
+	}
+
+	h3 {
+		text-align: center;
+	}
+
+	.fourth {
+		h3 {
+			text-align: left;
+			padding-left: 20px;
+		}
+	}
+
+	.blue {
+		background-color: $jasmine-blue;
+		.example2, .example {
+			background-color: lighten($jasmine-blue, 5%);
+		}		
+	}
+
+	.yellow {
+		background-color: $jasmine-yellow;
+		.example2, .example {
+			background-color: lighten($jasmine-yellow, 5%);
+		}
+	}
+
+	.same-list {
+		ul {
+			margin-bottom: 0px;
+		}
+	}
+
+	@media(min-width: $screen-tablet){
+		.jumbotron { // Not working for some reason.
+			padding: 330px 0px 10px 0px;
+			
+			h1 {
+				font-size: 36px;
+			}
+
+			p {
+				font-size: 21px;
+			}
+		}
+
+		.rts {
+			height: 100px;
+			position: relative;
+			
+			h3 {
+				position: absolute; 
+				top: 50%;
+				margin-top: -26px;
+			}
+		}
+
+		.rtlist {
+			padding-top: 10px;
+			min-height: 100px;
+		}
+
+		.same-list {
+			ul {
+				margin-bottom: 10px;
+			}
+		}
+
+		#break:before {
+			content: $my-linebreak;
+			white-space: pre;
+		}
+	}
+}
+
+
+
 $scat-yellow: #fbde7e;
 $scat-blue: #add8e6;
 
@@ -1068,6 +1173,52 @@ $terminal-outline: #e5e5e5;
 	@media(min-width: $screen-tablet){
 		h1 {
 			font-size: 7em;
+		}
+	}
+}
+
+.webdrivercss-body {
+	.jumbotron {
+		background-image: url('../images/red.jpg');
+		background-position: center;
+		padding-bottom: 120px;
+			
+		.dark-layer {
+			margin-top: 120px;
+
+			h1 {
+				margin-top: 15px;
+				padding-top: 0px;
+				padding-bottom: 0px;
+			}
+		}
+	}
+
+	aside {
+		li {
+			list-style-type: none;
+		}
+
+		ul li ul li {
+			list-style-type: disc;
+		}
+
+		h4 {
+			margin-top: 30px;
+		}
+	}
+
+	@media(min-width: $screen-md){
+		.jumbotron {
+			.light-layer {
+				margin-top: 120px;
+			}
+		}
+
+		aside {
+			h4 {
+				margin-top: 0px;
+			}
 		}
 	}
 }
