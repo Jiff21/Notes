@@ -38,6 +38,7 @@
 				<button value="button" onclick="makeVisible(simple)">Simple Python</button>
 				<button value="button" onclick="makeVisible(appium)">Appium</button>
 				<button value="button" onclick="makeVisible(protractorcommands)">Protractor</button>
+				<button value="button" onclick="makeVisible(nosetest)">Nosetest</button>
 			</div>
 
 			<div id="seleniumcommands" class="visible">
@@ -358,7 +359,46 @@ export ANDROID_HOME=$(dirname $(dirname $(which android)))
 						<li><span class="example">browser.driver.<span class="replace">elementName</span>.sendKeys('<span class="replace">TextToSend</span>');</span></li>
 						<li><span class="example">browser.driver.<span class="replace">elementName</span>.sendKeys(<span class="replace">Keys.RETURN</span>);</span></li>
 					</ul>
+			</div>
+			</div>
+			<div id="nosetest" class="hidden">
+			<div class="full">
+				<p>An Easy Test Runner is Nose, you can add it with:</p>
+				<div span class="example2">
+					pip install nose
 				</div>
+				<p>It will automatically find tests off file naming in the directory you are in and run them with the command:</p>
+				<div span class="example2">
+					nosetests
+				</div>
+				<p>You can run multiple tests at the same time with:</p>
+				<div span class="example2">
+					nosetests --processes=13
+				</div>
+				<p>If you get timeout exceptions try adding:</p>
+				<div span class="example2">
+					--process-timeout=3600
+				</div>
+				<p>You can also run a specific test with a comma separated list:</p>
+				<div span class="example2">
+					nosetests --tests=Sample_Test,Other_Test
+				</div>
+				<p>A weird quirk of nosetests is it won’t detect tests that end with the word test and no separator. So these work:</p>
+				<div span class="example2">
+					TestSample.py</br>
+					Sample.test.py</br>
+					test-sample.py</br>
+					sample_test.py</br>
+				</div>
+				<p>But it will not find:</p>
+				<div span class="example2">
+					SampleTest.py
+				</div>
+			</div>
+
+
+
+
 				<!-- 			<aside>
 						<div>
 								<h6> Selenium Commands </h6>
