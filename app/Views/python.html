@@ -46,7 +46,7 @@
 					<li><code class="example">list(enumerate(seasons))</code>: Returns a tuple containing count and value like from an array.</li>
 					<li><code class="example">getattr()</code>: getattr(x, 'foobar') is equivalent to x.foobar.</li>
 					<li><code class="example">setattr(object, name, value)</code>: setattr(x, 'foobar', 123) is equivalent to x.foobar = 123.</li>
-					<li><code class="example">globals()</code>: Returns all gloabls</li>
+					<li><code class="example">globals()</code>: Returns all globals</li>
 					<li><code class="example">locals()</code>: Returns a dict representing the current local symbol table.</li>
 					<li><code class="example">map(function, iterable, ...)</code>: Apply function to every item of iterable and return a list of the results. </li>
 					<li><code class="example">range(0, 30, 5)</code>: 0, 5, 10,...,30.</li>
@@ -100,6 +100,8 @@
 					<li><span class="example">truncate</span>: Empties the file. Watch out if you care about the file.</li>
 					<li><span class="example">write('<span class="replace">stuff</span>')</span>:Reads just one line of a text file.</li>
 					<li><span class="example"><span class="replace">var</span>.read()</span>:After you open something, if you need the string rather than the object</li>
+					<li><span class="example">seek(<span class="replace">offset, from_what</span>)</span>: Python read has a head. You use 0 for from_what to jump to beginning, 1 is relative to current offest, and 2 is relative to file end. offset is in bytes.</li>
+					<li><span class="example">readline()</span>: Reads through bytes until it finds a /n.</li>
 				</ul>
 			</div>
 			</div>
@@ -123,9 +125,15 @@
 				<h3>Functions</h3>
 				<p>Here is an example of a funtion. You define functions with <span class="term">def</span> in front of it. Do not name functions that start with a number.</p>
 				<div class="example2">
-					def print_two_again(arg1, arg2):</br>
-					&nbsp;&nbsp;&nbsp;&nbsp;print "arg1: %r, arg2: %r" % (arg1, arg2)
+					def get_a_sentence(arg1, arg2):</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;new_sentence = "I like %s but not %s" % (arg1, arg2)</br>
+					&nbsp;&nbsp;&nbsp;&nbsp;return new_sentence
 				</div>
+				<p>You would use the function above like so.</p>
+				<div class="example2">
+					my_sentence = get_a_sentence('dogs', 'cats')
+				</div>
+
 			</div>
 			</div>
 			</article>
