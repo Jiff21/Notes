@@ -104,6 +104,16 @@
 					try: assert "<span class="replace">No posts were found...</span>" not in driver.page_source<br>
 					except AssertionError, e: self.verificationErrors.append("<span class="replace">No Posts incorrectly appeared.</span>")
 				</div>
+				<h6>Partial Text Contains</h6>
+				<div class="example2">
+					posts = driver.find_elements_by_class_name('<span class="replace">post</span>')<br>
+					try: self.assertEqual(posts.text().contains('<span class="replace">example text</span>'))<br>
+					except AssertionError, e: self.verificationErrors.append('Expected example text but instead got ' + posts.text())<br>
+					## For non elements you may need use a regex.<br>
+					url_key = /notlookingfor/lookingfor/notlookingfor<br>
+					try: self.assertRegexpMatches(driver.current_url, *url_key[:-13])<br>
+					except AssertionError, e: self.verificationErrors.append("Expected " + driver.current_url + " to conatin " + url_key[:-13])
+				</div>
 				<h6>Count elements on page</h6>
 				<div class="example2">
 					posts = driver.find_elements_by_class_name('<span class="replace">post</span>')<br>
