@@ -17,7 +17,7 @@
 		<script src="../bower_components/modernizr/modernizr.js"></script>
 		<!-- endbuild -->
 	</head>
-	<body class="python-body">
+	<body class="python-body" id="python">
 		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
 		<div class="navPlaceholder"></div>
 		<!--[if lt IE 10]>
@@ -28,12 +28,12 @@
 				<div class="jumbotron">
 					<div class="light-layer">
 					<h1>Python Notes</h1>
-					<p class="lead">You are <a href="http://learnpythonthehardway.org/book/ex16.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
+					<p class="lead">You are <a href="https://learnpythonthehardway.org/book/ex24.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
 					</div>
 				</div>
 			</div>
 			<article>
-			<div class="full blue">
+			<div class="full skin light-layer">
 				<h3>Built In Functions</h3>
 				<p>Full list <a href="https://docs.python.org/2/library/functions.html" target="_blank">here.</a> Quick and easy here.</p>
 				<ul>
@@ -57,11 +57,11 @@
 					<li><span class="example">help()</span>Command line help module, like <span class="example">pydoc</span> but that is outside running python</li>
 					</ul>
 			</div>
-			<div class="full yellow">
-			<div class="fourth yellow rts">
+			<div class="full no-skin spacer">
+			<div class="fourth no-skin rts">
 				<h3>Formatters</h3>
 			</div>
-			<div class="fourth yellow rtlist">
+			<div class="fourth no-skin rtlist">
 					<ul>
 						<li>%s = variable for string replacements</li>
 						<li>%r = raw data for debugging, like strings display quotes around them</li>
@@ -69,12 +69,12 @@
 						<li>%% = Escape Percentage Symbol</li>
 					</ul>
 			</div>
-			<div class="fourth yellow rts">
+			<div class="fourth no-skin rts">
 				<div class="verticalAlign">
 				<h3>Escape Sequences</h3>
 				</div>
 			</div>
-			<div class="fourth yellow rtlist">
+			<div class="fourth no-skin rtlist">
 				<ul>
 					<li>\n = New line in a string of text.</li>
 					<li>\'= Esccape a single quote.</li>
@@ -89,9 +89,72 @@
 				</ul>
 			</div>
 			</div>
-			<div class="full blue">
+
+			<div class="full skin">
+				<h3>Modules</h3>
+				<p>Ou first example of importing a module is from <span class="term">sys</span>. As you know, at the top of the file you would import the module</p>
+				<div> class="example2">
+					from sys import argv <br><br>
+					script, first, second = argv<br><br>
+					print "The script is called:", script<br>
+					print "You like:", first<br>
+					print "You hate", second<br>
+				</div>
+				<p>On the 2nd lind of we unpack the arguments, then use them later. In terminal, this could be run with <span class="example">python filename.py dogs cats</span>. Remember command line arguments like raw_input come in as strings, you need to convert them if you need something else.</p>
+			</div>
+			<div class="full no-skin">
+				<h3>Functions</h3>
+				<p>Here is an example of a funtion. You define functions with <span class="term">def</span> in front of it. Do not name functions that start with a number.</p>
+				<div class="example2">
+					def get_my_opion(arg1, arg2):<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;op1 = "I like " + arg1<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;op2 = "I do not like " + arg2<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;return op1, op2<br>
+				</div>
+				<p>You would use the function above like so.</p>
+				<div class="example2">
+					dog_opinion, cat_opinion = get_my_opion('dogs', 'cats')<br>
+					print dog_opinion
+				</div>
+
+			</div>
+			<div class="full skin spacer">
+			<div class="fourth skin rts">
+				<h3>Dictionaries</h3>
+			</div>
+			<div class="fourth skin rtlist">
+				<div class="example2">
+					example_dict = {<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;'dogs':'good',<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;'cats':'bad'<br>
+					}<br><br>
+					example_dict['platypus'] = 'awesome'<br>
+					for key in example_dict:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;print key + " and it's value is " + example_ditc[key]
+				</div>
+			</div>
+			<div class="fourth skin rts">
+				<div class="verticalAlign">
+					<h3>Arrays</h3>
+				</div>
+			</div>
+			<div class="fourth skin rtlist">
+				<div class="example2">
+					example_array = [<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;'dopie',<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;'sleepy'<br>
+					]<br><br>
+					example_array.append('doc')<br>
+					for values in example_array:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;print values
+				</div>
+			</div>
+			</div>
+
+			<div class="full skin">
+			<div>
 				<h3>File Functions</h3>
-			
+			</div>
 			<div class="list-container">
 				<ul class="to-be-spliced">
 					<li><span class="example">close</span>: Closes the file.  Like File-&gt;Save.. in your editor.</li>
@@ -105,67 +168,10 @@
 				</ul>
 			</div>
 			</div>
-			<div class="full yellow">
-				<h3>This Project</h3>
-				<p>There is a difference between commas and plus's when combining strings. For example <span class="example">print "Hey" , var , "there."</span> would print "Hey you there." (if var = you). While <span>print "Hey " + you + " there."</span> would need spaces inserted. If you need to do it without spaces, you could do <span class="example">print "He's got %s eyes and %s hair." % (my_eyes, my_hair)</span>. It's bad form to have more than 80 characts on a line but you can two prints with a comma.</p>
-			</div>
-			<div class="full blue">
-				<h3>Modules</h3>
-				<p>Ou first example of importing a module is from <span class="term">sys</span>. As you know, at the top of the file you would import the module</p>
-				<div> class="example2">
-					from sys import argv <br><br>
-					script, first, second = argv<br><br>
-					print "The script is called:", script<br>
-					print "You like:", first<br>
-					print "You hate", second<br>
-				</div>
-				<p>On the 2nd lind of we unpack the arguments, then use them later. In terminal, this could be run with <span class="example">python filename.py dogs cats</span>. Remember command line arguments like raw_input come in as strings, you need to convert them if you need something else.</p>
-			</div>
-			<div class="full yellow">
-				<h3>Functions</h3>
-				<p>Here is an example of a funtion. You define functions with <span class="term">def</span> in front of it. Do not name functions that start with a number.</p>
-				<div class="example2">
-					def get_a_sentence(arg1, arg2):</br>
-					&nbsp;&nbsp;&nbsp;&nbsp;new_sentence = "I like %s but not %s" % (arg1, arg2)</br>
-					&nbsp;&nbsp;&nbsp;&nbsp;return new_sentence
-				</div>
-				<p>You would use the function above like so.</p>
-				<div class="example2">
-					my_sentence = get_a_sentence('dogs', 'cats')
-				</div>
 
-			</div>
-			<div class="full blue">
-			<div class="fourth blue rts">
-				<h3>Dictionaries</h3>
-			</div>
-			<div class="fourth blue rtlist">
-				<div class="example2">
-					example_dict = {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;'dogs':'good',<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;'cats':'bad'<br>
-					}<br><br>
-					example_dict['platypus'] = 'awesome'<br>
-					for key in example_dict:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;print key + " and it's value is " + example_ditc[key]
-				</div>
-			</div>
-			<div class="fourth blue rts">
-				<div class="verticalAlign">
-				<h3>Arrays</h3>
-				</div>
-			</div>
-			<div class="fourth blue rtlist">
-			<div class="example2">
-				example_array = [<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;'dopie',<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;'sleepy'<br>
-				]<br><br>
-				example_array.append('doc')<br>
-				for values in example_array:<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;print values
-			</div>
-			</div>
+			<div class="full no-skin">
+				<h3>Combining vars with strings</h3>
+				<p>There is a difference between commas and plus's when combining strings. For example <span class="example">print "Hey" , var , "there."</span> would print "Hey you there." (if var = you). While <span>print "Hey " + you + " there."</span> would need spaces inserted. If you need to do it without spaces, you could do <span class="example">print "He's got %s eyes and %s hair." % (my_eyes, my_hair)</span>. It's bad form to have more than 80 characts on a line but you can two prints with a comma.</p>
 			</div>
 			</article>
 			<!-- Loading footer with AJAX -->
@@ -206,6 +212,6 @@
 		<script src="../includes/nav.js"></script>
 		<script src="../includes/footer.js"></script>
 		<script src="../scripts/listBreaker.js"></script>
-		<script type="text/javascript">breakList(4, $('.to-be-spliced'), 'blue');</script>
+		<script type="text/javascript">breakList(4, $('.to-be-spliced'), 'skin');</script>
 	</body>
 </html>
