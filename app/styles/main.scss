@@ -49,6 +49,14 @@ article {
 		}
 	}
 
+	.half-when-big-wrapper {
+		 @include make-row;
+	}
+	.half-when-big {
+		@include make-sm-column(12);
+		@include make-md-column(6);
+	}
+
 	.fourth {
 		@include make-xs-column(12);
 		@include make-sm-column(3);

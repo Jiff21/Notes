@@ -35,6 +35,7 @@
 			<article>
 			<div class="full skin light-layer">
 				<h3>Built In Functions</h3>
+				<div class="half-when-big">
 				<p>Full list <a href="https://docs.python.org/2/library/functions.html" target="_blank">here.</a> Quick and easy here.</p>
 				<ul>
 					<li><code class="example">print("Hello world")</code>: Or print "Hello World"</li>
@@ -55,7 +56,16 @@
 					<li><code class="example">sorted(iterable[, cmp[, key[, reverse]]])</code>: Sort an object, details here.<a href="https://docs.python.org/2/library/functions.html#sorted" target="_blank"> See here.</a></li>
 					<li><code class="example">a = raw_input('<span class="replace">Prompt text here</span>')</code>: Prompt user for input<a href="https://docs.python.org/2/library/functions.html#raw_input" target="_blank"> See here.</a></li></li>
 					<li><span class="example">help()</span>Command line help module, like <span class="example">pydoc</span> but that is outside running python</li>
-					</ul>
+				</ul>
+				</div>
+				<div class="half-when-big">
+				<ul>
+					<li><code class="example">.split()</code>: Splits words at spaces, a char can be passed in instead.</li>
+					<li><code class="example">sorted(ex_var)</code>: sorts alphabetically, to a sort a string you split first </li>
+					<li><code class="example">.pop(<span class="replace">0</span>)</code>: The number determines the word, 0 is first, -1 is last.</li>
+					<li><code class="example">len()</code>: length of many things</li>
+				</ul>					
+				</div>
 			</div>
 			<div class="full no-skin spacer">
 			<div class="fourth no-skin rts">
@@ -106,15 +116,17 @@
 				<h3>Functions</h3>
 				<p>Here is an example of a funtion. You define functions with <span class="term">def</span> in front of it. Do not name functions that start with a number.</p>
 				<div class="example2">
-					def get_my_opion(arg1, arg2):<br>
+					def get_my_opinion(arg1, arg2):<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;op1 = "I like " + arg1<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;op2 = "I do not like " + arg2<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;return op1, op2<br>
 				</div>
 				<p>You would use the function above like so.</p>
 				<div class="example2">
-					dog_opinion, cat_opinion = get_my_opion('dogs', 'cats')<br>
-					print dog_opinion
+					dog_opinion, cat_opinion = get_my_opinion('dogs', 'cats')<br>
+					print dog_opinion<br>
+					## You can also do this:<br>
+					print "%s, but %s." % get_my_opinion('cats', dogs)
 				</div>
 
 			</div>
