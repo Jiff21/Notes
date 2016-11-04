@@ -28,7 +28,7 @@
 				<div class="jumbotron">
 					<div class="light-layer">
 					<h1>Python Notes</h1>
-					<p class="lead">You are <a href="https://learnpythonthehardway.org/book/ex24.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
+					<p class="lead">You are <a href="https://learnpythonthehardway.org/book/ex28.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
 					</div>
 				</div>
 			</div>
@@ -38,32 +38,32 @@
 				<div class="half-when-big">
 				<p>Full list <a href="https://docs.python.org/2/library/functions.html" target="_blank">here.</a> Quick and easy here.</p>
 				<ul>
-					<li><code class="example">print("Hello world")</code>: Or print "Hello World"</li>
-					<li><code class="example">str()</code>: to String.</li>
-					<li><code class="example">len()</code>: length of many things</li>
-					<li><code class="example">bool(2 > 3)</code>: Returns True/False Boolean</li>
-					<li><code class="example">callable(func)</code>: Lets you know if an object is callable</li>
-					<li><code class="example">classmethod()</code>: Returns class method of a function.</li>
-					<li><code class="example">list(enumerate(seasons))</code>: Returns a tuple containing count and value like from an array.</li>
-					<li><code class="example">getattr()</code>: getattr(x, 'foobar') is equivalent to x.foobar.</li>
-					<li><code class="example">setattr(object, name, value)</code>: setattr(x, 'foobar', 123) is equivalent to x.foobar = 123.</li>
-					<li><code class="example">globals()</code>: Returns all globals</li>
-					<li><code class="example">locals()</code>: Returns a dict representing the current local symbol table.</li>
-					<li><code class="example">map(function, iterable, ...)</code>: Apply function to every item of iterable and return a list of the results. </li>
-					<li><code class="example">range(0, 30, 5)</code>: 0, 5, 10,...,30.</li>
-					<li><code class="example">list(reversed(counting))</code>: [3,2,1]</li>
-					<li><code class="example">round(3.1234,2)</code>: 3.12, 5 rounds up</li>
-					<li><code class="example">sorted(iterable[, cmp[, key[, reverse]]])</code>: Sort an object, details here.<a href="https://docs.python.org/2/library/functions.html#sorted" target="_blank"> See here.</a></li>
-					<li><code class="example">a = raw_input('<span class="replace">Prompt text here</span>')</code>: Prompt user for input<a href="https://docs.python.org/2/library/functions.html#raw_input" target="_blank"> See here.</a></li></li>
-					<li><span class="example">help()</span>Command line help module, like <span class="example">pydoc</span> but that is outside running python</li>
+					<li><span class="term">print("Hello world")</span>: Or print "Hello World"</li>
+					<li><span class="term">str()</span>: to String.</li>
+					<li><span class="term">len()</span>: length of many things</li>
+					<li><span class="term">bool(2 > 3)</span>: Returns True/False Boolean</li>
+					<li><span class="term">callable(func)</span>: Lets you know if an object is callable</li>
+					<li><span class="term">classmethod()</span>: Returns class method of a function.</li>
+					<li><span class="term">list(enumerate(seasons))</span>: Returns a tuple containing count and value like from an array.</li>
+					<li><span class="term">getattr()</span>: getattr(x, 'foobar') is equivalent to x.foobar.</li>
+					<li><span class="term">setattr(object, name, value)</span>: setattr(x, 'foobar', 123) is equivalent to x.foobar = 123.</li>
+					<li><span class="term">globals()</span>: Returns all globals</li>
+					<li><span class="term">locals()</span>: Returns a dict representing the current local symbol table.</li>
+					<li><span class="term">map(function, iterable, ...)</span>: Apply function to every item of iterable and return a list of the results. </li>
+					<li><span class="term">range(0, 30, 5)</span>: 0, 5, 10,...,30.</li>
+					<li><span class="term">list(reversed(counting))</span>: [3,2,1]</li>
+					<li><span class="term">round(3.1234,2)</span>: 3.12, 5 rounds up</li>
+					<li><span class="term">sorted(iterable[, cmp[, key[, reverse]]])</span>: Sort an object, details here.<a href="https://docs.python.org/2/library/functions.html#sorted" target="_blank"> See here.</a></li>
+					<li><span class="term">a = raw_input('<span class="replace">Prompt text here</span>')</span>: Prompt user for input<a href="https://docs.python.org/2/library/functions.html#raw_input" target="_blank"> See here.</a></li></li>
+					<li><span class="term">help()</span>Command line help module, like <span class="term">pydoc</span> but that is outside running python</li>
 				</ul>
 				</div>
 				<div class="half-when-big">
 				<ul>
-					<li><code class="example">.split()</code>: Splits words at spaces, a char can be passed in instead.</li>
-					<li><code class="example">sorted(ex_var)</code>: sorts alphabetically, to a sort a string you split first </li>
-					<li><code class="example">.pop(<span class="replace">0</span>)</code>: The number determines the word, 0 is first, -1 is last.</li>
-					<li><code class="example">len()</code>: length of many things</li>
+					<li><span class="term">.split()</span>: Splits words at spaces, a char can be passed in instead.</li>
+					<li><span class="term">sorted(ex_var)</span>: sorts alphabetically, to a sort a string you split first </li>
+					<li><span class="term">.pop(<span class="replace">0</span>)</span>: The number determines the word, 0 is first, -1 is last.</li>
+					<li><span class="term">len()</span>: length of many things</li>
 				</ul>					
 				</div>
 			</div>
@@ -163,20 +163,27 @@
 			</div>
 			</div>
 
+			<div class="full no-skin">
+				<h3>Logic Statements</h3>
+				<p>Unlike the other languages you've previously learned, you don't have to us pikes or ampersands, you can simply use the words <span class="term">and</span>, <span class="term">or</span>, and <span class="term">not</span>.You also have the typical <span class="term">!=</span>, <span class="term">+=</span>, <span class="term">-=</span>, <span class="term">==</span>, <span class="term">&gt;=</span>, and <span class="term">&lt;=</span>. As you've learned before <span class="term">True</span> and <span class="term">False</span> are case sensitive. Double negatives are in play, like <span class="term">not(False)</span> would return TRUE.  <span class="term">is</span> works like ==, but <span class="term">in</span> is looking for the object in a sequence, <span class="example">e.g. 5 in (5,10,15)</span>.
+				</p>
+			</div>
+
+
 			<div class="full skin">
 			<div>
 				<h3>File Functions</h3>
 			</div>
 			<div class="list-container">
 				<ul class="to-be-spliced">
-					<li><span class="example">close</span>: Closes the file.  Like File-&gt;Save.. in your editor.</li>
-					<li><code class="example">open(name[, mode[, buffering]])</code>: Reads the contents of the file. You can assign the result to a variable. Defaults to r mode, need to pass 'w' if you want to write <a href="https://docs.python.org/2/library/functions.html#open" target="_blank">See here.</a></li>
-					<li><span class="example">readline</span>: Reads just one line of a text file.</li>
-					<li><span class="example">truncate</span>: Empties the file. Watch out if you care about the file.</li>
-					<li><span class="example">write('<span class="replace">stuff</span>')</span>:Reads just one line of a text file.</li>
-					<li><span class="example"><span class="replace">var</span>.read()</span>:After you open something, if you need the string rather than the object</li>
-					<li><span class="example">seek(<span class="replace">offset, from_what</span>)</span>: Python read has a head. You use 0 for from_what to jump to beginning, 1 is relative to current offest, and 2 is relative to file end. offset is in bytes.</li>
-					<li><span class="example">readline()</span>: Reads through bytes until it finds a /n.</li>
+					<li><span class="term">close</span>: Closes the file.  Like File-&gt;Save.. in your editor.</li>
+					<li><span class="term">open(name[, mode[, buffering]])</span>: Reads the contents of the file. You can assign the result to a variable. Defaults to r mode, need to pass 'w' if you want to write <a href="https://docs.python.org/2/library/functions.html#open" target="_blank">See here.</a></li>
+					<li><span class="term">readline</span>: Reads just one line of a text file.</li>
+					<li><span class="term">truncate</span>: Empties the file. Watch out if you care about the file.</li>
+					<li><span class="term">write('<span class="replace">stuff</span>')</span>:Reads just one line of a text file.</li>
+					<li><span class="term"><span class="replace">var</span>.read()</span>:After you open something, if you need the string rather than the object</li>
+					<li><span class="term">seek(<span class="replace">offset, from_what</span>)</span>: Python read has a head. You use 0 for from_what to jump to beginning, 1 is relative to current offest, and 2 is relative to file end. offset is in bytes.</li>
+					<li><span class="term">readline()</span>: Reads through bytes until it finds a /n.</li>
 				</ul>
 			</div>
 			</div>
