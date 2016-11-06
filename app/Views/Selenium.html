@@ -38,6 +38,7 @@
 				<button value="button" onclick="makeVisible(simple)">Simple Python</button>
 				<button value="button" onclick="makeVisible(appium)">Appium</button>
 				<button value="button" onclick="makeVisible(protractorcommands)">Protractor</button>
+				<button value="button" onclick="makeVisible(nosetest)">Nosetest</button>
 			</div>
 
 			<div id="seleniumcommands" class="visible">
@@ -102,6 +103,16 @@
 				<div class="example2">
 					try: assert "<span class="replace">No posts were found...</span>" not in driver.page_source<br>
 					except AssertionError, e: self.verificationErrors.append("<span class="replace">No Posts incorrectly appeared.</span>")
+				</div>
+				<h6>Partial Text Contains</h6>
+				<div class="example2">
+					posts = driver.find_elements_by_class_name('<span class="replace">post</span>')<br>
+					try: self.assertEqual(posts.text().contains('<span class="replace">example text</span>'))<br>
+					except AssertionError, e: self.verificationErrors.append('Expected example text but instead got ' + posts.text())<br>
+					## For non elements you may need use a regex.<br>
+					url_key = /notlookingfor/lookingfor/notlookingfor<br>
+					try: self.assertRegexpMatches(driver.current_url, *url_key[:-13])<br>
+					except AssertionError, e: self.verificationErrors.append("Expected " + driver.current_url + " to conatin " + url_key[:-13])
 				</div>
 				<h6>Count elements on page</h6>
 				<div class="example2">
@@ -275,6 +286,9 @@
 					action.press(x=700, y=466).move_to(x=700, y=-200).release().perform()
 				</div>
 
+				<h4>Actions</h4>
+				<P>there is fairly good documentation for how to perform actions on the Usage section for <a href="https://github.com/appium/python-client" target="_blank">Appium-Python-Client</a>.  Appium also provides more detailed documentation of <a href="http://appium.io/slate/en/master/?python#automating-mobile-gestures" target="_blank">touch actions</a> and <a href="http://appium.io/slate/en/master/?python#appium-client-libraries">client librarie</a>. I've attached two example tests from other projects and the globes files they referenced. One is an example of web tests using appium and the other is an example of a native test. You can also check out the example files provided by appium.</P>
+
 				<h4>Assertions</h4>
 				<div class="example2">
 					self.assertIsNotNone(<span class="replace">elem</span>)
@@ -288,7 +302,49 @@
 
 				<p>*For the purpose of this page we are setting this at the top of the test <span class="example">wd = self.driver</span></p>
 
+				<h4>Install at the time </h4>
+				<p>Prequisites Selenium &amp; Selenium Webdriver installed and setup. Xcode and Xcode-cli setup. Pip &amp; Homebrew Installed. These are an abbreviated version of the steps from their getting started guide I had to run to get it going. Android Home set and ADB setup. Java Development Kit installed as well.</p>
+				<div class="example2">
+					npm install -g appium </br>
+					pip install Appium-Python-Client</br>
+					brew install libimobiledevice</br>
+					npm install -g authorize-ios</br>
+					sudo authorize-ios</br>
+					brew install ios-webkit-debug-proxy</br>
+					brew install carthage</br>
+					Cd into appium folder. </br>
+					cd path/to/node_modules/appium/</br>
+					sudo npm install appium-ios-driver</br>
+					brew install --HEAD ideviceinstaller</br>
+				</div>
+				<p>Add location of Java Home to .bash_profile</p>
+				<div class="example2">
+					export JAVA_HOME=$(/usr/libexec/java_home)
+				</div>
+				<p>Also make sure Android Home is defined from your ADB Setup.</p>
+				<div class="example2">
+					export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools:~/Library/Android/sdk/build-tools
+export ANDROID_HOME=$(dirname $(dirname $(which android)))
+				</div>
 
+				<h4>Running</h4>
+				<p>Launch a selenium hub, a selenium node and run <span class="example">appium</span>. For iOS Safari you will need to also run <span class="example">ios_webkit_debug_proxy</span> and make sure you have a <a href="http://appium.io/slate/en/master/?ruby#running-your-tests-with-appium" target="_blank">distribution profile setup</a>.</p>
+
+				<h4>Wifi Controls</h4>
+				<p>This is an example of a <a href="https://github.com/appium/python-client/blob/master/test/functional/android/network_connection_tests.py" target="_blank">network test</a>. It uses</p>
+				<div class="example2">
+					from appium.webdriver.connectiontype import ConnectionType</br>
+					nc = driver.set_network_connection(ConnectionType.DATA_ONLY)</br>
+					self.assertIsInstance(nc, int)</br>
+					self.assertEqual(nc, ConnectionType.DATA_ONLY)</br>
+				</div>
+				<p>Airplane=1, Wifi only=2, data only=4,wifi and data = 6</p>
+
+				<h4>Remote Server</h4>
+				<p>You can point appium at a different computer on your network using:</p>
+				<div class="example2">
+					appium --address 192.0.0.1 --port 8080
+				</div>
 			</div>
 			</div>
 
@@ -332,7 +388,46 @@
 						<li><span class="example">browser.driver.<span class="replace">elementName</span>.sendKeys('<span class="replace">TextToSend</span>');</span></li>
 						<li><span class="example">browser.driver.<span class="replace">elementName</span>.sendKeys(<span class="replace">Keys.RETURN</span>);</span></li>
 					</ul>
+			</div>
+			</div>
+			<div id="nosetest" class="hidden">
+			<div class="full">
+				<p>An Easy Test Runner is Nose, you can add it with:</p>
+				<div span class="example2">
+					pip install nose
 				</div>
+				<p>It will automatically find tests off file naming in the directory you are in and run them with the command:</p>
+				<div span class="example2">
+					nosetests
+				</div>
+				<p>You can run multiple tests at the same time with:</p>
+				<div span class="example2">
+					nosetests --processes=13
+				</div>
+				<p>If you get timeout exceptions try adding:</p>
+				<div span class="example2">
+					--process-timeout=3600
+				</div>
+				<p>You can also run a specific test with a comma separated list:</p>
+				<div span class="example2">
+					nosetests --tests=Sample_Test,Other_Test
+				</div>
+				<p>A weird quirk of nosetests is it won’t detect tests that end with the word test and no separator. So these work:</p>
+				<div span class="example2">
+					TestSample.py</br>
+					Sample.test.py</br>
+					test-sample.py</br>
+					sample_test.py</br>
+				</div>
+				<p>But it will not find:</p>
+				<div span class="example2">
+					SampleTest.py
+				</div>
+			</div>
+
+
+
+
 				<!-- 			<aside>
 						<div>
 								<h6> Selenium Commands </h6>
