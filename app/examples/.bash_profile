@@ -89,3 +89,16 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Trying to specify path for NPM but will it break Android?
 ###
 export PATH="/usr/local/bin:$PATH"
+
+alias roocoup='python ~/Documents/Code/roo_coup/RooCoup.py'
+
+
+##
+# path prefix for NVM.
+##
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+
+export NVM_DIR="/Users/jeffcampbell/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
