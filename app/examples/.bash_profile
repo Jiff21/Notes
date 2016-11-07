@@ -99,7 +99,5 @@ alias roocoup='python ~/Documents/Code/roo_coup/RooCoup.py'
 ##
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
-export NVM_DIR="/Users/jeffcampbell/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-
