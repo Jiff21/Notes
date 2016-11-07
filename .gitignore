@@ -10,6 +10,7 @@ app/examples/sublime3/User/Package Control.ca-bundle
 app/examples/sublime3/User/Package Control.system-ca-bundle
 app/examples/sublime3/User/Package Control.ca-certs/
 app/examples/sublime3/User/Package Control.cache/
+app/examples/sublime3/User/oscrypto-ca-bundle.crt
 
 // Trying to figure out why these exist on home computer but not road.
 app/examples/sublime3/User/Package Control.user-ca-bundle

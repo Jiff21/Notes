@@ -586,9 +586,14 @@ $jasmine-blue: #add8e6;
 	}
 }
 
+$skin: #c9aa8e;
+$no-skin: #ebe1c6;
 
 
 .python-body {
+	body, .jumbotron {
+		background-color: $no-skin;
+	}
 	.jumbotron {
 		background-image: url('../images/Python.jpg');
 		background-position: center;
@@ -627,17 +632,17 @@ $jasmine-blue: #add8e6;
 		}
 	}
 
-	.blue {
-		background-color: $jasmine-blue;
+	.skin {
+		background-color: $skin;
 		.example2, .example {
-			background-color: lighten($jasmine-blue, 5%);
+			background-color: lighten($skin, 3%);
 		}		
 	}
 
-	.yellow {
-		background-color: $jasmine-yellow;
+	.no-skin {
+		background-color: $no-skin;
 		.example2, .example {
-			background-color: lighten($jasmine-yellow, 5%);
+			background-color: lighten($no-skin, 3%);
 		}
 	}
 

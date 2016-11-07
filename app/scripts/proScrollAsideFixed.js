@@ -3,18 +3,29 @@
 /*!
  * @docauthor Jeff Campbell
  */
+ 'use strict';
 
- /* imported $ */
- 
-'use strict';
 
-window.addEventListener('scroll', function() {
-	var scrollAt = 538;
-	var proAside = $('#proAside');
-	var posTop = document.body.scrollTop;
+/* exported proAside */
+function grabAsideByID () {
+	return document.getElementById('#proAside');
+}
+
+function keepInPlace (el){
+	const scrollAt = 538;
+	const posTop = document.body.scrollTop;
 	if (posTop < scrollAt) {
-		proAside.removeClass('pro-fixed');
+		// console.log('removing');
+		el.classList.remove('pro-fixed');
 	} else if (posTop >= scrollAt) {
-		proAside.addClass('pro-fixed');
+		// console.log('adding');
+		el.classList.add('pro-fixed');
 	}
-});
+}
+
+window.onload = function(){
+	const proAside = grabAsideByID();
+	window.addEventListener('scroll', function () {
+		keepInPlace(proAside);
+	});
+};
