@@ -3,33 +3,54 @@
  */
 'use strict';
 
-function headerChange() {
-	// Defining variables outside loop.
-	var i,
-		item,
-		itemArray,
-		switcher = document.getElementById('switcher');
-	// grabs element by switcher id to figure out which replace loop should be run.
-	if (switcher.className === 'red') {
+ /* exported headerChange */
+let itemArray,
+	switcher;
 
-		itemArray = document.getElementsByClassName('red');
-		i = itemArray.length - 1;
+function getSwitcher () {
+	return document.getElementById('switcher');
+}
 
-		for (i; i >= 0; i--) {
-			// Sets item to the current element in header array.
-			item = itemArray[i];
-			item.className = 'white';
-		}
-	} else {
+function getRed () {
+	return document.getElementsByClassName('red');
+}
 
-		itemArray = document.getElementsByClassName('white');
-		i = itemArray.length - 1;
+function getWhite () {
+	return document.getElementsByClassName('white');
+}
 
-		for (i; i >= 0; i--) {
-			item = itemArray[i];
-			item.className = 'red';
-		}
+function changeClassTo (items, newColor) {
+	// items.map(){
+	// 	item = items[i];
+	// 	item.className = newColor;
+	// }
+	var i = 0;
+	console.log(items.length);
+	var item;
+
+	for (i; i <= items.length; i++) {
+		// Sets item to the current element in header array.
+		item = items[i];
+		item.className = newColor;
 	}
 }
 
-headerChange();
+function headerChange () {
+	switcher = getSwitcher();
+	if (switcher.className === 'red') {
+		console.log('red');
+		itemArray = getRed();
+		changeClassTo(itemArray, 'white');
+	} else {
+		console.log('white');
+		itemArray = getWhite();
+		changeClassTo(itemArray, 'red');
+	}
+}
+
+
+window.onload = function(){
+	getSwitcher();
+};
+
+
