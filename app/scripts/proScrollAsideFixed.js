@@ -25,7 +25,7 @@ function keepInPlace (el){
 }
 
 window.onload = function(){
-	let proAside = grabAsideByID();
+	const proAside = grabAsideByID();
 	window.addEventListener('scroll', function () {
 		keepInPlace(proAside);
 	});
