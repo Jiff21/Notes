@@ -31,7 +31,7 @@
     "jshint-stylish": "~0.1.5",
     "load-grunt-tasks": "~0.4.0",
     "nightwatch": "^0.6.1",
-    "node-sass": "^3.1.2",
+    "node-sass": "^3.11.2",
     "phantomcss": "^0.10.4",
     "phantomjs": "^1.9.18",
     "selenium-server-standalone-jar": "^2.45.0",
