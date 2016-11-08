@@ -3,7 +3,7 @@
  */
 'use strict';
 
- /* exported headerChange */
+ /* exported headerChange, runOnClick */
 let itemArray,
 	switcher;
 
@@ -11,12 +11,8 @@ function getSwitcher () {
 	return document.getElementById('switcher');
 }
 
-function getRed () {
-	return document.getElementsByClassName('red');
-}
-
-function getWhite () {
-	return document.getElementsByClassName('white');
+function getByColor (col) {
+	return document.getElementsByClassName(col);
 }
 
 function changeClassTo (items, newColor) {
@@ -24,8 +20,9 @@ function changeClassTo (items, newColor) {
 	// 	item = items[i];
 	// 	item.className = newColor;
 	// }
+
 	var i = 0;
-	console.log(items.length);
+	// console.log(items.length);
 	var item;
 
 	for (i; i <= items.length; i++) {
@@ -38,19 +35,33 @@ function changeClassTo (items, newColor) {
 function headerChange () {
 	switcher = getSwitcher();
 	if (switcher.className === 'red') {
-		console.log('red');
-		itemArray = getRed();
+		itemArray = getByColor('red');
 		changeClassTo(itemArray, 'white');
 	} else {
-		console.log('white');
-		itemArray = getWhite();
+		itemArray = getByColor('white');
 		changeClassTo(itemArray, 'red');
 	}
 }
 
+var oldstyle = 'example2';
+var newstyle = 'example';
 
-window.onload = function(){
-	getSwitcher();
-};
+function exampleChange (oldClass, newClass) {
+	// document.getElementsByClassName returns a node list in older browser and HTMLCollection in Dom 4. See here: http://stackoverflow.com/questions/3871547/js-iterating-over-result-of-getelementsbyclassname-using-array-foreach
+	var examples = Array.from(document.getElementsByClassName(oldClass));
+	examples.forEach(function(element) {
+	    console.log(element);
+   	 	element.className = newClass;
+	});
+	oldstyle = newClass;
+	newstyle = oldClass;
+	return oldstyle, newstyle;
+}
 
+
+
+function runOnClick () {
+	headerChange();
+	exampleChange(oldstyle, newstyle);
+}
 
