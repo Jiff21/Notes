@@ -8,7 +8,7 @@
 
 /* exported proAside */
 function grabAsideByID () {
-	return document.getElementById('#proAside');
+	return document.getElementById('proAside');
 }
 
 function keepInPlace (el){
@@ -19,12 +19,13 @@ function keepInPlace (el){
 		el.classList.remove('pro-fixed');
 	} else if (posTop >= scrollAt) {
 		// console.log('adding');
+		el.addClass += 'pro-fixed';
 		el.classList.add('pro-fixed');
 	}
 }
 
 window.onload = function(){
-	const proAside = grabAsideByID();
+	let proAside = grabAsideByID();
 	window.addEventListener('scroll', function () {
 		keepInPlace(proAside);
 	});
