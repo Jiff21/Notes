@@ -28,7 +28,7 @@
 				<div class="jumbotron">
 					<div class="light-layer">
 					<h1>Python Notes</h1>
-					<p class="lead">You are <a href="https://learnpythonthehardway.org/book/ex28.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
+					<p class="lead">You are <a href="https://learnpythonthehardway.org/book/ex35.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
 					</div>
 				</div>
 			</div>
@@ -52,6 +52,9 @@
 					<li><span class="term">map(function, iterable, ...)</span>: Apply function to every item of iterable and return a list of the results. </li>
 					<li><span class="term">range(0, 30, 5)</span>: 0, 5, 10,...,30.</li>
 					<li><span class="term">list(reversed(counting))</span>: [3,2,1]</li>
+					<li><span class="term">insert(val, where)</span>: insert a value into a position in a list</li>
+					<li><span class="term">remove(val)</span>: remove first item that matches that value from a list.</li>
+					<li><span class="term">clear()</span>: Clear a list.</li>
 					<li><span class="term">round(3.1234,2)</span>: 3.12, 5 rounds up</li>
 					<li><span class="term">sorted(iterable[, cmp[, key[, reverse]]])</span>: Sort an object, details here.<a href="https://docs.python.org/2/library/functions.html#sorted" target="_blank"> See here.</a></li>
 					<li><span class="term">a = raw_input('<span class="replace">Prompt text here</span>')</span>: Prompt user for input<a href="https://docs.python.org/2/library/functions.html#raw_input" target="_blank"> See here.</a></li></li>
@@ -128,7 +131,6 @@
 					## You can also do this:<br>
 					print "%s, but %s." % get_my_opinion('cats', dogs)
 				</div>
-
 			</div>
 
 
@@ -151,7 +153,8 @@
 			</div>
 			<div class="fourth skin rts">
 				<div class="verticalAlign">
-					<h3>Arrays</h3>
+					<h3>Lists (Arrays)</h3>
+					<!-- <p>Remember: ordinal == ordered, 1st; cardinal == cards at random, 0.</p> -->
 				</div>
 			</div>
 			<div class="fourth skin rtlist">
@@ -162,12 +165,11 @@
 					]<br><br>
 					example_array.append('doc')<br>
 					for values in example_array:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;print values
+					&nbsp;&nbsp;&nbsp;&nbsp;print values<br><br>
+					i_like_doc = example_array[0]
 				</div>
 			</div>
 			</div>
-
-
 
 			<div class="full no-skin spacer">
 			<div class="fourth no-skin rts">
@@ -185,20 +187,25 @@
 			</div>
 			<div class="fourth no-skin rts">
 				<div class="verticalAlign">
-					<h3>FPO</h3>
+					<h3>Loops</h3>
 				</div>
 			</div>
 			<div class="fourth no-skin rtlist">
 				<div class="example2">
-					example_array = [<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;'dopie',<br>
+					numbers = range(1,6)<br>
+					for n in numbers:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % n<br><br>
+					while i < 6:<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % i<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;i += 1
+
 				</div>
 			</div>
 			</div>
 
 			<div class="full skin">
 				<h3>Logic Statements</h3>
-				<p>Unlike the other languages you've previously learned, you don't have to us pikes or ampersands, you can simply use the words <span class="term">and</span>, <span class="term">or</span>, and <span class="term">not</span>.You also have the typical <span class="term">!=</span>, <span class="term">+=</span>, <span class="term">-=</span>, <span class="term">==</span>, <span class="term">&gt;=</span>, and <span class="term">&lt;=</span>. As you've learned before <span class="term">True</span> and <span class="term">False</span> are case sensitive. Double negatives are in play, like <span class="term">not(False)</span> would return TRUE.  <span class="term">is</span> works like ==, but <span class="term">in</span> is looking for the object in a sequence, <span class="example">e.g. 5 in (5,10,15)</span>.
+				<p>Unlike the other languages you've previously learned, you don't have to us pikes or ampersands, you can simply use the words <span class="term">and</span>, <span class="term">or</span>, and <span class="term">not</span>.You also have the typical <span class="term">!=</span>, <span class="term">+=</span>, <span class="term">-=</span>, <span class="term">==</span>, <span class="term">&gt;=</span>, and <span class="term">&lt;=</span>. As you've learned before <span class="term">True</span> and <span class="term">False</span> are case sensitive. Double negatives are in play, like <span class="term">not(False)</span> would return TRUE.  <span class="term">is</span> works like ==, but <span class="term">in</span> is looking for the object in a sequence. You can also define a range like this <span class="example">3 <= x <= 6</span> or like this <span class="example">range(3,6)</span>.
 				</p>
 			</div>
 
