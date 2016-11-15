@@ -109,3 +109,24 @@ alias roocoup='python ~/Documents/Code/roo_coup/RooCoup.py'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f ~bin/google_appengine/path.bash.inc ]; then
+  source '~bin/google_appengine/path.bash.inc'
+fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f ~bin/google_appengine/completion.bash.inc ]; then
+  source '~bin/google_appengine/completion.bash.inc'
+fi
+
+##
+# Closure setup for Campus.
+##
+export GOOGLE_CLOSURE_PATH="$HOME/bin/google_closure"
+export GOOGLE_CLOSURE_TEMPLATES_PATH="$HOME/bin/google_closure_templates"
+
