@@ -16,8 +16,8 @@ alias old-web="cd /Applications/MAMP/htdocs"
 alias top10="ps -eo %cpu,pid,comm | sort -nr | head -10"
 alias deviceproxy="~/Documents/Tools/ntlmaps/main.py"
 alias wdio-run="./node_modules/.bin/wdio wdio.conf.js"
-alias shub='selenium-standalone start -- -role hub'
-alias snode='selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -maxSessions 31 -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY'
+alias shub='selenium-standalone start --version=3.0.1 -- -role hub'
+alias snode='selenium-standalone start --version=3.0.1 -- -role node -hub http://localhost:4444/grid/register -port 5556  -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY'
 alias cwdio='node ./qa/webdriverio/spec/smoke/full_campus.js'
 
 ###################################
