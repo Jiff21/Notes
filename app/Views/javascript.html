@@ -37,6 +37,7 @@
 				<p>Press this button for Javascript in action!</p>
 				<button type="button" value="button" onclick="runOnClick()">
 				Button</button>
+				<button type="button" value="button" onclick="makeVisible()">Updates</button>
 			</header>
 			<div class="main">
 				<p>
@@ -102,10 +103,26 @@
 				<p>
 				Another big part of Javascript is writting a <span class="term"> function </span>. A function is declared by:
 				</p>
-				<div class="example2">
+				<div class="example2 visible">
 					function myName() {<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dostuff;<br>
 					};
+				</div>
+				<div class="example2 hidden">
+
+				const saveJSON = (data, path, filename) => {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const parsedData = JSON.parse(data);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const json = JSON.stringify(parsedData);<br>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fs.writeFile(filename, json, 'utf8', (err) => {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (err) throw err;<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(`Stubbing data for ${ path } to ${ filename }`);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;} catch (e) {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.error(e.message);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+				};
 				</div>
 				<p>
 				Then you can use the function by calling it with parenthesis and then following it with a semicolon (e.g. <code class="example">
@@ -455,5 +472,6 @@
 		<script src="../includes/nav.js"></script>
 		<script src="../includes/footer.js"></script>
 		<script src="../scripts/headerChange.js"></script>
+		<script src="../scripts/newVisSwitch.js"></script>
 	</body>
 </html>
