@@ -28,14 +28,14 @@
 				<div class="jumbotron">
 					<h1>Javascript Notes</h1>
 					<p class="lead">&#x22;Things do not happen. Things are made to happen.&#x22; - JFK</p>
-					<p><a class="btn btn-lg btn-success" onclick="runOnClick()"><span class="glyphicon glyphicon-fire"></span> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
+					<p><a id="jumboButton" class="btn btn-lg btn-success" onclick="makeVisible()">Older Examples</span></a></p>
 				</div>
 			</div>
 			<article>
 			<header class="white" id="switcher">
 				<h3 >Javascript</h3>
-				<p>Press this button for updated examples</p>
-				<button type="button" value="button" onclick="makeVisible()">Updates</button>
+				<p>Press this button to toggle between old examples and new examples</p>
+				<button type="button" value="button" onclick="runOnClick()">Toggle</button>
 			</header>
 			<div class="main">
 				<p>
@@ -101,12 +101,12 @@
 				<p>
 				Another big part of Javascript is writting <span class="term">functions</span>. A function is declared this:
 				</p>
-				<div class="example2 visible">
+				<div class="example2 hidden">
 					function myName('n') {<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n);<br>
 					};
 				</div>
-				<div class="example2 hidden">
+				<div class="example2 visible">
 					const myName = (n) => {<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n);<br>
 					};

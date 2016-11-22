@@ -7,11 +7,19 @@
  /* exported makeVisible */
 'use strict';
 
+const changeButton = () => {
+	const buttonTitle = document.getElementById('jumboButton');
+	if (buttonTitle.text === 'Newer Examples'){
+		buttonTitle.text = 'Older Examples';
+	} else {
+		buttonTitle.text = 'Newer Examples';
+	}
+};
 
-function makeVisible(){
-	// HTML Collections live update. Put it in an araay to stop it.
+const changeExample = () => {
 	let i = 0;
 	let l = 0;
+	// HTML Collections live update. Put it in an araay to stop it.	
 	let oldVis = [].slice.call(document.getElementsByClassName('visible'));
 	let newVis = [].slice.call(document.getElementsByClassName('hidden'));
 
@@ -28,4 +36,9 @@ function makeVisible(){
 		newVis[l].classList.add('visible');
 		newVis[l].classList.remove('hidden');
 	}
-}
+};
+
+const makeVisible = () => {
+	changeButton();
+	changeExample();
+};
