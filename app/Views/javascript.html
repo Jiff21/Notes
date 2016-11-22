@@ -34,8 +34,8 @@
 			<article>
 			<header class="white" id="switcher">
 				<h3 >Javascript</h3>
-				<p>Press this button to toggle between old examples and new examples</p>
-				<button type="button" value="button" onclick="runOnClick()">Toggle</button>
+				<p>Press button for crappy styling changes.</p>
+				<button type="button" value="button" onclick="runOnClick()">Click Me!</button>
 			</header>
 			<div class="main">
 				<p>
@@ -82,18 +82,37 @@
 				make one by setting a condition then using a questionmark then do this is true colon this if false (e.g. <code class="example">
 				(playerOne > playerTwo ? playerOne : playerTwo)</code>).
 				</p>
+				<h4>Loops</h4>
+				<div class="visible">
+				<p> A <span class="term">For-of loop</span> is writen like:</p>
+				<div class="example2">
+				for (var value of myArray) {<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(value);<br>
+				};</div>
+				</div>
+
+
+				<div class="hidden">
 				<p>
 				Working with <span class="term"> Loops </span>, also known as iteration, is a big part of using Javascript. A <span
 				class="term">for loop</span> starts with the word &#x22;for&#x22; then opens parenthesis, in the parenthesis you start with a variable
 				being defined, after a comma you set a condition, after another comma you set and incrementor and then close the
-				parenthesis. You follow with curly braces, that will get executed every time the loop runs (e.g. <code class="example">for
-				(var = i, i &lt; 10, i++){console.log(i;};</code>).  A <span class="term">while loop</span> is writen like:
+				parenthesis. You follow with curly braces, that will get executed every time the loop runs.</p>
+				<p> A <span class="term">For loop</span> is writen like:</p> 
+				<div class="example2">
+				for (var = i, i &lt; 10, i++){<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(i);<br>
+				};</div>
+				
+				<p> A <span class="term">while loop</span> is writen like:</p> 
 				</p>
 				<div class="example2">
 					while (a &lt; 10){<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(a);<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a++;<br>
-				};<br></div>
+				};<br>
+				</div>
+				</div>
 				<p>
 				You can always use <span class="term"> break </span> to manually stop a loop. You can also use <span class="term"> continue
 				</span> to skip one iteration and check the condition again.
