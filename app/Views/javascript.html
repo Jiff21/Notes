@@ -28,15 +28,13 @@
 				<div class="jumbotron">
 					<h1>Javascript Notes</h1>
 					<p class="lead">&#x22;Things do not happen. Things are made to happen.&#x22; - JFK</p>
-					<p><a class="btn btn-lg btn-success" onclick="alert('I need to think of something for this to do.')"><span class="glyphicon glyphicon-fire"></span> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
+					<p><a class="btn btn-lg btn-success" onclick="runOnClick()"><span class="glyphicon glyphicon-fire"></span> FPO <span class="glyphicon glyphicon-fire"></span></a></p>
 				</div>
 			</div>
 			<article>
 			<header class="white" id="switcher">
 				<h3 >Javascript</h3>
-				<p>Press this button for Javascript in action!</p>
-				<button type="button" value="button" onclick="runOnClick()">
-				Button</button>
+				<p>Press this button for updated examples</p>
 				<button type="button" value="button" onclick="makeVisible()">Updates</button>
 			</header>
 			<div class="main">
@@ -101,7 +99,7 @@
 				</span> to skip one iteration and check the condition again.
 				</p>
 				<p>
-				Another big part of Javascript is writting a <span class="term"> function </span>. A function is declared by:
+				Another big part of Javascript is writting <span class="term">functions</span>. A function is declared this:
 				</p>
 				<div class="example2 visible">
 					function myName('n') {<br>
@@ -109,7 +107,7 @@
 					};
 				</div>
 				<div class="example2 hidden">
-					const saveJSON = (data, path, filename) => {<br>
+					const myName = (n) => {<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n);<br>
 					};
 				</div>
@@ -166,10 +164,10 @@
 				myFunction, false)</code>).  If you want to target something you can use a combo of a new variable and the .getElement function like this:
 				</p>
 				<div class="example2">
-					var myImage = document.getElementById(&#x27;mainImage&#x27;);{<br>
-					myImage.onclick = function(){;<br>
+					var myImage = document.getElementById(&#x27;mainImage&#x27;);<br>
+					myImage.onclick = function(){<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&#x27;You click me&#x27;);<br>
-					}<br>
+					};<br>
 				</div>
 				<p>
 				You can use the the onsubmit function for forms to stop them from sending to the server by setting them to return false. If you&#x27;re planning
@@ -198,7 +196,7 @@
 					But if you are dealing with associtive arrays you can simplify this by using the <span class="term">map</span> function.
 				</p>
 				<div class="example2">
-					function getStockSymbols(stocks){{<br>
+					function getStockSymbols(stocks){<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stocks.map(function(stock){<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.symbol;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
@@ -208,7 +206,7 @@
 					Of if you need to only get elements that pass a certain qualification you could use the <span class="term">filter</span> method.
 				</p>
 				<div class="example2">
-					function getStocksOver(stocks, minPrice){{<br>
+					function getStocksOver(stocks, minPrice){<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stocks.filter(function(stock){<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.price >= minPrice;<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
