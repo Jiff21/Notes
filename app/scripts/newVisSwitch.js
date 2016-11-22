@@ -15,7 +15,6 @@ function makeVisible(){
 	let oldVis = [].slice.call(document.getElementsByClassName('visible'));
 	let newVis = [].slice.call(document.getElementsByClassName('hidden'));
 
-	// Setting i length here because of live node list.
 	const numberOfOld = oldVis.length;
 	for(i; i < numberOfOld; i++){
 		// Loops through all previously visible elements and makes them hidden.
