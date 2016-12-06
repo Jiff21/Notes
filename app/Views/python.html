@@ -28,7 +28,7 @@
 				<div class="jumbotron">
 					<div class="light-layer">
 					<h1>Python Notes</h1>
-					<p class="lead">You are <a href="https://learnpythonthehardway.org/book/ex35.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
+					<p class="lead">You are <a href="https://learnpythonthehardway.org/book/ex38.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
 					</div>
 				</div>
 			</div>
@@ -78,7 +78,12 @@
 					<ul>
 						<li>%s = variable for string replacements</li>
 						<li>%r = raw data for debugging, like strings display quotes around them</li>
-						<li>%d = for numbers not string</li>
+						<li>%d = decimal integers</li>
+						<li>%f = floating point real number</li>
+						<li>%o = for octal number</li>
+						<li>%u = undsigned decimals</li>
+						<li>%c = Character Format</li>
+						<li>%X = Hexadecimal uppercase</li>
 						<li>%% = Escape Percentage Symbol</li>
 					</ul>
 			</div>
@@ -150,6 +155,7 @@
 					for key in example_dict:<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;print key + " and it's value is " + example_ditc[key]
 				</div>
+				<p>If you need an ordered dict, check out <a href="https://docs.python.org/2/library/collections.html#collections.OrderedDict">collections.OrderedDict</a>.</p>
 			</div>
 			<div class="fourth skin rts">
 				<div class="verticalAlign">
@@ -203,11 +209,87 @@
 			</div>
 			</div>
 
+			<div class="full no-skin spacer">
+				<div class="fourth no-skin rts">
+					<h3>Missing Keywords</h3>
+				</div>
+				<div class="fourth no-skin rtlist">
+					<ul>
+						<li><span class="term">assert</span>: e.g. <span class="example">assert False, "Error!"</span></li>
+						<li><span class="term">break</span>: Breaks out of a loop</li>
+						<li><span class="term">continue</span>: Don't process more of the loop, do it again.</li>
+						<li><span class="term">pass</span>: For Empty Blocks</li>
+						<li><span class="term">yield</span>: Pause here and return to caller.</li>
+						<li><span class="term">del</span>: Delete from a dict. e.g. <span class="example">del X[Y]</span></li>
+						<li><span class="term">global</span>: declare global var. e.g. <span class="example">global dags</span></li>
+						<li><span class="term">lamba</span>: declare a short anonymous func. e.g. <span class="example">s = lambda y: y + 2</span> then print s(2) would print 4</li>
+						<li><span class="term">try</span>: Try this block, and if exception, go to except.</li>
+						<li><span class="term">raise</span>: e.g. <span class="example">raise ValueError("No")</span></li>
+						<li><span class="term">finally</span>: Exceptions or not, finally do this no matter what.</li>
+					</ul>
+				</div>
+				<div class="fourth no-skin rtlist">
+					<h3>Data types</h3>
+				</div>
+				<div class="fourth no-skin rtlist">
+					<div class="full skin">
+						<table>
+						<colgroup>
+						<col width="12%">
+						<col width="54%">
+						<col width="34%">
+						</colgroup>
+						<thead valign="bottom">
+							<tr>
+								<th class="head">Type</th>
+								<th class="head">Description</th>
+							</tr>
+						</thead>
+						<tbody valign="top">
+							<tr>
+								<td><tt>True</tt></td>
+								<td>True boolean value.</td>
+							</tr>
+							<tr>
+								<td><tt>False</tt></td>
+								<td>False boolean value.</td>
+							</tr>
+							<tr>
+								<td><tt>None</tt></td>
+								<td>Represents "nothing" or "no value".</td>
+							</tr>
+							<tr>
+								<td><tt>strings</tt></td>
+								<td>Stores textual information.</td>
+							</tr>
+							<tr>
+								<td><tt>numbers</tt></td>
+								<td>Stores integers.</td>
+							</tr>
+							<tr>
+								<td><tt>floats</tt></td>
+								<td>Stores decimals.</td>
+							</tr>
+							<tr>
+								<td><tt>lists</tt></td>
+								<td>Stores a list of things.</td>
+							</tr>
+							<tr>
+								<td><tt>dicts</tt></td>
+								<td>Stores a key=value mapping of things.</td>
+							</tr>
+						</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+
 			<div class="full skin">
-				<h3>Logic Statements</h3>
-				<p>Unlike the other languages you've previously learned, you don't have to us pikes or ampersands, you can simply use the words <span class="term">and</span>, <span class="term">or</span>, and <span class="term">not</span>.You also have the typical <span class="term">!=</span>, <span class="term">+=</span>, <span class="term">-=</span>, <span class="term">==</span>, <span class="term">&gt;=</span>, and <span class="term">&lt;=</span>. As you've learned before <span class="term">True</span> and <span class="term">False</span> are case sensitive. Double negatives are in play, like <span class="term">not(False)</span> would return TRUE.  <span class="term">is</span> works like ==, but <span class="term">in</span> is looking for the object in a sequence. You can also define a range like this <span class="example">3 <= x <= 6</span> or like this <span class="example">range(3,6)</span>.
+				<h3>Operators</h3>
+				<p>Unlike the other languages you've previously learned, you don't have to us pikes or ampersands, you can simply use the words <span class="term">and</span>, <span class="term">or</span>, and <span class="term">not</span>.You also have the typical <span class="term">!=</span>, <span class="term">+=</span>, <span class="term">-=</span>, <span class="term">==</span>, <span class="term">&gt;=</span>, and <span class="term">&lt;=</span>. As you've learned before <span class="term">True</span> and <span class="term">False</span> are case sensitive. Double negatives are in play, like <span class="term">not(False)</span> would return TRUE.  <span class="term">is</span> works like ==, but <span class="term">in</span> is looking for the object in a sequence. You can also define a range like this <span class="example">3 <= x <= 6</span> or like this <span class="example">range(3,6)</span>. You also have <span class="term">%=</span> which is modulus assign <span class="example">x %= 2</span>.  <span class="term">@</span> is an AT(decorator) which can be used for <span class="example">@classmethod</span>.
 				</p>
 			</div>
+
 
 			<div class="full no-skin">
 			<div>
