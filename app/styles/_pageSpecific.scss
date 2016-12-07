@@ -6,16 +6,16 @@
 		background-image: url('../images/FranklinVsZeus.jpg');
 		background-position: center;
 		background-repeat: no-repeat;
-		
+
 		.dark-layer {
 			margin-top: 150px;
 		}
-		
+
 		h1 {
-			margin-top: 0px;
-			padding-top:15px;
+			margin-top: 0;
+			padding-top: 15px;
 		}
-		
+
 		p {
 			font-weight: bolder;
 		}
@@ -26,9 +26,10 @@
 .home-grid {
 	h6 {
 		@include border-radius(10px);
-		background: RGB(196, 236, 255);
+
+		background: rgb(196, 236, 255);
 		border: 3px solid black;
-		box-shadow: 10px 10px 5px #888888; 
+		box-shadow: 10px 10px 5px #888;
 		font-size: 16px;
 		padding: 50px 30px;
 		text-align: center;
@@ -45,7 +46,7 @@
 	.jumbotron {
 		background-image: url('../images/RooseveltVsBigfoot.jpg');
 		background-position: center;
-			
+
 		h1 {
 			color: $white;
 			margin-top: 2em;
@@ -59,12 +60,12 @@
 	.main {
 		h1,
 		h3 {
-			margin-top: 0px;
+			margin-top: 0;
 		}
 	}
 
 	.shy-text {
-		padding: 10px 100px 10px 100px;
+		padding: 10px 100px;
 	}
 
 	header {
@@ -73,7 +74,7 @@
 	}
 
 	pre {
-		margin: 10px 100px 10px 100px;
+		margin: 10px 100px;
 	}
 
 	.match-pic-height {
@@ -85,13 +86,13 @@
 		height: auto;
 	}
 
-	.container-fluid{
+	.container-fluid {
 		div {
 			margin-top: 10px;
 		}
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		.jumbotron {
 			h1 {
 				margin-top: 4em;
@@ -104,7 +105,7 @@
 	.jumbotron {
 		background-image: url('../images/ADB.jpg');
 		background-position: center;
-			
+
 		h1 {
 			color: $black;
 		}
@@ -124,7 +125,7 @@
 	.jumbotron {
 		background-image: url('../images/ripleyvstapler.gif');
 		background-position: center;
-			
+
 		h1 {
 			color: $white;
 			margin-top: 300px;
@@ -145,7 +146,7 @@
 	.jumbotron {
 		background-image: url('../images/bughunt.jpg');
 		background-position: center;
-			
+
 		h1 {
 			color: $white;
 			margin-top: 180px;
@@ -167,7 +168,7 @@
 	.jumbotron {
 		background-image: url('../images/JFKAlienHunter.jpg');
 		background-position: center;
-		
+
 		h1 {
 			color: $white;
 			margin-top: 50px;
@@ -192,7 +193,7 @@
 		background-color: DarkGray;
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		.jumbotron {
 			h1 {
 				margin-top: 230px;
@@ -210,7 +211,7 @@
 
 		.dark-layer {
 			margin-top: 80px;
-			
+
 			h1 {
 				color: $white;
 				margin-top: 15px;
@@ -226,7 +227,7 @@
 	.main {
 		@include make-sm-column-pull(4);
 	}
-	
+
 	aside {
 		@include make-sm-column-push(8);
 	}
@@ -236,14 +237,16 @@
 		font-size: 9em;
 		left: 0;
 		margin: 0;
-		opacity: .10;
+		opacity: 0.1;
 		overflow: hidden;
 		padding: 0;
 		position: absolute;
 		right: 50;
-		@media(min-width: $screen-tablet){
+
+		@media (min-width: $screen-tablet) {
 			font-size: 20em;
 		}
+
 		text-shadow: 4px 5px 10px #666;
 		top: 0;
 		transform: rotate(12deg);
@@ -257,15 +260,17 @@
 		font-size: 9em;
 		margin: 0;
 		padding: 0;
-		@media(min-width: $screen-tablet){
+
+		@media (min-width: $screen-tablet) {
 			font-size: 20em;
 		}
+
 		text-shadow: 4px 5px 10px #666;
-		opacity: .10;
+		opacity: 0.1;
 		filter: dropshadow(color=#666, offx=4, offy=5);
-		transform:rotate(-12deg);
-		-ms-transform:rotate(-12deg); /* IE 9 */
-		-webkit-transform:rotate(-12deg); /* Safari and Chrome */
+		transform: rotate(-12deg);
+		-ms-transform: rotate(-12deg); /* IE 9 */
+		-webkit-transform: rotate(-12deg); /* Safari and Chrome */
 		top: 600px;
 		left: 20px;
 		z-index: -1;
@@ -273,7 +278,7 @@
 	}
 
 	/* This is for styling the aside in the CSS Page */
-	@media(min-width: $screen-tablet){	
+	@media (min-width: $screen-tablet) {
 		aside {
 			overflow: auto;
 			min-height: 600px;
@@ -298,12 +303,12 @@
 	.jumbotron {
 		background-image: url('../images/Sasquatch.jpg');
 		background-position: center;
-		
+
 		h1 {
 			color: $dark-red;
 			margin-top: 60px;
 		}
-		
+
 		p {
 			color: $dark-red;
 			font-weight: 600;
@@ -316,22 +321,23 @@
 			height: 50px;
 			margin-bottom: 10px;
 			font-size: 30px;
+
 			@include button-color($white, $dark-red, #ff0000);
 			@include border-radius(10px);
-			
-			&:active, 
+
+			&:active,
 			&:hover {
 				border-top-color: $black;
 				background: $black;
 			}
-			
+
 			&:focus {
 				outline: none; //Not worrried about accessibility.
 			}
 		}
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		h3 {
 			font-size: 130px;
 		}
@@ -353,12 +359,12 @@
 
 		.light-layer {
 			margin-top: 120px;
-				
-				h1 {
-					margin-top: 15px;
-					padding-top: 0px;
-					padding-bottom: 0px;
-				}
+
+			h1 {
+				margin-top: 15px;
+				padding-top: 0;
+				padding-bottom: 0;
+			}
 		}
 	}
 
@@ -372,7 +378,7 @@
 		}
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		.jumbotron {
 			.light-layer {
 				margin-top: 250px;
@@ -387,32 +393,33 @@
 		background-image: url('../images/GWVZombies.jpg');
 		background-position: center;
 
-			.light-layer {
-				margin-top: 100px;
+		.light-layer {
+			margin-top: 100px;
 
-				h1 {
-					margin-top: 15px;
-					padding-bottom: 0px;
-					padding-top: 0px;
-				}
+			h1 {
+				margin-top: 15px;
+				padding-bottom: 0;
+				padding-top: 0;
 			}
+		}
 	}
 
 	aside {
 		h4 {
-			margin-top: 0px;
+			margin-top: 0;
 		}
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		.jumbotron {
 			.light-layer {
 				margin-top: 220px;
 			}
 		}
+
 		aside {
 			h4 {
-				margin-top: 0px;
+				margin-top: 0;
 			}
 		}
 	}
@@ -424,8 +431,8 @@
 		background-position: center;
 		padding-bottom: 120px;
 	}
-	
-	@media(min-width: $screen-tablet){
+
+	@media (min-width: $screen-tablet) {
 		.jumbotron {
 			.light-layer {
 				margin-top: 120px;
@@ -435,20 +442,19 @@
 }
 
 
-
 .node-body {
 	.jumbotron {
 		background-image: url('../images/nodegarden10.jpg');
 		background-position: center;
 		padding-bottom: 120px;
-			
+
 		.dark-layer {
 			margin-top: 120px;
 
 			h1 {
 				margin-top: 15px;
-				padding-top: 0px;
-				padding-bottom: 0px;
+				padding-top: 0;
+				padding-bottom: 0;
 			}
 		}
 	}
@@ -467,7 +473,7 @@
 		}
 	}
 
-	@media(min-width: $screen-md){
+	@media (min-width: $screen-md) {
 		.jumbotron {
 			.light-layer {
 				margin-top: 120px;
@@ -476,27 +482,25 @@
 
 		aside {
 			h4 {
-				margin-top: 0px;
+				margin-top: 0;
 			}
 		}
 	}
 }
 
 
-
 $jasmine-yellow: #fbde7e;
 $jasmine-blue: #add8e6;
-
 
 .jasmine-body {
 	.jumbotron {
 		background-image: url('../images/Jasmine.jpg');
 		background-position: right;
-		padding: 150px 0px 10px 0px;
-		
+		padding: 150px 0 10px;
+
 		.light-layer {
 			h1 {
-				padding: 0px 0px 0px 10px;
+				padding: 0 0 0 10px;
 			}
 		}
 
@@ -526,28 +530,32 @@ $jasmine-blue: #add8e6;
 
 	.blue {
 		background-color: $jasmine-blue;
-		.example2, .example {
+
+		.example2,
+		.example {
 			background-color: lighten($jasmine-blue, 5%);
-		}		
+		}
 	}
 
 	.yellow {
 		background-color: $jasmine-yellow;
-		.example2, .example {
+
+		.example2,
+		.example {
 			background-color: lighten($jasmine-yellow, 5%);
 		}
 	}
 
 	.same-list {
 		ul {
-			margin-bottom: 0px;
+			margin-bottom: 0;
 		}
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		.jumbotron { // Not working for some reason.
-			padding: 330px 0px 10px 0px;
-			
+			padding: 330px 0 10px;
+
 			h1 {
 				font-size: 36px;
 			}
@@ -560,9 +568,9 @@ $jasmine-blue: #add8e6;
 		.rts {
 			height: 100px;
 			position: relative;
-			
+
 			h3 {
-				position: absolute; 
+				position: absolute;
 				top: 50%;
 				margin-top: -26px;
 			}
@@ -579,7 +587,7 @@ $jasmine-blue: #add8e6;
 			}
 		}
 
-		#break:before {
+		#break::before {
 			content: $my-linebreak;
 			white-space: pre;
 		}
@@ -591,20 +599,22 @@ $no-skin: #ebe1c6;
 
 
 .python-body {
-	body, .jumbotron {
+	body,
+	.jumbotron {
 		background-color: $no-skin;
 	}
+
 	.jumbotron {
 		background-image: url('../images/Python.jpg');
 		background-position: center;
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-color: #000000;
-		padding: 150px 0px 10px 0px;
-		
+		background-color: #000;
+		padding: 150px 10px;
+
 		.light-layer {
 			h1 {
-				padding: 0px 0px 0px 10px;
+				padding: 0 0 0 10px;
 			}
 		}
 
@@ -634,28 +644,32 @@ $no-skin: #ebe1c6;
 
 	.skin {
 		background-color: $skin;
-		.example2, .example {
+
+		.example2,
+		.example {
 			background-color: lighten($skin, 3%);
-		}		
+		}
 	}
 
 	.no-skin {
 		background-color: $no-skin;
-		.example2, .example {
+
+		.example2,
+		.example {
 			background-color: lighten($no-skin, 3%);
 		}
 	}
 
 	.same-list {
 		ul {
-			margin-bottom: 0px;
+			margin-bottom: 0;
 		}
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		.jumbotron { // Not working for some reason.
-			padding: 330px 0px 10px 0px;
-			
+			padding: 330px 0 10px;
+
 			h1 {
 				font-size: 36px;
 			}
@@ -668,9 +682,9 @@ $no-skin: #ebe1c6;
 		.rts {
 			height: 100px;
 			position: relative;
-			
+
 			h3 {
-				position: absolute; 
+				position: absolute;
 				top: 50%;
 				margin-top: -26px;
 			}
@@ -687,14 +701,12 @@ $no-skin: #ebe1c6;
 			}
 		}
 
-		#break:before {
+		#break::before {
 			content: $my-linebreak;
 			white-space: pre;
 		}
 	}
 }
-
-
 
 $scat-yellow: #fbde7e;
 $scat-blue: #add8e6;
@@ -704,11 +716,11 @@ $scat-blue: #add8e6;
 	.jumbotron {
 		background-image: url('../images/staticcodeanalysis.jpg');
 		background-position: center;
-		padding: 10 0px 10px 0px;
-		
+		padding: 10 0 10px;
+
 		.light-layer {
 			h1 {
-				padding: 0px 0px 0px 10px;
+				padding: 0 0 0 10px;
 			}
 		}
 
@@ -738,22 +750,26 @@ $scat-blue: #add8e6;
 
 	.blue {
 		background-color: $scat-blue;
-		.example2, .example {
+
+		.example2,
+		.example {
 			background-color: lighten($scat-blue, 5%);
-		}		
+		}
 	}
 
 	.yellow {
 		background-color: $scat-yellow;
-		.example2, .example {
+
+		.example2,
+		.example {
 			background-color: lighten($scat-yellow, 5%);
 		}
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		.jumbotron { // Not working for some reason.
-			padding: 200px 0px 10px 0px;
-			
+			padding: 200px 0 10px;
+
 			h1 {
 				font-size: 36px;
 			}
@@ -766,9 +782,9 @@ $scat-blue: #add8e6;
 		.rts {
 			height: 100px;
 			position: relative;
-			
+
 			h3 {
-				position: absolute; 
+				position: absolute;
 				top: 50%;
 				margin-top: -26px;
 			}
@@ -785,7 +801,7 @@ $scat-blue: #add8e6;
 			}
 		}
 
-		#break:before {
+		#break::before {
 			content: $my-linebreak;
 			white-space: pre;
 		}
@@ -795,21 +811,15 @@ $scat-blue: #add8e6;
 			width: auto;
 			white-space: nowrap;
 		}
-
-
-
 	}
 }
-
-
-
 
 
 .selenium-body {
 	.jumbotron {
 		background-image: url('../images/abe_grizzly.jpg');
 		background-position: center;
-			
+
 		h1 {
 			color: white;
 			margin-top: 80px;
@@ -823,21 +833,22 @@ $scat-blue: #add8e6;
 	button {
 		height: 40px;
 		margin-bottom: 10px;
+
 		@include button-color($white, $black, #ff0000);
 		@include border-radius(2px);
-		
-		&:active, 
+
+		&:active,
 		&:hover {
 			border-top-color: $black;
 			background: $black;
 		}
-		
-			&:focus {
-				outline: none; //Not worrried about accessibility.
-			}
+
+		&:focus {
+			outline: none; //Not worrried about accessibility.
+		}
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		.jumbotron {
 			h1 {
 				margin-top: 180px;
@@ -854,10 +865,10 @@ $sublime-gold: #daa520;
 		background-image: url('../images/sublime.jpg');
 		background-position: top;
 		padding: 150 0 10;
-		
+
 		.light-layer {
 			h1 {
-				padding: 0px 0px 0px 10px;
+				padding: 0 0 0 10px;
 			}
 		}
 
@@ -875,16 +886,17 @@ $sublime-gold: #daa520;
 	article {
 		background-color: black;
 		color: white;
+
 		p {
 			margin-bottom: 2px;
 		}
 	}
 
-	.example2, 
+	.example2,
 	.example {
 		background-color: lighten($sublime-gold, 5%);
 		margin-bottom: 10px;
-	}	
+	}
 
 	h3 {
 		text-align: center;
@@ -900,27 +912,27 @@ $sublime-gold: #daa520;
 	.gold {
 		background-color: $sublime-gold;
 		color: $black;
-		
-		.example2, 
+
+		.example2,
 		.example {
 			background-color: lighten($sublime-gold, 5%);
 		}
 	}
 
 	.linter {
-		padding-bottom: 0px;
+		padding-bottom: 0;
 	}
 
 	.same-list {
 		ul {
-			margin-bottom: 0px;
+			margin-bottom: 0;
 		}
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		.jumbotron { // Not working for some reason.
-			padding: 222px 0px 10px 0px;
-			
+			padding: 222px 0 10px;
+
 			h1 {
 				font-size: 36px;
 			}
@@ -933,9 +945,9 @@ $sublime-gold: #daa520;
 		.rts {
 			height: 100px;
 			position: relative;
-			
+
 			h3 {
-				position: absolute; 
+				position: absolute;
 				top: 50%;
 				margin-top: -26px;
 			}
@@ -950,7 +962,7 @@ $sublime-gold: #daa520;
 			padding-top: 10px;
 		}
 
-		#break:before {
+		#break::before {
 			content: $my-linebreak;
 			white-space: pre;
 		}
@@ -962,25 +974,30 @@ $sublime-gold: #daa520;
 	.jumbotron {
 		background-image: url('../images/NixonVSaber.jpg');
 		background-position: center;
-		
+
 		.light-layer {
 			margin-top: 180px;
+
 			h1 {
 				margin-top: 15px;
-				padding: 0px 15px;
+				padding: 0 15px;
 			}
 		}
 	}
 
-	table, th, td {
+	table,
+	th,
+	td {
 		border: 1px solid black;
 	}
 
-	td, th {
+	td,
+	th {
 		text-align: center;
 	}
 
-	th, caption {
+	th,
+	caption {
 		background-color: #fffff0;
 	}
 
@@ -991,7 +1008,7 @@ $sublime-gold: #daa520;
 		font-weight: bolder;
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		.light-layer {
 			margin-top: 300px;
 		}
@@ -1005,7 +1022,7 @@ $sublime-gold: #daa520;
 		}
 	}
 
-	@media(min-width: $screen-desktop){
+	@media (min-width: $screen-desktop) {
 		.pro-fixed {
 			left: 50%;
 			margin-left: 150px;
@@ -1013,7 +1030,7 @@ $sublime-gold: #daa520;
 			top: 60px;
 			width: 900px;
 		}
-	}	
+	}
 }
 
 
@@ -1021,7 +1038,7 @@ $sublime-gold: #daa520;
 	.jumbotron {
 		background-image: url('../images/ReaganVeloc.jpg');
 		background-position: center;
-			
+
 		h1 {
 			color: $white;
 			margin-top: 4em;
@@ -1037,11 +1054,11 @@ $sublime-gold: #daa520;
 		max-width: 100%;
 	}
 
-	@media(min-width: $screen-desktop){
+	@media (min-width: $screen-desktop) {
 		.jumbotron {
 			h1 {
 				margin-top: 9em;
-			}			
+			}
 		}
 	}
 }
@@ -1051,7 +1068,7 @@ $sublime-gold: #daa520;
 	.jumbotron {
 		background-image: url('../images/SQLMap.jpeg');
 		background-position: center;
-			
+
 		h1 {
 			color: $white;
 			margin-top: 180px;
@@ -1079,8 +1096,8 @@ $sublime-gold: #daa520;
 
 	.footer {
 		position: fixed;
-		bottom: 0px;
-		left: 0px;
+		bottom: 0;
+		left: 0;
 		width: 100%;
 		background-color: $white;
 	}
@@ -1092,7 +1109,7 @@ $sublime-gold: #daa520;
 	.jumbotron {
 		background-image: url('../images/Octocat.jpg');
 		background-position: center;
-		
+
 		h1 {
 			color: $white;
 			margin-top: 180px;
@@ -1109,9 +1126,9 @@ $sublime-gold: #daa520;
 		}
 	}
 
-	@media(min-width: $screen-sm){
+	@media (min-width: $screen-sm) {
 		.pro-fixed {
-			left: 0px;
+			left: 0;
 			position: fixed;
 			top: 70px;
 			width: 100%;
@@ -1122,24 +1139,22 @@ $sublime-gold: #daa520;
 		}
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		aside {
 			a {
 				font-size: 2em;
 			}
 		}
+
 		.pro-fixed {
-			left: 0px;
+			left: 0;
 			position: fixed;
 			top: 70px;
 			width: 30%;
 		}
 	}
-
 	// @media(min-width: $screen-desktop){
-
-	// }	
-
+	// }
 }
 
 $terminal-text: #63de01;
@@ -1149,7 +1164,7 @@ $terminal-outline: #e5e5e5;
 	header {
 		color: $terminal-text;
 		padding-top: 40px;
-		
+
 		h1 {
 			font-size: 3em;
 		}
@@ -1159,7 +1174,8 @@ $terminal-outline: #e5e5e5;
 	color: $terminal-text;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-	.example, .example2 {
+	.example,
+	.example2 {
 		background-color: $black;
 		border: dashed 1px $terminal-outline;
 		color: $terminal-text;
@@ -1170,12 +1186,12 @@ $terminal-outline: #e5e5e5;
 	.keypress {
 		color: #e7e7e7;
 	}
-	
+
 	.footer {
 		color: $terminal-text;
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		h1 {
 			font-size: 7em;
 		}
@@ -1187,14 +1203,14 @@ $terminal-outline: #e5e5e5;
 		background-image: url('../images/red.jpg');
 		background-position: center;
 		padding-bottom: 120px;
-			
+
 		.dark-layer {
 			margin-top: 120px;
 
 			h1 {
 				margin-top: 15px;
-				padding-top: 0px;
-				padding-bottom: 0px;
+				padding-top: 0;
+				padding-bottom: 0;
 			}
 		}
 	}
@@ -1213,7 +1229,7 @@ $terminal-outline: #e5e5e5;
 		}
 	}
 
-	@media(min-width: $screen-md){
+	@media (min-width: $screen-md) {
 		.jumbotron {
 			.light-layer {
 				margin-top: 120px;
@@ -1222,7 +1238,7 @@ $terminal-outline: #e5e5e5;
 
 		aside {
 			h4 {
-				margin-top: 0px;
+				margin-top: 0;
 			}
 		}
 	}
@@ -1232,7 +1248,7 @@ $terminal-outline: #e5e5e5;
 .ard-body {
 	header {
 		margin-top: 40px;
-		
+
 		h1 {
 			margin: 20px;
 		}
@@ -1251,6 +1267,6 @@ $terminal-outline: #e5e5e5;
 	}
 
 	.light-layer {
-		opacity: .9;
+		opacity: 0.9;
 	}
 }

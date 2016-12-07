@@ -5,20 +5,22 @@ $icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 // endbower
 
 /* Remove Top Margin on the 1st Heading of Main Paragraph or Aside */
-.main div h3, 
-.main div h1, 
-.main div h2, 
-aside h5, 
-aside h6, 
+.main div h3,
+.main div h1,
+.main div h2,
+aside h5,
+aside h6,
 aside h4 {
 	margin-top: 0;
 }
 
 @import 'mixins';
 
+
 /* Mixin for setting Bootstrap setting using html5 terms.  Some pages changes in page specific. */
 article {
 	@include make-row();
+
 	.main {
 		@include make-xs-column(12);
 		@include make-sm-column(8);
@@ -38,11 +40,12 @@ article {
 	.half-full {
 		@include make-xs-column(12);
 		@include make-sm-column(6);
+
 		h3 {
 			text-align: center;
 		}
 
-		@media(min-width: $screen-tablet){
+		@media (min-width: $screen-tablet) {
 			h3 {
 				text-align: left;
 			}
@@ -50,8 +53,9 @@ article {
 	}
 
 	.half-when-big-wrapper {
-		 @include make-row;
+		@include make-row;
 	}
+
 	.half-when-big {
 		@include make-sm-column(12);
 		@include make-md-column(6);
@@ -66,32 +70,36 @@ article {
 	.five-of-seven {
 		@include make-xs-column(12);
 		@include make-sm-column(5);
+
 		h3 {
 			text-align: center;
 		}
 
-		@media(min-width: $screen-tablet){
+		@media (min-width: $screen-tablet) {
 			h3 {
 				text-align: left;
 			}
-		}		
+		}
 	}
 
 	.seven-of-five {
 		@include make-xs-column(12);
 		@include make-sm-column(7);
+
 		h3 {
 			text-align: center;
 		}
 
-		@media(min-width: $screen-tablet){
+		@media (min-width: $screen-tablet) {
 			h3 {
 				text-align: left;
 			}
-		}		
+		}
 	}
+
 	.wrapper {
 		display: table;
+
 		.fourth {
 			display: table-cell;
 		}
@@ -105,11 +113,12 @@ article {
 		color: $white;
 		cursor: pointer;
 		display: block;
-		padding: 5px 10px 5px 0px;
+		padding: 5px 10px 5px 0;
 		font-size: 1.5em;
-		margin: 4px 0px 0px -5px;
+		margin: 4px 0 0 -5px;
 		text-align: right;
 		text-decoration: none;
+
 		&:hover {
 			background-color: lighten($black, 15%);
 			color: $white;
@@ -129,11 +138,13 @@ article {
 		@include make-xs-column(4);
 		@include make-sm-column(3);
 		@include make-sm-column(2);
-		padding-left: 0px;
+
+		padding-left: 0 px;
 	}
 
 	.main {
 		@include make-xs-column(12);
+
 		h3 {
 			margin-top: 55px;
 		}
@@ -148,8 +159,8 @@ article {
 .browsehappy {
 	background: #ccc;
 	color: $black;
-	margin: .2em 0;
-	padding: .2em 0;
+	margin: 0.2em 0;
+	padding: 0.2em 0;
 }
 
 /* Space out content a bit */
@@ -202,11 +213,11 @@ header {
 
 	button {
 		border: 1px solid #dcdcdc;
-		color: #777777;
+		color: #777;
 		font-size: 12px;
 		font-weight: bold;
 		text-align: center;
-		text-shadow: 1px 1px 0px $black;
+		text-shadow: 1px 1px 0 $black;
 		width: 50px;
 	}
 }
@@ -246,14 +257,17 @@ header {
 	clear: both;
 
 	.glyphicon {
-		margin: 0px 2px 0px 10px;
+		margin: 0 2px 0 10px;
 	}
 }
 
 $example-background: #f9f2f4;
+
+
 /* Style for Example classes along with related spans. */
 .example {
 	@include border-radius(5px);
+
 	background-color: $example-background;
 	border: none 1px $black;
 	border-radius: 2px;
@@ -264,7 +278,7 @@ $example-background: #f9f2f4;
 
 .example2 {
 	background-color: $example-background;
-	border: solid 1px $black;		
+	border: solid 1px $black;
 	border-radius: 2px;
 	clear: all;
 	color: $black;
@@ -282,10 +296,9 @@ $example-background: #f9f2f4;
 	white-space: nowrap;
 }
 
-
 /* Adding styling to tables */
 table {
-	margin: 10px 0px;
+	margin: 10px 0;
 }
 
 .replace {
@@ -301,21 +314,23 @@ table {
 	color: blue;
 }
 
-/* Aside Styling*/
+/* Aside Styling */
 
 aside h5 { font-size: 90%; }
 
-
 aside {
-
 	li {
-		h6, h5, h4 {
+		h6,
+		h5,
+		h4 {
 			display: inline;
 		}
 	}
 }
 
-aside p, aside ol, aside ul {
+aside p,
+aside ol,
+aside ul {
 	font-family: tahoma, sans-serif;
 	font-size: 80%;
 	font-style: italic;
@@ -324,28 +339,28 @@ aside p, aside ol, aside ul {
 }
 
 /* This uses adjacent selectors to add extra line height after some headings */
-aside h4 + p, 
-aside h5 + p, 
+aside h4 + p,
+aside h5 + p,
 aside h6 + p {
 	margin: 5px;
 }
 
-
-/* This is for the properties inside the CSS Lists*/
+/* This is for the properties inside the CSS Lists */
 aside ul li {
-	margin: 3px 0px 3px 0px;
+	margin: 3px 0;
 }
 
 aside ul ul li {
 	font-size: 9px;
 	padding-left: 5px;
-	line-height: .9;
-	letter-spacing: .2em;
+	line-height: 0.9;
+	letter-spacing: 0.2em;
 }
 
 aside ul ul li:first-child {
-	margin: 2px 0px 1px 0px;
+	margin: 2px 0 1px;
 }
+
 
 /* For Jumbotron images that need an overlay to make text more readable. */
 .jumbotron {
@@ -359,33 +374,36 @@ aside ul ul li:first-child {
 		padding-left: 10px;
 		padding-right: 10px;
 		font-size: 16px;
-		@media(min-width: $screen-tablet){
+
+		@media (min-width: $screen-tablet) {
 			font-size: 21px;
 		}
 	}
 
 	h1 {
 		font-size: 36px;
-		margin-bottom: 0px;
-		@media(min-width: $screen-tablet){
+		margin-bottom: 0 px;
+
+		@media (min-width: $screen-tablet) {
 			font-size: 61px;
 			margin-bottom: 10px;
-		}		
+		}
 	}
 
 	.btn {
 		font-size: 18px;
 		padding: 7px 12px;
-		@media(min-width: $screen-tablet){
+
+		@media (min-width: $screen-tablet) {
 			font-size: 30px;
 			padding: 14px 24px;
-		}				
+		}
 	}
 
-	@media(min-width: $screen-tablet){
+	@media (min-width: $screen-tablet) {
 		min-height: 500px;
 
-		.dark-layer, 
+		.dark-layer,
 		.light-layer {
 			margin-top: 150px;
 		}
@@ -395,27 +413,27 @@ aside ul ul li:first-child {
 		overflow: auto;
 	}
 
-	.dark-layer, 
+	.dark-layer,
 	.light-layer {
 		@include border-radius(20px);
-		
-		h1, 
-		h2, 
-		h3, 
-		h4, 
-		h5, 
-		h6, 
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
 		p, {
 			font-weight: bold;
 			opacity: 1;
-			padding-left: 0px 10px;			
+			padding-left: 0 10px;
 		}
 
 		h1 {
 			padding: 15px;
 		}
 
-		opacity: .65;
+		opacity: 0.65;
 	}
 }
 
@@ -444,9 +462,8 @@ aside ul ul li:first-child {
 
 // adds 20 px to sections without headers.
 .spacer {
-	padding: 20px 0px;
+	padding: 20px 0;
 }
-
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
