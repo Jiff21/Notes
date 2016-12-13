@@ -1,5 +1,3 @@
-/* @flow */
-
 /*!
  * @docauthor Jeff Campbell
  */
@@ -15,34 +13,21 @@ const changeButton = () => {
   }
 };
 
+const addAndRemove = (currArray, toAdd, toRemove, startAt) => {
+  let i = startAt;
+  for (i; i < currArray.length; i += 1) {
+    // Loops through all previously visible elements and makes them hidden.
+    currArray[i].classList.remove(toRemove);
+    currArray[i].classList.add(toAdd);
+  }
+};
+
 const changeExample = () => {
-  let i = 0;
-  let l = 0;
-  // HTML Collections live update. Put it in an araay to stop it.
-  // const oldVis = Array.from(document.getElementsByClassName('visible'));
-  // const newVis = Array.from(document.getElementsByClassName('hidden'));
+  // HTML Collections live update. Put it in an array to stop it.
   const oldVis = [].slice.call(document.getElementsByClassName('visible'));
   const newVis = [].slice.call(document.getElementsByClassName('hidden'));
-  console.debug(oldVis.length);
-  console.debug(newVis.length);
-
-  const numberOfOld = oldVis.length;
-  for (i; i < numberOfOld; i += 1) {
-    // Loops through all previously visible elements and makes them hidden.
-    console.debug(oldVis[l]);
-    oldVis[l].classList.add('hidden');
-    oldVis[l].classList.remove('visible');
-  }
-
-  console.debug(oldVis.length);
-  console.debug(newVis.length);
-  const numberOfNew = newVis.length;
-  for (l; l < numberOfNew; l += 1) {
-    // Loops through all previously invisible elements and makes them visible.
-    console.debug(newVis[l]);
-    newVis[l].classList.add('visible');
-    newVis[l].classList.remove('hidden');
-  }
+  addAndRemove(oldVis, 'hidden', 'visible', 0);
+  addAndRemove(newVis, 'visible', 'hidden', 0);
 };
 
 const makeVisible = () => {
