@@ -1,166 +1,168 @@
 <!doctype html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<title>git Notes</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<!-- build:css styles/vendor.css -->
-		<!-- bower:css -->
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<!-- endbuild -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-		<!-- endbuild -->
-	</head>
-	<body class="git-body">
-		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
-		<div class="navPlaceholder"></div>
-		<!--[if lt IE 10]>
+
+<head>
+	<meta charset="utf-8">
+	<title>git Notes</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="../styles/main.css">
+	<!-- endbuild -->
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="../bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+	<!-- endbuild -->
+</head>
+
+<body class="git-body">
+	<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+	<div class="navPlaceholder"></div>
+	<!--[if lt IE 10]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container-fluid">
-			<div class="jumbotron">
-				<h1>Git</h1>
-			</div>
-			<article>
+	<div class="container-fluid">
+		<div class="jumbotron">
+			<h1>Git</h1>
+		</div>
+		<article>
 			<div class="left-nav">
-			<aside class="pro-fixed">
-				<a href="#start" class="left-naveButton clear-both">Starting</a>
-				<a href="#stash" class="left-naveButton clear-both">Stash</a>
-				<a href="#basics" class="left-naveButton clear-both">Basics</a>
-				<a href="#branches" class="left-naveButton clear-both">Branches</a>
-				<a href="#ignore" class="left-naveButton clear-both">Ignore</a>
-				<a href="#bisect" class="left-naveButton clear-both">Bisect</a>
-				<a href="#bower" class="left-naveButton clear-both">NPM &amp; Bower</a>
-			</aside>
+				<aside class="pro-fixed">
+					<a href="#start" class="left-naveButton clear-both">Starting</a>
+					<a href="#stash" class="left-naveButton clear-both">Stash</a>
+					<a href="#basics" class="left-naveButton clear-both">Basics</a>
+					<a href="#branches" class="left-naveButton clear-both">Branches</a>
+					<a href="#ignore" class="left-naveButton clear-both">Ignore</a>
+					<a href="#bisect" class="left-naveButton clear-both">Bisect</a>
+					<a href="#bower" class="left-naveButton clear-both">NPM &amp; Bower</a>
+				</aside>
 			</div>
 			<div class="main">
-			
+
 				<div id="start" class="left-nav-companion">
 					<h3>Starting a Project</h3>
 					<p>Locally use:</p>
 					<div class="example2">
-						git init <br>
-						touch README.md <br>
-						git add *.c<br>
-						git add README.md<br>
-						git commit -m "<span class="replace">This is the 1st commit</span>"
+						git init
+						<br> touch README.md
+						<br> git add *.c
+						<br> git add README.md
+						<br> git commit -m "<span class="replace">This is the 1st commit</span>"
 					</div>
 					<p> Pull down a project that has already been started: <br>
-					<div class="example2">git clone <span class="replace">github/url</span></div>
-					<p>
-					<img src="../images/SmileyFace.svg" alt="Smiley face" height="42" width="42">
+						<div class="example2">git clone <span class="replace">github/url</span></div>
+						<p>
+							<img src="../images/SmileyFace.svg" alt="Smiley face" height="42" width="42">
 				</div>
 				<div id="stash" class="left-nav-companion">
-					<h3 >Stash</h3>
+					<h3>Stash</h3>
 					<p>Save current changes to Stash<br>
-					<div class="example2">git stash -m &#x22;<span class="replace">Message about stash</span>&#x22;</div>
+						<div class="example2">git stash -m &#x22;<span class="replace">Message about stash</span>&#x22;</div>
 					</p>
 					<p>List stash changes<br>
-					<div class="example2">git stash list</div>
+						<div class="example2">git stash list</div>
 					</p>
 					<p>Get a stashed change back to working directory:<br>
-					<div class="example2">git stash pop <span class="replace">HashFragNum</span></div>
+						<div class="example2">git stash pop <span class="replace">HashFragNum</span></div>
 					</p>
 					<p>Clear all stashed changes:<br>
-					<div class="example2">git stash clear &#x22;<span class="replace">Message about stash</span>&#x22;</div>
+						<div class="example2">git stash clear &#x22;<span class="replace">Message about stash</span>&#x22;</div>
 					</p>
 				</div>
 				<div id="basics" class="left-nav-companion">
-					<h3 >Basics</h3>
+					<h3>Basics</h3>
 					<p>Check for Changes since last commit:<br>
-					<div class="example2">git status</div>
+						<div class="example2">git status</div>
 					</p>
 					<p>Add a file to local staging:<br>
-					<div class="example2">git add <span class="replace">path/to/file</span></div>
+						<div class="example2">git add <span class="replace">path/to/file</span></div>
 					</p>
 					<p>Move a file:<br>
-					<div class="example2">git mv <span class="replace"> path/to/filename.txt</span> <span class="replace"> new/path/to/filenamenew.txt</span></div>
+						<div class="example2">git mv <span class="replace"> path/to/filename.txt</span> <span class="replace"> new/path/to/filenamenew.txt</span></div>
 					</p>
 					<p> Commmit all staged file:<br>
-					<div class="example2">git commit -m &#x22;<span class="replace">Message with commit</span>&#x22;</div>
+						<div class="example2">git commit -m &#x22;<span class="replace">Message with commit</span>&#x22;</div>
 					</p>
 					<p> Stage &amp; Commmit all changes in working directory:<br>
-					<div class="example2">git commit -am &#x22;<span class="replace">Message with commit</span>&#x22;</div>
+						<div class="example2">git commit -am &#x22;<span class="replace">Message with commit</span>&#x22;</div>
 					</p>
 					<p>Push commits to remote:<br>
-					<div class="example2">git push</div>
+						<div class="example2">git push</div>
 					</p>
 					<p>Get rid of an unstage change:<br>
-					<div class="example2">git checkout <span class="replace">path/to/file/to/</span></div>
+						<div class="example2">git checkout <span class="replace">path/to/file/to/</span></div>
 					</p>
 					<p>Get rid of all unstaged changes:<br>
-					<div class="example2">git checkout — .</div>
+						<div class="example2">git checkout — .</div>
 					</p>
 					<p>Revert last commit (keeping changes) if not pushed to remote yet:<br>
-					<div class="example2">git reset HEAD~1</div>
+						<div class="example2">git reset HEAD~1</div>
 					</p>
 					<p>Revert last commit (nuking changes) if not pushed to remote yet:<br>
-					<div class="example2">git reset --hard HEAD~1</div>
+						<div class="example2">git reset --hard HEAD~1</div>
 					</p>
 					<p>Full diff between two branches:<br>
-					<div class="example2">git --no-pager log branch1...branch2 --oneline</div>
+						<div class="example2">git --no-pager log branch1...branch2 --oneline</div>
 					</p>
 
 				</div>
 				<div id="branches" class="left-nav-companion">
 					<h3>Branches</h3>
 					<p> Create a new branch off current branch:<br>
-					<div class="example2">git checkout -b <span class="replace">BranchName</span></div>
+						<div class="example2">git checkout -b <span class="replace">BranchName</span></div>
 					</p>
 					<p> Switch branch:<br>
-					<div class="example2">git checkout <span class="replace">BranchName</span></div>
+						<div class="example2">git checkout <span class="replace">BranchName</span></div>
 					</p>
 					<p> Show Local branches:<br>
-					<div class="example2">git branch</div>
+						<div class="example2">git branch</div>
 					</p>
 					<p> Show Remote branches:<br>
-					<div class="example2">git branch -r</div>
+						<div class="example2">git branch -r</div>
 					</p>
 					<p> Put a local branch on remote with default tracking:<br>
-					<div class="example2">git push -u <span class="replace">OriginName</span> <span class="replace">RemoteBranchName</span></div>
+						<div class="example2">git push -u <span class="replace">OriginName</span> <span class="replace">RemoteBranchName</span></div>
 					</p>
 					<p> Pull down a remote branch you don't have:<br>
-					<div class="example2">git checkout -b <span class="replace">LocalBranchName</span> origin/<span class="replace">remote_branch_name</span></div>
+						<div class="example2">git checkout -b <span class="replace">LocalBranchName</span> origin/<span class="replace">remote_branch_name</span></div>
 					</p>
 					<p> Delete local branch:<br>
-					<div class="example2">git branch -d <span class="replace">BranchName</span></div>
+						<div class="example2">git branch -d <span class="replace">BranchName</span></div>
 					</p>
 					<p>Merge a branch:<br>
-					<div class="example2">git merge <span class="replace">NameOfBranchToMergeIntoCurrentBranch</span></div>
+						<div class="example2">git merge <span class="replace">NameOfBranchToMergeIntoCurrentBranch</span></div>
 					</p>
 					<p>Cherry pick a commit from another branch:<br>
-					<div class="example2">git cherry-pick <span class="replace">HashOfChangeToMergeIn</span></div> or <div class="example2">git cherry-pick <span class="replace">olderHash</span>..<span class="replace">toNewerHash</span></div>
+						<div class="example2">git cherry-pick <span class="replace">HashOfChangeToMergeIn</span></div> or
+						<div class="example2">git cherry-pick <span class="replace">olderHash</span>..<span class="replace">toNewerHash</span></div>
 					</p>
 				</div>
 				<div id="ignore" class="left-nav-companion">
 					<h3>Git Settings</h3>
 					<p>Your syncing your .bash_profile now and autocompletion can be setup by simply setting your bash profile to use the files in this project:<br>
-					<div class="example2 example-overscroll">source Users/$USER/Documents/Code/Notes/app/examples/.bash_profile</div></p>
+						<div class="example2 example-overscroll">source Users/$USER/Documents/Code/Notes/app/examples/.bash_profile</div>
+					</p>
 					<p> You should be able to use your synced git ignore by configuring it to look at the file in this project <br>
-					<div class="example2 example-overscroll">git config --global core.excludesfile Users/$USER/Documents/Code/Notes/app/examples/.gitignore_global</div>
+						<div class="example2 example-overscroll">git config --global core.excludesfile Users/$USER/Documents/Code/Notes/app/examples/.gitignore_global</div>
 					</p>
 				</div>
 				<div id="bisect" class="left-nav-companion">
 					<h3>Git Bisect</h3>
 					<p>Git has a nifty feature for tracking down where a bug started. Figure out a past commit that's working (good hash), then follow these steps.</p>
 					<div class="example2">
-					git bisect start<br>
-					git bisect bad<br>
-					git bisect good <span class="replace">HashFragNum</span><br>
+						git bisect start<br> git bisect bad<br> git bisect good <span class="replace">HashFragNum</span><br>
 					</div>
 					<p>Keep repeating git bisect bad and good commands until landing on the commit that broke the code. Then type the following command and return to the head to fix the broken code.</p>
 					<div class="example2">git bisect reset</div>
 				</div>
 				<div id="bower" class="left-nav-companion">
 					<h3>NPM &amp; Bower</h3>
-					<p>Just a couple quick notes on npm &amp; Bower. When you need to update a dependency don't just update package.json, instead run the update through npm with a command.  Here's some examples.</p>
+					<p>Just a couple quick notes on npm &amp; Bower. When you need to update a dependency don't just update package.json, instead run the update through npm with a command. Here's some examples.</p>
 					<div class="example2">npm install <span class="replace">yeoman -g</span></div><br>
 					<div class="example2">git checkout <span class="replace">protractor@1.4.0 --save-dev</span></div><br>
 					<div class="example2">git checkout <span class="replace">selenium-webdriver@latest</span></div><br>
@@ -171,41 +173,50 @@
 
 		<!-- Loading footer with AJAX -->
 		<div class="footerPlaceholder"></div>
-		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-		e.src='//www.google-analytics.com/analytics.js';
-		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-		ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="../scripts/main.js"></script>
-		<!-- endbuild -->
-		<!-- myScripts -->
-		<script src="../includes/nav.js"></script>
-		<script src="../includes/footer.js"></script>
-		<script src="../scripts/anchorAdjustForHeader.js"></script>
-	</body>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] =
+				function() {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<!-- endbuild -->
+	<!-- myScripts -->
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+	<script src="../scripts/anchorAdjustForHeader.js"></script>
+</body>
+
 </html>

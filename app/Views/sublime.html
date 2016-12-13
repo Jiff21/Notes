@@ -1,78 +1,79 @@
 <!doctype html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<title>Sublime Text Notes</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<!-- build:css styles/vendor.css -->
-		<!-- bower:css -->
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<!-- endbuild -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-	</head>
-	<body class="sublime-body">
-		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
-		<div class="navPlaceholder"></div>
-		<!--[if lt IE 10]>
+
+<head>
+	<meta charset="utf-8">
+	<title>Sublime Text Notes</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="../styles/main.css">
+	<!-- endbuild -->
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="../bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body class="sublime-body">
+	<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+	<div class="navPlaceholder"></div>
+	<!--[if lt IE 10]>
 										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container-fluid">
-			<div>
-				<div class="jumbotron">
-					<div class="light-layer centered">
+	<div class="container-fluid">
+		<div>
+			<div class="jumbotron">
+				<div class="light-layer centered">
 					<h1>Sublime Notes</h1>
 					<p class="lead">FPO</p>
-					</div>
 				</div>
 			</div>
-			<article>
-				<div class="full">
-					<h3>Syncing Submlime Settings</h3>
-					<p>Currently you can sync your sublime 3 settings with the following commands. Be sure to quit sublime before doing remove.</p>
-					<div class="example2">
+		</div>
+		<article>
+			<div class="full">
+				<h3>Syncing Submlime Settings</h3>
+				<p>Currently you can sync your sublime 3 settings with the following commands. Be sure to quit sublime before doing remove.</p>
+				<div class="example2">
 					cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/</br>
 					rm -r User</br>
 					ln -s ~/Documents/Code/Notes/app/examples/sublime3/User
-					</div>
 				</div>
-				<div class="full text-centered">
-					<h4>Sublime-Linter setups</h4>
-				</div>
-				<div class="half-full linter">
-					<h5>jsHint</h5>
-					<p>It must be installed Globally: </p>
-					<div class="example">sudo npm install -g jshint</div>
-					<p>If you use a variable that is global and you don't want it to warn you.</p>
-					<div class="example">/* global variableName */</div>
-					<p>If you use are exporting a variable or function and you don't want it to warn you.</p>
-					<div class="example">/* exported variableName, functionName */</div>		
-				</div>
-				<div class="half-full linter">
-					<h5>php linter</h5>
-					<p>PHP must be installed. Shouldn't be a problem.</p>
-				</div>
-				<div class="half-full linter">
-					<h5>scss &amp; sass linter</h5>
-					<p>Install ruby if not already installed.</p>
-					<div class="example">sudo gem install scss-lint</div>
-					<p>Trying to figure out how to turn off indentation with spaces. Might be go
-					<span class="example">/Library/Ruby/Gems/2.0.0/gems/</span>
-					find sass-linter version go into config folder and edit default.yml file to have the following settings for Indentation character:tab &amp; Indentation:width:1, then restart.</p>
-				</div>
-				<div class="half-full linter">
-					<h5>html-tidy</h5>
-					<p>Should be preinstall on OSX but you can update with:</p>
-					<div class="example">brew install homebrew/dupes/tidy</div>
-					<p>or get the html 5 version:</p>
-					<div class="example">brew install homebrew/dupes/tidy --HEAD</div>
-				</div>
+			</div>
+			<div class="full text-centered">
+				<h4>Sublime-Linter setups</h4>
+			</div>
+			<div class="half-full linter">
+				<h5>jsHint</h5>
+				<p>It must be installed Globally: </p>
+				<div class="example">sudo npm install -g jshint</div>
+				<p>If you use a variable that is global and you don't want it to warn you.</p>
+				<div class="example">/* global variableName */</div>
+				<p>If you use are exporting a variable or function and you don't want it to warn you.</p>
+				<div class="example">/* exported variableName, functionName */</div>
+			</div>
+			<div class="half-full linter">
+				<h5>php linter</h5>
+				<p>PHP must be installed. Shouldn't be a problem.</p>
+			</div>
+			<div class="half-full linter">
+				<h5>scss &amp; sass linter</h5>
+				<p>Install ruby if not already installed.</p>
+				<div class="example">sudo gem install scss-lint</div>
+				<p>Trying to figure out how to turn off indentation with spaces. Might be go
+					<span class="example">/Library/Ruby/Gems/2.0.0/gems/</span> find sass-linter version go into config folder and edit default.yml file to have the following settings for Indentation character:tab &amp; Indentation:width:1, then restart.</p>
+			</div>
+			<div class="half-full linter">
+				<h5>html-tidy</h5>
+				<p>Should be preinstall on OSX but you can update with:</p>
+				<div class="example">brew install homebrew/dupes/tidy</div>
+				<p>or get the html 5 version:</p>
+				<div class="example">brew install homebrew/dupes/tidy --HEAD</div>
+			</div>
 			<div class="full gold">
 				<h3>Useful Shortcuts</h3>
 			</div>
@@ -95,49 +96,60 @@
 
 			</div>
 			<div class="full">
-			<h3>More Tips</h3>
-			<p>You know the command pallet is how you get to package manager, but it can also be used to toggle settings, like word wrap.</p>
+				<h3>More Tips</h3>
+				<p>You know the command pallet is how you get to package manager, but it can also be used to toggle settings, like word wrap.</p>
 			</div>
 
-			</article>
-			<!-- Loading footer with AJAX -->
-			<div class="footerPlaceholder"></div>
-		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="../scripts/main.js"></script>
-		<!-- endbuild -->
-		<!-- myScripts -->
-		<script src="../includes/nav.js"></script>
-		<script src="../includes/footer.js"></script>
-		<script src="../scripts/listBreaker.js"></script>
-		<script type="text/javascript">breakList(4, $('.to-be-spliced'), 'gold');</script>
-	</body>
+		</article>
+		<!-- Loading footer with AJAX -->
+		<div class="footerPlaceholder"></div>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] =
+				function() {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<!-- endbuild -->
+	<!-- myScripts -->
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+	<script src="../scripts/listBreaker.js"></script>
+	<script type="text/javascript">
+		breakList(4, $('.to-be-spliced'), 'gold');
+	</script>
+</body>
+
 </html>

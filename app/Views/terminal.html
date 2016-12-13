@@ -1,35 +1,37 @@
 <!doctype html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<title>Terminal Notes</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<!-- build:css styles/vendor.css -->
-		<!-- bower:css -->
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<!-- endbuild -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-	</head>
-	<body class="terminal-body">
-		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
-		<div class="navPlaceholder"></div>
-		<!--[if lt IE 10]>
+
+<head>
+	<meta charset="utf-8">
+	<title>Terminal Notes</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="../styles/main.css">
+	<!-- endbuild -->
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="../bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body class="terminal-body">
+	<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+	<div class="navPlaceholder"></div>
+	<!--[if lt IE 10]>
 		<p class="browse-happy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container">
-			<header>
-				<h1 id="shiny">Terminal</h1>
-				<p>emacs > esc > x > doctor > ctrl+c+x</p>
-			</header>
-			<div class="lang-grid git-grid">
-				<article>
+	<div class="container">
+		<header>
+			<h1 id="shiny">Terminal</h1>
+			<p>emacs > esc > x > doctor > ctrl+c+x</p>
+		</header>
+		<div class="lang-grid git-grid">
+			<article>
 				<div class="half-full">
 					<h3>Basics</h3>
 					<p><code class="example">cd</code> means change directory.</p>
@@ -52,25 +54,21 @@
 				</div>
 				<div class="full">
 					<h3>Bash Shortcuts</h3>
-					<p>Terminal shortcuts are store in the <span class="term">.bash_profile</span> in the User folder on mac.  By default this folder is hidden. You can make a shortcut a command or location with <code class="example">alias <span class="replace">newShortcutName</span>="<span class="replace">any terminal command</span>"</code>.
+					<p>Terminal shortcuts are store in the <span class="term">.bash_profile</span> in the User folder on mac. By default this folder is hidden. You can make a shortcut a command or location with <code class="example">alias <span class="replace">newShortcutName</span>="<span class="replace">any terminal command</span>"</code>.
 				</div>
 				<div class="half-full">
 					<h3>Change Command Line</h3>
 					<p>This is your command line preference for .bash_profile</p>
 					<div class="example2">
-						if [ -f ~/.git-prompt.sh ]; then<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;source ~/.git-prompt.sh<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;export PS1='[\u \W$(__git_ps1 " (%s)")]\$ '<br>
-						fi
+						if [ -f ~/.git-prompt.sh ]; then<br> &nbsp;&nbsp;&nbsp;&nbsp;source ~/.git-prompt.sh<br> &nbsp;&nbsp;&nbsp;&nbsp;export PS1='[\u \W$(__git_ps1 " (%s)")]\$ '<br> fi
 					</div>
 				</div>
 				<div class="half-full">
 					<h3>Git Auto-Complete</h3>
 					<p>The following addition to .bash_profile will turn on git auto-complete:</p>
 					<div class="example2">
-						if [ -f ~/.git-completion.bash ]; then<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;source ~/.git-completion.bash<br>
-						fi<br>
+						if [ -f ~/.git-completion.bash ]; then<br> &nbsp;&nbsp;&nbsp;&nbsp;source ~/.git-completion.bash<br> fi
+						<br>
 					</div>
 				</div>
 				<div class="full">
@@ -89,47 +87,56 @@
 					<h3>Change NPM Install localtion.</h3>
 					<div class="example2">npm config set prefix /usr/local</div>
 				</div>
-				
-				</article>
-				<!-- Loading footer with AJAX -->
-				<div class="footerPlaceholder"></div>
-			</div>
+
+			</article>
+			<!-- Loading footer with AJAX -->
+			<div class="footerPlaceholder"></div>
 		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-		e.src='//www.google-analytics.com/analytics.js';
-		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-		ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="../scripts/main.js"></script>
-		<!-- endbuild -->
-		<!-- myScripts -->
-		<script src="../includes/nav.js"></script>
-		<script src="../includes/footer.js"></script>
-		<script src="../bower_components/shine/dist/shine.min.js"></script>
-		<script src="../scripts/shiny.js"></script>
-	</body>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] =
+				function() {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<!-- endbuild -->
+	<!-- myScripts -->
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+	<script src="../bower_components/shine/dist/shine.min.js"></script>
+	<script src="../scripts/shiny.js"></script>
+</body>
+
 </html>

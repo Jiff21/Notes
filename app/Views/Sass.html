@@ -1,36 +1,38 @@
 <!doctype html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<title>Sass Notes</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<!-- build:css styles/vendor.css -->
-		<!-- bower:css -->
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<!-- endbuild -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-	</head>
-	<body class="sass-body">
-		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
-		<div class="navPlaceholder"></div>
-		<!--[if lt IE 10]>
+
+<head>
+	<meta charset="utf-8">
+	<title>Sass Notes</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="../styles/main.css">
+	<!-- endbuild -->
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="../bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body class="sass-body">
+	<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+	<div class="navPlaceholder"></div>
+	<!--[if lt IE 10]>
 										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container">
-			<div>
-				<div class="jumbotron">
-					<h1>Sass &amp; Less</h1>
-					<p>"Sasquatch <span class="term">is</span> something I haven't seen before." - Brock Samson</p>
-				</div>
+	<div class="container">
+		<div>
+			<div class="jumbotron">
+				<h1>Sass &amp; Less</h1>
+				<p>"Sasquatch <span class="term">is</span> something I haven't seen before." - Brock Samson</p>
 			</div>
-			<article>
+		</div>
+		<article>
 			<div class="main">
 				<div>
 					<button value="button" onclick="makeVisible(sassDiv)">SASS</button>
@@ -38,100 +40,91 @@
 				</div>
 				<div id="sassDiv" class="visible">
 					<h3 id="sassy">SASS</h3>
-					<p>To see command line Sass controls type <code class="example">Sass -?</code> You can update a stylesheet on the command line using <code class="example">sass --update <span class="replace">stylesheetname.scss</span></code> or you can keep it active with <code class="example">sass --watch <span class="replace">foldername:cssfoldername</span></code>.  Each of the last two commands can be run on a folder or a individual file, the new file name can be different than scss file name, just add <code>:<span class ="replace">newFileOrFoloderName</span></code> to the end of the command with no space.  You can change how it is converted to css using the <code class="example">-style</code> command.  There are 4 styles: nested (default), expanded (most human friendly), compact, &amp; compressed (minimized for production).
+					<p>To see command line Sass controls type <code class="example">Sass -?</code> You can update a stylesheet on the command line using <code class="example">sass --update <span class="replace">stylesheetname.scss</span></code> or you can keep it active
+						with <code class="example">sass --watch <span class="replace">foldername:cssfoldername</span></code>. Each of the last two commands can be run on a folder or a individual file, the new file name can be different than scss file name, just add <code>:<span class ="replace">newFileOrFoloderName</span></code>						to the end of the command with no space. You can change how it is converted to css using the <code class="example">-style</code> command. There are 4 styles: nested (default), expanded (most human friendly), compact, &amp; compressed (minimized
+						for production).
 					</p>
 					<p>Most of what you want to know is in their <a href="http://sass-lang.com/guide">guide</a>.</p>
-					<p>You can import a stylesheet with <code class="example">@import "<span class="replace">import_me</span>"</code> (no need to include .sass). <span class="term">Variables</span> are set by using a <code class="example">$</code> in front of the word and can be used repeatedly as you would expect. They also can be used to append content with string as so:
+					<p>You can import a stylesheet with <code class="example">@import "<span class="replace">import_me</span>"</code> (no need to include .sass). <span class="term">Variables</span> are set by using a <code class="example">$</code> in front of the word
+						and can be used repeatedly as you would expect. They also can be used to append content with string as so:
 					</p>
 					<div class="example2">
-						$myString ="This will end up after the paragraph."<br>
-						#iDParag:after {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;content: $myString;<br>
-						}
+						$myString ="This will end up after the paragraph."
+						<br> #iDParag:after {
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;content: $myString;
+						<br> }
 					</div>
 					<p>
-					Here's a sample of a <span class="term">mixin</span> in use:
+						Here's a sample of a <span class="term">mixin</span> in use:
 					</p>
 					<div class="example2">
-						// Default values below are optional <br>
-						@mixin customBorder($width: 2px, $color: black, $style: solid) {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;border: {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: $width;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: $color;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style: $style;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-						}<br>
-						header {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;@include customBorder(3px, blue, dotted)<br>
-						}<br>
+						// Default values below are optional
+						<br> @mixin customBorder($width: 2px, $color: black, $style: solid) {
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;border: {
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: $width;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: $color;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style: $style;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;}
+						<br> }
+						<br> header {<br> &nbsp;&nbsp;&nbsp;&nbsp;@include customBorder(3px, blue, dotted)<br> }
+						<br>
 					</div>
 					<p>
-					When nesting a style that would use a colon use an ampersand, e.g. <code class="example">&amp;:hover</code>.  You can also do math with SASS, so you could
-					simply do something like <code class="example">border: ($myBorder +10)/2;</code>. You can also add colors together and use functions on them, e.g. <code class="example">background-color: grayscale(invert(<span class="replace">$color 1 + $color2</span>);</code>. The cool thing that Sass has that less doesn't yet is an if operator. <br>
+						When nesting a style that would use a colon use an ampersand, e.g. <code class="example">&amp;:hover</code>. You can also do math with SASS, so you could simply do something like <code class="example">border: ($myBorder +10)/2;</code>. You can also
+						add colors together and use functions on them, e.g. <code class="example">background-color: grayscale(invert(<span class="replace">$color 1 + $color2</span>);</code>. The cool thing that Sass has that less doesn't yet is an if operator. <br>
 					</p>
 					<div class="example2">
-						$gender: girl;<br>
-						$myColor: if($gender=="boy", #00f, #f00);
+						$gender: girl;<br> $myColor: if($gender=="boy", #00f, #f00);
 					</div>
 					<p> If you have Bootstrap for Sass installed you can apply bootsrap to page elements through it.</p>
 					<div class="example2">
-						article{<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;@include make-row();<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.main {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-xs-column(12);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-sm-column(8);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-md-column(8);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-						}
+						article{
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;@include make-row();
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;.main {
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-xs-column(12);
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-sm-column(8);
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-md-column(8);
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;}
+						<br> }
 					</div>
 					<p>For reference, <a href="http://ruby.bvision.com/blog/please-stop-embedding-bootstrap-classes-in-your-html" target="_blank">this</a> is why I'm applying bootstrap via Sass.</p>
 				</div>
 				<div id="lessDiv" class="hidden">
 					<h3 id="lassy">LESS</h3>
-					<p> In production you want to compile the less files to css before use rather than using Javascript on the page. After initial compile simpLess watches the files as long as it's open. <span class="term">Variables</span> are set by using a @ in front of the word and can be used repeatedly as you would expect. <span class="term">Mixins</span> are set by using a <code class="example">.</code> in front of the word.  You can set a variable with parenthesis and set a default like in Sass. You can also use they keyword <code class="example">@arguments</code> to simply use parameters in the order they are passed in. Here's a sample of a mixin with <span class="term">pattern matching</span>:
+					<p> In production you want to compile the less files to css before use rather than using Javascript on the page. After initial compile simpLess watches the files as long as it's open. <span class="term">Variables</span> are set by using a @ in front
+						of the word and can be used repeatedly as you would expect. <span class="term">Mixins</span> are set by using a <code class="example">.</code> in front of the word. You can set a variable with parenthesis and set a default like in Sass. You can
+						also use they keyword <code class="example">@arguments</code> to simply use parameters in the order they are passed in. Here's a sample of a mixin with <span class="term">pattern matching</span>:
 					</p>
 					<div class="example2">
-						.alert(warning){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;@color: yellow;<br>
-						}<br>
-						.alert(error){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;@color: red<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;border: 2px;<br>
-						}<br>
-						/* Always be applied styles, if you need it to get double val use (@_,@_) */ <br>
-						.alert(@.){<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;<br>
-						}<br>
-						// Setting the current type.<br>
-						@type: error;<br>
-						#iDForm {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.alert(@type);<br>
-						}
+						.alert(warning){<br> &nbsp;&nbsp;&nbsp;&nbsp;@color: yellow;<br> }
+						<br> .alert(error){
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;@color: red<br> &nbsp;&nbsp;&nbsp;&nbsp;border: 2px;<br> }
+						<br> /* Always be applied styles, if you need it to get double val use (@_,@_) */ <br> .alert(@.){
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;<br> }
+						<br> // Setting the current type.<br> @type: error;<br> #iDForm {<br> &nbsp;&nbsp;&nbsp;&nbsp;.alert(@type);
+						<br> }
 					</div>
 					<p>
-					There are also <span class="term">Gaurded Mixins</span> that allow you to use the word <code class="example">when</code> to apply the style if it meets a condition.  This looks like,
+						There are also <span class="term">Gaurded Mixins</span> that allow you to use the word <code class="example">when</code> to apply the style if it meets a condition. This looks like,
 					</p>
 					<div class="example2">
-						.@3dText(@color) when lightness(@color) >= 50% {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;color: @color;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 1px 1px 0px lighten(@color, 5%),<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2px, 2px, 0px, lighten(@color, 10%),<br>
-						}
+						.@3dText(@color) when lightness(@color) >= 50% {<br> &nbsp;&nbsp;&nbsp;&nbsp;color: @color;<br> &nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 1px 1px 0px lighten(@color, 5%),<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2px, 2px, 0px, lighten(@color,
+						10%),<br> }
 					</div>
 					<p>
-					Like Sass, Less lets you use nested rules and they work the same, including the &amp; for sudo classes.  <span class="term">Operators</span>, which just means you can do math the same way you do in Sass. You can import a stylesheet with <code class="example">@import "<span class="replace">import_me</span>.less"</code>.
+						Like Sass, Less lets you use nested rules and they work the same, including the &amp; for sudo classes. <span class="term">Operators</span>, which just means you can do math the same way you do in Sass. You can import a stylesheet with <code class="example">@import "<span class="replace">import_me</span>.less"</code>.
 					</p>
 					<p> If you're using SASS, here's what you need to do to apply bootstrap</p>
 					<div class="example2">
-						.article {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.makeRow(); // Mixin provided by Bootstrap<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.main-section {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.makeColumn(10); // Mixin provided by Bootstrap<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;.aside {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.makeColumn(2); // Mixin provided by Bootstrap<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-						}
+						.article {
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;.makeRow(); // Mixin provided by Bootstrap
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;.main-section {
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.makeColumn(10); // Mixin provided by Bootstrap
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;}
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;.aside {
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.makeColumn(2); // Mixin provided by Bootstrap
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;}
+						<br> }
 					</div>
 				</div>
 			</div>
@@ -192,7 +185,7 @@
 					<ul>
 						<li>Variables
 							<ul>
-								<li>@accentColor: #24a;</li>
+								<li>@accentColor: #24A;</li>
 								<li>@myString: "something";</li>
 							</ul>
 						</li>
@@ -230,44 +223,53 @@
 					</ul>
 				</div>
 			</aside>
-			</article>
-			<!-- Loading footer with AJAX -->
-			<div class="footerPlaceholder"></div>
-		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="../scripts/main.js"></script>
-		<!-- endbuild -->
-		<!-- myScripts -->
-		<script src="../includes/nav.js"></script>
-		<script src="../includes/footer.js"></script>
-		<script src="../scripts/visSwitch.js"></script>
-	</body>
+		</article>
+		<!-- Loading footer with AJAX -->
+		<div class="footerPlaceholder"></div>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] =
+				function() {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<!-- endbuild -->
+	<!-- myScripts -->
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+	<script src="../scripts/visSwitch.js"></script>
+</body>
+
 </html>
