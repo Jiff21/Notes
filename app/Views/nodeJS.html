@@ -1,175 +1,190 @@
 <!doctype html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<title>Node.js Notes</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<!-- build:css styles/vendor.css -->
-		<!-- bower:css -->
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<!-- endbuild -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-	</head>
-	<body class="node-body">
-		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
-		<div class="navPlaceholder"></div>
-		<!--[if lt IE 10]>
+
+<head>
+	<meta charset="utf-8">
+	<title>Node.js Notes</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="../styles/main.css">
+	<!-- endbuild -->
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="../bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body class="node-body">
+	<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+	<div class="navPlaceholder"></div>
+	<!--[if lt IE 10]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container">
-			<div>
-				<div class="jumbotron">
-					<div class="dark-layer">
-						<h1>Node.js Notes</h1>
-						<p class="lead">"FPO"</p>
-					</div>
+	<div class="container">
+		<div>
+			<div class="jumbotron">
+				<div class="dark-layer">
+					<h1>Node.js Notes</h1>
+					<p class="lead">"FPO"</p>
 				</div>
 			</div>
+		</div>
 
-			<article class="col-md-9 col-sm-8 col-xs-12">
-				<h3>Basics</h3>
-				<p>
-					When declaring a variable, forgetting to prefix it with <span class="term">var</span> will cause it to be a global varaible. The <span class="term">Event Loop</span> starts automatically with Node. All input and output in node is non-blocking, essentially asynchonous calls. Since the node sever continues to run a listener, when you set a specific value it stay in memory.
-				</p>
-				<p>Create a project. Start with a folder and use <span class="example">npm init</span>.  For author supply email in angle brackets as well. If you install a module use <span class="example">npm install --save <span class="replace">moduleName</span></span> to make sure it ends up in package.json with a version number. You can install express globally, and use <span class="example">express <span class="replace">project name</span></span> to start a project. Then you can cd into the folder and use npm install -- to set up dependencies, then use <span class="example">npm install</span> to complete the instalation of the dependencies. Remember you can use <span class="example">npm prune</span> to get rid of unused modules or you can use <span class="example">npm update</span> modules. </p>
-				<p>
-					Here's a basic example of a setter and getter module in a file called flight.js.
-				</p>
-				<div class="example2">
-					var number, origin, desination;<br>
-					<br>
-					exports.setNumber = function &#40;num&#41; &#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number = num;<br>
-					&#125;<br>
-					exports.setOrigin = function &#40;o&#41; &#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orgin = o;<br>
-					&#125;<br>
-					exports.setDestination = function &#40;d&#41; &#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination = d;<br>
-					&#125;<br>
-					exports.getInfo = function &#40;&#41; &#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: number,<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: origin,<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: destination<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br>
-					&#125;<br>
-				</div>
-				<p>You could then load the module in a seperate file.</p>
-				<div class="example2">
-					var flight = require&#40;'./flight.js'&#41;;<br><br>
-					flight.setOrigin&#40;'LAX'&#41;;<br>
-					flight.setDestination&#40;'SFO'&#41;;<br>
-					flight.setNumber&#40;'134'&#41;;<br><br>
-					console.log&#40;flight.getInfo&#40;&#41;&#41;;<br>
-				</div>
-				<p>But this would get you introule because module results get cached. And the Vars are being set outside the function. Here is a better way to write that module.</p>
-				<div class="example2">
-					var Flight = function &#40;info&#41; &#123;<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data = &#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: null,<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: null,<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: null,<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;departs: null,<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrives: null,<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualDepart: null,<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualArrive: null<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.fill = function &#40;info&#41;&#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&#40;var prop in this.data&#41; &#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&#40;this.data[prop] !== 'undefined'&#41; &#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data[prop] = info[prop];<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerDepart: function &#40;&#41; &#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualDepart = Date.now&#40;&#41;;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerArrive: function &#40;&#41; &#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualArrive = Date.now&#40;&#41;;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.getInformation: function &#40;&#41; &#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return values;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Optionally create factory depending on setup.<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module.exports = function&#40;info&#41;&#123;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var instance = new Flight&#40;&#41;;<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.fill&#40;info&#41;;<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return instance;<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;<br>
-					&#125;;<br>
-				</div>
+		<article class="col-md-9 col-sm-8 col-xs-12">
+			<h3>Basics</h3>
+			<p>
+				When declaring a variable, forgetting to prefix it with <span class="term">var</span> will cause it to be a global varaible. The <span class="term">Event Loop</span> starts automatically with Node. All input and output in node is non-blocking, essentially
+				asynchonous calls. Since the node sever continues to run a listener, when you set a specific value it stay in memory.
+			</p>
+			<p>Create a project. Start with a folder and use <span class="example">npm init</span>. For author supply email in angle brackets as well. If you install a module use <span class="example">npm install --save <span class="replace">moduleName</span></span>
+				to make sure it ends up in package.json with a version number. You can install express globally, and use <span class="example">express <span class="replace">project name</span></span> to start a project. Then you can cd into the folder and use npm
+				install -- to set up dependencies, then use <span class="example">npm install</span> to complete the instalation of the dependencies. Remember you can use <span class="example">npm prune</span> to get rid of unused modules or you can use <span class="example">npm update</span>				modules. </p>
+			<p>
+				Here's a basic example of a setter and getter module in a file called flight.js.
+			</p>
+			<div class="example2">
+				var number, origin, desination;<br>
+				<br> exports.setNumber = function &#40;num&#41; &#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number = num;
+				<br> &#125;
+				<br> exports.setOrigin = function &#40;o&#41; &#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orgin = o;
+				<br> &#125;
+				<br> exports.setDestination = function &#40;d&#41; &#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination = d;
+				<br> &#125;
+				<br> exports.getInfo = function &#40;&#41; &#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: number,
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: origin,
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: destination
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br> &#125;
+				<br>
+			</div>
+			<p>You could then load the module in a seperate file.</p>
+			<div class="example2">
+				var flight = require&#40;'./flight.js'&#41;;
+				<br><br> flight.setOrigin&#40;'LAX'&#41;;
+				<br> flight.setDestination&#40;'SFO'&#41;;
+				<br> flight.setNumber&#40;'134'&#41;;
+				<br><br> console.log&#40;flight.getInfo&#40;&#41;&#41;;
+				<br>
+			</div>
+			<p>But this would get you introule because module results get cached. And the Vars are being set outside the function. Here is a better way to write that module.</p>
+			<div class="example2">
+				var Flight = function &#40;info&#41; &#123;
+				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data = &#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: null,
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: null,
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: null,
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;departs: null,
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrives: null,
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualDepart: null,
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualArrive: null
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.fill = function &#40;info&#41;&#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&#40;var prop in this.data&#41; &#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&#40;this.data[prop]
+				!== 'undefined'&#41; &#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data[prop] = info[prop];
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;
+				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerDepart: function &#40;&#41; &#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualDepart = Date.now&#40;&#41;;
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerArrive: function &#40;&#41; &#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualArrive = Date.now&#40;&#41;;
+				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.getInformation: function &#40;&#41; &#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return values;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Optionally create factory depending on setup.
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module.exports = function&#40;info&#41;&#123;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var instance = new
+				Flight&#40;&#41;;<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.fill&#40;info&#41;;
+				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return instance;
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br> &#125;;
+				<br>
+			</div>
 
 
-				<h3>Express</h3>
-				<p>Install Express with <span class="example">sudp npm install express -g</span> and install <span class="example">sudo npm install express-generator -g</span>. Currently you run the server with <span class="example">DEBUG=airline:* ./bin/www</span>
-				</p>
-				<p>Routing http verbs is a simple as using different methods in express. If you're modifying data use app.put istead of app.get. Just like http objects get passed as arguements, if you build middleware be sure to add next to tell the server to go on to the next object. <span class="term">req</span>(request), <span class="term">res</span>(response) and <span class="term">next</span>(as a parameter then as a function at the end of the middleware). <span class="term">Passport</span> &amp; and <span class="term">Passport-local</span> is middleware that you can use for handling logins, more details on use can be found <a href="http://www.lynda.com/JavaScript-tutorials/Logging-Express-applications-using-Passport/141132/152204-4.html">here</a>. </p>
+			<h3>Express</h3>
+			<p>Install Express with <span class="example">sudp npm install express -g</span> and install <span class="example">sudo npm install express-generator -g</span>. Currently you run the server with <span class="example">DEBUG=airline:* ./bin/www</span>
+			</p>
+			<p>Routing http verbs is a simple as using different methods in express. If you're modifying data use app.put istead of app.get. Just like http objects get passed as arguements, if you build middleware be sure to add next to tell the server to go on to
+				the next object. <span class="term">req</span>(request), <span class="term">res</span>(response) and <span class="term">next</span>(as a parameter then as a function at the end of the middleware). <span class="term">Passport</span> &amp; and
+				<span
+								class="term">Passport-local</span> is middleware that you can use for handling logins, more details on use can be found <a href="http://www.lynda.com/JavaScript-tutorials/Logging-Express-applications-using-Passport/141132/152204-4.html">here</a>. </p>
 
-				<h3>Unit Testing</h3>
-				<p><span class="term">Supertest</span> is a testing tool that lets you mimic http request that allows you to write tests not bound to a port and chain requests, in this version we used it in conjunction with <span class="term">should</span> and a globally installed instance of the <span class="term">Mocha</span> framwork. Here's an example of a test spec that takes an instance of the app built in helpers that uses spec'd data and runs a test using supertest.</p>
-				<div class="example2 example-overscroll">
-					var app = require('./helpers/app'),<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;should = require('should'),<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#;supertest = require('supertest');<br><br>
-					describe('flights', function () {<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it('should mark a flight as arrived', function (done) {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;supertest(app)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.put('/flight/18/arrived')<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.expect(200)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end(function(err,res){<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status.should.equal(200);<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.body.status.should.equal('done');<br>
+			<h3>Unit Testing</h3>
+			<p><span class="term">Supertest</span> is a testing tool that lets you mimic http request that allows you to write tests not bound to a port and chain requests, in this version we used it in conjunction with <span class="term">should</span> and a globally
+				installed instance of the <span class="term">Mocha</span> framwork. Here's an example of a test spec that takes an instance of the app built in helpers that uses spec'd data and runs a test using supertest.</p>
+			<div class="example2 example-overscroll">
+				var app = require('./helpers/app'),<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;should = require('should'),
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#;supertest = require('supertest');
+				<br><br> describe('flights', function () {
+				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it('should
+				mark a flight as arrived', function (done) {
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;supertest(app)
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.put('/flight/18/arrived')
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.expect(200)
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end(function(err,res){
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status.should.equal(200);
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.body.status.should.equal('done');
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;supertest(app)
 
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;supertest(app)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.get('/flight/18')<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.expect(200)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end(function(err,res){<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status.should.equal(200);<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.body.actualArrive<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.should.not.equal(undefined);<br>
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.get('/flight/18')
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.expect(200)
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end(function(err,res){
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status.should.equal(200);
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.body.actualArrive
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.should.not.equal(undefined);
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;done();
 
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;done();<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});<br>
-					});
-				</div>
-				<p>Their suggestions for unit testing, with my opinion infused.</p>
-					<ul>
-						<li>Instead of 100% coverage test all endpoints</li>
-						<li>Write tests after majority of application completed.</li>
-					</ul>
-				</p>
-				<h3>Mongo DB &amp; Mongoose</h3>
-				<p>You can either download a <a href="https://www.mongodb.org/">MondoDB</a> to install locally or set up a free one at <a href="https://mongolab.com/">Mongo Lab</a>. If you do it locally you have to place the binary files in an executible path, if you use mongolab you can find the address below "To connect using a driver via the standard URI" after setup. Mongoose can be installed on the project simply with  <code class="example">sudo npm install --save mongoose</code>, it manages the connection between a Mondodb and your application. Set up schemas to ensure normalized data, they can put in a schema folder and look like <code class="example">module.exports = mongoose.model('Flight', {number: Number, origin: String,});</code>. Now that you're handling the backend, you need to be responsible for sesssions. You can do this with connect-mongo. The session is always stored in the request (req). 
-				</p>
-			</article>
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+				<br> });
+			</div>
+			<p>Their suggestions for unit testing, with my opinion infused.</p>
+			<ul>
+				<li>Instead of 100% coverage test all endpoints</li>
+				<li>Write tests after majority of application completed.</li>
+			</ul>
+			</p>
+			<h3>Mongo DB &amp; Mongoose</h3>
+			<p>You can either download a <a href="https://www.mongodb.org/">MondoDB</a> to install locally or set up a free one at <a href="https://mongolab.com/">Mongo Lab</a>. If you do it locally you have to place the binary files in an executible path, if you
+				use mongolab you can find the address below "To connect using a driver via the standard URI" after setup. Mongoose can be installed on the project simply with <code class="example">sudo npm install --save mongoose</code>, it manages the connection
+				between a Mondodb and your application. Set up schemas to ensure normalized data, they can put in a schema folder and look like <code class="example">module.exports = mongoose.model('Flight', {number: Number, origin: String,});</code>. Now that you're
+				handling the backend, you need to be responsible for sesssions. You can do this with connect-mongo. The session is always stored in the request (req).
+			</p>
+		</article>
 
-			<aside class="col-md-3 col-sm-4 col-xs-12">
-				<h4> Quick Notes </h4>
-				<p> 
-					For all things: <a href="https://nodejs.org/" target="_blank">nodejs</a>.
-				</p>
-				<h5> Header </h5>
-				<ul>
-					<li>
-						<details open>
-							<summary>node objects</summary>
-							<ul>
-								<li>global</li>
-								<li>module</li>
-								<li>process</li>
-								<li>console</li>
-							</ul>
-						</details>
+		<aside class="col-md-3 col-sm-4 col-xs-12">
+			<h4> Quick Notes </h4>
+			<p>
+				For all things: <a href="https://nodejs.org/" target="_blank">nodejs</a>.
+			</p>
+			<h5> Header </h5>
+			<ul>
+				<li>
+					<details open>
+						<summary>node objects</summary>
+						<ul>
+							<li>global</li>
+							<li>module</li>
+							<li>process</li>
+							<li>console</li>
+						</ul>
+					</details>
 					<li>
 						<details closed>
 							<summary>Functions</summary>
@@ -211,46 +226,55 @@
 							</ul>
 						</details>
 					</li>
-				</ul>
-			</aside>
-			<div>
-				<!-- Loading footer with AJAX -->
-				<div class="footerPlaceholder"></div>
-			</div>
+			</ul>
+		</aside>
+		<div>
+			<!-- Loading footer with AJAX -->
+			<div class="footerPlaceholder"></div>
 		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="../scripts/main.js"></script>
-		<!-- endbuild -->
-		<!-- myScripts -->
-		<script src="../includes/nav.js"></script>
-		<script src="../includes/footer.js"></script>
-	</body>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] =
+				function() {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<!-- endbuild -->
+	<!-- myScripts -->
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+</body>
+
 </html>

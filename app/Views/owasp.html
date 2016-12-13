@@ -1,78 +1,90 @@
 <!doctype html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<title>OWASP Notes</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<!-- build:css styles/vendor.css -->
-		<!-- bower:css -->
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<!-- endbuild -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-	</head>
-	<body class="owasp-body">
-		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
-		<div class="navPlaceholder"></div>
-		<!--[if lt IE 10]>
+
+<head>
+	<meta charset="utf-8">
+	<title>OWASP Notes</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="../styles/main.css">
+	<!-- endbuild -->
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="../bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body class="owasp-body">
+	<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+	<div class="navPlaceholder"></div>
+	<!--[if lt IE 10]>
 										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container-fluid">
-			<div>
-				<div class="jumbotron">
-					<h1>OWASP</h1>
-					<p>"Don't be afraid to see what you see." - Ronald Reagan</p>
-				</div>
+	<div class="container-fluid">
+		<div>
+			<div class="jumbotron">
+				<h1>OWASP</h1>
+				<p>"Don't be afraid to see what you see." - Ronald Reagan</p>
 			</div>
-			<article>
+		</div>
+		<article>
 			<div class="main">
 				<h3>Introduction</h3>
-				<p>OWASP ZAP is a penetration testing tool for people who aren't penetration testing experts.   You can very easily scan a site and get a list of Alerts about possible security exploits and generate reports about parts of the site that don't follow OWASP best practices.  There are more intensive tools that can also be used to try to hack into the site.</p>
+				<p>OWASP ZAP is a penetration testing tool for people who aren't penetration testing experts. You can very easily scan a site and get a list of Alerts about possible security exploits and generate reports about parts of the site that don't follow OWASP
+					best practices. There are more intensive tools that can also be used to try to hack into the site.</p>
 				<h3>Installation and setup</h3>
-				<p>To install OWASP ZAP you just need to download it <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" target="_blank">here</a> and run through the installation process.  There isn't a ton of setup that needs to be done to use the quick start button talked about in the next section, but there are a few things that can be done to scan the site in different ways. </p>
+				<p>To install OWASP ZAP you just need to download it <a href="https://www.owasp.org/index.php/OWASP_Zed_Attack_Proxy_Project" target="_blank">here</a> and run through the installation process. There isn't a ton of setup that needs to be done to use the
+					quick start button talked about in the next section, but there are a few things that can be done to scan the site in different ways. </p>
 				<h3>Changing settings to work with MAMP on MAC</h3>
 				<p>If you’re on a mac using MAMP you’ll likely need to go into this file (File/mutillidae/classes/MySQLHandler.php) and change password to ‘root’ using a test editor.</p>
 				<h3>Configuring Firefox Proxy Settings</h3>
-				<p>You don't need to do this to use Quick Scan, but if you'd like to populate the Site Tree with individual pages you can do so by using the Plug-N-Hack button in OWASP ZAP.  You can also do this by going into Firefox Preferences, by Selecting the Advanced tab, selecting the Network Sub-Tab, pressing the Setting Button, clicking on the "Manual proxy configuration" button and pointing the HTTP Proxy at "localhost" and the Port at "8080" (Zap's default). You should also click on the "Use this proxy server for all protocols" button and make sure "localhost" is not included in the "No Proxy for" part of this menu.  Once this is done you can populate individual pages or explore the site manually (which is recommended by security experts) by simply navigating through the site manually in Firefox.</p>
+				<p>You don't need to do this to use Quick Scan, but if you'd like to populate the Site Tree with individual pages you can do so by using the Plug-N-Hack button in OWASP ZAP. You can also do this by going into Firefox Preferences, by Selecting the Advanced
+					tab, selecting the Network Sub-Tab, pressing the Setting Button, clicking on the "Manual proxy configuration" button and pointing the HTTP Proxy at "localhost" and the Port at "8080" (Zap's default). You should also click on the "Use this proxy server
+					for all protocols" button and make sure "localhost" is not included in the "No Proxy for" part of this menu. Once this is done you can populate individual pages or explore the site manually (which is recommended by security experts) by simply navigating
+					through the site manually in Firefox.</p>
 				<h3>Quick Start</h3>
-				<img src="../images/ZAP/QS1.jpg"  alt="Quick Start 1" title="Quick Start 1" />
-				<img src="../images/ZAP/QS2.jpg"  alt="Quick Start 2" title="Quick Start 2" />
-				<p>These scans miss content that can't be accessed unless you're logged in until you setup Auto-Authentication.   It should be noted that Quick Start uses the Spider tool and the Active Scan (which actively attacks the site) so you should only use it on approved sites. The scans can be triggered again by right clicking on the site in the sites tree, then selecting the corresponding option from the attack menu.  The Alerts from this or any attack can be exported as seen below.</p>
+				<img src="../images/ZAP/QS1.jpg" alt="Quick Start 1" title="Quick Start 1" />
+				<img src="../images/ZAP/QS2.jpg" alt="Quick Start 2" title="Quick Start 2" />
+				<p>These scans miss content that can't be accessed unless you're logged in until you setup Auto-Authentication. It should be noted that Quick Start uses the Spider tool and the Active Scan (which actively attacks the site) so you should only use it on
+					approved sites. The scans can be triggered again by right clicking on the site in the sites tree, then selecting the corresponding option from the attack menu. The Alerts from this or any attack can be exported as seen below.</p>
 				<h3>Generating a HTML Report</h3>
-				<img src="../images/ZAP/QS3.jpg"  alt="HTML Report" title="HTML Report" />
+				<img src="../images/ZAP/QS3.jpg" alt="HTML Report" title="HTML Report" />
 				<h3>Useful buttons</h3>
-				<img src="../images/ZAP/QS4.jpg"  alt="buttons" title="Buttons" />
+				<img src="../images/ZAP/QS4.jpg" alt="buttons" title="Buttons" />
 				<h3>Setting up Auto-Authentication</h3>
 				<ol>
-					<li>Find the login in the Sites Menu (open sites folder in left window) and right click on it, (it may look something like this: “POST:login.jsp(password,username” or “POST:index.php(page)(login-php-submit-button,password,username)”) right click and flag in context of Login Request.  This should fill in the Login POST data and the login in URL.</li>
-					<li>Then go to a page in the site tree and use find to find the text that appears while you're logged in (This text will usually be something like "<a href="logout.php">Logout</a>". Once you've found this highlight the text and right click it to flag it as a Logged In Indicator.</li>
+					<li>Find the login in the Sites Menu (open sites folder in left window) and right click on it, (it may look something like this: “POST:login.jsp(password,username” or “POST:index.php(page)(login-php-submit-button,password,username)”) right click and
+						flag in context of Login Request. This should fill in the Login POST data and the login in URL.</li>
+					<li>Then go to a page in the site tree and use find to find the text that appears while you're logged in (This text will usually be something like "<a href="logout.php">Logout</a>". Once you've found this highlight the text and right click it to flag
+						it as a Logged In Indicator.</li>
 					<li>Logout and copy the the URL from your browser and insert it into the "Logout URL"</li>
 					<li>You're Authentication Properties should look something like this:<br>
-						<img src="../images/ZAP/QS5.jpg"  alt="Auto-Auth" title="Auto-Auth" />
+						<img src="../images/ZAP/QS5.jpg" alt="Auto-Auth" title="Auto-Auth" />
 					</li>
 					<li>Hit the auto Authenticate button<br>
-						<img src="../images/ZAP/QS6.jpg"  alt="Auto-Auth2" title="Auto-Auth2" />
+						<img src="../images/ZAP/QS6.jpg" alt="Auto-Auth2" title="Auto-Auth2" />
 					</li>
 					<li>Go to the site in the browser and logout if necessary</li>
-					<li>Click on any link while logged out, if it logs back in automatically it means auto-authentication has been setup correctly.
-					(As of 12/16/2013, isn't capable of using cookies for login)</li>
+					<li>Click on any link while logged out, if it logs back in automatically it means auto-authentication has been setup correctly. (As of 12/16/2013, isn't capable of using cookies for login)</li>
 				</ol>
 				<h3>Form Fuzzing</h3>
-				<p>There's a bunch of different Fuzzers available.  Here are the basic steps for form fuzzing.
-				<img src="../images/ZAP/QS7.jpg"  alt="Fuzzer" title="Fuzzer" />
-				<img src="../images/ZAP/QS8.jpg"  alt="Fuzzer2" title="Fuzzer2" /><br>
-				For a better explanation of how to use Form Fuzzing watch this <a href="http://www.youtube.com/watch?feature=player_detailpage&amp;v=rmbi-VbIK6I" target="_blank">video</a>.  It should be noted that the "Successful" state just means the test completed.  The Reflected site means the text inserted is present in the sites Response, but you will want to look at where the text is reflected in the Response tab because a lot of it is false positives.</p>
+				<p>There's a bunch of different Fuzzers available. Here are the basic steps for form fuzzing.
+					<img src="../images/ZAP/QS7.jpg" alt="Fuzzer" title="Fuzzer" />
+					<img src="../images/ZAP/QS8.jpg" alt="Fuzzer2" title="Fuzzer2" /><br> For a better explanation of how to use Form Fuzzing watch this <a href="http://www.youtube.com/watch?feature=player_detailpage&amp;v=rmbi-VbIK6I" target="_blank">video</a>. It
+					should be noted that the "Successful" state just means the test completed. The Reflected site means the text inserted is present in the sites Response, but you will want to look at where the text is reflected in the Response tab because a lot of
+					it is false positives.</p>
 				<h3>Integration with other tools</h3>
-				<p>There is a way you can hook up some CI servers to run selenium, firefox, and Zap automatically when you deploy.  It can then run the site automatically and alert you if new security issues appear on a new deploy.  I will look further into this if this tool proves valuable.</p>
+				<p>There is a way you can hook up some CI servers to run selenium, firefox, and Zap automatically when you deploy. It can then run the site automatically and alert you if new security issues appear on a new deploy. I will look further into this if this
+					tool proves valuable.</p>
 				<h3>Early Results</h3>
-				<p>I think our code monkeys are doing a good job, because I haven't been able to get high alerts against one of our recent sites yet.  The tools was able to detect vulnerabilities on an old site we designed that came back because of said vulnerabilities.  This is a scan 40% done on the intentionally vulnerable site OWASP Mutillidae. It gives you an idea of what can be found by the program.
-				<img src="../images/ZAP/QS9.jpg"  alt="Muttilida" title="Muttilida" />
+				<p>I think our code monkeys are doing a good job, because I haven't been able to get high alerts against one of our recent sites yet. The tools was able to detect vulnerabilities on an old site we designed that came back because of said vulnerabilities.
+					This is a scan 40% done on the intentionally vulnerable site OWASP Mutillidae. It gives you an idea of what can be found by the program.
+					<img src="../images/ZAP/QS9.jpg" alt="Muttilida" title="Muttilida" />
 				</p>
 			</div>
 			<aside>
@@ -137,43 +149,52 @@
 					</li>
 				</ol>
 			</aside>
-			</article>
-			<!-- Loading footer with AJAX -->
-			<div class="footerPlaceholder"></div>
-		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="../scripts/main.js"></script>
-		<!-- endbuild -->
-		<!-- myScripts -->
-		<script src="../includes/nav.js"></script>
-		<script src="../includes/footer.js"></script>
-	</body>
+		</article>
+		<!-- Loading footer with AJAX -->
+		<div class="footerPlaceholder"></div>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] =
+				function() {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<!-- endbuild -->
+	<!-- myScripts -->
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+</body>
+
 </html>

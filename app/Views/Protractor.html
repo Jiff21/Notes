@@ -1,40 +1,43 @@
 <!doctype html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<title>Protractor Notes</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<!-- build:css styles/vendor.css -->
-		<!-- bower:css -->
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<!-- endbuild -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-	</head>
-	<body class="protractor-body">
-		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
-		<div class="navPlaceholder"></div>
-		<!--[if lt IE 10]>
+
+<head>
+	<meta charset="utf-8">
+	<title>Protractor Notes</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="../styles/main.css">
+	<!-- endbuild -->
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="../bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body class="protractor-body">
+	<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+	<div class="navPlaceholder"></div>
+	<!--[if lt IE 10]>
 										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container">
-			<div class="jumbotron">
-				<div class="light-layer">
-					<h1>Protractor Notes</h1>
-					<p class="lead">"When the President does it, that means that it's not illegal." - Richard Nixon</p>
-				</div>
+	<div class="container">
+		<div class="jumbotron">
+			<div class="light-layer">
+				<h1>Protractor Notes</h1>
+				<p class="lead">"When the President does it, that means that it's not illegal." - Richard Nixon</p>
 			</div>
-			<article>
+		</div>
+		<article>
 			<div class="main">
 				<div>
 					<h3>Introduction</h3>
-					<p>Protractor is an end to end test framework for <a href="https://angularjs.org/">AngularJS</a> applications built on top of <a href="https://code.google.com/p/selenium/wiki/WebDriverJs">WebDriverJS</a>. Protractor runs tests against your application running in a real browser, interacting with it as a user would.</p>
+					<p>Protractor is an end to end test framework for <a href="https://angularjs.org/">AngularJS</a> applications built on top of <a href="https://code.google.com/p/selenium/wiki/WebDriverJs">WebDriverJS</a>. Protractor runs tests against your application
+						running in a real browser, interacting with it as a user would.</p>
 					<h6>Disclaimer: Most of these notes were writting for protractor between 1.3 and 1.5, I recently updated a project to 2.5 and it's worth it for the speed, but these notes are only updated as I run into errors. If something doesn't work check <a href="https://github.com/angular/protractor/issues/2239" target="_blank">Breaking Changes</a>, there are big changes from 2-2.5. Like the element finder is no longer a promise and get text works without using a then function. </h6>
 				</div>
 				<div>
@@ -43,33 +46,35 @@
 				</div>
 				<div>
 					<h3>Tools</h3>
-					<p>The full list of selectors and evaluation tools can be found on their <a href="https://github.com/angular/protractor/blob/master/docs/api.md">github api page</a>.  Watch out, as many of them use deferred promises.</p>
+					<p>The full list of selectors and evaluation tools can be found on their <a href="https://github.com/angular/protractor/blob/master/docs/api.md">github api page</a>. Watch out, as many of them use deferred promises.</p>
 				</div>
 				<div>
 					<h3>Running Only Certain Tests</h3>
-					<p>When working on a single test or set of tests you probably don't want to run all of your tests.  This can be accomplished in a couple ways, the ones in protractor are mentioned in the reference conf file. By adding the following to you config file:
+					<p>When working on a single test or set of tests you probably don't want to run all of your tests. This can be accomplished in a couple ways, the ones in protractor are mentioned in the reference conf file. By adding the following to you config file:
 					</p>
 					<div class="example2">
-						//patterns are relative to the location of this config. <br>
-						suites: {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '<span class="replace">.e2e/**/*.spec.js</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smoke: ['<span class="replace">.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js</span>'],<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '<span class="replace">.e2e/views/*.spec.js</span>',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: '<span class="replace">e2e/nav/productcounter.js</span>'<br>
-						},<br>
+						//patterns are relative to the location of this config.
+						<br> suites: {
+							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '<span class="replace">.e2e/**/*.spec.js</span>',
+							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smoke: ['<span class="replace">.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js</span>'],
+							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '<span class="replace">.e2e/views/*.spec.js</span>',
+							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: '<span class="replace">e2e/nav/productcounter.js</span>'
+							<br> },
+						<br>
 					</div>
 					<p>
-					Then you can run a set of tests simple simply by adding <span class="term">--suite=<span class="replace">SuiteName</span></span> to the end of your run command in terminal (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --suite=smoke</code>).
-					<br>
-					While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using, but be careful because they're easy to miss if you forget to remove them.
+						Then you can run a set of tests simple simply by adding <span class="term">--suite=<span class="replace">SuiteName</span></span> to the end of your run command in terminal (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --suite=smoke</code>).
+						<br> While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using,
+						but be careful because they're easy to miss if you forget to remove them.
 					</p>
 					<p> There's a new option to exclude test for specific capability with build 1.40. You can now set multibrowser capabilities like this:</p>
 					<div class="example2">
-						multiCapabilities: [{<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'browserName': 'chrome',<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include: 'spec/unit/data/fakespecA.js'<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude: 'spec/unit/data/fakespecB.js'<br>
-						}]<br>
+						multiCapabilities: [{
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'browserName': 'chrome',
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include: 'spec/unit/data/fakespecA.js'
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude: 'spec/unit/data/fakespecB.js'
+						<br> }]
+						<br>
 					</div>
 					<table>
 						<caption>Single Test or Block by Language</caption>
@@ -102,102 +107,106 @@
 						</tbody>
 					</table>
 					<p>
-					If you're using single browser capability but wish to test with a different browser than the default add <span class="term">--browser=<span class="replace">BrowserName</span></span> (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --browser=firefox</code>).
+						If you're using single browser capability but wish to test with a different browser than the default add <span class="term">--browser=<span class="replace">BrowserName</span></span> (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --browser=firefox</code>).
 					</p>
 				</div>
 				<div>
 					<h3>Tips</h3>
 					<h4>Send Keys</h4>
 					<p>
-					A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br>
-					Sending letters and numbers works simple by using:
-					<div class="example2">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</div>
-					<p>Recently they fixed in issue and this should work for sending unicode keys.</p>
-					<div class="example2 example-overscroll">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</div>
-					<p>This was the workaround for previous issue so I'm keeping it here in case comes back.</p>
-					<div class="example2 example-overscroll">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</div>
-					<p>Using the send key delete doesn't seem to work,</p>
-					<div class="example2 example-overscroll">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">DELETE</span>);</div>
-					<p>But BACK_SPACE does.</p>
-					<div class="example2 example-overscroll">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">BACK_SPACE</span>);</div>
-					<h4>Sleep &amp; Pause</h4>
-					<p>A lot of times a test will fail because it isn't waiting for the page to load.  <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations.  You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code> to give the page time to load.  If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing 'd+RETURN' in terminal will continue to the next pause).</p>
-					<h5>Angular Can't Be Found</h5>
-					<p>As the <a href="https://github.com/angular/protractor/blob/master/docs/faq.md">FAQ</a> mentions this may have to do with the version, but they didn't mention that it looks for ng-app on the body tag.  So if yours is anywhere else you need to set rootEl in the config file (e.g. <code class="example">rootElement: '<span class="replace">div</span>',</code>). </p>
-					<h4>OnPrepare &amp; OnComplete</h4>
-					<p>You can use the OnPrepare function in the config file to set up for testing.  You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing).  I suggest at least setting a default window size and location to start your testing from.</p>
-					<div class="example2">
-						onPrepare: function() {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSi&shy;ze(<span class="replace">1500</span>,<span class="replace">1000</span>);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPo&shy;sition(<span class="replace">0</span>,<span class="replace">0</span>);<br>
-						},<br>
-					</div>
-					<p>Similar commands can be run before and after each test with <code class="example">beforeEach</code> &amp; <code class="example">afterEach</code>.  On 1.40 they added <code class="example">beforeLaunch</code> &amp; <code class="example">afterLaunch</code> which can be used to setup/close test dependencies, but beware this runs before global variable 'protractor' object is setup.</p>
-					<h4>$</h4>
-					<p>
-					<code class="example">$</code> means <code class="example">element(by.Css</code><br>
-					<code class="example">$$</code> means <code class="example">element.all(by.Css</code><br>
-					It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time.  Sometimes it's better to just use element.all then see what ends up in the array.
-					</p>
-					<h4>Selenium Workarounds</h4>
-					<h5>Scrolling</h5>
-					<p>There is no easy command for scrolling but you can accomplish it with:</p>
-					<div class="example2 example-overscroll">
-						browser.executeScript('window.scrollTo(0,2000);').then(function () {
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="replace">code to run here</span><br>
-						});
-					</div>
-					<h5>Local Storage</h5>
-					<p>When using local storage you also need to use browser.executeScript. Remember that you parse data when reading and stringify when writing. In Protractor, when writing to local storage inside executeScript you need to use arguments(). If you don&39;t want to mock the entire backend but have content changes coming from a CMS you can sometimes cheat by writing to local storage prior to loading the page.</p>
-					<h6>Clear local storage</h6>
-					<div class="example2">
-						browser.executeScript(&#39;localStorage.clear();&#39;);
-					</div>
-					<h6>Write to local storage with a json file</h6>
-					<div class="example2 example-overscroll">
-						var <span class="replace">productData</span> = require(&#39;./<span class="replace">stubbedjson/filename</span>.json&#39;);<br>
-						browser.executeScript(&#39;localStorage.setItem("<span class="replace">ngStorage-file-name-en_us</span>", arguments[0]);&#39;, JSON.stringify(<span class="replace">productData</span>));
-					</div>
-					<h6>Delete a specific file in local storage</h6>
-					<div class="example2 example-overscroll">
-						browser.executeScript(&#39;localStorage.removeItem("<span class="replace">ngStorage-file-name-en_us</span>");&#39;);
-					</div>
-					<h6>Upload a file</h6>
-					<div class="example2 example-overscroll">
-						var uploadInput = element(by.css("input[type=file]"));<br>
-						uploadInput.sendKeys("path/to/file");
-					</div>
-					<h4>Managing Expectations</h4>
-					<p>
-					Some good thing to check examples:<br>
-					<code class="example">expect(<span class="replace">elName</span>.isPr&shy;esent()).toBeTruthy();</code><br>
-					Or:
-					</p>
-					<div class="example2">
-						<span class="replace">prodNum.get(7).$('img')</span>.isDis&shy;played().then(function(val) {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();<br>
-					})</div>
-					<p>Or:
-					<code class="example">expect(<span class="replace">myButton</span>.isEn&shy;abled()).toBeFalsy();</code><br>
-					</p>
-					<p>Or:</p>
-					<div class="example2">
-						<span class="replace">mainImage</span>.get(size).then(function(val) {<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val.width).toEqual(16);<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val.height).toEqual(9);<br>
-						})
-					</div>
+						A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br> Sending letters and numbers works simple by using:
+						<div class="example2">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</div>
+						<p>Recently they fixed in issue and this should work for sending unicode keys.</p>
+						<div class="example2 example-overscroll">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</div>
+						<p>This was the workaround for previous issue so I'm keeping it here in case comes back.</p>
+						<div class="example2 example-overscroll">browser.actions().sendKeys(protractor.Key.<span class="replace">TAB</span>).perform();</div>
+						<p>Using the send key delete doesn't seem to work,</p>
+						<div class="example2 example-overscroll">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">DELETE</span>);</div>
+						<p>But BACK_SPACE does.</p>
+						<div class="example2 example-overscroll">element(by.name('name')).sendKeys(protractor.Key.<span class="replace">BACK_SPACE</span>);</div>
+						<h4>Sleep &amp; Pause</h4>
+						<p>A lot of times a test will fail because it isn't waiting for the page to load. <code class="example">browser.waitForAngular();</code> doesn't wait for angular animations. You can use <code class="example">browser.sleep(<span class="replace">####</span>);</code>							to give the page time to load. If you want to access the browser in the middle of the test use <code class="example">browser.pause(<span class="replace">#</span>)</code>, but remember to close web inspector before continuing the test (pressing
+							'd+RETURN' in terminal will continue to the next pause).</p>
+						<h5>Angular Can't Be Found</h5>
+						<p>As the <a href="https://github.com/angular/protractor/blob/master/docs/faq.md">FAQ</a> mentions this may have to do with the version, but they didn't mention that it looks for ng-app on the body tag. So if yours is anywhere else you need to set
+							rootEl in the config file (e.g. <code class="example">rootElement: '<span class="replace">div</span>',</code>). </p>
+						<h4>OnPrepare &amp; OnComplete</h4>
+						<p>You can use the OnPrepare function in the config file to set up for testing. You can do thing like disable animation with this (only useful if animation doesn't effect what you're testing). I suggest at least setting a default window size and location
+							to start your testing from.</p>
+						<div class="example2">
+							onPrepare: function() {
+							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSi&shy;ze(
+							<span class="replace">1500</span>,<span class="replace">1000</span>);
+							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPo&shy;sition(
+							<span class="replace">0</span>,<span class="replace">0</span>);
+							<br> },
+							<br>
+						</div>
+						<p>Similar commands can be run before and after each test with <code class="example">beforeEach</code> &amp; <code class="example">afterEach</code>. On 1.40 they added <code class="example">beforeLaunch</code> &amp; <code class="example">afterLaunch</code>							which can be used to setup/close test dependencies, but beware this runs before global variable 'protractor' object is setup.</p>
+						<h4>$</h4>
+						<p>
+							<code class="example">$</code> means <code class="example">element(by.Css</code><br>
+							<code class="example">$$</code> means <code class="example">element.all(by.Css</code>
+							<br> It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time. Sometimes
+							it's better to just use element.all then see what ends up in the array.
+						</p>
+						<h4>Selenium Workarounds</h4>
+						<h5>Scrolling</h5>
+						<p>There is no easy command for scrolling but you can accomplish it with:</p>
+						<div class="example2 example-overscroll">
+							browser.executeScript('window.scrollTo(0,2000);').then(function () { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<span class="replace">code to run here</span><br> });
+						</div>
+						<h5>Local Storage</h5>
+						<p>When using local storage you also need to use browser.executeScript. Remember that you parse data when reading and stringify when writing. In Protractor, when writing to local storage inside executeScript you need to use arguments(). If you don&39;t
+							want to mock the entire backend but have content changes coming from a CMS you can sometimes cheat by writing to local storage prior to loading the page.</p>
+						<h6>Clear local storage</h6>
+						<div class="example2">
+							browser.executeScript(&#39;localStorage.clear();&#39;);
+						</div>
+						<h6>Write to local storage with a json file</h6>
+						<div class="example2 example-overscroll">
+							var <span class="replace">productData</span> = require(&#39;./<span class="replace">stubbedjson/filename</span>.json&#39;);<br> browser.executeScript(&#39;localStorage.setItem("
+							<span class="replace">ngStorage-file-name-en_us</span>", arguments[0]);&#39;, JSON.stringify(<span class="replace">productData</span>));
+						</div>
+						<h6>Delete a specific file in local storage</h6>
+						<div class="example2 example-overscroll">
+							browser.executeScript(&#39;localStorage.removeItem("<span class="replace">ngStorage-file-name-en_us</span>");&#39;);
+						</div>
+						<h6>Upload a file</h6>
+						<div class="example2 example-overscroll">
+							var uploadInput = element(by.css("input[type=file]"));<br> uploadInput.sendKeys("path/to/file");
+						</div>
+						<h4>Managing Expectations</h4>
+						<p>
+							Some good thing to check examples:<br>
+							<code class="example">expect(<span class="replace">elName</span>.isPr&shy;esent()).toBeTruthy();</code><br> Or:
+						</p>
+						<div class="example2">
+							<span class="replace">prodNum.get(7).$('img')</span>.isDis&shy;played().then(function(val) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();
+							<br> })
+						</div>
+						<p>Or:
+							<code class="example">expect(<span class="replace">myButton</span>.isEn&shy;abled()).toBeFalsy();</code><br>
+						</p>
+						<p>Or:</p>
+						<div class="example2">
+							<span class="replace">mainImage</span>.get(size).then(function(val) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val.width).toEqual(16);
+							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val.height).toEqual(9);
+							<br> })
+						</div>
 
-					<h4>Ignore Syncronization</h4>
-					<p>A lot of people use Ignore Syncronization for the wrong reasons (like when rootEl can&#39;t be found. But it is should really only be used it you have to leave an angular site. If you&#39;re dealing with Google Oauth you may have to turn it on and off.</p>
-					<h6>After 2.5</h6>
-					<code class="example">browser.ignoreSynchronization = false;</code>
-					<h6>Around 1.5</h6>
-					<code class="example">protractor.getInstance().ignoresynchronization = false;</code>
-					<h3>Examples</h3>
-					<p><a href="../examples/protractor-examples/shared.js" download="shared.js">Here's</a> an example of a helper file that can be used to load shared functions and variables.</p>
-					<p><a href="../examples/protractor-examples/login-flow.js" download="login-flow.js">Here's</a> a login flow that can help with Google Oauth.</p>
-					<p><a href="../examples/protractor-examples/login-flow.js" download="login-flow.js">Here's</a> an example config file with some custom settings.</p>
+						<h4>Ignore Syncronization</h4>
+						<p>A lot of people use Ignore Syncronization for the wrong reasons (like when rootEl can&#39;t be found. But it is should really only be used it you have to leave an angular site. If you&#39;re dealing with Google Oauth you may have to turn it on and
+							off.</p>
+						<h6>After 2.5</h6>
+						<code class="example">browser.ignoreSynchronization = false;</code>
+						<h6>Around 1.5</h6>
+						<code class="example">protractor.getInstance().ignoresynchronization = false;</code>
+						<h3>Examples</h3>
+						<p><a href="../examples/protractor-examples/shared.js" download="shared.js">Here's</a> an example of a helper file that can be used to load shared functions and variables.</p>
+						<p><a href="../examples/protractor-examples/login-flow.js" download="login-flow.js">Here's</a> a login flow that can help with Google Oauth.</p>
+						<p><a href="../examples/protractor-examples/login-flow.js" download="login-flow.js">Here's</a> an example config file with some custom settings.</p>
 				</div>
 			</div>
 			<aside id="proAside">
@@ -210,8 +219,7 @@
 					<li><code class="example">element(by.cssContaining<br>
 					Text('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
 					<li><code class="example">element(by.className('')</code></li>
-					<li><code class="example">element(by.name('')</code><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;Element Name</li>
+					<li><code class="example">element(by.name('')</code><br> &nbsp;&nbsp;&nbsp;&nbsp;Element Name</li>
 					<li><code class="example">element(by.id('')</code></li>
 					<li><code class="example">element(by.partialLinkText('')</code></li>
 					<li><code class="example">element(by.binding('')</code></li>
@@ -265,44 +273,53 @@
 					<li>toBeDefined()</li>
 				</ul>
 			</aside>
-			</article>
-			<!-- Loading footer with AJAX -->
-			<div class="footerPlaceholder"></div>
-		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="../scripts/main.js"></script>
-		<!-- endbuild -->
-		<!-- My Scripts -->
-		<script src="../includes/nav.js"></script>
-		<script src="../includes/footer.js"></script>
-		<script src="../scripts/proScrollAsideFixed.js"></script>
-	</body>
+		</article>
+		<!-- Loading footer with AJAX -->
+		<div class="footerPlaceholder"></div>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] =
+				function() {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<!-- endbuild -->
+	<!-- My Scripts -->
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+	<script src="../scripts/proScrollAsideFixed.js"></script>
+</body>
+
 </html>

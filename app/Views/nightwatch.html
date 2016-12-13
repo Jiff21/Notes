@@ -1,106 +1,106 @@
 <!doctype html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<title>Nightwatch Notes</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<!-- build:css styles/vendor.css -->
-		<!-- bower:css -->
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<!-- endbuild -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-	</head>
-	<body class="nightwatch-body">
-		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
-		<div class="navPlaceholder"></div>
-		<!--[if lt IE 10]>
+
+<head>
+	<meta charset="utf-8">
+	<title>Nightwatch Notes</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="../styles/main.css">
+	<!-- endbuild -->
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="../bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body class="nightwatch-body">
+	<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+	<div class="navPlaceholder"></div>
+	<!--[if lt IE 10]>
 										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container-fluid">
-			<div>
-				<div class="jumbotron">
-				</div>
+	<div class="container-fluid">
+		<div>
+			<div class="jumbotron">
 			</div>
-			<article>
+		</div>
+		<article>
 			<div class="full text-centered">
 				<h3>Setup</h3>
 			</div>
 
 			<div class="half-full">
 				<h5>Step 1</h5>
-				<p>In a project already setup using grunt install nightwatch with <span class="example">sudo npm install nightwatch —save-dev</span>, then install selenium-standalone with <span class="example">sudo npm install selenium-server-standalone-jar --save-dev</span>. If a folder wasn't automatically created,  make a test folder at root scope. Inside that folder create the folder e2e. Inside e2e add the folders spec, screeenshots, and reports. As of version 0.6 they have grunt instructions <a href="http://nightwatchjs.org/guide#using-grunt" target="_blank">here</a> and I've updated these steps to reflect this, but it's so early on keep an eye on <a href="https://github.com/gextech/grunt-nightwatch">grunt-nightwatch</a> but it took similar steps to get it working. Start by adding this to the section of you grunt file right under <span class="term">module.export = function (grunt) {</span></p>
+				<p>In a project already setup using grunt install nightwatch with <span class="example">sudo npm install nightwatch —save-dev</span>, then install selenium-standalone with <span class="example">sudo npm install selenium-server-standalone-jar --save-dev</span>.
+					If a folder wasn't automatically created, make a test folder at root scope. Inside that folder create the folder e2e. Inside e2e add the folders spec, screeenshots, and reports. As of version 0.6 they have grunt instructions <a href="http://nightwatchjs.org/guide#using-grunt"
+									target="_blank">here</a> and I've updated these steps to reflect this, but it's so early on keep an eye on <a href="https://github.com/gextech/grunt-nightwatch">grunt-nightwatch</a> but it took similar steps to get it working. Start by adding this
+					to the section of you grunt file right under <span class="term">module.export = function (grunt) {</span></p>
 				<div class="example2">
-    			var nightwatch = require('nightwatch');<br>
-    			nightwatch.initGrunt(grunt);
+					var nightwatch = require('nightwatch');<br> nightwatch.initGrunt(grunt);
 				</div>
 				<p>And add this to your git ignore for the project.</p>
 				<div class="example2">
-					// Ignores for Nightwatch<br>
-					test/e2e/selenium-debug.log<br>
-					test/e2e/tests_output/<br>
-					test/e2e/reports<br>
-					test/e2e.screenshots<br>
+					// Ignores for Nightwatch<br> test/e2e/selenium-debug.log
+					<br> test/e2e/tests_output/
+					<br> test/e2e/reports
+					<br> test/e2e.screenshots
+					<br>
 				</div>
 			</div>
 			<div class="half-full">
 				<h5>Step 2</h5>
 				<p>Then in your gruntfile add the following to the <span class="term">gruntInitConfig</span> section.</p>
-				<div class="example2">			
-					nightwatch: {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;options: {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cwd: './test/e2e',<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;},<br><br>
-
-					&nbsp;&nbsp;&nbsp;&nbsp;'default': {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argv: {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env: 'default'<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;settings: {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config_path: 'test/e2e/nightwatch.json'<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;},<br><br>
-
-					&nbsp;&nbsp;&nbsp;&nbsp;'all': {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argv: {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env: 'chrome,firefox,safari'<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-			        },<br>
+				<div class="example2">
+					nightwatch: {<br> &nbsp;&nbsp;&nbsp;&nbsp;options: {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cwd: './test/e2e',
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;},
+					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;'default': {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argv: {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env: 'default'
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;settings: {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config_path: 'test/e2e/nightwatch.json'
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;},
+					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;'all': {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argv: {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env: 'chrome,firefox,safari'
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;}
+					<br> },
+					<br>
 				</div>
 			</div>
 			<div class="half-full">
 				<h5>Step 3</h5>
-				<p>Then in add the task <span class="example">nightwatch</span> to the run portion of of your <span class="term">grunt.registerTask('test', function (target) {</span> and a a seperate registerTask of 'test:e2e'. The end result should look something like this.</p>
+				<p>Then in add the task <span class="example">nightwatch</span> to the run portion of of your <span class="term">grunt.registerTask('test', function (target) {</span> and a a seperate registerTask of 'test:e2e'. The end result should look something like
+					this.</p>
 				<div class="example2">
-				grunt.registerTask('test', function (target) {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;if (target !== 'watch') {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grunt.task.run([<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'clean:server',<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'concurrent:test',<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'autoprefixer'<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
-				&nbsp;&nbsp;&nbsp;&nbsp;grunt.task.run([<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'connect:test',<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'jasmine',<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'nightwatch'<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;]);<br>
-				});<br><br>
-				// This task will kick off the unit tests 1 time<br>
-				grunt.registerTask('test:unit', [<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;'jasmine'<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;]);<br><br>
-				// This task will kick off the "End to End" tests 1 time, requires 'grunt serve' to be running<br>
-				grunt.registerTask('test:e2e', [<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;'nightwatch:default'<br>
-				]);<br>
+					grunt.registerTask('test', function (target) {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;if (target !== 'watch') {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grunt.task.run([
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'clean:server',
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'concurrent:test',
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'autoprefixer'
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;}
+					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;grunt.task.run([
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'connect:test',
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'jasmine',
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'nightwatch'
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;]);
+					<br> });
+					<br><br> // This task will kick off the unit tests 1 time<br> grunt.registerTask('test:unit', [<br> &nbsp;&nbsp;&nbsp;&nbsp;'jasmine'
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;]);
+					<br><br> // This task will kick off the "End to End" tests 1 time, requires 'grunt serve' to be running<br> grunt.registerTask('test:e2e', [<br> &nbsp;&nbsp;&nbsp;&nbsp;'nightwatch:default'
+					<br> ]);
+					<br>
 				</div>
 			</div>
 
@@ -109,45 +109,42 @@
 				<h5>Step 4</h5>
 				<p>Now in the e2e folder add a file title <span class="term">nightwatch.json</span>. The file should look something like this.</p>
 				<div class="example2">
-				{<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;"src_folders" : ["./spec"],<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;"live_output": true,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;"parallel_process_delay": 1500,<br><br>
-
-				&nbsp;&nbsp;&nbsp;&nbsp;"selenium" : {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"standalone": true,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"start_process": true,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"server_path": "../../node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-<span class="replace">2.45.0</span>.jar",<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"jar_version" : "<span class="replace">2.45.0</span>",<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"log_path": "",<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"cli_args": {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"webdriver.chrome.driver": "bin/chromedriver"<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;},<br><br>
-
-				&nbsp;&nbsp;&nbsp;&nbsp;"test_settings" : {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"default": {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"launch_url": "<span class="replace">http://0.0.0.0:9000/Views/home.html",</span><br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"silent": true,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"screenshots": {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"enabled": false,<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"path": "./screenshots"<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},<br><br>
-
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chrome" : {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"desiredCapabilities": {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"browserName": "chrome",<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chromeOptions": {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"args": [<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"use-fake-device-for-media-stream",<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"use-fake-ui-for-media-stream"<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
-				&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-				}<br>
+					{<br> &nbsp;&nbsp;&nbsp;&nbsp;"src_folders" : ["./spec"],
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;"live_output": true,
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;"parallel_process_delay": 1500,
+					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;"selenium" : {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"standalone":
+					true,<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"start_process": true,
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"server_path": "../../node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-<span class="replace">2.45.0</span>.jar",
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"jar_version" : "<span class="replace">2.45.0</span>",
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"log_path": "",
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"cli_args": {
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"webdriver.chrome.driver":
+					"bin/chromedriver"<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;},
+					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;"test_settings" : {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"default": {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"launch_url": "<span class="replace">http://0.0.0.0:9000/Views/home.html",</span>
+					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"silent": true, false,
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"screenshots": {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"enabled":
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"path": "./screenshots"
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chrome" : {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"desiredCapabilities": {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"browserName":"chrome",
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chromeOptions": {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"args":
+					[<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"use-fake-device-for-media-stream",
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"use-fake-ui-for-media-stream"
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;}
+					<br> }
+					<br>
 				</div>
 			</div>
 			<div class="half-full">
@@ -162,32 +159,37 @@
 			</div>
 			<div class="half-full">
 				<div class="example2 example-overscroll">
-				module.exports = {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;'Demo test Google': function(browser) {<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.url('http://www.google.com')<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.waitForElementVisible('body', 1000)<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setValue('input[type=text]', 'nodejs')<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.waitForElementVisible('button[name=btnG]', 1000)<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.click('button[name=btnG]').pause(1000)<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.assert.containsText('#ires', 'joyent/node')<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end();<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;}<br>
-				};<br>
+					module.exports = {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;'Demo test Google': function(browser) {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.url('http://www.google.com')
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.waitForElementVisible('body', 1000)
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setValue('input[type=text]', 'nodejs')
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.waitForElementVisible('button[name=btnG]',
+					1000)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.click('button[name=btnG]').pause(1000)
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.assert.containsText('#ires', 'joyent/node')
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end();
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;}
+					<br> };
+					<br>
 				</div>
 			</div>
 			<div class="full text-centered">
 				<h3>Comands</h3>
 			</div>
 			<div class="full">
-				<p>A full list of commands can be found on the <a href="http://nightwatchjs.org/api#commands" target="_blank">nightwatch API page</a>. But the Xpath selector might be the most useful. The easy way to get an elements xPath is to use Chrome Dev tools to select the element, then in the Elements tab of dev tools right click on the html and use copy xPath, this can be combined with the text function to get a xPath containing text selector.</p>
+				<p>A full list of commands can be found on the <a href="http://nightwatchjs.org/api#commands" target="_blank">nightwatch API page</a>. But the Xpath selector might be the most useful. The easy way to get an elements xPath is to use Chrome Dev tools to
+					select the element, then in the Elements tab of dev tools right click on the html and use copy xPath, this can be combined with the text function to get a xPath containing text selector.</p>
 			</div>
 			<div class="full list-container">
-			<!-- If you want to use to-be-spliced on this page you need to also add a variable for what div it replaces -->
+				<!-- If you want to use to-be-spliced on this page you need to also add a variable for what div it replaces -->
 				<ul>
-					<li><span class="example">.click('xpath', '<span class="replace">X/Path</span>[text()="<span class="replace">text</span>"]').pause(1000)</span></li>
-					<li><span class="example">.waitForElementVisible('<span class="replace">body.sass-body</span>', 1000)</span></li>
-					<li><span class="example">.setValue('input[type=text]', '<span class="replace">nodejs</span>')</span></li>
+					<li><span class="example">.click('xpath', '<span class="replace">X/Path</span>[text()="<span class="replace">text</span>"]').pause(1000)</span>
+					</li>
+					<li><span class="example">.waitForElementVisible('<span class="replace">body.sass-body</span>', 1000)</span>
+					</li>
+					<li><span class="example">.setValue('input[type=text]', '<span class="replace">nodejs</span>')</span>
+					</li>
 				</ul>
 			</div>
 			<div class="full text-centered">
@@ -204,7 +206,8 @@
 			</div>
 			<div class="full list-container">
 				<ul>
-					<li><span class="example">.assert.containsText('<span class="replace">#ires</span>', '<span class="replace">joyent/node</span>')</span></li>
+					<li><span class="example">.assert.containsText('<span class="replace">#ires</span>', '<span class="replace">joyent/node</span>')</span>
+					</li>
 				</ul>
 			</div>
 			<div class="full text-centered">
@@ -215,50 +218,64 @@
 			</div>
 			<div class="full list-container">
 				<ul>
-					<li><span class="example">grunt test:e2e -t /spec/<span class="replace">name/or/path/to/spec</span></span></li>
-					<li><span class="example">grunt test:e2e -g /spec/<span class="replace">folderNameToRunAGroup</span></span></li>
-					<li><span class="example">grunt test:e2e -e <span class="replace">environmentNameDefiniedInNightwatchJson</span></span></li>
+					<li><span class="example">grunt test:e2e -t /spec/<span class="replace">name/or/path/to/spec</span></span>
+					</li>
+					<li><span class="example">grunt test:e2e -g /spec/<span class="replace">folderNameToRunAGroup</span></span>
+					</li>
+					<li><span class="example">grunt test:e2e -e <span class="replace">environmentNameDefiniedInNightwatchJson</span></span>
+					</li>
 				</ul>
-			</div>			
-			</article>
-			<!-- Loading footer with AJAX -->
-			<div class="footerPlaceholder"></div>
-		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="../scripts/main.js"></script>
-		<!-- endbuild -->
-		<!-- myScripts -->
-		<script src="../includes/nav.js"></script>
-		<script src="../includes/footer.js"></script>
-		<script src="../scripts/listBreaker.js"></script>
-		<script type="text/javascript">breakList(4, $('.to-be-spliced'), 'gold');</script>
-	</body>
+			</div>
+		</article>
+		<!-- Loading footer with AJAX -->
+		<div class="footerPlaceholder"></div>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] =
+				function() {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<!-- endbuild -->
+	<!-- myScripts -->
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+	<script src="../scripts/listBreaker.js"></script>
+	<script type="text/javascript">
+		breakList(4, $('.to-be-spliced'), 'gold');
+	</script>
+</body>
+
 </html>
