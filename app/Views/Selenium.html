@@ -1,36 +1,38 @@
 <!doctype html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<title>Selenium Notes</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<!-- build:css styles/vendor.css -->
-		<!-- bower:css -->
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<!-- endbuild -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-	</head>
-	<body class="selenium-body">
-		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
-		<div class="navPlaceholder"></div>
-		<!--[if lt IE 10]>
+
+<head>
+	<meta charset="utf-8">
+	<title>Selenium Notes</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="../styles/main.css">
+	<!-- endbuild -->
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="../bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body class="selenium-body">
+	<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+	<div class="navPlaceholder"></div>
+	<!--[if lt IE 10]>
 										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container">
-			<div>
-				<div class="jumbotron">
-					<h1>Selenium Notes</h1>
-					<p class="lead">"The best thing about the future is that it comes one day at a time." - Abraham Lincoln</p>
-				</div>
+	<div class="container">
+		<div>
+			<div class="jumbotron">
+				<h1>Selenium Notes</h1>
+				<p class="lead">"The best thing about the future is that it comes one day at a time." - Abraham Lincoln</p>
 			</div>
-			<article>
+		</div>
+		<article>
 
 			<div>
 				<button value="button" onclick="makeVisible(seleniumcommands)">Python Commands</button>
@@ -42,394 +44,433 @@
 			</div>
 
 			<div id="seleniumcommands" class="visible">
-			<div class="full">
-				<h2> Selenium Python</h2>
-				<h4>Seleniumn Locators</h4>
-				<ul class="example-overscroll">
-					<li><span class="example">driver.find_element_by_id("<span class="replace">search</span>")</span></li>
-					<li><span class="example">driver.find_element_by_name("<span class="replace">replace</span>")</span></li>
-					<li><span class="example">driver.find_element_by_xpath("<span class="replace">//div[@id='a']//a[@class='click']</span>")</span></li>
-					<li><span class="example">driver.find_element_by_partial_link_text("<span class="replace">replace</span>")</span></li>
-					<li><span class="example">driver.find_element_by_link_text("<span class="replace">replace</span>")</span></li>
-					<li><span class="example">driver.find_element_by_css_selector("<span class="replace">h1.example</span>")</span></li>
-					<li><span class="example">driver.find_element_by_class_name("<span class="replace">aside</span>")</span></li>
-				</ul>
+				<div class="full">
+					<h2> Selenium Python</h2>
+					<h4>Seleniumn Locators</h4>
+					<ul class="example-overscroll">
+						<li><span class="example">driver.find_element_by_id("<span class="replace">search</span>")</span>
+						</li>
+						<li><span class="example">driver.find_element_by_name("<span class="replace">replace</span>")</span>
+						</li>
+						<li><span class="example">driver.find_element_by_xpath("<span class="replace">//div[@id='a']//a[@class='click']</span>")</span>
+						</li>
+						<li><span class="example">driver.find_element_by_partial_link_text("<span class="replace">replace</span>")</span>
+						</li>
+						<li><span class="example">driver.find_element_by_link_text("<span class="replace">replace</span>")</span>
+						</li>
+						<li><span class="example">driver.find_element_by_css_selector("<span class="replace">h1.example</span>")</span>
+						</li>
+						<li><span class="example">driver.find_element_by_class_name("<span class="replace">aside</span>")</span>
+						</li>
+					</ul>
 
-				<h4>Webdriver By Locators</h4>
-				<p>If you prefer webdrivers By locators</p>
-				<div class="example2">from selenium.webdriver.common.by import By</div>
-				<ul>
-					<li><span class="example">driver.find_element(By.ID, '<span class="replace">signIn</span>')</span></li>
-					<li><span class="example">driver.find_element(By.NAME, '<span class="replace">signIn</span>')</span></li>
-					<li><span class="example">driver.find_element(By.XPATH, '//button[contains(text(), "<span class="replace">Sign In</span>")]')</span></li>
-					<li><span class="example">driver.find_element(By.XPATH, "//label[text()='<span class="replace">Don't Sign In</span>']")</span></li>
-					<li><span class="example">driver.find_element(By.PARTIAL_LINK_TEXT, '<span class="replace">Sign</span>')</span></li>
-					<li><span class="example">driver.find_element(By.LINK_TEXT, '<span class="replace">Sign In</span>')</span></li>
-					<li><span class="example">driver.find_element(By.CSS_SELECTOR, '<span class="replace">a#signIn</span>')</span></li>
-					<li><span class="example">driver.find_element(By.CLASS_NAME, '<span class="replace">signIn</span>')</span></li>
-					<li><span class="example">driver.find_element(By.TAG_NAME, '<span class="replace">signIn</span>')</span></li>
-				</ul>
+					<h4>Webdriver By Locators</h4>
+					<p>If you prefer webdrivers By locators</p>
+					<div class="example2">from selenium.webdriver.common.by import By</div>
+					<ul>
+						<li><span class="example">driver.find_element(By.ID, '<span class="replace">signIn</span>')</span>
+						</li>
+						<li><span class="example">driver.find_element(By.NAME, '<span class="replace">signIn</span>')</span>
+						</li>
+						<li><span class="example">driver.find_element(By.XPATH, '//button[contains(text(), "<span class="replace">Sign In</span>")]')</span>
+						</li>
+						<li><span class="example">driver.find_element(By.XPATH, "//label[text()='<span class="replace">Don't Sign In</span>']")</span>
+						</li>
+						<li><span class="example">driver.find_element(By.PARTIAL_LINK_TEXT, '<span class="replace">Sign</span>')</span>
+						</li>
+						<li><span class="example">driver.find_element(By.LINK_TEXT, '<span class="replace">Sign In</span>')</span>
+						</li>
+						<li><span class="example">driver.find_element(By.CSS_SELECTOR, '<span class="replace">a#signIn</span>')</span>
+						</li>
+						<li><span class="example">driver.find_element(By.CLASS_NAME, '<span class="replace">signIn</span>')</span>
+						</li>
+						<li><span class="example">driver.find_element(By.TAG_NAME, '<span class="replace">signIn</span>')</span>
+						</li>
+					</ul>
 
-				<h4>Waiting</h4>
-				<p>Be sure to import wait and expected conditions</p>
-				<div class="example2">
-					from selenium.webdriver.support.ui import WebDriverWait<br>
-					from selenium.webdriver.support import expected_conditions as EC
-				</div>
-				<p>Then you can wait for an element like this:</p>
-				<div class="example2 example-overscroll">
-					wait = WebDriverWait(driver, <span class="replace">10</span>)<br>
-					element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'<span class="replace">message-results</span>')))
-				</div>
-				<p>Check out available <a href="https://seleniumhq.github.io/selenium/docs/api/py/webdriver_support/selenium.webdriver.support.expected_conditions.html" target="_blank">Expected Conditions</a></p>
-				<p>You could also use implicit waits, normally the dom will look for an element and immediately fail if not there. You can change it to implicitly_wait which will poll the dom every X number of seconds before failing, but this will change for the whole webdriver instance and slow down other tests.</p>
-				<div class="example2">
-					driver.implicitly_wait(<span class="replace">1</span>)
-				</div>
-				<p>If you want to slow down the test a specific amount of time while debugging.</p>
-				<div class="example2">
-					import time <br><br>
-					time.sleep(<span class="replace">1</span>)
-				</div>
-				<h4>Send Keys</h4>
-				<div class="example2">from selenium.webdriver.common.keys import Keys</div>
-				<ul>
-					<li><span class="example"><span class="replace">elementName</span>.send_keys('<span class="replace">TextToSend</span>')</span></li>
-					<li><span class="example"><span class="replace">elementName</span>.send_keys(Keys.RETURN)</span></li>
-				</ul>
-				<p>A list of <a href="http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.keys" target="_blank">special keys</a>, like return above.</p>
-				
-				<h4>Example Assertions</h4>
-				<p>Check out available <a href="https://docs.python.org/2.7/library/unittest.html#test-cases" target="_blank">Asserts</a></p>
-				<h6>Check page source</h6>
-				<div class="example2">
-					try: assert "<span class="replace">No posts were found...</span>" not in driver.page_source<br>
-					except AssertionError, e: self.verificationErrors.append("<span class="replace">No Posts incorrectly appeared.</span>")
-				</div>
-				<h6>Partial Text Contains</h6>
-				<div class="example2">
-					posts = driver.find_elements_by_class_name('<span class="replace">post</span>')<br>
-					try: self.assertEqual(posts.text().contains('<span class="replace">example text</span>'))<br>
-					except AssertionError, e: self.verificationErrors.append('Expected example text but instead got ' + posts.text())<br>
-					## For non elements you may need use a regex.<br>
-					url_key = /notlookingfor/lookingfor/notlookingfor<br>
-					try: self.assertRegexpMatches(driver.current_url, *url_key[:-13])<br>
-					except AssertionError, e: self.verificationErrors.append("Expected " + driver.current_url + " to conatin " + url_key[:-13])
-				</div>
-				<h6>Count elements on page</h6>
-				<div class="example2">
-					posts = driver.find_elements_by_class_name('<span class="replace">post</span>')<br>
-					try: self.assertEqual(len(posts), 1)<br>
-					except AssertionError, e: self.verificationErrors.append('Search ' + str(len(posts)) + ' many posts when there should only be 1.')
-				</div>
-				<h6>Elements text in an if statement</h6>
-				<div class="example2 example-overscroll">
-					welcome_message = driver.find_element(By.CSS_SELECTOR, '<span class="replace">h1#welcome-message</span>')<br>
-					if current_hour &lt; 12<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Ohayōgozaimasu')<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )<br>
-					elif current_hour &lt;= 24:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Kon&#39;nichiwa')<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )<br>
-					else<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Dude where did you get that clock?')<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )
-				</div>
-				<h6>More Than a certain amount</h6>
-				<div class="example2 example-overscroll">
-					nav_bar_links = driver.find_elements(By.CSS_SELECTOR, '.dropdown-menu &#62; li &#62; a')<br>
-					try: self.assertTrue(len(nav_bar_links) &#62; 2)<br>
-					except AssertionError, e: self.verificationErrors.append("Expected more urls: " + str(len(nav_bar_links)))
-				</div>
+					<h4>Waiting</h4>
+					<p>Be sure to import wait and expected conditions</p>
+					<div class="example2">
+						from selenium.webdriver.support.ui import WebDriverWait<br> from selenium.webdriver.support import expected_conditions as EC
+					</div>
+					<p>Then you can wait for an element like this:</p>
+					<div class="example2 example-overscroll">
+						wait = WebDriverWait(driver, <span class="replace">10</span>)<br> element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'<span class="replace">message-results</span>')))
+					</div>
+					<p>Check out available <a href="https://seleniumhq.github.io/selenium/docs/api/py/webdriver_support/selenium.webdriver.support.expected_conditions.html" target="_blank">Expected Conditions</a></p>
+					<p>You could also use implicit waits, normally the dom will look for an element and immediately fail if not there. You can change it to implicitly_wait which will poll the dom every X number of seconds before failing, but this will change for the whole
+						webdriver instance and slow down other tests.</p>
+					<div class="example2">
+						driver.implicitly_wait(<span class="replace">1</span>)
+					</div>
+					<p>If you want to slow down the test a specific amount of time while debugging.</p>
+					<div class="example2">
+						import time
+						<br><br> time.sleep(
+						<span class="replace">1</span>)
+					</div>
+					<h4>Send Keys</h4>
+					<div class="example2">from selenium.webdriver.common.keys import Keys</div>
+					<ul>
+						<li><span class="example"><span class="replace">elementName</span>.send_keys('<span class="replace">TextToSend</span>')</span>
+						</li>
+						<li><span class="example"><span class="replace">elementName</span>.send_keys(Keys.RETURN)</span>
+						</li>
+					</ul>
+					<p>A list of <a href="http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.common.keys" target="_blank">special keys</a>, like return above.</p>
 
-				<h6>Check Image responses</h6>
-				<div class="example2 example-overscroll">
-					import requests <br><br>
-					for image in side_bar_images:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;current_link = image.get_attribute("src")<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;r = requests.get(current_link)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(r.status_code, 200)<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append(current_link + ' delivered response code of ' + r.status_code)
-				</div>				
+					<h4>Example Assertions</h4>
+					<p>Check out available <a href="https://docs.python.org/2.7/library/unittest.html#test-cases" target="_blank">Asserts</a></p>
+					<h6>Check page source</h6>
+					<div class="example2">
+						try: assert "<span class="replace">No posts were found...</span>" not in driver.page_source
+						<br> except AssertionError, e: self.verificationErrors.append("<span class="replace">No Posts incorrectly appeared.</span>")
+					</div>
+					<h6>Partial Text Contains</h6>
+					<div class="example2">
+						posts = driver.find_elements_by_class_name('<span class="replace">post</span>')
+						<br> try: self.assertEqual(posts.text().contains('<span class="replace">example text</span>'))
+						<br> except AssertionError, e: self.verificationErrors.append('Expected
+						example text but instead got ' + posts.text())
+						<br> ## For non elements you may need use a regex.
+						<br> url_key = /notlookingfor/lookingfor/notlookingfor
+						<br> try: self.assertRegexpMatches(driver.current_url, *url_key[:-13])
+						<br> except AssertionError,
+						e: self.verificationErrors.append("Expected " + driver.current_url + " to conatin " + url_key[:-13])
+					</div>
+					<h6>Count elements on page</h6>
+					<div class="example2">
+						posts = driver.find_elements_by_class_name('<span class="replace">post</span>')
+						<br> try: self.assertEqual(len(posts), 1)
+						<br> except AssertionError, e: self.verificationErrors.append('Search ' + str(len(posts)) + ' many posts when there should only
+						be 1.')
+					</div>
+					<h6>Elements text in an if statement</h6>
+					<div class="example2 example-overscroll">
+						welcome_message = driver.find_element(By.CSS_SELECTOR, '<span class="replace">h1#welcome-message</span>')
+						<br> if current_hour &lt; 12
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Ohayōgozaimasu')
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )
+						<br> elif current_hour &lt;= 24:
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Kon&#39;nichiwa')
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )
+						<br> else
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Dude where did you get that clock?')
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour)
+							+ " but the message is " + welcome_message.text )
+					</div>
+					<h6>More Than a certain amount</h6>
+					<div class="example2 example-overscroll">
+						nav_bar_links = driver.find_elements(By.CSS_SELECTOR, '.dropdown-menu &#62; li &#62; a')
+						<br> try: self.assertTrue(len(nav_bar_links) &#62; 2)
+						<br> except AssertionError, e: self.verificationErrors.append("Expected more urls: " + str(len(nav_bar_links)))
+					</div>
 
-				<h6>Displayed / Visible </h6>
-				<div class="example2 example-overscroll">
-				try: self.assertTrue(<span class="replace">elem_name</span>.is_displayed())<br>
-				except AssertionError, e: self.verificationErrors.append("Element not visible when it should be.")
-				</div>
+					<h6>Check Image responses</h6>
+					<div class="example2 example-overscroll">
+						import requests
+						<br><br> for image in side_bar_images:
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;current_link = image.get_attribute("src")
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;r = requests.get(current_link)
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(r.status_code,
+						200)<br> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append(current_link + ' delivered response code of ' + r.status_code)
+					</div>
 
-							
+					<h6>Displayed / Visible </h6>
+					<div class="example2 example-overscroll">
+						try: self.assertTrue(<span class="replace">elem_name</span>.is_displayed())
+						<br> except AssertionError, e: self.verificationErrors.append("Element not visible when it should be.")
+					</div>
+					<h4>Properties</h4>
+					<p>You can get the text of an element simply by adding <span class="term">.text</span> to it:</p>
+					<div class="example2"><span class="replace">example_elem</span>.text</div>
+					<p>You get the css propert off an element with the following command. Note that it returns it in rgba(###, ###, ###, 1) format.</p>
+					<div class="example2"><span class="replace">elem_name</span>.value_of_css_property('<span class="replace">background-color</span>')</div>
+					<p>You can get the elements size with. It will return in a dict like so {'width': 250, 'height': 250}</p>
+					<div class="example2"><span class="replace">elem_name</span>.size</div>
+					<p>You can get the elements size with. It will return in a dict like so {'y': 800, 'x': 300}</p>
+					<div class="example2"><span class="replace">elem_name</span>.location</div>
+					<p>Get attribute.</p>
+					<div class="example2"><span class="replace">elem_name</span>.get_attribute('<span class="replace">href</span>')</div>
+					<p>With execute script</p>
+					<div class="example2">driver.execute_script("return <span class="replace"> document.body.scrollWidth</span>")</div>
 
-				<h4>Properties</h4>		
-				<p>You can get the text of an element simply by adding <span class="term">.text</span> to it:</p>
-				<div class="example2"><span class="replace">example_elem</span>.text</div>
-				<p>You get the css propert off an element with the following command. Note that it returns it in rgba(###, ###, ###, 1) format.</p>
-				<div class="example2"><span class="replace">elem_name</span>.value_of_css_property('<span class="replace">background-color</span>')</div>
-				<p>You can get the elements size with. It will return in a dict like so {'width': 250, 'height': 250}</p>
-				<div class="example2"><span class="replace">elem_name</span>.size</div>
-				<p>You can get the elements size with. It will return in a dict like so {'y': 800, 'x': 300}</p>
-				<div class="example2"><span class="replace">elem_name</span>.location</div>
-				<p>Get attribute.</p>
-				<div class="example2"><span class="replace">elem_name</span>.get_attribute('<span class="replace">href</span>')</div>
-				<p>With execute script</p>
-				<div class="example2">driver.execute_script("return <span class="replace"> document.body.scrollWidth</span>")</div>
-
-				<h4>Interacting With Browser</h4>		
-				<p>Set Window Size</p>
-				<div class="example2">driver.set_window_size(<span class="replace">1200</span>,<span class="replace">1000</span>)</div>
-				<p>Set Window Location</p>
-				<div class="example2">driver.set_window_position(<span class="replace">0</span>,<span class="replace">0</span>)</div>
-
-
-				<h4>Screenshot</h4>
-				<p>Need to look into this</p>
-				<div class="example2">driver.get_screenshot_as_file('/Screenshots/google.png')</div>
+					<h4>Interacting With Browser</h4>
+					<p>Set Window Size</p>
+					<div class="example2">driver.set_window_size(<span class="replace">1200</span>,<span class="replace">1000</span>)</div>
+					<p>Set Window Location</p>
+					<div class="example2">driver.set_window_position(<span class="replace">0</span>,<span class="replace">0</span>)</div>
 
 
-				<h4>Action Chains</h4>		
-				<p>Be sure to load in actions chains for webdrivers</p>
-				<div class="example2">from selenium.webdriver.common.action_chains import ActionChains</div>
-				<p>Then you can perform chained actions like this.</p>
-				<div class="example2">
-					actions = ActionChains(driver)<br>
-					actions.click(<span class="replace">elem</span>)<br>
-					actions.send_keys("<span class="replace">Automated Testing IGNORE ME!!!!</span>")<br>
-					actions.send_keys(Keys.RETURN)<br>
-					actions.perform()
+					<h4>Screenshot</h4>
+					<p>Need to look into this</p>
+					<div class="example2">driver.get_screenshot_as_file('/Screenshots/google.png')</div>
+
+
+					<h4>Action Chains</h4>
+					<p>Be sure to load in actions chains for webdrivers</p>
+					<div class="example2">from selenium.webdriver.common.action_chains import ActionChains</div>
+					<p>Then you can perform chained actions like this.</p>
+					<div class="example2">
+						actions = ActionChains(driver)
+						<br> actions.click(
+						<span class="replace">elem</span>)<br> actions.send_keys("
+						<span class="replace">Automated Testing IGNORE ME!!!!</span>")
+						<br> actions.send_keys(Keys.RETURN)
+						<br> actions.perform()
+					</div>
+
 				</div>
-				
-			</div>
 			</div>
 
 
 
 			<div id="simple" class="hidden">
-			<div class="full">
-				<p>This is the most basic starting point for testing in Selenium.</p>
-				<h3>Quick Install</h3>
-				<p>To get around an OS X El Capitan Permissions issue we need to install a version of python through <a href="http://brew.sh/" target="_blank">homebrew</a> (this may cause issues with NPM later though).</p>
-				<div span class="example2">
-					brew update &amp;&amp; brew upgrade<br>
-					brew install python<br>
-					hash -r python<br>
-					pip install selenium<br>
-					pip install nose<br>
+				<div class="full">
+					<p>This is the most basic starting point for testing in Selenium.</p>
+					<h3>Quick Install</h3>
+					<p>To get around an OS X El Capitan Permissions issue we need to install a version of python through <a href="http://brew.sh/" target="_blank">homebrew</a> (this may cause issues with NPM later though).</p>
+					<div span class="example2">
+						brew update &amp;&amp; brew upgrade
+						<br> brew install python
+						<br> hash -r python
+						<br> pip install selenium
+						<br> pip install nose
+						<br>
+					</div>
+					<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests
+						with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
+					<p>Here is an <a href="./../examples/python-selenium-examples/simple/simple_carousel_test.py" target="_blank">example</a> of a really simple test.</p>
+					<p>Useful documentation can be found <a href="http://selenium-python.readthedocs.io/" target="_blank">here</a> and <a href="http://www.seleniumhq.org/docs/" target="_blank">here</a>.</p>
 				</div>
-				<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
-				<p>Here is an <a href="./../examples/python-selenium-examples/simple/simple_carousel_test.py" target="_blank">example</a> of a really simple test.</p>
-				<p>Useful documentation can be found <a href="http://selenium-python.readthedocs.io/" target="_blank">here</a> and <a href="http://www.seleniumhq.org/docs/" target="_blank">here</a>.</p>
-			</div>
 			</div>
 
 
 
 
 			<div id="sgrid" class="hidden">
-			<div class="full">
-				<h2>Selenium Grid Python Tests</h2>
-				<p>This is a setup where the browsers can be configured in the globes.py file and multiple browsers can be tested at the same time using selenium grid.</p>
-				<h3>Install</h3>
-				<div span class="example2">
-					sudo npm install selenium-standalone@latest -get<br>
-					sudo selenium-standalone install<br>
-					pip install nose<br>
+				<div class="full">
+					<h2>Selenium Grid Python Tests</h2>
+					<p>This is a setup where the browsers can be configured in the globes.py file and multiple browsers can be tested at the same time using selenium grid.</p>
+					<h3>Install</h3>
+					<div span class="example2">
+						sudo npm install selenium-standalone@latest -get
+						<br> sudo selenium-standalone install
+						<br> pip install nose
+					</div>
+					<h3>Running</h3>
+					<p>Start a hub in terminal.</p>
+					<div class="example2">
+						selenium-standalone start -- -role hub
+					</div>
+					<p>In another tab of terminal register you local mac</p>
+					<div class="example2">
+						selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -maxSessions 31 -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY
+						-browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY
+					</div>
+					<p>In you want to run tests off a virtualbox as well register another hub.</p>
+					<div class="example2">
+						selenium-standalone start -- -role node -hub http://<span class="replace">[YOUR COMPUTERS IP ADDRESS]</span>:4444/grid/register -port 5557 -maxSessions 6 -browser browserName="internet explorer",javascriptEnabled=true,maxInstances=3,version=
+						<span class="replace">9</span>,platform=ANY
+					</div>
+					<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests
+						with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
+					<p>So for example you can import this <a href="./../examples/python-selenium-examples/grid/globes.py" target="_blank">global file</a> by including <span class="example">from globes import *</span> at the top of your test, and then run tests like
+						<a href="./../examples/python-selenium-examples/grid/home_test.py" target="_blank">this</a> or <a href="./../examples/python-selenium-examples/grid/search_test.py" target="_blank">this</a>.</p>
 				</div>
-				<h3>Running</h3>
-				<p>Start a hub in terminal.</p>
-				<div class="example2">
-					selenium-standalone start -- -role hub
-				</div>
-				<p>In another tab of terminal register you local mac</p>
-				<div class="example2">
-					selenium-standalone start -- -role node -hub http://localhost:4444/grid/register -port 5556 -maxSessions 31 -browser browserName=firefox,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=chrome,javascriptEnabled=true,maxInstances=10,platform=ANY -browser browserName=safari,javascriptEnabled=true,maxInstances=10,platform=ANY
-				</div>
-				<p>In you want to run tests off a virtualbox as well register another hub.</p>
-				<div class="example2">
-					selenium-standalone start -- -role node -hub http://<span class="replace">[YOUR COMPUTERS IP ADDRESS]</span>:4444/grid/register -port 5557 -maxSessions 6 -browser browserName="internet explorer",javascriptEnabled=true,maxInstances=3,version=<span class="replace">9</span>,platform=ANY
-				</div>
-				<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
-				<p>So for example you can import this <a href="./../examples/python-selenium-examples/grid/globes.py" target="_blank">global file</a> by including <span class="example">from globes import *</span> at the top of your test, and then run tests like <a href="./../examples/python-selenium-examples/grid/home_test.py" target="_blank">this</a> or <a href="./../examples/python-selenium-examples/grid/search_test.py" target="_blank">this</a>.</p>
-			</div>
 			</div>
 
-				
+
 			<div id="appium" class="hidden">
-			<div class="full">
+				<div class="full">
 
-				<h3>Appium + Selenium + Python</h3>
-				<p>See the example general file <a href="./../examples/python-selenium-examples/appium/desired_capabilities.py" target="_blank">here</a> and the example test <a href="./../examples/python-selenium-examples/appium/app_test.py" target="_blank">here</a>.</p>
+					<h3>Appium + Selenium + Python</h3>
+					<p>See the example general file <a href="./../examples/python-selenium-examples/appium/desired_capabilities.py" target="_blank">here</a> and the example test <a href="./../examples/python-selenium-examples/appium/app_test.py" target="_blank">here</a>.</p>
 
-				<h4>Locators</h4>
-				<p>Appium works a lot like normal Selenium Python but you have limited selectors because it is an app</p>
-				<div class="example2">wd.find_element_by_android_uiautomator('text("<span class="replace">Overview</span>")')</div>
-				<div class="example2">wd.find_element_by_xpath('//android.widget.<span class="replace">TextView</span>[@<span class="replace">resource-id</span>="<span class="replace">com.google.example.app.name:id/curriculums_header_coins</span>"]')</div>
+					<h4>Locators</h4>
+					<p>Appium works a lot like normal Selenium Python but you have limited selectors because it is an app</p>
+					<div class="example2">wd.find_element_by_android_uiautomator('text("<span class="replace">Overview</span>")')</div>
+					<div class="example2">wd.find_element_by_xpath('//android.widget.<span class="replace">TextView</span>[@<span class="replace">resource-id</span>="<span class="replace">com.google.example.app.name:id/curriculums_header_coins</span>"]')</div>
 
 
-				<h4>Waiting</h4>
-				<p>Be sure to import wait and expected conditions</p>
-				<div class="example2">
-					from selenium.webdriver.support.ui import WebDriverWait<br>
-					from selenium.webdriver.support import expected_conditions as EC
-				</div>
-				<p>Then you can wait like this:</p>
-				<div class="example2">
-					wait = WebDriverWait(wd, 20)<br>
-					currently_waiting_for = wait.until(EC.element_to_be_clickable((By.XPATH,'//android.widget.TextView[@text="<span class="replace">Example Text</span>"]')))
-				</div>
+					<h4>Waiting</h4>
+					<p>Be sure to import wait and expected conditions</p>
+					<div class="example2">
+						from selenium.webdriver.support.ui import WebDriverWait
+						<br> from selenium.webdriver.support import expected_conditions as EC
+					</div>
+					<p>Then you can wait like this:</p>
+					<div class="example2">
+						wait = WebDriverWait(wd, 20)
+						<br> currently_waiting_for = wait.until(EC.element_to_be_clickable((By.XPATH,'//android.widget.TextView[@text="<span class="replace">Example Text</span>"]')))
+					</div>
 
-				<h4>Scrolling</h4>
-				<p>If you want to scroll the page you need to import touch actions.</p>
-				<div class="example2">
-					from appium.webdriver.common.touch_action import TouchAction
-				</div>
-				<p>Then you can perform an action like so.</p>
-				<div class="example2">
-					action = TouchAction(wd)<br>
-					action.press(x=700, y=466).move_to(x=700, y=-200).release().perform()
-				</div>
-				<p>Currently <a href="https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/appium-bindings.md#swipe" target="_blank">swipe</a> seems to work better than this. </p>
-				<div class="example2">
-					driver.swipe(start_x=700, start_y=1400, end_x=700, end_y=200, duration=300)
-				</div>
+					<h4>Scrolling</h4>
+					<p>If you want to scroll the page you need to import touch actions.</p>
+					<div class="example2">
+						from appium.webdriver.common.touch_action import TouchAction
+					</div>
+					<p>Then you can perform an action like so.</p>
+					<div class="example2">
+						action = TouchAction(wd)
+						<br> action.press(x=700, y=466).move_to(x=700, y=-200).release().perform()
+					</div>
+					<p>Currently <a href="https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/appium-bindings.md#swipe" target="_blank">swipe</a> seems to work better than this. </p>
+					<div class="example2">
+						driver.swipe(start_x=700, start_y=1400, end_x=700, end_y=200, duration=300)
+					</div>
 
-				<h4>Actions</h4>
-				<P>there is fairly good documentation for how to perform actions on the Usage section for <a href="https://github.com/appium/python-client" target="_blank">Appium-Python-Client</a>.  Appium also provides more detailed documentation of <a href="http://appium.io/slate/en/master/?python#automating-mobile-gestures" target="_blank">touch actions</a> and <a href="http://appium.io/slate/en/master/?python#appium-client-libraries">client librarie</a>. I've attached two example tests from other projects and the globes files they referenced. One is an example of web tests using appium and the other is an example of a native test. You can also check out the example files provided by appium.</P>
+					<h4>Actions</h4>
+					<P>there is fairly good documentation for how to perform actions on the Usage section for
+					<a href="https://github.com/appium/python-client" target="_blank">Appium-Python-Client</a>.
+					Appium also provides more detailed documentation of <a href="http://appium.io/slate/en/master/?python#automating-mobile-gestures" target="_blank">
+					touch actions</a> and <a href="http://appium.io/slate/en/master/?python#appium-client-libraries">client librarie</a>.
+					I've attached two example tests from other projects and the globes files they referenced. One is an example of
+					web tests using appium and the other is an example of a native test. You can also check out the example files provided by appium.</P>
 
-				<h4>Assertions</h4>
-				<div class="example2">
-					self.assertIsNotNone(<span class="replace">elem</span>)
-				</div>
-				<div class="example2">
-					self.assertEqual('<span class="replace">Example Text</span>', elem.get_attribute('text'))
-				</div>
-				<div class="example2">
-					self.assertTrue(activity, '<span class="replace">com.example.app.name/intro.MainDrawerActivity</span>')
-				</div>
+					<h4>Assertions</h4>
+					<div class="example2">
+						self.assertIsNotNone(<span class="replace">elem</span>)
+					</div>
+					<div class="example2">
+						self.assertEqual('<span class="replace">Example Text</span>', elem.get_attribute('text'))
+					</div>
+					<div class="example2">
+						self.assertTrue(activity, '<span class="replace">com.example.app.name/intro.MainDrawerActivity</span>')
+					</div>
 
-				<p>*For the purpose of this page we are setting this at the top of the test <span class="example">wd = self.driver</span></p>
+					<p>*For the purpose of this page we are setting this at the top of the test <span class="example">wd = self.driver</span></p>
 
-				<h4>Install at the time </h4>
-				<p>Prequisites Selenium &amp; Selenium Webdriver installed and setup. Xcode and Xcode-cli setup. Pip &amp; Homebrew Installed. These are an abbreviated version of the steps from their getting started guide I had to run to get it going. Android Home set and ADB setup. Java Development Kit installed as well.</p>
-				<div class="example2">
-					npm install -g appium </br>
-					pip install Appium-Python-Client</br>
-					brew install libimobiledevice</br>
-					npm install -g authorize-ios</br>
-					sudo authorize-ios</br>
-					brew install ios-webkit-debug-proxy</br>
-					brew install carthage</br>
-					Cd into appium folder. </br>
-					cd path/to/node_modules/appium/</br>
-					sudo npm install appium-ios-driver</br>
-					brew install --HEAD ideviceinstaller</br>
-				</div>
-				<p>Add location of Java Home to .bash_profile</p>
-				<div class="example2">
-					export JAVA_HOME=$(/usr/libexec/java_home)
-				</div>
-				<p>Also make sure Android Home is defined from your ADB Setup.</p>
-				<div class="example2">
-					export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools:~/Library/Android/sdk/build-tools
-export ANDROID_HOME=$(dirname $(dirname $(which android)))
-				</div>
+					<h4>Install at the time </h4>
+					<p>Prequisites Selenium &amp; Selenium Webdriver installed and setup. Xcode and Xcode-cli setup. Pip &amp; Homebrew Installed. These are an abbreviated version of the steps from their getting started guide I had to run to get it going. Android Home
+						set and ADB setup. Java Development Kit installed as well.</p>
+					<div class="example2">
+						npm install -g appium </br>
+						pip install Appium-Python-Client</br>
+						brew install libimobiledevice</br>
+						npm install -g authorize-ios</br>
+						sudo authorize-ios</br>
+						brew install ios-webkit-debug-proxy</br>
+						brew install carthage</br>
+						Cd into appium folder. </br>
+						cd path/to/node_modules/appium/</br>
+						sudo npm install appium-ios-driver</br>
+						brew install --HEAD ideviceinstaller</br>
+					</div>
+					<p>Add location of Java Home to .bash_profile</p>
+					<div class="example2">
+						export JAVA_HOME=$(/usr/libexec/java_home)
+					</div>
+					<p>Also make sure Android Home is defined from your ADB Setup.</p>
+					<div class="example2">
+						export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools:~/Library/Android/sdk/build-tools export ANDROID_HOME=$(dirname $(dirname $(which android)))
+					</div>
 
-				<h4>Running</h4>
-				<p>Launch a selenium hub, a selenium node and run <span class="example">appium</span>. For iOS Safari you will need to also run <span class="example">ios_webkit_debug_proxy</span> and make sure you have a <a href="http://appium.io/slate/en/master/?ruby#running-your-tests-with-appium" target="_blank">distribution profile setup</a>.</p>
+					<h4>Running</h4>
+					<p>Launch a selenium hub, a selenium node and run <span class="example">appium</span>. For iOS Safari you will need to also run <span class="example">ios_webkit_debug_proxy</span> and make sure you have a <a href="http://appium.io/slate/en/master/?ruby#running-your-tests-with-appium"
+										target="_blank">distribution profile setup</a>.</p>
 
-				<h4>Wifi Controls</h4>
-				<p>This is an example of a <a href="https://github.com/appium/python-client/blob/master/test/functional/android/network_connection_tests.py" target="_blank">network test</a>. It uses</p>
-				<div class="example2">
-					from appium.webdriver.connectiontype import ConnectionType</br>
-					nc = driver.set_network_connection(ConnectionType.DATA_ONLY)</br>
-					self.assertIsInstance(nc, int)</br>
-					self.assertEqual(nc, ConnectionType.DATA_ONLY)</br>
-				</div>
-				<p>Airplane=1, Wifi only=2, data only=4,wifi and data = 6</p>
+					<h4>Wifi Controls</h4>
+					<p>This is an example of a <a href="https://github.com/appium/python-client/blob/master/test/functional/android/network_connection_tests.py" target="_blank">network test</a>. It uses</p>
+					<div class="example2">
+						from appium.webdriver.connectiontype import ConnectionType</br>
+						nc = driver.set_network_connection(ConnectionType.DATA_ONLY)</br>
+						self.assertIsInstance(nc, int)</br>
+						self.assertEqual(nc, ConnectionType.DATA_ONLY)</br>
+					</div>
+					<p>Airplane=1, Wifi only=2, data only=4,wifi and data = 6</p>
 
-				<h4>Remote Server</h4>
-				<p>You can point appium at a different computer on your network using:</p>
-				<div class="example2">
-					appium --address 192.0.0.1 --port 8080
+					<h4>Remote Server</h4>
+					<p>You can point appium at a different computer on your network using:</p>
+					<div class="example2">
+						appium --address 192.0.0.1 --port 8080
+					</div>
 				</div>
-			</div>
 			</div>
 
 
 			<div id="protractorcommands" class="hidden">
-			<div class="full">
-				<h1>Protractor Related</h1>
-				<p>When using protractor you occasionally need to operate using selenium when outside an Angular site. Here are some commands that have been useful.</p>
-				<h2> Selenium Javascript Web Driver </h2>
-				<h6>Locators</h6>
-				<ul>
-					<li><span class="example">browser.driver.findElem&shy;ent(by.id('<span class="replace">signIn</span>'));</span></li>
-					<li><span class="example">browser.driver.findElem&shy;ent(by.partialLinkText('<span class="replace">signIn</span>'));</span></li>
-					<li><span class="example">browser.driver.findElem&shy;ent(by.css('<span class="replace">signIn</span>'));</span></li>
-					<li><span class="example">browser.driver.findElem&shy;ent(by.className('<span class="replace">signIn</span>'));</span></li>
-					<li><span class="example">browser.driver.findElem&shy;ent(by.name('<span class="replace">signIn</span>'));</span></li>
-					<li><span class="example">browser.driver.findElem&shy;ent(by.xpath('<span class="replace">signIn</span>'));</span></li>
-				</ul>
-				<p> Here are some useful commands that you've had to use in Jasmine or Protractor:</p>
-				<ul>
-					<li><span class="example">browser.driver.isElementPresent(by.css('<span class="replace">img .new</span>'))</span></li>
-					<li><span class="example">browser.driver.manage().dele&shy;teCookie('<span class="replace">loggedin</span>');</span></li>
-					<li><span class="example">browser.driver.manage().dele&shy;teAllCookies();</span></li>
-					<li><span class="example">browser.executeScript('wind&shy;ow.localStorage.clear();');</span></li>
-					<li><span class="example">browser.get('<span class="replace">http:www.exa&shy;mple.com</span>');</span></li>
-					<li>A wait command: <br>
-						<div class="example2">
-							browser.driver.wait(function() { <br>
-							&nbsp;&nbsp;console.log(&quot;<span class="replace">Message to log while.</span>&quot;);<br>
-							&nbsp;&nbsp;return browser.driver.isElemen&shy;tPresent(by.name('<span class="replace">acco&shy;unt-test@test.com</span>')).then(fun&shy;ction(el) { <br>
-							&nbsp;&nbsp;&nbsp;&nbsp;return el === true; <br>
-							&nbsp;&nbsp;}); <br>
-							}, <span class="replace">5000</span>) <br>
-							&nbsp;&nbsp;.then(function() { <br>
-							&nbsp;&nbsp;&nbsp;&nbsp; <span class="replace">yourFunction()</span>;<br>
-							});<br>
-						</div></li>
+				<div class="full">
+					<h1>Protractor Related</h1>
+					<p>When using protractor you occasionally need to operate using selenium when outside an Angular site. Here are some commands that have been useful.</p>
+					<h2> Selenium Javascript Web Driver </h2>
+					<h6>Locators</h6>
+					<ul>
+						<li><span class="example">browser.driver.findElem&shy;ent(by.id('<span class="replace">signIn</span>'));</span>
+						</li>
+						<li><span class="example">browser.driver.findElem&shy;ent(by.partialLinkText('<span class="replace">signIn</span>'));</span>
+						</li>
+						<li><span class="example">browser.driver.findElem&shy;ent(by.css('<span class="replace">signIn</span>'));</span>
+						</li>
+						<li><span class="example">browser.driver.findElem&shy;ent(by.className('<span class="replace">signIn</span>'));</span>
+						</li>
+						<li><span class="example">browser.driver.findElem&shy;ent(by.name('<span class="replace">signIn</span>'));</span>
+						</li>
+						<li><span class="example">browser.driver.findElem&shy;ent(by.xpath('<span class="replace">signIn</span>'));</span>
+						</li>
+					</ul>
+					<p> Here are some useful commands that you've had to use in Jasmine or Protractor:</p>
+					<ul>
+						<li><span class="example">browser.driver.isElementPresent(by.css('<span class="replace">img .new</span>'))</span>
+						</li>
+						<li><span class="example">browser.driver.manage().dele&shy;teCookie('<span class="replace">loggedin</span>');</span>
+						</li>
+						<li><span class="example">browser.driver.manage().dele&shy;teAllCookies();</span></li>
+						<li><span class="example">browser.executeScript('wind&shy;ow.localStorage.clear();');</span></li>
+						<li><span class="example">browser.get('<span class="replace">http:www.exa&shy;mple.com</span>');</span>
+						</li>
+						<li>A wait command: <br>
+							<div class="example2">
+								browser.driver.wait(function() { <br> &nbsp;&nbsp;console.log(&quot;
+								<span class="replace">Message to log while.</span>&quot;);<br> &nbsp;&nbsp;return browser.driver.isElemen&shy;tPresent(by.name('<span class="replace">acco&shy;unt-test@test.com</span>')).then(fun&shy;ction(el) { <br> &nbsp;&nbsp;&nbsp;&nbsp;return
+								el === true; <br> &nbsp;&nbsp;}); <br> }, <span class="replace">5000</span>) <br> &nbsp;&nbsp;.then(function() { <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="replace">yourFunction()</span>;<br> });
+								<br>
+							</div>
+						</li>
 					</ul>
 					<p>Send Keys should work as followed but I'm having trouble with special keys, I've also tried sending browser.driver.Keys.Return.</p>
 					<ul>
-						<li><span class="example">browser.driver.<span class="replace">elementName</span>.sendKeys('<span class="replace">TextToSend</span>');</span></li>
-						<li><span class="example">browser.driver.<span class="replace">elementName</span>.sendKeys(<span class="replace">Keys.RETURN</span>);</span></li>
+						<li><span class="example">browser.driver.<span class="replace">elementName</span>.sendKeys('<span class="replace">TextToSend</span>');</span>
+						</li>
+						<li><span class="example">browser.driver.<span class="replace">elementName</span>.sendKeys(<span class="replace">Keys.RETURN</span>);</span>
+						</li>
 					</ul>
-			</div>
+				</div>
 			</div>
 			<div id="nosetest" class="hidden">
-			<div class="full">
-				<p>An Easy Test Runner is Nose, you can add it with:</p>
-				<div span class="example2">
-					pip install nose
+				<div class="full">
+					<p>An Easy Test Runner is Nose, you can add it with:</p>
+					<div span class="example2">
+						pip install nose
+					</div>
+					<p>It will automatically find tests off file naming in the directory you are in and run them with the command:</p>
+					<div span class="example2">
+						nosetests
+					</div>
+					<p>You can run multiple tests at the same time with:</p>
+					<div span class="example2">
+						nosetests --processes=13
+					</div>
+					<p>If you get timeout exceptions try adding:</p>
+					<div span class="example2">
+						--process-timeout=3600
+					</div>
+					<p>You can also run a specific test with a comma separated list:</p>
+					<div span class="example2">
+						nosetests --tests=Sample_Test,Other_Test
+					</div>
+					<p>A weird quirk of nosetests is it won’t detect tests that end with the word test and no separator. So these work:</p>
+					<div span class="example2">
+						TestSample.py</br>
+						Sample.test.py</br>
+						test-sample.py</br>
+						sample_test.py</br>
+					</div>
+					<p>But it will not find:</p>
+					<div span class="example2">
+						SampleTest.py
+					</div>
 				</div>
-				<p>It will automatically find tests off file naming in the directory you are in and run them with the command:</p>
-				<div span class="example2">
-					nosetests
-				</div>
-				<p>You can run multiple tests at the same time with:</p>
-				<div span class="example2">
-					nosetests --processes=13
-				</div>
-				<p>If you get timeout exceptions try adding:</p>
-				<div span class="example2">
-					--process-timeout=3600
-				</div>
-				<p>You can also run a specific test with a comma separated list:</p>
-				<div span class="example2">
-					nosetests --tests=Sample_Test,Other_Test
-				</div>
-				<p>A weird quirk of nosetests is it won’t detect tests that end with the word test and no separator. So these work:</p>
-				<div span class="example2">
-					TestSample.py</br>
-					Sample.test.py</br>
-					test-sample.py</br>
-					sample_test.py</br>
-				</div>
-				<p>But it will not find:</p>
-				<div span class="example2">
-					SampleTest.py
-				</div>
-			</div>
 
 
 
@@ -446,45 +487,54 @@ export ANDROID_HOME=$(dirname $(dirname $(which android)))
 								<h6> Tags </h6>
 						</div>
 				</aside> -->
-				</div>
-				</article>
-				<!-- Loading footer with AJAX -->
-				<div class="footerPlaceholder"></div>
 			</div>
-			<!-- build:js scripts/vendor.js -->
-			<!-- bower:js -->
-			<script src="../bower_components/jquery/dist/jquery.js"></script>
-			<!-- endbower -->
-			<!-- endbuild -->
-			<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-			<script>
-				(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-				function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-				e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-				e.src='//www.google-analytics.com/analytics.js';
-				r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-				ga('create','UA-XXXXX-X');ga('send','pageview');
-			</script>
-			<!-- build:js scripts/plugins.js -->
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-			<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-			<!-- endbuild -->
-			<!-- build:js({app,.tmp}) scripts/main.js -->
-			<script src="../scripts/main.js"></script>
-			<script src="../scripts/visSwitch.js"></script>
-			<!-- endbuild -->
-			<!-- myScripts -->
-			<script src="../includes/nav.js"></script>
-			<script src="../includes/footer.js"></script>
-		</body>
-	</html>
+		</article>
+		<!-- Loading footer with AJAX -->
+		<div class="footerPlaceholder"></div>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] =
+				function() {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<script src="../scripts/visSwitch.js"></script>
+	<!-- endbuild -->
+	<!-- myScripts -->
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+</body>
+
+</html>

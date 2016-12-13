@@ -1,110 +1,117 @@
 <!doctype html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<title>HTML Notes</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<!-- build:css styles/vendor.css -->
-		<!-- bower:css -->
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<!-- endbuild -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-		<!-- This is some embedded style for example purposes. BAD FORM.-->
-		<Style type="text/css">
-		.red { color: red; }
-		p.first:first-line{font-variant: small-caps;}
+
+<head>
+	<meta charset="utf-8">
+	<title>HTML Notes</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="../styles/main.css">
+	<!-- endbuild -->
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="../bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+	<!-- This is some embedded style for example purposes. BAD FORM.-->
+	<Style type="text/css">
+	.red {
+			color: red;
 		}
-		.col1 {background-color: #fcd;}
-		.col2 {background-color: #cfd;}
-		.col3 {background-color: #cdf;}
-		#frame1 {
-			width: 300px;
-			height: 400px;
-			margin: 4px 0 4px 4px;
-			border: 2px solid #666;
-			overflow: auto;
-			background-color: #eef;
-			font-family: tahoma, sans-serif;
-			font-size: 10pt;
-			padding: 0 6pt;
+
+		p.first:first-line {
+			font-variant: small-caps;
 		}
-		#frame1 h1 { margin-top: 0; }
-		</Style>
-	</head>
-	<body class="html-body">
-		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
-		<div class="navPlaceholder"></div>
-		<!--[if lt IE 10]>
+	}
+	.col1 {
+		background-color: #fcd;
+	}
+	.col2 {
+		background-color: #cfd;
+	}
+	.col3 {
+		background-color: #cdf;
+	}
+	#frame1 {
+		width: 300px;
+		height: 400px;
+		margin: 4px 0 4px 4px;
+		border: 2px solid #666;
+		overflow: auto;
+		background-color: #eef;
+		font-family: tahoma, sans-serif;
+		font-size: 10pt;
+		padding: 0 6pt;
+	}
+	#frame1 h1 {
+		margin-top: 0;
+	}
+	</Style>
+</head>
+
+<body class="html-body">
+	<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+	<div class="navPlaceholder"></div>
+	<!--[if lt IE 10]>
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container-fluid">
+	<div class="container-fluid">
 
-			<div class="jumbotron">
-				<h1>HTML Notes</h1>
-				<p class="lead">&#x22;Speak softly and carry a big stick, and you will go far.&#x22; - Teddy Roosevelt summarizing an old African proverb.</p>
-				<p>
-				<a class="btn btn-lg btn-success" onclick = "alert('Moooooo!')" > <span class="glyphicon glyphicon-fire"></span> Switch Colors <span class="glyphicon glyphicon-fire"></span></a>
-				</p>
-			</div>
-			<article>
-				<header>
-					<h3 class="white" id="switcher">HTML</h3>
-					<p class="white"> This is a paragraph in the Header.  We&#x27;re not going to count it as part of the article.</p>
-				</header>			
+		<div class="jumbotron">
+			<h1>HTML Notes</h1>
+			<p class="lead">&#x22;Speak softly and carry a big stick, and you will go far.&#x22; - Teddy Roosevelt summarizing an old African proverb.</p>
+			<p>
+				<a class="btn btn-lg btn-success" onclick="alert('Moooooo!')"> <span class="glyphicon glyphicon-fire"></span> Switch Colors <span class="glyphicon glyphicon-fire"></span></a>
+			</p>
+		</div>
+		<article>
+			<header>
+				<h3 class="white" id="switcher">HTML</h3>
+				<p class="white"> This is a paragraph in the Header. We&#x27;re not going to count it as part of the article.</p>
+			</header>
 			<div class="main">
 				<div class="five-of-seven">
-					<img src="../images/fpo-logos.jpg" width="260" height="260"
-					alt="Picture of me." title="Me Bored." />
+					<img src="../images/fpo-logos.jpg" width="260" height="260" alt="Picture of me." title="Me Bored." />
 				</div>
 				<div class="seven-of-five">
 					<h1> This is the 1st Header. </h1>
 					<p class="first">
-					This is the 1st Paragraph. I&#x27;m going to make this paragraph fairly long just to try to
-					get it to word wrap on the browser page.  You can make a <span class="term">Comment
-					</span> using a less than symbol, an exclamation point, and two dashes to open in and
-					I really want it to be at least three lines or the small-caps font variant doesn&#x27;t make
-					it look anything like a book.	Or you can reload the <a href="../Views/home.html" target="_Blank">homepage</a>
-					in a new window.  Or maybe you&#x27;d like to see the <a href="#p6">Sixth Paragraph</a>, it&#x27;s about CSS.
+						This is the 1st Paragraph. I&#x27;m going to make this paragraph fairly long just to try to get it to word wrap on the browser page. You can make a <span class="term">Comment
+					</span> using a less than symbol, an exclamation point, and two dashes to open in and I really want it to be at least three lines or the small-caps font variant doesn&#x27;t make it look anything like a book. Or you can reload the <a href="../Views/home.html"
+										target="_Blank">homepage</a> in a new window. Or maybe you&#x27;d like to see the <a href="#p6">Sixth Paragraph</a>, it&#x27;s about CSS.
 					</p>
 				</div>
 
 				<div class="full shy-text">
-					<p> This is the second paragraph. This&shy;Sentence&shy;Has&shy;Soft&shy;Hyphens&shy;If&shy;You&shy;Make&shy;It&shy;Wrap.
-					YouCanIndicateWhereYou&shy;WantTheWordToBreakWith&shy;TheFollowingMarkUp:  <code class="example">&amp;shy;</code>.
+					<p> This is the second paragraph. This&shy;Sentence&shy;Has&shy;Soft&shy;Hyphens&shy;If&shy;You&shy;Make&shy;It&shy;Wrap. YouCanIndicateWhereYou&shy;WantTheWordToBreakWith&shy;TheFollowingMarkUp: <code class="example">&amp;shy;</code>.
 					</p>
 				</div>
 
 				<div class="full">
-<pre> 
+					<pre>
 This is how you make     a paragraph with    weird spacing using pre.  Pre can also be used to show characters that would &amp;otherwise #give HTML trouble (look I fixed this but it would&#x27;ve displayed the &#x26;amp; if I didn&#x27;t).
 </pre>
 				</div>
 				<div class="five-of-seven">
-					<img src="../images/fpo-logos.jpg" width="260" height="260"
-					alt="Washington Vs. Zombies" title="George Washington also revolted against Zombie Tyranny"/>
+					<img src="../images/fpo-logos.jpg" width="260" height="260" alt="Washington Vs. Zombies" title="George Washington also revolted against Zombie Tyranny" />
 				</div>
 				<div class="seven-of-five match-pic-height">
 					<p>
-					You open a paragraph with a <code class="example">&lt;p&gt;</code> tag.   You can force linebreaks <br>
-					with a <code class="example">&lt;br /&gt;</code> tag. You can do other stuff, like add extra &nbsp;&nbsp;&nbsp;&nbsp; spaces!
-					with <code class="example">&amp;nbsp</code>. You can also highlight text with the word <mark>mark</mark> tags That's really not that
-					useful but you could change the colors using CSS. Although you could use &#x22;quotation marks&#x22; in the text, <q>Smart
-					Quotes</q>  <code class="example">&lt;q&gt;</code> are the way to go because <q>you can have <q>nested</q> quotes in the text</q>
-					and can be changed for different languages with CSS.  You can also quote a block of text with blockquote.
+						You open a paragraph with a <code class="example">&lt;p&gt;</code> tag. You can force linebreaks <br> with a <code class="example">&lt;br /&gt;</code> tag. You can do other stuff, like add extra &nbsp;&nbsp;&nbsp;&nbsp; spaces! with <code class="example">&amp;nbsp</code>.
+						You can also highlight text with the word <mark>mark</mark> tags That's really not that useful but you could change the colors using CSS. Although you could use &#x22;quotation marks&#x22; in the text, <q>Smart
+					Quotes</q> <code class="example">&lt;q&gt;</code> are the way to go because <q>you can have <q>nested</q> quotes in the text</q>
+						and can be changed for different languages with CSS. You can also quote a block of text with blockquote.
 					</p>
 				</div>
 
 				<div class="row">
 					<div class="half-full">
 						<p>
-						These are some Phrase Elements in an ordered list:
+							These are some Phrase Elements in an ordered list:
 						</p>
 						<ol>
 							<li> <em> Emphasize </em> <code class="example">&lt;em&gt;</code></li>
@@ -118,7 +125,7 @@ This is how you make     a paragraph with    weird spacing using pre.  Pre can a
 					</div>
 					<div class="half-full">
 						<p>
-						These are Font Elements in an unordered list:
+							These are Font Elements in an unordered list:
 						</p>
 						<ul style="list-style-type: circle">
 							<li> <b>Bold</b> <code class="example">&lt;b&gt;</code></li>
@@ -144,81 +151,74 @@ This is how you make     a paragraph with    weird spacing using pre.  Pre can a
 				<div class="seven-of-five">
 					<h3> Let's talk about CSS (H3 of 6 Header).</h3>
 					<p id="p6" class="first">
-					This is the Sixth Paragraph.  In it we're going to talk about CSS.  When writing CSS you can just style by
-					using different element names on the page by using them as a selector.  If you want to select a class, you
-					need to put a period in front of the name (e.g. <code class="example">.example:</code>).  If you want to use an ID selector, use the
-					Pound symbol in front of the name (e.g. <code class="example">#example:</code>) Some commonly used CSS properties are font-family, font-size,
-					font-weight, border, margin, background-color, ,  . Setting the overflow property to auto is a neat trick. When
-					you are working with borders always remember TRBL (Top, Right, Bottom, Left). You can add multiple classes to a
-					html element using whitespace.
-					Click on  the picture to go back to the top of the document:
+						This is the Sixth Paragraph. In it we're going to talk about CSS. When writing CSS you can just style by using different element names on the page by using them as a selector. If you want to select a class, you need to put a period in front of the name
+						(e.g. <code class="example">.example:</code>). If you want to use an ID selector, use the Pound symbol in front of the name (e.g. <code class="example">#example:</code>) Some commonly used CSS properties are font-family, font-size, font-weight,
+						border, margin, background-color, , . Setting the overflow property to auto is a neat trick. When you are working with borders always remember TRBL (Top, Right, Bottom, Left). You can add multiple classes to a html element using whitespace. Click
+						on the picture to go back to the top of the document:
 					</p>
 				</div>
 
 
 				<div class="five-of-seven">
 					<a href="#top">
-					<img src="../images/fpo-logos.jpg" width="260" height="260"
-					alt="The end of Bigfoot" title="Bigfoot did exist until Teddy Roosevelt found him."/>
+						<img src="../images/fpo-logos.jpg" width="260" height="260" alt="The end of Bigfoot" title="Bigfoot did exist until Teddy Roosevelt found him." />
 					</a>
 				</div>
 
 				<div class="full">
 					<p>
-					Selectors are very important in styling your page.   Descendant Selectors just require a space (e.g. h2 p). Child
-					&#x9;&#x9;&#x9;&#x9;&#x9;selectors are similar but they don&#x27;t target the whole page (e.g. h2 &gt; p).  Adjacent selectors (e.g. h1 + p, H2 +p,)
-					&#x9;&#x9;&#x9;&#x9;&#x9;can be useful if there if you want to select something that follows another thing directly and is part of the same
-					&#x9;&#x9;&#x9;&#x9;&#x9;parent element.  Attribute Selectors look for things with the thing in brackets (e.g. a[title] or a[title=&#x22;example&#x22;]).
-					&#x9;&#x9;&#x9;&#x9;&#x9;When using Attribute selectors you can use a tilde (~) before the equal sign to find anything with it instead of an
-					&#x9;&#x9;&#x9;&#x9;&#x9;exact match or you can use a carrot (^) to look for anything that starts with. Or you can use a dollar sign ($) to look
-					&#x9;&#x9;&#x9;&#x9;&#x9;for anything that has that end.  As you&#x27;re familiar with you can use asterisk to do a wildcard search (*).
+						Selectors are very important in styling your page. Descendant Selectors just require a space (e.g. h2 p). Child &#x9;&#x9;&#x9;&#x9;&#x9;selectors are similar but they don&#x27;t target the whole page (e.g. h2 &gt; p). Adjacent selectors (e.g. h1 + p,
+						H2 +p,) &#x9;&#x9;&#x9;&#x9;&#x9;can be useful if there if you want to select something that follows another thing directly and is part of the same &#x9;&#x9;&#x9;&#x9;&#x9;parent element. Attribute Selectors look for things with the thing in brackets
+						(e.g. a[title] or a[title=&#x22;example&#x22;]). &#x9;&#x9;&#x9;&#x9;&#x9;When using Attribute selectors you can use a tilde (~) before the equal sign to find anything with it instead of an &#x9;&#x9;&#x9;&#x9;&#x9;exact match or you can use a carrot
+						(^) to look for anything that starts with. Or you can use a dollar sign ($) to look &#x9;&#x9;&#x9;&#x9;&#x9;for anything that has that end. As you&#x27;re familiar with you can use asterisk to do a wildcard search (*).
 					</p>
 					<p>
-					<button onclick = "alert('Hello')" > Run Some Javascript </button>
+						<button onclick="alert('Hello')"> Run Some Javascript </button>
 					</p>
 				</div>
 
 				<div class="seven-of-five">
 					<p>
-					This is an example of some of the code:
+						This is an example of some of the code:
 					</p>
 					<div class="example2">
-						&lt;section&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;caption&gt;This is my table&lt;/caption&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;colgroup&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col1&quot; /&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col2&quot; /&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col3&quot; /&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/colgroup&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Years&lt;/th&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Drink&lt;/th&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;James&lt;/td&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;19&lt;/td&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Jameson &amp; Ginger&lt;/td&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;<br>
-						&lt;/section&gt;<br>
+						&lt;section&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;table&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;caption&gt;This is my table&lt;/caption&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;colgroup&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col1&quot; /&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col2&quot; /&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;col class=&quot;col3&quot; /&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/colgroup&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Name&lt;/th&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Years&lt;/th&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;th&gt;Drink&lt;/th&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tr&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;James&lt;/td&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;19&lt;/td&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;td&gt;Jameson &amp; Ginger&lt;/td&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tr&gt;
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/table&gt;
+						<br> &lt;/section&gt;
+						<br>
 					</div>
-				</div>				
+				</div>
 
 				<div class="five-of-seven">
 					<p>
-					This is a table:
+						This is a table:
 					</p>
 					<section>
 						<table>
 							<caption>
-							This is my table
+								This is my table
 							</caption>
 							<colgroup>
-							<col class="col1" />
-							<col class="col2" />
-							<col class="col3" />
+								<col class="col1" />
+								<col class="col2" />
+								<col class="col3" />
 							</colgroup>
 							<tr>
 								<th>Name</th>
@@ -241,26 +241,26 @@ This is how you make     a paragraph with    weird spacing using pre.  Pre can a
 
 				<div class="full clear-both">
 					<p>
-					This is a frame with an HTML 5 accordian list in it. You make the frame with an id and CSS. You make the list accordian by starting a <span class="example">&lt;details open&gt;</span> tag, and you also want to title it in <span class="example">&lt;summary&gt;</span> tags.  This is new to HTML5 and isn't really supported yet.
+						This is a frame with an HTML 5 accordian list in it. You make the frame with an id and CSS. You make the list accordian by starting a <span class="example">&lt;details open&gt;</span> tag, and you also want to title it in <span class="example">&lt;summary&gt;</span>						tags. This is new to HTML5 and isn't really supported yet.
 					</p>
 					<!-- This is a frame.  It could also just use a src to fill it -->
 					<div id="frame1">
 						<h3>Top Ten Lists</h3>
 						<div>
 							<details open>
-							<summary>Top 10 Smokers Bars</summary>
-							<ol>
-								<li>Summer Place</li>
-								<li>Hemlock</li>
-								<li>Thee Parkside</li>
-								<li>Zeitgeist</li>
-								<li>Savoy Tavoli</li>
-								<li>Edinburgh Castle</li>
-								<li>Dr. Teeth &amp; the Electric Mayhem</li>
-								<li>Vertigo</li>
-								<li>Toad Hall</li>
-								<li>Bacchus Kirk</li>
-							</ol>
+								<summary>Top 10 Smokers Bars</summary>
+								<ol>
+									<li>Summer Place</li>
+									<li>Hemlock</li>
+									<li>Thee Parkside</li>
+									<li>Zeitgeist</li>
+									<li>Savoy Tavoli</li>
+									<li>Edinburgh Castle</li>
+									<li>Dr. Teeth &amp; the Electric Mayhem</li>
+									<li>Vertigo</li>
+									<li>Toad Hall</li>
+									<li>Bacchus Kirk</li>
+								</ol>
 							</details>
 						</div>
 					</div>
@@ -311,42 +311,51 @@ This is how you make     a paragraph with    weird spacing using pre.  Pre can a
 			</aside>
 			<!-- Loading footer with AJAX -->
 			<div class="footerPlaceholder"></div>
-			</article>
-		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-		e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-		e.src='//www.google-analytics.com/analytics.js';
-		r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-		ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="../scripts/main.js"></script>
-		<!-- endbuild -->
-		<!-- myScripts -->
-		<script src="../includes/nav.js"></script>
-		<script src="../includes/footer.js"></script>
-		<script src="../scripts/anchorAdjustForHeader.js"></script>
-	</body>
+		</article>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] =
+				function() {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<!-- endbuild -->
+	<!-- myScripts -->
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+	<script src="../scripts/anchorAdjustForHeader.js"></script>
+</body>
+
 </html>

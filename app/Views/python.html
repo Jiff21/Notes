@@ -1,80 +1,83 @@
 <!doctype html>
 <html class="no-js">
-	<head>
-		<meta charset="utf-8">
-		<title>Python Notes</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link rel="shortcut icon" href="../favicon.ico">
-		<!-- build:css styles/vendor.css -->
-		<!-- bower:css -->
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- build:css(.tmp) styles/main.css -->
-		<link rel="stylesheet" href="../styles/main.css">
-		<!-- endbuild -->
-		<!-- build:js scripts/vendor/modernizr.js -->
-		<script src="../bower_components/modernizr/modernizr.js"></script>
-		<!-- endbuild -->
-	</head>
-	<body class="python-body" id="python">
-		<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
-		<div class="navPlaceholder"></div>
-		<!--[if lt IE 10]>
+
+<head>
+	<meta charset="utf-8">
+	<title>Python Notes</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<!-- build:css styles/vendor.css -->
+	<!-- bower:css -->
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="../styles/main.css">
+	<!-- endbuild -->
+	<!-- build:js scripts/vendor/modernizr.js -->
+	<script src="../bower_components/modernizr/modernizr.js"></script>
+	<!-- endbuild -->
+</head>
+
+<body class="python-body" id="python">
+	<!-- Loading the header with javascript include.  Should add a switch for html5 import -->
+	<div class="navPlaceholder"></div>
+	<!--[if lt IE 10]>
 										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-		<div class="container-fluid">
-			<div>
-				<div class="jumbotron">
-					<div class="light-layer">
+	<div class="container-fluid">
+		<div>
+			<div class="jumbotron">
+				<div class="light-layer">
 					<h1>Python Notes</h1>
 					<p class="lead">You are <a href="https://learnpythonthehardway.org/book/ex40.html" target="_blank">here</a> on Drills. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
-					</div>
 				</div>
 			</div>
-			<article>
+		</div>
+		<article>
 			<div class="full skin light-layer">
 				<h3>Built In Functions</h3>
 				<div class="half-when-big">
-				<p>Full list <a href="https://docs.python.org/2/library/functions.html" target="_blank">here.</a> Quick and easy here.</p>
-				<ul>
-					<li><span class="term">print("Hello world")</span>: Or print "Hello World"</li>
-					<li><span class="term">str()</span>: to String.</li>
-					<li><span class="term">len()</span>: length of many things</li>
-					<li><span class="term">bool(2 > 3)</span>: Returns True/False Boolean</li>
-					<li><span class="term">callable(func)</span>: Lets you know if an object is callable</li>
-					<li><span class="term">classmethod()</span>: Returns class method of a function.</li>
-					<li><span class="term">list(enumerate(seasons))</span>: Returns a tuple containing count and value like from an array.</li>
-					<li><span class="term">getattr()</span>: getattr(x, 'foobar') is equivalent to x.foobar.</li>
-					<li><span class="term">setattr(object, name, value)</span>: setattr(x, 'foobar', 123) is equivalent to x.foobar = 123.</li>
-					<li><span class="term">globals()</span>: Returns all globals</li>
-					<li><span class="term">locals()</span>: Returns a dict representing the current local symbol table.</li>
-					<li><span class="term">map(function, iterable, ...)</span>: Apply function to every item of iterable and return a list of the results. </li>
-					<li><span class="term">range(0, 30, 5)</span>: 0, 5, 10,...,30.</li>
-					<li><span class="term">list(reversed(counting))</span>: [3,2,1]</li>
-					<li><span class="term">insert(val, where)</span>: insert a value into a position in a list</li>
-					<li><span class="term">remove(val)</span>: remove first item that matches that value from a list.</li>
-					<li><span class="term">clear()</span>: Clear a list.</li>
-					<li><span class="term">round(3.1234,2)</span>: 3.12, 5 rounds up</li>
-					<li><span class="term">sorted(iterable[, cmp[, key[, reverse]]])</span>: Sort an object, details here.<a href="https://docs.python.org/2/library/functions.html#sorted" target="_blank"> See here.</a></li>
-					<li><span class="term">a = raw_input('<span class="replace">Prompt text here</span>')</span>: Prompt user for input<a href="https://docs.python.org/2/library/functions.html#raw_input" target="_blank"> See here.</a></li></li>
-					<li><span class="term">help()</span>Command line help module, like <span class="term">pydoc</span> but that is outside running python</li>
-				</ul>
+					<p>Full list <a href="https://docs.python.org/2/library/functions.html" target="_blank">here.</a> Quick and easy here.</p>
+					<ul>
+						<li><span class="term">print("Hello world")</span>: Or print "Hello World"</li>
+						<li><span class="term">str()</span>: to String.</li>
+						<li><span class="term">len()</span>: length of many things</li>
+						<li><span class="term">bool(2 > 3)</span>: Returns True/False Boolean</li>
+						<li><span class="term">callable(func)</span>: Lets you know if an object is callable</li>
+						<li><span class="term">classmethod()</span>: Returns class method of a function.</li>
+						<li><span class="term">list(enumerate(seasons))</span>: Returns a tuple containing count and value like from an array.</li>
+						<li><span class="term">getattr()</span>: getattr(x, 'foobar') is equivalent to x.foobar.</li>
+						<li><span class="term">setattr(object, name, value)</span>: setattr(x, 'foobar', 123) is equivalent to x.foobar = 123.</li>
+						<li><span class="term">globals()</span>: Returns all globals</li>
+						<li><span class="term">locals()</span>: Returns a dict representing the current local symbol table.</li>
+						<li><span class="term">map(function, iterable, ...)</span>: Apply function to every item of iterable and return a list of the results. </li>
+						<li><span class="term">range(0, 30, 5)</span>: 0, 5, 10,...,30.</li>
+						<li><span class="term">list(reversed(counting))</span>: [3,2,1]</li>
+						<li><span class="term">insert(val, where)</span>: insert a value into a position in a list</li>
+						<li><span class="term">remove(val)</span>: remove first item that matches that value from a list.</li>
+						<li><span class="term">clear()</span>: Clear a list.</li>
+						<li><span class="term">round(3.1234,2)</span>: 3.12, 5 rounds up</li>
+						<li><span class="term">sorted(iterable[, cmp[, key[, reverse]]])</span>: Sort an object, details here.<a href="https://docs.python.org/2/library/functions.html#sorted" target="_blank"> See here.</a></li>
+						<li><span class="term">a = raw_input('<span class="replace">Prompt text here</span>')</span>: Prompt user for input<a href="https://docs.python.org/2/library/functions.html#raw_input" target="_blank"> See here.</a></li>
+						</li>
+						<li><span class="term">help()</span>Command line help module, like <span class="term">pydoc</span> but that is outside running python</li>
+					</ul>
 				</div>
 				<div class="half-when-big">
-				<ul>
-					<li><span class="term">.split()</span>: Splits words at spaces, a char can be passed in instead.</li>
-					<li><span class="term">sorted(ex_var)</span>: sorts alphabetically, to a sort a string you split first </li>
-					<li><span class="term">.pop(<span class="replace">0</span>)</span>: The number determines the word, 0 is first, -1 is last.</li>
-					<li><span class="term">len()</span>: length of many things</li>
-				</ul>					
+					<ul>
+						<li><span class="term">.split()</span>: Splits words at spaces, a char can be passed in instead.</li>
+						<li><span class="term">sorted(ex_var)</span>: sorts alphabetically, to a sort a string you split first </li>
+						<li><span class="term">.pop(<span class="replace">0</span>)</span>: The number determines the word, 0 is first, -1 is last.</li>
+						<li><span class="term">len()</span>: length of many things</li>
+					</ul>
 				</div>
 			</div>
 			<div class="full no-skin spacer">
-			<div class="fourth no-skin rts">
-				<h3>Formatters</h3>
-			</div>
-			<div class="fourth no-skin rtlist">
+				<div class="fourth no-skin rts">
+					<h3>Formatters</h3>
+				</div>
+				<div class="fourth no-skin rtlist">
 					<ul>
 						<li>%s = variable for string replacements</li>
 						<li>%r = raw data for debugging, like strings display quotes around them</li>
@@ -86,26 +89,26 @@
 						<li>%X = Hexadecimal uppercase</li>
 						<li>%% = Escape Percentage Symbol</li>
 					</ul>
-			</div>
-			<div class="fourth no-skin rts">
-				<div class="verticalAlign">
-				<h3>Escape Sequences</h3>
 				</div>
-			</div>
-			<div class="fourth no-skin rtlist">
-				<ul>
-					<li>\n = New line in a string of text.</li>
-					<li>\'= Esccape a single quote.</li>
-					<li>\" = escape a double quote</li>
-					<li>\t = tab</li>
-					<li>\\ = backslash</li>
-					<li>\N{name} = Character name in Unicode</li>
-					<li>\a = ASCII Bel (Beep)</li>
-					<li>\b = backspace </li>
-					<li>\xhh = Charcter with hex value of</li>
-					<li>u'\U0001F47E' = Unicode String</li>
-				</ul>
-			</div>
+				<div class="fourth no-skin rts">
+					<div class="verticalAlign">
+						<h3>Escape Sequences</h3>
+					</div>
+				</div>
+				<div class="fourth no-skin rtlist">
+					<ul>
+						<li>\n = New line in a string of text.</li>
+						<li>\'= Esccape a single quote.</li>
+						<li>\" = escape a double quote</li>
+						<li>\t = tab</li>
+						<li>\\ = backslash</li>
+						<li>\N{name} = Character name in Unicode</li>
+						<li>\a = ASCII Bel (Beep)</li>
+						<li>\b = backspace </li>
+						<li>\xhh = Charcter with hex value of</li>
+						<li>u'\U0001F47E' = Unicode String</li>
+					</ul>
+				</div>
 			</div>
 
 			<div class="full skin spacer">
@@ -113,28 +116,29 @@
 					<h3>Modules</h3>
 					<p>Ou first example of importing a module is from <span class="term">sys</span>. As you know, at the top of the file you would import the module</p>
 					<div class="example2">
-						from sys import argv <br><br>
-						script, first, second = argv<br><br>
-						print "The script is called:", script<br>
-						print "You like:", first<br>
-						print "You hate", second<br>
+						from sys import argv
+						<br><br> script, first, second = argv
+						<br><br> print "The script is called:", script
+						<br> print "You like:", first
+						<br> print "You hate", second
 					</div>
-					<p>On the 2nd lind of we unpack the arguments, then use them later. In terminal, this could be run with <span class="example">python filename.py dogs cats</span>. Remember command line arguments like raw_input come in as strings, you need to convert them if you need something else.</p>
+					<p>On the 2nd lind of we unpack the arguments, then use them later. In terminal, this could be run with <span class="example">python filename.py dogs cats</span>. Remember command line arguments like raw_input come in as strings, you need to convert
+						them if you need something else.</p>
 				</div>
 
 				<div class="half-when-big skin">
 					<h3>Classes</h3>
 					<p>"instantiate" is overly smart way to say "create." When you instantiate a class what you get is called an object.</p>
 					<div class="example2">
-						class MyStuff(object):<br><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;def __init__(self):<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.tangerine = "And now a thousand years between"<br><br>
-						&nbsp;&nbsp;&nbsp;&nbsp;def apple(self):<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print "I AM CLASSY APPLES!"<br><br>
-						<span class="comment">## Then Instantiate a new object!<br></span>
-						thing = MyStuff()<br>
-						thing.apple()<br>
-						print thing.tangerine
+						class MyStuff(object):
+						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self):
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.tangerine = "And now a thousand years between"
+						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def apple(self):
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print
+						"I AM CLASSY APPLES!"
+						<br><br>
+						<span class="comment">## Then Instantiate a new object!<br></span> thing = MyStuff()<br> thing.apple()
+						<br> print thing.tangerine
 					</div>
 					<p>ss</p>
 				</div>
@@ -145,89 +149,86 @@
 				<h3>Functions</h3>
 				<p>Here is an example of a funtion. You define functions with <span class="term">def</span> in front of it. Do not name functions that start with a number.</p>
 				<div class="example2">
-					def get_my_opinion(arg1, arg2):<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;op1 = "I like " + arg1<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;op2 = "I do not like " + arg2<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;return op1, op2<br>
+					def get_my_opinion(arg1, arg2):
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;op1 = "I like " + arg1
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;op2 = "I do not like " + arg2
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;return op1, op2
 				</div>
 				<p>You would use the function above like so.</p>
 				<div class="example2">
-					dog_opinion, cat_opinion = get_my_opinion('dogs', 'cats')<br>
-					print dog_opinion<br>
-					## You can also do this:<br>
-					print "%s, but %s." % get_my_opinion('cats', dogs)
+					dog_opinion, cat_opinion = get_my_opinion('dogs', 'cats')
+					<br> print dog_opinion
+					<br> ## You can also do this:
+					<br> print "%s, but %s." % get_my_opinion('cats', dogs)
 				</div>
 			</div>
-
-
 
 
 			<div class="full skin spacer">
-			<div class="fourth skin rts">
-				<h3>Dictionaries</h3>
-			</div>
-			<div class="fourth skin rtlist">
-				<div class="example2">
-					example_dict = {<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;'dogs':'good',<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;'cats':'bad'<br>
-					}<br><br>
-					example_dict['platypus'] = 'awesome'<br>
-					for key in example_dict:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;print key + " and it's value is " + example_ditc[key]
+				<div class="fourth skin rts">
+					<h3>Dictionaries</h3>
 				</div>
-				<p>If you need an ordered dict, check out <a href="https://docs.python.org/2/library/collections.html#collections.OrderedDict">collections.OrderedDict</a>.</p>
-			</div>
-			<div class="fourth skin rts">
-				<div class="verticalAlign">
-					<h3>Lists (Arrays)</h3>
-					<!-- <p>Remember: ordinal == ordered, 1st; cardinal == cards at random, 0.</p> -->
+				<div class="fourth skin rtlist">
+					<div class="example2">
+						example_dict = {
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;'dogs':'good',
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;'cats':'bad'
+						<br> }
+						<br><br> example_dict['platypus'] = 'awesome'
+						<br> for key in example_dict:
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print key + " and it's value is " + example_ditc[key]
+					</div>
+					<p>If you need an ordered dict, check out <a href="https://docs.python.org/2/library/collections.html#collections.OrderedDict">collections.OrderedDict</a>.</p>
 				</div>
-			</div>
-			<div class="fourth skin rtlist">
-				<div class="example2">
-					example_array = [<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;'dopie',<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;'sleepy'<br>
-					]<br><br>
-					example_array.append('doc')<br>
-					for values in example_array:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;print values<br><br>
-					i_like_doc = example_array[0]
+				<div class="fourth skin rts">
+					<div class="verticalAlign">
+						<h3>Lists (Arrays)</h3>
+						<!-- <p>Remember: ordinal == ordered, 1st; cardinal == cards at random, 0.</p> -->
+					</div>
 				</div>
-			</div>
+				<div class="fourth skin rtlist">
+					<div class="example2">
+						example_array = [
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;'dopie',
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;'sleepy'
+						<br> ]
+						<br><br> example_array.append('doc')
+						<br> for values in example_array:
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print values
+						<br><br> i_like_doc = example_array[0]
+					</div>
+				</div>
 			</div>
 
 			<div class="full no-skin spacer">
-			<div class="fourth no-skin rts">
-				<h3>If, Elif, Else</h3>
-			</div>
-			<div class="fourth no-skin rtlist">
-				<div class="example2">
-					if animal == dog: <br>
-					&nbsp;&nbsp;&nbsp;&nbsp;print "Who's a good dog."<br>
-					elif animal == cat:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;print "Who's a good cat."<br>
-					else:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;print "Are you a platypus?"
+				<div class="fourth no-skin rts">
+					<h3>If, Elif, Else</h3>
 				</div>
-			</div>
-			<div class="fourth no-skin rts">
-				<div class="verticalAlign">
-					<h3>Loops</h3>
+				<div class="fourth no-skin rtlist">
+					<div class="example2">
+						if animal == dog:
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "Who's a good dog."
+						<br> elif animal == cat:
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "Who's a good cat."
+						<br> else:
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "Are you a platypus?"
+					</div>
 				</div>
-			</div>
-			<div class="fourth no-skin rtlist">
-				<div class="example2">
-					numbers = range(1,6)<br>
-					for n in numbers:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % n<br><br>
-					while i < 6:<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % i<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;i += 1
-
+				<div class="fourth no-skin rts">
+					<div class="verticalAlign">
+						<h3>Loops</h3>
+					</div>
 				</div>
-			</div>
+				<div class="fourth no-skin rtlist">
+					<div class="example2">
+						numbers = range(1,6)
+						<br> for n in numbers:
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % n
+						<br><br> while i < 6:
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % i
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;i += 1
+					</div>
+				</div>
 			</div>
 
 			<div class="full no-skin spacer">
@@ -255,51 +256,51 @@
 				<div class="fourth no-skin rtlist">
 					<div class="full skin">
 						<table>
-						<colgroup>
-						<col width="12%">
-						<col width="54%">
-						<col width="34%">
-						</colgroup>
-						<thead valign="bottom">
-							<tr>
-								<th class="head">Type</th>
-								<th class="head">Description</th>
-							</tr>
-						</thead>
-						<tbody valign="top">
-							<tr>
-								<td><tt>True</tt></td>
-								<td>True boolean value.</td>
-							</tr>
-							<tr>
-								<td><tt>False</tt></td>
-								<td>False boolean value.</td>
-							</tr>
-							<tr>
-								<td><tt>None</tt></td>
-								<td>Represents "nothing" or "no value".</td>
-							</tr>
-							<tr>
-								<td><tt>strings</tt></td>
-								<td>Stores textual information.</td>
-							</tr>
-							<tr>
-								<td><tt>numbers</tt></td>
-								<td>Stores integers.</td>
-							</tr>
-							<tr>
-								<td><tt>floats</tt></td>
-								<td>Stores decimals.</td>
-							</tr>
-							<tr>
-								<td><tt>lists</tt></td>
-								<td>Stores a list of things.</td>
-							</tr>
-							<tr>
-								<td><tt>dicts</tt></td>
-								<td>Stores a key=value mapping of things.</td>
-							</tr>
-						</tbody>
+							<colgroup>
+								<col width="12%">
+								<col width="54%">
+								<col width="34%">
+							</colgroup>
+							<thead valign="bottom">
+								<tr>
+									<th class="head">Type</th>
+									<th class="head">Description</th>
+								</tr>
+							</thead>
+							<tbody valign="top">
+								<tr>
+									<td><tt>True</tt></td>
+									<td>True boolean value.</td>
+								</tr>
+								<tr>
+									<td><tt>False</tt></td>
+									<td>False boolean value.</td>
+								</tr>
+								<tr>
+									<td><tt>None</tt></td>
+									<td>Represents "nothing" or "no value".</td>
+								</tr>
+								<tr>
+									<td><tt>strings</tt></td>
+									<td>Stores textual information.</td>
+								</tr>
+								<tr>
+									<td><tt>numbers</tt></td>
+									<td>Stores integers.</td>
+								</tr>
+								<tr>
+									<td><tt>floats</tt></td>
+									<td>Stores decimals.</td>
+								</tr>
+								<tr>
+									<td><tt>lists</tt></td>
+									<td>Stores a list of things.</td>
+								</tr>
+								<tr>
+									<td><tt>dicts</tt></td>
+									<td>Stores a key=value mapping of things.</td>
+								</tr>
+							</tbody>
 						</table>
 					</div>
 				</div>
@@ -307,72 +308,88 @@
 
 			<div class="full skin">
 				<h3>Operators</h3>
-				<p>Unlike the other languages you've previously learned, you don't have to us pikes or ampersands, you can simply use the words <span class="term">and</span>, <span class="term">or</span>, and <span class="term">not</span>.You also have the typical <span class="term">!=</span>, <span class="term">+=</span>, <span class="term">-=</span>, <span class="term">==</span>, <span class="term">&gt;=</span>, and <span class="term">&lt;=</span>. As you've learned before <span class="term">True</span> and <span class="term">False</span> are case sensitive. Double negatives are in play, like <span class="term">not(False)</span> would return TRUE.  <span class="term">is</span> works like ==, but <span class="term">in</span> is looking for the object in a sequence. You can also define a range like this <span class="example">3 <= x <= 6</span> or like this <span class="example">range(3,6)</span>. You also have <span class="term">%=</span> which is modulus assign <span class="example">x %= 2</span>.  <span class="term">@</span> is an AT(decorator) which can be used for <span class="example">@classmethod</span>.
+				<p>Unlike the other languages you've previously learned, you don't have to us pikes or ampersands, you can simply use the words <span class="term">and</span>, <span class="term">or</span>, and <span class="term">not</span>.You also have the typical
+					<span
+									class="term">!=</span>, <span class="term">+=</span>, <span class="term">-=</span>, <span class="term">==</span>, <span class="term">&gt;=</span>, and <span class="term">&lt;=</span>. As you've learned before <span class="term">True</span> and <span class="term">False</span>						are case sensitive. Double negatives are in play, like <span class="term">not(False)</span> would return TRUE. <span class="term">is</span> works like ==, but <span class="term">in</span> is looking for the object in a sequence. You can also define
+						a range like this <span class="example">3 <= x <= 6</span> or like this <span class="example">range(3,6)</span>. You also have <span class="term">%=</span> which is modulus assign <span class="example">x %= 2</span>. <span class="term">@</span>						is an AT(decorator) which can be used for <span class="example">@classmethod</span>.
 				</p>
 			</div>
 
 
 			<div class="full no-skin">
-			<div>
-				<h3>File Functions</h3>
-			</div>
-			<div class="list-container">
-				<ul class="to-be-spliced">
-					<li><span class="term">close</span>: Closes the file.  Like File-&gt;Save.. in your editor.</li>
-					<li><span class="term">open(name[, mode[, buffering]])</span>: Reads the contents of the file. You can assign the result to a variable. Defaults to r mode, need to pass 'w' if you want to write <a href="https://docs.python.org/2/library/functions.html#open" target="_blank">See here.</a></li>
-					<li><span class="term">readline</span>: Reads just one line of a text file.</li>
-					<li><span class="term">truncate</span>: Empties the file. Watch out if you care about the file.</li>
-					<li><span class="term">write('<span class="replace">stuff</span>')</span>:Reads just one line of a text file.</li>
-					<li><span class="term"><span class="replace">var</span>.read()</span>:After you open something, if you need the string rather than the object</li>
-					<li><span class="term">seek(<span class="replace">offset, from_what</span>)</span>: Python read has a head. You use 0 for from_what to jump to beginning, 1 is relative to current offest, and 2 is relative to file end. offset is in bytes.</li>
-					<li><span class="term">readline()</span>: Reads through bytes until it finds a /n.</li>
-				</ul>
-			</div>
+				<div>
+					<h3>File Functions</h3>
+				</div>
+				<div class="list-container">
+					<ul class="to-be-spliced">
+						<li><span class="term">close</span>: Closes the file. Like File-&gt;Save.. in your editor.</li>
+						<li><span class="term">open(name[, mode[, buffering]])</span>: Reads the contents of the file. You can assign the result to a variable. Defaults to r mode, need to pass 'w' if you want to write <a href="https://docs.python.org/2/library/functions.html#open"
+											target="_blank">See here.</a></li>
+						<li><span class="term">readline</span>: Reads just one line of a text file.</li>
+						<li><span class="term">truncate</span>: Empties the file. Watch out if you care about the file.</li>
+						<li><span class="term">write('<span class="replace">stuff</span>')</span>:Reads just one line of a text file.</li>
+						<li><span class="term"><span class="replace">var</span>.read()</span>:After you open something, if you need the string rather than the object</li>
+						<li><span class="term">seek(<span class="replace">offset, from_what</span>)</span>: Python read has a head. You use 0 for from_what to jump to beginning, 1 is relative to current offest, and 2 is relative to file end. offset is in bytes.</li>
+						<li><span class="term">readline()</span>: Reads through bytes until it finds a /n.</li>
+					</ul>
+				</div>
 			</div>
 
 			<div class="full no-skin">
 				<h3>Combining vars with strings</h3>
-				<p>There is a difference between commas and plus's when combining strings. For example <span class="example">print "Hey" , var , "there."</span> would print "Hey you there." (if var = you). While <span>print "Hey " + you + " there."</span> would need spaces inserted. If you need to do it without spaces, you could do <span class="example">print "He's got %s eyes and %s hair." % (my_eyes, my_hair)</span>. It's bad form to have more than 80 characts on a line but you can two prints with a comma.</p>
+				<p>There is a difference between commas and plus's when combining strings. For example <span class="example">print "Hey" , var , "there."</span> would print "Hey you there." (if var = you). While <span>print "Hey " + you + " there."</span> would need
+					spaces inserted. If you need to do it without spaces, you could do <span class="example">print "He's got %s eyes and %s hair." % (my_eyes, my_hair)</span>. It's bad form to have more than 80 characts on a line but you can two prints with a comma.</p>
 			</div>
-			</article>
-			<!-- Loading footer with AJAX -->
-			<div class="footerPlaceholder"></div>
-		</div>
-		<!-- build:js scripts/vendor.js -->
-		<!-- bower:js -->
-		<script src="../bower_components/jquery/dist/jquery.js"></script>
-		<!-- endbower -->
-		<!-- endbuild -->
-		<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		<!-- build:js scripts/plugins.js -->
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
-		<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
-		<!-- endbuild -->
-		<!-- build:js({app,.tmp}) scripts/main.js -->
-		<script src="../scripts/main.js"></script>
-		<!-- endbuild -->
-		<!-- myScripts -->
-		<script src="../includes/nav.js"></script>
-		<script src="../includes/footer.js"></script>
-		<script src="../scripts/listBreaker.js"></script>
-		<script type="text/javascript">breakList(4, $('.to-be-spliced'), 'skin');</script>
-	</body>
+		</article>
+		<!-- Loading footer with AJAX -->
+		<div class="footerPlaceholder"></div>
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+	<script>
+		(function(b, o, i, l, e, r) {
+			b.GoogleAnalyticsObject = l;
+			b[l] || (b[l] =
+				function() {
+					(b[l].q = b[l].q || []).push(arguments)
+				});
+			b[l].l = +new Date;
+			e = o.createElement(i);
+			r = o.getElementsByTagName(i)[0];
+			e.src = '//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e, r)
+		}(window, document, 'script', 'ga'));
+		ga('create', 'UA-XXXXX-X');
+		ga('send', 'pageview');
+	</script>
+	<!-- build:js scripts/plugins.js -->
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/alert.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/dropdown.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tooltip.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/button.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/popover.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/carousel.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/scrollspy.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/collapse.js"></script>
+	<script src="../bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/tab.js"></script>
+	<!-- endbuild -->
+	<!-- build:js({app,.tmp}) scripts/main.js -->
+	<script src="../scripts/main.js"></script>
+	<!-- endbuild -->
+	<!-- myScripts -->
+	<script src="../includes/nav.js"></script>
+	<script src="../includes/footer.js"></script>
+	<script src="../scripts/listBreaker.js"></script>
+	<script type="text/javascript">
+		breakList(4, $('.to-be-spliced'), 'skin');
+	</script>
+</body>
+
 </html>
