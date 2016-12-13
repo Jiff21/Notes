@@ -43,7 +43,7 @@
 						<li><span class="term">print("Hello world")</span>: Or print "Hello World"</li>
 						<li><span class="term">str()</span>: to String.</li>
 						<li><span class="term">len()</span>: length of many things</li>
-						<li><span class="term">bool(2 > 3)</span>: Returns True/False Boolean</li>
+						<li><span class="term">bool(2 &gt; 3)</span>: Returns True/False Boolean</li>
 						<li><span class="term">callable(func)</span>: Lets you know if an object is callable</li>
 						<li><span class="term">classmethod()</span>: Returns class method of a function.</li>
 						<li><span class="term">list(enumerate(seasons))</span>: Returns a tuple containing count and value like from an array.</li>
@@ -224,7 +224,7 @@
 						numbers = range(1,6)
 						<br> for n in numbers:
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % n
-						<br><br> while i < 6:
+						<br><br> while i &lt; 6:
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % i
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;i += 1
 					</div>
@@ -308,10 +308,7 @@
 
 			<div class="full skin">
 				<h3>Operators</h3>
-				<p>Unlike the other languages you've previously learned, you don't have to us pikes or ampersands, you can simply use the words <span class="term">and</span>, <span class="term">or</span>, and <span class="term">not</span>.You also have the typical
-					<span
-									class="term">!=</span>, <span class="term">+=</span>, <span class="term">-=</span>, <span class="term">==</span>, <span class="term">&gt;=</span>, and <span class="term">&lt;=</span>. As you've learned before <span class="term">True</span> and <span class="term">False</span>						are case sensitive. Double negatives are in play, like <span class="term">not(False)</span> would return TRUE. <span class="term">is</span> works like ==, but <span class="term">in</span> is looking for the object in a sequence. You can also define
-						a range like this <span class="example">3 <= x <= 6</span> or like this <span class="example">range(3,6)</span>. You also have <span class="term">%=</span> which is modulus assign <span class="example">x %= 2</span>. <span class="term">@</span>						is an AT(decorator) which can be used for <span class="example">@classmethod</span>.
+				<p>Unlike the other languages you've previously learned, you don't have to us pikes or ampersands, you can simply use the words <span class="term">and</span>, <span class="term">or</span>, and <span class="term">not</span>.You also have the typical <span class="term">!=</span>, <span class="term">+=</span>, <span class="term">-=</span>, <span class="term">==</span>, <span class="term">&gt;=</span>, and <span class="term">&lt;=</span>. As you've learned before <span class="term">True</span> and <span class="term">False</span> are case sensitive. Double negatives are in play, like <span class="term">not(False)</span> would return TRUE. <span class="term">is</span> works like ==, but <span class="term">in</span> is looking for the object in a sequence. You can also define a range like this <span class="example">3 &lt;= x &lt;= 6</span> or like this <span class="example">range(3,6)</span>. You also have <span class="term">%=</span> which is modulus assign <span class="example">x %= 2</span>. <span class="term">@</span> is an AT(decorator) which can be used for <span class="example">@classmethod</span>.
 				</p>
 			</div>
 
@@ -322,9 +319,8 @@
 				</div>
 				<div class="list-container">
 					<ul class="to-be-spliced">
-						<li><span class="term">close</span>: Closes the file. Like File-&gt;Save.. in your editor.</li>
-						<li><span class="term">open(name[, mode[, buffering]])</span>: Reads the contents of the file. You can assign the result to a variable. Defaults to r mode, need to pass 'w' if you want to write <a href="https://docs.python.org/2/library/functions.html#open"
-											target="_blank">See here.</a></li>
+						<li><span class="term">close</span>: Closes the file. Like File-&gt; Save.. in your editor.</li>
+						<li><span class="term">open(name[, mode[, buffering]])</span>: Reads the contents of the file. You can assign the result to a variable. Defaults to r mode, need to pass 'w' if you want to write <a href="https://docs.python.org/2/library/functions.html#open" target="_blank">See here.</a></li>
 						<li><span class="term">readline</span>: Reads just one line of a text file.</li>
 						<li><span class="term">truncate</span>: Empties the file. Watch out if you care about the file.</li>
 						<li><span class="term">write('<span class="replace">stuff</span>')</span>:Reads just one line of a text file.</li>
@@ -337,8 +333,7 @@
 
 			<div class="full no-skin">
 				<h3>Combining vars with strings</h3>
-				<p>There is a difference between commas and plus's when combining strings. For example <span class="example">print "Hey" , var , "there."</span> would print "Hey you there." (if var = you). While <span>print "Hey " + you + " there."</span> would need
-					spaces inserted. If you need to do it without spaces, you could do <span class="example">print "He's got %s eyes and %s hair." % (my_eyes, my_hair)</span>. It's bad form to have more than 80 characts on a line but you can two prints with a comma.</p>
+				<p>There is a difference between commas and plus's when combining strings. For example <span class="example">print "Hey" , var , "there."</span> would print "Hey you there." (if var = you). While <span>print "Hey " + you + " there."</span> would need spaces inserted. If you need to do it without spaces, you could do <span class="example">print "He's got %s eyes and %s hair." % (my_eyes, my_hair)</span>. It's bad form to have more than 80 characts on a line but you can two prints with a comma.</p>
 			</div>
 		</article>
 		<!-- Loading footer with AJAX -->
