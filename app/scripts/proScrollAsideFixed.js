@@ -17,14 +17,14 @@ function keepInPlace(el) {
     el.classList.remove('pro-fixed');
   } else if (posTop >= scrollAt) {
     // console.log('adding');
-    el.addClass += 'pro-fixed';
+    // el.addClass += 'pro-fixed';
     el.classList.add('pro-fixed');
   }
 }
 
-window.onload = function(){
+window.onload = function loadIn() {
   const proAside = grabAsideByID();
-  window.addEventListener('scroll', function () {
+  window.addEventListener('scroll', function listner() {
     keepInPlace(proAside);
   });
 };
