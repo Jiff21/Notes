@@ -3,8 +3,6 @@
 /* exported breakList */
 /* imported $ */
 
-'use strict';
-
 function breakList(numOfLists, list, color){
 	var listLength = list.find('li').size();
 	// console.log('There are this many list items ' + list.find('li').size());

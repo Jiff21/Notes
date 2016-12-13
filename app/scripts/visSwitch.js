@@ -6,9 +6,6 @@
  // Letting jshint know these are Exported Variables.
  /* exported makeVisible */
 
-'use strict';
-
-
 var i,
 	oldVis,
 	newVis;

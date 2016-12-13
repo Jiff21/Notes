@@ -3,8 +3,6 @@
 /*!
  * @docauthor Jeff Campbell
  */
- 'use strict';
-
 
 /* exported proAside */
 function grabAsideByID () {

@@ -1,7 +1,6 @@
 /*!
  * @docauthor Jeff Campbell
  */
-'use strict';
 
 
 // Should I be loading global javascript all in this file?

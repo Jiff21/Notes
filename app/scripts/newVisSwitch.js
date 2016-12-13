@@ -5,7 +5,6 @@
  */
  // Letting jshint know these are Exported Variables.
  /* exported makeVisible */
-'use strict';
 
 const changeButton = () => {
   const buttonTitle = document.getElementById('jumboButton');

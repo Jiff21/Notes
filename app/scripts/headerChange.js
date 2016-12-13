@@ -1,7 +1,6 @@
 /*!
  * @docauthor Jeff Campbell
  */
-'use strict';
 
  /* exported headerChange, runOnClick */
 let itemArray,
@@ -64,4 +63,3 @@ function runOnClick () {
 	headerChange();
 	exampleChange(oldstyle, newstyle);
 }
-

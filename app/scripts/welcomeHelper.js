@@ -1,10 +1,8 @@
 /* @flow */
 
-'use strict';
-
 var welcome,
 	now = new Date().getHours();
-	
+
 switch (true) {
 case (now < 3):
 	welcome = 'Shouldn&#39;t you be at a bar?';

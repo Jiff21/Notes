@@ -1,5 +1,4 @@
 // Generated on 2014-06-29 using generator-webapp 0.4.9
-'use strict';
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -23,7 +22,7 @@ module.exports = function (grunt) {
 
 	var nightwatch = require('nightwatch');
 	nightwatch.initGrunt(grunt);
- 
+
 	// Define the configuration for all the tasks
 	grunt.initConfig({
 

@@ -5,8 +5,6 @@
 // Letting jshint know these are Global Variables.
 /*global shinejs, Shine*/
 
-'use strict';
-
 var config = new shinejs.Config({
 	numSteps: 9,
 	opacityPow: 4.3,
