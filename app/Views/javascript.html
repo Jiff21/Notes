@@ -74,6 +74,7 @@
 				%</code> will leave you the remainder. The <span class="term">Ternary </span> operator is like a mini if statement, you make one by setting a condition then using a questionmark then do this is true colon this if false (e.g. <code class="example">
 				(playerOne > playerTwo ? playerOne : playerTwo)</code>).
 				</p>
+
 				<h4>Loops</h4>
 				<div class="visible">
 					<p> A <span class="term">For-of loop</span> is writen like:</p>
@@ -84,16 +85,17 @@
 					</div>
 				</div>
 
-
 				<div class="hidden">
 					<p>
 						Working with <span class="term"> Loops </span>, also known as iteration, is a big part of using Javascript. A <span class="term">for loop</span> starts with the word &#x22;for&#x22; then opens parenthesis, in the parenthesis you start with a variable
 						being defined, after a comma you set a condition, after another comma you set and incrementor and then close the parenthesis. You follow with curly braces, that will get executed every time the loop runs.</p>
 					<p> A <span class="term">For loop</span> is writen like:</p>
 					<div class="example2">
-						for (var = i, i &lt; 10, i++){<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(i);
+						for (var = i, i &lt; 10, i++){
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(i);
 						<br> };
 					</div>
+
 					<p> A <span class="term">while loop</span> is writen like:</p>
 					</p>
 					<div class="example2">
@@ -104,6 +106,7 @@
 						<br>
 					</div>
 				</div>
+
 				<p>
 					You can always use <span class="term"> break </span> to manually stop a loop. You can also use <span class="term"> continue
 				</span> to skip one iteration and check the condition again.
@@ -111,15 +114,19 @@
 				<p>
 					Another big part of Javascript is writting <span class="term">functions</span>. A function is declared this:
 				</p>
+
 				<div class="example2 hidden">
-					function myName('n') {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n);
+					function myName('n') {
+					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n);
 					<br> };
 				</div>
+
 				<div class="example2 visible">
 					const myName = (n) => {
 					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n);
 					<br> };
 				</div>
+
 				<p>
 					Then you can use the function by calling it with parenthesis and then following it with a semicolon (e.g. <code class="example">
 				myName();</code>). Some functions have <span class="term">parameters</span> that go inside the parenthesis. If you call a function with extra parameters it will just ignore the extras, but if you pass in too few they will be considered undefined.
