@@ -130,14 +130,14 @@
 					<h3>Classes</h3>
 					<p>"instantiate" is overly smart way to say "create." When you instantiate a class what you get is called an object.</p>
 					<div class="example2">
-						class MyStuff(object):
-						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self):
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.tangerine = "And now a thousand years between"
+						class ClassyStuff(object):
+						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n):
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name = n
 						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def apple(self):
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print
-						"I AM CLASSY APPLES!"
+						"I AM CLASSY %s!" % self.name
 						<br><br>
-						<span class="comment">## Then Instantiate a new object!<br></span> thing = MyStuff()<br> thing.apple()
+						<span class="comment">## Then Instantiate a new object!<br></span> thing = MyStuff("appple")<br> thing.apple()
 						<br> print thing.tangerine
 					</div>
 					<p>ss</p>
