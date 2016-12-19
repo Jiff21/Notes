@@ -193,6 +193,10 @@
 					<br> };
 					<br>
 				</div>
+				<p>This could probably be done more efficiently with <<span class="term">map</span>. It's similar to forEach but returns a new array by default. The function run needs to take in the element run as an argumen &amp; return the new element that’s going to take its place in the new array.</p>
+				<div class="example2">
+					stocks.map(addSymbol(stock));
+				</div>
 				<p>
 					But if you are dealing with associtive arrays you can simplify this by using the <span class="term">map</span> function.
 				</p>
