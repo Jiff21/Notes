@@ -3,18 +3,18 @@ import json
 import unittest
 from globes import *
 
-api_key = '' # Add API key. I've set one up in beyondqa's cloud console. found here: https://console.developers.google.com/apis/credentials/key/
+api_key = '' # Add API key. Found here: https://console.developers.google.com/apis/credentials/key/
 base = 'http://example.com'
 locale_code = 'en_US'
 url_array = ['/', '/about/', '/contact/', '/faq/']
 
 def get_insights_json(self, base_url, page_url, local, device_type, api_key, speed_or_useability, expected_score):
 	url = 'https://www.googleapis.com/pagespeedonline/v2/runPagespeed?url=' + base_url + page_url + '&filter_third_party_resources=true&locale=' + local + '&screenshot=false&strategy=' + device_type + '&key=' + api_key
-	print "Getting :: " + url
+	# print "Getting :: " + url
 	r = requests.get(url)
-	# print 'GET for ', str(page), ' ::: Returned with a: ' , str(r.status_code)
+	# print 'GET for ', str(url), ' ::: Returned with a: ' , str(r.status_code)
 	return_code = r.status_code
-	print 'GET for ', str(page_url), ' ::: Returned with the text: \n' , str(r.text)
+	# print 'GET for ', str(page_url), ' ::: Returned with the text: \n' , str(r.text)
 	try: self.assertEqual(return_code, 200)
 	except AssertionError, e: self.verificationErrors.append(base_url + str(page_url) + " did not return 200")
 	return_text = r.text
