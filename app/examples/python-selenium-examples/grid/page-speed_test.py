@@ -22,7 +22,7 @@ def get_insights_json(self, base_url, page_url, local, device_type, api_key, spe
 	score = return_json['ruleGroups'][speed_or_useability]['score']
 	print 'Getting ' + speed_or_useability + ' for ' + base_url + page_url + ' and got a score of ' + str(score)
 	try: self.assertTrue(int(score) >= expected_score)
-	except AssertionError, e: self.verificationErrors.append(base_url + str(page_url) + ' expected ' + device_type + ' speed score to be greater than 80, instead got ' + str(score) )
+	except AssertionError, e: self.verificationErrors.append(base_url + str(page_url) + ' expected ' + device_type + ' speed score to be greater than ' + expected_score + ', instead got ' + str(score) )
 
 class TestAllAPIs(unittest.TestCase):
 
