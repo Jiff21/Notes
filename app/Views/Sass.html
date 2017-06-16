@@ -35,10 +35,10 @@
 		<article>
 			<div class="main">
 				<div>
-					<button value="button" onclick="makeVisible(sassDiv)">SASS</button>
-					<button value="button" onclick="makeVisible(lessDiv)">LESS</button>
+					<button value="button" onclick="makeVisible('sassDiv')">SASS</button>
+					<button value="button" onclick="makeVisible('lessDiv')">LESS</button>
 				</div>
-				<div id="sassDiv" class="visible">
+				<div class="visible sassDiv">
 					<h3 id="sassy">SASS</h3>
 					<p>To see command line Sass controls type <code class="example">Sass -?</code> You can update a stylesheet on the command line using <code class="example">sass --update <span class="replace">stylesheetname.scss</span></code> or you can keep it active
 						with <code class="example">sass --watch <span class="replace">foldername:cssfoldername</span></code>. Each of the last two commands can be run on a folder or a individual file, the new file name can be different than scss file name, just add <code>:<span class ="replace">newFileOrFoloderName</span></code>						to the end of the command with no space. You can change how it is converted to css using the <code class="example">-style</code> command. There are 4 styles: nested (default), expanded (most human friendly), compact, &amp; compressed (minimized
@@ -89,7 +89,7 @@
 					</div>
 					<p>For reference, <a href="http://ruby.bvision.com/blog/please-stop-embedding-bootstrap-classes-in-your-html" target="_blank">this</a> is why I'm applying bootstrap via Sass.</p>
 				</div>
-				<div id="lessDiv" class="hidden">
+				<div class="hidden lessDiv">
 					<h3 id="lassy">LESS</h3>
 					<p> In production you want to compile the less files to css before use rather than using Javascript on the page. After initial compile simpLess watches the files as long as it's open. <span class="term">Variables</span> are set by using a @ in front
 						of the word and can be used repeatedly as you would expect. <span class="term">Mixins</span> are set by using a <code class="example">.</code> in front of the word. You can set a variable with parenthesis and set a default like in Sass. You can

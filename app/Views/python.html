@@ -13,6 +13,7 @@
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
 	<link rel="stylesheet" href="../styles/main.css">
+	<link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
 	<!-- endbuild -->
 	<!-- build:js scripts/vendor/modernizr.js -->
 	<script src="../bower_components/modernizr/modernizr.js"></script>
@@ -25,8 +26,8 @@
 	<!--[if lt IE 10]>
 										<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
-	<div class="container-fluid">
-		<div>
+	<div class="container-fluid no-skin">
+		<div >
 			<div class="jumbotron">
 				<div class="light-layer">
 					<h1>Python Notes</h1>
@@ -35,12 +36,23 @@
 			</div>
 		</div>
 		<article>
+			<div class="no-skin">
+			<div id="buttons-div" >
+				<button value="button" id="two-button" onclick="switchTwo()" class="paper-button medium-paper-button " disabled="true">Python 2.7</button>
+				<button value="button" id="three-button" onclick="switchThree()" class="paper-button medium-paper-button">Python 3.6.1</button>
+			</div>
+			</div>
 			<div class="full skin light-layer">
 				<h3>Built In Functions</h3>
 				<div class="half-when-big">
 					<p>Full list <a href="https://docs.python.org/2/library/functions.html" target="_blank">here.</a> Quick and easy here.</p>
 					<ul>
-						<li><span class="term">print("Hello world")</span>: Or print "Hello World"</li>
+						<div class="two-seven">
+						<li><span class="term">print 'Hello world'</span></li>
+						</div>
+						<div class="three-six">
+						<li><span class="term">print('Hello World')</span></li>
+						</div>
 						<li><span class="term">str()</span>: to String.</li>
 						<li><span class="term">len()</span>: length of many things</li>
 						<li><span class="term">bool(2 &gt; 3)</span>: Returns True/False Boolean</li>
@@ -392,6 +404,7 @@
 	<script type="text/javascript">
 		breakList(4, $('.to-be-spliced'), 'skin');
 	</script>
+	<script src="../scripts/pythonSwitch.js"></script>
 </body>
 
 </html>

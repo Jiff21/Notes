@@ -11,7 +11,7 @@ $icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 aside h5,
 aside h6,
 aside h4 {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 @import 'mixins';
@@ -19,246 +19,246 @@ aside h4 {
 
 /* Mixin for setting Bootstrap setting using html5 terms.  Some pages changes in page specific. */
 article {
-	@include make-row();
+    @include make-row();
 
-	.main {
-		@include make-xs-column(12);
-		@include make-sm-column(8);
-		@include make-md-column(8);
-	}
+    .main {
+        @include make-xs-column(12);
+        @include make-sm-column(8);
+        @include make-md-column(8);
+    }
 
-	aside {
-		@include make-xs-column(12);
-		@include make-sm-column(4);
-		@include make-md-column(4);
-	}
+    aside {
+        @include make-xs-column(12);
+        @include make-sm-column(4);
+        @include make-md-column(4);
+    }
 
-	.full {
-		@include make-xs-column(12);
-	}
+    .full {
+        @include make-xs-column(12);
+    }
 
-	.half-full {
-		@include make-xs-column(12);
-		@include make-sm-column(6);
+    .half-full {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
 
-		h3 {
-			text-align: center;
-		}
+        h3 {
+            text-align: center;
+        }
 
-		@media (min-width: $screen-tablet) {
-			h3 {
-				text-align: left;
-			}
-		}
-	}
+        @media (min-width: $screen-tablet) {
+            h3 {
+                text-align: left;
+            }
+        }
+    }
 
-	.half-when-big-wrapper {
-		@include make-row;
-	}
+    .half-when-big-wrapper {
+        @include make-row;
+    }
 
-	.half-when-big {
-		@include make-sm-column(12);
-		@include make-md-column(6);
-	}
+    .half-when-big {
+        @include make-sm-column(12);
+        @include make-md-column(6);
+    }
 
-	.fourth {
-		@include make-xs-column(12);
-		@include make-sm-column(3);
-		@include make-md-column(3);
-	}
+    .fourth {
+        @include make-xs-column(12);
+        @include make-sm-column(3);
+        @include make-md-column(3);
+    }
 
-	.five-of-seven {
-		@include make-xs-column(12);
-		@include make-sm-column(5);
+    .five-of-seven {
+        @include make-xs-column(12);
+        @include make-sm-column(5);
 
-		h3 {
-			text-align: center;
-		}
+        h3 {
+            text-align: center;
+        }
 
-		@media (min-width: $screen-tablet) {
-			h3 {
-				text-align: left;
-			}
-		}
-	}
+        @media (min-width: $screen-tablet) {
+            h3 {
+                text-align: left;
+            }
+        }
+    }
 
-	.seven-of-five {
-		@include make-xs-column(12);
-		@include make-sm-column(7);
+    .seven-of-five {
+        @include make-xs-column(12);
+        @include make-sm-column(7);
 
-		h3 {
-			text-align: center;
-		}
+        h3 {
+            text-align: center;
+        }
 
-		@media (min-width: $screen-tablet) {
-			h3 {
-				text-align: left;
-			}
-		}
-	}
+        @media (min-width: $screen-tablet) {
+            h3 {
+                text-align: left;
+            }
+        }
+    }
 
-	.wrapper {
-		display: table;
+    .wrapper {
+        display: table;
 
-		.fourth {
-			display: table-cell;
-		}
-	}
+        .fourth {
+            display: table-cell;
+        }
+    }
 }
 
 .left-nav {
-	a {
-		background-color: $black;
-		border: 2px solid $white;
-		color: $white;
-		cursor: pointer;
-		display: block;
-		padding: 5px 10px 5px 0;
-		font-size: 1.5em;
-		margin: 4px 0 0 -5px;
-		text-align: right;
-		text-decoration: none;
+    a {
+        background-color: $black;
+        border: 2px solid $white;
+        color: $white;
+        cursor: pointer;
+        display: block;
+        padding: 5px 10px 5px 0;
+        font-size: 1.5em;
+        margin: 4px 0 0 -5px;
+        text-align: right;
+        text-decoration: none;
 
-		&:hover {
-			background-color: lighten($black, 15%);
-			color: $white;
-			text-decoration: none;
-		}
+        &:hover {
+            background-color: lighten($black, 15%);
+            color: $white;
+            text-decoration: none;
+        }
 
-		&:active,
-		&:focus {
-			background-color: $white;
-			color: $black;
-			outline: none;
-			text-decoration: none;
-		}
-	}
+        &:active,
+        &:focus {
+            background-color: $white;
+            color: $black;
+            outline: none;
+            text-decoration: none;
+        }
+    }
 
-	aside {
-		@include make-xs-column(4);
-		@include make-sm-column(3);
-		@include make-sm-column(2);
+    aside {
+        @include make-xs-column(4);
+        @include make-sm-column(3);
+        @include make-sm-column(2);
 
-		padding-left: 0 px;
-	}
+        padding-left: 0 px;
+    }
 
-	.main {
-		@include make-xs-column(12);
+    .main {
+        @include make-xs-column(12);
 
-		h3 {
-			margin-top: 55px;
-		}
-	}
+        h3 {
+            margin-top: 55px;
+        }
+    }
 
-	.left-nav-companion {
-		margin-left: 30%;
-	}
+    .left-nav-companion {
+        margin-left: 30%;
+    }
 }
 
 // modenizer warning don't change name until you look into it.
 .browsehappy {
-	background: #ccc;
-	color: $black;
-	margin: 0.2em 0;
-	padding: 0.2em 0;
+    background: #ccc;
+    color: $black;
+    margin: 0.2em 0;
+    padding: 0.2em 0;
 }
 
 /* Space out content a bit */
 body {
-	padding-bottom: 20px;
-	padding-top: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 
-	.text-centered {
-		text-align: center;
-	}
+    .text-centered {
+        text-align: center;
+    }
 }
 
 .comment {
-	font-style: italic;
-	color: #ff0;
+    font-style: italic;
+    color: #ff0;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
-	padding-left: 15px;
-	padding-right: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 /* Custom page header */
 .header {
-	border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 
-	/* Make the masthead heading the same height as the navigation */
-	h3 {
-		line-height: 40px;
-		margin-bottom: 0;
-		margin-top: 0;
-		padding-bottom: 19px;
-		text-transform: capitalize;
-	}
+    /* Make the masthead heading the same height as the navigation */
+    h3 {
+        line-height: 40px;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-bottom: 19px;
+        text-transform: capitalize;
+    }
 }
 
 
 /* Styling for the Old Header Class.  May be I can get rid of this or style into jumbrotrons with LESS. */
 header {
-	background-color: Black;
-	color: $white;
-	border-radius: 25px;
-	font-variant: small-caps;
-	text-align: center;
-	padding: 10px;
-	margin-bottom: 30px;
+    background-color: Black;
+    color: $white;
+    border-radius: 25px;
+    font-variant: small-caps;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 30px;
 
-	button {
-		border: 1px solid #dcdcdc;
-		color: #777;
-		font-size: 12px;
-		font-weight: bold;
-		text-align: center;
-		text-shadow: 1px 1px 0 $black;
-		width: 50px;
-	}
+    button {
+        border: 1px solid #dcdcdc;
+        color: #777;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        text-shadow: 1px 1px 0 $black;
+        width: 50px;
+    }
 }
 
 /* Custom page footer */
 .footer {
-	color: #777;
-	border-top: 1px solid #e5e5e5;
-	padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 19px;
 }
 
 .container-narrow > hr {
-	margin: 30px 0;
+    margin: 30px 0;
 }
 
 /* Supporting marketing content */
 .marketing {
-	margin: 40px 0;
+    margin: 40px 0;
 
-	p + h4 {
-		margin-top: 28px;
-	}
+    p + h4 {
+        margin-top: 28px;
+    }
 }
 
 /* Nav Styling here */
 .navbar-brand {
-	img {
-		margin-top: -7px;
-		max-height: 30px;
-		max-width: 30px;
-		padding-right: 5px;
-	}
+    img {
+        margin-top: -7px;
+        max-height: 30px;
+        max-width: 30px;
+        padding-right: 5px;
+    }
 }
 
 /* Footer Styling here */
 .footer {
-	clear: both;
+    clear: both;
 
-	.glyphicon {
-		margin: 0 2px 0 10px;
-	}
+    .glyphicon {
+        margin: 0 2px 0 10px;
+    }
 }
 
 $example-background: #f9f2f4;
@@ -266,52 +266,52 @@ $example-background: #f9f2f4;
 
 /* Style for Example classes along with related spans. */
 .example {
-	@include border-radius(5px);
+    @include border-radius(5px);
 
-	background-color: $example-background;
-	border: none 1px $black;
-	border-radius: 2px;
-	color: $black;
-	font-style: italic;
-	padding: 2px;
+    background-color: $example-background;
+    border: none 1px $black;
+    border-radius: 2px;
+    color: $black;
+    font-style: italic;
+    padding: 2px;
 }
 
 .example2 {
-	background-color: $example-background;
-	border: solid 1px $black;
-	border-radius: 2px;
-	clear: all;
-	color: $black;
-	font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
-	font-size: 90%;
-	font-style: italic;
-	margin-bottom: 10px;
-	padding: 2px;
-	padding-left: 5px;
+    background-color: $example-background;
+    border: solid 1px $black;
+    border-radius: 2px;
+    clear: all;
+    color: $black;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    font-size: 90%;
+    font-style: italic;
+    margin-bottom: 10px;
+    padding: 2px;
+    padding-left: 5px;
 }
 
 .example-overscroll {
-	overflow-x: scroll;
-	width: auto;
-	white-space: nowrap;
+    overflow-x: scroll;
+    width: auto;
+    white-space: nowrap;
 }
 
 /* Adding styling to tables */
 table {
-	margin: 10px 0;
+    margin: 10px 0;
 }
 
 .replace {
-	color: red;
+    color: red;
 }
 
 /* Style for Term class */
 .term {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .keypress {
-	color: blue;
+    color: blue;
 }
 
 /* Aside Styling */
@@ -319,175 +319,247 @@ table {
 aside h5 { font-size: 90%; }
 
 aside {
-	li {
-		h6,
-		h5,
-		h4 {
-			display: inline;
-		}
-	}
+    li {
+        h6,
+        h5,
+        h4 {
+            display: inline;
+        }
+    }
 }
 
 aside p,
 aside ol,
 aside ul {
-	font-family: tahoma, sans-serif;
-	font-size: 80%;
-	font-style: italic;
-	list-style-position: inside;
-	margin: 2px;
+    font-family: tahoma, sans-serif;
+    font-size: 80%;
+    font-style: italic;
+    list-style-position: inside;
+    margin: 2px;
 }
 
 /* This uses adjacent selectors to add extra line height after some headings */
 aside h4 + p,
 aside h5 + p,
 aside h6 + p {
-	margin: 5px;
+    margin: 5px;
 }
 
 /* This is for the properties inside the CSS Lists */
 aside ul li {
-	margin: 3px 0;
+    margin: 3px 0;
 }
 
 aside ul ul li {
-	font-size: 9px;
-	padding-left: 5px;
-	line-height: 0.9;
-	letter-spacing: 0.2em;
+    font-size: 9px;
+    padding-left: 5px;
+    line-height: 0.9;
+    letter-spacing: 0.2em;
 }
 
 aside ul ul li:first-child {
-	margin: 2px 0 1px;
+    margin: 2px 0 1px;
 }
 
 
 /* For Jumbotron images that need an overlay to make text more readable. */
 .jumbotron {
-	background-size: cover;
-	border-bottom: 1px solid #e5e5e5;
-	margin-top: 45px;
-	text-align: center;
-	width: 100%;
+    background-size: cover;
+    border-bottom: 1px solid #e5e5e5;
+    margin-top: 45px;
+    text-align: center;
+    width: 100%;
 
-	p {
-		padding-left: 10px;
-		padding-right: 10px;
-		font-size: 16px;
+    p {
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 16px;
 
-		@media (min-width: $screen-tablet) {
-			font-size: 21px;
-		}
-	}
+        @media (min-width: $screen-tablet) {
+            font-size: 21px;
+        }
+    }
 
-	h1 {
-		font-size: 36px;
-		margin-bottom: 0 px;
+    h1 {
+        font-size: 36px;
+        margin-bottom: 0 px;
 
-		@media (min-width: $screen-tablet) {
-			font-size: 61px;
-			margin-bottom: 10px;
-		}
-	}
+        @media (min-width: $screen-tablet) {
+            font-size: 61px;
+            margin-bottom: 10px;
+        }
+    }
 
-	.btn {
-		font-size: 18px;
-		padding: 7px 12px;
+    .btn {
+        font-size: 18px;
+        padding: 7px 12px;
 
-		@media (min-width: $screen-tablet) {
-			font-size: 30px;
-			padding: 14px 24px;
-		}
-	}
+        @media (min-width: $screen-tablet) {
+            font-size: 30px;
+            padding: 14px 24px;
+        }
+    }
 
-	@media (min-width: $screen-tablet) {
-		min-height: 500px;
+    @media (min-width: $screen-tablet) {
+        min-height: 500px;
 
-		.dark-layer,
-		.light-layer {
-			margin-top: 150px;
-		}
-	}
+        .dark-layer,
+        .light-layer {
+            margin-top: 150px;
+        }
+    }
 
-	div {
-		overflow: auto;
-	}
+    div {
+        overflow: auto;
+    }
 
-	.dark-layer,
-	.light-layer {
-		@include border-radius(20px);
+    .dark-layer,
+    .light-layer {
+        @include border-radius(20px);
 
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		p, {
-			font-weight: bold;
-			opacity: 1;
-			padding-left: 0 10px;
-		}
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p, {
+            font-weight: bold;
+            opacity: 1;
+            padding-left: 0 10px;
+        }
 
-		h1 {
-			padding: 15px;
-		}
+        h1 {
+            padding: 15px;
+        }
 
-		opacity: 0.65;
-	}
+        opacity: 0.65;
+    }
 }
 
 .dark-layer {
-	background-color: $black;
-	color: $white;
+    background-color: $black;
+    color: $white;
 }
 
 .light-layer {
-	background-color: $white;
-	color: $black;
+    background-color: $white;
+    color: $black;
 }
 
 .clear-both {
-	clear: both;
+    clear: both;
 }
 
 .visible {
-	display: block;
+    display: block;
 }
 
 // .to-be-spliced,
 .hidden {
-	display: none;
+    display: none;
 }
+
+.medium-paper-button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Roboto', 'Noto', sans-serif;
+    font-size: 14px;
+    font-weight: 500px;
+    line-height: 1.2;
+    min-width: 80px;
+    padding: 6px 8px;
+    text-transform: uppercase;
+    &[disabled] {
+        color: #969696;
+    }
+    & + .small-paper-button{
+        margin-left: 8px;
+    }
+    &[animated]{
+        transition-delay: 0s;
+        transition-duration: 0.28s;
+        transition-property: box-shadow;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+.paper-button {
+    border: transparent;
+    border-radius: 3px;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Roboto', 'Noto', sans-serif;
+    font-weight: 500px;
+    min-width: 80px;
+    padding: 6px 8px;
+    text-transform: uppercase;
+    &[disabled] {
+        color: #969696;
+    }
+    & + .paper-button{
+        margin-left: 8px;
+    }
+    &[animated]{
+        transition-delay: 0s;
+        transition-duration: 0.28s;
+        transition-property: box-shadow;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+// avoiding firefox min-height issues
+.small-paper-button {
+    font-size: 12px;
+    line-height: 1.2;
+    padding: 8px 8px;
+}
+
+.medium-paper-button {
+    font-size: 14px;
+    line-height: 1.2;
+    padding: 6px 8px;
+}
+
+.large-paper-button {
+    font-size: 16px;
+    padding: 3px 8px;
+}
+
+.extra-large-paper-button {
+    font-size: 18px;
+    padding: 1.5px 8px;
+}
+
 
 // adds 20 px to sections without headers.
 .spacer {
-	padding: 20px 0;
+    padding: 20px 0;
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-	.container {
-		max-width: 900px;
-	}
+    .container {
+        max-width: 900px;
+    }
 
-	/* Remove the padding we set earlier */
-	.header,
-	.marketing,
-	.footer {
-		padding-left: 0;
-		padding-right: 0;
-	}
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
 
-	/* Space out the masthead */
-	.header {
-		margin-bottom: 30px;
-	}
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
 
-	/* Remove the bottom border on the jumbotron for visual effect */
-	.jumbotron {
-		border-bottom: 0;
-	}
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
 }
 
 @import 'pageSpecific';
