@@ -20,6 +20,7 @@
 		"SublimeLinter-html-tidy",
 		"SublimeLinter-jshint",
 		"SublimeLinter-php",
-		"SublimeLinter-phplint"
+		"SublimeLinter-phplint",
+		"SublimeLinter-pylint"
 	]
 }

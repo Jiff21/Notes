@@ -2,6 +2,7 @@ node_modules
 dist
 .tmp
 .DS_Store
+*.pyc
 bower_components
 test/bower_components
 app/examples/sublime3/User/Package Control.cache/

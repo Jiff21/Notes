@@ -48,17 +48,16 @@ changesearch(){
     git grep $1 $(git rev-list --all)
 }
 
-###################################
-# For Homebrew:
-###################################
+# ###################################
+# # For Homebrew:
+# ###################################
 export PATH="$HOME/.node/bin:$PATH"
 export PATH="/usr/sbin:$PATH"
 
-##
-# Trying to specify path for NPM but will it break Android?
-###
+# ###################################
+# # Trying to specify path for NPM but will it break Android?
+####################################
 export PATH="/usr/local/bin:$PATH"
-
 
 ###################################
 # Adding Working Directory and Branch to Command Line
@@ -81,52 +80,49 @@ fi
 ###################################
 eval "$(grunt --completion=bash)"
 
-##
+###################################
 # Setup for Android SDK for use with cordova
-##
-
+###################################
 export PATH=${PATH}:$HOME/Documents/Tools/android-sdk-macosx/platform-tools:$HOME/Documents/Tools/android-sdk-macosx/tools:$HOME/Documents/Tools/android-sdk-macosx/build-tools/22.0.1
 export ANDROID_HOME=$(dirname $(dirname $(which android)))
 
 
-###
+###################################
 # Setting Java Home. Needed for Appium.
-###
+###################################
 export JAVA_HOME=$(/usr/libexec/java_home)
-
-##
-# Trying to specify path for NPM but will it break Android?
-###
-export PATH="/usr/local/bin:$PATH"
 
 alias roocoup='python ~/Documents/Code/roo_coup/RooCoup.py'
 
-
-##
+###################################
 # path prefix for NVM.
-##
+###################################
 [[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+###################################
+# Closure setup for Campus.
+###################################
+export GOOGLE_CLOSURE_PATH="$HOME/bin/google_closure"
+export GOOGLE_CLOSURE_TEMPLATES_PATH="$HOME/bin/google_closure_templates"
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f ~bin/google_appengine/path.bash.inc ]; then
-  source '~bin/google_appengine/path.bash.inc'
+
+# gcloud Install. https://cloud.google.com/sdk/downloads, place google_cloud_sdk at $home/bin/
+if [ -f $HOME/bin/google-cloud-sdk/path.bash.inc ]; then
+  source $HOME/bin/google-cloud-sdk/path.bash.inc
 fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f ~bin/google_appengine/completion.bash.inc ]; then
-  source '~bin/google_appengine/completion.bash.inc'
+if [ -f $HOME/bin/google-cloud-sdk/completion.bash.inc ]; then
+  source $HOME/bin/google-cloud-sdk/completion.bash.inc
 fi
 
-##
-# Closure setup for Campus.
-##
-export GOOGLE_CLOSURE_PATH="$HOME/bin/google_closure"
-export GOOGLE_CLOSURE_TEMPLATES_PATH="$HOME/bin/google_closure_templates"
+# Then steps 2 & 3 from https://cloud.google.com/appengine/docs/python/download for these.
+export CLOUDSDK_ROOT_DIR="$HOME/bin/google-cloud-sdk"
+export GAE_SDK_ROOT="$HOME/bin/google-cloud-sdk/platform/google_appengine"
+export PYTHONPATH=${CLOUDSDK_ROOT_DIR}:${GAE_SDK_ROOT}:${PYTHONPATH}
+
 
