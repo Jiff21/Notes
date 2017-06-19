@@ -83,7 +83,7 @@
 						<li><span class="term">.pop(<span class="replace">0</span>)</span>: The number determines the word, 0 is first, -1 is last.</li>
 						<li><span class="term">.upper()</span>: string to UPPERCASE</li>
 						<li><span class="term">.replace('cat', 'dog')</span>: string replace</li>
-						<li><span class="term">string[0:3]</span>grab 0-2 substring, add a third number to change the step</li>
+						<li><span class="term">string[0:3]</span>slice 0-2 substring, add a third number to change the step or [::-1] to reverse</li>
 					</ul>
 				</div>
 			</div>
@@ -132,9 +132,16 @@
 					<div class="example2">
 						from sys import argv
 						<br><br> script, first, second = argv
+						<span class="two-seven">
 						<br><br> print "The script is called:", script
 						<br> print "You like:", first
 						<br> print "You hate", second
+						</span>
+						<span class="three-six hidden">
+						<br><br> print ('The script is called:' , script)
+						<br> print ('You like:', first )
+						<br> print ('You hate', second)
+						</span>
 					</div>
 					<p>On the 2nd lind of we unpack the arguments, then use them later. In terminal, this could be run with <span class="example">python filename.py dogs cats</span>. Remember command line arguments like raw_input come in as strings, you need to convert
 						them if you need something else.</p>
@@ -154,12 +161,23 @@
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.optional = None
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.age = a
 						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def message(self):
+						<span class="two-seven">
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print
 						"I AM CLASSY %s!" % self.name
+						</span>
+						<span class="three-six hidden">
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(
+						'I AM CLASSY %s!' % self.name)
+						</span>
 						<br><br>
 						<span class="comment">## Then Instantiate a new object!
 							<br></span> thing = ClassyStuff("apple")<br> thing.message()
+						<span class="two-seven">
 						<br> print thing.name
+						</span>
+						<span class="three-six hidden">
+						<br> print (thing.name)
+						</span>
 						<br> thing.optional = "seeds"
 					</div>
 				</div>
@@ -178,9 +196,16 @@
 				<p>You would use the function above like so.</p>
 				<div class="example2">
 					dog_opinion, cat_opinion = get_my_opinion('dogs', 'cats')
+					<span class="two-seven">
 					<br> print dog_opinion
 					<br> ## You can also do this:
 					<br> print "%s, but %s." % get_my_opinion('cats', dogs)
+					</span>
+					<span class="three-six hidden">
+					<br> print (dog_opinion)
+					<br> ## You can also do this:
+					<br> print ('%s, but %s.' % get_my_opinion('cats', dogs))
+					</span>
 				</div>
 			</div>
 
@@ -197,7 +222,12 @@
 						<br> }
 						<br><br> example_dict['platypus'] = 'awesome'
 						<br> for key in example_dict:
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print key + " and it's value is " + example_ditc[key]
+						<span class="two-seven">
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print key + " and it's value is " + example_dict[key]
+						</span>
+						<span class="three-six hidden">
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print ('%s and it\'s value is %s' % (key, example_dict[key]))
+						</span>
 					</div>
 					<p>If you need an ordered dict, check out <a href="https://docs.python.org/2/library/collections.html#collections.OrderedDict">collections.OrderedDict</a>.</p>
 				</div>
@@ -214,9 +244,17 @@
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;'sleepy'
 						<br> ]
 						<br><br> example_array.append('doc')
-						<br> for values in example_array:
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print values
-						<br><br> i_like_doc = example_array[0]
+						<br> for value in example_array:
+						<span class="two-seven">
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print value
+						</span>
+						<span class="three-six hidden">
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print(value)
+						</span>
+						<br><br> i_like_dopie = example_array[0]
+						<br> example_array.insert(2, 'napoleon')
+						<br> example_array.remove('napoleon')
+						<br> i_like_dopie = example_array.pop(example_array.index('doc'))
 					</div>
 				</div>
 			</div>
@@ -228,11 +266,26 @@
 				<div class="fourth no-skin rtlist">
 					<div class="example2">
 						if animal == dog:
+						<span class="two-seven">
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "Who's a good dog."
+						</span>
+						<span class="three-six hidden">
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print (Who\'s a good dog.)
+						</span>
 						<br> elif animal == cat:
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "Who's a good cat."
+						<span class="two-seven">
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print  "Who's a good cat."
+						</span>
+						<span class="three-six hidden">
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print (Who\'s a good cat.)
+						</span>
 						<br> else:
+						<span class="two-seven">
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "Are you a platypus?"
+						</span>
+						<span class="three-six hidden">
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print ('Are you a platypus?')
+						</span>
 					</div>
 				</div>
 				<div class="fourth no-skin rts">
@@ -241,12 +294,20 @@
 					</div>
 				</div>
 				<div class="fourth no-skin rtlist">
-					<div class="example2">
+					<div class="example2 two-seven">
 						numbers = range(1,6)
 						<br> for n in numbers:
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % n
 						<br><br> while i &lt; 6:
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % i
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;i += 1
+					</div>
+					<div class="example2 three-six hidden">
+						numbers = range(1,6)
+						<br> for n in numbers:
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print ('At %d' % n)
+						<br><br> while i &lt; 6:
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print ('At %d' % i)
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;i += 1
 					</div>
 				</div>
