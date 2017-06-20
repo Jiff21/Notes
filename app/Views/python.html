@@ -74,6 +74,10 @@
 						<li><span class="term">a = raw_input('<span class="replace">Prompt text here</span>')</span>: Prompt user for input<a href="https://docs.python.org/2/library/functions.html#raw_input" target="_blank"> See here.</a></li>
 						</li>
 						<li><span class="term">help()</span>Command line help module, like <span class="term">pydoc</span> but that is outside running python</li>
+						<li><span class="term">max()</span>: Get largest number</li>
+						<li><span class="term">abs()</span>: Get absolute value (always pos value)</li>
+						<li><span class="term">type()</span>: Get type</li>
+						<li><span class="term">string[0:3]</span>slice 0-2 substring, add a third number to change the step or [::-1] to reverse</li>
 					</ul>
 				</div>
 				<div class="half-when-big">
@@ -83,7 +87,12 @@
 						<li><span class="term">.pop(<span class="replace">0</span>)</span>: The number determines the word, 0 is first, -1 is last.</li>
 						<li><span class="term">.upper()</span>: string to UPPERCASE</li>
 						<li><span class="term">.replace('cat', 'dog')</span>: string replace</li>
-						<li><span class="term">string[0:3]</span>slice 0-2 substring, add a third number to change the step or [::-1] to reverse</li>
+						<li><span class="term">.keys()</span>: List dict keys</li>
+						<li><span class="term">.values()</span>: List dict values</li>
+						<li><span class="term">.items()</span>: List key value pairs</li>
+						<li><span class="term">.copy()</span>: copy a dict</li>
+						<li><span class="term">.clear()</span>: clear a dict</li>
+						<li><span class="term">.zip(list1, list2)</span>: itterate through two lists until smallest list length returning paired lists.</li>
 					</ul>
 				</div>
 			</div>
@@ -149,35 +158,45 @@
 
 				<div class="half-when-big skin">
 					<h3>Classes</h3>
-					<p>"instantiate" is overly smart way to say "create." When you instantiate a class what you get is called an object.</p>
-					<div class="example2">
+					<p>"instantiate" is overly smart way to say "create." When you instantiate a class what you get is called an object. Notice you use self on variables in the class methods. </p>
+					<div class="example2 two-seven">
 						class Thing(object):
 						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n):
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name = n
 						<br><br><span class="comment">## This class inherits name from Thing, <a href="https://docs.python.org/2/library/functions.html#super" target="_blank">super</a> used because of <a href="http://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods" target="_blank">this</a>.</span>
 						<br>class ClassyStuff(Thing):
-						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n, a):
+						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n='Dee Default', a=18):
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(ClassyStuff, self).__init__(n)
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.optional = None
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.age = a
 						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def message(self):
-						<span class="two-seven">
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print
 						"I AM CLASSY %s!" % self.name
-						</span>
-						<span class="three-six hidden">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(
-						'I AM CLASSY %s!' % self.name)
 						</span>
 						<br><br>
 						<span class="comment">## Then Instantiate a new object!
 							<br></span> thing = ClassyStuff("apple")<br> thing.message()
-						<span class="two-seven">
 						<br> print thing.name
-						</span>
-						<span class="three-six hidden">
+						<br> thing.optional = "seeds"
+					</div>
+					<div class="example2 three-six hidden">
+						class TypeOfThing(object):
+						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n):
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name = n
+						<br><br><span class="comment">## This class inherits name from Thing, <a href="https://docs.python.org/2/library/functions.html#super" target="_blank">super</a> used because of <a href="http://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods" target="_blank">this</a>.</span>
+						<br>class ClassyStuff(Thing):
+						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n='Dee Default', a=18):
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(ClassyStuff, self).__init__(n)
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.optional = None
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.age = a
+						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def message(self):
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(
+						'I AM CLASSY %s!' % self.name)
+						<br><br>
+						<span class="comment">## Then Instantiate a new object!</span> 
+						<br>thing = ClassyStuff('apple')
+						<br> thing.message()
 						<br> print (thing.name)
-						</span>
 						<br> thing.optional = "seeds"
 					</div>
 				</div>
@@ -185,8 +204,8 @@
 
 
 			<div class="full no-skin">
-				<h3>Functions</h3>
-				<p>Here is an example of a funtion. You define functions with <span class="term">def</span> in front of it. Do not name functions that start with a number.</p>
+				<h3>Methods</h3>
+				<p>Here is an example of a Method, they're like funtions. You define method with <span class="term">def</span> in front of it. Do not name functions that start with a number.</p>
 				<div class="example2">
 					def get_my_opinion(arg1, arg2):
 					<br> &nbsp;&nbsp;&nbsp;&nbsp;op1 = "I like " + arg1
@@ -216,21 +235,21 @@
 				</div>
 				<div class="fourth skin rtlist">
 					<div class="example2">
-						example_dict = {
+						mammals = {
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;'dogs':'good',
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;'cats':'bad'
 						<br> }
-						<br><br> example_dict['platypus'] = 'awesome'
-						<br> for key in example_dict:
+						<br><br> mammals['platypus'] = 'awesome'
+						<br> for key in mammals:
 						<span class="two-seven">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print key + " and it's value is " + example_dict[key]
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print key + " and it's value is " + mammals[key]
 						</span>
 						<span class="three-six hidden">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print ('%s and it\'s value is %s' % (key, example_dict[key]))
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print ('The Key is %s and they\'re %s, which is also its value' % (key, mammals[key]))
 						</span>
 					</div>
-					<p>If you need an ordered dict, check out <a href="https://docs.python.org/2/library/collections.html#collections.OrderedDict">collections.OrderedDict</a>.</p>
-				</div>
+					<p>If you need an ordered dict, check out <a href="https://docs.python.org/2/library/collections.html#collections.OrderedDict">collections.OrderedDict</a>. You can also nest dictionaries inside eachother, when you do this you access values like <span class="example">animals['mammals']['dogs']</span>.</p>
+				</div>''
 				<div class="fourth skin rts">
 					<div class="verticalAlign">
 						<h3>Lists (Arrays)</h3>
@@ -254,14 +273,61 @@
 						<br><br> i_like_dopie = example_array[0]
 						<br> example_array.insert(2, 'napoleon')
 						<br> example_array.remove('napoleon')
-						<br> i_like_dopie = example_array.pop(example_array.index('doc'))
+						<br> i_like_doc = example_array.pop(example_array.index('doc'))
 					</div>
+				</div>
+			</div>
+
+			<div class="full skin spacer">
+				<div class="fourth skin rts">
+					<h3>Tuple</h3>
+				</div>
+				<div class="fourth skin rtlist">
+					<div class="example2">
+						mammals = ('dogs', 'cats', 'platypus')
+						<br>good_animal = mammals['dogs']
+					</div>
+					<p>Tuple's are like lists but immutable. What you can do is limited with tuples but you can splice, index, and count them.</p>
+				</div>
+				<div class="fourth skin rts">
+					<div class="verticalAlign">
+						<h3>Sets &amp; Frozen Sets</h3>
+						<p>Being an unordered collectio of unique elements, sets do not record element position or order of insertion. Accordingly, sets do not support indexing, slicing, or other sequence-like behavior. Sets are mutable and frozensets are not.</p>
+					</div>
+				</div>
+				<div class="fourth skin rtlist">
 				</div>
 			</div>
 
 			<div class="full no-skin spacer">
 				<div class="fourth no-skin rts">
-					<h3>If, Elif, Else</h3>
+					<h3>Boolean Operators</h3>
+				</div>
+				<div class="fourth no-skin rtlist">
+				<p>Order of precedence is not, and, or.</p>
+					<li><span class="term">not</span> not True is false </li>
+					<li><span class="term">and</span> True and False is False</li>
+					<li><span class="term">or</span> or <span class="term">|</span> True or False is True</li>
+				</div>
+				<div class="fourth no-skin rts">
+					<div class="verticalAlign">
+						<h3>Comparators</h3>
+						<!-- <p>Remember: ordinal == ordered, 1st; cardinal == cards at random, 0.</p> -->
+					</div>
+				</div>
+				<div class="fourth no-skin rtlist">
+					<li><span class="term">==</span> Equals</li>
+					<li><span class="term">!=</span> Not Equals</li>
+					<li><span class="term">&lt;</span> Less Than</li>
+					<li><span class="term">>=</span> Greater to or Equal</li>
+					<li><span class="term">is</span> Is the same object</li>
+					<li><span class="term">in</span> In the container (list, tuples, sets, or dict Keys). Also checks string sub-strings, so bool('example' in 'https://example.com') is True</li>
+				</div>
+			</div>
+
+			<div class="full skin spacer">
+				<div class="fourth skin rts">
+					<h3>Conditionals <br>(If, Elif, Else)</h3>
 				</div>
 				<div class="fourth no-skin rtlist">
 					<div class="example2">
@@ -274,10 +340,10 @@
 						</span>
 						<br> elif animal == cat:
 						<span class="two-seven">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print  "Who's a good cat."
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print  "No cats are good."
 						</span>
 						<span class="three-six hidden">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print (Who\'s a good cat.)
+						<br> &nbsp;&nbsp;&nbsp;&nbsp;print (No cats are good.)
 						</span>
 						<br> else:
 						<span class="two-seven">
@@ -288,12 +354,12 @@
 						</span>
 					</div>
 				</div>
-				<div class="fourth no-skin rts">
+				<div class="fourth skin rts">
 					<div class="verticalAlign">
 						<h3>Loops</h3>
 					</div>
 				</div>
-				<div class="fourth no-skin rtlist">
+				<div class="fourth skin rtlist">
 					<div class="example2 two-seven">
 						numbers = range(1,6)
 						<br> for n in numbers:
