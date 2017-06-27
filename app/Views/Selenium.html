@@ -80,13 +80,28 @@
 						</li>
 						<li><span class="example">driver.find_element(By.LINK_TEXT, '<span class="replace">Sign In</span>')</span>
 						</li>
-						<li><span class="example">driver.find_element(By.CSS_SELECTOR, '<span class="replace">a#signIn</span>')</span>
+						<li><span class="example">driver.find_element(By.CSS_SELECTOR, '<span class="replace">div.nav &gt; a#signIn</span>')</span>
 						</li>
 						<li><span class="example">driver.find_element(By.CLASS_NAME, '<span class="replace">signIn</span>')</span>
 						</li>
 						<li><span class="example">driver.find_element(By.TAG_NAME, '<span class="replace">signIn</span>')</span>
 						</li>
 					</ul>
+
+					<div>
+						<h5>Wildcards</h5>
+							<ul>
+								<li>
+									<span class="example">By.CSS_SELECTOR, '<span class="replace">input[class^="inputs"]</span>') = Class that starts with "inputs"</span>
+								</li>
+								<li>
+									<span class="example">By.CSS_SELECTOR, '<span class="replace">input[class$="inputs"]</span>') = Class that ends with "inputs"</span>
+								</li>
+								<li>
+									<span class="example">By.CSS_SELECTOR, '<span class="replace">input[class*="inputs"]</span>') = Class that contains with "inputs"</span>
+								</li>
+							</ul>
+					</div>
 
 					<h4>Waiting</h4>
 					<p>Be sure to import wait and expected conditions</p>
