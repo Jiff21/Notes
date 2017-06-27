@@ -100,6 +100,15 @@
 								<li>
 									<span class="example">By.CSS_SELECTOR, '<span class="replace">input[class*="inputs"]</span>') = Class that contains with "inputs"</span>
 								</li>
+								<li>
+									<span class="example">By.XPATH, '<span class="replace">//a[@href="/sign_in"]//parent::li/</span>') = a li that is the parent of an /sign_in anchor link </span>
+								</li>
+								<li>
+									<span class="example">By.XPATH, '<span class="replace">//a[@href="/sign_in"]/preceding-sibling::li/</span>') = a li that is immediately before the anchor </span>
+								</li>
+								<li>
+									<span class="example">By.XPATH, '<span class="replace">//a[@href="/sign_in"]//following-sibling::li/</span>') = next li following the link </span>
+								</li>
 							</ul>
 					</div>
 
