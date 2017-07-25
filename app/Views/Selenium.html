@@ -121,7 +121,7 @@
 					<div class="example2 example-overscroll">
 						wait = WebDriverWait(driver, <span class="replace">10</span>)<br> element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'<span class="replace">message-results</span>')))
 					</div>
-					<p>Check out available <a href="https://seleniumhq.github.io/selenium/docs/api/py/webdriver_support/selenium.webdriver.support.expected_conditions.html" target="_blank">Expected Conditions</a></p>
+					<p>Check out available <a href="https://seleniumhq.github.io/selenium/docs/api/py/webdriver_support/selenium.webdriver.support.expected_conditions.html" target="_blank">Expected Conditions</a>.</p>
 					<p>You could also use implicit waits, normally the dom will look for an element and immediately fail if not there. You can change it to implicitly_wait which will poll the dom every X number of seconds before failing, but this will change for the whole
 						webdriver instance and slow down other tests.</p>
 					<div class="example2">
@@ -218,14 +218,22 @@
 					<div class="example2"><span class="replace">elem_name</span>.get_attribute('<span class="replace">href</span>')</div>
 					<p>With execute script</p>
 					<div class="example2">driver.execute_script("return <span class="replace"> document.body.scrollWidth</span>")</div>
+					<p>With execute script</p>
+					<div class="example2">element.is_enabled()</div>
+					<<p>Bool that returns True if elemenet is enabled</p>
 
-					<h4>Interacting With Browser</h4>
+
+					<h4>Other Browser Methods</h4>
 					<p>Set Window Size</p>
 					<div class="example2">driver.set_window_size(<span class="replace">1200</span>,<span class="replace">1000</span>)</div>
 					<p>Set Window Location</p>
 					<div class="example2">driver.set_window_position(<span class="replace">0</span>,<span class="replace">0</span>)</div>
-
-
+					<p>Get current url</p>
+					<div class="example2">driver.current_url</div>
+					<p>Back</p>
+					<div class="example2">driver.back()</div>
+					<p>Forward</p>
+					<div class="example2">driver.forward()</div>
 					<h4>Screenshot</h4>
 					<p>Need to look into this</p>
 					<div class="example2">driver.get_screenshot_as_file('/Screenshots/google.png')</div>
