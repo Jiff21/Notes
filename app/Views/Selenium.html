@@ -36,11 +36,14 @@
 
 			<div>
 				<button value="button" onclick="makeVisible(seleniumcommands)">Python Commands</button>
-				<button value="button" onclick="makeVisible(sgrid)">Grid</button>
 				<button value="button" onclick="makeVisible(simple)">Simple Python</button>
+				<button value="button" onclick="makeVisible(behave)">Behave Style</button>
+				<button value="button" onclick="makeVisible(sgrid)">Grid</button>
 				<button value="button" onclick="makeVisible(appium)">Appium</button>
 				<button value="button" onclick="makeVisible(protractorcommands)">Protractor</button>
 				<button value="button" onclick="makeVisible(nosetest)">Nosetest</button>
+				<button value="button" onclick="makeVisible(appium)">Appium</button>
+
 			</div>
 
 			<div id="seleniumcommands" class="visible">
@@ -236,30 +239,67 @@
 					<h4>Screenshot</h4>
 					<p>Need to look into this</p>
 					<div class="example2">driver.get_screenshot_as_file('qa/screenshots/google.png')</div>
+
 					<h4>Action Chains</h4>
 					<p>Be sure to load in actions chains for webdrivers</p>
 					<div class="example2">from selenium.webdriver.common.action_chains import ActionChains</div>
-					<p>Then you can perform chained actions like this.</p>
+					<p>Then you can perform chained actions. This is part of how you hover or drag and drop.
 					<div class="example2">
 						actions = ActionChains(driver)
 						<br> actions.click(
 						<span class="replace">elem</span>)<br> actions.send_keys("
 						<span class="replace">Automated Testing IGNORE ME!!!!</span>")
 						<br> actions.send_keys(Keys.RETURN)
+						<br> actions.move_to_element(hover_element)
+						<br> actions.drag_and_drop(source_element, target_element)
+						<br> actions.click_and_hold(source_element).move_to(target_element).release()
+						<br> actions.drag_and_drop_by_offset(slider_element, 100, 0)
 						<br> actions.perform()
+					</div>
+
+					<h4>Switch_to</h4>
+					<p>Alerts</p>
+					<div class="example2">
+						current_alert = driver.switch_to.alert <br>
+						current_alert.accept() <br>
+						current_alert = driver.switch_to.alert <br>
+						current_alert.dismiss() <br>
 					</div>
 					<p>Window commands</p>
 					<div class="example2">
 						original_handle = driver.current_window_handle <br>
-						all_handles = driver.current_window_handles<br>
+						all_handles = driver.window_handles<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;for handle in handles:<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(handle)<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if handle not in original_handle:<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver.switch_to.window(handle)<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver.close<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
-						driver.swith_to.window(original_handle)
+						driver.switch_to.window(original_handle)
 					</div>
+					<p>iFrames can be switched to using the id, name or number</p>
+					<div class="example2">
+						driver.switch_to.frame('frame-id') <br>
+						driver.switch_to.default_context()
+					</div>
+
+
+					<h4>Logging</h4>
+					<p>You can add logging through <a href="https://docs.python.org/3/library/logging.html" target="_blank">pythons logging</a>. You can customize it by creating a <a href="https://docs.python.org/2/library/logging.handlers.html" target="_blank">handler class</a> and you can use <span class="example">%(name)</span> can be used to get the name of the current handler, the cleanest seems to be loading a <a href="https://docs.python.org/2/library/logging.config.html#configuration-file-format" target="_blank">config file</a>.</p>
+					<div class="example2">
+						import logging
+						<br><br>logging.warning('ERROR, CRITICAL, WARNING, and INFO are the available levels')
+						<br>loggin.info('Info is disabled by defualt')
+						<br>logging.error('Example error')
+						<br>logging.basicConfig(
+						<br>&nbsp;&nbsp;&nbsp;&nbsp;filename='qa/log_file.txt', 
+						<br>&nbsp;&nbsp;&nbsp;&nbsp;format='%(levelname)s:%(message)s at %(asctime)s which is formatted %(datefmt)='%m-%d-%Y %I:%M-%S %p, 
+						<br>&nbsp;&nbsp;&nbsp;&nbsp;level=logging.CRITICAL
+						<br>)
+						<br><br># Or I load a config
+						<br>logging.config.fileConfig('qa/logging.conf')
+					</div>
+					<p>You can also look into writing a custom logger </p>
 
 				</div>
 			</div>
@@ -269,24 +309,24 @@
 			<div id="simple" class="hidden">
 				<div class="full">
 					<p>This is the most basic starting point for testing in Selenium.</p>
-					<h3>Quick Install</h3>
-					<p>To get around an OS X El Capitan Permissions issue we need to install a version of python through <a href="http://brew.sh/" target="_blank">homebrew</a> (this may cause issues with NPM later though).</p>
-					<div span class="example2">
-						brew update &amp;&amp; brew upgrade
-						<br> brew install python
-						<br> hash -r python
-						<br> pip install selenium
-						<br> pip install nose
-						<br>
+					<div class="example2">
+						virtulenv env
+						<br>source env/bin/activate
+						<br>pip install selenium
+						<br>curl -L https://github.com/mozilla/geckodriver/releases/download/v0.17.0/geckodriver-v0.17.0-macos.tar.gz | tar xz -C qa/env/bin
+						<br>curl -L https://chromedriver.storage.googleapis.com/2.30/chromedriver_mac64.zip | tar xz -C qa/env/bin
 					</div>
-					<p>Then you can simply run tests with the <span class="example">nosetests --processes=10  --process-timeout=3600</span>. You can run a single file with <span class="example">python path/to/file/file_name.py</span>. You can run a specfic set of tests
-						with <span class="example">nosetests --tests=example_1_test,example_2_test</span>. When naming files keep in mind that you should end file names with test, nosetests can be picky about filenames especially if they start with test.</p>
 					<p>Here is an <a href="./../examples/python-selenium-examples/simple/simple_carousel_test.py" target="_blank">example</a> of a really simple test.</p>
 					<p>Useful documentation can be found <a href="http://selenium-python.readthedocs.io/" target="_blank">here</a> and <a href="http://www.seleniumhq.org/docs/" target="_blank">here</a>.</p>
 				</div>
 			</div>
 
 
+			<div id="behave" class="hidden">
+				<div class="full">
+					<p>Behave is a BDD Framework. Please see <a href="https://github.com/Jiff21/qa/tree/master/e2e" target="_blank">qa project</a> for setup.</p>
+				</div>
+			<div>
 
 
 			<div id="sgrid" class="hidden">
@@ -478,6 +518,7 @@
 					</ul>
 				</div>
 			</div>
+
 			<div id="nosetest" class="hidden">
 				<div class="full">
 					<p>An Easy Test Runner is Nose, you can add it with:</p>
@@ -510,6 +551,10 @@
 					<p>But it will not find:</p>
 					<div span class="example2">
 						SampleTest.py
+					</div>
+					<p>Combining it all together</p>
+					<div class="example2">
+						nosetests --processes=10  --process-timeout=3600
 					</div>
 				</div>
 
