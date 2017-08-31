@@ -103,16 +103,13 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 
-###################################
-# Closure setup for Campus.
-###################################
 export GOOGLE_CLOSURE_PATH="$HOME/bin/google_closure"
 export GOOGLE_CLOSURE_TEMPLATES_PATH="$HOME/bin/google_closure_templates"
 
 
-# gcloud Install. https://cloud.google.com/sdk/downloads, place google_cloud_sdk at $home/bin/
-if [ -f $HOME/bin/google-cloud-sdk/path.bash.inc ]; then
-  source $HOME/bin/google-cloud-sdk/path.bash.inc
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f ~bin/google_appengine/path.bash.inc ]; then
+  source '~bin/google_appengine/path.bash.inc'
 fi
 
 # The next line enables shell command completion for gcloud.
