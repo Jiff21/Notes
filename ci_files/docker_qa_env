@@ -1,0 +1,97 @@
+FROM ubuntu:14.04
+MAINTAINER Jiff <Jeff@bynd.com>
+LABEL version="1.0"
+LABEL description="A machine with all the \
+qa dependencies installed."
+
+
+RUN apt-get update && apt-get install -y \
+	python2.7 \
+	python-dev \
+	python-pip \
+	unzip \
+	nodejs \
+	npm \
+	firefox \
+	php5-curl \
+	wget \
+	libpth-dev \
+	libx11-dev \
+	libx11-xcb-dev \
+	libcairo2-dev \
+	libxcb-xkb-dev \
+	libxcb-xinerama0-dev \
+	libxcb-randr0-dev
+
+# libx dependencies are for https://github.com/emgram769/lighthouse#dependencies
+
+# Install Google Chrome
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# RUN dpkg -i google-chrome*.deb
+RUN npm install -g chrome
+RUN export CHROME_PATH=/usr/local/bin:$PATH
+
+RUN mkdir qa
+RUN pip install virtualenv
+RUN virtualenv qa/env
+# Maybe works second time due to cache
+RUN ls
+RUN . qa/env/bin/activate
+# Functional Testing + other main installs
+RUN pip install chai==1.1.2
+RUN pip install requests==2.18.1
+RUN pip install selenium==3.4.3
+RUN pip install behave==1.2.5
+
+# Donload Compressed Chromedriver and geckodriver (Firefox)
+RUN wget https://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -O temp.zip
+RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.19.0/geckodriver-v0.19.0-linux64.tar.gz -O temp.tar.gz
+# Decompress files downloaded in previous step
+RUN unzip temp.zip
+RUN tar -xvzf temp.tar.gz
+# Move drivers to the path and delete compressed versions
+RUN mv chromedriver qa/env/bin && rm temp.zip
+RUN mv geckodriver qa/env/bin && rm temp.tar.gz
+RUN ls
+
+# Locust Installs
+RUN pip install locustio==0.7.5
+RUN pip install pyzmq==16.0.2
+
+# Zap Install
+RUN pip install python-owasp-zap-v2.4==0.0.11
+RUN pip install zapcli==0.8.0
+
+# Google Auth Installs
+RUN pip install google-auth==1.0.2
+RUN pip install google-api-python-client==1.6.2
+RUN pip install requests-toolbelt==0.8.0
+RUN pip install eyes-selenium==3.10.4
+
+# Lighthouse
+# RUN npm install lighthouse -g
+# RUN wget https://dl.yarnpkg.com/debian/pubkey.gpg
+# RUN sudo apt-key add pubkey.gpg
+# RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+# RUN apt-get update && apt-get install yarn
+# RUN yarn global add lighthouse
+# Alpine?
+RUN apk add yarn
+
+
+ENV LIGHTHOUSE_PORT '--port 8080'
+ENV PAGE_NAME 'index'
+ENV LIGHTHOUSE_OUTPUT_FOLDER '--output-path=qa/accessibility/output/'
+ENV LIGHTHOUSE_FILE_FORMAT '--output json --output html'
+ENV LIGHTHOUSE_MISC_OPTIONS '--disable-storage-reset --max-wait-for-load=20 --chrome-flags=" --no-sandbox --disable-gpu --headless"'
+ENV LIGHTHOUSE_SCAN_ADDRESS = 'http://172.19.0.1:3000'
+ENV LIGHTHOUSE_OUTPUT_PATH = $LIGHTHOUSE_OUTPUT_FOLDER$PAGE_NAME
+
+# PORT for Lighthouse
+EXPOSE 8080
+
+# Debug
+RUN echo ${LIGHTHOUSE_OUTPUT_PATH}
+
+# Command for Lighthouse
+CMD [ "lighthouse", "--verbose", "CHROME_PATH=/usr/local/bin", "${LIGHTHOUSE_PORT}", "${LIGHTHOUSE_FILE_FORMAT}", "${LIGHTHOUSE_OUTPUT_PATH}", "${LIGHTHOUSE_MISC_OPTIONS}" ,"${LIGHTHOUSE_SCAN_ADDRESS}"]
