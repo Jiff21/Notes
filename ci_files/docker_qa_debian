@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM debian:sid
 MAINTAINER Jiff <Jeff@bynd.com>
 LABEL version="1.0"
 LABEL description="A machine with all the \
@@ -7,22 +7,25 @@ qa dependencies installed."
 
 
 RUN apt-get update && apt-get install -y \
-	nodejs=8.0.0 \
-	python2.7 \
-	python-dev \
-	python-pip \
+	curl \
+	python3.6 \
+	python3-pip \
+	python3-setuptools \
+	ca-certificates \
+	apt-transport-https \
+	--no-install-recommends \
+	gnupg \
 	unzip \
-	npm \
 	firefox \
-	php5-curl \
-	wget \
-	libpth-dev \
-	libx11-dev \
-	libx11-xcb-dev \
-	libcairo2-dev \
-	libxcb-xkb-dev \
-	libxcb-xinerama0-dev \
-	libxcb-randr0-dev
+	&& curl -sSL https://deb.nodesource.com/setup_8.x | bash - \
+	&& curl -sSL https://dl.google.com/linux/linux_signing_key.pub | apt-key add - \
+	&& echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list \
+	&& apt-get update && apt-get install -y \
+		google-chrome-stable \
+		nodejs \
+		--no-install-recommends \
+	&& npm --global install yarn \
+  && rm -rf /var/lib/apt/lists/*
 
 # libx dependencies are for https://github.com/emgram769/lighthouse#dependencies
 
@@ -33,16 +36,20 @@ RUN npm install -g chrome
 RUN export CHROME_PATH=/usr/local/bin:$PATH
 
 RUN mkdir qa
-RUN pip install virtualenv
-RUN virtualenv qa/env
+RUN pip3 install virtualenv
+RUN virtualenv qa/env -p python3.6
+
+# Lighthouse
+ARG CACHEBUST=1
+RUN yarn global add lighthouse
+
 # Maybe works second time due to cache
 RUN ls
 RUN . qa/env/bin/activate
 # Functional Testing + other main installs
-RUN pip install chai==1.1.2
-RUN pip install requests==2.18.1
-RUN pip install selenium==3.4.3
-RUN pip install behave==1.2.5
+RUN pip3 install requests==2.18.1
+RUN pip3 install selenium==3.6.0
+RUN pip3 install behave==1.2.5
 
 # Donload Compressed Chromedriver and geckodriver (Firefox)
 RUN wget https://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip -O temp.zip
@@ -56,36 +63,19 @@ RUN mv geckodriver qa/env/bin && rm temp.tar.gz
 RUN ls
 
 # Locust Installs
-RUN pip install locustio==0.7.5
-RUN pip install pyzmq==16.0.2
+RUN pip3 install locustio==0.7.5
+RUN pip3 install pyzmq==16.0.2
 
 # Zap Install
-RUN pip install python-owasp-zap-v2.4==0.0.11
-RUN pip install zapcli==0.8.0
+RUN pip3 install python-owasp-zap-v2.4==0.0.11
+RUN pip3 install zapcli==0.8.0
 
 # Google Auth Installs
-RUN pip install google-auth==1.0.2
-RUN pip install google-api-python-client==1.6.2
-RUN pip install requests-toolbelt==0.8.0
-RUN pip install eyes-selenium==3.10.4
+RUN pip3 install google-auth==1.0.2
+RUN pip3 install google-api-python-client==1.6.2
+RUN pip3 install requests-toolbelt==0.8.0
+RUN pip3 install eyes-selenium==3.10.4
 
-# Lighthouse
-RUN npm --global install yarn
-ARG CACHEBUST=1
-RUN ln -s /usr/bin/nodejs /usr/bin/node
-RUN node --version
-RUN yarn global add lighthouse
-# RUN wget https://dl.yarnpkg.com/debian/pubkey.gpg
-# RUN sudo apt-key add pubkey.gpg
-# RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-# RUN apt-get update && apt-get install yarn
-# RUN yarn global add lighthouse
-# RUN apt-get update && apt-get install -y git
-# RUN git clone https://github.com/emgram769/lighthouse.git
-# RUN cd lighthouse
-# RUN make
-# RUN make install
-# RUN lighthouse-install
 
 ENV LIGHTHOUSE_PORT '--port 8080'
 ENV PAGE_NAME 'index'
