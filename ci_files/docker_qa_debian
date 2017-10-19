@@ -11,9 +11,13 @@ RUN apt-get update && apt-get install -y \
 	python3.6 \
 	python3-pip \
 	python3-setuptools \
+	python3-dev \
 	ca-certificates \
 	apt-transport-https \
 	--no-install-recommends \
+	build-essential \
+	gcc \
+	libev-dev \
 	gnupg \
 	unzip \
 	firefox \
@@ -27,7 +31,8 @@ RUN apt-get update && apt-get install -y \
 	&& npm --global install yarn \
   && rm -rf /var/lib/apt/lists/*
 
-# libx dependencies are for https://github.com/emgram769/lighthouse#dependencies
+# until pip 9.0.2 error fixed. See https://github.com/pypa/pip/issues/4216#issuecomment-310287598
+RUN pip3 install -I https://github.com/pypa/pip/archive/master.zip#egg=pip
 
 # Install Google Chrome
 RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
@@ -63,6 +68,8 @@ RUN mv geckodriver qa/env/bin && rm temp.tar.gz
 RUN ls
 
 # Locust Installs
+RUN pip3 install -I https://github.com/pypa/pip/archive/master.zip#egg=pip
+RUN pip3 install wheel
 RUN pip3 install locustio==0.7.5
 RUN pip3 install pyzmq==16.0.2
 
