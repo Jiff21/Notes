@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y \
 	&& npm --global install yarn \
   && rm -rf /var/lib/apt/lists/*
 
-# until pip 9.0.2 error fixed. See https://github.com/pypa/pip/issues/4216#issuecomment-310287598
+# until pip 9.0.2 fixes https://github.com/pypa/pip/issues/4216#issuecomment-310287598
 RUN pip3 install -I https://github.com/pypa/pip/archive/master.zip#egg=pip
 
 # Install Google Chrome
