@@ -44,7 +44,7 @@
 					<div class="example2">adb dumpsys | grep &quot;DUMP OF SERVICE&quot;</div>
 					<h5>Clear Logcat then pipe log to a file</h5>
 					<div class="example2">
-						adb logcat -c</br>
+						adb logcat -c<br/>
 						adb logcat com.package.name > fileName.txt
 					</div>
 					<h5>Install</h5>
@@ -56,8 +56,8 @@
 					<h3>Screen Recording</h3>
 					<p>You can make a recording of the screen for demo purposes. Full commands can be found <a href="https://developer.android.com/tools/help/shell.html#screenrecord" target="_blank">here</a>. The basics are:</p>
 					<div class="example2">
-						adb shell<br> screenrecord --verbose /sdcard/<span class="replace">demo</span>.mp4<br> // (press Ctrl-C to stop) <br> exit
-						<br> adb pull /sdcard/<span class="replace">demo</span>.mp4
+						adb shell<br/> screenrecord --verbose /sdcard/<span class="replace">demo</span>.mp4<br/> // (press Ctrl-C to stop) <br/> exit
+						<br/> adb pull /sdcard/<span class="replace">demo</span>.mp4
 					</div>
 					<p>Note: screenrecord is only supported on 4.4 and above. if you try it on an older device it will report "screenrecord not found".</p>
 				</div>
@@ -87,7 +87,7 @@
 						<li>
 							View permissions an apk is using (You must have build-tools set up to use aaptl)
 							<div class="example2">
-								adb shell pm list packages -f<br> adb pull <span class="replace">/path/to/package/from/previous/step.apk</span><br> aapt d permissions <span class="replace">path/to/app/on/computer.apk</span><br>
+								adb shell pm list packages -f<br/> adb pull <span class="replace">/path/to/package/from/previous/step.apk</span><br/> aapt d permissions <span class="replace">path/to/app/on/computer.apk</span><br/>
 							</div>
 						</li>
 					</ul>
@@ -116,41 +116,45 @@
 							<div class="example2">alias deviceproxy="~/ntlmaps-0.9.9.0.1/main.py"</div>
 						</li>
 						<li>In NTLMaps folder locater server.cfg and open it in a text editor</li>
-						<li>Change the following lines of the config file</li>
-						<ul>
-							<li>
-								PARENT_PROXY:[Proxy Address]
-								<div class="example2">PARENT_PROXY:<span class="replace">127.0.0.1</span></div>
-							</li>
-							<li>
-								PARENT_PROXY_PORT:[####]
-								<div class="example2">PARENT_PROXY_PORT:<span class="replace">8080</span></div>
-							</li>
-							<li>
-								Allow External Clients
-								<div class="example2">ALLOW_EXTERNAL_CLIENTS:1</div>
-							</li>
+						<li>Change the following lines of the config file
+							<ul>
+								<li>
+									PARENT_PROXY:[Proxy Address]
+									<div class="example2">PARENT_PROXY:<span class="replace">127.0.0.1</span></div>
+								</li>
+								<li>
+									PARENT_PROXY_PORT:[####]
+									<div class="example2">PARENT_PROXY_PORT:<span class="replace">8080</span></div>
+								</li>
+								<li>
+									Allow External Clients
+									<div class="example2">ALLOW_EXTERNAL_CLIENTS:1</div>
+								</li>
+							</ul>
+						</li>
 
-						</ul>
 						<li>Connect Device to Shared Network</li>
-						<li>Edit the connection settings on that device</li>
-						<ol>
-							<li>Obtain the Networks DCHP Server address with a program like <a href="https://play.google.com/store/apps/details?id=lksystems.wifiintruder" target="blank">Wifi Inspector</a> or use iOS device connected to same network to get server address</li>
-							<li>Go to Settings &gt; WiFi</li>
-							<li>Hold down the name of the Network you're connected and select Modify Network</li>
-							<li>Advanced Settings</li>
-							<ul>
-								<li>Proxy set to Manual</li>
-								<li>Proxy Hostname to IP address from step 7-1</li>
-								<li>Port to LISTEN_PORT found in NTMLMaps server.cfg file (Should be defaulted to 5865)</li>
-								<li>IP Settings DHCP should be fine.</li>
-								<li>Save</li>
-							</ul>
-							<li>Install certificate of proxy you're using on device (Note will require a passcode being used on lock screen</li>
-							<ul>
-								<li>If you just mail it to the android device, clicking on the .pem file will prompt you on certificate install. Certificates can later be found in Security &gt; Edit Certificates.</li>
-							</ul>
-						</ol>
+						<li>Edit the connection settings on that device
+							<ol>
+								<li>Obtain the Networks DCHP Server address with a program like <a href="https://play.google.com/store/apps/details?id=lksystems.wifiintruder" target="blank">Wifi Inspector</a> or use iOS device connected to same network to get server address</li>
+								<li>Go to Settings &gt; WiFi</li>
+								<li>Hold down the name of the Network you're connected and select Modify Network</li>
+								<li>Advanced Settings
+									<ul>
+										<li>Proxy set to Manual</li>
+										<li>Proxy Hostname to IP address from step 7-1</li>
+										<li>Port to LISTEN_PORT found in NTMLMaps server.cfg file (Should be defaulted to 5865)</li>
+										<li>IP Settings DHCP should be fine.</li>
+										<li>Save</li>
+									</ul>
+								</li>
+								<li>Install certificate of proxy you're using on device (Note will require a passcode being used on lock screen
+									<ul>
+										<li>If you just mail it to the android device, clicking on the .pem file will prompt you on certificate install. Certificates can later be found in Security &gt; Edit Certificates.</li>
+									</ul>
+								</li>
+							</ol>
+							</li>
 					</ol>
 				</div>
 			</div>

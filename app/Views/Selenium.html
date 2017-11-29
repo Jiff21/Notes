@@ -118,11 +118,11 @@
 					<h4>Waiting</h4>
 					<p>Be sure to import wait and expected conditions</p>
 					<div class="example2">
-						from selenium.webdriver.support.ui import WebDriverWait<br> from selenium.webdriver.support import expected_conditions as EC
+						from selenium.webdriver.support.ui import WebDriverWait<br/> from selenium.webdriver.support import expected_conditions as EC
 					</div>
 					<p>Then you can wait for an element like this:</p>
 					<div class="example2 example-overscroll">
-						wait = WebDriverWait(driver, <span class="replace">10</span>)<br> element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'<span class="replace">message-results</span>')))
+						wait = WebDriverWait(driver, <span class="replace">10</span>)<br/> element = wait.until(EC.element_to_be_clickable((By.CLASS_NAME,'<span class="replace">message-results</span>')))
 					</div>
 					<p>Check out available <a href="https://seleniumhq.github.io/selenium/docs/api/py/webdriver_support/selenium.webdriver.support.expected_conditions.html" target="_blank">Expected Conditions</a>.</p>
 					<p>You could also use implicit waits, normally the dom will look for an element and immediately fail if not there. You can change it to implicitly_wait which will poll the dom every X number of seconds before failing, but this will change for the whole
@@ -133,7 +133,7 @@
 					<p>If you want to slow down the test a specific amount of time while debugging.</p>
 					<div class="example2">
 						import time
-						<br><br> time.sleep(
+						<br/><br/> time.sleep(
 						<span class="replace">1</span>)
 					</div>
 					<h4>Send Keys</h4>
@@ -151,62 +151,62 @@
 					<h6>Check page source</h6>
 					<div class="example2">
 						try: assert "<span class="replace">No posts were found...</span>" not in driver.page_source
-						<br> except AssertionError, e: self.verificationErrors.append("<span class="replace">No Posts incorrectly appeared.</span>")
+						<b/> except AssertionError, e: self.verificationErrors.append("<span class="replace">No Posts incorrectly appeared.</span>")
 					</div>
 					<h6>Partial Text Contains</h6>
 					<div class="example2">
 						posts = driver.find_elements_by_class_name('<span class="replace">post</span>')
-						<br> try: self.assertEqual(posts.text().contains('<span class="replace">example text</span>'))
-						<br> except AssertionError, e: self.verificationErrors.append('Expected
+						<br/> try: self.assertEqual(posts.text().contains('<span class="replace">example text</span>'))
+						<br/> except AssertionError, e: self.verificationErrors.append('Expected
 						example text but instead got ' + posts.text())
-						<br> ## For non elements you may need use a regex.
-						<br> url_key = /notlookingfor/lookingfor/notlookingfor
-						<br> try: self.assertRegexpMatches(driver.current_url, *url_key[:-13])
-						<br> except AssertionError,
+						<br/> ## For non elements you may need use a regex.
+						<br/> url_key = /notlookingfor/lookingfor/notlookingfor
+						<br/> try: self.assertRegexpMatches(driver.current_url, *url_key[:-13])
+						<br/> except AssertionError,
 						e: self.verificationErrors.append("Expected " + driver.current_url + " to conatin " + url_key[:-13])
 					</div>
 					<h6>Count elements on page</h6>
 					<div class="example2">
 						posts = driver.find_elements_by_class_name('<span class="replace">post</span>')
-						<br> try: self.assertEqual(len(posts), 1)
-						<br> except AssertionError, e: self.verificationErrors.append('Search ' + str(len(posts)) + ' many posts when there should only
+						<br/> try: self.assertEqual(len(posts), 1)
+						<br/> except AssertionError, e: self.verificationErrors.append('Search ' + str(len(posts)) + ' many posts when there should only
 						be 1.')
 					</div>
 					<h6>Elements text in an if statement</h6>
 					<div class="example2 example-overscroll">
 						welcome_message = driver.find_element(By.CSS_SELECTOR, '<span class="replace">h1#welcome-message</span>')
-						<br> if current_hour &lt; 12
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Ohayōgozaimasu')
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )
-						<br> elif current_hour &lt;= 24:
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Kon&#39;nichiwa')
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )
-						<br> else
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Dude where did you get that clock?')
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour)
+						<br/> if current_hour &lt; 12
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Ohayōgozaimasu')
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )
+						<br/> elif current_hour &lt;= 24:
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Kon&#39;nichiwa')
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour) + " but the message is " + welcome_message.text )
+						<br/> else
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(<span class="replace">welcome_message</span>.text, 'Dude where did you get that clock?')
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append("The hour is " + str(current_hour)
 							+ " but the message is " + welcome_message.text )
 					</div>
 					<h6>More Than a certain amount</h6>
 					<div class="example2 example-overscroll">
 						nav_bar_links = driver.find_elements(By.CSS_SELECTOR, '.dropdown-menu &#62; li &#62; a')
-						<br> try: self.assertTrue(len(nav_bar_links) &#62; 2)
-						<br> except AssertionError, e: self.verificationErrors.append("Expected more urls: " + str(len(nav_bar_links)))
+						<br/> try: self.assertTrue(len(nav_bar_links) &#62; 2)
+						<br/> except AssertionError, e: self.verificationErrors.append("Expected more urls: " + str(len(nav_bar_links)))
 					</div>
 
 					<h6>Check Image responses</h6>
 					<div class="example2 example-overscroll">
 						import requests
-						<br><br> for image in side_bar_images:
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;current_link = image.get_attribute("src")
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;r = requests.get(current_link)
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(r.status_code,
-						200)<br> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append(current_link + ' delivered response code of ' + r.status_code)
+						<br/><br/> for image in side_bar_images:
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;current_link = image.get_attribute("src")
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;r = requests.get(current_link)
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;try: self.assertEqual(r.status_code,
+						200)<br/> &nbsp;&nbsp;&nbsp;&nbsp;except AssertionError, e: self.verificationErrors.append(current_link + ' delivered response code of ' + r.status_code)
 					</div>
 
 					<h6>Displayed / Visible </h6>
 					<div class="example2 example-overscroll">
 						try: self.assertTrue(<span class="replace">elem_name</span>.is_displayed())
-						<br> except AssertionError, e: self.verificationErrors.append("Element not visible when it should be.")
+						<br/> except AssertionError, e: self.verificationErrors.append("Element not visible when it should be.")
 					</div>
 					<h4>Properties</h4>
 					<p>You can get the text of an element simply by adding <span class="term">.text</span> to it:</p>
@@ -246,40 +246,40 @@
 					<p>Then you can perform chained actions. This is part of how you hover or drag and drop.
 					<div class="example2">
 						actions = ActionChains(driver)
-						<br> actions.click(
-						<span class="replace">elem</span>)<br> actions.send_keys("
+						<br/> actions.click(
+						<span class="replace">elem</span>)<br/> actions.send_keys("
 						<span class="replace">Automated Testing IGNORE ME!!!!</span>")
-						<br> actions.send_keys(Keys.RETURN)
-						<br> actions.move_to_element(hover_element)
-						<br> actions.drag_and_drop(source_element, target_element)
-						<br> actions.click_and_hold(source_element).move_to(target_element).release()
-						<br> actions.drag_and_drop_by_offset(slider_element, 100, 0)
-						<br> actions.perform()
+						<br/> actions.send_keys(Keys.RETURN)
+						<br/> actions.move_to_element(hover_element)
+						<br/> actions.drag_and_drop(source_element, target_element)
+						<br/> actions.click_and_hold(source_element).move_to(target_element).release()
+						<br/> actions.drag_and_drop_by_offset(slider_element, 100, 0)
+						<br/> actions.perform()
 					</div>
 
 					<h4>Switch_to</h4>
 					<p>Alerts</p>
 					<div class="example2">
-						current_alert = driver.switch_to.alert <br>
-						current_alert.accept() <br>
-						current_alert = driver.switch_to.alert <br>
-						current_alert.dismiss() <br>
+						current_alert = driver.switch_to.alert <br/>
+						current_alert.accept() <br/>
+						current_alert = driver.switch_to.alert <br/>
+						current_alert.dismiss() <br/>
 					</div>
 					<p>Window commands</p>
 					<div class="example2">
-						original_handle = driver.current_window_handle <br>
-						all_handles = driver.window_handles<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;for handle in handles:<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(handle)<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if handle not in original_handle:<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver.switch_to.window(handle)<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver.close<br>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br>
+						original_handle = driver.current_window_handle <br/>
+						all_handles = driver.window_handles<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;for handle in handles:<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(handle)<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if handle not in original_handle:<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver.switch_to.window(handle)<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;driver.close<br/>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break<br/>
 						driver.switch_to.window(original_handle)
 					</div>
 					<p>iFrames can be switched to using the id, name or number</p>
 					<div class="example2">
-						driver.switch_to.frame('frame-id') <br>
+						driver.switch_to.frame('frame-id') <br/>
 						driver.switch_to.default_context()
 					</div>
 
@@ -288,16 +288,16 @@
 					<p>You can add logging through <a href="https://docs.python.org/3/library/logging.html" target="_blank">pythons logging</a>. You can customize it by creating a <a href="https://docs.python.org/2/library/logging.handlers.html" target="_blank">handler class</a> and you can use <span class="example">%(name)</span> can be used to get the name of the current handler, the cleanest seems to be loading a <a href="https://docs.python.org/2/library/logging.config.html#configuration-file-format" target="_blank">config file</a>.</p>
 					<div class="example2">
 						import logging
-						<br><br>logging.warning('ERROR, CRITICAL, WARNING, and INFO are the available levels')
-						<br>loggin.info('Info is disabled by defualt')
-						<br>logging.error('Example error')
-						<br>logging.basicConfig(
-						<br>&nbsp;&nbsp;&nbsp;&nbsp;filename='qa/log_file.txt', 
-						<br>&nbsp;&nbsp;&nbsp;&nbsp;format='%(levelname)s:%(message)s at %(asctime)s which is formatted %(datefmt)='%m-%d-%Y %I:%M-%S %p, 
-						<br>&nbsp;&nbsp;&nbsp;&nbsp;level=logging.CRITICAL
-						<br>)
-						<br><br># Or I load a config
-						<br>logging.config.fileConfig('qa/logging.conf')
+						<br/><br/>logging.warning('ERROR, CRITICAL, WARNING, and INFO are the available levels')
+						<br/>loggin.info('Info is disabled by defualt')
+						<br/>logging.error('Example error')
+						<br/>logging.basicConfig(
+						<br/>&nbsp;&nbsp;&nbsp;&nbsp;filename='qa/log_file.txt',
+						<br/>&nbsp;&nbsp;&nbsp;&nbsp;format='%(levelname)s:%(message)s at %(asctime)s which is formatted %(datefmt)='%m-%d-%Y %I:%M-%S %p,
+						<br/>&nbsp;&nbsp;&nbsp;&nbsp;level=logging.CRITICAL
+						<br/>)
+						<br/><br/># Or I load a config
+						<br/>logging.config.fileConfig('qa/logging.conf')
 					</div>
 					<p>You can also look into writing a custom logger </p>
 
@@ -311,10 +311,10 @@
 					<p>This is the most basic starting point for testing in Selenium.</p>
 					<div class="example2">
 						virtulenv qa/env
-						<br>source qa/env/bin/activate
-						<br>pip install selenium
-						<br>curl -L https://github.com/mozilla/geckodriver/releases/download/v0.17.0/geckodriver-v0.17.0-macos.tar.gz | tar xz -C qa/env/bin
-						<br>curl -L https://chromedriver.storage.googleapis.com/2.30/chromedriver_mac64.zip | tar xz -C qa/env/bin
+						<br/>source qa/env/bin/activate
+						<br/>pip install selenium
+						<br/>curl -L https://github.com/mozilla/geckodriver/releases/download/v0.17.0/geckodriver-v0.17.0-macos.tar.gz | tar xz -C qa/env/bin
+						<br/>curl -L https://chromedriver.storage.googleapis.com/2.30/chromedriver_mac64.zip | tar xz -C qa/env/bin
 					</div>
 					<p>Here is an <a href="./../examples/python-selenium-examples/simple/simple_carousel_test.py" target="_blank">example</a> of a really simple test. You can run a unnitest like the example using python</p>
 					<div class="example2">
@@ -339,8 +339,8 @@
 					<h3>Install</h3>
 					<div span class="example2">
 						sudo npm install selenium-standalone@latest -get
-						<br> sudo selenium-standalone install
-						<br> pip install nose
+						<br/> sudo selenium-standalone install
+						<br/> pip install nose
 					</div>
 					<h3>Running</h3>
 					<p>Start a hub in terminal.</p>
@@ -381,12 +381,12 @@
 					<p>Be sure to import wait and expected conditions</p>
 					<div class="example2">
 						from selenium.webdriver.support.ui import WebDriverWait
-						<br> from selenium.webdriver.support import expected_conditions as EC
+						<br/> from selenium.webdriver.support import expected_conditions as EC
 					</div>
 					<p>Then you can wait like this:</p>
 					<div class="example2">
 						wait = WebDriverWait(wd, 20)
-						<br> currently_waiting_for = wait.until(EC.element_to_be_clickable((By.XPATH,'//android.widget.TextView[@text="<span class="replace">Example Text</span>"]')))
+						<br/> currently_waiting_for = wait.until(EC.element_to_be_clickable((By.XPATH,'//android.widget.TextView[@text="<span class="replace">Example Text</span>"]')))
 					</div>
 
 					<h4>Scrolling</h4>
@@ -397,7 +397,7 @@
 					<p>Then you can perform an action like so.</p>
 					<div class="example2">
 						action = TouchAction(wd)
-						<br> action.press(x=700, y=466).move_to(x=700, y=-200).release().perform()
+						<br/> action.press(x=700, y=466).move_to(x=700, y=-200).release().perform()
 					</div>
 					<p>Currently <a href="https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/appium-bindings.md#swipe" target="_blank">swipe</a> seems to work better than this. </p>
 					<div class="example2">
@@ -429,17 +429,17 @@
 					<p>Prequisites Selenium &amp; Selenium Webdriver installed and setup. Xcode and Xcode-cli setup. Pip &amp; Homebrew Installed. These are an abbreviated version of the steps from their getting started guide I had to run to get it going. Android Home
 						set and ADB setup. Java Development Kit installed as well.</p>
 					<div class="example2">
-						npm install -g appium </br>
-						pip install Appium-Python-Client</br>
-						brew install libimobiledevice</br>
-						npm install -g authorize-ios</br>
-						sudo authorize-ios</br>
-						brew install ios-webkit-debug-proxy</br>
-						brew install carthage</br>
-						Cd into appium folder. </br>
-						cd path/to/node_modules/appium/</br>
-						sudo npm install appium-ios-driver</br>
-						brew install --HEAD ideviceinstaller</br>
+						npm install -g appium <br/>
+						pip install Appium-Python-Client<br/>
+						brew install libimobiledevice<br/>
+						npm install -g authorize-ios<br/>
+						sudo authorize-ios<br/>
+						brew install ios-webkit-debug-proxy<br/>
+						brew install carthage<br/>
+						Cd into appium folder. <br/>
+						cd path/to/node_modules/appium/<br/>
+						sudo npm install appium-ios-driver<br/>
+						brew install --HEAD ideviceinstaller<br/>
 					</div>
 					<p>Add location of Java Home to .bash_profile</p>
 					<div class="example2">
@@ -457,10 +457,10 @@
 					<h4>Wifi Controls</h4>
 					<p>This is an example of a <a href="https://github.com/appium/python-client/blob/master/test/functional/android/network_connection_tests.py" target="_blank">network test</a>. It uses</p>
 					<div class="example2">
-						from appium.webdriver.connectiontype import ConnectionType</br>
-						nc = driver.set_network_connection(ConnectionType.DATA_ONLY)</br>
-						self.assertIsInstance(nc, int)</br>
-						self.assertEqual(nc, ConnectionType.DATA_ONLY)</br>
+						from appium.webdriver.connectiontype import ConnectionType<br/>
+						nc = driver.set_network_connection(ConnectionType.DATA_ONLY)<br/>
+						self.assertIsInstance(nc, int)<br/>
+						self.assertEqual(nc, ConnectionType.DATA_ONLY)<br/>
 					</div>
 					<p>Airplane=1, Wifi only=2, data only=4,wifi and data = 6</p>
 
@@ -503,12 +503,12 @@
 						<li><span class="example">browser.executeScript('wind&shy;ow.localStorage.clear();');</span></li>
 						<li><span class="example">browser.get('<span class="replace">http:www.exa&shy;mple.com</span>');</span>
 						</li>
-						<li>A wait command: <br>
+						<li>A wait command: <br/>
 							<div class="example2">
-								browser.driver.wait(function() { <br> &nbsp;&nbsp;console.log(&quot;
-								<span class="replace">Message to log while.</span>&quot;);<br> &nbsp;&nbsp;return browser.driver.isElemen&shy;tPresent(by.name('<span class="replace">acco&shy;unt-test@test.com</span>')).then(fun&shy;ction(el) { <br> &nbsp;&nbsp;&nbsp;&nbsp;return
-								el === true; <br> &nbsp;&nbsp;}); <br> }, <span class="replace">5000</span>) <br> &nbsp;&nbsp;.then(function() { <br> &nbsp;&nbsp;&nbsp;&nbsp; <span class="replace">yourFunction()</span>;<br> });
-								<br>
+								browser.driver.wait(function() { <br/> &nbsp;&nbsp;console.log(&quot;
+								<span class="replace">Message to log while.</span>&quot;);<br/> &nbsp;&nbsp;return browser.driver.isElemen&shy;tPresent(by.name('<span class="replace">acco&shy;unt-test@test.com</span>')).then(fun&shy;ction(el) { <br/> &nbsp;&nbsp;&nbsp;&nbsp;return
+								el === true; <br/> &nbsp;&nbsp;}); <br/> }, <span class="replace">5000</span>) <br/> &nbsp;&nbsp;.then(function() { <br/> &nbsp;&nbsp;&nbsp;&nbsp; <span class="replace">yourFunction()</span>;<br/> });
+								<br/>
 							</div>
 						</li>
 					</ul>
@@ -546,10 +546,10 @@
 					</div>
 					<p>A weird quirk of nosetests is it won’t detect tests that end with the word test and no separator. So these work:</p>
 					<div span class="example2">
-						TestSample.py</br>
-						Sample.test.py</br>
-						test-sample.py</br>
-						sample_test.py</br>
+						TestSample.py<br/>
+						Sample.test.py<br/>
+						test-sample.py<br/>
+						sample_test.py<br/>
 					</div>
 					<p>But it will not find:</p>
 					<div span class="example2">
