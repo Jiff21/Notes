@@ -31,14 +31,14 @@
 			<div class="jumbotron">
 				<div class="light-layer">
 					<h1>Python Notes</h1>
-					<p class="lead">You are <a href="https://learnpythonthehardway.org/book/ex42.html"" target="_blank">here</a>. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
+					<p class="lead">You are <a href="https://learnpythonthehardway.org/book/ex42.html" target="_blank">here</a>. True is True, true is not defined. - Me (&amp; probably a lot of other people).</p>
 				</div>
 			</div>
 		</div>
 		<article>
 			<div class="no-skin">
 			<div id="buttons-div" >
-				<button value="button" id="two-button" onclick="switchTwo()" class="paper-button medium-paper-button " disabled="true">Python 2.7</button>
+				<button value="button" id="two-button" onclick="switchTwo()" class="paper-button medium-paper-button " disabled="disabled">Python 2.7</button>
 				<button value="button" id="three-button" onclick="switchThree()" class="paper-button medium-paper-button">Python 3.6.1</button>
 			</div>
 			</div>
@@ -50,7 +50,7 @@
 						<div class="two-seven">
 						<li><span class="term">print 'Hello world'</span></li>
 						</div>
-						<div class="three-six">
+						<div class="three-six hidden">
 						<li><span class="term">print('Hello World')</span></li>
 						</div>
 						<li><span class="term">str()</span>: to String.</li>
@@ -193,7 +193,7 @@
 						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(
 						'I AM CLASSY %s!' % self.name)
 						<br><br>
-						<span class="comment">## Then Instantiate a new object!</span> 
+						<span class="comment">## Then Instantiate a new object!</span>
 						<br>thing = ClassyStuff('apple')
 						<br> thing.message()
 						<br> print (thing.name)

@@ -19,10 +19,10 @@ function switchTwo() {
   let j = newVis.length - 1;
   for (j; j >= 0; j -= 1) {
     // Loops through all previously visible elements and makes them hidden.
-    newVis[j].classList.remove('hidden')
+    newVis[j].classList.remove('hidden');
   }
 
-  document.querySelector('button#two-button').disabled = true;
+  document.querySelector('button#two-button').disabled = 'disabled';
   document.querySelector('button#three-button').disabled = false;
 
 }
@@ -41,9 +41,9 @@ function switchThree() {
   let j = newVis.length - 1;
   for (j; j >= 0; j -= 1) {
     // Loops through all previously visible elements and makes them hidden.
-    newVis[j].classList.remove('hidden')
+    newVis[j].classList.remove('hidden');
   }
 
-  document.querySelector('button#three-button').disabled = true;
+  document.querySelector('button#three-button').disabled = 'disabled';
   document.querySelector('button#two-button').disabled = false;
 }
