@@ -132,6 +132,6 @@ Or start a Flow Server to check as you edit.
 ```
 virtualenv env
 . env/bin/activate
-pip install -r requirements.txt
+pip install -r test-requirements.txt
 html5validator --root app/Views/
 ```
