@@ -31,3 +31,4 @@ test/phantomcss/screenshots
 
 // Python
 *.pyc
+env

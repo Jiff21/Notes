@@ -21,6 +21,8 @@ Use:
 
 ## Running Tests
 
+More current testing in [QA](https://github.com/Jiff21/Notes) Project.
+
 ##### Python Selenium
 
 Install Selenium [Standalone](https://www.npmjs.com/package/selenium-standalone)
@@ -72,7 +74,7 @@ Registering a Node from a Virtualbox can be accoplished with the following comma
 	selenium-standalone start -- -role node -hub http://[YOUR COMPUTERS IP ADDRESS]:4444/grid/register -port 5557 -maxSessions 6 -browser browserName="internet explorer",javascriptEnabled=true,maxInstances=3,version=9,platform=ANY
 
 
-Notes: 
+Notes:
 
 * Useful documentation can be found [here](http://selenium-python.readthedocs.io/) and [here](http://www.seleniumhq.org/docs/).
 
@@ -111,7 +113,7 @@ To Run PhatomCSS tests:
 *PhantomCSS Notes: it keeps trying to get you to run it with --web-security=no --version, but that breaks it on OSX 10.10.5. Also, ignore the warning about not running tests. On Rebase no tests are run intentionally. On run command it must be referring to end.js or start.js file as you can see tests running and producing results.
 
 ##### Flow
-To Install Flow. 
+To Install Flow.
 
 	npm install --save-dev flow-bin -g
 
@@ -124,3 +126,12 @@ Or start a Flow Server to check as you edit.
 	flow
 
 ---
+
+#### HTML5 html5validator
+
+```
+virtualenv env
+. env/bin/activate
+pip install -r requirements.txt
+html5validator --root app/Views/
+```
