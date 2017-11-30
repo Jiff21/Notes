@@ -30,7 +30,7 @@
 			<div class="jumbotron">
 				<h1>Javascript Notes</h1>
 				<p class="lead">&#x22;Things do not happen. Things are made to happen.&#x22; - JFK</p>
-				<p><a id="jumboButton" class="btn btn-lg btn-success" onclick="makeVisible()">Older Examples</span></a></p>
+				<p><a id="jumboButton" class="btn btn-lg btn-success" onclick="makeVisible()">Older Examples</a></p>
 			</div>
 		</div>
 		<article>
@@ -55,11 +55,11 @@
 				</p>
 				<div class="example2">
 					if (x==100){
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(this)
-					<br> }else{
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(that)
-					<br> }
-					<br>
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(this)
+					<br/> }else{
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(that)
+					<br/> }
+					<br/>
 				</div>
 				<p>
 					You can nest another argument inside the else, but it is suggested to not nest more than once or twice for the sake of code readiblity.
@@ -80,8 +80,8 @@
 					<p> A <span class="term">For-of loop</span> is writen like:</p>
 					<div class="example2">
 						for (var value of myArray) {
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(value);
-						<br> };
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(value);
+						<br/> };
 					</div>
 				</div>
 
@@ -89,21 +89,20 @@
 					<p>
 						Working with <span class="term"> Loops </span>, also known as iteration, is a big part of using Javascript. A <span class="term">for loop</span> starts with the word &#x22;for&#x22; then opens parenthesis, in the parenthesis you start with a variable
 						being defined, after a comma you set a condition, after another comma you set and incrementor and then close the parenthesis. You follow with curly braces, that will get executed every time the loop runs.</p>
-					<p> A <span class="term">For loop</span> is writen like:</p>
+					<p>A <span class="term">For loop</span> is writen like:</p>
 					<div class="example2">
 						for (var = i, i &lt; 10, i++){
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(i);
-						<br> };
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(i);
+						<br/> };
 					</div>
 
 					<p> A <span class="term">while loop</span> is writen like:</p>
-					</p>
 					<div class="example2">
 						while (a &lt; 10){
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(a);
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a++;
-						<br> };
-						<br>
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(a);
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a++;
+						<br/> };
+						<br/>
 					</div>
 				</div>
 
@@ -117,14 +116,14 @@
 
 				<div class="example2 hidden">
 					function myName('n') {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n);
-					<br> };
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n);
+					<br/> };
 				</div>
 
 				<div class="example2 visible">
 					const myName = (n) => {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n);
-					<br> };
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(n);
+					<br/> };
 				</div>
 
 				<p>
@@ -141,15 +140,15 @@
 					<span class="term">Objects</span> are containers that hold things like variables or functions. You make a variable like this:
 				</p>
 				<div class="example2">
-					var player = new Object();<br> player.name = "Fred";<br> player.score = 100;<br>
+					var player = new Object();<br/> player.name = "Fred";<br/> player.score = 100;<br/>
 				</div>
 				<p>
 					But this also has a shorthand (<code class="example">var player = {name: &#x22;fred&#x22;, score = 100};</code>). You can then make a method for the object by writting a function like this:
 				</p>
 				<div class="example2">
 					function playerDetails(){
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(this.name + &#x22; has a score of &#x22; + this.score &#x22;.&#x22;);
-					<br> }
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(this.name + &#x22; has a score of &#x22; + this.score &#x22;.&#x22;);
+					<br/> }
 				</div>
 				<p>
 					One of the most important methods of the Document Object Model is <span class=term>getElementById</span> which can be used to retrieve an element node (<code class="example">var myElement = document.getElementById(&#x27;someId&#x27;)</code>). You
@@ -168,9 +167,9 @@
 				</p>
 				<div class="example2">
 					var myImage = document.getElementById(&#x27;mainImage&#x27;);
-					<br> myImage.onclick = function(){
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&#x27;You click me&#x27;);
-					<br> };
+					<br/> myImage.onclick = function(){
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert(&#x27;You click me&#x27;);
+					<br/> };
 				</div>
 				<p>
 					You can use the the onsubmit function for forms to stop them from sending to the server by setting them to return false. If you&#x27;re planning on adding CSS that will require Javascript to complete the function you may want to only add the CSS through
@@ -189,11 +188,11 @@
 				</p>
 				<div class="example2">
 					stocks.forEach(function(stock)){
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;symbols.push(stock.symbols);
-					<br> };
-					<br>
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;symbols.push(stock.symbols);
+					<br/> };
+					<br/>
 				</div>
-				<p>This could probably be done more efficiently with <<span class="term">map</span>. It's similar to forEach but returns a new array by default. The function run needs to take in the element run as an argumen &amp; return the new element that’s going to take its place in the new array.</p>
+				<p>This could probably be done more efficiently with <span class="term">map</span>. It's similar to forEach but returns a new array by default. The function run needs to take in the element run as an argumen &amp; return the new element that’s going to take its place in the new array.</p>
 				<div class="example2">
 					stocks.map(addSymbol(stock));
 				</div>
@@ -202,35 +201,35 @@
 				</p>
 				<div class="example2">
 					function getStockSymbols(stocks){
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stocks.map(function(stock){
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.symbol;
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br> };
-					<br>
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stocks.map(function(stock){
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.symbol;
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+					<br/> };
+					<br/>
 				</div>
 				<p>
 					Of if you need to only get elements that pass a certain qualification you could use the <span class="term">filter</span> method.
 				</p>
 				<div class="example2">
-					function getStocksOver(stocks, minPrice){<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stocks.filter(function(stock){<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.price >= minPrice;<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
-					<br> };
-					<br>
+					function getStocksOver(stocks, minPrice){<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stocks.filter(function(stock){<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.price >= minPrice;<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+					<br/> };
+					<br/>
 				</div>
 				<p>
 					The advantage of using map and filter together instead of looping through data is it will work well with asynchronous data, while loops generally do not. The end result would look something like this.
 				</p>
 				<div class="example2">
-					var fileredStockSymbols = {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stock.
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filter(function(stock){
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.price >= 150;
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}).
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map(function(stock){
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.symbol;
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}).
-					<br> };
-					<br> filteredStockSymbols.forEach(function(symbol){
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(symbol);
-					<br> });
+					var fileredStockSymbols = {<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;stock.
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filter(function(stock){
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.price >= 150;
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}).
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;map(function(stock){
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return stock.symbol;
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}).
+					<br/> };
+					<br/> filteredStockSymbols.forEach(function(symbol){
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(symbol);
+					<br/> });
 				</div>
 			</div>
 			<aside>
@@ -241,7 +240,7 @@
 						<ul>
 							<li>
 								<h6> Function Basics </h6>
-								<p>This is how you define a function:<br> function myName() = { <br> do stuff; <br> }
+								<p>This is how you define a function:<br/> function myName() = { <br/> do stuff; <br/> }
 								</p>
 								<p>
 									<a href="http://www.tutorialspoint.com/javascript/javascript_builtin_functions.htm" target="_blank"> Functions </a> are quick arguements.
