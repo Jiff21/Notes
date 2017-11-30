@@ -604,6 +604,7 @@ $no-skin: #ebe1c6;
 		background-color: $no-skin;
 	}
 
+
 	.jumbotron {
 		background-image: url('../images/Python.jpg');
 		background-position: center;
@@ -629,6 +630,23 @@ $no-skin: #ebe1c6;
 			margin-left: 20px;
 			font-size: 10px;
 		}
+	}
+
+	td:nth-child(n) {
+  	font-style: italic;
+		vertical-align: top;
+	}
+
+	tbody {
+		vertical-align: bottom;
+	}
+
+	col:nth-child(1) {
+		width: 30%;
+	}
+
+	col:nth-child(2) {
+		width: 70%
 	}
 
 	#buttons-div {

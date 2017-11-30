@@ -42,39 +42,39 @@
 									target="_blank">here</a> and I've updated these steps to reflect this, but it's so early on keep an eye on <a href="https://github.com/gextech/grunt-nightwatch">grunt-nightwatch</a> but it took similar steps to get it working. Start by adding this
 					to the section of you grunt file right under <span class="term">module.export = function (grunt) {</span></p>
 				<div class="example2">
-					var nightwatch = require('nightwatch');<br> nightwatch.initGrunt(grunt);
+					var nightwatch = require('nightwatch');<br /> nightwatch.initGrunt(grunt);
 				</div>
 				<p>And add this to your git ignore for the project.</p>
 				<div class="example2">
-					// Ignores for Nightwatch<br> test/e2e/selenium-debug.log
-					<br> test/e2e/tests_output/
-					<br> test/e2e/reports
-					<br> test/e2e.screenshots
-					<br>
+					// Ignores for Nightwatch<br /> test/e2e/selenium-debug.log
+					<br /> test/e2e/tests_output/
+					<br /> test/e2e/reports
+					<br /> test/e2e.screenshots
+					<br />
 				</div>
 			</div>
 			<div class="half-full">
 				<h5>Step 2</h5>
 				<p>Then in your gruntfile add the following to the <span class="term">gruntInitConfig</span> section.</p>
 				<div class="example2">
-					nightwatch: {<br> &nbsp;&nbsp;&nbsp;&nbsp;options: {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cwd: './test/e2e',
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;},
-					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;'default': {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argv: {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env: 'default'
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;settings: {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config_path: 'test/e2e/nightwatch.json'
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;},
-					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;'all': {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argv: {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env: 'chrome,firefox,safari'
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;}
-					<br> },
-					<br>
+					nightwatch: {<br /> &nbsp;&nbsp;&nbsp;&nbsp;options: {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cwd: './test/e2e',
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;},
+					<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;'default': {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argv: {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env: 'default'
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;settings: {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;config_path: 'test/e2e/nightwatch.json'
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;},
+					<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;'all': {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;argv: {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;env: 'chrome,firefox,safari'
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;}
+					<br /> },
+					<br />
 				</div>
 			</div>
 			<div class="half-full">
@@ -83,24 +83,24 @@
 					this.</p>
 				<div class="example2">
 					grunt.registerTask('test', function (target) {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;if (target !== 'watch') {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grunt.task.run([
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'clean:server',
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'concurrent:test',
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'autoprefixer'
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;}
-					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;grunt.task.run([
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'connect:test',
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'jasmine',
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'nightwatch'
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;]);
-					<br> });
-					<br><br> // This task will kick off the unit tests 1 time<br> grunt.registerTask('test:unit', [<br> &nbsp;&nbsp;&nbsp;&nbsp;'jasmine'
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;]);
-					<br><br> // This task will kick off the "End to End" tests 1 time, requires 'grunt serve' to be running<br> grunt.registerTask('test:e2e', [<br> &nbsp;&nbsp;&nbsp;&nbsp;'nightwatch:default'
-					<br> ]);
-					<br>
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;if (target !== 'watch') {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;grunt.task.run([
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'clean:server',
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'concurrent:test',
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'autoprefixer'
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]);
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;}
+					<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;grunt.task.run([
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'connect:test',
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'jasmine',
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'nightwatch'
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;]);
+					<br /> });
+					<br /><br /> // This task will kick off the unit tests 1 time<br /> grunt.registerTask('test:unit', [<br /> &nbsp;&nbsp;&nbsp;&nbsp;'jasmine'
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;]);
+					<br /><br /> // This task will kick off the "End to End" tests 1 time, requires 'grunt serve' to be running<br /> grunt.registerTask('test:e2e', [<br /> &nbsp;&nbsp;&nbsp;&nbsp;'nightwatch:default'
+					<br /> ]);
+					<br />
 				</div>
 			</div>
 
@@ -109,42 +109,42 @@
 				<h5>Step 4</h5>
 				<p>Now in the e2e folder add a file title <span class="term">nightwatch.json</span>. The file should look something like this.</p>
 				<div class="example2">
-					{<br> &nbsp;&nbsp;&nbsp;&nbsp;"src_folders" : ["./spec"],
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;"live_output": true,
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;"parallel_process_delay": 1500,
-					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;"selenium" : {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"standalone":
-					true,<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"start_process": true,
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"server_path": "../../node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-<span class="replace">2.45.0</span>.jar",
-					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"jar_version" : "<span class="replace">2.45.0</span>",
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"log_path": "",
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"cli_args": {
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"webdriver.chrome.driver":
-					"bin/chromedriver"<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;},
-					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;"test_settings" : {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"default": {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"launch_url": "<span class="replace">http://0.0.0.0:9000/Views/home.html",</span>
-					<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"silent": true, false,
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"screenshots": {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"enabled":
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"path": "./screenshots"
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
-					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chrome" : {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"desiredCapabilities": {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"browserName":"chrome",
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chromeOptions": {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"args":
-					[<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"use-fake-device-for-media-stream",
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"use-fake-ui-for-media-stream"
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-					<br><br> &nbsp;&nbsp;&nbsp;&nbsp;}
-					<br> }
-					<br>
+					{<br /> &nbsp;&nbsp;&nbsp;&nbsp;"src_folders" : ["./spec"],
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;"live_output": true,
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;"parallel_process_delay": 1500,
+					<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;"selenium" : {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"standalone":
+					true,<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"start_process": true,
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"server_path": "../../node_modules/selenium-server-standalone-jar/jar/selenium-server-standalone-<span class="replace">2.45.0</span>.jar",
+					<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"jar_version" : "<span class="replace">2.45.0</span>",
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"log_path": "",
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"cli_args": {
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"webdriver.chrome.driver":
+					"bin/chromedriver"<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;},
+					<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;"test_settings" : {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"default": {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"launch_url": "<span class="replace">http://0.0.0.0:9000/Views/home.html",</span>
+					<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"silent": true, false,
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"screenshots": {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"enabled":
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"path": "./screenshots"
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;},
+					<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chrome" : {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"desiredCapabilities": {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"browserName":"chrome",
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"chromeOptions": {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"args":
+					[<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"use-fake-device-for-media-stream",
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"use-fake-ui-for-media-stream"
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+					<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;}
+					<br /> }
+					<br />
 				</div>
 			</div>
 			<div class="half-full">
@@ -160,18 +160,18 @@
 			<div class="half-full">
 				<div class="example2 example-overscroll">
 					module.exports = {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;'Demo test Google': function(browser) {
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.url('http://www.google.com')
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.waitForElementVisible('body', 1000)
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setValue('input[type=text]', 'nodejs')
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.waitForElementVisible('button[name=btnG]',
-					1000)<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.click('button[name=btnG]').pause(1000)
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.assert.containsText('#ires', 'joyent/node')
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end();
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;}
-					<br> };
-					<br>
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;'Demo test Google': function(browser) {
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.url('http://www.google.com')
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.waitForElementVisible('body', 1000)
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.setValue('input[type=text]', 'nodejs')
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.waitForElementVisible('button[name=btnG]',
+					1000)<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.click('button[name=btnG]').pause(1000)
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.assert.containsText('#ires', 'joyent/node')
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end();
+					<br /> &nbsp;&nbsp;&nbsp;&nbsp;}
+					<br /> };
+					<br />
 				</div>
 			</div>
 			<div class="full text-centered">

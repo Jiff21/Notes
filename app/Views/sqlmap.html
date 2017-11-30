@@ -62,7 +62,7 @@
 					<li>Select the Proxy Tab</li>
 					<li>Turn Intercept On</li>
 					<li>Return to Firefox and submit the form with anything typed into the field</li>
-					<li>Return to BurpSuite and copy all of the text in the RAW tab, seen below<br>
+					<li>Return to BurpSuite and copy all of the text in the RAW tab, seen below<br />
 						<img src="../images/SQLMap/BS1.jpg" alt="Burp Suite Proxy" title="Burp Suite Proxy Intercept" />
 					</li>
 					<li>Open your text editor and paste the text from step 16</li>
@@ -70,17 +70,17 @@
 					<li>Return to Terminal and enter the following text: <code class="example">cat <span class="replace">[drag file from step 18 into terminal]</span></code></li>
 					<li>Then enter the following text: <code class="example">./sqlmap.py -r <span class="replace">[drag file from step 18]</span> --banner</code></li>
 					<li>Navigate through the prompts using common sense. </li>
-					<li>If any vulnerabilities are detected you will receive a message like this:<br>
-						<img src="../images/SQLMap/BS2.jpg" alt="SQL Map Message 2" title="SQL Map Message 2" /><br> If you get this, that's basically all we need to know, this should be sufficient to know you should fix the vulnerability. These steps will continue just
+					<li>If any vulnerabilities are detected you will receive a message like this:<br />
+						<img src="../images/SQLMap/BS2.jpg" alt="SQL Map Message 2" title="SQL Map Message 2" /><br /> If you get this, that's basically all we need to know, this should be sufficient to know you should fix the vulnerability. These steps will continue just
 						in case you need to prove that you can gain valuable data.
 					</li>
 					<li>Select the desired field to try to gain the information (i.e. enter 0 or 1 then hit return).</li>
-					<li>If successful you'll get a message like this:<br>
-						<img src="../images/SQLMap/BS3.jpg" alt="SQL Map Message 3" title="SQL Map Message 3" /><br>
+					<li>If successful you'll get a message like this:<br />
+						<img src="../images/SQLMap/BS3.jpg" alt="SQL Map Message 3" title="SQL Map Message 3" /><br />
 					</li>
 				</ol>
 				<p>
-					If this didn't get you through you can try increasing the level, risk and/or increasing the time for time-based attacks. This test can take several hours,but the command in step 20 would be changed to something like:<br>
+					If this didn't get you through you can try increasing the level, risk and/or increasing the time for time-based attacks. This test can take several hours,but the command in step 20 would be changed to something like:<br />
 					<span class="example">
 				./sqlmap.py - r <span class="replace">[drag file from step 18]</span> --level=5 --risk=3 --time-sec=15 --banner
 					</span>
@@ -91,27 +91,27 @@
 				</p>
 				<ol>
 					<li>Enter the following: <code class="example">./mysql.py -r <span class="replace">[File saved from Burp]</span> --dbms=<span class="replace">[Db type from banner test]</span> --dbs</code></li>
-					<li>Use the Injection Points you're presented with and it should present something like this.<br>
+					<li>Use the Injection Points you're presented with and it should present something like this.<br />
 						<img src="../images/SQLMap/BS4.jpg" alt="SQL Map Message 4" title="SQL Map Message 4" />
 					</li>
-					<li>User -D to lock in a database from step 2. In my example I'm using the database named 'nowasp'. Also add --tables to the end of the line.<br>
+					<li>User -D to lock in a database from step 2. In my example I'm using the database named 'nowasp'. Also add --tables to the end of the line.<br />
 						<code class="example">./mysql.py -r <span class="replace">[FIle save from Burp]</span> --dbms=<span class="replace">[Db type from banner test]</span> -D <span class="replace">nowasp</span> --tables</code>
 					</li>
-					<li>Once again use the Injection points available until you get the available tables.<br>
+					<li>Once again use the Injection points available until you get the available tables.<br />
 						<img src="../images/SQLMap/BS5.jpg" alt="SQL Map Message 5" title="SQL Map Message 5" />
 					</li>
-					<li>Use -T to lock in a table from step 4. Also add --columns to the end of the line.<br>
+					<li>Use -T to lock in a table from step 4. Also add --columns to the end of the line.<br />
 						<code class="example">./mysql.py -r <span class="replace">[FIle save from Burp]</span> --dbms=<span class="replace">[Db type from banner test]</span> -D <span class="replace">nowasp</span> -T <span class="replace">user</span> --columns</code>
 					</li>
-					<li>Now use the injection options until you get the columns from the db.<br>
+					<li>Now use the injection options until you get the columns from the db.<br />
 						<img src="../images/SQLMap/BS6.jpg" alt="SQL Map Message 6" title="SQL Map Message 6" />
 					</li>
-					<li>From the Columns in the above table, I'm interested in 'is_admin', 'password', and 'username'. I'm going to Select all three columns with '-C', then dump the columns to me.<br>
+					<li>From the Columns in the above table, I'm interested in 'is_admin', 'password', and 'username'. I'm going to Select all three columns with '-C', then dump the columns to me.<br />
 						<code class="example">./mysql.py -r <span class="replace">[FIle save from Burp]</span> --dbms=<span class="replace">[Db type from banner test]</span> -D <span class="replace">nowasp</span> -T <span class="replace">user</span> -C <span class="replace">is_admin</span>,<span class="replace">password</span>,<span class="replace">username</span> --dump</code>
 					</li>
 					<li>
 						Don't follow the redirect if you get one. If you plan on cracking the password using another program select Yes, No at the prompts. If you want to take a shot at using SQLMap's dictionary to decrypt them select N,Y,N. You may get a warning if it has trouble
-						counting the records, you may need to give it a pivot point with a column from the database. PHP knowledge is probably necessary to get around this. But you could try the query from the video I watched (<code class="example">./mysql.py -r <span class="replace">[File save from Burp]</span> --dbms=<span class="replace">[Db type from banner test]</span> -D <span class="replace">nowasp</span> -T <span class="replace">user</span> --sql-query="<span class="replace">SELECT User,Password FROM mysql.user ORDER BY Desc</span>"</code>).<br>
+						counting the records, you may need to give it a pivot point with a column from the database. PHP knowledge is probably necessary to get around this. But you could try the query from the video I watched (<code class="example">./mysql.py -r <span class="replace">[File save from Burp]</span> --dbms=<span class="replace">[Db type from banner test]</span> -D <span class="replace">nowasp</span> -T <span class="replace">user</span> --sql-query="<span class="replace">SELECT User,Password FROM mysql.user ORDER BY Desc</span>"</code>).<br />
 						<img src="../images/SQLMap/BS7.jpg" alt="SQL Map Message 7" title="SQL Map Message 7" />
 					</li>
 					<li>If you can't decrypt the password in SQLMap you may want to try <a href="http://www.openwall.com/john/" target="_blank">John The Ripper</a>.</li>

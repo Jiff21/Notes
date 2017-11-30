@@ -54,27 +54,27 @@
 					</p>
 					<div class="example2">
 						//patterns are relative to the location of this config.
-						<br> suites: {
-							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '<span class="replace">.e2e/**/*.spec.js</span>',
-							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smoke: ['<span class="replace">.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js</span>'],
-							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '<span class="replace">.e2e/views/*.spec.js</span>',
-							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: '<span class="replace">e2e/nav/productcounter.js</span>'
-							<br> },
-						<br>
+						<br /> suites: {
+							<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;full: '<span class="replace">.e2e/**/*.spec.js</span>',
+							<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;smoke: ['<span class="replace">.e2e/views/home.spec.js', '.e2e/nav/conversionpath.spec.js', '.e2e/views/product.spec.js</span>'],
+							<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;views: '<span class="replace">.e2e/views/*.spec.js</span>',
+							<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;inProg: '<span class="replace">e2e/nav/productcounter.js</span>'
+							<br /> },
+						<br />
 					</div>
 					<p>
 						Then you can run a set of tests simple simply by adding <span class="term">--suite=<span class="replace">SuiteName</span></span> to the end of your run command in terminal (e.g. <code class="example"> protractor  <span class="replace">example/conf.js</span> --suite=smoke</code>).
-						<br> While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using,
+						<br /> While you're working on a test you probably only want to run that test, maybe you only want to run that describe block, or maybe you want to skip a test for the time being. This can be accomplished through the testing framework you're using,
 						but be careful because they're easy to miss if you forget to remove them.
 					</p>
 					<p> There's a new option to exclude test for specific capability with build 1.40. You can now set multibrowser capabilities like this:</p>
 					<div class="example2">
 						multiCapabilities: [{
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'browserName': 'chrome',
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include: 'spec/unit/data/fakespecA.js'
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude: 'spec/unit/data/fakespecB.js'
-						<br> }]
-						<br>
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'browserName': 'chrome',
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;include: 'spec/unit/data/fakespecA.js'
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exclude: 'spec/unit/data/fakespecB.js'
+						<br /> }]
+						<br />
 					</div>
 					<table>
 						<caption>Single Test or Block by Language</caption>
@@ -114,7 +114,7 @@
 					<h3>Tips</h3>
 					<h4>Send Keys</h4>
 					<p>
-						A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br> Sending letters and numbers works simple by using:
+						A list of Unicode Send Keys available to Selenium can be found <a href="http://selenium.googlecode.com/svn/trunk/docs/api/java/org/openqa/selenium/Keys.html">here</a>.<br /> Sending letters and numbers works simple by using:
 						<div class="example2">element(by.name('<span class="replace">name</span>')).sendKeys('<span class="replace">Example</span>');</div>
 						<p>Recently they fixed in issue and this should work for sending unicode keys.</p>
 						<div class="example2 example-overscroll">element(by.name('<span class="replace">name</span>')).sendKeys(protractor.Key.<span class="replace">TAB</span>)</div>
@@ -135,19 +135,19 @@
 							to start your testing from.</p>
 						<div class="example2">
 							onPrepare: function() {
-							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSi&shy;ze(
+							<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setSi&shy;ze(
 							<span class="replace">1500</span>,<span class="replace">1000</span>);
-							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPo&shy;sition(
+							<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;browser.manage().window().setPo&shy;sition(
 							<span class="replace">0</span>,<span class="replace">0</span>);
-							<br> },
-							<br>
+							<br /> },
+							<br />
 						</div>
 						<p>Similar commands can be run before and after each test with <code class="example">beforeEach</code> &amp; <code class="example">afterEach</code>. On 1.40 they added <code class="example">beforeLaunch</code> &amp; <code class="example">afterLaunch</code>							which can be used to setup/close test dependencies, but beware this runs before global variable 'protractor' object is setup.</p>
 						<h4>$</h4>
 						<p>
-							<code class="example">$</code> means <code class="example">element(by.Css</code><br>
+							<code class="example">$</code> means <code class="example">element(by.Css</code><br />
 							<code class="example">$$</code> means <code class="example">element.all(by.Css</code>
-							<br> It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time. Sometimes
+							<br /> It's important to remember that element is just grabbing the first thing it encounters and will only warn you to be more specific some of the time. Sometimes
 							it's better to just use element.all then see what ends up in the array.
 						</p>
 						<h4>Selenium Workarounds</h4>
@@ -155,7 +155,7 @@
 						<p>There is no easy command for scrolling but you can accomplish it with:</p>
 						<div class="example2 example-overscroll">
 							browser.executeScript('window.scrollTo(0,2000);').then(function () { &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<span class="replace">code to run here</span><br> });
+							<span class="replace">code to run here</span><br /> });
 						</div>
 						<h5>Local Storage</h5>
 						<p>When using local storage you also need to use browser.executeScript. Remember that you parse data when reading and stringify when writing. In Protractor, when writing to local storage inside executeScript you need to use arguments(). If you don&39;t
@@ -166,7 +166,7 @@
 						</div>
 						<h6>Write to local storage with a json file</h6>
 						<div class="example2 example-overscroll">
-							var <span class="replace">productData</span> = require(&#39;./<span class="replace">stubbedjson/filename</span>.json&#39;);<br> browser.executeScript(&#39;localStorage.setItem("
+							var <span class="replace">productData</span> = require(&#39;./<span class="replace">stubbedjson/filename</span>.json&#39;);<br /> browser.executeScript(&#39;localStorage.setItem("
 							<span class="replace">ngStorage-file-name-en_us</span>", arguments[0]);&#39;, JSON.stringify(<span class="replace">productData</span>));
 						</div>
 						<h6>Delete a specific file in local storage</h6>
@@ -175,25 +175,25 @@
 						</div>
 						<h6>Upload a file</h6>
 						<div class="example2 example-overscroll">
-							var uploadInput = element(by.css("input[type=file]"));<br> uploadInput.sendKeys("path/to/file");
+							var uploadInput = element(by.css("input[type=file]"));<br /> uploadInput.sendKeys("path/to/file");
 						</div>
 						<h4>Managing Expectations</h4>
 						<p>
-							Some good thing to check examples:<br>
-							<code class="example">expect(<span class="replace">elName</span>.isPr&shy;esent()).toBeTruthy();</code><br> Or:
+							Some good thing to check examples:<br />
+							<code class="example">expect(<span class="replace">elName</span>.isPr&shy;esent()).toBeTruthy();</code><br /> Or:
 						</p>
 						<div class="example2">
-							<span class="replace">prodNum.get(7).$('img')</span>.isDis&shy;played().then(function(val) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();
-							<br> })
+							<span class="replace">prodNum.get(7).$('img')</span>.isDis&shy;played().then(function(val) {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();
+							<br /> })
 						</div>
 						<p>Or:
-							<code class="example">expect(<span class="replace">myButton</span>.isEn&shy;abled()).toBeFalsy();</code><br>
+							<code class="example">expect(<span class="replace">myButton</span>.isEn&shy;abled()).toBeFalsy();</code><br />
 						</p>
 						<p>Or:</p>
 						<div class="example2">
-							<span class="replace">mainImage</span>.get(size).then(function(val) {<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val.width).toEqual(16);
-							<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val.height).toEqual(9);
-							<br> })
+							<span class="replace">mainImage</span>.get(size).then(function(val) {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val.width).toEqual(16);
+							<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val.height).toEqual(9);
+							<br /> })
 						</div>
 
 						<h4>Ignore Syncronization</h4>
@@ -216,10 +216,10 @@
 					<li><code class="example">$</code> means <code class="example">element(by.Css</code></li>
 					<li><code class="example">$$</code> means <code class="example">element.all(by.Css</code></li>
 					<li><code class="example">element(by.className('')</code></li>
-					<li><code class="example">element(by.cssContaining<br>
+					<li><code class="example">element(by.cssContaining<br />
 					Text('<span class="replace">css</span>', '<span class="replace">text</span>')</code></li>
 					<li><code class="example">element(by.className('')</code></li>
-					<li><code class="example">element(by.name('')</code><br> &nbsp;&nbsp;&nbsp;&nbsp;Element Name</li>
+					<li><code class="example">element(by.name('')</code><br /> &nbsp;&nbsp;&nbsp;&nbsp;Element Name</li>
 					<li><code class="example">element(by.id('')</code></li>
 					<li><code class="example">element(by.partialLinkText('')</code></li>
 					<li><code class="example">element(by.binding('')</code></li>
@@ -227,8 +227,8 @@
 				</ul>
 				<h6>Send Keys</h6>
 				<ul>
-					<li>Should be: <br>
-						<code class="example">element(by.name('name'))<br>
+					<li>Should be: <br />
+						<code class="example">element(by.name('name'))<br />
 					.sendKeys(protractor.Key.<span class="replace">TAB</span>)</code></li>
 				</ul>
 				<h6>Browser</h6>
@@ -238,16 +238,16 @@
 					<li><code class="example">browser.getCurrentUrl()</code></li>
 					<li><code class="example">browser.sleep(<span class="replace">#</span>)</code></li>
 					<li><code class="example">browser.pause(<span class="replace">#</span>)</code></li>
-					<li><code class="example">browser.manage()<br>
+					<li><code class="example">browser.manage()<br />
 					.window().setSize(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
-					<li><code class="example">browser.manage().window()<br>
+					<li><code class="example">browser.manage().window()<br />
 					.setPosition(<span class="replace">1500</span>, <span class="replace">1000</span>);</code></li>
-					<li><code class="example">browser.manage()<br>
+					<li><code class="example">browser.manage()<br />
 					.getCookie('<span class="replace">_ga</span>')</code> (promise)</li>
-					<li><code class="example">browser.manage()<br>
-					.addCookie('<span class="replace">name</span>','<span class="replace">value</span>',<br>
+					<li><code class="example">browser.manage()<br />
+					.addCookie('<span class="replace">name</span>','<span class="replace">value</span>',<br />
 					'<span class="replace">path</span>','<span class="replace">domain</span>')</code></li>
-					<li><code class="example">browser.driver.navigate()<br>
+					<li><code class="example">browser.driver.navigate()<br />
 					.forward()</code> (promise)</li>
 					<li><code class="example">browser.refresh();</code></li>
 				</ul>
@@ -260,7 +260,7 @@
 					<li><code class="example"><span class="replace">elName</span>.getAttribute('<span class="replace">value</span>')</code></li>
 					<li><code class="example"><span class="replace">elName</span>.isDisplayed()</code> (promise)</li>
 					<li><code class="example"><span class="replace">elName</span>.isPresent()</code></li>
-					<li><code class="example"><span class="replace">elName</span>.getLocation()</code><br>relative to left corner of screen</li>
+					<li><code class="example"><span class="replace">elName</span>.getLocation()</code><br />relative to left corner of screen</li>
 				</ul>
 				<h6>Matchers</h6>
 				<ul>

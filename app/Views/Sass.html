@@ -50,42 +50,42 @@
 					</p>
 					<div class="example2">
 						$myString ="This will end up after the paragraph."
-						<br> #iDParag:after {
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;content: $myString;
-						<br> }
+						<br /> #iDParag:after {
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;content: $myString;
+						<br /> }
 					</div>
 					<p>
 						Here's a sample of a <span class="term">mixin</span> in use:
 					</p>
 					<div class="example2">
 						// Default values below are optional
-						<br> @mixin customBorder($width: 2px, $color: black, $style: solid) {
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;border: {
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: $width;
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: $color;
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style: $style;
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;}
-						<br> }
-						<br> header {<br> &nbsp;&nbsp;&nbsp;&nbsp;@include customBorder(3px, blue, dotted)<br> }
-						<br>
+						<br /> @mixin customBorder($width: 2px, $color: black, $style: solid) {
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;border: {
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width: $width;
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;color: $color;
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;style: $style;
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;}
+						<br /> }
+						<br /> header {<br /> &nbsp;&nbsp;&nbsp;&nbsp;@include customBorder(3px, blue, dotted)<br /> }
+						<br />
 					</div>
 					<p>
 						When nesting a style that would use a colon use an ampersand, e.g. <code class="example">&amp;:hover</code>. You can also do math with SASS, so you could simply do something like <code class="example">border: ($myBorder +10)/2;</code>. You can also
-						add colors together and use functions on them, e.g. <code class="example">background-color: grayscale(invert(<span class="replace">$color 1 + $color2</span>);</code>. The cool thing that Sass has that less doesn't yet is an if operator. <br>
+						add colors together and use functions on them, e.g. <code class="example">background-color: grayscale(invert(<span class="replace">$color 1 + $color2</span>);</code>. The cool thing that Sass has that less doesn't yet is an if operator. <br />
 					</p>
 					<div class="example2">
-						$gender: girl;<br> $myColor: if($gender=="boy", #00f, #f00);
+						$gender: girl;<br /> $myColor: if($gender=="boy", #00f, #f00);
 					</div>
 					<p> If you have Bootstrap for Sass installed you can apply bootsrap to page elements through it.</p>
 					<div class="example2">
 						article{
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;@include make-row();
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;.main {
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-xs-column(12);
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-sm-column(8);
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-md-column(8);
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;}
-						<br> }
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;@include make-row();
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;.main {
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-xs-column(12);
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-sm-column(8);
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@include make-md-column(8);
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;}
+						<br /> }
 					</div>
 					<p>For reference, <a href="http://ruby.bvision.com/blog/please-stop-embedding-bootstrap-classes-in-your-html" target="_blank">this</a> is why I'm applying bootstrap via Sass.</p>
 				</div>
@@ -96,20 +96,20 @@
 						also use they keyword <code class="example">@arguments</code> to simply use parameters in the order they are passed in. Here's a sample of a mixin with <span class="term">pattern matching</span>:
 					</p>
 					<div class="example2">
-						.alert(warning){<br> &nbsp;&nbsp;&nbsp;&nbsp;@color: yellow;<br> }
-						<br> .alert(error){
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;@color: red<br> &nbsp;&nbsp;&nbsp;&nbsp;border: 2px;<br> }
-						<br> /* Always be applied styles, if you need it to get double val use (@_,@_) */ <br> .alert(@.){
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;<br> }
-						<br> // Setting the current type.<br> @type: error;<br> #iDForm {<br> &nbsp;&nbsp;&nbsp;&nbsp;.alert(@type);
-						<br> }
+						.alert(warning){<br /> &nbsp;&nbsp;&nbsp;&nbsp;@color: yellow;<br /> }
+						<br /> .alert(error){
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;@color: red<br /> &nbsp;&nbsp;&nbsp;&nbsp;border: 2px;<br /> }
+						<br /> /* Always be applied styles, if you need it to get double val use (@_,@_) */ <br /> .alert(@.){
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;padding: 10px;<br /> }
+						<br /> // Setting the current type.<br /> @type: error;<br /> #iDForm {<br /> &nbsp;&nbsp;&nbsp;&nbsp;.alert(@type);
+						<br /> }
 					</div>
 					<p>
 						There are also <span class="term">Gaurded Mixins</span> that allow you to use the word <code class="example">when</code> to apply the style if it meets a condition. This looks like,
 					</p>
 					<div class="example2">
-						.@3dText(@color) when lightness(@color) >= 50% {<br> &nbsp;&nbsp;&nbsp;&nbsp;color: @color;<br> &nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 1px 1px 0px lighten(@color, 5%),<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2px, 2px, 0px, lighten(@color,
-						10%),<br> }
+						.@3dText(@color) when lightness(@color) >= 50% {<br /> &nbsp;&nbsp;&nbsp;&nbsp;color: @color;<br /> &nbsp;&nbsp;&nbsp;&nbsp;text-shadow: 1px 1px 0px lighten(@color, 5%),<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2px, 2px, 0px, lighten(@color,
+						10%),<br /> }
 					</div>
 					<p>
 						Like Sass, Less lets you use nested rules and they work the same, including the &amp; for sudo classes. <span class="term">Operators</span>, which just means you can do math the same way you do in Sass. You can import a stylesheet with <code class="example">@import "<span class="replace">import_me</span>.less"</code>.
@@ -117,14 +117,14 @@
 					<p> If you're using SASS, here's what you need to do to apply bootstrap</p>
 					<div class="example2">
 						.article {
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;.makeRow(); // Mixin provided by Bootstrap
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;.main-section {
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.makeColumn(10); // Mixin provided by Bootstrap
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;}
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;.aside {
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.makeColumn(2); // Mixin provided by Bootstrap
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;}
-						<br> }
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;.makeRow(); // Mixin provided by Bootstrap
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;.main-section {
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.makeColumn(10); // Mixin provided by Bootstrap
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;}
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;.aside {
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.makeColumn(2); // Mixin provided by Bootstrap
+						<br /> &nbsp;&nbsp;&nbsp;&nbsp;}
+						<br /> }
 					</div>
 				</div>
 			</div>

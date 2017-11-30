@@ -45,11 +45,11 @@
 					<p>Create a directory and place <a href="https://developers.google.com/actions/tools/gactions-cli" target="_blank">gactions</a> file in it. CD into it and run:</p>
 					<div class="example2">
 						chmod +x gactions
-						<br> mkdir new_project &amp;&amp; cd new_project 
-						<br> gactions init
-						<br> git add README.md
-						<br> npm install express body-parser actions-on-google --save
-						<br> touch app.js
+						<br /> mkdir new_project &amp;&amp; cd new_project 
+						<br /> gactions init
+						<br /> git add README.md
+						<br /> npm install express body-parser actions-on-google --save
+						<br /> touch app.js
 					</div>
 					<p>Full <a href="https://developers.google.com/actions/develop/sdk/getting-started" target="_blank">instructions</a>. Look into <span class="example2">npm i actions-on-google --save-dev</span> install</p>
 				</div>
@@ -70,20 +70,20 @@
 					<p><a href="https://developers.google.com/actions/tools/ngrok" target="_blank">NGrok</a> is useful for quickly debugging:</p>
 					<div class="example2">
 					  brew cask install ngrok
-					  <br>ngrok http <span class="replace">8080</span>
+					  <br />ngrok http <span class="replace">8080</span>
 					</div>
 					<p>Use the http://<span class="replace">90b5d2f2</span>.ngrok.io address as your api endpoint in the <span class="replace">action</span>.json file> Then you should be able to run with: </p>
 					<div class="example2">gactions preview --action_package <span class="replace">mypackage.json</span> --preview_mins <span class="replace">
 					666</span> --invocation_name "<span class="replace">Example Name</span>"
-					<br>./gactions simulate
-					<br> talk to <span class="replace">Example Name</span>
+					<br />./gactions simulate
+					<br /> talk to <span class="replace">Example Name</span>
 					</div>
 					<p>You can monitor ngrok connection at <a href="http://localhost:4040" target="_blank">http://localhost:4040</a></p>
 					<h3>Setting up Cloud functions</h3>
 					<p></p>
 					<div class="example2">
 						gcloud init
-						<br>gcloud config set project <span class="replace">projectid-###</span>
+						<br />gcloud config set project <span class="replace">projectid-###</span>
 					</div>
 					<p>Locally you can run this where function_name = exports.functionName = (request, response) => { ...</p>
 					<div class="example2">

@@ -48,71 +48,71 @@
 				Here's a basic example of a setter and getter module in a file called flight.js.
 			</p>
 			<div class="example2">
-				var number, origin, desination;<br>
-				<br> exports.setNumber = function &#40;num&#41; &#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number = num;
-				<br> &#125;
-				<br> exports.setOrigin = function &#40;o&#41; &#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orgin = o;
-				<br> &#125;
-				<br> exports.setDestination = function &#40;d&#41; &#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination = d;
-				<br> &#125;
-				<br> exports.getInfo = function &#40;&#41; &#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: number,
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: origin,
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: destination
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
-				<br> &#125;
-				<br>
+				var number, origin, desination;<br />
+				<br /> exports.setNumber = function &#40;num&#41; &#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number = num;
+				<br /> &#125;
+				<br /> exports.setOrigin = function &#40;o&#41; &#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;orgin = o;
+				<br /> &#125;
+				<br /> exports.setDestination = function &#40;d&#41; &#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination = d;
+				<br /> &#125;
+				<br /> exports.getInfo = function &#40;&#41; &#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: number,
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: origin,
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: destination
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br /> &#125;
+				<br />
 			</div>
 			<p>You could then load the module in a seperate file.</p>
 			<div class="example2">
 				var flight = require&#40;'./flight.js'&#41;;
-				<br><br> flight.setOrigin&#40;'LAX'&#41;;
-				<br> flight.setDestination&#40;'SFO'&#41;;
-				<br> flight.setNumber&#40;'134'&#41;;
-				<br><br> console.log&#40;flight.getInfo&#40;&#41;&#41;;
-				<br>
+				<br /><br /> flight.setOrigin&#40;'LAX'&#41;;
+				<br /> flight.setDestination&#40;'SFO'&#41;;
+				<br /> flight.setNumber&#40;'134'&#41;;
+				<br /><br /> console.log&#40;flight.getInfo&#40;&#41;&#41;;
+				<br />
 			</div>
 			<p>But this would get you introule because module results get cached. And the Vars are being set outside the function. Here is a better way to write that module.</p>
 			<div class="example2">
 				var Flight = function &#40;info&#41; &#123;
-				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data = &#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: null,
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: null,
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: null,
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;departs: null,
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrives: null,
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualDepart: null,
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualArrive: null
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
-				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.fill = function &#40;info&#41;&#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&#40;var prop in this.data&#41; &#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&#40;this.data[prop]
+				<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data = &#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;number: null,
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;origin: null,
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;destination: null,
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;departs: null,
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arrives: null,
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualDepart: null,
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;actualArrive: null
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.fill = function &#40;info&#41;&#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&#40;var prop in this.data&#41; &#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&#40;this.data[prop]
 				!== 'undefined'&#41; &#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data[prop] = info[prop];
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;
-				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerDepart: function &#40;&#41; &#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualDepart = Date.now&#40;&#41;;
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerArrive: function &#40;&#41; &#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualArrive = Date.now&#40;&#41;;
-				<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.getInformation: function &#40;&#41; &#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return values;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
-				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Optionally create factory depending on setup.
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module.exports = function&#40;info&#41;&#123;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var instance = new
-				Flight&#40;&#41;;<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.fill&#40;info&#41;;
-				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return instance;
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
-				<br> &#125;;
-				<br>
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data[prop] = info[prop];
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;
+				<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerDepart: function &#40;&#41; &#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualDepart = Date.now&#40;&#41;;
+				<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.triggerArrive: function &#40;&#41; &#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.actualArrive = Date.now&#40;&#41;;
+				<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.data.getInformation: function &#40;&#41; &#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return values;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//Optionally create factory depending on setup.
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;module.exports = function&#40;info&#41;&#123;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var instance = new
+				Flight&#40;&#41;;<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;instance.fill&#40;info&#41;;
+				<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return instance;
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#125;;
+				<br /> &#125;;
+				<br />
 			</div>
 
 
@@ -128,31 +128,31 @@
 			<p><span class="term">Supertest</span> is a testing tool that lets you mimic http request that allows you to write tests not bound to a port and chain requests, in this version we used it in conjunction with <span class="term">should</span> and a globally
 				installed instance of the <span class="term">Mocha</span> framwork. Here's an example of a test spec that takes an instance of the app built in helpers that uses spec'd data and runs a test using supertest.</p>
 			<div class="example2 example-overscroll">
-				var app = require('./helpers/app'),<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;should = require('should'),
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#;supertest = require('supertest');
-				<br><br> describe('flights', function () {
-				<br><br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it('should
+				var app = require('./helpers/app'),<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;should = require('should'),
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#;supertest = require('supertest');
+				<br /><br /> describe('flights', function () {
+				<br /><br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;it('should
 				mark a flight as arrived', function (done) {
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;supertest(app)
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.put('/flight/18/arrived')
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.expect(200)
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end(function(err,res){
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status.should.equal(200);
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.body.status.should.equal('done');
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;supertest(app)
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;supertest(app)
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.put('/flight/18/arrived')
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.expect(200)
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end(function(err,res){
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status.should.equal(200);
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.body.status.should.equal('done');
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;supertest(app)
 
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.get('/flight/18')
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.expect(200)
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end(function(err,res){
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status.should.equal(200);
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.body.actualArrive
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.should.not.equal(undefined);
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;done();
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.get('/flight/18')
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.expect(200)
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.end(function(err,res){
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.status.should.equal(200);
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.body.actualArrive
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.should.not.equal(undefined);
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;done();
 
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
-				<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
-				<br> });
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+				<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});
+				<br /> });
 			</div>
 			<p>Their suggestions for unit testing, with my opinion infused.</p>
 			<ul>

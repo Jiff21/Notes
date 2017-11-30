@@ -140,16 +140,16 @@
 					<p>Ou first example of importing a module is from <span class="term">sys</span>. As you know, at the top of the file you would import the module</p>
 					<div class="example2">
 						from sys import argv
-						<br><br> script, first, second = argv
+						<br/><br/> script, first, second = argv
 						<span class="two-seven">
-						<br><br> print "The script is called:", script
-						<br> print "You like:", first
-						<br> print "You hate", second
+						<br/><br/> print "The script is called:", script
+						<br/> print "You like:", first
+						<br/> print "You hate", second
 						</span>
 						<span class="three-six hidden">
-						<br><br> print ('The script is called:' , script)
-						<br> print ('You like:', first )
-						<br> print ('You hate', second)
+						<br/><br/> print ('The script is called:' , script)
+						<br/> print ('You like:', first )
+						<br/> print ('You hate', second)
 						</span>
 					</div>
 					<p>On the 2nd lind of we unpack the arguments, then use them later. In terminal, this could be run with <span class="example">python filename.py dogs cats</span>. Remember command line arguments like raw_input come in as strings, you need to convert
@@ -161,43 +161,42 @@
 					<p>"instantiate" is overly smart way to say "create." When you instantiate a class what you get is called an object. Notice you use self on variables in the class methods. </p>
 					<div class="example2 two-seven">
 						class Thing(object):
-						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n):
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name = n
-						<br><br><span class="comment">## This class inherits name from Thing, <a href="https://docs.python.org/2/library/functions.html#super" target="_blank">super</a> used because of <a href="http://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods" target="_blank">this</a>.</span>
-						<br>class ClassyStuff(Thing):
-						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n='Dee Default', a=18):
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(ClassyStuff, self).__init__(n)
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.optional = None
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.age = a
-						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def message(self):
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print
+						<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n):
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name = n
+						<br/><br/><span class="comment">## This class inherits name from Thing, <a href="https://docs.python.org/2/library/functions.html#super" target="_blank">super</a> used because of <a href="http://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods" target="_blank">this</a>.</span>
+						<br/>class ClassyStuff(Thing):
+						<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n='Dee Default', a=18):
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(ClassyStuff, self).__init__(n)
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.optional = None
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.age = a
+						<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;def message(self):
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print
 						"I AM CLASSY %s!" % self.name
-						</span>
-						<br><br>
+						<br/><br/>
 						<span class="comment">## Then Instantiate a new object!
-							<br></span> thing = ClassyStuff("apple")<br> thing.message()
-						<br> print thing.name
-						<br> thing.optional = "seeds"
+							<br/></span> thing = ClassyStuff("apple")<br/> thing.message()
+						<br/> print thing.name
+						<br/> thing.optional = "seeds"
 					</div>
 					<div class="example2 three-six hidden">
 						class TypeOfThing(object):
-						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n):
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name = n
-						<br><br><span class="comment">## This class inherits name from Thing, <a href="https://docs.python.org/2/library/functions.html#super" target="_blank">super</a> used because of <a href="http://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods" target="_blank">this</a>.</span>
-						<br>class ClassyStuff(Thing):
-						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n='Dee Default', a=18):
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(ClassyStuff, self).__init__(n)
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.optional = None
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.age = a
-						<br><br> &nbsp;&nbsp;&nbsp;&nbsp;def message(self):
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(
+						<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n):
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.name = n
+						<br/><br/><span class="comment">## This class inherits name from Thing, <a href="https://docs.python.org/2/library/functions.html#super" target="_blank">super</a> used because of <a href="http://stackoverflow.com/questions/576169/understanding-python-super-with-init-methods" target="_blank">this</a>.</span>
+						<br/>class ClassyStuff(Thing):
+						<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;def __init__(self, n='Dee Default', a=18):
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;super(ClassyStuff, self).__init__(n)
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.optional = None
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.age = a
+						<br/><br/> &nbsp;&nbsp;&nbsp;&nbsp;def message(self):
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(
 						'I AM CLASSY %s!' % self.name)
-						<br><br>
+						<br/><br/>
 						<span class="comment">## Then Instantiate a new object!</span>
-						<br>thing = ClassyStuff('apple')
-						<br> thing.message()
-						<br> print (thing.name)
-						<br> thing.optional = "seeds"
+						<br/>thing = ClassyStuff('apple')
+						<br/> thing.message()
+						<br/> print (thing.name)
+						<br/> thing.optional = "seeds"
 					</div>
 				</div>
 			</div>
@@ -208,22 +207,22 @@
 				<p>Here is an example of a Method, they're like funtions. You define method with <span class="term">def</span> in front of it. Do not name functions that start with a number.</p>
 				<div class="example2">
 					def get_my_opinion(arg1, arg2):
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;op1 = "I like " + arg1
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;op2 = "I do not like " + arg2
-					<br> &nbsp;&nbsp;&nbsp;&nbsp;return op1, op2
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;op1 = "I like " + arg1
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;op2 = "I do not like " + arg2
+					<br/> &nbsp;&nbsp;&nbsp;&nbsp;return op1, op2
 				</div>
 				<p>You would use the function above like so.</p>
 				<div class="example2">
 					dog_opinion, cat_opinion = get_my_opinion('dogs', 'cats')
 					<span class="two-seven">
-					<br> print dog_opinion
-					<br> ## You can also do this:
-					<br> print "%s, but %s." % get_my_opinion('cats', dogs)
+					<br/> print dog_opinion
+					<br/> ## You can also do this:
+					<br/> print "%s, but %s." % get_my_opinion('cats', dogs)
 					</span>
 					<span class="three-six hidden">
-					<br> print (dog_opinion)
-					<br> ## You can also do this:
-					<br> print ('%s, but %s.' % get_my_opinion('cats', dogs))
+					<br/> print (dog_opinion)
+					<br/> ## You can also do this:
+					<br/> print ('%s, but %s.' % get_my_opinion('cats', dogs))
 					</span>
 				</div>
 			</div>
@@ -236,16 +235,16 @@
 				<div class="fourth skin rtlist">
 					<div class="example2">
 						mammals = {
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;'dogs':'good',
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;'cats':'bad'
-						<br> }
-						<br><br> mammals['platypus'] = 'awesome'
-						<br> for key in mammals:
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;'dogs':'good',
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;'cats':'bad'
+						<br/> }
+						<br/><br/> mammals['platypus'] = 'awesome'
+						<br/> for key in mammals:
 						<span class="two-seven">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print key + " and it's value is " + mammals[key]
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print key + " and it's value is " + mammals[key]
 						</span>
 						<span class="three-six hidden">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print ('The Key is %s and they\'re %s, which is also its value' % (key, mammals[key]))
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print ('The Key is %s and they\'re %s, which is also its value' % (key, mammals[key]))
 						</span>
 					</div>
 					<p>If you need an ordered dict, check out <a href="https://docs.python.org/2/library/collections.html#collections.OrderedDict">collections.OrderedDict</a>. You can also nest dictionaries inside eachother, when you do this you access values like <span class="example">animals['mammals']['dogs']</span>.</p>
@@ -259,21 +258,21 @@
 				<div class="fourth skin rtlist">
 					<div class="example2">
 						example_array = [
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;'dopie',
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;'sleepy'
-						<br> ]
-						<br><br> example_array.append('doc')
-						<br> for value in example_array:
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;'dopie',
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;'sleepy'
+						<br/> ]
+						<br/><br/> example_array.append('doc')
+						<br/> for value in example_array:
 						<span class="two-seven">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print value
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print value
 						</span>
 						<span class="three-six hidden">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print(value)
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print(value)
 						</span>
-						<br><br> i_like_dopie = example_array[0]
-						<br> example_array.insert(2, 'napoleon')
-						<br> example_array.remove('napoleon')
-						<br> i_like_doc = example_array.pop(example_array.index('doc'))
+						<br/><br/> i_like_dopie = example_array[0]
+						<br/> example_array.insert(2, 'napoleon')
+						<br/> example_array.remove('napoleon')
+						<br/> i_like_doc = example_array.pop(example_array.index('doc'))
 					</div>
 				</div>
 			</div>
@@ -285,7 +284,7 @@
 				<div class="fourth skin rtlist">
 					<div class="example2">
 						mammals = ('dogs', 'cats', 'platypus')
-						<br>good_animal = mammals['dogs']
+						<br/>good_animal = mammals['dogs']
 					</div>
 					<p>Tuple's are like lists but immutable. What you can do is limited with tuples but you can splice, index, and count them.</p>
 				</div>
@@ -305,9 +304,11 @@
 				</div>
 				<div class="fourth no-skin rtlist">
 				<p>Order of precedence is not, and, or.</p>
-					<li><span class="term">not</span> not True is false </li>
-					<li><span class="term">and</span> True and False is False</li>
-					<li><span class="term">or</span> or <span class="term">|</span> True or False is True</li>
+					<ul>
+						<li><span class="term">not</span> not True is false </li>
+						<li><span class="term">and</span> True and False is False</li>
+						<li><span class="term">or</span> or <span class="term">|</span> True or False is True</li>
+					</ul>
 				</div>
 				<div class="fourth no-skin rts">
 					<div class="verticalAlign">
@@ -316,41 +317,43 @@
 					</div>
 				</div>
 				<div class="fourth no-skin rtlist">
-					<li><span class="term">==</span> Equals</li>
-					<li><span class="term">!=</span> Not Equals</li>
-					<li><span class="term">&lt;</span> Less Than</li>
-					<li><span class="term">>=</span> Greater to or Equal</li>
-					<li><span class="term">is</span> Is the same object</li>
-					<li><span class="term">in</span> In the container (list, tuples, sets, or dict Keys). Also checks string sub-strings, so bool('example' in 'https://example.com') is True</li>
+					<ul>
+						<li><span class="term">==</span> Equals</li>
+						<li><span class="term">!=</span> Not Equals</li>
+						<li><span class="term">&lt;</span> Less Than</li>
+						<li><span class="term">>=</span> Greater to or Equal</li>
+						<li><span class="term">is</span> Is the same object</li>
+						<li><span class="term">in</span> In the container (list, tuples, sets, or dict Keys). Also checks string sub-strings, so bool('example' in 'https://example.com') is True</li>
+					</ul>
 				</div>
 			</div>
 
 			<div class="full skin spacer">
 				<div class="fourth skin rts">
-					<h3>Conditionals <br>(If, Elif, Else)</h3>
+					<h3>Conditionals <br/>(If, Elif, Else)</h3>
 				</div>
 				<div class="fourth no-skin rtlist">
 					<div class="example2">
 						if animal == dog:
 						<span class="two-seven">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "Who's a good dog."
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print "Who's a good dog."
 						</span>
 						<span class="three-six hidden">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print (Who\'s a good dog.)
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print (Who\'s a good dog.)
 						</span>
-						<br> elif animal == cat:
+						<br/> elif animal == cat:
 						<span class="two-seven">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print  "No cats are good."
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print  "No cats are good."
 						</span>
 						<span class="three-six hidden">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print (No cats are good.)
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print (No cats are good.)
 						</span>
-						<br> else:
+						<br/> else:
 						<span class="two-seven">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "Are you a platypus?"
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print "Are you a platypus?"
 						</span>
 						<span class="three-six hidden">
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print ('Are you a platypus?')
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print ('Are you a platypus?')
 						</span>
 					</div>
 				</div>
@@ -362,19 +365,19 @@
 				<div class="fourth skin rtlist">
 					<div class="example2 two-seven">
 						numbers = range(1,6)
-						<br> for n in numbers:
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % n
-						<br><br> while i &lt; 6:
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % i
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;i += 1
+						<br/> for n in numbers:
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % n
+						<br/><br/> while i &lt; 6:
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print "At %d" % i
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;i += 1
 					</div>
 					<div class="example2 three-six hidden">
 						numbers = range(1,6)
-						<br> for n in numbers:
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print ('At %d' % n)
-						<br><br> while i &lt; 6:
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;print ('At %d' % i)
-						<br> &nbsp;&nbsp;&nbsp;&nbsp;i += 1
+						<br/> for n in numbers:
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print ('At %d' % n)
+						<br/><br/> while i &lt; 6:
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;print ('At %d' % i)
+						<br/> &nbsp;&nbsp;&nbsp;&nbsp;i += 1
 					</div>
 				</div>
 			</div>
@@ -405,47 +408,46 @@
 					<div class="full skin">
 						<table>
 							<colgroup>
-								<col width="12%">
-								<col width="54%">
-								<col width="34%">
+								<col>
+								<col>
 							</colgroup>
-							<thead valign="bottom">
+							<thead>
 								<tr>
 									<th class="head">Type</th>
 									<th class="head">Description</th>
 								</tr>
 							</thead>
-							<tbody valign="top">
+							<tbody>
 								<tr>
-									<td><tt>True</tt></td>
+									<td>True</td>
 									<td>True boolean value.</td>
 								</tr>
 								<tr>
-									<td><tt>False</tt></td>
+									<td>False</td>
 									<td>False boolean value.</td>
 								</tr>
 								<tr>
-									<td><tt>None</tt></td>
+									<td>None</td>
 									<td>Represents "nothing" or "no value".</td>
 								</tr>
 								<tr>
-									<td><tt>strings</tt></td>
+									<td>strings</td>
 									<td>Stores textual information.</td>
 								</tr>
 								<tr>
-									<td><tt>numbers</tt></td>
+									<td>numbers</td>
 									<td>Stores integers.</td>
 								</tr>
 								<tr>
-									<td><tt>floats</tt></td>
+									<td>floats</td>
 									<td>Stores decimals.</td>
 								</tr>
 								<tr>
-									<td><tt>lists</tt></td>
+									<td>lists</td>
 									<td>Stores a list of things.</td>
 								</tr>
 								<tr>
-									<td><tt>dicts</tt></td>
+									<td>dicts</td>
 									<td>Stores a key=value mapping of things.</td>
 								</tr>
 							</tbody>

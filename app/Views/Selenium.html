@@ -151,7 +151,7 @@
 					<h6>Check page source</h6>
 					<div class="example2">
 						try: assert "<span class="replace">No posts were found...</span>" not in driver.page_source
-						<b/> except AssertionError, e: self.verificationErrors.append("<span class="replace">No Posts incorrectly appeared.</span>")
+						<br/> except AssertionError, e: self.verificationErrors.append("<span class="replace">No Posts incorrectly appeared.</span>")
 					</div>
 					<h6>Partial Text Contains</h6>
 					<div class="example2">
@@ -329,7 +329,7 @@
 				<div class="full">
 					<p>Behave is a BDD Framework. Please see <a href="https://github.com/Jiff21/qa/tree/master/e2e" target="_blank">qa project</a> for setup.</p>
 				</div>
-			<div>
+			</div>
 
 
 			<div id="sgrid" class="hidden">
@@ -337,7 +337,7 @@
 					<h2>Selenium Grid Python Tests</h2>
 					<p>This is a setup where the browsers can be configured in the globes.py file and multiple browsers can be tested at the same time using selenium grid.</p>
 					<h3>Install</h3>
-					<div span class="example2">
+					<div class="example2">
 						sudo npm install selenium-standalone@latest -get
 						<br/> sudo selenium-standalone install
 						<br/> pip install nose
@@ -525,34 +525,34 @@
 			<div id="nosetest" class="hidden">
 				<div class="full">
 					<p>An Easy Test Runner is Nose, you can add it with:</p>
-					<div span class="example2">
+					<div class="example2">
 						pip install nose
 					</div>
 					<p>It will automatically find tests off file naming in the directory you are in and run them with the command:</p>
-					<div span class="example2">
+					<div class="example2">
 						nosetests
 					</div>
 					<p>You can run multiple tests at the same time with:</p>
-					<div span class="example2">
+					<div class="example2">
 						nosetests --processes=13
 					</div>
 					<p>If you get timeout exceptions try adding:</p>
-					<div span class="example2">
+					<div class="example2">
 						--process-timeout=3600
 					</div>
 					<p>You can also run a specific test with a comma separated list:</p>
-					<div span class="example2">
+					<div class="example2">
 						nosetests --tests=Sample_Test,Other_Test
 					</div>
 					<p>A weird quirk of nosetests is it won’t detect tests that end with the word test and no separator. So these work:</p>
-					<div span class="example2">
+					<div class="example2">
 						TestSample.py<br/>
 						Sample.test.py<br/>
 						test-sample.py<br/>
 						sample_test.py<br/>
 					</div>
 					<p>But it will not find:</p>
-					<div span class="example2">
+					<div class="example2">
 						SampleTest.py
 					</div>
 					<p>Combining it all together</p>

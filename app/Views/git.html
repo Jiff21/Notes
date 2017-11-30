@@ -49,12 +49,12 @@
 					<p>Locally use:</p>
 					<div class="example2">
 						git init
-						<br> touch README.md
-						<br> git add *.c
-						<br> git add README.md
-						<br> git commit -m "<span class="replace">This is the 1st commit</span>"
+						<br /> touch README.md
+						<br /> git add *.c
+						<br /> git add README.md
+						<br /> git commit -m "<span class="replace">This is the 1st commit</span>"
 					</div>
-					<p> Pull down a project that has already been started: <br>
+					<p> Pull down a project that has already been started: <br />
 						<div class="example2">git clone <span class="replace">github/url</span></div>
 						<p>
 							<img src="../images/SmileyFace.svg" alt="Smiley face" height="42" width="42">
@@ -62,98 +62,98 @@
 
 				<div id="stash" class="left-nav-companion">
 					<h3>Stash</h3>
-					<p>Save current changes to Stash<br>
+					<p>Save current changes to Stash<br />
 						<span class="example2">git stash -m &#x22;<span class="replace">Message about stash</span>&#x22;</span>
 					</p>
 
-					<p>List stash changes<br>
+					<p>List stash changes<br />
 						<span class="example2">git stash list</span>
 					</p>
 
-					<p>Get a stashed change back to working directory:<br>
+					<p>Get a stashed change back to working directory:<br />
 						<span class="example2">git stash pop <span class="replace">HashFragNum</span></span>
 					</p>
 
-					<p>Clear all stashed changes:<br>
+					<p>Clear all stashed changes:<br />
 						<span class="example2">git stash clear &#x22;<span class="replace">Message about stash</span>&#x22;</span>
 					</p>
 				</div>
 
 				<div id="basics" class="left-nav-companion">
 					<h3>Basics</h3>
-					<p>Check for Changes since last commit:<br>
+					<p>Check for Changes since last commit:<br />
 						<span class="example2">git status</span>
 					</p>
-					<p>Add a file to local staging:<br>
+					<p>Add a file to local staging:<br />
 						<span class="example2">git add <span class="replace">path/to/file</span></span>
 					</p>
-					<p>Move a file:<br>
+					<p>Move a file:<br />
 						<span class="example2">git mv <span class="replace"> path/to/filename.txt</span> <span class="replace"> new/path/to/filenamenew.txt</span></span>
 					</p>
-					<p> Commmit all staged file:<br>
+					<p> Commmit all staged file:<br />
 						<span class="example2">git commit -m &#x22;<span class="replace">Message with commit</span>&#x22;</span>
 					</p>
-					<p> Stage &amp; Commmit all changes in working directory:<br>
+					<p> Stage &amp; Commmit all changes in working directory:<br />
 						<span class="example2">git commit -am &#x22;<span class="replace">Message with commit</span>&#x22;</span>
 					</p>
-					<p>Push commits to remote:<br>
+					<p>Push commits to remote:<br />
 						<span class="example2">git push</span>
 					</p>
-					<p>Get rid of an unstage change:<br>
+					<p>Get rid of an unstage change:<br />
 						<span class="example2">git checkout <span class="replace">path/to/file/to/</span></span>
 					</p>
-					<p>Get rid of all unstaged changes:<br>
+					<p>Get rid of all unstaged changes:<br />
 						<span class="example2">git checkout — .</span>
 					</p>
-					<p>Revert last commit (keeping changes) if not pushed to remote yet:<br>
+					<p>Revert last commit (keeping changes) if not pushed to remote yet:<br />
 						<span class="example2">git reset HEAD~1</span>
 					</p>
-					<p>Revert last commit (nuking changes) if not pushed to remote yet:<br>
+					<p>Revert last commit (nuking changes) if not pushed to remote yet:<br />
 						<span class="example2">git reset --hard HEAD~1</span>
 					</p>
-					<p>Full diff between two branches:<br>
+					<p>Full diff between two branches:<br />
 						<span class="example2">git --no-pager log branch1...branch2 --oneline</span>
 					</p>
 
 				</div>
 				<div id="branches" class="left-nav-companion">
 					<h3>Branches</h3>
-					<p> Create a new branch off current branch:<br>
+					<p> Create a new branch off current branch:<br />
 						<span class="example2">git checkout -b <span class="replace">BranchName</span></span>
 					</p>
-					<p> Switch branch:<br>
+					<p> Switch branch:<br />
 						<span class="example2">git checkout <span class="replace">BranchName</span></span>
 					</p>
-					<p> Show Local branches:<br>
+					<p> Show Local branches:<br />
 						<span class="example2">git branch</span>
 					</p>
-					<p> Show Remote branches:<br>
+					<p> Show Remote branches:<br />
 						<span class="example2">git branch -r</span>
 					</p>
-					<p> Put a local branch on remote with default tracking:<br>
+					<p> Put a local branch on remote with default tracking:<br />
 						<span class="example2">git push -u <span class="replace">OriginName</span> <span class="replace">RemoteBranchName</span></span>
 					</p>
-					<p> Pull down a remote branch you don't have:<br>
+					<p> Pull down a remote branch you don't have:<br />
 						<span class="example2">git checkout -b <span class="replace">LocalBranchName</span> origin/<span class="replace">remote_branch_name</span></span>
 					</p>
-					<p> Delete local branch:<br>
+					<p> Delete local branch:<br />
 						<span class="example2">git branch -d <span class="replace">BranchName</span></span>
 					</p>
-					<p>Merge a branch:<br>
+					<p>Merge a branch:<br />
 						<span class="example2">git merge <span class="replace">NameOfBranchToMergeIntoCurrentBranch</span></span>
 					</p>
-					<p>Cherry pick a commit from another branch:<br>
+					<p>Cherry pick a commit from another branch:<br />
 						<span class="example2">git cherry-pick <span class="replace">HashOfChangeToMergeIn</span></span> or
 						<span class="example2">git cherry-pick <span class="replace">olderHash</span>..<span class="replace">toNewerHash</span></span>
 					</p>
 				</div>
 				<div id="ignore" class="left-nav-companion">
 					<h3>Git Settings</h3>
-					<p>Your syncing your .bash_profile now and autocompletion can be setup by simply setting your bash profile to use the files in this project:<br>
+					<p>Your syncing your .bash_profile now and autocompletion can be setup by simply setting your bash profile to use the files in this project:<br />
 						<span class="example2 example-overscroll">source Users/$USER/Documents/Code/Notes/app/examples/.bash_profile</span>
 					</p>
 
-					<p> You should be able to use your synced git ignore by configuring it to look at the file in this project <br>
+					<p> You should be able to use your synced git ignore by configuring it to look at the file in this project <br />
 						<span class="example2 example-overscroll">git config --global core.excludesfile Users/$USER/Documents/Code/Notes/app/examples/.gitignore_global</span>
 					</p>
 
@@ -162,7 +162,7 @@
 					<h3>Git Bisect</h3>
 					<p>Git has a nifty feature for tracking down where a bug started. Figure out a past commit that's working (good hash), then follow these steps.</p>
 					<div class="example2">
-						git bisect start<br> git bisect bad<br> git bisect good <span class="replace">HashFragNum</span><br>
+						git bisect start<br /> git bisect bad<br /> git bisect good <span class="replace">HashFragNum</span><br />
 					</div>
 					<p>Keep repeating git bisect bad and good commands until landing on the commit that broke the code. Then type the following command and return to the head to fix the broken code.</p>
 					<div class="example2">git bisect reset</div>
@@ -170,9 +170,9 @@
 				<div id="bower" class="left-nav-companion">
 					<h3>NPM &amp; Bower</h3>
 					<p>Just a couple quick notes on npm &amp; Bower. When you need to update a dependency don't just update package.json, instead run the update through npm with a command. Here's some examples.</p>
-					<div class="example2">npm install <span class="replace">yeoman -g</span></div><br>
-					<div class="example2">git checkout <span class="replace">protractor@1.4.0 --save-dev</span></div><br>
-					<div class="example2">git checkout <span class="replace">selenium-webdriver@latest</span></div><br>
+					<div class="example2">npm install <span class="replace">yeoman -g</span></div><br />
+					<div class="example2">git checkout <span class="replace">protractor@1.4.0 --save-dev</span></div><br />
+					<div class="example2">git checkout <span class="replace">selenium-webdriver@latest</span></div><br />
 					<div class="example2">git checkout <span class="replace">chromedriver@"&#62;2.0.0 &#60;2.12.0"</span></div>
 				</div>
 			</div>
