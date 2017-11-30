@@ -158,7 +158,7 @@
 							<span class="replace">code to run here</span><br /> });
 						</div>
 						<h5>Local Storage</h5>
-						<p>When using local storage you also need to use browser.executeScript. Remember that you parse data when reading and stringify when writing. In Protractor, when writing to local storage inside executeScript you need to use arguments(). If you don&39;t
+						<p>When using local storage you also need to use browser.executeScript. Remember that you parse data when reading and stringify when writing. In Protractor, when writing to local storage inside executeScript you need to use arguments(). If you don&#39;t
 							want to mock the entire backend but have content changes coming from a CMS you can sometimes cheat by writing to local storage prior to loading the page.</p>
 						<h6>Clear local storage</h6>
 						<div class="example2">
@@ -186,9 +186,8 @@
 							<span class="replace">prodNum.get(7).$('img')</span>.isDis&shy;played().then(function(val) {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val).toBeFalsy();
 							<br /> })
 						</div>
-						<p>Or:
-							<code class="example">expect(<span class="replace">myButton</span>.isEn&shy;abled()).toBeFalsy();</code><br />
-						</p>
+						<p>Or:</p>
+							<div class="example2">expect(<span class="replace">myButton</span>.isEn&shy;abled()).toBeFalsy();</div>
 						<p>Or:</p>
 						<div class="example2">
 							<span class="replace">mainImage</span>.get(size).then(function(val) {<br /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;expect(val.width).toEqual(16);
