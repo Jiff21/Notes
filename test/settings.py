@@ -1,6 +1,6 @@
 import os
 
-BASE_URL = os.getenv('BASE_URL', 'http://0.0.0.0:9000/')
+BASE_URL = os.getenv('BASE_URL', 'http://0.0.0.0:9000')
 DRIVER = os.getenv('DRIVER', 'chrome')
 DRIVER = DRIVER.lower().replace(' ', '_').replace('-', '_')
 LIGHTHOUSE_IMAGE = os.getenv('LIGHTHOUSE_IMAGE', 'http://localhost:8085')
@@ -10,7 +10,7 @@ SL_DC = os.getenv(
     '{"platform": "Mac OS X 10.9", "browserName": "chrome", "version": "31"}'
 )
 PAGES_DICT = {
-    'index': '/',
+    'homepage': 'home.html',
     'html page':'/Views/html.html',
     'javascript page':'/Views/javascript.html',
     'css page':'/Views/css.html',
