@@ -41,24 +41,26 @@
 				<ol>
 					<li>Click the Proxy Tab</li>
 					<li>On the second set of tabs click Options</li>
-					<li>In the Intercept Server Response section </li>
-					<ol>
-						<li>Unclick enabled on Content Type Header Matches text. </li>
-						<li>Add a new rule</li>
+					<li>In the Intercept Server Response section
 						<ol>
-							<li>Boolean Operator = And</li>
-							<li>Match Type = Http method </li>
-							<li>Match Relationship = Does Not Match</li>
-							<li>Match Condition = [RANDOM STRING] (e.g. &#x22;^66666666666&#x22;)</li>
+							<li>Unclick enabled on Content Type Header Matches text. </li>
+							<li>Add a new rule
+								<ol>
+									<li>Boolean Operator = And</li>
+									<li>Match Type = Http method </li>
+									<li>Match Relationship = Does Not Match</li>
+									<li>Match Condition = [RANDOM STRING] (e.g. &#x22;^66666666666&#x22;)</li>
+								</ol>
+							</li>
 						</ol>
-					</ol>
-					<li>Now you're going to get all responses that don't have that string in them. But now you're probably going to want to filter out some other responses. Here are some suggested filters for Responses:</li>
-					<ol>
-						<li>Match Type = Domain Name, Match Relationship = Does Not Match, Match Condition = ^ssl\.google-analytics\.com</li>
-						<li>Match Type = Domain Name, Match Relationship = Does Not Match, Match Condition = ^safebrowsing-cache\.google\.com</li>
-						<li>Match Type = Domain Name, Match Relationship = Does Not Match, Match Condition = ^fonts\.gstatic\.com</li>
-						<li>etc, pretty much go through intercepting responses until you filter out all 3rd party things you do not wish to test.</li>
-					</ol>
+					<li>Now you're going to get all responses that don't have that string in them. But now you're probably going to want to filter out some other responses. Here are some suggested filters for Responses:
+						<ol>
+							<li>Match Type = Domain Name, Match Relationship = Does Not Match, Match Condition = ^ssl\.google-analytics\.com</li>
+							<li>Match Type = Domain Name, Match Relationship = Does Not Match, Match Condition = ^safebrowsing-cache\.google\.com</li>
+							<li>Match Type = Domain Name, Match Relationship = Does Not Match, Match Condition = ^fonts\.gstatic\.com</li>
+							<li>etc, pretty much go through intercepting responses until you filter out all 3rd party things you do not wish to test.</li>
+						</ol>
+					</li>
 				</ol>
 				<h1>Repeater</h1>
 				<p>If you left click on an intercepted call in the proxy tab you can use the option Send to Repeater, this will allow you to repeatedly send the same API call repeatedly, editing the call in-between sends and monitory the response the server returns.</p>
@@ -67,30 +69,34 @@
 				<p>The Position Tab allows you to highlight the variables you want to fuzz. This will be done automatically if sent from the repeater, but you may want to clear and highlight just the ones you want to fuzz and hit the add button to set them as payload
 					variables. You also select your attack type on this page.</p>
 				<ul>
-					<li>Sniper</li>
-					<ul>
-						<li>Attack a single variable with a list of payloads.</li>
-					</ul>
+					<li>Sniper
+						<ul>
+							<li>Attack a single variable with a list of payloads.</li>
+						</ul>
+					</li>
 				</ul>
 				<ul>
-					<li>Battering Ram</li>
-					<ul>
-						<li>Attack multiple variables with the same payload.</li>
-					</ul>
+					<li>Battering Ram
+						<ul>
+							<li>Attack multiple variables with the same payload.</li>
+						</ul>
+					</li>
 				</ul>
 				<ul>
-					<li>Pitchfork</li>
-					<ul>
-						<li>Attack variables with 2 different matched lists. (Example: username list and password list)</li>
-					</ul>
+					<li>Pitchfork
+						<ul>
+							<li>Attack variables with 2 different matched lists. (Example: username list and password list)</li>
+						</ul>
+					</li>
 				</ul>
 				<ul>
-					<li>Cluster Bomb</li>
-					<ul>
-						<li>Similar to pitchfork but it will try all the items in list 1 with first item from list 2, then try all items in list 1 with 2nd item in list 2.</li>
-						<li>Say you're trying to login with a user by guessing there password from commonly used password list. Setup usernames in list 1 and passwords in list 2. It will try password 1 from list 2 for all the usernames in list 1, then move on to password 2
-							in list 2 with all the usernames in list 1. If you're trying this attack you may want to try using a really long list of users to avoid locking out accounts for failing validation repeatedly in a short period of time.</li>
-					</ul>
+					<li>Cluster Bomb
+						<ul>
+							<li>Similar to pitchfork but it will try all the items in list 1 with first item from list 2, then try all items in list 1 with 2nd item in list 2.</li>
+							<li>Say you're trying to login with a user by guessing there password from commonly used password list. Setup usernames in list 1 and passwords in list 2. It will try password 1 from list 2 for all the usernames in list 1, then move on to password 2
+								in list 2 with all the usernames in list 1. If you're trying this attack you may want to try using a really long list of users to avoid locking out accounts for failing validation repeatedly in a short period of time.</li>
+						</ul>
+					</li>
 				</ul>
 				<p>The Payload Tab is where you set up your attacks. The Payload Sets options let you select which variable you're editing. Note you can only adjust as many variables as you've set in the Position tab, and variable number is the order it appears. Payload
 					Type lets you pick what type of attack you send, some of the more useful options are:</p>
@@ -155,7 +161,7 @@
 					<li>Any view with PII (Personally identifiable information) for other users</li>
 				</ul>
 
-				<!-- </div> -->
+			</div>
 
 		</article>
 		<!-- Loading footer with AJAX -->
