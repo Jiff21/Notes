@@ -115,6 +115,22 @@
 							</ul>
 					</div>
 
+					<div>
+						<h5>Debugging Locators</h5>
+						<p> Sometimes an element will be blocked or hard to tell what
+							element is registering the click:
+							<span class="example">monitorEvents(window, "click");</span>
+							dropped into console can help debug this. </p>
+						<p> As you know
+							<span class="example">document.querySelector('
+								<span class="replace">div.nav &gt; a#signIn</span>')
+							</span> in console can be the best way to test CSS selectors.
+						</p>
+						<p> Xpath can be tested in Chrome Dev Tools Elements tab, if
+							you cmd+f on the element tree.
+						</p>
+					</div>
+
 					<h4>Waiting</h4>
 					<p>Be sure to import wait and expected conditions</p>
 					<div class="example2">
