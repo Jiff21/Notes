@@ -37,6 +37,7 @@
 					<a href="#stash" class="left-naveButton clear-both">Stash</a>
 					<a href="#basics" class="left-naveButton clear-both">Basics</a>
 					<a href="#branches" class="left-naveButton clear-both">Branches</a>
+					<a href="#diff" class="left-naveButton clear-both">Compare</a>
 					<a href="#ignore" class="left-naveButton clear-both">Ignore</a>
 					<a href="#bisect" class="left-naveButton clear-both">Bisect</a>
 					<a href="#bower" class="left-naveButton clear-both">NPM &amp; Bower</a>
@@ -145,6 +146,15 @@
 					<p>Cherry pick a commit from another branch:<br />
 						<span class="example2">git cherry-pick <span class="replace">HashOfChangeToMergeIn</span></span> or
 						<span class="example2">git cherry-pick <span class="replace">olderHash</span>..<span class="replace">toNewerHash</span></span>
+					</p>
+				</div>
+				<div id="diff" class="left-nav-companion">
+					<h3>Compare</h3>
+					<p> Get all files changed between two branches:<br />
+						<span class="example2">git diff --name-status <span class="replace">BranchName</span>..<span class="replace">master</span></span>
+					</p>
+					<p> Compare a specifc file between two branches:<br />
+						<span class="example2">git diff <span class="replace">BranchName</span>..<span class="replace">master</span> -- <span class="replace">path/to/file</span></span>
 					</p>
 				</div>
 				<div id="ignore" class="left-nav-companion">
